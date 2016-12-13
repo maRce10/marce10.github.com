@@ -1,27 +1,13 @@
 ---
 layout: page
-title: About
+title: about
 comments: yes
 permalink: /about/
 ---
 
-
-### Freshman21 is a Jekyll theme.
-
-A tribute to Twenty Twelve and Twenty eleven.
-
-I like wordpress's theme Twenty Twelve and Twenty eleven very much. 
-So I called my Jekyll theme Freshman21 (Freshman <q>twenty-first</q> , it means twenty-first century, not twenty-one), this theme is based on my former theme [Freshman](https://github.com/yulijia/freshman/).
-
-Freshman21 have two main page format, one is [single column](http://yulijia.net/en/  "see demo"), the other is two columns. For more details, please see the articles on the site.
-
-<cite>Proudly enjoy using Freshman21 theme.</cite> <code>;)</code>
-
-<img title="麋鹿" src="https://i.imgur.com/Mdc4szJl.jpg" alt="麋鹿" width="580" height="668" />
-
-#### Hi, the picture you have seen in the sample-page is a Père David's deer photoed by my friend at Beijing Milu Park, China.
-
-Milu(麋鹿) is the chinese name of Père David's deer.
+<p><font size="5"><b>Marcelo Araya-Salas</b></font></p>
+<br>
+I am a postdoctoral associate at the [Cornell Lab of Ornithology](http://www.birds.cornell.edu/Page.aspx?pid=1478). My research focuses on using Neotropical study systems and novel analytical methods to investigate the (evolutionary) behavioral ecology of birds. I have also been involved in the development of computational tools for the analysis of animal vocalizations on the R platform. [Grace Smith-Vidaurre](http://gsmithvi.github.io/) and I have made available the R package [warbleR](https://cran.r-project.org/package=warbleR) that provides tools to streamline acoustic analysis of animal sounds. Check my [website](http://marceloarayasalas.weebly.com/) for more info about my work.
 
 
 
