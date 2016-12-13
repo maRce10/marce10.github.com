@@ -11,10 +11,10 @@ locale: en_US
 
 ### Personal info and site tools info:
 twitter_username: 
-github_username:  https://github.com/maRce10/marce10.github.com
+github_username:  maRce10
 disqus_shortname: 
 favicon:     "/images/favicon.ico"
-aboutme: Hi, this is Lijia Yu. I made the Freshman21 theme. Please enjoy it. # these are shown on aboutme-sidebar.
+aboutme: Marcelo Araya-Salas, Behavioral Ecologist and Bioacustician. # these are shown on aboutme-sidebar.
 aboutme_photo: https://i.imgur.com/Mdc4szJl.jpg# your photo.
 google_analytics_key: UA-57979084-1 # put YOUR key here to enable tracking! (blank to disable)
 
