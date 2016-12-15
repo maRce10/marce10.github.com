@@ -75,7 +75,11 @@ dl,
 blockquote,
 code,
 kbd,
-pre,
+pre{
+    white-space: pre-wrap;
+    font-size: 16px;
+     background-color: #FDF6E3;
+}
 samp {
   margin: 1em 0;
 }
