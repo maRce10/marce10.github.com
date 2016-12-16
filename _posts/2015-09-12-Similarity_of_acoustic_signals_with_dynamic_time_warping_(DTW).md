@@ -75,7 +75,7 @@ mantel(dm,as.dist(recmat),permutations = 1000)
 ## 
 ## Upper quantiles of permutations (null model):
 ##   90%   95% 97.5%   99% 
-## 0.174 0.239 0.289 0.374 
+## 0.172 0.248 0.318 0.408 
 ## Permutation: free
 ## Number of permutations: 1000
 ```
@@ -118,11 +118,11 @@ mantel(dspan,as.dist(recmat),permutations = 10000)
 ## mantel(xdis = dspan, ydis = as.dist(recmat), permutations = 10000) 
 ## 
 ## Mantel statistic r: 0.5269 
-##       Significance: 0.00029997 
+##       Significance: 0.00049995 
 ## 
 ## Upper quantiles of permutations (null model):
 ##   90%   95% 97.5%   99% 
-## 0.186 0.244 0.299 0.360 
+## 0.189 0.254 0.302 0.352 
 ## Permutation: free
 ## Number of permutations: 10000
 ```
@@ -143,11 +143,11 @@ mantel(dm, dspan, permutations = 10000)
 ## mantel(xdis = dm, ydis = dspan, permutations = 10000) 
 ## 
 ## Mantel statistic r: 0.3582 
-##       Significance: 0.016098 
+##       Significance: 0.015098 
 ## 
 ## Upper quantiles of permutations (null model):
 ##   90%   95% 97.5%   99% 
-## 0.189 0.260 0.326 0.390 
+## 0.183 0.258 0.316 0.396 
 ## Permutation: free
 ## Number of permutations: 10000
 ```
