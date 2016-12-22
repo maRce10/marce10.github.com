@@ -2,6 +2,7 @@
 layout: page
 title: <font size="9"><b>Marcelo Araya-Salas</b></font> 
 subtitle: 
+bigimg: /img/LBH.jpg
 ---
 
 
