@@ -1,5 +1,6 @@
 ---
 layout: post
+comments: true
 title: "Signal detection with cross-correlation using monitoR "
 date: 15-12-2016
 ---

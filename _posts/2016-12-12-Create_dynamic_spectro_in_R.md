@@ -6,18 +6,19 @@ date: 12-12-2016
 
 This code creates a video with the spectrogram scrolling from right to left. The spectrogram is synchronized with the audio. This is done by creating single image files for each of the movie frames and then putting them together in .mp4 video format. You will need  the ffmpeg UNIX application to be able to run the code (only works for OSX and Linux).  
 
-First load the packages (the code will install the packages if missing)
+First load the [warbleR](https://cran.r-project.org/package=warbleR) package 
 
 
 {% highlight r %}
-require("tuneR")
+require("warbleR")
 {% endhighlight %}
 
-Download and read the example sound file
+Download and read the example sound file (long-billed hermit song)
 
 
 {% highlight r %}
-download.file(url = "http://marceloarayasalas.weebly.com/uploads/2/5/5/2/25524573/0.sur.2014.7.3.8.31.wav", destfile = "example.wav")
+download.file(url = "http://marceloarayasalas.weebly.com/uploads/2/5/5/2/25524573/0.sur.2014.7.3.8.31.wav", 
+    destfile = "example.wav")
 
 wav1 <- readWave("example.wav", from = 0, to = 19, units = "seconds")
 {% endhighlight %}
@@ -36,11 +37,16 @@ fps <- 50
 marg <- tlimsize / 2
 
 #add silence
-wav <-pastew(wave2 = silence(duration = marg, samp.rate = wav1@samp.rate, xunit = "time"), wave1 = wav1, f = wav@samp.rate, output = "Wave")
-wav <-pastew(wave1 = silence(duration = marg, samp.rate = wav@samp.rate, xunit = "time"), wave2 = wav, f = wav@samp.rate, output = "Wave")
+wav <-pastew(wave2 = silence(duration = marg, samp.rate = wav1@samp.rate, 
+            xunit = "time"), wave1 = wav1, f = wav@samp.rate, 
+            output = "Wave")
+
+wav <-pastew(wave1 = silence(duration = marg, samp.rate = wav@samp.rate, 
+            xunit = "time"), wave2 = wav, f = wav@samp.rate,
+            output = "Wave")
 {% endhighlight %}
 
- and create the individual images that will be put together in a video
+ and create the individual images that will be put together in a video (this might take a while...)
  
 
 {% highlight r %}
@@ -54,9 +60,11 @@ repeat{
 
   tlim <- c(x, x + tlimsize)
 
-  spectro(wave = wav, f = wav@samp.rate, wl = 300, ovlp = 90, flim = c(2, 10.5), tlim = tlim, scale = F, grid = F, 
-          palette = gray.colors,  norm = F, dBref = 2*10e-5, osc = T, colgrid="white", colwave="chocolate2", colaxis="white",
-          collab="white", colbg="black")
+  spectro(wave = wav, f = wav@samp.rate, wl = 300, ovlp = 90, 
+          flim = c(2, 10.5), tlim = tlim, scale = F, grid = F, 
+          palette = gray.colors,  norm = F, dBref = 2*10e-5, 
+          osc = T, colgrid="white", colwave="chocolate2", 
+          colaxis="white", collab="white", colbg="black")
   
   abline(v = tlim[1]+marg, lty = 2, col = "skyblue", lwd = 2)
   
@@ -74,8 +82,6 @@ The last step is to run the ffmeg application in UNIX (only works for OSX and Li
 
 
 {% highlight r %}
-# This is run in UNIX using the system function (need ffmpeg installed)
-
 #Make video
 system("ffmpeg -framerate 50 -i fee%04d.tiff -c:v libx264 -profile:v high -crf 2 -pix_fmt yuv420p spectro_movie.mp4")
 
@@ -87,7 +93,5 @@ system("ffmpeg -i spectro_movie.mp4 -i audio1.wav -vcodec libx264 -acodec libmp3
 {% endhighlight %}
 
 At the end you should get something like this:
-<br>
-[![Alt text](https://img.youtube.com/vi/McAQaIXeuUQ/0.jpg)](https://www.youtube.com/watch?v=McAQaIXeuUQ)
-<iframe  title="YouTube video player" width="1000" height="585" src="https://youtu.be/McAQaIXeuUQ" frameborder="0"></iframe>
 
+<iframe width="854/1.3" height="480/1.3" src="https://www.youtube.com/embed/McAQaIXeuUQ" frameborder="0" allowfullscreen></iframe>
