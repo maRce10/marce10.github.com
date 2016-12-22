@@ -1,6 +1,5 @@
 ---
 layout: post
-comments: true
 title: "Signal detection with cross-correlation using monitoR "
 date: 15-12-2016
 ---
@@ -50,7 +49,7 @@ phae1T1<-makeCorTemplate("Phae.long1.wav", t.lim=c(manualoc.df$start[2],manualoc
     frq.lim=c(1, 11), dens=1, name="phae11")
 {% endhighlight %}
 
-![plot of chunk unnamed-chunk-3](/assets/Rfig/unnamed-chunk-3-1.svg)
+![plot of chunk unnamed-chunk-3](/assets/Rfig/unnamed-chunk-3-1.png)
 
 {% highlight text %}
 ## 
@@ -66,7 +65,7 @@ phae2T1<-makeCorTemplate("Phae.long2.wav", t.lim=c(manualoc.df$start[5],manualoc
        frq.lim=c(1, 11), dens=1, name="phae21")
 {% endhighlight %}
 
-![plot of chunk unnamed-chunk-3](/assets/Rfig/unnamed-chunk-3-2.svg)
+![plot of chunk unnamed-chunk-3](/assets/Rfig/unnamed-chunk-3-2.png)
 
 {% highlight text %}
 ## 
@@ -82,7 +81,7 @@ phae3T1<-makeCorTemplate("Phae.long3.wav", t.lim=c(manualoc.df$start[7],manualoc
        frq.lim=c(1, 11), dens=1, name="phae31")
 {% endhighlight %}
 
-![plot of chunk unnamed-chunk-3](/assets/Rfig/unnamed-chunk-3-3.svg)
+![plot of chunk unnamed-chunk-3](/assets/Rfig/unnamed-chunk-3-3.png)
 
 {% highlight text %}
 ## 
@@ -98,7 +97,7 @@ phae4T1<-makeCorTemplate("Phae.long4.wav", t.lim=c(manualoc.df$start[9],manualoc
        frq.lim=c(1, 11), dens=1, name="phae41")
 {% endhighlight %}
 
-![plot of chunk unnamed-chunk-3](/assets/Rfig/unnamed-chunk-3-4.svg)
+![plot of chunk unnamed-chunk-3](/assets/Rfig/unnamed-chunk-3-4.png)
 
 {% highlight text %}
 ## 
@@ -156,7 +155,7 @@ cdetectsPhae1<-findPeaks(cscoresPhae1, parallel = TRUE)
 plot(cdetectsPhae1, hit.marker="points")
 {% endhighlight %}
 
-![plot of chunk unnamed-chunk-6](/assets/Rfig/unnamed-chunk-6-1.svg)
+![plot of chunk unnamed-chunk-6](/assets/Rfig/unnamed-chunk-6-1.png)
 
 We can do the same for each sound file:
 
@@ -197,7 +196,7 @@ cdetectsPhae2<-findPeaks(cscoresPhae2, parallel = TRUE)
 plot(cdetectsPhae2, hit.marker="points")
 {% endhighlight %}
 
-![plot of chunk unnamed-chunk-7](/assets/Rfig/unnamed-chunk-7-1.svg)
+![plot of chunk unnamed-chunk-7](/assets/Rfig/unnamed-chunk-7-1.png)
 
 
 {% highlight r %}
@@ -237,7 +236,7 @@ cdetectsPhae3<-findPeaks(cscoresPhae3, parallel = TRUE)
 plot(cdetectsPhae3, hit.marker="points")
 {% endhighlight %}
 
-![plot of chunk unnamed-chunk-8](/assets/Rfig/unnamed-chunk-8-1.svg)
+![plot of chunk unnamed-chunk-8](/assets/Rfig/unnamed-chunk-8-1.png)
 
 
 {% highlight r %}
@@ -277,7 +276,7 @@ cdetectsPhae4<-findPeaks(cscoresPhae4, parallel = TRUE)
 plot(cdetectsPhae4, hit.marker="points")
 {% endhighlight %}
 
-![plot of chunk unnamed-chunk-9](/assets/Rfig/unnamed-chunk-9-1.svg)
+![plot of chunk unnamed-chunk-9](/assets/Rfig/unnamed-chunk-9-1.png)
 
 We can also run all templates on a single sound file:
 
@@ -328,6 +327,6 @@ cdetectsPhae4all<-findPeaks(cscoresPhae4all, parallel = TRUE)
 plot(cdetectsPhae4all, hit.marker="points")
 {% endhighlight %}
 
-![plot of chunk unnamed-chunk-10](/assets/Rfig/unnamed-chunk-10-1.svg)
+![plot of chunk unnamed-chunk-10](/assets/Rfig/unnamed-chunk-10-1.png)
 
 
