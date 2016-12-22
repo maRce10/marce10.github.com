@@ -4,7 +4,7 @@ title: "Download a single recording for each species in a country from Xeno-Cant
 date: 22-12-2016
 ---
 
-I warbleR user ask if "there is any method for downloading from xeno canto a SINGLE individual of each species in Costa Rica" from Xeno-Canto.
+A warbleR user asks if "there is any method for downloading from xeno canto a SINGLE individual of each species in Costa Rica" from Xeno-Canto.
 
 This can be done by 1) downloading the metadata of all recordings in a given site (in this case Costa Rica) using the `querxc` function from the package [warbleR](https://cran.r-project.org/package=warbleR) (which searches and downloads recordings from [Xeno-Canto](http://www.xeno-canto.org)), 2) filtering the metadata to have only one recording per species, and 3) input the filtered metadata back into `querxc`to download the selected recordings.
 
@@ -25,14 +25,14 @@ CR.recs <- querxc(qword = 'cnt:"costa rica"', download = FALSE)
 
 {% highlight text %}
 ## 
-   |+++++++                                           | 12% ~04m 31s      
-   |+++++++++++++                                     | 25% ~02m 35s      
-   |+++++++++++++++++++                               | 38% ~01m 39s      
-   |+++++++++++++++++++++++++                         | 50% ~01m 14s      
-   |++++++++++++++++++++++++++++++++                  | 62% ~48s          
-   |++++++++++++++++++++++++++++++++++++++            | 75% ~28s          
-   |++++++++++++++++++++++++++++++++++++++++++++      | 88% ~13s          
-   |++++++++++++++++++++++++++++++++++++++++++++++++++| 100% elapsed = 01m 50s
+   |+++++++                                           | 12% ~04m 56s      
+   |+++++++++++++                                     | 25% ~03m 06s      
+   |+++++++++++++++++++                               | 38% ~02m 49s      
+   |+++++++++++++++++++++++++                         | 50% ~01m 50s      
+   |++++++++++++++++++++++++++++++++                  | 62% ~01m 08s      
+   |++++++++++++++++++++++++++++++++++++++            | 75% ~39s          
+   |++++++++++++++++++++++++++++++++++++++++++++      | 88% ~21s          
+   |++++++++++++++++++++++++++++++++++++++++++++++++++| 100% elapsed = 02m 41s
 {% endhighlight %}
 
 This query returned 3832 recordings from 518 species (at the time I am writing this post)
@@ -129,4 +129,4 @@ CR.no.songs2 <- CR.no.songs[!CR.no.songs$English_name %in% CR.songs$English_name
 querxc(X = CR.no.songs2)
 {% endhighlight %}
 
-That is it
+That is it!
