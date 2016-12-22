@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Download a single recording for each species in a site from Xeno-Canto"
+title: "Download a single recording for each species in a country from Xeno-Canto"
 date: 22-12-2016
 ---
 
@@ -25,14 +25,14 @@ CR.recs <- querxc(qword = 'cnt:"costa rica"', download = FALSE)
 
 {% highlight text %}
 ## 
-   |+++++++                                           | 12% ~29s          
-   |+++++++++++++                                     | 25% ~27s          
-   |+++++++++++++++++++                               | 38% ~23s          
-   |+++++++++++++++++++++++++                         | 50% ~19s          
-   |++++++++++++++++++++++++++++++++                  | 62% ~14s          
-   |++++++++++++++++++++++++++++++++++++++            | 75% ~09s          
-   |++++++++++++++++++++++++++++++++++++++++++++      | 88% ~04s          
-   |++++++++++++++++++++++++++++++++++++++++++++++++++| 100% elapsed = 35s
+   |+++++++                                           | 12% ~04m 31s      
+   |+++++++++++++                                     | 25% ~02m 35s      
+   |+++++++++++++++++++                               | 38% ~01m 39s      
+   |+++++++++++++++++++++++++                         | 50% ~01m 14s      
+   |++++++++++++++++++++++++++++++++                  | 62% ~48s          
+   |++++++++++++++++++++++++++++++++++++++            | 75% ~28s          
+   |++++++++++++++++++++++++++++++++++++++++++++      | 88% ~13s          
+   |++++++++++++++++++++++++++++++++++++++++++++++++++| 100% elapsed = 01m 50s
 {% endhighlight %}
 
 This query returned 3832 recordings from 518 species (at the time I am writing this post)

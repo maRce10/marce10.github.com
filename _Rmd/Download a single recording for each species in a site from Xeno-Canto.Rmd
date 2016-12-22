@@ -1,5 +1,5 @@
 ---
-title: "Download a single recording for each species in a site from Xeno-Canto"
+title: "Download a single recording for each species in a country from Xeno-Canto"
 author: "Marcelo Araya-Salas"
 date: "2016-12-22"
 output: 
