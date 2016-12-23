@@ -26,6 +26,7 @@ navbar-links:
   Marcelo Araya-Salas: "aboutme"
   Resources:
     - warbleR workflow: "https://cran.r-project.org/web/packages/warbleR/vignettes/warbleR_workflow.html"
+    - warbleR paper: "http://onlinelibrary.wiley.com/doi/10.1111/2041-210X.12624/full"
     - soundecology intro: "https://cran.r-project.org/web/packages/soundecology/vignettes/intro.html"
     - seewave website: "http://rug.mnhn.fr/seewave/"
   Author's home: "http://marceloarayasalas.weebly.com"
