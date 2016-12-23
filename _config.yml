@@ -82,7 +82,7 @@ footer-links-active:
 share-links-active:
   twitter: true
   facebook: true
-  google: false
+  google: true
   linkedin: true
 
 # How to display the link to the website in the footer
@@ -94,7 +94,7 @@ share-links-active:
 disqus: "bioacusticaucr"
 
 # Fill in your Google Analytics ID to track your website using GA
-#google_analytics: ""
+#google_analytics: "GTM-KLSL9WK"
 
 # Facebook App ID
 # fb_app_id: ""
