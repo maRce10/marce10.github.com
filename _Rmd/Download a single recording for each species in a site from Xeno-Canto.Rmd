@@ -19,7 +19,7 @@ require("warbleR")
 
 ```
 
-then we search for all recordings in Costa Rica setting the download argument to `FALSE` to obtain only the metadata. Note that the search term follow the xeno-canto advance query syntax. This syntax uses tags to search within a particular aspect of the recordings (e.g. country, location, sound type). Tags are of the form tag:searchterm'. See [http://www.xeno-canto.org/help/search](http://www.xeno-canto.org/help/search) for a full description.
+then we search for all recordings in Costa Rica setting the download argument to `FALSE` to obtain only the metadata. Note that the search term follows the xeno-canto advance query syntax. This syntax uses tags to search within a particular aspect of the recordings (e.g. country, location, sound type). Tags are of the form tag:searchterm'. See [http://www.xeno-canto.org/help/search](http://www.xeno-canto.org/help/search) for a full description. (Note that in `querxc` you can also search for species names or families without using any tags)
 
 ```{r , eval = F}
 
@@ -45,7 +45,7 @@ length(unique(CR.recs$English_name))
 
 ```
 
-Now filter the metadata. First split the data in 'songs' and 'other sounds' (possibly calls) and then select a single recording for each species. I sort the data based on recording quality before filtering so the best quality recordings are found higher up in the list (so seleted recordings are the highest quality recordings for each species)
+Now filter the metadata. First split the data in 'songs' and 'other sounds' (possibly calls) and then select a single recording for each species. Sort the metadata by recording quality before filtering so the best quality recordings are found higher up in the list (which ensures that selected recordings are the highest quality recordings for each species)
 
 ```{r , eval = T}
 
@@ -99,4 +99,4 @@ querxc(X = CR.no.songs2)
 
 ```
 
-That is it!
+That's it!

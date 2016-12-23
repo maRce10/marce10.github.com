@@ -4,7 +4,7 @@ title: "Creating dynamic spectrograms (videos)"
 date: 12-12-2016
 ---
 
-This code creates a video with the spectrogram scrolling from right to left. The spectrogram is synchronized with the audio. This is done by creating single image files for each of the movie frames and then putting them together in .mp4 video format. You will need  the ffmpeg UNIX application to be able to run the code (only works for OSX and Linux).  
+This code creates a video with a spectrogram scrolling from right to left. The spectrogram is synchronized with the audio. This is done by creating single image files for each of the movie frames and then putting them together in .mp4 video format. You will need  the ffmpeg UNIX application to be able to run the code (only works for OSX and Linux).  
 
 First load the [warbleR](https://cran.r-project.org/package=warbleR) package 
 
@@ -13,7 +13,7 @@ First load the [warbleR](https://cran.r-project.org/package=warbleR) package
 require("warbleR")
 {% endhighlight %}
 
-Download and read the example sound file (long-billed hermit song)
+Download and read the example sound file ([long-billed hermit](http://neotropical.birds.cornell.edu/portal/species/overview?p_p_spp=231771) song)
 
 
 {% highlight r %}
@@ -23,7 +23,7 @@ download.file(url = "http://marceloarayasalas.weebly.com/uploads/2/5/5/2/2552457
 wav1 <- readWave("example.wav", from = 0, to = 19, units = "seconds")
 {% endhighlight %}
 
-Set the frequency limit, frames per second (video) and a margin of silence to add at the start and end of wav (so the sound starts playing at 0)
+Set the frequency limit, frames per second (video) and a margin of silence to add at the start and end of the sound file (so the sound starts playing at 0)
 
 
 {% highlight r %}
@@ -94,4 +94,4 @@ system("ffmpeg -i spectro_movie.mp4 -i audio1.wav -vcodec libx264 -acodec libmp3
 
 At the end you should get something like this:
 
-<iframe width="854/1.3" height="480/1.3" src="https://www.youtube.com/embed/McAQaIXeuUQ" frameborder="0" allowfullscreen></iframe>
+<iframe width="854/2" height="480/2" src="https://www.youtube.com/embed/McAQaIXeuUQ" frameborder="0" allowfullscreen></iframe>
