@@ -15,7 +15,7 @@ First we load the package
 require("warbleR")
 {% endhighlight %}
 
-then we search for all recordings in Costa Rica setting the download argument to `FALSE` to obtain only the metadata. Note that the search term follow the xeno-canto advance query syntax. This syntax uses tags to search within a particular aspect of the recordings (e.g. country, location, sound type). Tags are of the form tag:searchterm'. See [http://www.xeno-canto.org/help/search](http://www.xeno-canto.org/help/search) for a full description.
+then we search for all recordings in Costa Rica setting the download argument to `FALSE` to obtain only the metadata. Note that the search term follows the xeno-canto advance query syntax. This syntax uses tags to search within a particular aspect of the recordings (e.g. country, location, sound type). Tags are of the form tag:searchterm'. See [http://www.xeno-canto.org/help/search](http://www.xeno-canto.org/help/search) for a full description. (Note that in `querxc` you can also search for species names or families without using any tags)
 
 
 {% highlight r %}
@@ -25,14 +25,14 @@ CR.recs <- querxc(qword = 'cnt:"costa rica"', download = FALSE)
 
 {% highlight text %}
 ## 
-   |+++++++                                           | 12% ~01m 00s      
-   |+++++++++++++                                     | 25% ~47s          
-   |+++++++++++++++++++                               | 38% ~31s          
-   |+++++++++++++++++++++++++                         | 50% ~22s          
-   |++++++++++++++++++++++++++++++++                  | 62% ~15s          
-   |++++++++++++++++++++++++++++++++++++++            | 75% ~09s          
-   |++++++++++++++++++++++++++++++++++++++++++++      | 88% ~05s          
-   |++++++++++++++++++++++++++++++++++++++++++++++++++| 100% elapsed = 36s
+   |+++++++                                           | 12% ~01m 30s      
+   |+++++++++++++                                     | 25% ~01m 13s      
+   |+++++++++++++++++++                               | 38% ~01m 26s      
+   |+++++++++++++++++++++++++                         | 50% ~01m 18s      
+   |++++++++++++++++++++++++++++++++                  | 62% ~55s          
+   |++++++++++++++++++++++++++++++++++++++            | 75% ~40s          
+   |++++++++++++++++++++++++++++++++++++++++++++      | 88% ~20s          
+   |++++++++++++++++++++++++++++++++++++++++++++++++++| 100% elapsed = 02m 29s
 {% endhighlight %}
 
 This query returned 3832 recordings from 518 species (at the time I am writing this post)
@@ -62,7 +62,7 @@ length(unique(CR.recs$English_name))
 ## [1] 518
 {% endhighlight %}
 
-Now filter the metadata. First split the data in 'songs' and 'other sounds' (possibly calls) and then select a single recording for each species. I sort the data based on recording quality before filtering so the best quality recordings are found higher up in the list (so seleted recordings are the highest quality recordings for each species)
+Now filter the metadata. First split the data in 'songs' and 'other sounds' (possibly calls) and then select a single recording for each species. Sort the metadata by recording quality before filtering so the best quality recordings are found higher up in the list (which ensures that selected recordings are the highest quality recordings for each species)
 
 
 {% highlight r %}
@@ -129,4 +129,4 @@ CR.no.songs2 <- CR.no.songs[!CR.no.songs$English_name %in% CR.songs$English_name
 querxc(X = CR.no.songs2)
 {% endhighlight %}
 
-That is it!
+That's it!

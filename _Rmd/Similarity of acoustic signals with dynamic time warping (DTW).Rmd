@@ -7,7 +7,7 @@ output:
     variant: markdown_github
 ---
 
-This short tutorial shows how to use the `dfDTW` function in `warbleR` to compare acoustics signals using dynamic time warping (DTW).
+Here I show how to use the `dfDTW` function in [warbleR](https://cran.r-project.org/package=warbleR) to compare acoustics signals using dynamic time warping (DTW).
 
 First load these packages (if not installed the code will install it):
 ```{r,message=F}
