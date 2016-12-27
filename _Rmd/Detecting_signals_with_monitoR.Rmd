@@ -14,7 +14,7 @@ Here I show how to detect signals with cross-correlation using the very cool pac
 
 The package [monitoR](https://cran.r-project.org/package=monitoR) runs cross-correlation across sound files to search for the signals using previously defined templates. Thus, templates should be examples of the signals we want to detect. It can search for several templates in the same run. I show how the package works using the sound files and data examples that come with the package [warbleR](https://cran.r-project.org/package=warbleR). These are recordings from long-billed hermits, each one singing a different song type.
 
-First load the packages (the code will install the packages if missing):
+First load the packages (the code will install the packages if missing)
 
 ```{r, message=F}
 
@@ -26,7 +26,7 @@ require(y, character.only = T)
   })
 ```
 
-We need to create the templates. We just have to select and example from each sound file and provide the start and end as well as the frequency range of the signal. We will load the long-billed hermit sound:
+We need to create the templates. We just have to select and example from each sound file and provide the start and end as well as the frequency range of the signal. We will load the long-billed hermit sound
 
 ```{r,message=F}
 #optional: write files in temporal file
@@ -44,7 +44,7 @@ writeWave(Phae.long4,"Phae.long4.wav")
 ```
 
 
-and create the templates:
+and create the templates
 
 ```{r, message=F}
 phae1T1<-makeCorTemplate("Phae.long1.wav", t.lim=c(manualoc.df$start[2],manualoc.df$end[2]),wl = 300,ovlp=90,
@@ -70,7 +70,7 @@ cscoresPhae1<-corMatch(survey = "Phae.long1.wav",templates = phae1T1, parallel =
 
 ```
 
-Now we can extract the detection peaks and generate a graphical output:
+Now we can extract the detection peaks and generate a graphical output
 
 ```{r, message=F}
 cdetectsPhae1<-findPeaks(cscoresPhae1, parallel = TRUE)
@@ -80,7 +80,7 @@ plot(cdetectsPhae1, hit.marker="points")
 
 ```
 
-We can do the same for each sound file:
+We can do the same for each sound file
 ```{r, message=F}
 
 cscoresPhae2<-corMatch(survey = "Phae.long2.wav",templates = phae2T1, parallel = T,show.prog = F, time.source = "fileinfo",

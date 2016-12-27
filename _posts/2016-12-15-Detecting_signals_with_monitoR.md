@@ -11,7 +11,7 @@ Here I show how to detect signals with cross-correlation using the very cool pac
 
 The package [monitoR](https://cran.r-project.org/package=monitoR) runs cross-correlation across sound files to search for the signals using previously defined templates. Thus, templates should be examples of the signals we want to detect. It can search for several templates in the same run. I show how the package works using the sound files and data examples that come with the package [warbleR](https://cran.r-project.org/package=warbleR). These are recordings from long-billed hermits, each one singing a different song type.
 
-First load the packages (the code will install the packages if missing):
+First load the packages (the code will install the packages if missing)
 
 
 {% highlight r %}
@@ -23,7 +23,7 @@ require(y, character.only = T)
   })
 {% endhighlight %}
 
-We need to create the templates. We just have to select and example from each sound file and provide the start and end as well as the frequency range of the signal. We will load the long-billed hermit sound:
+We need to create the templates. We just have to select and example from each sound file and provide the start and end as well as the frequency range of the signal. We will load the long-billed hermit sound
 
 
 {% highlight r %}
@@ -41,7 +41,7 @@ writeWave(Phae.long4,"Phae.long4.wav")
 {% endhighlight %}
 
 
-and create the templates:
+and create the templates
 
 
 {% highlight r %}
@@ -126,6 +126,7 @@ cscoresPhae1<-corMatch(survey = "Phae.long1.wav",templates = phae1T1, parallel =
 ## 	Done.
 {% endhighlight %}
 
+Now we can extract the detection peaks and generate a graphical output
 
 
 {% highlight r %}
@@ -149,7 +150,7 @@ plot(cdetectsPhae1, hit.marker="points")
 
 ![plot of chunk unnamed-chunk-5](/assets/Rfig/unnamed-chunk-5-1.png)
 
-We can do the same for each sound file:
+We can do the same for each sound file
 
 {% highlight r %}
 cscoresPhae2<-corMatch(survey = "Phae.long2.wav",templates = phae2T1, parallel = T,show.prog = F, time.source = "fileinfo",
