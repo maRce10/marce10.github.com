@@ -61,14 +61,6 @@ phae4T1<-makeCorTemplate("Phae.long4.wav", t.lim=c(manualoc.df$start[9],manualoc
 
 ```
 
-Now we put together all templates in a single object:
-
-```{r, message=F}
-
-ctemps<-combineCorTemplates(phae1T1, phae2T1, phae3T1, phae4T1)
-
-```
-
 Now that we have the templates we can search for those "acoustic patterns" in a sound file. As the function uses cross-correlation to determine the similarity to the templates we need to select a correlation method. In this case we use Pearson correlation. Lets do it first with the template from the Phae.long1.wav file
 
 ```{r, message=F}
@@ -125,10 +117,12 @@ plot(cdetectsPhae4, hit.marker="points")
 
 ```
 
-We can also run all templates on a single sound file:
-
+We can also run all templates on a single sound file (it requires put together all templates in a single object)
 
 ```{r, message=F}
+#put templates together
+ctemps<-combineCorTemplates(phae1T1, phae2T1, phae3T1, phae4T1)
+
 cscoresPhae4all<-corMatch(survey = "Phae.long1.wav",templates = ctemps, parallel = T,show.prog = F, time.source = "fileinfo",
                   cor.method = cm,warn=F, write.wav = T)
 
