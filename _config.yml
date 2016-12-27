@@ -96,7 +96,7 @@ share-links-active:
 disqus: "bioacusticaucr"
 
 # Fill in your Google Analytics ID to track your website using GA
-#google_analytics: "GTM-KLSL9WK"
+google_analytics: "UA-89519694-1"
 
 # Facebook App ID
 # fb_app_id: ""
