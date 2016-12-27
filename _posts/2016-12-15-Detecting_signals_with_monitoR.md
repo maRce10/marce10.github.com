@@ -106,13 +106,6 @@ phae4T1<-makeCorTemplate("Phae.long4.wav", t.lim=c(manualoc.df$start[9],manualoc
 ## Done.
 {% endhighlight %}
 
-Now we put together all templates in a single object:
-
-
-{% highlight r %}
-ctemps<-combineCorTemplates(phae1T1, phae2T1, phae3T1, phae4T1)
-{% endhighlight %}
-
 Now that we have the templates we can search for those "acoustic patterns" in a sound file. As the function uses cross-correlation to determine the similarity to the templates we need to select a correlation method. In this case we use Pearson correlation. Lets do it first with the template from the Phae.long1.wav file
 
 
@@ -154,7 +147,7 @@ cdetectsPhae1<-findPeaks(cscoresPhae1, parallel = TRUE)
 plot(cdetectsPhae1, hit.marker="points")
 {% endhighlight %}
 
-![plot of chunk unnamed-chunk-6](/assets/Rfig/unnamed-chunk-6-1.png)
+![plot of chunk unnamed-chunk-5](/assets/Rfig/unnamed-chunk-5-1.png)
 
 We can do the same for each sound file:
 
@@ -195,7 +188,7 @@ cdetectsPhae2<-findPeaks(cscoresPhae2, parallel = TRUE)
 plot(cdetectsPhae2, hit.marker="points")
 {% endhighlight %}
 
-![plot of chunk unnamed-chunk-7](/assets/Rfig/unnamed-chunk-7-1.png)
+![plot of chunk unnamed-chunk-6](/assets/Rfig/unnamed-chunk-6-1.png)
 
 
 {% highlight r %}
@@ -235,7 +228,7 @@ cdetectsPhae3<-findPeaks(cscoresPhae3, parallel = TRUE)
 plot(cdetectsPhae3, hit.marker="points")
 {% endhighlight %}
 
-![plot of chunk unnamed-chunk-8](/assets/Rfig/unnamed-chunk-8-1.png)
+![plot of chunk unnamed-chunk-7](/assets/Rfig/unnamed-chunk-7-1.png)
 
 
 {% highlight r %}
@@ -275,13 +268,15 @@ cdetectsPhae4<-findPeaks(cscoresPhae4, parallel = TRUE)
 plot(cdetectsPhae4, hit.marker="points")
 {% endhighlight %}
 
-![plot of chunk unnamed-chunk-9](/assets/Rfig/unnamed-chunk-9-1.png)
+![plot of chunk unnamed-chunk-8](/assets/Rfig/unnamed-chunk-8-1.png)
 
-We can also run all templates on a single sound file:
-
+We can also run all templates on a single sound file (it requires put together all templates in a single object)
 
 
 {% highlight r %}
+#put templates together
+ctemps<-combineCorTemplates(phae1T1, phae2T1, phae3T1, phae4T1)
+
 cscoresPhae4all<-corMatch(survey = "Phae.long1.wav",templates = ctemps, parallel = T,show.prog = F, time.source = "fileinfo",
                   cor.method = cm,warn=F, write.wav = T)
 {% endhighlight %}
@@ -326,6 +321,6 @@ cdetectsPhae4all<-findPeaks(cscoresPhae4all, parallel = TRUE)
 plot(cdetectsPhae4all, hit.marker="points")
 {% endhighlight %}
 
-![plot of chunk unnamed-chunk-10](/assets/Rfig/unnamed-chunk-10-1.png)
+![plot of chunk unnamed-chunk-9](/assets/Rfig/unnamed-chunk-9-1.png)
 
 
