@@ -270,7 +270,7 @@ plot(cdetectsPhae4, hit.marker="points")
 
 ![plot of chunk unnamed-chunk-8](/assets/Rfig/unnamed-chunk-8-1.png)
 
-We can also run all templates on a single sound file (it requires put together all templates in a single object)
+We can also run all templates on a single sound file. It requires putting together all templates in a single object
 
 
 {% highlight r %}
