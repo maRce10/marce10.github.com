@@ -78,7 +78,7 @@ cscoresPhae1<-corMatch(survey = "Phae.long1.wav",templates = phae1T1, parallel =
 
 ```
 
-And now lets look at the results detecting each template in its original file:
+Now we can extract the detection peaks and generate a graphical output:
 
 ```{r, message=F}
 cdetectsPhae1<-findPeaks(cscoresPhae1, parallel = TRUE)

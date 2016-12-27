@@ -133,7 +133,6 @@ cscoresPhae1<-corMatch(survey = "Phae.long1.wav",templates = phae1T1, parallel =
 ## 	Done.
 {% endhighlight %}
 
-And now lets look at the results detecting each template in its original file:
 
 
 {% highlight r %}
