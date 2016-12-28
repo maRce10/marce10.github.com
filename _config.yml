@@ -30,6 +30,7 @@ navbar-links:
     - soundecology intro: "https://cran.r-project.org/web/packages/soundecology/vignettes/intro.html"
     - seewave website: "http://rug.mnhn.fr/seewave/"
     - monitoR quick start: "https://cran.r-project.org/web/packages/monitoR/vignettes/monitoR_QuickStart.pdf"
+    - R-bloggers: " r-bloggers.com"
   Marcelo Araya-Salas: "aboutme"
   Author's home: "http://marceloarayasalas.weebly.com"
 
