@@ -8,12 +8,19 @@ A warbleR user asks if "there is any method for downloading from xeno canto a SI
 
 This can be done by 1) downloading the metadata of all recordings in a given site (in this case Costa Rica) using the `querxc` function from the package [warbleR](https://cran.r-project.org/package=warbleR) (which searches and downloads recordings from [Xeno-Canto](http://www.xeno-canto.org)), 2) filtering the metadata to have only one recording per species, and 3) input the filtered metadata back into `querxc`to download the selected recordings.
 
-First we load the package
+You will need [warbleR](https://cran.r-project.org/package=warbleR) version 1.1.4 or higher to be able to run this code (currently you wil have to download it from github using the package [devtools](https://cran.r-project.org/package=devtools)).
 
 
 {% highlight r %}
+#run it only if devtools isn't installed
+install.packages("devtools")
+
+devtools::install_github("maRce10/warbleR")
 require("warbleR")
 {% endhighlight %}
+
+
+
 
 then we search for all recordings in Costa Rica setting the download argument to `FALSE` to obtain only the metadata. Note that the search term follows the xeno-canto advance query syntax. This syntax uses tags to search within a particular aspect of the recordings (e.g. country, location, sound type). Tags are of the form tag:searchterm'. See [http://www.xeno-canto.org/help/search](http://www.xeno-canto.org/help/search) for a full description. (Note that in `querxc` you can also search for species names or families without using any tags)
 
@@ -24,10 +31,18 @@ CR.recs <- querxc(qword = 'cnt:"costa rica"', download = FALSE)
 
 
 {% highlight text %}
-## Error in querxc(qword = "cnt:\"costa rica\"", download = FALSE, parallel = 4): No connection to xeno-canto.org (check your internet connection!)
+## 
+   |+++++++                                           | 12% ~30s          
+   |+++++++++++++                                     | 25% ~53s          
+   |+++++++++++++++++++                               | 38% ~35s          
+   |+++++++++++++++++++++++++                         | 50% ~25s          
+   |++++++++++++++++++++++++++++++++                  | 62% ~17s          
+   |++++++++++++++++++++++++++++++++++++++            | 75% ~11s          
+   |++++++++++++++++++++++++++++++++++++++++++++      | 88% ~05s          
+   |++++++++++++++++++++++++++++++++++++++++++++++++++| 100% elapsed = 37s
 {% endhighlight %}
 
-This query returned 3832 recordings from 518 species (at the time I am writing this post)
+This query returned more than 38000 recordings from ~518 species (at the time I am writing this post)
 
 
 {% highlight r %}
@@ -38,7 +53,7 @@ nrow(CR.recs)
 
 
 {% highlight text %}
-## Error in nrow(CR.recs): object 'CR.recs' not found
+## [1] 3834
 {% endhighlight %}
 
 
@@ -51,7 +66,7 @@ length(unique(CR.recs$English_name))
 
 
 {% highlight text %}
-## Error in unique(CR.recs$English_name): object 'CR.recs' not found
+## [1] 518
 {% endhighlight %}
 
 Now filter the metadata. First split the data in 'songs' and 'other sounds' (possibly calls) and then select a single recording for each species. Sort the metadata by recording quality before filtering so the best quality recordings are found higher up in the list (which ensures that selected recordings are the highest quality recordings for each species)
@@ -61,63 +76,17 @@ Now filter the metadata. First split the data in 'songs' and 'other sounds' (pos
 #order by quality
 CR.recs <- CR.recs[order(order(match(CR.recs$Quality, 
                 c("A", "B", "C", "D", "E", "no score")))),]
-{% endhighlight %}
 
 
-
-{% highlight text %}
-## Error in eval(expr, envir, enclos): object 'CR.recs' not found
-{% endhighlight %}
-
-
-
-{% highlight r %}
 #subset in song and no-songs
 CR.songs <- CR.recs[grep("song", CR.recs$Vocalization_type, ignore.case = T),]
-{% endhighlight %}
-
-
-
-{% highlight text %}
-## Error in eval(expr, envir, enclos): object 'CR.recs' not found
-{% endhighlight %}
-
-
-
-{% highlight r %}
 CR.no.songs <- CR.recs[grep("song", 
                       CR.recs$Vocalization_type, ignore.case = T, invert = T),]
-{% endhighlight %}
 
 
-
-{% highlight text %}
-## Error in eval(expr, envir, enclos): object 'CR.recs' not found
-{% endhighlight %}
-
-
-
-{% highlight r %}
 #remove duplicates by species
 CR.songs <- CR.songs[!duplicated(CR.songs$English_name),]
-{% endhighlight %}
-
-
-
-{% highlight text %}
-## Error in eval(expr, envir, enclos): object 'CR.songs' not found
-{% endhighlight %}
-
-
-
-{% highlight r %}
 CR.no.songs <- CR.no.songs[!duplicated(CR.no.songs$English_name),]
-{% endhighlight %}
-
-
-
-{% highlight text %}
-## Error in eval(expr, envir, enclos): object 'CR.no.songs' not found
 {% endhighlight %}
 
 We ended up with songs from 379 species and no-songs from 420 species
@@ -131,7 +100,7 @@ nrow(CR.songs)
 
 
 {% highlight text %}
-## Error in nrow(CR.songs): object 'CR.songs' not found
+## [1] 379
 {% endhighlight %}
 
 
@@ -144,7 +113,7 @@ nrow(CR.no.songs)
 
 
 {% highlight text %}
-## Error in nrow(CR.no.songs): object 'CR.no.songs' not found
+## [1] 420
 {% endhighlight %}
 
 To download the files just input the filtered metadata back into `querxc` (this will probably take several minutes!)

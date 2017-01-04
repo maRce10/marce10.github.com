@@ -11,13 +11,21 @@ A warbleR user asks if "there is any method for downloading from xeno canto a SI
 
 This can be done by 1) downloading the metadata of all recordings in a given site (in this case Costa Rica) using the `querxc` function from the package [warbleR](https://cran.r-project.org/package=warbleR) (which searches and downloads recordings from [Xeno-Canto](http://www.xeno-canto.org)), 2) filtering the metadata to have only one recording per species, and 3) input the filtered metadata back into `querxc`to download the selected recordings.
 
-First we load the package
+You will need [warbleR](https://cran.r-project.org/package=warbleR) version 1.1.4 or higher to be able to run this code (currently you wil have to download it from github using the package [devtools](https://cran.r-project.org/package=devtools)).
 
-```{r , eval=T}
+```{r , eval=F}
+#run it only if devtools isn't installed
+install.packages("devtools")
 
+devtools::install_github("maRce10/warbleR")
 require("warbleR")
 
 ```
+
+```{r, eval=T, echo= F}
+require("warbleR")
+```
+
 
 then we search for all recordings in Costa Rica setting the download argument to `FALSE` to obtain only the metadata. Note that the search term follows the xeno-canto advance query syntax. This syntax uses tags to search within a particular aspect of the recordings (e.g. country, location, sound type). Tags are of the form tag:searchterm'. See [http://www.xeno-canto.org/help/search](http://www.xeno-canto.org/help/search) for a full description. (Note that in `querxc` you can also search for species names or families without using any tags)
 
@@ -33,7 +41,7 @@ CR.recs <- querxc(qword = 'cnt:"costa rica"', download = FALSE, parallel = 4)
 
 ```
 
-This query returned 3832 recordings from 518 species (at the time I am writing this post)
+This query returned more than 38000 recordings from ~518 species (at the time I am writing this post)
 
 ```{r , eval = T}
 
