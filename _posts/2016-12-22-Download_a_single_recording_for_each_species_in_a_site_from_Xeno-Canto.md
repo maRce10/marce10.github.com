@@ -22,7 +22,7 @@ require("warbleR")
 
 
 
-then we search for all recordings in Costa Rica setting the download argument to `FALSE` to obtain only the metadata. Note that the search term follows the xeno-canto advance query syntax. This syntax uses tags to search within a particular aspect of the recordings (e.g. country, location, sound type). Tags are of the form tag:searchterm'. See [http://www.xeno-canto.org/help/search](http://www.xeno-canto.org/help/search) for a full description. (Note that in `querxc` you can also search for species names or families without using any tags)
+then search for all recordings in Costa Rica setting the download argument to `FALSE` to obtain only the metadata. Note that the search term follows the xeno-canto advanced query syntax. This syntax uses tags to search within a particular aspect of the recordings (e.g. country, location, sound type). Tags are of the form tag:searchterm'. See [http://www.xeno-canto.org/help/search](http://www.xeno-canto.org/help/search) for a full description. (Note that in `querxc` you can also search for species names or families without using any tags)
 
 
 {% highlight r %}
@@ -32,14 +32,14 @@ CR.recs <- querxc(qword = 'cnt:"costa rica"', download = FALSE)
 
 {% highlight text %}
 ## 
-   |+++++++                                           | 12% ~30s          
-   |+++++++++++++                                     | 25% ~53s          
-   |+++++++++++++++++++                               | 38% ~35s          
-   |+++++++++++++++++++++++++                         | 50% ~25s          
-   |++++++++++++++++++++++++++++++++                  | 62% ~17s          
-   |++++++++++++++++++++++++++++++++++++++            | 75% ~11s          
-   |++++++++++++++++++++++++++++++++++++++++++++      | 88% ~05s          
-   |++++++++++++++++++++++++++++++++++++++++++++++++++| 100% elapsed = 37s
+   |+++++++                                           | 12% ~21s          
+   |+++++++++++++                                     | 25% ~18s          
+   |+++++++++++++++++++                               | 38% ~16s          
+   |+++++++++++++++++++++++++                         | 50% ~13s          
+   |++++++++++++++++++++++++++++++++                  | 62% ~11s          
+   |++++++++++++++++++++++++++++++++++++++            | 75% ~07s          
+   |++++++++++++++++++++++++++++++++++++++++++++      | 88% ~03s          
+   |++++++++++++++++++++++++++++++++++++++++++++++++++| 100% elapsed = 31s
 {% endhighlight %}
 
 This query returned more than 38000 recordings from ~518 species (at the time I am writing this post)
