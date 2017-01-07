@@ -29,10 +29,7 @@ rec1 <- querxc(qword = 'nr:153989', download = TRUE)
 
 
 {% highlight text %}
-## 
-   |++++++++++++++++++++++++++++++++++++++++++++++++++| 100% elapsed = 01s
-## 
-   |++++++++++++++++++++++++++++++++++++++++++++++++++| 100% elapsed = 23s
+## Error in querxc(qword = "nr:153989", download = TRUE): No connection to xeno-canto.org (check your internet connection!)
 {% endhighlight %}
 
 
@@ -44,10 +41,7 @@ rec2 <- querxc(qword = 'nr:154190', download = TRUE)
 
 
 {% highlight text %}
-## 
-   |++++++++++++++++++++++++++++++++++++++++++++++++++| 100% elapsed = 00s
-## 
-   |++++++++++++++++++++++++++++++++++++++++++++++++++| 100% elapsed = 14s
+## Error in querxc(qword = "nr:154190", download = TRUE): No connection to xeno-canto.org (check your internet connection!)
 {% endhighlight %}
 
 
@@ -59,9 +53,7 @@ mp32wav()
 
 
 {% highlight text %}
-## 
-   |+++++++++++++++++++++++++                         | 50% ~01s          
-   |++++++++++++++++++++++++++++++++++++++++++++++++++| 100% elapsed = 02s
+## Error in mp32wav(): no 'mp3' files in working directory
 {% endhighlight %}
 
 
@@ -69,21 +61,13 @@ Create the long spectrograms in .jpeg format
 
 
 {% highlight r %}
-lspec(flim = c(0, 6), pal = reverse.heat.colors, wl = 200, it = "jpeg")
+lspec(flim = c(0, 6), sxrow = 10, pal = reverse.heat.colors, wl = 200, it = "jpeg")
 {% endhighlight %}
 
 
 
 {% highlight text %}
-## 
-   |+++++++++++++++++++++++++                         | 50% ~14s
-{% endhighlight %}
-
-
-
-{% highlight text %}
-## 
-   |++++++++++++++++++++++++++++++++++++++++++++++++++| 100% elapsed = 32s
+## Error in lspec(flim = c(0, 6), sxrow = 10, pal = reverse.heat.colors, : no .wav files in working directory
 {% endhighlight %}
 
 
@@ -97,17 +81,9 @@ lspec2pdf(keep.jpeg = FALSE)
 
 
 {% highlight text %}
-## 
-   |+++++++++++++++++++++++++                         | 50% ~04s
+## Error in lspec2pdf(keep.jpeg = FALSE): No .jpeg files were found in the working directory
 {% endhighlight %}
 
-
-
-{% highlight text %}
-## 
-   |++++++++++++++++++++++++++++++++++++++++++++++++++| 100% elapsed = 08s
-{% endhighlight %}
-
-You should get 2 pdf files that look like [this one](https://marce10.github.io/_pdfs/Crypturellus-boucardi-153989.pdf)
+You should get 2 pdf files that look like [this one](https://github.com/maRce10/marce10.github.com/_pdfs/Crypturellus-boucardi-153989.pdf)
 
 

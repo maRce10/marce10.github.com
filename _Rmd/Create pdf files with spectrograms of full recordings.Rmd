@@ -51,7 +51,7 @@ lspec2pdf(keep.jpeg = FALSE)
 
 ```
 
-You should get 2 pdf files that look like [this one](https://marce10.github.io/_pdfs/Crypturellus-boucardi-153989.pdf)
+You should get 2 pdf files that look like [this one](https://github.com/maRce10/marce10.github.com/_pdfs/Crypturellus-boucardi-153989.pdf)
 
 ```{r, echo=F}
 
