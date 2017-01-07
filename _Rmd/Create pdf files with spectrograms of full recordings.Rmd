@@ -39,7 +39,7 @@ mp32wav()
 Create the long spectrograms in .jpeg format
 
 ```{r}
-lspec(flim = c(0, 6), pal = reverse.heat.colors, wl = 200, it = "jpeg")
+lspec(flim = c(0, 6), sxrow = 10, pal = reverse.heat.colors, wl = 200, it = "jpeg")
 
 ```
 
