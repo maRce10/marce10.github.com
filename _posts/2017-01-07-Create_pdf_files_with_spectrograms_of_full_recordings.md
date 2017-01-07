@@ -84,6 +84,6 @@ lspec2pdf(keep.jpeg = FALSE)
 ## Error in lspec2pdf(keep.jpeg = FALSE): No .jpeg files were found in the working directory
 {% endhighlight %}
 
-You should get 2 pdf files that look like [this one](https://github.com/maRce10/marce10.github.com/blob/master/_pdfs/Crypturellus-boucardi-153989.pdf)
+You should get 2 pdf files that look like [this one](http://marceloarayasalas.weebly.com/uploads/2/5/5/2/25524573/crypturellus-boucardi-153989.pdf)
 
 
