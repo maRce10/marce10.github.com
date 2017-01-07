@@ -29,7 +29,10 @@ rec1 <- querxc(qword = 'nr:153989', download = TRUE)
 
 
 {% highlight text %}
-## Error in querxc(qword = "nr:153989", download = TRUE): No connection to xeno-canto.org (check your internet connection!)
+## 
+   |++++++++++++++++++++++++++++++++++++++++++++++++++| 100% elapsed = 00s
+## 
+   |++++++++++++++++++++++++++++++++++++++++++++++++++| 100% elapsed = 17s
 {% endhighlight %}
 
 
@@ -41,7 +44,10 @@ rec2 <- querxc(qword = 'nr:154190', download = TRUE)
 
 
 {% highlight text %}
-## Error in querxc(qword = "nr:154190", download = TRUE): No connection to xeno-canto.org (check your internet connection!)
+## 
+   |++++++++++++++++++++++++++++++++++++++++++++++++++| 100% elapsed = 00s
+## 
+   |++++++++++++++++++++++++++++++++++++++++++++++++++| 100% elapsed = 17s
 {% endhighlight %}
 
 
@@ -53,7 +59,9 @@ mp32wav()
 
 
 {% highlight text %}
-## Error in mp32wav(): no 'mp3' files in working directory
+## 
+   |+++++++++++++++++++++++++                         | 50% ~01s          
+   |++++++++++++++++++++++++++++++++++++++++++++++++++| 100% elapsed = 02s
 {% endhighlight %}
 
 
@@ -67,7 +75,15 @@ lspec(flim = c(0, 6), sxrow = 10, pal = reverse.heat.colors, wl = 200, it = "jpe
 
 
 {% highlight text %}
-## Error in lspec(flim = c(0, 6), sxrow = 10, pal = reverse.heat.colors, : no .wav files in working directory
+## 
+   |+++++++++++++++++++++++++                         | 50% ~10s
+{% endhighlight %}
+
+
+
+{% highlight text %}
+## 
+   |++++++++++++++++++++++++++++++++++++++++++++++++++| 100% elapsed = 24s
 {% endhighlight %}
 
 
@@ -81,7 +97,15 @@ lspec2pdf(keep.jpeg = FALSE)
 
 
 {% highlight text %}
-## Error in lspec2pdf(keep.jpeg = FALSE): No .jpeg files were found in the working directory
+## 
+   |+++++++++++++++++++++++++                         | 50% ~01s
+{% endhighlight %}
+
+
+
+{% highlight text %}
+## 
+   |++++++++++++++++++++++++++++++++++++++++++++++++++| 100% elapsed = 03s
 {% endhighlight %}
 
 You should get 2 pdf files that look like [this one](http://marceloarayasalas.weebly.com/uploads/2/5/5/2/25524573/crypturellus-boucardi-153989.pdf)
