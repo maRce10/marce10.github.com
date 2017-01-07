@@ -8,7 +8,7 @@ A warbleR user asks if "there is any method for downloading from xeno canto a SI
 
 This can be done by 1) downloading the metadata of all recordings in a given site (in this case Costa Rica) using the `querxc` function from the package [warbleR](https://cran.r-project.org/package=warbleR) (which searches and downloads recordings from [Xeno-Canto](http://www.xeno-canto.org)), 2) filtering the metadata to have only one recording per species, and 3) input the filtered metadata back into `querxc`to download the selected recordings.
 
-You will need [warbleR](https://cran.r-project.org/package=warbleR) version 1.1.4 or higher to be able to run this code (currently you wil have to download it from github using the package [devtools](https://cran.r-project.org/package=devtools)).
+You will need [warbleR](https://cran.r-project.org/package=warbleR) version 1.1.5 or higher to be able to run this code (currently you have to download it from github using the package [devtools](https://cran.r-project.org/package=devtools)).
 
 
 {% highlight r %}
@@ -32,14 +32,14 @@ CR.recs <- querxc(qword = 'cnt:"costa rica"', download = FALSE)
 
 {% highlight text %}
 ## 
-   |+++++++                                           | 12% ~21s          
-   |+++++++++++++                                     | 25% ~18s          
-   |+++++++++++++++++++                               | 38% ~16s          
-   |+++++++++++++++++++++++++                         | 50% ~13s          
-   |++++++++++++++++++++++++++++++++                  | 62% ~11s          
-   |++++++++++++++++++++++++++++++++++++++            | 75% ~07s          
-   |++++++++++++++++++++++++++++++++++++++++++++      | 88% ~03s          
-   |++++++++++++++++++++++++++++++++++++++++++++++++++| 100% elapsed = 31s
+   |+++++++                                           | 12% ~01m 11s      
+   |+++++++++++++                                     | 25% ~44s          
+   |+++++++++++++++++++                               | 38% ~33s          
+   |+++++++++++++++++++++++++                         | 50% ~25s          
+   |++++++++++++++++++++++++++++++++                  | 62% ~18s          
+   |++++++++++++++++++++++++++++++++++++++            | 75% ~12s          
+   |++++++++++++++++++++++++++++++++++++++++++++      | 88% ~06s          
+   |++++++++++++++++++++++++++++++++++++++++++++++++++| 100% elapsed = 45s
 {% endhighlight %}
 
 This query returned more than 38000 recordings from ~518 species (at the time I am writing this post)
@@ -53,7 +53,7 @@ nrow(CR.recs)
 
 
 {% highlight text %}
-## [1] 3834
+## [1] 3837
 {% endhighlight %}
 
 
@@ -66,7 +66,7 @@ length(unique(CR.recs$English_name))
 
 
 {% highlight text %}
-## [1] 518
+## [1] 519
 {% endhighlight %}
 
 Now filter the metadata. First split the data in 'songs' and 'other sounds' (possibly calls) and then select a single recording for each species. Sort the metadata by recording quality before filtering so the best quality recordings are found higher up in the list (which ensures that selected recordings are the highest quality recordings for each species)
@@ -113,7 +113,7 @@ nrow(CR.no.songs)
 
 
 {% highlight text %}
-## [1] 420
+## [1] 421
 {% endhighlight %}
 
 To download the files just input the filtered metadata back into `querxc` (this will probably take several minutes!)
