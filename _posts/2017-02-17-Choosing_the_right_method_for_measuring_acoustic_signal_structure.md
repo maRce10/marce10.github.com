@@ -17,9 +17,6 @@ First load the package and save the example sound files in the working directory
 {% highlight r %}
 library(warbleR)
 
-# Set a temporary directory
-setwd(tempdir())
-
 data(list = c("Phae.long1", "Phae.long2", "Phae.long3", "Phae.long4", "selec.table"))
 writeWave(Phae.long1,"Phae.long1.wav")
 writeWave(Phae.long2,"Phae.long2.wav")
@@ -32,8 +29,8 @@ Then just run the function selecting the 2 methods that you want to compare. The
 
 
 {% highlight r %}
-compare.methods(X = selec.table, flim = c(0, 10), bp = c(0, 10), wl = 300,
-n = 10, methods = c("XCORR", "dfDTW"))
+compare.methods(X = selec.table, flim = c(0, 10), bp = c(0, 10), 
+                wl = 300, n = 10, methods = c("XCORR", "dfDTW"))
 {% endhighlight %}
 
 It should produce 10 image files (in the working directory) that look like these ones:
@@ -41,6 +38,8 @@ It should produce 10 image files (in the working directory) that look like these
 ![compare.methods_example1](/img/comp.meth1.png)
 
 ![compare.methods_example2](/img/comp.meth2.png)
+
+(You can tell where you working directory is found by running getwd())
 
 The acoustic pairwise distance between signals is shown next to the arrows linking them. The font color of a distance value corresponds to the font color of the method that generated it, as shown in the scatterplots (in this case black font represents XCORR distances). Distances are standardize, being 0 the distance of a signal to itself and 1 the farthest pairwise distance in the pool of signals. Principal Component Analysis (`princomp` function) is applied to calculate distances when using spectral parameters (SP). In that case the first 2 PC's are used. Classical Multidimensional Scaling (also known as Principal Coordinates Analysis, `cmdscale` function) is used for all other methods. The file name contains the methods being compared and the row number of the selections. This function uses internally a modified version of the `spectro` function from [seewave](https://cran.r-project.org/package=seewave) package to create spectrograms. Note that the spectrograms are all plotted with the same frequency and time scales.
 
@@ -54,7 +53,8 @@ st2 <- rbind(selec.table, selec.table, selec.table)
 st2$selec <- 1:nrow(st2)
 
 #now we can compare SP method against XCORR
-compare.methods(X = st2, flim = c(0, 10), bp = c(0, 10), wl = 300, n = 10, methods = c("XCORR", "SP"))
+compare.methods(X = st2, flim = c(0, 10), bp = c(0, 10), 
+                wl = 300, n = 10, methods = c("XCORR", "SP"))
 {% endhighlight %}
 
 ![compare.methods_example2](/img/comp.meth3.png)
@@ -67,7 +67,8 @@ sp <- specan(selec.table, bp = c(0, 10))
 
 sp <- sp[, 1:7]
 
-compare.methods(X = selec.table, flim = c(0, 10), sp = sp, bp = c(0, 10), wl = 300, n = 10, methods = c("dfDTW", "SP"))
+compare.methods(X = selec.table, flim = c(0, 10), sp = sp, bp = c(0, 10),
+                wl = 300, n = 10, methods = c("dfDTW", "SP"))
 {% endhighlight %}
 
 
