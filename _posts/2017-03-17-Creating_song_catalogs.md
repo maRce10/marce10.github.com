@@ -4,7 +4,7 @@ title: "Creating song catalogs"
 date: 17-03-2017
 ---
 
-When looking at geographic variation of songs we usually want to compare the spectrograms from different individuals and sites. This can be challenging when working with large number of signals, individuals and/or sites. The new [warbleR](https://cran.r-project.org/package=warbleR) function `catalog` aims to simplify this task.
+When looking at geographic variation of songs we usually want to compare the spectrograms from different individuals and sites. This can be challenging when working with large numbers of signals, individuals and/or sites. The new [warbleR](https://cran.r-project.org/package=warbleR) function `catalog` aims to simplify this task.
 
 This is how it works: 
 
@@ -29,7 +29,7 @@ require("warbleR")
 {% endhighlight %}
 
 
-Load the package and save the example sound files as .wavs in the working directory 
+Load the package and save the example sound files as .wav in the working directory 
 
 
 {% highlight r %}
