@@ -118,10 +118,10 @@ Y <- selec.table
 for(i in 1:4) Y <- rbind(Y, Y)
 
 #simulated columns
-  Y$songtype <- sample(letters[1:3], nrow(Y), replace = T)
-  Y$site <- rep(letters[4:25], nrow(Y))[1:nrow(Y)]
+Y$songtype <- sample(letters[1:3], nrow(Y), replace = T)
+Y$site <- rep(letters[4:25], nrow(Y))[1:nrow(Y)]
 
-  #sort by site and the by song type 
+#sort by site and then by song type 
 Y <- Y[sort(Y$site, Y$songtype), ]
   
   
@@ -136,7 +136,7 @@ catalog(X = Y, flim = c(1, 10), nrow = 12, ncol = 5, cex = 2, leg.wd = 8,
 
  ![catalog5](/img/Catalog_p1-5.png)
  
- The following plots show a nice example of song geographic variation of [Northern Cardinals (Cardinalis cardinalis)](https://www.allaboutbirds.org/guide/Northern_Cardinal/id) in Mexico (from my collaborator Marco Ortiz)
+ The following plots show a nice example of song geographic variation of [Northern Cardinals (Cardinalis cardinalis)](https://www.allaboutbirds.org/guide/Northern_Cardinal/id) in Mexico (from my collaborator Marco Ortiz).
  
  ![catalog6](/img/Catalog_p1-Cardinalis.png)
  ![catalog7](/img/Catalog_p2-Cardinalis.png)
