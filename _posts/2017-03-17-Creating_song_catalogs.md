@@ -163,6 +163,7 @@ catalog(X = Ysnr, flim = c(1, 10), nrow = 12, ncol = 5, cex = 2, leg.wd = 8,
  ![catalog6](/img/Catalog_p1-Cardinalis.png)
  ![catalog7](/img/Catalog_p2-Cardinalis.png)
 
+A single pdf containing all catalog images can be generated using the `catalog2pdf` function. 
 
-The function has other arguments to specify spectrogram settings (e.g. margin, grid, frequency limits) and image parameters (e.g. image type, resolution). Check out the function help document.
+The `catalog` function has other arguments to specify spectrogram settings (e.g. margin, grid, frequency limits) and image parameters (e.g. image type, resolution). Check out the function help document.
 
