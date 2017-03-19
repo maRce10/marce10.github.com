@@ -53,12 +53,12 @@ catalog(X = selec.table[1:10,], flim = c(1, 10), nrow = 5, ncol = 2,
 
 ![catalog1](/img/Catalog_p1-.png)
 
-Spectrograms can be color-tagged using the `tags` argument. A legend is added when `legend` = TRUE. The duration can also be allowed to vary between spectrograms setting `same.time.scale`= TRUE
+Spectrograms can be color-tagged using the `tags` argument. A legend is added when `legend` > 0 (check documentation). The duration can also be allowed to vary between spectrograms setting `same.time.scale`= TRUE
 
 
 {% highlight r %}
 catalog(X = selec.table[1:10,], flim = c(1, 10), nrow = 5, ncol = 2, 
-        same.time.scale = FALSE, mar = 0.01, wl = 200, 
+        same.time.scale = FALSE, mar = 0.01, wl = 200, legend = 1, 
         gr = FALSE, tags = c("sound.files"), leg.wd = 10)
 {% endhighlight %}
   
@@ -94,7 +94,7 @@ Y <- Y[sort(Y$site, Y$songtype), ]
   
 catalog(X = Y, flim = c(1, 10), nrow = 12, ncol = 5, cex = 2, leg.wd = 8,
         same.time.scale = TRUE, mar = 0.01, wl = 200, gr = FALSE,
-        labels = c("sound.files","songtype", "site"), legend = TRUE, 
+        labels = c("sound.files","songtype", "site"), legend = 3, 
  width = 23, height = 30, tag.pal = list(terrain.colors, temp.colors),
   tags = c("songtype", "site"))
 {% endhighlight %}
@@ -122,7 +122,7 @@ Y <- Y[sort(Y$site, Y$songtype), ]
   
 catalog(X = Y, flim = c(1, 10), nrow = 12, ncol = 5, cex = 2, leg.wd = 8,
         same.time.scale = TRUE, mar = 0.01, wl = 200, gr = FALSE,
-        labels = c("sound.files","songtype", "site"), legend = TRUE, 
+        labels = c("sound.files","songtype", "site"), legend = 3, 
  width = 23, height = 30, tag.pal = list(terrain.colors, temp.colors),
   tags = c("songtype", "site"), hatching = 2)
 {% endhighlight %}
