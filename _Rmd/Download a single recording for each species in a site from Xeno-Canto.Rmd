@@ -7,7 +7,7 @@ output:
     variant: markdown_github
 ---
 
-A warbleR user asks if "there is any method for downloading from xeno canto a SINGLE individual of each species in Costa Rica".
+A [warbleR](https://cran.r-project.org/package=warbleR) user asks if "there is any method for downloading from xeno canto a SINGLE individual of each species in Costa Rica".
 
 This can be done by 1) downloading the metadata of all recordings in a given site (in this case Costa Rica) using the `querxc` function from the package [warbleR](https://cran.r-project.org/package=warbleR) (which searches and downloads recordings from [Xeno-Canto](http://www.xeno-canto.org)), 2) filtering the metadata to have only one recording per species, and 3) input the filtered metadata back into `querxc`to download the selected recordings.
 
