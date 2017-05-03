@@ -7,13 +7,13 @@ output:
     variant: markdown_github
 ---
 
-Some people have asked for the code we used to make figure 3 in the [Methods in Ecology and Evolution paper describing warbleR](http://onlinelibrary.wiley.com/doi/10.1111/2041-210X.12624/full). So, here it is. The figure was made in part by my collaborator [Grace Smith-Vidaurre](smithvidaurre.weebly.com), so thanks to Grace for sharing.
+Some people have asked for the code we used to make figure 3 in the [Methods in Ecology and Evolution paper describing warbleR](http://onlinelibrary.wiley.com/doi/10.1111/2041-210X.12624/full). So, here it is. The figure was made in part by my collaborator [Grace Smith-Vidaurre](http://smithvidaurre.weebly.com), so thanks to Grace for sharing.
 
 The figure shows the grouping of long-billed hermit songs in the acoustic space based on similarity of dominant frequency contours. Similarity was assessed using dynamic time warping. The scatterplot is based on the two axes from a classic multidimensional scaling. The figure also shows spectrograms for each of the song types. This figure is created with ggplot graphs and spectrograms which are put together in a multipanel graph using the grid package. Note that you'll need to download recordings from Xeno-Canto (so internet connection required).
 
 Load/install packages:
  
-```{r load libraries and functions, eval = F}
+```{r load libraries and functions, eval = T}
 
 x <- c("ggplot2", "gtable", "grid", "warbleR")
 
@@ -108,6 +108,9 @@ lbhMDS$cols[grep("154129|154161", lbhMDS$rid)]  <- terrain.colors(10)[2]
 lbhMDS$song.type[grep("154138", lbhMDS$rid)]  <-  "D"
 lbhMDS$cols[grep("154138", lbhMDS$rid)]  <-  heat.colors(10)[6]
 
+shps <- c(21:25, 4)
+cols <- lbhMDS$cols[!duplicated(lbhMDS$song.type)]
+
 ```
 
 Create first scatterplot:
@@ -158,7 +161,7 @@ col.leg
 
 Create song type spectrograms:
 
-```{r create song type spectrograms, eval = T}
+```{r create song type spectrograms 1, eval = T, echo = F}
 
 # choosing first song per recording
 X <- Phae.hisnr[!duplicated(Phae.hisnr$sound.files), ] 
@@ -166,7 +169,47 @@ X$cols <- lbhMDS$cols[!duplicated(Phae.hisnr$sound.files)]
 
 
 # creating spectrograms with colored borders by cluster
-# make sure to use wav files at 44100 kHz for better spectrogram resolution
+plot_list <- lapply(1:nrow(X), function(i) {
+  
+ spc <- ggspectro(tuneR::readWave(file.path("/home/m/Dropbox/Websites/Blog/recs for MEE plot", as.character(X$sound.files[i])),
+        from = X$start[i] - 0.05, to = X$end[i] + 0.05, units = "seconds"), f = 22050, 
+                  wl = 150, ovlp = 90, palette = reverse.gray.colors.2, 
+                   collab = "black", flim = c(1.5, 12), tlab = "",
+                   flab = "", alab = "", scale = FALSE, grid = FALSE, 
+                   cexlab = 1.5, trel = FALSE) + 
+    stat_contour(geom = "polygon", aes(fill=..level..), bins = 30) + 
+    scale_fill_continuous(name = "Amplitude (dB)", limits = c(-30,0),
+        na.value = "transparent", low = "white", high = "black") + 
+    theme_bw() + 
+    guides(color = FALSE, fill = FALSE) + 
+    ggtitle(unique(X$rid)[i]) + 
+    theme(axis.title.x = element_blank(), axis.title.y = element_blank(), 
+          axis.text.x = element_text(size = 20), axis.text.y = element_text(size = 20),
+          axis.line.x = element_line(size = 20), axis.line.y = element_line(size = 20),
+          plot.margin = unit(c(2,2,1,1), "lines"), 
+          plot.title = element_text(size = 24, vjust = 1, face = "bold")) +
+    scale_x_continuous(breaks = c(seq(0,  X$end[i] - X$start[i], 0.1))) +
+      theme(plot.background = element_rect(size = 6, linetype = "solid", 
+                                           color = X$cols[i])) + 
+     annotation_custom( 
+      grob = pointsGrob(pch = shps[i], gp = gpar(cex = 1.5)),
+      ymin = 11,  ymax = 11,  xmin = 0.01, xmax = 0.01)
+  
+  return(spc)
+  })
+
+plot_list
+
+```
+
+```{r create song type spectrograms, eval = F}
+
+# choosing first song per recording
+X <- Phae.hisnr[!duplicated(Phae.hisnr$sound.files), ] 
+X$cols <- lbhMDS$cols[!duplicated(Phae.hisnr$sound.files)]
+
+
+# creating spectrograms with colored borders by cluster
 plot_list <- lapply(1:nrow(X), function(i) {
   
  spc <- ggspectro(tuneR::readWave(file.path(tempdir(), as.character(X$sound.files[i])),
@@ -188,7 +231,10 @@ plot_list <- lapply(1:nrow(X), function(i) {
           plot.title = element_text(size = 24, vjust = 1, face = "bold")) +
     scale_x_continuous(breaks = c(seq(0,  X$end[i] - X$start[i], 0.1))) +
       theme(plot.background = element_rect(size = 6, linetype = "solid", 
-                                           color = X$cols[i]))
+                                           color = X$cols[i])) + 
+     annotation_custom( 
+      grob = pointsGrob(pch = shps[i], gp = gpar(cex = 1.5)),
+      ymin = 11,  ymax = 11,  xmin = 0.01, xmax = 0.01)
   
   return(spc)
   })
@@ -200,6 +246,8 @@ plot_list
 Put all the grobs (graphical objects) together:
 
 ```{r create grobs and initialize some viewport settings, eval = T, fig.width=20, fig.height=12}
+
+#create grobs and initialize some viewport settings
 
 col.leg <- gtable_filter(ggplot_gtable(ggplot_build(col.leg)), "guide-box") 
 shape.leg <- gtable_filter(ggplot_gtable(ggplot_build(shape.leg)), "guide-box") 

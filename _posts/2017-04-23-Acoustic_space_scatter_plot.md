@@ -4,7 +4,7 @@ title: "Acoustic space scatter plot"
 date: 23-04-2017
 ---
 
-Some people have asked for the code we used to make figure 3 in the [Methods in Ecology and Evolution paper describing warbleR](http://onlinelibrary.wiley.com/doi/10.1111/2041-210X.12624/full). So, here it is. The figure was made in part by my collaborator [Grace Smith-Vidaurre](smithvidaurre.weebly.com), so thanks to Grace for sharing.
+Some people have asked for the code we used to make figure 3 in the [Methods in Ecology and Evolution paper describing warbleR](http://onlinelibrary.wiley.com/doi/10.1111/2041-210X.12624/full). So, here it is. The figure was made in part by my collaborator [Grace Smith-Vidaurre](http://smithvidaurre.weebly.com), so thanks to Grace for sharing.
 
 The figure shows the grouping of long-billed hermit songs in the acoustic space based on similarity of dominant frequency contours. Similarity was assessed using dynamic time warping. The scatterplot is based on the two axes from a classic multidimensional scaling. The figure also shows spectrograms for each of the song types. This figure is created with ggplot graphs and spectrograms which are put together in a multipanel graph using the grid package. Note that you'll need to download recordings from Xeno-Canto (so internet connection required).
 
@@ -92,6 +92,9 @@ lbhMDS$cols[grep("154129|154161", lbhMDS$rid)]  <- terrain.colors(10)[2]
 
 lbhMDS$song.type[grep("154138", lbhMDS$rid)]  <-  "D"
 lbhMDS$cols[grep("154138", lbhMDS$rid)]  <-  heat.colors(10)[6]
+
+shps <- c(21:25, 4)
+cols <- lbhMDS$cols[!duplicated(lbhMDS$song.type)]
 {% endhighlight %}
 
 Create first scatterplot:
@@ -146,6 +149,48 @@ col.leg
 Create song type spectrograms:
 
 
+{% highlight text %}
+## [[1]]
+{% endhighlight %}
+
+![plot of chunk create song type spectrograms 1](/assets/Rfig/create song type spectrograms 1-1.png)
+
+{% highlight text %}
+## 
+## [[2]]
+{% endhighlight %}
+
+![plot of chunk create song type spectrograms 1](/assets/Rfig/create song type spectrograms 1-2.png)
+
+{% highlight text %}
+## 
+## [[3]]
+{% endhighlight %}
+
+![plot of chunk create song type spectrograms 1](/assets/Rfig/create song type spectrograms 1-3.png)
+
+{% highlight text %}
+## 
+## [[4]]
+{% endhighlight %}
+
+![plot of chunk create song type spectrograms 1](/assets/Rfig/create song type spectrograms 1-4.png)
+
+{% highlight text %}
+## 
+## [[5]]
+{% endhighlight %}
+
+![plot of chunk create song type spectrograms 1](/assets/Rfig/create song type spectrograms 1-5.png)
+
+{% highlight text %}
+## 
+## [[6]]
+{% endhighlight %}
+
+![plot of chunk create song type spectrograms 1](/assets/Rfig/create song type spectrograms 1-6.png)
+
+
 {% highlight r %}
 # choosing first song per recording
 X <- Phae.hisnr[!duplicated(Phae.hisnr$sound.files), ] 
@@ -153,7 +198,6 @@ X$cols <- lbhMDS$cols[!duplicated(Phae.hisnr$sound.files)]
 
 
 # creating spectrograms with colored borders by cluster
-# make sure to use wav files at 44100 kHz for better spectrogram resolution
 plot_list <- lapply(1:nrow(X), function(i) {
   
  spc <- ggspectro(tuneR::readWave(file.path(tempdir(), as.character(X$sound.files[i])),
@@ -175,7 +219,10 @@ plot_list <- lapply(1:nrow(X), function(i) {
           plot.title = element_text(size = 24, vjust = 1, face = "bold")) +
     scale_x_continuous(breaks = c(seq(0,  X$end[i] - X$start[i], 0.1))) +
       theme(plot.background = element_rect(size = 6, linetype = "solid", 
-                                           color = X$cols[i]))
+                                           color = X$cols[i])) + 
+     annotation_custom( 
+      grob = pointsGrob(pch = shps[i], gp = gpar(cex = 1.5)),
+      ymin = 11,  ymax = 11,  xmin = 0.01, xmax = 0.01)
   
   return(spc)
   })
@@ -183,53 +230,12 @@ plot_list <- lapply(1:nrow(X), function(i) {
 plot_list
 {% endhighlight %}
 
-
-
-{% highlight text %}
-## [[1]]
-{% endhighlight %}
-
-![plot of chunk create song type spectrograms](/assets/Rfig/create song type spectrograms-1.png)
-
-{% highlight text %}
-## 
-## [[2]]
-{% endhighlight %}
-
-![plot of chunk create song type spectrograms](/assets/Rfig/create song type spectrograms-2.png)
-
-{% highlight text %}
-## 
-## [[3]]
-{% endhighlight %}
-
-![plot of chunk create song type spectrograms](/assets/Rfig/create song type spectrograms-3.png)
-
-{% highlight text %}
-## 
-## [[4]]
-{% endhighlight %}
-
-![plot of chunk create song type spectrograms](/assets/Rfig/create song type spectrograms-4.png)
-
-{% highlight text %}
-## 
-## [[5]]
-{% endhighlight %}
-
-![plot of chunk create song type spectrograms](/assets/Rfig/create song type spectrograms-5.png)
-
-{% highlight text %}
-## 
-## [[6]]
-{% endhighlight %}
-
-![plot of chunk create song type spectrograms](/assets/Rfig/create song type spectrograms-6.png)
-
 Put all the grobs (graphical objects) together:
 
 
 {% highlight r %}
+#create grobs and initialize some viewport settings
+
 col.leg <- gtable_filter(ggplot_gtable(ggplot_build(col.leg)), "guide-box") 
 shape.leg <- gtable_filter(ggplot_gtable(ggplot_build(shape.leg)), "guide-box") 
 
