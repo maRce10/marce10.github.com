@@ -48,7 +48,7 @@ writeWave(Phae.long4,"Phae.long4.wav")
 
 
 
-We can check that now there are 4 sound files in our working directory:
+We can check that now there are 4 sound files in the working directory:
 
 
 {% highlight r %}
