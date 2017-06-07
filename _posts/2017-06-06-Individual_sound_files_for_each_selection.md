@@ -154,7 +154,7 @@ tuneR::writeWave(object = wvcut, filename = paste0(as.character(X$sound.files[i]
 
 ### Step 2: Add a <i>(X)lapply</i> function
 
-Several versions of the `lapply` function found in R base package can be used. The function `pblapply` from the package [pbapply](https://cran.r-project.org/package=pbapply) provides a nice progress bar. The following code should produce cuts for each selection in `selec.table`:
+Several versions of the `lapply` function can be used. The function `pblapply` from the package [pbapply](https://cran.r-project.org/package=pbapply) provides a nice progress bar. The following code should produce cuts for each selection in `selec.table`:
 
 
 {% highlight r %}
@@ -162,7 +162,7 @@ out <- pbapply::pblapply(1:nrow(selec.table), function(y)
   cutFUN(X = selec.table, i = y, mar = 0.05))
 {% endhighlight %}
 
-We could also used `lapply` (no progress bar) or `mclapply` ([parallel](https://cran.r-project.org/package=parallel) package, parallel computing), or even `pbmclapply` ([pbmcapply](https://cran.r-project.org/package=pbmcapply) package, parallel computing and progress bar, but not available for windows). In fact all these options are included in most [warbleR](https://cran.r-project.org/package=pbmcapply) functions.
+We could also used `lapply` (no progress bar) or `mclapply` ([parallel](https://cran.r-project.org/package=parallel) package, parallel computing), or even `pbmclapply` ([pbmcapply](https://cran.r-project.org/package=pbmcapply) package, parallel computing and progress bar, but not available for windows). In fact, all these options are included in most [warbleR](https://cran.r-project.org/package=pbmcapply) functions.
 
 
 ### Step 3: Put all the code inside a new function
@@ -397,4 +397,4 @@ cut_sels <- function(X, mar = 0.05, parallel = 1, path = NULL, dest.path = NULL,
 
 
 
-That's is it. If you developed a function that you think could be useful to other people it can include it [warbleR](https://cran.r-project.org/package=warbleR).
+That's is it. If you developed a function that you think could be useful to other people it can be included it [warbleR](https://cran.r-project.org/package=warbleR).
