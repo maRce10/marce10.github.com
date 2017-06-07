@@ -62,8 +62,7 @@ list.files(pattern = "\\.wav$", ignore.case = TRUE)
 {% endhighlight %}
 
 
-
-Note that the selection table `selec.table` contains columns for sound file name, start and end of signals (in seconds), and a unique ID for each selection: 
+The selection table `selec.table` contains columns for sound file name, start and end of signals (in seconds), and a unique ID for each selection: 
 
 
 {% highlight r %}
