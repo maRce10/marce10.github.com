@@ -32,6 +32,7 @@ require("warbleR")
 {% endhighlight %}
 
 
+
 Save the example sound files as *.wav* in a temporary working directory (to test the code):
 
 
@@ -397,4 +398,4 @@ cut_sels <- function(X, mar = 0.05, parallel = 1, path = NULL, dest.path = NULL,
 
 
 
-That's is it. If you developed a function that you think could be useful to other people it can be included it [warbleR](https://cran.r-project.org/package=warbleR).
+That's is it. If you developed a function that you think could be useful to other people we could include it in [warbleR](https://cran.r-project.org/package=warbleR).
