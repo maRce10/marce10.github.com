@@ -9,7 +9,7 @@ When looking at geographic variation of songs we usually want to compare the spe
 This is how it works: 
 
 * The function plots a matrix of spectrograms from signals listed in a selection table (a data frame similar to the example data frame `selec.table` in [warbleR](https://cran.r-project.org/package=warbleR))
-* This graphs are saved as image files in the working directory (or path provided)
+* The graphs are saved as image files in the working directory (or path provided)
 * Several images are generated if the number of signals don't fit in a single file 
 * Spectrograms can be labeled or color tagged to facilitate exploring variation related to the parameter of interest (e.g. site, song type)
 A legend can be added to help match colors with tag levels and different color palettes can be used for each tag
@@ -25,7 +25,6 @@ Below is a short tutorial showing some of this features. To be able to run the c
 install.packages("devtools")
 
 devtools::install_github("maRce10/warbleR")
-require("warbleR")
 {% endhighlight %}
 
 
