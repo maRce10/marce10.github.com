@@ -20,7 +20,7 @@ A legend can be added to help match colors with tag levels and different color p
 * Users can control the number of rows and columns as well as the width and height of the output image
 
 
-Below is a short tutorial showing some of these features. To be able to run the code you need [warbleR](https://cran.r-project.org/package=warbleR) 1.1.6 or higher, which has not been released on CRAN and it's only available in the most recent development version on github. It can be installed using the [devtools](https://cran.r-project.org/package=devtools)) package as follows
+Below is a short tutorial showing some of these features. To be able to run the code you need [warbleR](https://cran.r-project.org/package=warbleR) 1.1.6 or higher, which has not been released on CRAN and it's only available in the most recent development version on github. It can be installed using the [devtools](https://cran.r-project.org/package=devtools) package as follows
 
 ```{r , eval=F}
 #run it only if devtools isn't installed
