@@ -6,7 +6,6 @@ subtitle:
 ![me](/img/me.png)
 
 ### <center> Marcelo Araya-Salas </center>
-<font size="4"><center>Marcelo Araya-Salas</center></font>
 
 I am postdoctoral associate at the Lab of Ornithology [Cornell Lab of Ornithology](http://www.birds.cornell.edu/Page.aspx?pid=1478), Cornell University. I am broadly interested in the evolution of behavior from a evolutionary and cultural perspective, as well as the interplay between these two. I worked on hummingbird signaling behavior during my PhD, and also explored the evolution of learned vocal signals in other groups using comparative analyses. I plan to expand these research avenues during my time at the Lab of O. 
 
