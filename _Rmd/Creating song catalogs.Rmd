@@ -53,7 +53,7 @@ catalog(X = selec.table[1:10,], flim = c(1, 10), nrow = 5, ncol = 2,
         same.time.scale = TRUE, mar = 0.01, wl = 200, gr = FALSE)
 ```
 
-![catalog1](https://github.com/maRce10/marce10.github.com/tree/master/img/Catalog_p1-.png)
+![catalog1](https://github.com/maRce10/marce10.github.com/blob/master/img/Catalog_p1-.png)
 
 Spectrograms can be color-tagged using the `tags` argument. A legend is added when `legend > 0` (check documentation). The duration can also be allowed to vary between spectrograms setting `same.time.scale = TRUE`
 
@@ -64,7 +64,7 @@ catalog(X = selec.table[1:10,], flim = c(1, 10), nrow = 5, ncol = 2,
         tags = c("sound.files"), leg.wd = 10)
 ```
   
-![catalog2](https://github.com/maRce10/marce10.github.com/tree/master/img/Catalog_p1-2.png)
+![catalog2](https://github.com/maRce10/marce10.github.com/blob/master/img/Catalog_p1-2.png)
 
 Two color tags can be used at the same times (`tags` argument) using different color palettes for each tag (`tag.pal` argument). The code below also uses a different color palette for the spectrogram (`pal` argument) and set `orientation` of the output image file to horizontal
   
@@ -75,7 +75,7 @@ catalog(X = selec.table[1:10,], flim = c(1, 10), nrow = 5, ncol = 2,
        leg.wd = 10)
 ```
 
-![catalog3](https://github.com/maRce10/marce10.github.com/tree/master/img/Catalog_p1-3.png)
+![catalog3](https://github.com/maRce10/marce10.github.com/blob/master/img/Catalog_p1-3.png)
 
 Many more columns and rows can be displayed. In this example a bigger selection data frame is created by combining binding several times the data used in the previous examples. The code also creates some new (hypothetical) data for song type and site> Note that the data is sorted by sites so songs from the same site are closer in the catalog
 
@@ -104,7 +104,7 @@ catalog(X = Y, flim = c(1, 10), nrow = 12, ncol = 5, cex = 2, leg.wd = 8,
 
  The first image would look like this (several image are produced in the signals don't fit in a single one)
 
- ![catalog4](https://github.com/maRce10/marce10.github.com/tree/master/img/Catalog_p1-4.png)
+ ![catalog4](https://github.com/maRce10/marce10.github.com/blob/master/img/Catalog_p1-4.png)
 
 When several levels are displayed in a tag colors could become very similar, as in the example above. In that case cross-hatched labels can be used using the `hatching` argument. Either one or both color tags can be cross-hatched. The following applies cross-hatching on the second tag
  
@@ -118,7 +118,7 @@ catalog(X = Y, flim = c(1, 10), nrow = 12, ncol = 5, cex = 2, leg.wd = 8,
 
 ```
 
- ![catalog5](https://github.com/maRce10/marce10.github.com/tree/master/img/Catalog_p1-5.png)
+ ![catalog5](https://github.com/maRce10/marce10.github.com/blob/master/img/Catalog_p1-5.png)
 
 Continuous variables can be used for color tagging as well. The following code calculates the signal-to-noise ratio for each selection and then use it to tag them in the catalog. The breaks argument specifies that the signal-to-noise ratio range should be split in 3 intervals.
 It also sets the first color tag twice the size of the second one
@@ -139,7 +139,7 @@ catalog(X = Ysnr, flim = c(1, 10), nrow = 12, ncol = 5, cex = 2, leg.wd = 8,
 
 ```
 
- ![catalog6](https://github.com/maRce10/marce10.github.com/tree/master/img/Catalog_p1-6.png)
+ ![catalog6](https://github.com/maRce10/marce10.github.com/blob/master/img/Catalog_p1-6.png)
  
 Both tags could be numeric. The following code calculates the spectral entropy with `specan` and the use it as a tag along with the signal-to-noise ratio
  
@@ -154,7 +154,7 @@ catalog(X = Ysnr, flim = c(1, 10), nrow = 12, ncol = 5, cex = 2, leg.wd = 8,
 
 ```
 
- ![catalog7](https://github.com/maRce10/marce10.github.com/tree/master/img/Catalog_p1-7.png)
+ ![catalog7](https://github.com/maRce10/marce10.github.com/blob/master/img/Catalog_p1-7.png)
  
  The legend can be removed for one of both tags. The argument `legend = 2` plots the legend only for the second tag
  
@@ -165,12 +165,12 @@ catalog(X = Ysnr, flim = c(1, 10), nrow = 12, ncol = 5, cex = 2, leg.wd = 8,
 
 ```
  
-![catalog7](https://github.com/maRce10/marce10.github.com/tree/master/img/Catalog_p1-8.png)
+![catalog7](https://github.com/maRce10/marce10.github.com/blob/master/img/Catalog_p1-8.png)
  
  The following plots show a nice example of song geographic variation of [Northern Cardinals (Cardinalis cardinalis)]((https://www.allaboutbirds.org/guide/Northern_Cardinal/id) in Mexico (from my collaborator Marco Ortiz).
  
- ![catalog6](https://github.com/maRce10/marce10.github.com/tree/master/img/Catalog_p1-Cardinalis.png)
- ![catalog7](https://github.com/maRce10/marce10.github.com/tree/master/img/Catalog_p2-Cardinalis.png)
+ ![catalog6](https://github.com/maRce10/marce10.github.com/blob/master/img/Catalog_p1-Cardinalis.png)
+ ![catalog7](https://github.com/maRce10/marce10.github.com/blob/master/img/Catalog_p2-Cardinalis.png)
 
 A single pdf containing all catalog images can be generated using the `catalog2pdf` function. 
 

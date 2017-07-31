@@ -49,7 +49,7 @@ catalog(X = selec.table[1:9,], flim = c(1, 11), nrow = 3, ncol = 3,
 
 ```
 
-![upd.catalog1](https://github.com/maRce10/marce10.github.com/tree/master/img/Updates_Catalog_p1.png)
+![upd.catalog1](https://github.com/maRce10/marce10.github.com/blob/master/img/Updates_Catalog_p1.png)
 
 The new arguments can be used to add a background color that is shared by selections belonging to the same grouping variable level. The following code uses the "sound.files" column to color selection groups using "group.tag". It also makes use of the "spec.mar" to increase the colored areas around the spectrograms and "lab.mar" to shrink the area allocated for selection labels and tags
 
@@ -64,7 +64,7 @@ catalog(X = selec.table[1:9,], flim = c(1, 11), nrow = 3, ncol = 3,
 
 ```
 
-![upd.catalog2](https://github.com/maRce10/marce10.github.com/tree/master/img/Updates_Catalog_p2.png)
+![upd.catalog2](https://github.com/maRce10/marce10.github.com/blob/master/img/Updates_Catalog_p2.png)
 
 
 Note that the selection tables are sorted to ensure that selection sharing the same grouping factor level are clumped together in the catalog.
@@ -81,7 +81,7 @@ catalog(X = selec.table[1:9,], flim = c(1, 10), nrow = 3, ncol = 3,
 
 ```
 
-![upd.catalog3](https://github.com/maRce10/marce10.github.com/tree/master/img/Updates_Catalog_p3.png)
+![upd.catalog3](https://github.com/maRce10/marce10.github.com/blob/master/img/Updates_Catalog_p3.png)
 
 ---
 
@@ -101,7 +101,7 @@ catalog(X = selec.table[1:9,], flim = c(1, 10), nrow = 3, ncol = 3,
 
 ```
 
-![upd.catalog4](https://github.com/maRce10/marce10.github.com/tree/master/img/Updates_Catalog_p4.png)
+![upd.catalog4](https://github.com/maRce10/marce10.github.com/blob/master/img/Updates_Catalog_p4.png)
 
 
 The argument "by.row" allows to fill catalogs either by rows (if TRUE) or by columns (if FALSE).
@@ -119,7 +119,7 @@ catalog(X = selec.table[1:9,], flim = c(1, 10), nrow = 3, ncol = 3,
 
 ```
 
-![upd.catalog5](https://github.com/maRce10/marce10.github.com/tree/master/img/Updates_Catalog_p5.png)
+![upd.catalog5](https://github.com/maRce10/marce10.github.com/blob/master/img/Updates_Catalog_p5.png)
 
 By row
 
@@ -134,7 +134,7 @@ catalog(X = selec.table[1:9,], flim = c(1, 10), nrow = 3, ncol = 3,
 
 ```
 
-![upd.catalog6](https://github.com/maRce10/marce10.github.com/tree/master/img/Updates_Catalog_p6.png)
+![upd.catalog6](https://github.com/maRce10/marce10.github.com/blob/master/img/Updates_Catalog_p6.png)
 
 
 Finally, the argument "prop.mar" allows to add margins at both sides of the signals (when creating the spectrogram) that is proportional to the duration of the signal. For instance a value of 0.1 in a signal of 1s will add 0.1 s at the beginning and end of the signal. This can be particularly useful when the durations of signals varies a lot. In this example a margin equals to a third of signal duration is used:
@@ -150,4 +150,4 @@ catalog(X = selec.table[1:9,], flim = c(1, 10), nrow = 3, ncol = 3,
 
 ```
 
-![upd.catalog7](https://github.com/maRce10/marce10.github.com/tree/master/img/Updates_Catalog_p7.png)
+![upd.catalog7](https://github.com/maRce10/marce10.github.com/blob/master/img/Updates_Catalog_p7.png)
