@@ -7,7 +7,7 @@ output:
     variant: markdown_github
 ---
 
-Here I show how to use the `dfDTW` function in [warbleR](https://cran.r-project.org/package=warbleR) to compare acoustics signals using dynamic time warping (DTW).
+Here I show how to use the `dfDTW` function in [warbleR]((https://cran.r-project.org/package=warbleR) to compare acoustics signals using dynamic time warping (DTW).
 
 First load these packages (if not installed the code will install it):
 ```{r,message=F}
@@ -37,7 +37,7 @@ writeWave(Phae.long4, "Phae.long4.wav")
 
 These recordings all come from long-billed hermits with different song types.
 
-We can run the DTW analysis to compare these time series usin the [warbleR](https://cran.r-project.org/package=warbleR) function `dfDTW` which calculates the dominant frequency contours of each sgnals and compares using dynamic time warping. Internally it applies the `dtwDist` function from the [dtw](https://cran.r-project.org/package=dtw) package.
+We can run the DTW analysis to compare these time series usin the [warbleR]((https://cran.r-project.org/package=warbleR) function `dfDTW` which calculates the dominant frequency contours of each sgnals and compares using dynamic time warping. Internally it applies the `dtwDist` function from the [dtw]((https://cran.r-project.org/package=dtw) package.
 
 ```{r,eval=T}
 

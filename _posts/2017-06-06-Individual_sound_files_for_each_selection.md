@@ -1,13 +1,10 @@
 ---
+layout: post
 title: "Individual sound files for each selection (or how to create a <i>warbleR</i> function)"
-author: "Marcelo Araya-Salas"
-date: "2017-06-06"
-output: 
-  md_document:
-    variant: markdown_github
+date: 06-06-2017
 ---
 
-A friend of mine wants to "create individual sound files for each selection" in a selection table. This is a good opportunity to show how to a create a function that works iteratively on signals in a selection table (like most [warbleR]((https://cran.r-project.org/package=warbleR) functions). 
+A friend of mine wants to "create individual sound files for each selection" in a selection table. This is a good opportunity to show how to a create a function that works iteratively on signals in a selection table (like most [warbleR](https://cran.r-project.org/package=warbleR) functions). 
 
 It takes 3 main steps: 
 
@@ -23,25 +20,23 @@ Other things can be added to the function to check arguments and set working dir
 
 ### Step 1: Create function that does what we want on a single selection
 
-First install and/or load [warbleR]((https://cran.r-project.org/package=warbleR) (which also loads [tuneR]((https://cran.r-project.org/package=tuneR), the package for cutting and saving sound files):
+First install and/or load [warbleR](https://cran.r-project.org/package=warbleR) (which also loads [tuneR](https://cran.r-project.org/package=tuneR), the package for cutting and saving sound files):
 
-```{r , eval=F}
+
+{% highlight r %}
 if(!"devtools" %in% installed.packages()[,"Package"])  install.packages("devtools")
 require("devtools") 
 
 devtools::install_github("maRce10/warbleR")
 require("warbleR")
+{% endhighlight %}
 
-```
 
-```{r, echo = F}
-require("warbleR")
-```
 
 Save the example sound files as *.wav* in a temporary working directory (to test the code):
 
-```{r, eval = F}
- 
+
+{% highlight r %}
 setwd(tempdir())
 
 data(list = c("Phae.long1", "Phae.long2", "Phae.long3", 
@@ -50,42 +45,55 @@ writeWave(Phae.long1,"Phae.long1.wav")
 writeWave(Phae.long2,"Phae.long2.wav")
 writeWave(Phae.long3,"Phae.long3.wav")
 writeWave(Phae.long4,"Phae.long4.wav")
+{% endhighlight %}
 
-```
 
-```{r, eval = T, echo = F}
- 
-data(list = c("Phae.long1", "Phae.long2", "Phae.long3", 
-              "Phae.long4", "selec.table"))
-writeWave(Phae.long1,"Phae.long1.wav")
-writeWave(Phae.long2,"Phae.long2.wav")
-writeWave(Phae.long3,"Phae.long3.wav")
-writeWave(Phae.long4,"Phae.long4.wav")
-
-```
 
 We can check that now there are 4 sound files in the working directory:
 
-```{r}
 
+{% highlight r %}
 list.files(pattern = "\\.wav$", ignore.case = TRUE)
+{% endhighlight %}
 
-```
+
+
+{% highlight text %}
+## [1] "Phae.long1.wav" "Phae.long2.wav" "Phae.long3.wav" "Phae.long4.wav"
+{% endhighlight %}
 
 
 The selection table `selec.table` contains columns for sound file name, start and end of signals (in seconds), and a unique ID for each selection: 
 
-```{r}
 
+{% highlight r %}
 head(selec.table)
+{% endhighlight %}
 
-```
 
 
-Now write a code that takes the selection from a single row, extracts the *.wav* file segment, and save it to the working directory. To do this use the functions `readWave` and `writeWave` from [tuneR]((https://cran.r-project.org/package=tuneR):
+{% highlight text %}
+##      sound.files selec     start       end low.freq high.freq sel.comment
+## 1 Phae.long1.wav     1 1.1693549 1.3423884 2.220105  8.604378         c24
+## 2 Phae.long1.wav     2 2.1584085 2.3214565 2.169437  8.807053         c25
+## 3 Phae.long1.wav     3 0.3433366 0.5182553 2.218294  8.756604         c26
+## 4 Phae.long2.wav     1 0.1595983 0.2921692 2.316862  8.822316         c27
+## 5 Phae.long2.wav     2 1.4570585 1.5832087 2.284006  8.888027         c28
+## 6 Phae.long3.wav     1 0.6265520 0.7577715 3.006834  8.822316         c29
+##   rec.comment
+## 1          NA
+## 2          NA
+## 3          NA
+## 4          NA
+## 5          NA
+## 6          NA
+{% endhighlight %}
 
-```{r, eval = T}
 
+Now write a code that takes the selection from a single row, extracts the *.wav* file segment, and save it to the working directory. To do this use the functions `readWave` and `writeWave` from [tuneR](https://cran.r-project.org/package=tuneR):
+
+
+{% highlight r %}
 #lets use X for the selection table data frame as is the convention in warbleR functions 
 X <- selec.table
 
@@ -94,18 +102,23 @@ wvcut <- tuneR::readWave(as.character(X$sound.files[1]), from = X$start[1], to =
 
 # save cut removing file extension
 tuneR::writeWave(object = wvcut, filename = paste0(gsub("\\.wav$", "",X$sound.files[1], ignore.case = TRUE), "-", X$selec[1], ".wav"))
-   
-```
+{% endhighlight %}
 
 Note that the sound file name (with the file extension removed) and selection ID were used to name the cut. This is important because it will produce a unique name for each cut, so they won't be overwritten.
 
 The following code shows that there is a new sound file corresponding to the new cut:
 
-```{r}
 
+{% highlight r %}
 list.files(pattern = "\\.wav$", ignore.case = TRUE)
+{% endhighlight %}
 
-```
+
+
+{% highlight text %}
+## [1] "Phae.long1-1.wav" "Phae.long1.wav"   "Phae.long2.wav"  
+## [4] "Phae.long3.wav"   "Phae.long4.wav"
+{% endhighlight %}
 
 
 Now put the code inside a function. The index number 1 used above has to be replaced by 'i' so it runs one each row iteratively. I also added a few more line of codes to:
@@ -115,8 +128,8 @@ Now put the code inside a function. The index number 1 used above has to be repl
 
 
 
-```{r, eval = T}
- 
+
+{% highlight r %}
 cutFUN <- function(X, i, mar){
     
     # Read sound files, initialize frequency and time limits for spectrogram
@@ -138,28 +151,27 @@ cutFUN <- function(X, i, mar){
 tuneR::writeWave(object = wvcut, filename = paste0(as.character(X$sound.files[i]), "-", X$selec[i], ".wav"))
 
   }
-```
+{% endhighlight %}
 
 ### Step 2: Add a <i>(X)lapply</i> function
 
-Several versions of the `lapply` function can be used. The function `pblapply` from the package [pbapply]((https://cran.r-project.org/package=pbapply) provides a nice progress bar. The following code should produce cuts for each selection in `selec.table`:
+Several versions of the `lapply` function can be used. The function `pblapply` from the package [pbapply](https://cran.r-project.org/package=pbapply) provides a nice progress bar. The following code should produce cuts for each selection in `selec.table`:
 
-```{r, eval = T}
- 
+
+{% highlight r %}
 out <- pbapply::pblapply(1:nrow(selec.table), function(y) 
   cutFUN(X = selec.table, i = y, mar = 0.05))
-    
-```
+{% endhighlight %}
 
-We could also used `lapply` (no progress bar) or `mclapply` ([parallel]((https://cran.r-project.org/package=parallel) package, parallel computing), or even `pbmclapply` ([pbmcapply]((https://cran.r-project.org/package=pbmcapply) package, parallel computing and progress bar, but not available for windows). In fact, all these options are included in most [warbleR]((https://cran.r-project.org/package=pbmcapply) functions.
+We could also used `lapply` (no progress bar) or `mclapply` ([parallel](https://cran.r-project.org/package=parallel) package, parallel computing), or even `pbmclapply` ([pbmcapply](https://cran.r-project.org/package=pbmcapply) package, parallel computing and progress bar, but not available for windows). In fact, all these options are included in most [warbleR](https://cran.r-project.org/package=pbmcapply) functions.
 
 
 ### Step 3: Put all the code inside a new function
 
 Just copy/paste the `cutFUN` function and the `(X)lapply` function inside a new function:
 
-```{r, eval = T}
- 
+
+{% highlight r %}
 cut.selections <- function(X, mar){
   
 # internal function to cut each selection 
@@ -189,12 +201,12 @@ tuneR::writeWave(object = wvcut, filename = paste0(as.character(X$sound.files[i]
 out <- pbapply::pblapply(1:nrow(X), function(y) cutFUN(X = selec.table, i = y, mar = 0.05))
     
 }
-```
+{% endhighlight %}
 
 Let's see if it works. First we should remove the cuts we created previously. The following code removes only the cuts but not the original sound files (filtered out based on file size):
 
-```{r, eval = T}
 
+{% highlight r %}
 wvs <- list.files(pattern = "\\.wav$", ignore.case = TRUE)
 
 sz <- file.info(list.files(pattern = "\\.wav$", ignore.case = TRUE))$size
@@ -202,26 +214,42 @@ sz <- file.info(list.files(pattern = "\\.wav$", ignore.case = TRUE))$size
 unlink(wvs[sz < 50000])
 
 list.files(pattern = "\\.wav$", ignore.case = TRUE)
-```
+{% endhighlight %}
+
+
+
+{% highlight text %}
+## [1] "Phae.long1.wav" "Phae.long2.wav" "Phae.long3.wav" "Phae.long4.wav"
+{% endhighlight %}
 
 And run the function:
 
-```{r}
 
+{% highlight r %}
 cut.selections(X = selec.table, mar = 0.05)
-
-```
+{% endhighlight %}
 
 The cuts now are found in the working directory:
 
-```{r}
+
+{% highlight r %}
 list.files(pattern = "\\.wav$", ignore.case = TRUE)
-```
+{% endhighlight %}
 
-I put together all the code in a new [warbleR]((https://cran.r-project.org/package=warbleR) function called `cut_sels` (available in version 1.1.9, currrently only on github).  I added a few more arguments (labels, overwrite, parallel, ...), some argument checks to warn users when using invalid values, and parallel and progress bar options. Here is the code in case you are curious:  
 
-```{r, eval = F}
 
+{% highlight text %}
+##  [1] "Phae.long1.wav"       "Phae.long1.wav-1.wav" "Phae.long1.wav-2.wav"
+##  [4] "Phae.long1.wav-3.wav" "Phae.long2.wav"       "Phae.long2.wav-1.wav"
+##  [7] "Phae.long2.wav-2.wav" "Phae.long3.wav"       "Phae.long3.wav-1.wav"
+## [10] "Phae.long3.wav-2.wav" "Phae.long3.wav-3.wav" "Phae.long4.wav"      
+## [13] "Phae.long4.wav-1.wav" "Phae.long4.wav-2.wav" "Phae.long4.wav-3.wav"
+{% endhighlight %}
+
+I put together all the code in a new [warbleR](https://cran.r-project.org/package=warbleR) function called `cut_sels` (available in version 1.1.9, currrently only on github).  I added a few more arguments (labels, overwrite, parallel, ...), some argument checks to warn users when using invalid values, and parallel and progress bar options. Here is the code in case you are curious:  
+
+
+{% highlight r %}
 cut_sels <- function(X, mar = 0.05, parallel = 1, path = NULL, dest.path = NULL, pb = TRUE,
                      labels = c("sound.files", "selec"), overwrite = FALSE, ...){
   
@@ -366,13 +394,8 @@ cut_sels <- function(X, mar = 0.05, parallel = 1, path = NULL, dest.path = NULL,
   
   if(!is.null(path)) setwd(wd)
 }
+{% endhighlight %}
 
 
-```
 
-```{r, eval = T, echo = F}
- 
-unlink(list.files(pattern = "\\.wav$", ignore.case = TRUE))
-```
-
-That's is it. If you developed a function that you think could be useful to other people we could include it in [warbleR]((https://cran.r-project.org/package=warbleR).
+That's is it. If you developed a function that you think could be useful to other people we could include it in [warbleR](https://cran.r-project.org/package=warbleR).

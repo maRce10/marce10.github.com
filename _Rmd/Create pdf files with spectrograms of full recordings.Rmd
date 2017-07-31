@@ -7,9 +7,9 @@ output:
     variant: markdown_github
 ---
 
-The [warbleR](https://cran.r-project.org/package=warbleR) function `lspec`  produces image files with spectrograms of whole recordings split into multiple rows. For a long recording several image files will be produced, which could be inconvenient when dealing with many long recordings. I recently added a new function `lspec2pdf` that combines `lspec` images in .jpeg format into a single pdf file (available in warbleR 1.1.5 or higher).    
+The [warbleR]((https://cran.r-project.org/package=warbleR) function `lspec`  produces image files with spectrograms of whole recordings split into multiple rows. For a long recording several image files will be produced, which could be inconvenient when dealing with many long recordings. I recently added a new function `lspec2pdf` that combines `lspec` images in .jpeg format into a single pdf file (available in warbleR 1.1.5 or higher).    
 
-You need [warbleR](https://cran.r-project.org/package=warbleR) version 1.1.5 or higher to be able to run the code (currently you have to download it from github using the package [devtools](https://cran.r-project.org/package=devtools)).
+You need [warbleR]((https://cran.r-project.org/package=warbleR) version 1.1.5 or higher to be able to run the code (currently you have to download it from github using the package [devtools]((https://cran.r-project.org/package=devtools)).
 
 ```{r , eval=F}
 #run it only if devtools isn't installed

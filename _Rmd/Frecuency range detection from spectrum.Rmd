@@ -9,13 +9,13 @@ output:
 
 In bioacoustics we are often interested in measuring the frequency range of acoustic signals. This is typically done by drawing boxes in Raven/Syrinx/Avisoft. An alternative way, and potentially less subjective, is to infer the range from the energy distribution in the frequency domain applying amplitude thresholds on spectrums. 
 
-I have added two new functions to [warbleR](https://cran.r-project.org/package=warbleR) that do exactly that:
+I have added two new functions to [warbleR]((https://cran.r-project.org/package=warbleR) that do exactly that:
 
-* `frange.detec`: detects the frequency range of signals in wave objects (like a [seewave](https://cran.r-project.org/package=seewave) function). Can produce image files in the working directory if `img = TRUE`.
+* `frange.detec`: detects the frequency range of signals in wave objects (like a [seewave]((https://cran.r-project.org/package=seewave) function). Can produce image files in the working directory if `img = TRUE`.
 
 * `frange`: applies 'frange.detec' function iteratively on signals listed in a selection table.  If `plot = TRUE` a graph including a spectrogram and a frequency spectrum is produced.
 
-This how they work. But first Load/install [warbleR](https://cran.r-project.org/package=warbleR):
+This how they work. But first Load/install [warbleR]((https://cran.r-project.org/package=warbleR):
  
 ```{r load libraries and functions, eval = T}
 
