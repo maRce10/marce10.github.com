@@ -39,9 +39,9 @@ compare.methods(X = selec.table, flim = c(0, 10), bp = c(0, 10),
 
 It should produce 10 image files (in the working directory) that look like these ones:
 
-![compare.methods_example1](https://github.com/maRce10/marce10.github.com/blob/master/img/comp.meth1.png)
+![compare.methods_example1](img/comp.meth1.png)
 
-![compare.methods_example2](https://github.com/maRce10/marce10.github.com/blob/master/img/comp.meth2.png)
+![compare.methods_example2](img/comp.meth2.png)
 
 (You can tell where you working directory is found by running getwd())
 
@@ -62,7 +62,7 @@ compare.methods(X = st2, flim = c(0, 10), bp = c(0, 10),
 
 ```
 
-![compare.methods_example2](https://github.com/maRce10/marce10.github.com/blob/master/img/comp.meth3.png)
+![compare.methods_example2](img/comp.meth3.png)
 
 Alternatively, you can provide you own data. This could be helpful for removing undesired parameters or to input parameters obtained elsewhere (e.g from Raven). To do so, input your data with the `sp` argument. "SP" must be included as a method in the 'methods' argument. The example below 1) calculates the spectral parameters with the `specan` function, 2) selects only the first 7 columns of the output, and 3) inputs this data into `compare.methods`.
 
@@ -78,7 +78,7 @@ compare.methods(X = selec.table, flim = c(0, 10), sp = sp, bp = c(0, 10),
 ```
 
 
-![compare.methods_example2](https://github.com/maRce10/marce10.github.com/blob/master/img/comp.meth4.png)
+![compare.methods_example2](img/comp.meth4.png)
  
 The function has many other arguments to specify methods (e.g. bandpass, overlap) and spectrogram settings (e.g. margin, grid, frequency limits). Take a look at the function help document.
 
