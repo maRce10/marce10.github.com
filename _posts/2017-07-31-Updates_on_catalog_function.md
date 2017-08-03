@@ -10,8 +10,8 @@ To be able to run the code you need [warbleR]((https://cran.r-project.org/packag
 
 
 {% highlight r %}
-#run it only if devtools isn't installed
-install.packages("devtools")
+# install devtools if is not yet installed
+if(!"devtools" %in% installed.packages()[,"Package"]) install.packages("devtools")
 
 devtools::install_github("maRce10/warbleR")
 {% endhighlight %}
@@ -41,7 +41,7 @@ The following code creates a catalog with 3 columns and 3 rows labeled with the 
 {% highlight r %}
 catalog(X = selec.table[1:9,], flim = c(1, 11), nrow = 3, ncol = 3, 
         height = 10, width = 10, same.time.scale = TRUE, mar = 0.01, 
-        wl = 150, gr = FALSE)
+        wl = 150, gr = FALSE, box = FALSE)
 {% endhighlight %}
 
 ![upd.catalog1](img/Updates_Catalog_p1.png)
@@ -56,7 +56,7 @@ cmc <- function(n) cm.colors(n, alpha = 0.5)
 catalog(X = selec.table[1:9,], flim = c(1, 11), nrow = 3, ncol = 3, 
         height = 10, width = 10, tag.pal = list(cmc), cex = 0.8,
         same.time.scale = TRUE, mar = 0.01, wl = 150, gr = FALSE, 
-        group.tag = "sound.files", spec.mar = 0.4, lab.mar = 0.8)
+        group.tag = "sound.files", spec.mar = 0.4, lab.mar = 0.8, box = FALSE)
 {% endhighlight %}
 
 ![upd.catalog2](img/Updates_Catalog_p2.png)
@@ -72,14 +72,14 @@ catalog(X = selec.table[1:9,], flim = c(1, 10), nrow = 3, ncol = 3,
         height = 10, width = 10, tag.pal = list(cmc), cex = 0.8,
         same.time.scale = TRUE, mar = 0.01, wl = 200, gr = FALSE, 
         group.tag = "sound.files", spec.mar = 0.4, lab.mar = 0.8,
-        max.group.cols = 3)
+        max.group.cols = 3, box = FALSE)
 {% endhighlight %}
 
 ![upd.catalog3](img/Updates_Catalog_p3.png)
 
 ---
 
-### 2) Arguments "title", "by.row", "prop.mar" and "rm.axes" to further customize catalog setup
+### 2) Arguments "title", "by.row", "prop.mar", "box" and "rm.axes" to further customize catalog setup
 
 
 As their names suggest, the arguments "title" and "rm.axes" allow users to add a title at the top of catalogs and remove the *x* and *y* axes. respectively:
@@ -91,7 +91,7 @@ catalog(X = selec.table[1:9,], flim = c(1, 10), nrow = 3, ncol = 3,
         same.time.scale = TRUE, mar = 0.01, wl = 200, gr = FALSE, 
         group.tag = "sound.files", spec.mar = 0.4, lab.mar = 0.8,
         max.group.cols = 3, rm.axes = TRUE, 
-        title = "This one has a title and no axes")
+        title = "This one has a title and no axes", box = FALSE)
 {% endhighlight %}
 
 ![upd.catalog4](img/Updates_Catalog_p4.png)
@@ -108,7 +108,7 @@ catalog(X = selec.table[1:9,], flim = c(1, 10), nrow = 3, ncol = 3,
         same.time.scale = TRUE, mar = 0.01, wl = 200, gr = FALSE, 
         group.tag = "sound.files", spec.mar = 0.4, lab.mar = 0.8,
         max.group.cols = 3, rm.axes = TRUE, title = "By column", 
-        by.row = FALSE)
+        by.row = FALSE, box = FALSE)
 {% endhighlight %}
 
 ![upd.catalog5](img/Updates_Catalog_p5.png)
@@ -122,13 +122,12 @@ catalog(X = selec.table[1:9,], flim = c(1, 10), nrow = 3, ncol = 3,
         same.time.scale = TRUE, mar = 0.01, wl = 200, gr = FALSE, 
         group.tag = "sound.files", spec.mar = 0.4, lab.mar = 0.8,
         max.group.cols = 3, rm.axes = TRUE, title = "By row", 
-        by.row = TRUE)
+        by.row = TRUE, box = FALSE)
 {% endhighlight %}
 
 ![upd.catalog6](img/Updates_Catalog_p6.png)
 
-
-Finally, the argument "prop.mar" allows to add margins at both sides of the signals (when creating the spectrogram) that is proportional to the duration of the signal. For instance a value of 0.1 in a signal of 1s will add 0.1 s at the beginning and end of the signal. This can be particularly useful when the durations of signals varies a lot. In this example a margin equals to a third of signal duration is used:
+"box" allows users to draw a rectangle around the spectrogram and corresponding labels and tags
 
 
 {% highlight r %}
@@ -137,7 +136,22 @@ catalog(X = selec.table[1:9,], flim = c(1, 10), nrow = 3, ncol = 3,
         same.time.scale = TRUE, mar = 0.01, wl = 200, gr = FALSE, 
         group.tag = "sound.files", spec.mar = 0.4, lab.mar = 0.8,
         max.group.cols = 3, rm.axes = TRUE, title = "By row", 
-        by.row = TRUE, prop.mar = 1/3)
+        by.row = TRUE, tags = "sel.comment", box = TRUE)
 {% endhighlight %}
 
-![upd.catalog7](img/Updates_Catalog_p7.png)
+![upd.catalog6](img/Updates_Catalog_p7.png)
+
+
+Finally, the argument "prop.mar" allows to add margins at both sides of the signals (when creating the spectrogram) that is proportional to the duration of the signal. For instance a value of 0.1 in a signal of 1s will add 0.1 s at the beginning and end of the signal. This can be particularly useful when the duration of signals varies a lot. In this example a margin equals to a third of signal duration is used:
+
+
+{% highlight r %}
+catalog(X = selec.table[1:9,], flim = c(1, 10), nrow = 3, ncol = 3, 
+        height = 10, width = 10, tag.pal = list(cmc), cex = 0.8,
+        same.time.scale = TRUE, mar = 0.01, wl = 200, gr = FALSE, 
+        group.tag = "sound.files", spec.mar = 0.4, lab.mar = 0.8,
+        max.group.cols = 3, rm.axes = TRUE, title = "By row", 
+        by.row = TRUE, prop.mar = 1/3, tags = "sel.comment", box = TRUE)
+{% endhighlight %}
+
+![upd.catalog7](img/Updates_Catalog_p8.png)
