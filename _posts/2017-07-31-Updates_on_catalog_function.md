@@ -4,9 +4,9 @@ title: "Updates on catalog function"
 date: 31-07-2017
 ---
 
-Here are a few updates on catalog() based on suggestions from [warbleR]((https://cran.r-project.org/package=warbleR) users.
+A [previous post](https://marce10.github.io/2017/03/17/Creating_song_catalogs.html) described the new function `catalog`. Here are a few updates on `catalog` based on suggestions from [warbleR](https://cran.r-project.org/package=warbleR) users.
 
-To be able to run the code you need [warbleR]((https://cran.r-project.org/package=warbleR) 1.1.6 or higher, which hasn't been released on CRAN and it's only available in the most recent development version on github. It can be installed using the [devtools]((https://cran.r-project.org/package=devtools) package as follows
+To be able to run the code you need [warbleR](https://cran.r-project.org/package=warbleR) 1.1.6 or higher, which hasn't been released on CRAN and it's only available in the most recent development version on github. It can be installed using the [devtools](https://cran.r-project.org/package=devtools) package as follows
 
 
 {% highlight r %}
@@ -44,7 +44,7 @@ catalog(X = selec.table[1:9,], flim = c(1, 11), nrow = 3, ncol = 3,
         wl = 150, gr = FALSE, box = FALSE)
 {% endhighlight %}
 
-![upd.catalog1](img/Updates_Catalog_p1.png)
+![upd.catalog1](/img/Updates_Catalog_p1.png)
 
 The new arguments can be used to add a background color that is shared by selections belonging to the same grouping variable level. The following code uses the "sound.files" column to color selection groups using "group.tag". It also makes use of the "spec.mar" to increase the colored areas around the spectrograms and "lab.mar" to shrink the area allocated for selection labels and tags
 
@@ -59,7 +59,7 @@ catalog(X = selec.table[1:9,], flim = c(1, 11), nrow = 3, ncol = 3,
         group.tag = "sound.files", spec.mar = 0.4, lab.mar = 0.8, box = FALSE)
 {% endhighlight %}
 
-![upd.catalog2](img/Updates_Catalog_p2.png)
+![upd.catalog2](/img/Updates_Catalog_p2.png)
 
 
 Note that the selection tables are sorted to ensure that selection sharing the same grouping factor level are clumped together in the catalog.
@@ -75,7 +75,7 @@ catalog(X = selec.table[1:9,], flim = c(1, 10), nrow = 3, ncol = 3,
         max.group.cols = 3, box = FALSE)
 {% endhighlight %}
 
-![upd.catalog3](img/Updates_Catalog_p3.png)
+![upd.catalog3](/img/Updates_Catalog_p3.png)
 
 ---
 
@@ -94,7 +94,7 @@ catalog(X = selec.table[1:9,], flim = c(1, 10), nrow = 3, ncol = 3,
         title = "This one has a title and no axes", box = FALSE)
 {% endhighlight %}
 
-![upd.catalog4](img/Updates_Catalog_p4.png)
+![upd.catalog4](/img/Updates_Catalog_p4.png)
 
 
 The argument "by.row" allows to fill catalogs either by rows (if TRUE) or by columns (if FALSE).
@@ -111,7 +111,7 @@ catalog(X = selec.table[1:9,], flim = c(1, 10), nrow = 3, ncol = 3,
         by.row = FALSE, box = FALSE)
 {% endhighlight %}
 
-![upd.catalog5](img/Updates_Catalog_p5.png)
+![upd.catalog5](/img/Updates_Catalog_p5.png)
 
 By row
 
@@ -125,9 +125,9 @@ catalog(X = selec.table[1:9,], flim = c(1, 10), nrow = 3, ncol = 3,
         by.row = TRUE, box = FALSE)
 {% endhighlight %}
 
-![upd.catalog6](img/Updates_Catalog_p6.png)
+![upd.catalog6](/img/Updates_Catalog_p6.png)
 
-"box" allows users to draw a rectangle around the spectrogram and corresponding labels and tags
+The argument "box" allows users to draw a rectangle around the spectrogram and corresponding labels and tags
 
 
 {% highlight r %}
@@ -139,7 +139,7 @@ catalog(X = selec.table[1:9,], flim = c(1, 10), nrow = 3, ncol = 3,
         by.row = TRUE, tags = "sel.comment", box = TRUE)
 {% endhighlight %}
 
-![upd.catalog6](img/Updates_Catalog_p7.png)
+![upd.catalog7](/img/Updates_Catalog_p7.png)
 
 
 Finally, the argument "prop.mar" allows to add margins at both sides of the signals (when creating the spectrogram) that is proportional to the duration of the signal. For instance a value of 0.1 in a signal of 1s will add 0.1 s at the beginning and end of the signal. This can be particularly useful when the duration of signals varies a lot. In this example a margin equals to a third of signal duration is used:
@@ -154,4 +154,4 @@ catalog(X = selec.table[1:9,], flim = c(1, 10), nrow = 3, ncol = 3,
         by.row = TRUE, prop.mar = 1/3, tags = "sel.comment", box = TRUE)
 {% endhighlight %}
 
-![upd.catalog7](img/Updates_Catalog_p8.png)
+![upd.catalog8](/img/Updates_Catalog_p8.png)
