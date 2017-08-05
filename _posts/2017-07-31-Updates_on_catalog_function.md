@@ -6,7 +6,7 @@ date: 31-07-2017
 
 A [previous post](https://marce10.github.io/2017/03/17/Creating_song_catalogs.html) described the new function `catalog`. Here are a few updates on `catalog` based on suggestions from [warbleR](https://cran.r-project.org/package=warbleR) users.
 
-To be able to run the code you need [warbleR](https://cran.r-project.org/package=warbleR) 1.1.6 or higher, which hasn't been released on CRAN and it's only available in the most recent development version on github. It can be installed using the [devtools](https://cran.r-project.org/package=devtools) package as follows
+To be able to run the code you need [warbleR](https://cran.r-project.org/package=warbleR) 1.1.9 or higher, which hasn't been released on CRAN and it's only available in the most recent development version on github. It can be installed using the [devtools](https://cran.r-project.org/package=devtools) package as follows
 
 
 {% highlight r %}
