@@ -67,7 +67,7 @@ View(st)
 
 And this is how it works
 
-![gif1](/img/noautonext.gif)
+![gif1](/img/seltailor.noautonext.gif)
 
 
 The `auto.next` argument can help speed up the process once users feel confortable with the function. The `pause` argument (not shown) controls how long the function waits until it moves into the next selection
@@ -84,6 +84,6 @@ View(st2)
 
 ```
 
-![gif1](/img/autonext.gif)
+![gif1](/img/seltailor.autonext.gif)
 
 The function has many more arguments to customize spectrograms. The `index` argument can be used to only fix a subset of the signals (while returning the whole data set). Check the function documentation for a full description of the additional arguments.
