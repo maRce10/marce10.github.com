@@ -70,7 +70,7 @@ And this is how it works
 ![gif1](/img/noautonext.gif)
 
 
-The `auto.next` argument can help speed up the process once users field confortable with the function. The `pause` argument (not shown) controls how long the function waits until it moves into the next selection
+The `auto.next` argument can help speed up the process once users feel confortable with the function. The `pause` argument (not shown) controls how long the function waits until it moves into the next selection
 
 ```{r, eval = F}
 
