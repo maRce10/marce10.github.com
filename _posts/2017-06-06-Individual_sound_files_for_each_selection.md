@@ -4,7 +4,7 @@ title: "Individual sound files for each selection (or how to create a <i>warbleR
 date: 06-06-2017
 ---
 
-A friend of mine wants to "create individual sound files for each selection" in a selection table. This is a good opportunity to show how to a create a function that works iteratively on signals in a selection table (like most [warbleR](https://cran.r-project.org/package=warbleR) functions). 
+A friend of mine wants to "create individual sound files for each selection" in a selection table. This is a good opportunity to show how to create a function that works iteratively on signals in a selection table (like most [warbleR]((https://cran.r-project.org/package=warbleR) functions). 
 
 It takes 3 main steps: 
 
@@ -20,7 +20,7 @@ Other things can be added to the function to check arguments and set working dir
 
 ### Step 1: Create function that does what we want on a single selection
 
-First install and/or load [warbleR](https://cran.r-project.org/package=warbleR) (which also loads [tuneR](https://cran.r-project.org/package=tuneR), the package for cutting and saving sound files):
+First install and/or load [warbleR]((https://cran.r-project.org/package=warbleR) (which also loads [tuneR]((https://cran.r-project.org/package=tuneR), the package for cutting and saving sound files):
 
 
 {% highlight r %}
@@ -90,7 +90,7 @@ head(selec.table)
 {% endhighlight %}
 
 
-Now write a code that takes the selection from a single row, extracts the *.wav* file segment, and save it to the working directory. To do this use the functions `readWave` and `writeWave` from [tuneR](https://cran.r-project.org/package=tuneR):
+Now write a code that takes the selection from a single row, extracts the *.wav* file segment, and save it to the working directory. To do this use the functions `readWave` and `writeWave` from [tuneR]((https://cran.r-project.org/package=tuneR):
 
 
 {% highlight r %}
@@ -155,7 +155,7 @@ tuneR::writeWave(object = wvcut, filename = paste0(as.character(X$sound.files[i]
 
 ### Step 2: Add a <i>(X)lapply</i> function
 
-Several versions of the `lapply` function can be used. The function `pblapply` from the package [pbapply](https://cran.r-project.org/package=pbapply) provides a nice progress bar. The following code should produce cuts for each selection in `selec.table`:
+Several versions of the `lapply` function can be used. The function `pblapply` from the package [pbapply]((https://cran.r-project.org/package=pbapply) provides a nice progress bar. The following code should produce cuts for each selection in `selec.table`:
 
 
 {% highlight r %}
@@ -163,7 +163,7 @@ out <- pbapply::pblapply(1:nrow(selec.table), function(y)
   cutFUN(X = selec.table, i = y, mar = 0.05))
 {% endhighlight %}
 
-We could also used `lapply` (no progress bar) or `mclapply` ([parallel](https://cran.r-project.org/package=parallel) package, parallel computing), or even `pbmclapply` ([pbmcapply](https://cran.r-project.org/package=pbmcapply) package, parallel computing and progress bar, but not available for windows). In fact, all these options are included in most [warbleR](https://cran.r-project.org/package=pbmcapply) functions.
+We could also used `lapply` (no progress bar) or `mclapply` ([parallel]((https://cran.r-project.org/package=parallel) package, parallel computing), or even `pbmclapply` ([pbmcapply]((https://cran.r-project.org/package=pbmcapply) package, parallel computing and progress bar, but not available for windows). In fact, all these options are included in most [warbleR]((https://cran.r-project.org/package=pbmcapply) functions.
 
 
 ### Step 3: Put all the code inside a new function
@@ -246,7 +246,7 @@ list.files(pattern = "\\.wav$", ignore.case = TRUE)
 ## [13] "Phae.long4.wav-1.wav" "Phae.long4.wav-2.wav" "Phae.long4.wav-3.wav"
 {% endhighlight %}
 
-I put together all the code in a new [warbleR](https://cran.r-project.org/package=warbleR) function called `cut_sels` (available in version 1.1.9, currrently only on github).  I added a few more arguments (labels, overwrite, parallel, ...), some argument checks to warn users when using invalid values, and parallel and progress bar options. Here is the code in case you are curious:  
+I put together all the code in a new [warbleR]((https://cran.r-project.org/package=warbleR) function called `cut_sels` (available in version 1.1.9, currrently only on github).  I added a few more arguments (labels, overwrite, parallel, ...), some argument checks to warn users when using invalid values, and parallel and progress bar options. Here is the code in case you are curious:  
 
 
 {% highlight r %}
@@ -398,4 +398,4 @@ cut_sels <- function(X, mar = 0.05, parallel = 1, path = NULL, dest.path = NULL,
 
 
 
-That's is it. If you developed a function that you think could be useful to other people we could include it in [warbleR](https://cran.r-project.org/package=warbleR).
+That's is it. If you developed a function that you think could be useful to other people we could include it in [warbleR]((https://cran.r-project.org/package=warbleR).

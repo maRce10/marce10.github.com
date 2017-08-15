@@ -7,7 +7,7 @@ output:
     variant: markdown_github
 ---
 
-A friend of mine wants to "create individual sound files for each selection" in a selection table. This is a good opportunity to show how to a create a function that works iteratively on signals in a selection table (like most [warbleR]((https://cran.r-project.org/package=warbleR) functions). 
+A friend of mine wants to "create individual sound files for each selection" in a selection table. This is a good opportunity to show how to create a function that works iteratively on signals in a selection table (like most [warbleR]((https://cran.r-project.org/package=warbleR) functions). 
 
 It takes 3 main steps: 
 

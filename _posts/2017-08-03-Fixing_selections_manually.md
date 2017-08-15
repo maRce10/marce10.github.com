@@ -6,7 +6,7 @@ date: 03-08-2017
 
 This short post shows how to use the `seltailor` function to adjust selection frequency and time 'coordinates' in an interactive and iterative manner.
 
-To be able to run the code you need [warbleR](https://cran.r-project.org/package=warbleR) 1.1.9 or higher, which hasn't been released on CRAN and it's only available in the most recent development version on github. It can be installed using the [devtools](https://cran.r-project.org/package=devtools) package as follows
+To be able to run the code you need [warbleR](https://cran.r-project.org/package=warbleR) 1.1.9 or higher, which hasn't been released on CRAN and it's only available on github. It can be installed using the [devtools](https://cran.r-project.org/package=devtools) package as follows
 
 
 {% highlight r %}
@@ -53,8 +53,8 @@ Now run the function on the selection table. For simplicity, it is run only on t
 
 
 {% highlight r %}
-st <- seltailor(X =  selec.table[1:4,], 
       flim = c(1,12), wl = 120, auto.next = FALSE, 
+st <- seltailor(X =  selec.table[1:4,], 
       frange = TRUE)
 
 View(st)

@@ -1,7 +1,7 @@
 ---
-title: "Fixing selections manually"
+title: "Color highlighted signals in spectrograms"
 author: "Marcelo Araya-Salas"
-date: "2017-08-03"
+date: "August 4, 2017"
 output: 
   md_document:
     variant: markdown_github
@@ -36,34 +36,102 @@ First load the example data and recordings
 library(warbleR)
 
 setwd(tempdir())
-data(list = c("Phae.long1", "Phae.long2", "Phae.long3", 
-              "Phae.long4", "selec.table"))
+# save wav file examples
+data(list = c("Phae.long1", "selec.table"))
 writeWave(Phae.long1,"Phae.long1.wav")
-writeWave(Phae.long2,"Phae.long2.wav")
-writeWave(Phae.long3,"Phae.long3.wav")
-writeWave(Phae.long4,"Phae.long4.wav")
+ 
+ 
+#tests  
+st <- selec.table[selec.table$sound.files == "Phae.long1.wav",]
+
+
+sgnl <- tuneR::readWave(as.character(st$sound.files[1]))
+    
 
 ```
 
 Add some 'noise' to the selections so they are a bit off the actual song position
 
 ```{r,  eval=F}
+source("~/Dropbox/warbleR/R/filled.contour.color.INTFUN.R")
 
-selec.table$start <- selec.table$start + rnorm(n = nrow(selec.table), sd = 0.03)
-selec.table$end <- selec.table$end + rnorm(n = nrow(selec.table), sd = 0.03)
+X11(width = 15, height = 5)
+
+#use this if in OSX
+#quartz(width = 15, height = 5)
+
+st$colors <- topo.colors(nrow(st))
+
+
+# highlight selections
+color.spectro(wave = sgnl, wl = 300, ovlp = 90, flim = c(1, 8.6), 
+    collevels = seq(-90, 0, 5), dB = "B", X = st, col.clm = "colors", 
+    base.col = "skyblue",  t.mar = 0.07, f.mar = 0.1, 
+    interactive = NULL)
+
+
+
+querxc(qword = 'nr:154073', download = TRUE, pb = F)
+
+mp32wav()
+```
+
+````{r}
+sgnl2 <- tuneR::readWave("Phaethornis-striigularis-154073.wav", from = 0.33, to = 3.8, units = "seconds")
+    
+ggcols <- function(n) {
+  hues = seq(15, 375, length = n + 1)
+  hcl(h = hues, l = 65, c = 100)[1:n]
+}
+
+cols <- ggcols(10)
+cols <- sample(cols)
+
+X11(width = 15, height = 5)
+#use this if in OSX
+#quartz(width = 15, height = 5)
+
+color.spectro(wave = sgnl2, wl = 400, ovlp = 90, flim = c(4.5, 10.7), 
+  collevels = seq(-50, 0, 5), selec.col = cols[1], interactive = 1)
+
+for(i in 2:length(cols))
+color.spectro(wave = sgnl2, wl = 400, ovlp = 90, flim = c(4.5, 10.7),
+          collevels = seq(-50, 0, 5), selec.col = cols[i], interactive = 1, 
+          add = TRUE)
+
+
 
 ```
 
-Now run the function on the selection table. For simplicity, it is run only on the first 4 selections
 
-```{r, eval = F}
 
-      flim = c(1,12), wl = 120, auto.next = FALSE, 
-st <- seltailor(X =  selec.table[1:4,], 
-      frange = TRUE)
 
-View(st)
+````{r}
+sgnl2 <- tuneR::readWave("Phaethornis-striigularis-154073.wav", from = 0.33, to = 2.1, units = "seconds")
+    
+ggcols <- function(n) {
+  hues = seq(15, 375, length = n + 1)
+  hcl(h = hues, l = 65, c = 100)[1:n]
+}
+
+cols <- ggcols(6)
+
+X11(width = 15, height = 5)
+#use this if in OSX
+#quartz(width = 15, height = 5)
+
+color.spectro(wave = sgnl2, wl = 400, ovlp = 90, flim = c(4.5, 10.7), 
+  collevels = seq(-50, 0, 5), selec.col = cols[1], interactive = 1)
+
+for(i in 2:length(cols))
+color.spectro(wave = sgnl2, wl = 400, ovlp = 90, flim = c(4.5, 10.7),
+          collevels = seq(-50, 0, 5), selec.col = cols[i], interactive = 1, 
+          add = TRUE)
+
+
+
 ```
+
 
 And this is how it works
 
