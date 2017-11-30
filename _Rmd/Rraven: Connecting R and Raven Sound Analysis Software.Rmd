@@ -1,15 +1,10 @@
 ---
 title: "Rraven: Connecting R and Raven Sound Analysis Software"
+author: "Marcelo Araya-Salas"
 date: "2017-11-30"
 output: 
   md_document:
     variant: markdown_github
-    toc: yes
-    toc_float:
-      collapsed: no
-      smooth_scroll: no
----
-
 ---
 
 ```{r, echo = FALSE, message = FALSE}
