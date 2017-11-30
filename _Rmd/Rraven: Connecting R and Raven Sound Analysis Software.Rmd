@@ -1,8 +1,8 @@
 ---
 title: "Rraven: Connecting R and Raven Sound Analysis Software"
 date: "2017-11-30"
-output:
-  html_document:
+output: 
+  md_document:
     variant: markdown_github
     toc: yes
     toc_float:
