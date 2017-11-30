@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "<i>Rraven</i>: Connecting R and Raven Sound Analysis Software"
+title: "Rraven: Connecting R and Raven Sound Analysis Software"
 date: 30-11-2017
 ---
 

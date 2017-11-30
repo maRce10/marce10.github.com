@@ -1,5 +1,5 @@
 ---
-title: "<i>Rraven</i>: Connecting R and Raven Sound Analysis Software"
+title: "Rraven: Connecting R and Raven Sound Analysis Software"
 author: "Marcelo Araya-Salas"
 date: "2017-11-30"
 output: 
