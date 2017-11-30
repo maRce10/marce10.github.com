@@ -53,7 +53,7 @@ getwd()
 
 
 {% highlight text %}
-[1] "/tmp/RtmpVJQbOW"
+[1] "/tmp/RtmpNLSNZA"
 {% endhighlight %}
  &nbsp; 
 
@@ -1561,9 +1561,6 @@ xcorr.rav <- imp_corr_mat(file = "BatchCorrOutput.txt", path = tempdir())
 {% endhighlight %}
 
 
-{% highlight text %}
-Error in file(con, "r"): cannot open the connection
-{% endhighlight %}
  &nbsp; 
  
 The function returns a list containing the correlation matrix (here only showing the first 5 rows/columns):
@@ -1576,7 +1573,12 @@ xcorr.rav$correlation[1:5, 1:5]
 
 
 {% highlight text %}
-Error in eval(expr, envir, enclos): object 'xcorr.rav' not found
+                    01-Phae.long1-1.wav 10-Phae.long4-2.wav 11-Phae.long4-3.wav 07-Phae.long3-2.wav 05-Phae.long2-2.wav
+01-Phae.long1-1.wav               1.000               0.216               0.184               0.285               0.443
+10-Phae.long4-2.wav               0.216               1.000               0.781               0.290               0.235
+11-Phae.long4-3.wav               0.184               0.781               1.000               0.279               0.186
+07-Phae.long3-2.wav               0.285               0.290               0.279               1.000               0.433
+05-Phae.long2-2.wav               0.443               0.235               0.186               0.433               1.000
 {% endhighlight %}
  &nbsp; 
  
@@ -1590,7 +1592,12 @@ xcorr.rav$`lag (s)`[1:5, 1:5]
 
 
 {% highlight text %}
-Error in eval(expr, envir, enclos): object 'xcorr.rav' not found
+                    01-Phae.long1-1.wav 10-Phae.long4-2.wav 11-Phae.long4-3.wav 07-Phae.long3-2.wav 05-Phae.long2-2.wav
+01-Phae.long1-1.wav               0.000               0.011               0.006               0.028               0.034
+10-Phae.long4-2.wav              -0.011               0.000              -0.006               0.040               0.023
+11-Phae.long4-3.wav              -0.006               0.006               0.000               0.046               0.028
+07-Phae.long3-2.wav              -0.028              -0.040              -0.046               0.000              -0.011
+05-Phae.long2-2.wav              -0.034              -0.023              -0.028               0.011               0.000
 {% endhighlight %}
  &nbsp; 
  
@@ -1600,43 +1607,13 @@ This output is ready for stats. For instance, the following code runs a mantel t
 {% highlight r %}
 #convert cross-corr to distance
 xcorr.rvn <- 1- xcorr.rav$correlation
-{% endhighlight %}
 
-
-
-{% highlight text %}
-Error in eval(expr, envir, enclos): object 'xcorr.rav' not found
-{% endhighlight %}
-
-
-
-{% highlight r %}
 #sort matrix to match selection table
 xcorr.rvn <- xcorr.rvn[order(rownames(xcorr.rvn)), order(colnames(xcorr.rvn))]
-{% endhighlight %}
 
-
-
-{% highlight text %}
-Error in eval(expr, envir, enclos): object 'xcorr.rvn' not found
-{% endhighlight %}
-
-
-
-{% highlight r %}
 #convert it to distance matrix
 xcorr.rvn <- as.dist(xcorr.rvn)
-{% endhighlight %}
 
-
-
-{% highlight text %}
-Error in as.dist(xcorr.rvn): object 'xcorr.rvn' not found
-{% endhighlight %}
-
-
-
-{% highlight r %}
 # measure acoustic parameters
 sp.wrblR <- specan(selec.table, bp = c(1, 11), wl = 150, pb = FALSE)
 
@@ -1649,7 +1626,20 @@ vegan::mantel(xcorr.rvn, dist.sp.wrblR)
 
 
 {% highlight text %}
-Error in as.dist(xdis): object 'xcorr.rvn' not found
+
+Mantel statistic based on Pearson's product-moment correlation 
+
+Call:
+vegan::mantel(xdis = xcorr.rvn, ydis = dist.sp.wrblR) 
+
+Mantel statistic r: 0.2841 
+      Significance: 0.015 
+
+Upper quantiles of permutations (null model):
+  90%   95% 97.5%   99% 
+0.154 0.200 0.233 0.300 
+Permutation: free
+Number of permutations: 999
 {% endhighlight %}
  &nbsp; 
 

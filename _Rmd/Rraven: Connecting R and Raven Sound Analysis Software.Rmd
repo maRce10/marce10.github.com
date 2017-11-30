@@ -441,7 +441,7 @@ xcorr.rav <- imp_corr_mat(file = "BatchCorrOutput.txt", path = tempdir())
 writeLines(selection_files[[6]], con = names(selection_files)[6])
 
 # Import output (change the name of the file if you used a different one)
-xcorr.rav <- imp_corr_mat(file = "BatchCorrOutput.txt", path = tempdir())
+xcorr.rav <- imp_corr_mat(file = "BatchCorrOutput.txt")
 
 ```
  &nbsp; 
