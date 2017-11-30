@@ -2,9 +2,13 @@
 title: "<i>Rraven</i>: Connecting R and Raven Sound Analysis Software"
 author: "Marcelo Araya-Salas"
 date: "2017-11-30"
-output: 
+output:
   md_document:
     variant: markdown_github
+        toc: yes
+    toc_float:
+      collapsed: no
+      smooth_scroll: no
 ---
 
 ```{r, echo = FALSE, message = FALSE}
@@ -126,9 +130,15 @@ rvn.dat <- imp_raven(all.data = TRUE, path = tempdir())
 
 kable(head(rvn.dat[,1:5]), align = "c", row.names = F)
 
+```
+
+
+```{r, eval=TRUE, echo=F, message=F}
 kable(head(rvn.dat[,6:ncol(rvn.dat)]), align = "c", row.names = F)
 
 ```
+
+
  &nbsp; 
  
 Note that the 'waveform' view data has been removed. It can also be imported as follows: 
