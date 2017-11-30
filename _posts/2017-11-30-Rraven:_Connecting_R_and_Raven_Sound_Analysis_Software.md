@@ -5,7 +5,6 @@ date: 30-11-2017
 ---
 
 
- &nbsp; 
 
 The `Rraven` package is designed to facilitate the exchange of data between R and  [Raven sound analysis software](http://www.birds.cornell.edu/brp/raven/RavenOverview.html) ([Cornell Lab of Ornithology](http://www.birds.cornell.edu)). [Raven](http://www.birds.cornell.edu/brp/raven/RavenOverview.html) provides very  powerful tools for the analysis of (animal) sounds. R can simplify the automatization of complex routines of analyses. Furthermore, R packages as [warbleR](https://cran.r-project.org/package=warbleR), [seewave](https://cran.r-project.org/package=seewave) and [monitoR](https://cran.r-project.org/package=monitoR) (among others) provide additional methods of analysis, working as a perfect complement for those found in [Raven](http://www.birds.cornell.edu/brp/raven/RavenOverview.html). Hence, bridging these applications can largely expand the bioacoustician's toolkit.
 
