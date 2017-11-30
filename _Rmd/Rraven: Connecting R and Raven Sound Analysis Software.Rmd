@@ -2,13 +2,9 @@
 title: "<i>Rraven</i>: Connecting R and Raven Sound Analysis Software"
 author: "Marcelo Araya-Salas"
 date: "2017-11-30"
-output:
+output: 
   md_document:
     variant: markdown_github
-        toc: yes
-    toc_float:
-      collapsed: no
-      smooth_scroll: no
 ---
 
 ```{r, echo = FALSE, message = FALSE}
@@ -116,28 +112,27 @@ This code shows how to import all the data contained in those files into R:
 
 ```{r, eval=FALSE}
 
- #providing the name of the column with the sound file names
 rvn.dat <- imp_raven(all.data = TRUE)
 
 head(rvn.dat)
 
 ```
 
+
 ```{r, eval=TRUE, echo=F, message=F}
 
- #providing the name of the column with the sound file names
 rvn.dat <- imp_raven(all.data = TRUE, path = tempdir())
 
-kable(head(rvn.dat[,1:5]), align = "c", row.names = F)
-
+kable(head(rvn.dat[,1:6]), align = "c", row.names = F,  format = "html")
 ```
-
-
+ &nbsp; 
+ 
 ```{r, eval=TRUE, echo=F, message=F}
-kable(head(rvn.dat[,6:ncol(rvn.dat)]), align = "c", row.names = F)
+
+
+kable(head(rvn.dat[,7:ncol(rvn.dat)]), align = "c", row.names = F,  format = "html")
 
 ```
-
 
  &nbsp; 
  
@@ -151,7 +146,7 @@ head(rvn.dat)
 
 ```
 
-```{r, eval = TRUE, echo = FALSE, message = FALSE, warning = FALSE, cache.comments=FALSE, comment=F, include=F}
+```{r, eval = TRUE, echo = FALSE, message = FALSE, warning = FALSE, cache.comments=FALSE, comment=F}
 
 rvn.dat <- imp_raven(all.data = TRUE, path = tempdir(), waveform = TRUE)
 
@@ -163,7 +158,8 @@ kable(head(rvn.dat), format = "html")
 [Raven](http://www.birds.cornell.edu/brp/raven/RavenOverview.html) selections can also be imported in a 'selection.table' format so it can be directly input into [warbleR](https://cran.r-project.org/package=warbleR) functions. To do this you need to set the `all.data = FALSE` and indicate which column contains the sound file name (using the 'sound.file.col' argument): 
 
 ```{r, eval=FALSE}
- #providing the name of the column with the sound file names
+
+#providing the name of the column with the sound file names
 rvn.dat <- imp_raven(sound.file.col = "End.File", all.data = FALSE, freq.cols = TRUE)
 
 head(rvn.dat)
@@ -175,7 +171,9 @@ head(rvn.dat)
  #providing the name of the column with the sound file names
 rvn.dat <- imp_raven(sound.file.col = "Begin.File", all.data = FALSE, freq.cols = TRUE)
 
-knitr::kable(head(rvn.dat), align = "c", row.names = FALSE)
+names(rvn.dat)[grep("channel", names(rvn.dat))] <- "channel"
+
+knitr::kable(head(rvn.dat[,-2]), align = "c", row.names = FALSE, format = "html")
 
 ```
  &nbsp; 
@@ -200,11 +198,18 @@ rvn.dat.st <- make.selection.table(rvn.dat)
 
 sp <- specan(X = rvn.dat, bp = "frange", wl = 150, pb = FALSE, ovlp = 90)
 
-knitr::kable(head(sp[,1:6]), align = "c", row.names = FALSE)
-knitr::kable(head(sp[,6:15]), align = "c", row.names = FALSE)
+knitr::kable(head(sp[,1:6]), align = "c", row.names = FALSE,  format = "html")
 
 ```
  &nbsp; 
+ 
+```{r, eval=TRUE, echo=F, message=F}
+
+knitr::kable(head(sp[,6:15]), align = "c", row.names = FALSE,  format = "html")
+
+```
+ &nbsp; 
+
 
 
 And this code creates song catalogs:
@@ -217,7 +222,7 @@ catalog(X = rvn.dat.st[1:9, ], flim = c(1, 10), nrow = 3, ncol = 3, same.time.sc
 
 ```
 
-![catalog](Catalog.jpeg)
+![catalog](/img/catalog.png)
 ---
 
 This is just to cite a few analysis that can be implemented in [warbleR](https://cran.r-project.org/package=warbleR).
@@ -263,8 +268,14 @@ rvn.dat <- imp_raven(all.data = TRUE)
 fcts <- extract_ts(X = rvn.dat, ts.column = "Peak.Freq.Contour..Hz.")
  
 
-knitr::kable(head(fcts[ ,1:14]), align = "c", row.names = FALSE)
-knitr::kable(head(fcts[ ,39:53]), align = "c", row.names = FALSE)
+kable(head(fcts[ ,1:14]), align = "c", row.names = FALSE,   format = "html")
+```
+
+
+ &nbsp;
+
+```{r, eval=T, echo=FALSE}
+knitr::kable(head(fcts[ ,39:53]), align = "c", row.names = FALSE,   format = "html")
  
 ```
  &nbsp;
@@ -288,7 +299,7 @@ head(fcts[,21:32])
 fcts <- extract_ts(X = rvn.dat, ts.column = "Peak.Freq.Contour..Hz.",
  equal.length = TRUE)
 
-knitr::kable(head(fcts[ ,21:32]), align = "c", row.names = FALSE)
+kable(head(fcts[ ,21:32]), align = "c", row.names = FALSE,   format = "html")
  
 ```
  &nbsp; 
@@ -301,7 +312,7 @@ And the length of the series can also be specified:
 fcts <- extract_ts(X = rvn.dat, ts.column = "Peak.Freq.Contour..Hz.",
 equal.length = T, length.out = 10)  
 
-knitr::kable(head(fcts), align = "c", row.names = FALSE)
+kable(head(fcts), align = "c", row.names = FALSE,   format = "html")
 
 
 ```
@@ -312,7 +323,7 @@ knitr::kable(head(fcts), align = "c", row.names = FALSE)
 fcts <- extract_ts(X = rvn.dat, ts.column = "Peak.Freq.Contour..Hz.", 
 equal.length = T, length.out = 10)  
 
-knitr::kable(head(fcts), align = "c", row.names = FALSE)
+kable(head(fcts), align = "c", row.names = FALSE,   format = "html")
 
 
 ```
@@ -347,7 +358,7 @@ st1
 st1 <- rvn.dat[ ,1:7]
 
 #check original column names
-kable(st1, align = "c", row.names = FALSE)
+kable(st1, align = "c", row.names = FALSE,   format = "html")
 ```
 
 
@@ -361,7 +372,7 @@ relabel_colms(st1)
 rc <- relabel_colms(st1)
 
 #check original column names
-kable(rc, align = "c", row.names = FALSE)
+kable(rc, align = "c", row.names = FALSE,   format = "html")
 ```
  &nbsp; 
 
@@ -381,7 +392,7 @@ relabel_colms(st1, extra.cols.name = c("selec.file", "View"),
 rc <- relabel_colms(st1, extra.cols.name = c("selec.file", "View"),
  c("Raven selection file", "Raven view"))
 
-kable(rc, align = "c", row.names = F)
+kable(rc, align = "c", row.names = F,   format = "html")
 ```
  &nbsp; 
 

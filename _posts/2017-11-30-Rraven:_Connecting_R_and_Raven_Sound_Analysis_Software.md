@@ -2,10 +2,6 @@
 layout: post
 title: "<i>Rraven</i>: Connecting R and Raven Sound Analysis Software"
 date: 30-11-2017
-        toc: yes
-    toc_float:
-      collapsed: no
-      smooth_scroll: no
 ---
 
 
@@ -86,33 +82,138 @@ This code shows how to import all the data contained in those files into R:
 
 
 {% highlight r %}
- #providing the name of the column with the sound file names
 rvn.dat <- imp_raven(all.data = TRUE)
 
 head(rvn.dat)
 {% endhighlight %}
 
 
-| Selection |     View      | Channel | Begin.Time..s. | End.Time..s. |
-|:---------:|:-------------:|:-------:|:--------------:|:------------:|
-|     1     | Spectrogram 1 |    1    |   1.1693549    |  1.3423884   |
-|     2     | Spectrogram 1 |    1    |   2.1584085    |  2.3214565   |
-|     3     | Spectrogram 1 |    1    |   0.3433366    |  0.5182553   |
-|     1     | Spectrogram 1 |    1    |   0.1595983    |  0.2921692   |
-|     2     | Spectrogram 1 |    1    |   1.4570585    |  1.5832087   |
-|     1     | Spectrogram 1 |    1    |   0.6265520    |  0.7577715   |
-
-
-
-| Low.Freq..Hz. | High.Freq..Hz. |   Begin.File   | channel |           Begin.Path           | File.Offset |            selec.file             |
-|:-------------:|:--------------:|:--------------:|:-------:|:------------------------------:|:-----------:|:---------------------------------:|
-|   2220.105    |    8604.378    | Phae.long1.wav |    1    | /tmp/RtmpWpOeaR/Phae.long1.wav |  1.1693549  | LBH 1 selection table example.txt |
-|   2169.437    |    8807.053    | Phae.long1.wav |    1    | /tmp/RtmpWpOeaR/Phae.long1.wav |  2.1584085  | LBH 1 selection table example.txt |
-|   2218.294    |    8756.604    | Phae.long1.wav |    1    | /tmp/RtmpWpOeaR/Phae.long1.wav |  0.3433366  | LBH 1 selection table example.txt |
-|   2316.862    |    8822.316    | Phae.long2.wav |    1    | /tmp/RtmpWpOeaR/Phae.long2.wav |  0.1595983  | LBH 2 selection table example.txt |
-|   2284.006    |    8888.027    | Phae.long2.wav |    1    | /tmp/RtmpWpOeaR/Phae.long2.wav |  1.4570585  | LBH 2 selection table example.txt |
-|   3006.834    |    8822.316    | Phae.long3.wav |    1    | /tmp/RtmpWpOeaR/Phae.long3.wav |  0.6265520  | LBH 3 selection table example.txt |
-
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:center;"> Selection </th>
+   <th style="text-align:center;"> View </th>
+   <th style="text-align:center;"> Channel </th>
+   <th style="text-align:center;"> Begin.Time..s. </th>
+   <th style="text-align:center;"> End.Time..s. </th>
+   <th style="text-align:center;"> Low.Freq..Hz. </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 1.1693549 </td>
+   <td style="text-align:center;"> 1.3423884 </td>
+   <td style="text-align:center;"> 2220.105 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 2 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 2.1584085 </td>
+   <td style="text-align:center;"> 2.3214565 </td>
+   <td style="text-align:center;"> 2169.437 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 3 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 0.3433366 </td>
+   <td style="text-align:center;"> 0.5182553 </td>
+   <td style="text-align:center;"> 2218.294 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 0.1595983 </td>
+   <td style="text-align:center;"> 0.2921692 </td>
+   <td style="text-align:center;"> 2316.862 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 2 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 1.4570585 </td>
+   <td style="text-align:center;"> 1.5832087 </td>
+   <td style="text-align:center;"> 2284.006 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 0.6265520 </td>
+   <td style="text-align:center;"> 0.7577715 </td>
+   <td style="text-align:center;"> 3006.834 </td>
+  </tr>
+</tbody>
+</table>
+ &nbsp; 
+ 
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:center;"> High.Freq..Hz. </th>
+   <th style="text-align:center;"> Begin.File </th>
+   <th style="text-align:center;"> channel </th>
+   <th style="text-align:center;"> Begin.Path </th>
+   <th style="text-align:center;"> File.Offset </th>
+   <th style="text-align:center;"> selec.file </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:center;"> 8604.378 </td>
+   <td style="text-align:center;"> Phae.long1.wav </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> /tmp/RtmpWpOeaR/Phae.long1.wav </td>
+   <td style="text-align:center;"> 1.1693549 </td>
+   <td style="text-align:center;"> LBH 1 selection table example.txt </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 8807.053 </td>
+   <td style="text-align:center;"> Phae.long1.wav </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> /tmp/RtmpWpOeaR/Phae.long1.wav </td>
+   <td style="text-align:center;"> 2.1584085 </td>
+   <td style="text-align:center;"> LBH 1 selection table example.txt </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 8756.604 </td>
+   <td style="text-align:center;"> Phae.long1.wav </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> /tmp/RtmpWpOeaR/Phae.long1.wav </td>
+   <td style="text-align:center;"> 0.3433366 </td>
+   <td style="text-align:center;"> LBH 1 selection table example.txt </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 8822.316 </td>
+   <td style="text-align:center;"> Phae.long2.wav </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> /tmp/RtmpWpOeaR/Phae.long2.wav </td>
+   <td style="text-align:center;"> 0.1595983 </td>
+   <td style="text-align:center;"> LBH 2 selection table example.txt </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 8888.027 </td>
+   <td style="text-align:center;"> Phae.long2.wav </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> /tmp/RtmpWpOeaR/Phae.long2.wav </td>
+   <td style="text-align:center;"> 1.4570585 </td>
+   <td style="text-align:center;"> LBH 2 selection table example.txt </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 8822.316 </td>
+   <td style="text-align:center;"> Phae.long3.wav </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> /tmp/RtmpWpOeaR/Phae.long3.wav </td>
+   <td style="text-align:center;"> 0.6265520 </td>
+   <td style="text-align:center;"> LBH 3 selection table example.txt </td>
+  </tr>
+</tbody>
+</table>
 
  &nbsp; 
  
@@ -125,28 +226,198 @@ rvn.dat <- imp_raven(all.data = TRUE, waveform = TRUE)
 head(rvn.dat)
 {% endhighlight %}
 
-
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:right;"> Selection </th>
+   <th style="text-align:left;"> View </th>
+   <th style="text-align:right;"> Channel </th>
+   <th style="text-align:right;"> Begin.Time..s. </th>
+   <th style="text-align:right;"> End.Time..s. </th>
+   <th style="text-align:right;"> Low.Freq..Hz. </th>
+   <th style="text-align:right;"> High.Freq..Hz. </th>
+   <th style="text-align:left;"> Begin.File </th>
+   <th style="text-align:right;"> channel </th>
+   <th style="text-align:left;"> Begin.Path </th>
+   <th style="text-align:right;"> File.Offset </th>
+   <th style="text-align:left;"> selec.file </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> Spectrogram 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1.1693549 </td>
+   <td style="text-align:right;"> 1.3423884 </td>
+   <td style="text-align:right;"> 2220.105 </td>
+   <td style="text-align:right;"> 8604.378 </td>
+   <td style="text-align:left;"> Phae.long1.wav </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> /tmp/RtmpWpOeaR/Phae.long1.wav </td>
+   <td style="text-align:right;"> 1.1693549 </td>
+   <td style="text-align:left;"> LBH 1 selection table example.txt </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> Spectrogram 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 2.1584085 </td>
+   <td style="text-align:right;"> 2.3214565 </td>
+   <td style="text-align:right;"> 2169.437 </td>
+   <td style="text-align:right;"> 8807.053 </td>
+   <td style="text-align:left;"> Phae.long1.wav </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> /tmp/RtmpWpOeaR/Phae.long1.wav </td>
+   <td style="text-align:right;"> 2.1584085 </td>
+   <td style="text-align:left;"> LBH 1 selection table example.txt </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:left;"> Spectrogram 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0.3433366 </td>
+   <td style="text-align:right;"> 0.5182553 </td>
+   <td style="text-align:right;"> 2218.294 </td>
+   <td style="text-align:right;"> 8756.604 </td>
+   <td style="text-align:left;"> Phae.long1.wav </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> /tmp/RtmpWpOeaR/Phae.long1.wav </td>
+   <td style="text-align:right;"> 0.3433366 </td>
+   <td style="text-align:left;"> LBH 1 selection table example.txt </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> Spectrogram 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0.1595983 </td>
+   <td style="text-align:right;"> 0.2921692 </td>
+   <td style="text-align:right;"> 2316.862 </td>
+   <td style="text-align:right;"> 8822.316 </td>
+   <td style="text-align:left;"> Phae.long2.wav </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> /tmp/RtmpWpOeaR/Phae.long2.wav </td>
+   <td style="text-align:right;"> 0.1595983 </td>
+   <td style="text-align:left;"> LBH 2 selection table example.txt </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> Spectrogram 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1.4570585 </td>
+   <td style="text-align:right;"> 1.5832087 </td>
+   <td style="text-align:right;"> 2284.006 </td>
+   <td style="text-align:right;"> 8888.027 </td>
+   <td style="text-align:left;"> Phae.long2.wav </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> /tmp/RtmpWpOeaR/Phae.long2.wav </td>
+   <td style="text-align:right;"> 1.4570585 </td>
+   <td style="text-align:left;"> LBH 2 selection table example.txt </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> Spectrogram 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0.6265520 </td>
+   <td style="text-align:right;"> 0.7577715 </td>
+   <td style="text-align:right;"> 3006.834 </td>
+   <td style="text-align:right;"> 8822.316 </td>
+   <td style="text-align:left;"> Phae.long3.wav </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> /tmp/RtmpWpOeaR/Phae.long3.wav </td>
+   <td style="text-align:right;"> 0.6265520 </td>
+   <td style="text-align:left;"> LBH 3 selection table example.txt </td>
+  </tr>
+</tbody>
+</table>
  &nbsp; 
  
 [Raven](http://www.birds.cornell.edu/brp/raven/RavenOverview.html) selections can also be imported in a 'selection.table' format so it can be directly input into [warbleR](https://cran.r-project.org/package=warbleR) functions. To do this you need to set the `all.data = FALSE` and indicate which column contains the sound file name (using the 'sound.file.col' argument): 
 
 
 {% highlight r %}
- #providing the name of the column with the sound file names
+#providing the name of the column with the sound file names
 rvn.dat <- imp_raven(sound.file.col = "End.File", all.data = FALSE, freq.cols = TRUE)
 
 head(rvn.dat)
 {% endhighlight %}
 
-
-|  sound.files   | channel.Channel | channel.channel | selec |   start   |    end    |            selec.file             | bottom.freq | top.freq |
-|:--------------:|:---------------:|:---------------:|:-----:|:---------:|:---------:|:---------------------------------:|:-----------:|:--------:|
-| Phae.long1.wav |        1        |        1        |   1   | 1.1693549 | 1.3423884 | LBH 1 selection table example.txt |  2.220105   | 8.604378 |
-| Phae.long1.wav |        1        |        1        |   2   | 2.1584085 | 2.3214565 | LBH 1 selection table example.txt |  2.169437   | 8.807053 |
-| Phae.long1.wav |        1        |        1        |   3   | 0.3433366 | 0.5182553 | LBH 1 selection table example.txt |  2.218294   | 8.756604 |
-| Phae.long2.wav |        1        |        1        |   1   | 0.1595983 | 0.2921692 | LBH 2 selection table example.txt |  2.316862   | 8.822316 |
-| Phae.long2.wav |        1        |        1        |   2   | 1.4570585 | 1.5832087 | LBH 2 selection table example.txt |  2.284006   | 8.888027 |
-| Phae.long3.wav |        1        |        1        |   1   | 0.6265520 | 0.7577715 | LBH 3 selection table example.txt |  3.006834   | 8.822316 |
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:center;"> sound.files </th>
+   <th style="text-align:center;"> channel </th>
+   <th style="text-align:center;"> selec </th>
+   <th style="text-align:center;"> start </th>
+   <th style="text-align:center;"> end </th>
+   <th style="text-align:center;"> selec.file </th>
+   <th style="text-align:center;"> bottom.freq </th>
+   <th style="text-align:center;"> top.freq </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:center;"> Phae.long1.wav </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 1.1693549 </td>
+   <td style="text-align:center;"> 1.3423884 </td>
+   <td style="text-align:center;"> LBH 1 selection table example.txt </td>
+   <td style="text-align:center;"> 2.220105 </td>
+   <td style="text-align:center;"> 8.604378 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Phae.long1.wav </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 2 </td>
+   <td style="text-align:center;"> 2.1584085 </td>
+   <td style="text-align:center;"> 2.3214565 </td>
+   <td style="text-align:center;"> LBH 1 selection table example.txt </td>
+   <td style="text-align:center;"> 2.169437 </td>
+   <td style="text-align:center;"> 8.807053 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Phae.long1.wav </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 3 </td>
+   <td style="text-align:center;"> 0.3433366 </td>
+   <td style="text-align:center;"> 0.5182553 </td>
+   <td style="text-align:center;"> LBH 1 selection table example.txt </td>
+   <td style="text-align:center;"> 2.218294 </td>
+   <td style="text-align:center;"> 8.756604 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Phae.long2.wav </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 0.1595983 </td>
+   <td style="text-align:center;"> 0.2921692 </td>
+   <td style="text-align:center;"> LBH 2 selection table example.txt </td>
+   <td style="text-align:center;"> 2.316862 </td>
+   <td style="text-align:center;"> 8.822316 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Phae.long2.wav </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 2 </td>
+   <td style="text-align:center;"> 1.4570585 </td>
+   <td style="text-align:center;"> 1.5832087 </td>
+   <td style="text-align:center;"> LBH 2 selection table example.txt </td>
+   <td style="text-align:center;"> 2.284006 </td>
+   <td style="text-align:center;"> 8.888027 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Phae.long3.wav </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 0.6265520 </td>
+   <td style="text-align:center;"> 0.7577715 </td>
+   <td style="text-align:center;"> LBH 3 selection table example.txt </td>
+   <td style="text-align:center;"> 3.006834 </td>
+   <td style="text-align:center;"> 8.822316 </td>
+  </tr>
+</tbody>
+</table>
  &nbsp; 
  
 The data frame contains the following columns: sound.files, channel, selec, start, end, and selec.file. You can also import the frequency range parameters in the 'selection.table' by setting 'freq.cols' tp `TRUE`. The data frame returned by "imp_raven" (when in the 'warbleR' format) can be input into several [warbleR](https://cran.r-project.org/package=warbleR) functions for further analysis. For instance, the following code runs additional parameter measurements on the imported selections:
@@ -161,27 +432,162 @@ sp <- specan(X = rvn.dat, bp = "frange", wl = 150, pb = FALSE, ovlp = 90)
 head(sp)
 {% endhighlight %}
 
-
-|  sound.files   | selec | duration  | meanfreq |    sd    | freq.median |
-|:--------------:|:-----:|:---------:|:--------:|:--------:|:-----------:|
-| Phae.long1.wav |   1   | 0.1730334 | 5.982350 | 1.399687 |  6.331716   |
-| Phae.long1.wav |   2   | 0.1630480 | 5.997299 | 1.422930 |  6.212125   |
-| Phae.long1.wav |   3   | 0.1749187 | 6.020600 | 1.515536 |  6.428439   |
-| Phae.long2.wav |   1   | 0.1325709 | 6.398304 | 1.340412 |  6.595971   |
-| Phae.long2.wav |   2   | 0.1261502 | 6.311837 | 1.370040 |  6.602020   |
-| Phae.long3.wav |   1   | 0.1312195 | 6.612400 | 1.093120 |  6.670130   |
-
-
-
-| freq.median | freq.Q25 | freq.Q75 | freq.IQR | time.median | time.Q25  | time.Q75  | time.IQR  |   skew   |   kurt    |
-|:-----------:|:--------:|:--------:|:--------:|:-----------:|:---------:|:---------:|:---------:|:--------:|:---------:|
-|  6.331716   | 5.296584 | 6.869521 | 1.572937 |  0.0764552  | 0.0465681 | 0.1174629 | 0.0708948 | 1.998039 | 7.021565  |
-|  6.212125   | 5.328746 | 6.880795 | 1.552049 |  0.0766553  | 0.0439026 | 0.1156798 | 0.0717772 | 1.918356 | 7.334323  |
-|  6.428439   | 5.152811 | 6.983309 | 1.830498 |  0.0902434  | 0.0534519 | 0.1277291 | 0.0742772 | 2.495361 | 11.139125 |
-|  6.595971   | 5.607323 | 7.380852 | 1.773529 |  0.0768669  | 0.0543005 | 0.1036645 | 0.0493641 | 1.568523 | 6.016392  |
-|  6.602020   | 5.609829 | 7.213209 | 1.603380 |  0.0761028  | 0.0528492 | 0.0979471 | 0.0450980 | 2.468996 | 10.884349 |
-|  6.670130   | 6.067212 | 7.349366 | 1.282153 |  0.0635054  | 0.0430425 | 0.0896131 | 0.0465706 | 1.773688 | 6.626019  |
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:center;"> sound.files </th>
+   <th style="text-align:center;"> selec </th>
+   <th style="text-align:center;"> duration </th>
+   <th style="text-align:center;"> meanfreq </th>
+   <th style="text-align:center;"> sd </th>
+   <th style="text-align:center;"> freq.median </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:center;"> Phae.long1.wav </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 0.1730334 </td>
+   <td style="text-align:center;"> 5.982350 </td>
+   <td style="text-align:center;"> 1.399687 </td>
+   <td style="text-align:center;"> 6.331716 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Phae.long1.wav </td>
+   <td style="text-align:center;"> 2 </td>
+   <td style="text-align:center;"> 0.1630480 </td>
+   <td style="text-align:center;"> 5.997299 </td>
+   <td style="text-align:center;"> 1.422930 </td>
+   <td style="text-align:center;"> 6.212125 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Phae.long1.wav </td>
+   <td style="text-align:center;"> 3 </td>
+   <td style="text-align:center;"> 0.1749187 </td>
+   <td style="text-align:center;"> 6.020600 </td>
+   <td style="text-align:center;"> 1.515536 </td>
+   <td style="text-align:center;"> 6.428439 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Phae.long2.wav </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 0.1325709 </td>
+   <td style="text-align:center;"> 6.398304 </td>
+   <td style="text-align:center;"> 1.340412 </td>
+   <td style="text-align:center;"> 6.595971 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Phae.long2.wav </td>
+   <td style="text-align:center;"> 2 </td>
+   <td style="text-align:center;"> 0.1261502 </td>
+   <td style="text-align:center;"> 6.311837 </td>
+   <td style="text-align:center;"> 1.370040 </td>
+   <td style="text-align:center;"> 6.602020 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Phae.long3.wav </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 0.1312195 </td>
+   <td style="text-align:center;"> 6.612400 </td>
+   <td style="text-align:center;"> 1.093120 </td>
+   <td style="text-align:center;"> 6.670130 </td>
+  </tr>
+</tbody>
+</table>
  &nbsp; 
+ 
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:center;"> freq.median </th>
+   <th style="text-align:center;"> freq.Q25 </th>
+   <th style="text-align:center;"> freq.Q75 </th>
+   <th style="text-align:center;"> freq.IQR </th>
+   <th style="text-align:center;"> time.median </th>
+   <th style="text-align:center;"> time.Q25 </th>
+   <th style="text-align:center;"> time.Q75 </th>
+   <th style="text-align:center;"> time.IQR </th>
+   <th style="text-align:center;"> skew </th>
+   <th style="text-align:center;"> kurt </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:center;"> 6.331716 </td>
+   <td style="text-align:center;"> 5.296584 </td>
+   <td style="text-align:center;"> 6.869521 </td>
+   <td style="text-align:center;"> 1.572937 </td>
+   <td style="text-align:center;"> 0.0764552 </td>
+   <td style="text-align:center;"> 0.0465681 </td>
+   <td style="text-align:center;"> 0.1174629 </td>
+   <td style="text-align:center;"> 0.0708948 </td>
+   <td style="text-align:center;"> 1.998039 </td>
+   <td style="text-align:center;"> 7.021565 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 6.212125 </td>
+   <td style="text-align:center;"> 5.328746 </td>
+   <td style="text-align:center;"> 6.880795 </td>
+   <td style="text-align:center;"> 1.552049 </td>
+   <td style="text-align:center;"> 0.0766553 </td>
+   <td style="text-align:center;"> 0.0439026 </td>
+   <td style="text-align:center;"> 0.1156798 </td>
+   <td style="text-align:center;"> 0.0717772 </td>
+   <td style="text-align:center;"> 1.918356 </td>
+   <td style="text-align:center;"> 7.334323 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 6.428439 </td>
+   <td style="text-align:center;"> 5.152811 </td>
+   <td style="text-align:center;"> 6.983309 </td>
+   <td style="text-align:center;"> 1.830498 </td>
+   <td style="text-align:center;"> 0.0902434 </td>
+   <td style="text-align:center;"> 0.0534519 </td>
+   <td style="text-align:center;"> 0.1277291 </td>
+   <td style="text-align:center;"> 0.0742772 </td>
+   <td style="text-align:center;"> 2.495361 </td>
+   <td style="text-align:center;"> 11.139125 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 6.595971 </td>
+   <td style="text-align:center;"> 5.607323 </td>
+   <td style="text-align:center;"> 7.380852 </td>
+   <td style="text-align:center;"> 1.773529 </td>
+   <td style="text-align:center;"> 0.0768669 </td>
+   <td style="text-align:center;"> 0.0543005 </td>
+   <td style="text-align:center;"> 0.1036645 </td>
+   <td style="text-align:center;"> 0.0493641 </td>
+   <td style="text-align:center;"> 1.568523 </td>
+   <td style="text-align:center;"> 6.016392 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 6.602020 </td>
+   <td style="text-align:center;"> 5.609829 </td>
+   <td style="text-align:center;"> 7.213209 </td>
+   <td style="text-align:center;"> 1.603380 </td>
+   <td style="text-align:center;"> 0.0761028 </td>
+   <td style="text-align:center;"> 0.0528492 </td>
+   <td style="text-align:center;"> 0.0979471 </td>
+   <td style="text-align:center;"> 0.0450980 </td>
+   <td style="text-align:center;"> 2.468996 </td>
+   <td style="text-align:center;"> 10.884349 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 6.670130 </td>
+   <td style="text-align:center;"> 6.067212 </td>
+   <td style="text-align:center;"> 7.349366 </td>
+   <td style="text-align:center;"> 1.282153 </td>
+   <td style="text-align:center;"> 0.0635054 </td>
+   <td style="text-align:center;"> 0.0430425 </td>
+   <td style="text-align:center;"> 0.0896131 </td>
+   <td style="text-align:center;"> 0.0465706 </td>
+   <td style="text-align:center;"> 1.773688 </td>
+   <td style="text-align:center;"> 6.626019 </td>
+  </tr>
+</tbody>
+</table>
+ &nbsp; 
+
 
 
 And this code creates song catalogs:
@@ -193,7 +599,7 @@ catalog(X = rvn.dat.st[1:9, ], flim = c(1, 10), nrow = 3, ncol = 3, same.time.sc
  tag.pal = list(terrain.colors), tags = "sound.files")
 {% endhighlight %}
 
-![catalog](Catalog.jpeg)
+![catalog](/img/catalog.png)
 ---
 
 This is just to cite a few analysis that can be implemented in [warbleR](https://cran.r-project.org/package=warbleR).
@@ -223,26 +629,253 @@ head(fcts[,1:14])
 head(fcts[,39:53])
 {% endhighlight %}
 
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:center;"> sound.files </th>
+   <th style="text-align:center;"> selec </th>
+   <th style="text-align:center;"> P.F.1 </th>
+   <th style="text-align:center;"> P.F.2 </th>
+   <th style="text-align:center;"> P.F.3 </th>
+   <th style="text-align:center;"> P.F.4 </th>
+   <th style="text-align:center;"> P.F.5 </th>
+   <th style="text-align:center;"> P.F.6 </th>
+   <th style="text-align:center;"> P.F.7 </th>
+   <th style="text-align:center;"> P.F.8 </th>
+   <th style="text-align:center;"> P.F.9 </th>
+   <th style="text-align:center;"> P.F.10 </th>
+   <th style="text-align:center;"> P.F.11 </th>
+   <th style="text-align:center;"> P.F.12 </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:center;"> Phae.long1.wav </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 6943.4 </td>
+   <td style="text-align:center;"> 7119.1 </td>
+   <td style="text-align:center;"> 7294.9 </td>
+   <td style="text-align:center;"> 7294.9 </td>
+   <td style="text-align:center;"> 7294.9 </td>
+   <td style="text-align:center;"> 7382.8 </td>
+   <td style="text-align:center;"> 7470.7 </td>
+   <td style="text-align:center;"> 7646.5 </td>
+   <td style="text-align:center;"> 5185.5 </td>
+   <td style="text-align:center;"> 5273.4 </td>
+   <td style="text-align:center;"> 5361.3 </td>
+   <td style="text-align:center;"> 5449.2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Phae.long1.wav </td>
+   <td style="text-align:center;"> 2 </td>
+   <td style="text-align:center;"> 6767.6 </td>
+   <td style="text-align:center;"> 6943.4 </td>
+   <td style="text-align:center;"> 7207.0 </td>
+   <td style="text-align:center;"> 7207.0 </td>
+   <td style="text-align:center;"> 7294.9 </td>
+   <td style="text-align:center;"> 7382.8 </td>
+   <td style="text-align:center;"> 7470.7 </td>
+   <td style="text-align:center;"> 7558.6 </td>
+   <td style="text-align:center;"> 7558.6 </td>
+   <td style="text-align:center;"> 7646.5 </td>
+   <td style="text-align:center;"> 5185.5 </td>
+   <td style="text-align:center;"> 5361.3 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Phae.long1.wav </td>
+   <td style="text-align:center;"> 3 </td>
+   <td style="text-align:center;"> 6943.4 </td>
+   <td style="text-align:center;"> 4746.1 </td>
+   <td style="text-align:center;"> 7119.1 </td>
+   <td style="text-align:center;"> 4834.0 </td>
+   <td style="text-align:center;"> 7207.0 </td>
+   <td style="text-align:center;"> 4921.9 </td>
+   <td style="text-align:center;"> 4921.9 </td>
+   <td style="text-align:center;"> 7558.6 </td>
+   <td style="text-align:center;"> 7646.5 </td>
+   <td style="text-align:center;"> 7734.4 </td>
+   <td style="text-align:center;"> 7998.0 </td>
+   <td style="text-align:center;"> 8085.9 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Phae.long2.wav </td>
+   <td style="text-align:center;"> 4 </td>
+   <td style="text-align:center;"> 5888.7 </td>
+   <td style="text-align:center;"> 6503.9 </td>
+   <td style="text-align:center;"> 4570.3 </td>
+   <td style="text-align:center;"> 4834.0 </td>
+   <td style="text-align:center;"> 5185.5 </td>
+   <td style="text-align:center;"> 5537.1 </td>
+   <td style="text-align:center;"> 5537.1 </td>
+   <td style="text-align:center;"> 5800.8 </td>
+   <td style="text-align:center;"> 6503.9 </td>
+   <td style="text-align:center;"> 3779.3 </td>
+   <td style="text-align:center;"> 6240.2 </td>
+   <td style="text-align:center;"> 6328.1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Phae.long2.wav </td>
+   <td style="text-align:center;"> 5 </td>
+   <td style="text-align:center;"> 4570.3 </td>
+   <td style="text-align:center;"> 4746.1 </td>
+   <td style="text-align:center;"> 4921.9 </td>
+   <td style="text-align:center;"> 5097.7 </td>
+   <td style="text-align:center;"> 5097.7 </td>
+   <td style="text-align:center;"> 5185.5 </td>
+   <td style="text-align:center;"> 5800.8 </td>
+   <td style="text-align:center;"> 5712.9 </td>
+   <td style="text-align:center;"> 5888.7 </td>
+   <td style="text-align:center;"> 5976.6 </td>
+   <td style="text-align:center;"> 6064.5 </td>
+   <td style="text-align:center;"> 6064.5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Phae.long3.wav </td>
+   <td style="text-align:center;"> 6 </td>
+   <td style="text-align:center;"> 4218.8 </td>
+   <td style="text-align:center;"> 6240.2 </td>
+   <td style="text-align:center;"> 6591.8 </td>
+   <td style="text-align:center;"> 6679.7 </td>
+   <td style="text-align:center;"> 7119.1 </td>
+   <td style="text-align:center;"> 5009.8 </td>
+   <td style="text-align:center;"> 5800.8 </td>
+   <td style="text-align:center;"> 6240.2 </td>
+   <td style="text-align:center;"> 6767.6 </td>
+   <td style="text-align:center;"> 6416.0 </td>
+   <td style="text-align:center;"> 6328.1 </td>
+   <td style="text-align:center;"> 6328.1 </td>
+  </tr>
+</tbody>
+</table>
 
-|  sound.files   | selec | P.F.1  | P.F.2  | P.F.3  | P.F.4  | P.F.5  | P.F.6  | P.F.7  | P.F.8  | P.F.9  | P.F.10 | P.F.11 | P.F.12 |
-|:--------------:|:-----:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|
-| Phae.long1.wav |   1   | 6943.4 | 7119.1 | 7294.9 | 7294.9 | 7294.9 | 7382.8 | 7470.7 | 7646.5 | 5185.5 | 5273.4 | 5361.3 | 5449.2 |
-| Phae.long1.wav |   2   | 6767.6 | 6943.4 | 7207.0 | 7207.0 | 7294.9 | 7382.8 | 7470.7 | 7558.6 | 7558.6 | 7646.5 | 5185.5 | 5361.3 |
-| Phae.long1.wav |   3   | 6943.4 | 4746.1 | 7119.1 | 4834.0 | 7207.0 | 4921.9 | 4921.9 | 7558.6 | 7646.5 | 7734.4 | 7998.0 | 8085.9 |
-| Phae.long2.wav |   4   | 5888.7 | 6503.9 | 4570.3 | 4834.0 | 5185.5 | 5537.1 | 5537.1 | 5800.8 | 6503.9 | 3779.3 | 6240.2 | 6328.1 |
-| Phae.long2.wav |   5   | 4570.3 | 4746.1 | 4921.9 | 5097.7 | 5097.7 | 5185.5 | 5800.8 | 5712.9 | 5888.7 | 5976.6 | 6064.5 | 6064.5 |
-| Phae.long3.wav |   6   | 4218.8 | 6240.2 | 6591.8 | 6679.7 | 7119.1 | 5009.8 | 5800.8 | 6240.2 | 6767.6 | 6416.0 | 6328.1 | 6328.1 |
 
+ &nbsp;
 
-
-| P.F.37 | P.F.38 | P.F.39 | P.F.40 | P.F.41 | P.F.42 | P.F.43 | P.F.44 | P.F.45 | P.F.46 | P.F.47 | P.F.48 | P.F.49 | P.F.50 | P.F.51 |
-|:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|
-| 6943.4 | 7119.1 | 7207.0 | 7207.0 | 7207.0 | 7031.2 | 6943.4 | 6591.8 | 7119.1 | 7119.1 | 7207.0 | 7119.1 | 7207.0 | 7119.1 | 7119.1 |
-| 6943.4 | 7119.1 | 7207.0 | 7207.0 | 7207.0 | 7207.0 | 7207.0 | 7119.1 | 7119.1 | 7207.0 | 7119.1 | 7207.0 |   NA   |   NA   |   NA   |
-| 6943.4 | 7031.2 | 7119.1 | 7031.2 | 7294.9 | 7207.0 | 7207.0 | 7031.2 | 7207.0 | 7031.2 | 7031.2 | 7119.1 | 7119.1 | 7207.0 | 7119.1 |
-| 6064.5 | 6152.3 | 6152.3 |   NA   |   NA   |   NA   |   NA   |   NA   |   NA   |   NA   |   NA   |   NA   |   NA   |   NA   |   NA   |
-| 5537.1 |   NA   |   NA   |   NA   |   NA   |   NA   |   NA   |   NA   |   NA   |   NA   |   NA   |   NA   |   NA   |   NA   |   NA   |
-| 7119.1 | 7822.3 | 6416.0 | 6855.5 |   NA   |   NA   |   NA   |   NA   |   NA   |   NA   |   NA   |   NA   |   NA   |   NA   |   NA   |
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:center;"> P.F.37 </th>
+   <th style="text-align:center;"> P.F.38 </th>
+   <th style="text-align:center;"> P.F.39 </th>
+   <th style="text-align:center;"> P.F.40 </th>
+   <th style="text-align:center;"> P.F.41 </th>
+   <th style="text-align:center;"> P.F.42 </th>
+   <th style="text-align:center;"> P.F.43 </th>
+   <th style="text-align:center;"> P.F.44 </th>
+   <th style="text-align:center;"> P.F.45 </th>
+   <th style="text-align:center;"> P.F.46 </th>
+   <th style="text-align:center;"> P.F.47 </th>
+   <th style="text-align:center;"> P.F.48 </th>
+   <th style="text-align:center;"> P.F.49 </th>
+   <th style="text-align:center;"> P.F.50 </th>
+   <th style="text-align:center;"> P.F.51 </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:center;"> 6943.4 </td>
+   <td style="text-align:center;"> 7119.1 </td>
+   <td style="text-align:center;"> 7207.0 </td>
+   <td style="text-align:center;"> 7207.0 </td>
+   <td style="text-align:center;"> 7207.0 </td>
+   <td style="text-align:center;"> 7031.2 </td>
+   <td style="text-align:center;"> 6943.4 </td>
+   <td style="text-align:center;"> 6591.8 </td>
+   <td style="text-align:center;"> 7119.1 </td>
+   <td style="text-align:center;"> 7119.1 </td>
+   <td style="text-align:center;"> 7207.0 </td>
+   <td style="text-align:center;"> 7119.1 </td>
+   <td style="text-align:center;"> 7207.0 </td>
+   <td style="text-align:center;"> 7119.1 </td>
+   <td style="text-align:center;"> 7119.1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 6943.4 </td>
+   <td style="text-align:center;"> 7119.1 </td>
+   <td style="text-align:center;"> 7207.0 </td>
+   <td style="text-align:center;"> 7207.0 </td>
+   <td style="text-align:center;"> 7207.0 </td>
+   <td style="text-align:center;"> 7207.0 </td>
+   <td style="text-align:center;"> 7207.0 </td>
+   <td style="text-align:center;"> 7119.1 </td>
+   <td style="text-align:center;"> 7119.1 </td>
+   <td style="text-align:center;"> 7207.0 </td>
+   <td style="text-align:center;"> 7119.1 </td>
+   <td style="text-align:center;"> 7207.0 </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 6943.4 </td>
+   <td style="text-align:center;"> 7031.2 </td>
+   <td style="text-align:center;"> 7119.1 </td>
+   <td style="text-align:center;"> 7031.2 </td>
+   <td style="text-align:center;"> 7294.9 </td>
+   <td style="text-align:center;"> 7207.0 </td>
+   <td style="text-align:center;"> 7207.0 </td>
+   <td style="text-align:center;"> 7031.2 </td>
+   <td style="text-align:center;"> 7207.0 </td>
+   <td style="text-align:center;"> 7031.2 </td>
+   <td style="text-align:center;"> 7031.2 </td>
+   <td style="text-align:center;"> 7119.1 </td>
+   <td style="text-align:center;"> 7119.1 </td>
+   <td style="text-align:center;"> 7207.0 </td>
+   <td style="text-align:center;"> 7119.1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 6064.5 </td>
+   <td style="text-align:center;"> 6152.3 </td>
+   <td style="text-align:center;"> 6152.3 </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 5537.1 </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 7119.1 </td>
+   <td style="text-align:center;"> 7822.3 </td>
+   <td style="text-align:center;"> 6416.0 </td>
+   <td style="text-align:center;"> 6855.5 </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+   <td style="text-align:center;"> NA </td>
+  </tr>
+</tbody>
+</table>
  &nbsp;
  
 Note that these sequences are not all of equal length (one has NAs at the end).
@@ -257,15 +890,110 @@ fcts <- extract_ts(X = rvn.dat, ts.column = "Peak.Freq.Contour..Hz.",  equal.len
 head(fcts[,21:32])
 {% endhighlight %}
  
-
-|  P.F.19  |  P.F.20  |  P.F.21  |  P.F.22  |  P.F.23  |  P.F.24  |  P.F.25  |  P.F.26  |  P.F.27  |  P.F.28  |  P.F.29  | P.F.30 |
-|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:------:|
-| 6246.314 | 6373.603 | 6500.893 | 6628.183 | 6755.472 | 6882.762 | 7010.052 | 7137.341 | 7264.631 | 7391.921 | 7519.210 | 7646.5 |
-| 6649.379 | 6803.945 | 6958.510 | 7113.076 | 7267.641 | 7422.207 | 7576.772 | 7731.338 | 7885.903 | 8040.469 | 8195.034 | 8349.6 |
-| 6834.272 | 7003.993 | 7173.714 | 7343.434 | 7513.155 | 7682.876 | 7852.597 | 8022.317 | 8192.038 | 8361.759 | 8531.479 | 8701.2 |
-| 6288.748 | 6428.162 | 6567.576 | 6706.990 | 6846.403 | 6985.817 | 7125.231 | 7264.645 | 7404.059 | 7543.472 | 7682.886 | 7822.3 |
-| 6479.666 | 6585.741 | 6691.817 | 6797.893 | 6903.969 | 7010.045 | 7116.121 | 7222.197 | 7328.272 | 7434.348 | 7540.424 | 7646.5 |
-| 6564.510 | 6694.828 | 6825.145 | 6955.462 | 7085.779 | 7216.097 | 7346.414 | 7476.731 | 7607.048 | 7737.366 | 7867.683 | 7998.0 |
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:center;"> P.F.19 </th>
+   <th style="text-align:center;"> P.F.20 </th>
+   <th style="text-align:center;"> P.F.21 </th>
+   <th style="text-align:center;"> P.F.22 </th>
+   <th style="text-align:center;"> P.F.23 </th>
+   <th style="text-align:center;"> P.F.24 </th>
+   <th style="text-align:center;"> P.F.25 </th>
+   <th style="text-align:center;"> P.F.26 </th>
+   <th style="text-align:center;"> P.F.27 </th>
+   <th style="text-align:center;"> P.F.28 </th>
+   <th style="text-align:center;"> P.F.29 </th>
+   <th style="text-align:center;"> P.F.30 </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:center;"> 6246.314 </td>
+   <td style="text-align:center;"> 6373.603 </td>
+   <td style="text-align:center;"> 6500.893 </td>
+   <td style="text-align:center;"> 6628.183 </td>
+   <td style="text-align:center;"> 6755.472 </td>
+   <td style="text-align:center;"> 6882.762 </td>
+   <td style="text-align:center;"> 7010.052 </td>
+   <td style="text-align:center;"> 7137.341 </td>
+   <td style="text-align:center;"> 7264.631 </td>
+   <td style="text-align:center;"> 7391.921 </td>
+   <td style="text-align:center;"> 7519.210 </td>
+   <td style="text-align:center;"> 7646.5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 6649.379 </td>
+   <td style="text-align:center;"> 6803.945 </td>
+   <td style="text-align:center;"> 6958.510 </td>
+   <td style="text-align:center;"> 7113.076 </td>
+   <td style="text-align:center;"> 7267.641 </td>
+   <td style="text-align:center;"> 7422.207 </td>
+   <td style="text-align:center;"> 7576.772 </td>
+   <td style="text-align:center;"> 7731.338 </td>
+   <td style="text-align:center;"> 7885.903 </td>
+   <td style="text-align:center;"> 8040.469 </td>
+   <td style="text-align:center;"> 8195.034 </td>
+   <td style="text-align:center;"> 8349.6 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 6834.272 </td>
+   <td style="text-align:center;"> 7003.993 </td>
+   <td style="text-align:center;"> 7173.714 </td>
+   <td style="text-align:center;"> 7343.434 </td>
+   <td style="text-align:center;"> 7513.155 </td>
+   <td style="text-align:center;"> 7682.876 </td>
+   <td style="text-align:center;"> 7852.597 </td>
+   <td style="text-align:center;"> 8022.317 </td>
+   <td style="text-align:center;"> 8192.038 </td>
+   <td style="text-align:center;"> 8361.759 </td>
+   <td style="text-align:center;"> 8531.479 </td>
+   <td style="text-align:center;"> 8701.2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 6288.748 </td>
+   <td style="text-align:center;"> 6428.162 </td>
+   <td style="text-align:center;"> 6567.576 </td>
+   <td style="text-align:center;"> 6706.990 </td>
+   <td style="text-align:center;"> 6846.403 </td>
+   <td style="text-align:center;"> 6985.817 </td>
+   <td style="text-align:center;"> 7125.231 </td>
+   <td style="text-align:center;"> 7264.645 </td>
+   <td style="text-align:center;"> 7404.059 </td>
+   <td style="text-align:center;"> 7543.472 </td>
+   <td style="text-align:center;"> 7682.886 </td>
+   <td style="text-align:center;"> 7822.3 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 6479.666 </td>
+   <td style="text-align:center;"> 6585.741 </td>
+   <td style="text-align:center;"> 6691.817 </td>
+   <td style="text-align:center;"> 6797.893 </td>
+   <td style="text-align:center;"> 6903.969 </td>
+   <td style="text-align:center;"> 7010.045 </td>
+   <td style="text-align:center;"> 7116.121 </td>
+   <td style="text-align:center;"> 7222.197 </td>
+   <td style="text-align:center;"> 7328.272 </td>
+   <td style="text-align:center;"> 7434.348 </td>
+   <td style="text-align:center;"> 7540.424 </td>
+   <td style="text-align:center;"> 7646.5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 6564.510 </td>
+   <td style="text-align:center;"> 6694.828 </td>
+   <td style="text-align:center;"> 6825.145 </td>
+   <td style="text-align:center;"> 6955.462 </td>
+   <td style="text-align:center;"> 7085.779 </td>
+   <td style="text-align:center;"> 7216.097 </td>
+   <td style="text-align:center;"> 7346.414 </td>
+   <td style="text-align:center;"> 7476.731 </td>
+   <td style="text-align:center;"> 7607.048 </td>
+   <td style="text-align:center;"> 7737.366 </td>
+   <td style="text-align:center;"> 7867.683 </td>
+   <td style="text-align:center;"> 7998.0 </td>
+  </tr>
+</tbody>
+</table>
  &nbsp; 
 
 And the length of the series can also be specified:
@@ -276,18 +1004,113 @@ And the length of the series can also be specified:
 fcts <- extract_ts(X = rvn.dat, ts.column = "Peak.Freq.Contour..Hz.",
 equal.length = T, length.out = 10)  
 
-knitr::kable(head(fcts), align = "c", row.names = FALSE)
+kable(head(fcts), align = "c", row.names = FALSE,   format = "html")
 {% endhighlight %}
 
-
-|  sound.files   | selec | P.F.1  |  P.F.2   |  P.F.3   |  P.F.4   |  P.F.5   |  P.F.6   |  P.F.7   |  P.F.8   |  P.F.9   | P.F.10 |
-|:--------------:|:-----:|:------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:------:|
-| Phae.long1.wav |   1   | 3955.1 | 4365.256 | 4775.411 | 5185.567 | 5595.722 | 6005.878 | 6416.033 | 6826.189 | 7236.344 | 7646.5 |
-| Phae.long1.wav |   2   | 3867.2 | 4365.244 | 4863.289 | 5361.333 | 5859.378 | 6357.422 | 6855.467 | 7353.511 | 7851.556 | 8349.6 |
-| Phae.long1.wav |   3   | 3779.3 | 4326.178 | 4873.056 | 5419.933 | 5966.811 | 6513.689 | 7060.567 | 7607.444 | 8154.322 | 8701.2 |
-| Phae.long2.wav |   4   | 3779.3 | 4228.522 | 4677.744 | 5126.967 | 5576.189 | 6025.411 | 6474.633 | 6923.856 | 7373.078 | 7822.3 |
-| Phae.long2.wav |   5   | 4570.3 | 4912.100 | 5253.900 | 5595.700 | 5937.500 | 6279.300 | 6621.100 | 6962.900 | 7304.700 | 7646.5 |
-| Phae.long3.wav |   6   | 4218.8 | 4638.711 | 5058.622 | 5478.533 | 5898.444 | 6318.356 | 6738.267 | 7158.178 | 7578.089 | 7998.0 |
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:center;"> sound.files </th>
+   <th style="text-align:center;"> selec </th>
+   <th style="text-align:center;"> P.F.1 </th>
+   <th style="text-align:center;"> P.F.2 </th>
+   <th style="text-align:center;"> P.F.3 </th>
+   <th style="text-align:center;"> P.F.4 </th>
+   <th style="text-align:center;"> P.F.5 </th>
+   <th style="text-align:center;"> P.F.6 </th>
+   <th style="text-align:center;"> P.F.7 </th>
+   <th style="text-align:center;"> P.F.8 </th>
+   <th style="text-align:center;"> P.F.9 </th>
+   <th style="text-align:center;"> P.F.10 </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:center;"> Phae.long1.wav </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 3955.1 </td>
+   <td style="text-align:center;"> 4365.256 </td>
+   <td style="text-align:center;"> 4775.411 </td>
+   <td style="text-align:center;"> 5185.567 </td>
+   <td style="text-align:center;"> 5595.722 </td>
+   <td style="text-align:center;"> 6005.878 </td>
+   <td style="text-align:center;"> 6416.033 </td>
+   <td style="text-align:center;"> 6826.189 </td>
+   <td style="text-align:center;"> 7236.344 </td>
+   <td style="text-align:center;"> 7646.5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Phae.long1.wav </td>
+   <td style="text-align:center;"> 2 </td>
+   <td style="text-align:center;"> 3867.2 </td>
+   <td style="text-align:center;"> 4365.244 </td>
+   <td style="text-align:center;"> 4863.289 </td>
+   <td style="text-align:center;"> 5361.333 </td>
+   <td style="text-align:center;"> 5859.378 </td>
+   <td style="text-align:center;"> 6357.422 </td>
+   <td style="text-align:center;"> 6855.467 </td>
+   <td style="text-align:center;"> 7353.511 </td>
+   <td style="text-align:center;"> 7851.556 </td>
+   <td style="text-align:center;"> 8349.6 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Phae.long1.wav </td>
+   <td style="text-align:center;"> 3 </td>
+   <td style="text-align:center;"> 3779.3 </td>
+   <td style="text-align:center;"> 4326.178 </td>
+   <td style="text-align:center;"> 4873.056 </td>
+   <td style="text-align:center;"> 5419.933 </td>
+   <td style="text-align:center;"> 5966.811 </td>
+   <td style="text-align:center;"> 6513.689 </td>
+   <td style="text-align:center;"> 7060.567 </td>
+   <td style="text-align:center;"> 7607.444 </td>
+   <td style="text-align:center;"> 8154.322 </td>
+   <td style="text-align:center;"> 8701.2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Phae.long2.wav </td>
+   <td style="text-align:center;"> 4 </td>
+   <td style="text-align:center;"> 3779.3 </td>
+   <td style="text-align:center;"> 4228.522 </td>
+   <td style="text-align:center;"> 4677.744 </td>
+   <td style="text-align:center;"> 5126.967 </td>
+   <td style="text-align:center;"> 5576.189 </td>
+   <td style="text-align:center;"> 6025.411 </td>
+   <td style="text-align:center;"> 6474.633 </td>
+   <td style="text-align:center;"> 6923.856 </td>
+   <td style="text-align:center;"> 7373.078 </td>
+   <td style="text-align:center;"> 7822.3 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Phae.long2.wav </td>
+   <td style="text-align:center;"> 5 </td>
+   <td style="text-align:center;"> 4570.3 </td>
+   <td style="text-align:center;"> 4912.100 </td>
+   <td style="text-align:center;"> 5253.900 </td>
+   <td style="text-align:center;"> 5595.700 </td>
+   <td style="text-align:center;"> 5937.500 </td>
+   <td style="text-align:center;"> 6279.300 </td>
+   <td style="text-align:center;"> 6621.100 </td>
+   <td style="text-align:center;"> 6962.900 </td>
+   <td style="text-align:center;"> 7304.700 </td>
+   <td style="text-align:center;"> 7646.5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Phae.long3.wav </td>
+   <td style="text-align:center;"> 6 </td>
+   <td style="text-align:center;"> 4218.8 </td>
+   <td style="text-align:center;"> 4638.711 </td>
+   <td style="text-align:center;"> 5058.622 </td>
+   <td style="text-align:center;"> 5478.533 </td>
+   <td style="text-align:center;"> 5898.444 </td>
+   <td style="text-align:center;"> 6318.356 </td>
+   <td style="text-align:center;"> 6738.267 </td>
+   <td style="text-align:center;"> 7158.178 </td>
+   <td style="text-align:center;"> 7578.089 </td>
+   <td style="text-align:center;"> 7998.0 </td>
+  </tr>
+</tbody>
+</table>
  &nbsp; 
 
 The time series data frame can be directly input into the `dfDTW` [warbleR](https://cran.r-project.org/package=warbleR) function to calculate [Dynamic Time Warping](https://en.wikipedia.org/wiki/Dynamic_time_warping) distances:
@@ -338,20 +1161,120 @@ st1 <- rvn.dat[ ,1:7]
 st1
 {% endhighlight %}
 
-
-| Selection |     View      | Channel | Begin.Time..s. | End.Time..s. | Low.Freq..Hz. | High.Freq..Hz. |
-|:---------:|:-------------:|:-------:|:--------------:|:------------:|:-------------:|:--------------:|
-|     1     | Spectrogram 1 |    1    |     1.169      |  1.3420334   |    2220.1     |     8604.4     |
-|     2     | Spectrogram 1 |    1    |     2.158      |  2.3210480   |    2169.4     |     8807.1     |
-|     3     | Spectrogram 1 |    1    |     0.343      |  0.5179187   |    2218.3     |     8756.6     |
-|     4     | Spectrogram 1 |    1    |     0.160      |  0.2925709   |    2316.9     |     8822.3     |
-|     5     | Spectrogram 1 |    1    |     1.457      |  1.5831502   |    2284.0     |     8888.0     |
-|     6     | Spectrogram 1 |    1    |     0.627      |  0.7582195   |    3006.8     |     8822.3     |
-|     7     | Spectrogram 1 |    1    |     1.974      |  2.1041789   |    2776.8     |     8888.0     |
-|     8     | Spectrogram 1 |    1    |     0.123      |  0.2542170   |    2316.9     |     9315.2     |
-|     9     | Spectrogram 1 |    1    |     1.517      |  1.6624249   |    2514.0     |     9216.6     |
-|    10     | Spectrogram 1 |    1    |     2.933      |  3.0771864   |    2579.7     |    10235.1     |
-|    11     | Spectrogram 1 |    1    |     0.145      |  0.2900989   |    2579.7     |     9742.3     |
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:center;"> Selection </th>
+   <th style="text-align:center;"> View </th>
+   <th style="text-align:center;"> Channel </th>
+   <th style="text-align:center;"> Begin.Time..s. </th>
+   <th style="text-align:center;"> End.Time..s. </th>
+   <th style="text-align:center;"> Low.Freq..Hz. </th>
+   <th style="text-align:center;"> High.Freq..Hz. </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 1.169 </td>
+   <td style="text-align:center;"> 1.3420334 </td>
+   <td style="text-align:center;"> 2220.1 </td>
+   <td style="text-align:center;"> 8604.4 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 2 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 2.158 </td>
+   <td style="text-align:center;"> 2.3210480 </td>
+   <td style="text-align:center;"> 2169.4 </td>
+   <td style="text-align:center;"> 8807.1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 3 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 0.343 </td>
+   <td style="text-align:center;"> 0.5179187 </td>
+   <td style="text-align:center;"> 2218.3 </td>
+   <td style="text-align:center;"> 8756.6 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 4 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 0.160 </td>
+   <td style="text-align:center;"> 0.2925709 </td>
+   <td style="text-align:center;"> 2316.9 </td>
+   <td style="text-align:center;"> 8822.3 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 5 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 1.457 </td>
+   <td style="text-align:center;"> 1.5831502 </td>
+   <td style="text-align:center;"> 2284.0 </td>
+   <td style="text-align:center;"> 8888.0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 6 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 0.627 </td>
+   <td style="text-align:center;"> 0.7582195 </td>
+   <td style="text-align:center;"> 3006.8 </td>
+   <td style="text-align:center;"> 8822.3 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 7 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 1.974 </td>
+   <td style="text-align:center;"> 2.1041789 </td>
+   <td style="text-align:center;"> 2776.8 </td>
+   <td style="text-align:center;"> 8888.0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 8 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 0.123 </td>
+   <td style="text-align:center;"> 0.2542170 </td>
+   <td style="text-align:center;"> 2316.9 </td>
+   <td style="text-align:center;"> 9315.2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 9 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 1.517 </td>
+   <td style="text-align:center;"> 1.6624249 </td>
+   <td style="text-align:center;"> 2514.0 </td>
+   <td style="text-align:center;"> 9216.6 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 10 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 2.933 </td>
+   <td style="text-align:center;"> 3.0771864 </td>
+   <td style="text-align:center;"> 2579.7 </td>
+   <td style="text-align:center;"> 10235.1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 11 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 0.145 </td>
+   <td style="text-align:center;"> 0.2900989 </td>
+   <td style="text-align:center;"> 2579.7 </td>
+   <td style="text-align:center;"> 9742.3 </td>
+  </tr>
+</tbody>
+</table>
 
 
 
@@ -360,20 +1283,120 @@ st1
 relabel_colms(st1)
 {% endhighlight %}
 
-
-| selec |     View      | Channel | start |    end    | bottom.freq | top.freq |
-|:-----:|:-------------:|:-------:|:-----:|:---------:|:-----------:|:--------:|
-|   1   | Spectrogram 1 |    1    | 1.169 | 1.3420334 |   2220.1    |  8604.4  |
-|   2   | Spectrogram 1 |    1    | 2.158 | 2.3210480 |   2169.4    |  8807.1  |
-|   3   | Spectrogram 1 |    1    | 0.343 | 0.5179187 |   2218.3    |  8756.6  |
-|   4   | Spectrogram 1 |    1    | 0.160 | 0.2925709 |   2316.9    |  8822.3  |
-|   5   | Spectrogram 1 |    1    | 1.457 | 1.5831502 |   2284.0    |  8888.0  |
-|   6   | Spectrogram 1 |    1    | 0.627 | 0.7582195 |   3006.8    |  8822.3  |
-|   7   | Spectrogram 1 |    1    | 1.974 | 2.1041789 |   2776.8    |  8888.0  |
-|   8   | Spectrogram 1 |    1    | 0.123 | 0.2542170 |   2316.9    |  9315.2  |
-|   9   | Spectrogram 1 |    1    | 1.517 | 1.6624249 |   2514.0    |  9216.6  |
-|  10   | Spectrogram 1 |    1    | 2.933 | 3.0771864 |   2579.7    | 10235.1  |
-|  11   | Spectrogram 1 |    1    | 0.145 | 0.2900989 |   2579.7    |  9742.3  |
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:center;"> selec </th>
+   <th style="text-align:center;"> View </th>
+   <th style="text-align:center;"> Channel </th>
+   <th style="text-align:center;"> start </th>
+   <th style="text-align:center;"> end </th>
+   <th style="text-align:center;"> bottom.freq </th>
+   <th style="text-align:center;"> top.freq </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 1.169 </td>
+   <td style="text-align:center;"> 1.3420334 </td>
+   <td style="text-align:center;"> 2220.1 </td>
+   <td style="text-align:center;"> 8604.4 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 2 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 2.158 </td>
+   <td style="text-align:center;"> 2.3210480 </td>
+   <td style="text-align:center;"> 2169.4 </td>
+   <td style="text-align:center;"> 8807.1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 3 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 0.343 </td>
+   <td style="text-align:center;"> 0.5179187 </td>
+   <td style="text-align:center;"> 2218.3 </td>
+   <td style="text-align:center;"> 8756.6 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 4 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 0.160 </td>
+   <td style="text-align:center;"> 0.2925709 </td>
+   <td style="text-align:center;"> 2316.9 </td>
+   <td style="text-align:center;"> 8822.3 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 5 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 1.457 </td>
+   <td style="text-align:center;"> 1.5831502 </td>
+   <td style="text-align:center;"> 2284.0 </td>
+   <td style="text-align:center;"> 8888.0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 6 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 0.627 </td>
+   <td style="text-align:center;"> 0.7582195 </td>
+   <td style="text-align:center;"> 3006.8 </td>
+   <td style="text-align:center;"> 8822.3 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 7 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 1.974 </td>
+   <td style="text-align:center;"> 2.1041789 </td>
+   <td style="text-align:center;"> 2776.8 </td>
+   <td style="text-align:center;"> 8888.0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 8 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 0.123 </td>
+   <td style="text-align:center;"> 0.2542170 </td>
+   <td style="text-align:center;"> 2316.9 </td>
+   <td style="text-align:center;"> 9315.2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 9 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 1.517 </td>
+   <td style="text-align:center;"> 1.6624249 </td>
+   <td style="text-align:center;"> 2514.0 </td>
+   <td style="text-align:center;"> 9216.6 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 10 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 2.933 </td>
+   <td style="text-align:center;"> 3.0771864 </td>
+   <td style="text-align:center;"> 2579.7 </td>
+   <td style="text-align:center;"> 10235.1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 11 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 0.145 </td>
+   <td style="text-align:center;"> 0.2900989 </td>
+   <td style="text-align:center;"> 2579.7 </td>
+   <td style="text-align:center;"> 9742.3 </td>
+  </tr>
+</tbody>
+</table>
  &nbsp; 
 
 Additional columns can also be relabeled:
@@ -384,20 +1407,120 @@ relabel_colms(st1, extra.cols.name = c("selec.file", "View"),
               extra.cols.new.name = c("Raven selection file", "Raven view"))
 {% endhighlight %}
 
-
-| selec |  Raven view   | Channel | start |    end    | bottom.freq | top.freq |
-|:-----:|:-------------:|:-------:|:-----:|:---------:|:-----------:|:--------:|
-|   1   | Spectrogram 1 |    1    | 1.169 | 1.3420334 |   2220.1    |  8604.4  |
-|   2   | Spectrogram 1 |    1    | 2.158 | 2.3210480 |   2169.4    |  8807.1  |
-|   3   | Spectrogram 1 |    1    | 0.343 | 0.5179187 |   2218.3    |  8756.6  |
-|   4   | Spectrogram 1 |    1    | 0.160 | 0.2925709 |   2316.9    |  8822.3  |
-|   5   | Spectrogram 1 |    1    | 1.457 | 1.5831502 |   2284.0    |  8888.0  |
-|   6   | Spectrogram 1 |    1    | 0.627 | 0.7582195 |   3006.8    |  8822.3  |
-|   7   | Spectrogram 1 |    1    | 1.974 | 2.1041789 |   2776.8    |  8888.0  |
-|   8   | Spectrogram 1 |    1    | 0.123 | 0.2542170 |   2316.9    |  9315.2  |
-|   9   | Spectrogram 1 |    1    | 1.517 | 1.6624249 |   2514.0    |  9216.6  |
-|  10   | Spectrogram 1 |    1    | 2.933 | 3.0771864 |   2579.7    | 10235.1  |
-|  11   | Spectrogram 1 |    1    | 0.145 | 0.2900989 |   2579.7    |  9742.3  |
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:center;"> selec </th>
+   <th style="text-align:center;"> Raven view </th>
+   <th style="text-align:center;"> Channel </th>
+   <th style="text-align:center;"> start </th>
+   <th style="text-align:center;"> end </th>
+   <th style="text-align:center;"> bottom.freq </th>
+   <th style="text-align:center;"> top.freq </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 1.169 </td>
+   <td style="text-align:center;"> 1.3420334 </td>
+   <td style="text-align:center;"> 2220.1 </td>
+   <td style="text-align:center;"> 8604.4 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 2 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 2.158 </td>
+   <td style="text-align:center;"> 2.3210480 </td>
+   <td style="text-align:center;"> 2169.4 </td>
+   <td style="text-align:center;"> 8807.1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 3 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 0.343 </td>
+   <td style="text-align:center;"> 0.5179187 </td>
+   <td style="text-align:center;"> 2218.3 </td>
+   <td style="text-align:center;"> 8756.6 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 4 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 0.160 </td>
+   <td style="text-align:center;"> 0.2925709 </td>
+   <td style="text-align:center;"> 2316.9 </td>
+   <td style="text-align:center;"> 8822.3 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 5 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 1.457 </td>
+   <td style="text-align:center;"> 1.5831502 </td>
+   <td style="text-align:center;"> 2284.0 </td>
+   <td style="text-align:center;"> 8888.0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 6 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 0.627 </td>
+   <td style="text-align:center;"> 0.7582195 </td>
+   <td style="text-align:center;"> 3006.8 </td>
+   <td style="text-align:center;"> 8822.3 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 7 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 1.974 </td>
+   <td style="text-align:center;"> 2.1041789 </td>
+   <td style="text-align:center;"> 2776.8 </td>
+   <td style="text-align:center;"> 8888.0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 8 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 0.123 </td>
+   <td style="text-align:center;"> 0.2542170 </td>
+   <td style="text-align:center;"> 2316.9 </td>
+   <td style="text-align:center;"> 9315.2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 9 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 1.517 </td>
+   <td style="text-align:center;"> 1.6624249 </td>
+   <td style="text-align:center;"> 2514.0 </td>
+   <td style="text-align:center;"> 9216.6 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 10 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 2.933 </td>
+   <td style="text-align:center;"> 3.0771864 </td>
+   <td style="text-align:center;"> 2579.7 </td>
+   <td style="text-align:center;"> 10235.1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 11 </td>
+   <td style="text-align:center;"> Spectrogram 1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 0.145 </td>
+   <td style="text-align:center;"> 0.2900989 </td>
+   <td style="text-align:center;"> 2579.7 </td>
+   <td style="text-align:center;"> 9742.3 </td>
+  </tr>
+</tbody>
+</table>
  &nbsp; 
 
 ---
