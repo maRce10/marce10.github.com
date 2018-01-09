@@ -33,7 +33,7 @@ We need to create the templates. We just have to select and example from each so
 # setwd(file.path(tempdir()))
 
 # load sound files and data
-data(list = c("Phae.long1", "Phae.long2", "Phae.long3", "Phae.long4", "manualoc.df"))
+data(list = c("Phae.long1", "Phae.long2", "Phae.long3", "Phae.long4", "selec.table"))
 
 #write files to disk
 writeWave(Phae.long1,"Phae.long1.wav")
@@ -47,16 +47,16 @@ writeWave(Phae.long4,"Phae.long4.wav")
 and create the templates
 
 ```{r, message=F}
-phae1T1<-makeCorTemplate("Phae.long1.wav", t.lim=c(manualoc.df$start[2],manualoc.df$end[2]),wl = 300,ovlp=90,
+phae1T1<-makeCorTemplate("Phae.long1.wav", t.lim=c(selec.table$start[2],selec.table$end[2]),wl = 300,ovlp=90,
     frq.lim=c(1, 11), dens=1, name="phae11")
 
-phae2T1<-makeCorTemplate("Phae.long2.wav", t.lim=c(manualoc.df$start[5],manualoc.df$end[5]),wl = 300,ovlp=90,
+phae2T1<-makeCorTemplate("Phae.long2.wav", t.lim=c(selec.table$start[5],selec.table$end[5]),wl = 300,ovlp=90,
        frq.lim=c(1, 11), dens=1, name="phae21")
 
-phae3T1<-makeCorTemplate("Phae.long3.wav", t.lim=c(manualoc.df$start[7],manualoc.df$end[7]),wl = 300,ovlp=90,
+phae3T1<-makeCorTemplate("Phae.long3.wav", t.lim=c(selec.table$start[7],selec.table$end[7]),wl = 300,ovlp=90,
        frq.lim=c(1, 11), dens=1, name="phae31")
 
-phae4T1<-makeCorTemplate("Phae.long4.wav", t.lim=c(manualoc.df$start[9],manualoc.df$end[9]),wl = 300,ovlp=90,
+phae4T1<-makeCorTemplate("Phae.long4.wav", t.lim=c(selec.table$start[9],selec.table$end[9]),wl = 300,ovlp=90,
        frq.lim=c(1, 11), dens=1, name="phae41")
 
 ```

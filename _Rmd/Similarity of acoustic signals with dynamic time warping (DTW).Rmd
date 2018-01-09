@@ -27,7 +27,7 @@ and load example data from `warbleR`
 # optional, save it in a temporal folder
 # setwd(tempdir())
  
-data(list = c( "Phae.long1", "Phae.long2","Phae.long3", "Phae.long4","manualoc.df"))
+data(list = c( "Phae.long1", "Phae.long2","Phae.long3", "Phae.long4","selec.table"))
 
 writeWave(Phae.long1, "Phae.long1.wav")
 writeWave(Phae.long2, "Phae.long2.wav")
@@ -41,7 +41,7 @@ We can run the DTW analysis to compare these time series usin the [warbleR]((htt
 
 ```{r,eval=T}
 
-dm <- dfDTW(manualoc.df, length.out = 30, flim = c(1, 12), bp = c(2, 9), wl = 300, img = FALSE, pb = F)
+dm <- dfDTW(selec.table, length.out = 30, flim = c(1, 12), bp = c(2, 9), wl = 300, img = FALSE, pb = F)
 ```
 
 
@@ -76,7 +76,7 @@ What about its performance compare to a more standard method like measuring a bu
 We can calculate "acoustic distance" using acoustic parameters and then correlate it to the "recording id" matrix
 
 ```{r, eval=T}
-span<-specan(manualoc.df)
+span<-specan(selec.table)
 
 dspan<-dist(span[,3:ncol(span)],method = "euclidean",diag = T,upper = T)
 

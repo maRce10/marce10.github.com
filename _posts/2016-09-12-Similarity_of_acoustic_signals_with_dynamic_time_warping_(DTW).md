@@ -4,7 +4,7 @@ title: "Song similarity using dynamic time warping"
 date: 12-09-2016
 ---
 
-This short tutorial shows how to use the `dfDTW` function in `warbleR` to compare acoustics signals using dynamic time warping (DTW).
+Here I show how to use the `dfDTW` function in [warbleR]((https://cran.r-project.org/package=warbleR) to compare acoustics signals using dynamic time warping (DTW).
 
 First load these packages (if not installed the code will install it):
 
@@ -24,7 +24,7 @@ and load example data from `warbleR`
 # optional, save it in a temporal folder
 # setwd(tempdir())
  
-data(list = c( "Phae.long1", "Phae.long2","Phae.long3", "Phae.long4","manualoc.df"))
+data(list = c( "Phae.long1", "Phae.long2","Phae.long3", "Phae.long4","selec.table"))
 
 writeWave(Phae.long1, "Phae.long1.wav")
 writeWave(Phae.long2, "Phae.long2.wav")
@@ -34,11 +34,11 @@ writeWave(Phae.long4, "Phae.long4.wav")
 
 These recordings all come from long-billed hermits with different song types.
 
-We can run the DTW analysis to compare these time series usin the [warbleR](https://cran.r-project.org/package=warbleR) function `dfDTW` which calculates the dominant frequency contours of each sgnals and compares using dynamic time warping. Internally it applies the `dtwDist` function from the [dtw](https://cran.r-project.org/package=dtw) package.
+We can run the DTW analysis to compare these time series usin the [warbleR]((https://cran.r-project.org/package=warbleR) function `dfDTW` which calculates the dominant frequency contours of each sgnals and compares using dynamic time warping. Internally it applies the `dtwDist` function from the [dtw]((https://cran.r-project.org/package=dtw) package.
 
 
 {% highlight r %}
-dm <- dfDTW(manualoc.df, length.out = 30, flim = c(1, 12), bp = c(2, 9), wl = 300, img = FALSE, pb = F)
+dm <- dfDTW(selec.table, length.out = 30, flim = c(1, 12), bp = c(2, 9), wl = 300, img = FALSE, pb = F)
 {% endhighlight %}
 
 
@@ -75,12 +75,12 @@ mantel(dm,as.dist(recmat),permutations = 1000)
 ## Call:
 ## mantel(xdis = dm, ydis = as.dist(recmat), permutations = 1000) 
 ## 
-## Mantel statistic r: 0.6544 
+## Mantel statistic r: 0.673 
 ##       Significance: 0.000999 
 ## 
 ## Upper quantiles of permutations (null model):
 ##   90%   95% 97.5%   99% 
-## 0.174 0.231 0.285 0.376 
+## 0.180 0.243 0.308 0.362 
 ## Permutation: free
 ## Number of permutations: 1000
 {% endhighlight %}
@@ -92,29 +92,8 @@ We can calculate "acoustic distance" using acoustic parameters and then correlat
 
 
 {% highlight r %}
-span<-specan(manualoc.df)
-{% endhighlight %}
+span<-specan(selec.table)
 
-
-
-{% highlight text %}
-## 
-   |+++++                                             | 9 % ~00s          
-   |++++++++++                                        | 18% ~00s          
-   |++++++++++++++                                    | 27% ~00s          
-   |+++++++++++++++++++                               | 36% ~00s          
-   |+++++++++++++++++++++++                           | 45% ~00s          
-   |++++++++++++++++++++++++++++                      | 55% ~00s          
-   |++++++++++++++++++++++++++++++++                  | 64% ~00s          
-   |+++++++++++++++++++++++++++++++++++++             | 73% ~00s          
-   |+++++++++++++++++++++++++++++++++++++++++         | 82% ~00s          
-   |++++++++++++++++++++++++++++++++++++++++++++++    | 91% ~00s          
-   |++++++++++++++++++++++++++++++++++++++++++++++++++| 100% elapsed = 00s
-{% endhighlight %}
-
-
-
-{% highlight r %}
 dspan<-dist(span[,3:ncol(span)],method = "euclidean",diag = T,upper = T)
 
 mantel(dspan,as.dist(recmat),permutations = 10000)
@@ -129,12 +108,12 @@ mantel(dspan,as.dist(recmat),permutations = 10000)
 ## Call:
 ## mantel(xdis = dspan, ydis = as.dist(recmat), permutations = 10000) 
 ## 
-## Mantel statistic r: 0.5269 
-##       Significance: 0.00039996 
+## Mantel statistic r: 0.418 
+##       Significance: 0.0011999 
 ## 
 ## Upper quantiles of permutations (null model):
 ##   90%   95% 97.5%   99% 
-## 0.187 0.247 0.299 0.357 
+## 0.166 0.218 0.266 0.319 
 ## Permutation: free
 ## Number of permutations: 10000
 {% endhighlight %}
@@ -157,12 +136,12 @@ mantel(dm, dspan, permutations = 10000)
 ## Call:
 ## mantel(xdis = dm, ydis = dspan, permutations = 10000) 
 ## 
-## Mantel statistic r: 0.3582 
-##       Significance: 0.016098 
+## Mantel statistic r: 0.4533 
+##       Significance: 0.0018998 
 ## 
 ## Upper quantiles of permutations (null model):
 ##   90%   95% 97.5%   99% 
-## 0.184 0.262 0.317 0.387 
+## 0.183 0.248 0.302 0.363 
 ## Permutation: free
 ## Number of permutations: 10000
 {% endhighlight %}

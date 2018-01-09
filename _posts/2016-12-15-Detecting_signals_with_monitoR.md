@@ -7,9 +7,9 @@ date: 15-12-2016
 
 
 
-Here I show how to detect signals with cross-correlation using the very cool package [monitoR](https://cran.r-project.org/package=monitoR). This package aims to facilitate acoustic template detection. The code here is similar but much less detailed than the [quick start](https://cran.r-project.org/web/packages/monitoR/vignettes/monitoR_QuickStart.pdf) vignette of the [monitoR](https://cran.r-project.org/package=monitoR) package, so I encourage to look at the vignette if you want to learn more about it. 
+Here I show how to detect signals with cross-correlation using the very cool package [monitoR]((https://cran.r-project.org/package=monitoR). This package aims to facilitate acoustic template detection. The code here is similar but much less detailed than the [quick start]((https://cran.r-project.org/web/packages/monitoR/vignettes/monitoR_QuickStart.pdf) vignette of the [monitoR]((https://cran.r-project.org/package=monitoR) package, so I encourage to look at the vignette if you want to learn more about it. 
 
-The package [monitoR](https://cran.r-project.org/package=monitoR) runs cross-correlation across sound files to search for the signals using previously defined templates. Thus, templates should be examples of the signals we want to detect. It can search for several templates in the same run. I show how the package works using the sound files and data examples that come with the package [warbleR](https://cran.r-project.org/package=warbleR). These are recordings from long-billed hermits, each one singing a different song type.
+The package [monitoR]((https://cran.r-project.org/package=monitoR) runs cross-correlation across sound files to search for the signals using previously defined templates. Thus, templates should be examples of the signals we want to detect. It can search for several templates in the same run. I show how the package works using the sound files and data examples that come with the package [warbleR]((https://cran.r-project.org/package=warbleR). These are recordings from long-billed hermits, each one singing a different song type.
 
 First load the packages (the code will install the packages if missing)
 
@@ -31,7 +31,7 @@ We need to create the templates. We just have to select and example from each so
 # setwd(file.path(tempdir()))
 
 # load sound files and data
-data(list = c("Phae.long1", "Phae.long2", "Phae.long3", "Phae.long4", "manualoc.df"))
+data(list = c("Phae.long1", "Phae.long2", "Phae.long3", "Phae.long4", "selec.table"))
 
 #write files to disk
 writeWave(Phae.long1,"Phae.long1.wav")
@@ -45,7 +45,7 @@ and create the templates
 
 
 {% highlight r %}
-phae1T1<-makeCorTemplate("Phae.long1.wav", t.lim=c(manualoc.df$start[2],manualoc.df$end[2]),wl = 300,ovlp=90,
+phae1T1<-makeCorTemplate("Phae.long1.wav", t.lim=c(selec.table$start[2],selec.table$end[2]),wl = 300,ovlp=90,
     frq.lim=c(1, 11), dens=1, name="phae11")
 {% endhighlight %}
 
@@ -61,7 +61,7 @@ phae1T1<-makeCorTemplate("Phae.long1.wav", t.lim=c(manualoc.df$start[2],manualoc
 
 
 {% highlight r %}
-phae2T1<-makeCorTemplate("Phae.long2.wav", t.lim=c(manualoc.df$start[5],manualoc.df$end[5]),wl = 300,ovlp=90,
+phae2T1<-makeCorTemplate("Phae.long2.wav", t.lim=c(selec.table$start[5],selec.table$end[5]),wl = 300,ovlp=90,
        frq.lim=c(1, 11), dens=1, name="phae21")
 {% endhighlight %}
 
@@ -77,7 +77,7 @@ phae2T1<-makeCorTemplate("Phae.long2.wav", t.lim=c(manualoc.df$start[5],manualoc
 
 
 {% highlight r %}
-phae3T1<-makeCorTemplate("Phae.long3.wav", t.lim=c(manualoc.df$start[7],manualoc.df$end[7]),wl = 300,ovlp=90,
+phae3T1<-makeCorTemplate("Phae.long3.wav", t.lim=c(selec.table$start[7],selec.table$end[7]),wl = 300,ovlp=90,
        frq.lim=c(1, 11), dens=1, name="phae31")
 {% endhighlight %}
 
@@ -93,7 +93,7 @@ phae3T1<-makeCorTemplate("Phae.long3.wav", t.lim=c(manualoc.df$start[7],manualoc
 
 
 {% highlight r %}
-phae4T1<-makeCorTemplate("Phae.long4.wav", t.lim=c(manualoc.df$start[9],manualoc.df$end[9]),wl = 300,ovlp=90,
+phae4T1<-makeCorTemplate("Phae.long4.wav", t.lim=c(selec.table$start[9],selec.table$end[9]),wl = 300,ovlp=90,
        frq.lim=c(1, 11), dens=1, name="phae41")
 {% endhighlight %}
 
