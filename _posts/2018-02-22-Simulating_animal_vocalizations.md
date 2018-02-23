@@ -35,7 +35,7 @@ The basic song "parameters" that can be customized using the `sim_songs` functio
 1. The amount of modulation
 1. The duration of sub-units and silences in between
 
-A "song" with 5 sub-units, a frequency of 5 kHz and only the fundamental frequency can be simulated as follows: 
+The following code simulates a "song" with 5 sub-units, with a starting frequency of 5 kHz and a single harmonic (fundamental): 
 
 
 {% highlight r %}
