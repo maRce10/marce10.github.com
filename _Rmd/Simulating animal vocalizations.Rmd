@@ -11,21 +11,19 @@ This post shows how to simulate animal vocalizations using the new [warbleR](htt
 
 The function uses a brownian motion model of stochastic diffusion to simulate the changes in frequency (e.g. modulation) across continuous traces of sound (song sub-units or elements). Several parameters of the songs can be customized, which allow users to simulate an wide range of signal structures. Nonetheless, more parameters and diffusion models will be added in future versions.
 
-First install and/or load [warbleR](https://cran.r-project.org/package=warbleR) developmental version:
+First install and/or load [warbleR](https://cran.r-project.org/package=warbleR) developmental version (if there is an older [warbleR](https://cran.r-project.org/package=warbleR) version installed it has to be removed first):
 
-```{r , eval=F}
+```{r, eval=F}
+# remove warbleR
+remove.packages("warbleR")
 
 # install devtools if not installed
 if (!"devtools" %in% installed.packages()[,"Package"])  
   install.packages("devtools")
 
-#load it
-require("devtools") 
-
 # and install warbleR from github
 devtools::install_github("maRce10/warbleR")
-require("warbleR")
-
+library("warbleR")
 
 ```
 
