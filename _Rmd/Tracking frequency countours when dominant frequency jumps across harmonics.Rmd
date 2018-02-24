@@ -177,9 +177,9 @@ The frequency contour is now accurately tracked despite the dominant frequency j
  
 Now we can try it on a real song. This is an element from a fairy-wren song:
 
-```{r track_harm_8, out.width= 750, dpi = 100, echo=F}
+```{r track_harm_8, out.width= 750, dpi = 100, echo=F, error=F, message=F}
 
-wv_sl <- readRDS("/img/fairy_wren_song_and_selections.RDS")
+wv_sl <- readRDS("~/Dropbox/Websites/Blog/maRce10.github.com/img/fairy_wren_song_and_selections.RDS")
 
 attach(wv_sl)
 
@@ -189,7 +189,7 @@ spectro(exmp_wv, collevels = seq(-50, 0, 1), wl = 100, flim = c(1.3, 10.2), pale
 
 This is the frequency contour using the regular `dfreq` function:
 
-```{r track_harm_9, out.width= 750, dpi = 100, echo=F}
+```{r track_harm_9, out.width= 750, dpi = 100, echo=F, error=F, message=F}
 
 spectro(exmp_wv, collevels = seq(-50, 0, 1), wl = 100, flim = c(1.3, 10.2), palette = reverse.gray.colors.1, grid = F, scale = F, ovlp = 90, main = "seewave's 'dfreq'")
 
@@ -206,7 +206,7 @@ points(x = dfrq[ , 1] + 0.01, y =  dfrq[ , 2],
 
 And this is using the `track_harm` function:
 
-```{r track_harm_10, out.width= 750, dpi = 100, echo=F}
+```{r track_harm_10, out.width= 750, dpi = 100, echo=F, error=F, message=F}
 # track harmonic frequencu contour
 trck_hrm <- track_harm(wave = exmp_wv, tlim = c(mar, exmp_sls$end - exmp_sls$start + mar), wl = 100, 
                        ovlp = 80, threshold = 5, plot = F, 

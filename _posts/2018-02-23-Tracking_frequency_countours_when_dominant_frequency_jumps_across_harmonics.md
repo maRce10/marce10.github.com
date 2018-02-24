@@ -165,11 +165,6 @@ The frequency contour is now accurately tracked despite the dominant frequency j
  
 Now we can try it on a real song. This is an element from a fairy-wren song:
 
-
-{% highlight text %}
-Error in gzfile(file, "rb"): cannot open the connection
-{% endhighlight %}
-
 <img src="/assets/Rfig/track_harm_8-1.png" title="plot of chunk track_harm_8" alt="plot of chunk track_harm_8" width="750" />
 
 This is the frequency contour using the regular `dfreq` function:
