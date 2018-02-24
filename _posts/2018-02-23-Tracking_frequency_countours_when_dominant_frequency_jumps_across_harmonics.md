@@ -4,7 +4,7 @@ title: Tracking frequency contours when dominant frequency jumps across harmonic
 date: 23-02-2018
 ---
 
-When tracking dominant frequency to get frequency contours most algorithms rely on getting the highest amplitude frequency (i.e. dominant frequency) at each time window. This method, however, can be problematic when the highest amplitude is found at different harmonics in different time windows. Here, I demonstrate how this issue can be overcome using the new [warbleR](https://cran.r-project.org/package=warbleR) function `track_harm`.
+When tracking dominant frequency in order to obtain a frequency contour most algorithms rely on getting the highest amplitude frequency (i.e. dominant frequency) at each time window. This method, however, can be problematic when the highest amplitude is found at different harmonics in different time windows. Here, I demonstrate how this issue can be overcome using the new [warbleR](https://cran.r-project.org/package=warbleR) function `track_harm`.
 
 First install and/or load [warbleR](https://cran.r-project.org/package=warbleR) developmental version (if there is an older [warbleR](https://cran.r-project.org/package=warbleR) version installed it has to be removed first):
 
@@ -65,7 +65,7 @@ Now simulate the two song segments independently:
 {% highlight r %}
 #song 1
 sm_sng_p1 <- sim_songs(steps = 4, durs = 0.25, gaps = c(0.1, 0), 
-                       samp.rate = sr, bgn = 0.25,
+                       samp.rate = sr, bgn = 0.25, fout = 0,
                        freq = 4, harms = hrms, amps = amps, seed = 4, 
                        diff_fun = "BB")
 
@@ -75,13 +75,14 @@ spectro(sm_sng_p1, grid = F, scale = F, ovlp = ovlp, palette = pal,
         flim = flm, main = "song segment 1")
 {% endhighlight %}
 
-<img src="/assets/Rfig/unnamed-chunk-4-1.png" title="plot of chunk unnamed-chunk-4" alt="plot of chunk unnamed-chunk-4" width="750" />
+<img src="/assets/Rfig/track_harm_4-1.png" title="plot of chunk track_harm_4" alt="plot of chunk track_harm_4" width="750" />
 
 {% highlight r %}
 # song 2
 sm_sng_p2 <- sim_songs(steps = 4, durs = 0.25, gaps = c(0, 0.1), 
-                       samp.rate = sr, bgn = 0.9, freq = 4, harms = hrms, 
-                       amps = rev(amps), seed = 4, diff_fun = "BB")
+                       samp.rate = sr, bgn = 0.9, fin = 0, 
+                       freq = 4, harms = hrms, amps = rev(amps), 
+                       seed = 4, diff_fun = "BB")
 
 # plot spectrogram
 spectro(sm_sng_p2, grid = F, scale = F,  ovlp = ovlp, palette = pal, 
@@ -89,9 +90,9 @@ spectro(sm_sng_p2, grid = F, scale = F,  ovlp = ovlp, palette = pal,
         flim = flm)
 {% endhighlight %}
 
-<img src="/assets/Rfig/unnamed-chunk-4-2.png" title="plot of chunk unnamed-chunk-4" alt="plot of chunk unnamed-chunk-4" width="750" />
+<img src="/assets/Rfig/track_harm_4-2.png" title="plot of chunk track_harm_4" alt="plot of chunk track_harm_4" width="750" />
 
-Note that the amplitude values were flipped (`amps = rev(amps)`) in the second simulation so the highest amplitude is in the last harmonic. A seed is also used so the same song will be generated every time. If `seed = NULL` (as by default) then a different song will produced each time.
+Note that the amplitude values were flipped (`amps = rev(amps)`) in the second simulation so the highest amplitude is in the last harmonic. Also, the fade-out was set to 0 (`fout`) in the first simulation while the fade-in (`fin`) was 0 in the second. A seed is used so the same song will be generated every time. If `seed = NULL` (as by default) then a different song will produced each time.
 
 
 We can put together this 2 song segments in a single wave object using [seewave's](https://cran.r-project.org/package=seewave) `pastew` function:
@@ -107,7 +108,7 @@ spectro(sm_sng, grid = F, scale = F, f = f, ovlp = ovlp, palette = pal,
         main = "'Jumping' dominant frequency song")
 {% endhighlight %}
 
-<img src="/assets/Rfig/unnamed-chunk-5-1.png" title="plot of chunk unnamed-chunk-5" alt="plot of chunk unnamed-chunk-5" width="750" />
+<img src="/assets/Rfig/track_harm_5-1.png" title="plot of chunk track_harm_5" alt="plot of chunk track_harm_5" width="750" />
 
 There it is. A song in which the dominant frequency jumps from the first harmonic to the fourth one.
 
@@ -135,7 +136,7 @@ points(x = dm_frq[ , 1] + 0.1, y =  dm_frq[ , 2], cex = 1, col = "red2",
        pch = 20)
 {% endhighlight %}
 
-<img src="/assets/Rfig/unnamed-chunk-6-1.png" title="plot of chunk unnamed-chunk-6" alt="plot of chunk unnamed-chunk-6" width="750" />
+<img src="/assets/Rfig/track_harm_6-1.png" title="plot of chunk track_harm_6" alt="plot of chunk track_harm_6" width="750" />
 
 the red dots highlight the resulting frequency contour.
 
@@ -158,8 +159,26 @@ points(x = trck_hrm[ , 1] + 0.1, y =  trck_hrm[ , 2], cex = 1,
        col = "red2", pch = 20)
 {% endhighlight %}
 
-<img src="/assets/Rfig/unnamed-chunk-7-1.png" title="plot of chunk unnamed-chunk-7" alt="plot of chunk unnamed-chunk-7" width="750" />
+<img src="/assets/Rfig/track_harm_7-1.png" title="plot of chunk track_harm_7" alt="plot of chunk track_harm_7" width="750" />
 
-The frequency contour is now accurately tracked despite the dominant frequency jumping across harmonics. 
+The frequency contour is now accurately tracked despite the dominant frequency jumping across harmonics. `trac_harms` takes exactly the same arguments than [seewave's](https://cran.r-project.org/package=seewave) `dfreq` function, so it can be simply replaced in existing code. 
+ 
+Now we can try it on a real song. This is an element from a fairy-wren song:
+
+
+{% highlight text %}
+Error in gzfile(file, "rb"): cannot open the connection
+{% endhighlight %}
+
+<img src="/assets/Rfig/track_harm_8-1.png" title="plot of chunk track_harm_8" alt="plot of chunk track_harm_8" width="750" />
+
+This is the frequency contour using the regular `dfreq` function:
+
+<img src="/assets/Rfig/track_harm_9-1.png" title="plot of chunk track_harm_9" alt="plot of chunk track_harm_9" width="750" />
+
+And this is using the `track_harm` function:
+
+<img src="/assets/Rfig/track_harm_10-1.png" title="plot of chunk track_harm_10" alt="plot of chunk track_harm_10" width="750" />
+
  
 Please report any bugs [here](https://github.com/maRce10/warbleR/issues).
