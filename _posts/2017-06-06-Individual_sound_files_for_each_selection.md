@@ -4,7 +4,7 @@ title: "Individual sound files for each selection (or how to create a <i>warbleR
 date: 06-06-2017
 ---
 
-A friend of mine wants to "create individual sound files for each selection" in a selection table. This is a good opportunity to show how to create a function that works iteratively on signals in a selection table (like most [warbleR]((https://cran.r-project.org/package=warbleR) functions). 
+A friend of mine wants to "create individual sound files for each selection" in a selection table. This is a good opportunity to show how to create a function that works iteratively on signals in a selection table (like most [warbleR](https://cran.r-project.org/package=warbleR) functions). 
 
 It takes 3 main steps: 
 
@@ -20,7 +20,7 @@ Other things can be added to the function to check arguments and set working dir
 
 ### Step 1: Create function that does what we want on a single selection
 
-First install and/or load [warbleR]((https://cran.r-project.org/package=warbleR) (which also loads [tuneR]((https://cran.r-project.org/package=tuneR), the package for cutting and saving sound files):
+First install and/or load [warbleR](https://cran.r-project.org/package=warbleR) (which also loads [tuneR](https://cran.r-project.org/package=tuneR), the package for cutting and saving sound files):
 
 
 {% highlight r %}
@@ -73,24 +73,24 @@ head(selec.table)
 
 
 {% highlight text %}
-##      sound.files selec     start       end low.freq high.freq sel.comment
-## 1 Phae.long1.wav     1 1.1693549 1.3423884 2.220105  8.604378         c24
-## 2 Phae.long1.wav     2 2.1584085 2.3214565 2.169437  8.807053         c25
-## 3 Phae.long1.wav     3 0.3433366 0.5182553 2.218294  8.756604         c26
-## 4 Phae.long2.wav     1 0.1595983 0.2921692 2.316862  8.822316         c27
-## 5 Phae.long2.wav     2 1.4570585 1.5832087 2.284006  8.888027         c28
-## 6 Phae.long3.wav     1 0.6265520 0.7577715 3.006834  8.822316         c29
-##   rec.comment
-## 1          NA
-## 2          NA
-## 3          NA
-## 4          NA
-## 5          NA
-## 6          NA
+##      sound.files channel selec     start       end bottom.freq top.freq
+## 1 Phae.long1.wav       1     1 1.1693549 1.3423884    2.220105 8.604378
+## 2 Phae.long1.wav       1     2 2.1584085 2.3214565    2.169437 8.807053
+## 3 Phae.long1.wav       1     3 0.3433366 0.5182553    2.218294 8.756604
+## 4 Phae.long2.wav       1     1 0.1595983 0.2921692    2.316862 8.822316
+## 5 Phae.long2.wav       1     2 1.4570585 1.5832087    2.284006 8.888027
+## 6 Phae.long3.wav       1     1 0.6265520 0.7577715    3.006834 8.822316
+##   sel.comment rec.comment
+## 1         c24          NA
+## 2         c25          NA
+## 3         c26          NA
+## 4         c27          NA
+## 5         c28          NA
+## 6         c29          NA
 {% endhighlight %}
 
 
-Now write a code that takes the selection from a single row, extracts the *.wav* file segment, and save it to the working directory. To do this use the functions `readWave` and `writeWave` from [tuneR]((https://cran.r-project.org/package=tuneR):
+Now write a code that takes the selection from a single row, extracts the *.wav* file segment, and save it to the working directory. To do this use the functions `readWave` and `writeWave` from [tuneR](https://cran.r-project.org/package=tuneR):
 
 
 {% highlight r %}
@@ -163,7 +163,7 @@ out <- pbapply::pblapply(1:nrow(selec.table), function(y)
   cutFUN(X = selec.table, i = y, mar = 0.05))
 {% endhighlight %}
 
-We could also used `lapply` (no progress bar) or `mclapply` ([parallel]((https://cran.r-project.org/package=parallel) package, parallel computing), or even `pbmclapply` ([pbmcapply]((https://cran.r-project.org/package=pbmcapply) package, parallel computing and progress bar, but not available for windows). In fact, all these options are included in most [warbleR]((https://cran.r-project.org/package=pbmcapply) functions.
+We could also used `lapply` (no progress bar) or `mclapply` ([parallel](https://cran.r-project.org/package=parallel) package, parallel computing), or even `pbmclapply` ([pbmcapply](https://cran.r-project.org/package=pbmcapply) package, parallel computing and progress bar, but not available for windows). In fact, all these options are included in most [warbleR](https://cran.r-project.org/package=pbmcapply) functions.
 
 
 ### Step 3: Put all the code inside a new function
@@ -246,7 +246,7 @@ list.files(pattern = "\\.wav$", ignore.case = TRUE)
 ## [13] "Phae.long4.wav-1.wav" "Phae.long4.wav-2.wav" "Phae.long4.wav-3.wav"
 {% endhighlight %}
 
-I put together all the code in a new [warbleR]((https://cran.r-project.org/package=warbleR) function called `cut_sels` (available in version 1.1.9, currrently only on github).  I added a few more arguments (labels, overwrite, parallel, ...), some argument checks to warn users when using invalid values, and parallel and progress bar options. Here is the code in case you are curious:  
+I put together all the code in a new [warbleR](https://cran.r-project.org/package=warbleR) function called `cut_sels` (available in version 1.1.9, currrently only on github).  I added a few more arguments (labels, overwrite, parallel, ...), some argument checks to warn users when using invalid values, and parallel and progress bar options. Here is the code in case you are curious:  
 
 
 {% highlight r %}
@@ -398,4 +398,4 @@ cut_sels <- function(X, mar = 0.05, parallel = 1, path = NULL, dest.path = NULL,
 
 
 
-That's is it. If you developed a function that you think could be useful to other people we could include it in [warbleR]((https://cran.r-project.org/package=warbleR).
+That's is it. If you developed a function that you think could be useful to other people we could include it in [warbleR](https://cran.r-project.org/package=warbleR).
