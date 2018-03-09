@@ -19,10 +19,13 @@ Before getting into the functions, the packages must be installed and loaded. I 
 library(warbleR)
 library(Rraven)
 library(knitr)
+library(kableExtra)
 
 opts_chunk$set(comment = "")
 opts_knit$set(root.dir = tempdir())
 options(width = 150, max.print = 100)
+
+options("digits" = 3, "digits.secs" = 3, knitr.table.format = "html") 
 
 #website to fix gifs
 #https://ezgif.com/optimize
@@ -44,16 +47,17 @@ library(Rraven)
 ```
  &nbsp; 
  
-Let's also use a temporary folder as the working directory i which to save all sound files and data files:
+Let's also use a temporary folder as the working directory in which to save all sound and data files:
 
 ```{r eval= F, echo=T}
 
 setwd(tempdir())
 
 #load example data
-data(list = c("Phae.long1", "Phae.long2", "Phae.long3", "Phae.long4", "selec.table", "selection_files"))
+data(list = c("Phae.long1", "Phae.long2", "Phae.long3", "Phae.long4", 
+              "selec.table", "selection_files"))
 
-#save sound files  in temporary directory
+# save sound files  in temporary directory
 writeWave(Phae.long1,"Phae.long1.wav")
 writeWave(Phae.long2,"Phae.long2.wav")
 writeWave(Phae.long3,"Phae.long3.wav")
@@ -63,7 +67,8 @@ writeWave(Phae.long4,"Phae.long4.wav")
 out <- lapply(1:4, function(x)
 writeLines(selection_files[[x]], con = names(selection_files)[x]))
 
-#this is the temporary directory location (of course different each time is run)
+# this is the temporary directory location (of course different each 
+# time is run)
 getwd() 
 
 ```
@@ -71,7 +76,8 @@ getwd()
 ```{r eval= T, echo=F}
 
 #load example data
-data(list = c("Phae.long1", "Phae.long2", "Phae.long3", "Phae.long4", "selec.table", "selection_files"))
+data(list = c("Phae.long1", "Phae.long2", "Phae.long3", "Phae.long4", 
+              "selec.table", "selection_files"))
 
 #save sound files  in temporary directory
 writeWave(Phae.long1,"Phae.long1.wav", extensible = FALSE)
@@ -87,7 +93,7 @@ writeLines(selection_files[[x]], con = names(selection_files)[x]))
 # rvn.dat <- imp_raven(sound.file.col = "Begin.File", all.data = FALSE)
 
 #this is the temporary directory location (of course different each time is run)
-getwd() 
+# getwd() 
 
 ```
  &nbsp; 
@@ -114,8 +120,7 @@ This code shows how to import all the data contained in those files into R:
 
 rvn.dat <- imp_raven(all.data = TRUE)
 
-head(rvn.dat)
-
+rvn.dat
 ```
 
 
@@ -123,17 +128,13 @@ head(rvn.dat)
 
 rvn.dat <- imp_raven(all.data = TRUE, path = tempdir())
 
-kable(head(rvn.dat[,1:6]), align = "c", row.names = F,  format = "html")
+kbl <- kable(rvn.dat, align = "c", row.names = F,  format = "html")
+
+kbl <- kable_styling(kbl, bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = FALSE, font_size = 12)
+
+scroll_box(kbl, height = "500px", width = "900px",
+box_css = "border: 1px solid #ddd; padding: 5px; ", extra_css = NULL)
 ```
- &nbsp; 
- 
-```{r, eval=TRUE, echo=F, message=F}
-
-
-kable(head(rvn.dat[,7:ncol(rvn.dat)]), align = "c", row.names = F,  format = "html")
-
-```
-
  &nbsp; 
  
 Note that the 'waveform' view data has been removed. It can also be imported as follows: 
@@ -142,15 +143,19 @@ Note that the 'waveform' view data has been removed. It can also be imported as 
 
 rvn.dat <- imp_raven(all.data = TRUE, waveform = TRUE)
 
-head(rvn.dat)
-
+rvn.dat
 ```
 
 ```{r, eval = TRUE, echo = FALSE, message = FALSE, warning = FALSE, cache.comments=FALSE, comment=F}
 
 rvn.dat <- imp_raven(all.data = TRUE, path = tempdir(), waveform = TRUE)
 
-kable(head(rvn.dat), format = "html")
+kbl <- kable(rvn.dat, align = "c", row.names = F,  format = "html")
+
+kbl <- kable_styling(kbl, bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = FALSE, font_size = 12)
+
+scroll_box(kbl, height = "500px", width = "900px",
+box_css = "border: 1px solid #ddd; padding: 5px; ", extra_css = NULL)
 
 ```
  &nbsp; 
@@ -160,9 +165,10 @@ kable(head(rvn.dat), format = "html")
 ```{r, eval=FALSE}
 
 #providing the name of the column with the sound file names
-rvn.dat <- imp_raven(sound.file.col = "End.File", all.data = FALSE, freq.cols = TRUE)
+rvn.dat <- imp_raven(sound.file.col = "End.File", all.data = FALSE, 
+                     freq.cols = TRUE)
 
-head(rvn.dat)
+rvn.dat
 
 ```
 
@@ -173,8 +179,12 @@ rvn.dat <- imp_raven(sound.file.col = "Begin.File", all.data = FALSE, freq.cols 
 
 names(rvn.dat)[grep("channel", names(rvn.dat))] <- "channel"
 
-knitr::kable(head(rvn.dat[,-2]), align = "c", row.names = FALSE, format = "html")
+kbl <- kable(rvn.dat, align = "c", row.names = F)
 
+kable_styling(kbl, bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = FALSE, font_size = 14)
+
+# scroll_box(kbl, height = "500px", width = "900px",
+# box_css = "border: 1px solid #ddd; padding: 5px; ", extra_css = NULL)
 ```
  &nbsp; 
  
@@ -185,10 +195,10 @@ The data frame contains the following columns: sound.files, channel, selec, star
 # convert to class selection.table
 rvn.dat.st <- make.selection.table(rvn.dat)
 
-sp <- specan(X = rvn.dat, bp = "frange", wl = 150, pb = FALSE, ovlp = 90)
+sp <- specan(X = rvn.dat, bp = "frange", wl = 150, pb = FALSE, 
+             ovlp = 90)
 
-head(sp)
-
+sp
 ```
 
 ```{r, eval=TRUE, echo=FALSE}
@@ -198,26 +208,27 @@ rvn.dat.st <- make.selection.table(rvn.dat)
 
 sp <- specan(X = rvn.dat, bp = "frange", wl = 150, pb = FALSE, ovlp = 90)
 
-knitr::kable(head(sp[,1:6]), align = "c", row.names = FALSE,  format = "html")
+kbl <- knitr::kable(sp, align = "c", row.names = FALSE,  format = "html")
+
+kbl <- kable_styling(kbl, bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = FALSE, font_size = 12)
+
+scroll_box(kbl, width = "900px",
+box_css = "border: 1px solid #ddd; padding: 5px; ", extra_css = NULL)
 
 ```
  &nbsp; 
  
-```{r, eval=TRUE, echo=F, message=F}
-
-knitr::kable(head(sp[,6:15]), align = "c", row.names = FALSE,  format = "html")
-
-```
- &nbsp; 
-
 
 
 And this code creates song catalogs:
 
 ```{r, eval = FALSE}
 
-catalog(X = rvn.dat.st[1:9, ], flim = c(1, 10), nrow = 3, ncol = 3, same.time.scale = F,
- ovlp = 90, parallel = 1, mar = 0.01, wl = 200, pal = reverse.heat.colors, width = 20,  labels = c("sound.files", "selec"), legend = 1, 
+catalog(X = rvn.dat.st[1:9, ], flim = c(1, 10), nrow = 3, ncol = 3, 
+        same.time.scale = F,
+ ovlp = 90, parallel = 1, mar = 0.01, wl = 200, 
+ pal = reverse.heat.colors, width = 20,  
+ labels = c("sound.files", "selec"), legend = 1, 
  tag.pal = list(terrain.colors), tags = "sound.files")
 
 ```
@@ -246,14 +257,14 @@ writeLines(selection_files[[5]], con = names(selection_files)[5])
 rvn.dat <- imp_raven(all.data = TRUE) 
 
 # Peak freq contour dif length
-fcts <- extract_ts(X = rvn.dat, ts.column = "Peak.Freq.Contour..Hz.")
+fcts <- extract_ts(X = rvn.dat, ts.column = "Peak Freq Contour (Hz)")
  
-head(fcts[,1:14])
-head(fcts[,39:53])
+head(fcts)
+
 
 ```
 
-```{r, eval=T, echo=FALSE}
+```{r, eval=T, echo=FALSE, error=F}
 
 #remove previous raven data files
 unlink(list.files(pattern = "\\.txt$"))
@@ -265,41 +276,43 @@ writeLines(selection_files[[5]], con = names(selection_files)[5])
 rvn.dat <- imp_raven(all.data = TRUE) 
 
 # Peak freq contour dif length
-fcts <- extract_ts(X = rvn.dat, ts.column = "Peak.Freq.Contour..Hz.")
+fcts <- extract_ts(X = rvn.dat, ts.column = "Peak Freq Contour (Hz)")
  
+kbl <- kable(fcts, align = "c", row.names = FALSE,   format = "html")
 
-kable(head(fcts[ ,1:14]), align = "c", row.names = FALSE,   format = "html")
+kbl <- kable_styling(kbl, bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = FALSE, font_size = 12)
+
+scroll_box(kbl, width = "900px",
+box_css = "border: 1px solid #ddd; padding: 5px; ", extra_css = NULL)
+
+
 ```
+&nbsp;
 
-
- &nbsp;
-
-```{r, eval=T, echo=FALSE}
-knitr::kable(head(fcts[ ,39:53]), align = "c", row.names = FALSE,   format = "html")
- 
-```
- &nbsp;
- 
 Note that these sequences are not all of equal length (one has NAs at the end).
 `extract_ts` can also interpolate values so all time series have the same length:
 
 ```{r, eval=F, echo=T}
 
 # Peak freq contour equal length
-fcts <- extract_ts(X = rvn.dat, ts.column = "Peak.Freq.Contour..Hz.",  equal.length = TRUE)
+fcts <- extract_ts(X = rvn.dat, ts.column = "Peak Freq Contour (Hz)",
+                   equal.length = TRUE)
 
 #look at the last rows wit no NAs
-head(fcts[,21:32])
+fcts[,21:32])
 
 ```
  
 ```{r, eval=T, echo = F}
 
 # Peak freq contour equal length
-fcts <- extract_ts(X = rvn.dat, ts.column = "Peak.Freq.Contour..Hz.",
+fcts <- extract_ts(X = rvn.dat, ts.column = "Peak Freq Contour (Hz)",
  equal.length = TRUE)
 
-kable(head(fcts[ ,21:32]), align = "c", row.names = FALSE,   format = "html")
+kbl <- kable(head(fcts[ ,21:32]), align = "c", row.names = FALSE,   format = "html")
+
+kable_styling(kbl, bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = FALSE, font_size = 12)
+
  
 ```
  &nbsp; 
@@ -309,33 +322,38 @@ And the length of the series can also be specified:
 ```{r, eval=FALSE}
 
 # Peak freq contour equal length 10 measurements
-fcts <- extract_ts(X = rvn.dat, ts.column = "Peak.Freq.Contour..Hz.",
+fcts <- extract_ts(X = rvn.dat, ts.column = "Peak Freq Contour (Hz)",
 equal.length = T, length.out = 10)  
 
-kable(head(fcts), align = "c", row.names = FALSE,   format = "html")
+kbl <- kable(head(fcts), align = "c", row.names = FALSE,   format = "html")
+
+kable_styling(kbl, bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = FALSE, font_size = 12)
 
 
 ```
-
-```{r, eval=TRUE, echo=FALSE}
-
-# Peak freq contour equal length 10 measurements
-fcts <- extract_ts(X = rvn.dat, ts.column = "Peak.Freq.Contour..Hz.", 
-equal.length = T, length.out = 10)  
-
-kable(head(fcts), align = "c", row.names = FALSE,   format = "html")
-
-
-```
- &nbsp; 
+&nbsp; 
 
 The time series data frame can be directly input into the `dfDTW` [warbleR](https://cran.r-project.org/package=warbleR) function to calculate [Dynamic Time Warping](https://en.wikipedia.org/wiki/Dynamic_time_warping) distances:
 
-```{r}
+```{r, eval=F, echo=T}
 
 dfDTW(ts.df = fcts)
 
 ```
+
+```{r, eval=T, echo=F}
+
+dtwDF <- dfDTW(ts.df = fcts)
+
+kbl <- kable(dtwDF, align = "c", row.names = TRUE,   format = "html")
+
+kbl <- kable_styling(kbl, bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = FALSE, font_size = 12)
+
+scroll_box(kbl, width = "900px",
+box_css = "border: 1px solid #ddd; padding: 5px; ", extra_css = NULL)
+
+```
+
 
 ---
 
@@ -358,7 +376,10 @@ st1
 st1 <- rvn.dat[ ,1:7]
 
 #check original column names
-kable(st1, align = "c", row.names = FALSE,   format = "html")
+kbl <- kable(st1, align = "c", row.names = FALSE,   format = "html")
+
+kable_styling(kbl, bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = FALSE, font_size = 12)
+
 ```
 
 
@@ -372,7 +393,10 @@ relabel_colms(st1)
 rc <- relabel_colms(st1)
 
 #check original column names
-kable(rc, align = "c", row.names = FALSE,   format = "html")
+kbl <- kable(rc, align = "c", row.names = FALSE,   format = "html")
+
+kable_styling(kbl, bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = FALSE, font_size = 12)
+
 ```
  &nbsp; 
 
@@ -381,7 +405,8 @@ Additional columns can also be relabeled:
 
 # 2 additional column 
 relabel_colms(st1, extra.cols.name = c("selec.file", "View"),
-              extra.cols.new.name = c("Raven selection file", "Raven view"))
+              extra.cols.new.name = c("Raven selection file", 
+                                      "Raven view"))
 
 
 ```
@@ -392,7 +417,10 @@ relabel_colms(st1, extra.cols.name = c("selec.file", "View"),
 rc <- relabel_colms(st1, extra.cols.name = c("selec.file", "View"),
  c("Raven selection file", "Raven view"))
 
-kable(rc, align = "c", row.names = F,   format = "html")
+kbl <- kable(rc, align = "c", row.names = FALSE,   format = "html")
+
+kable_styling(kbl, bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = FALSE, font_size = 12)
+
 ```
  &nbsp; 
 
@@ -413,7 +441,10 @@ dir.create("cuts")
 selec.table$rownames <- sprintf("%02d",1:nrow(selec.table))
 
 # cut files
-cut_sels(X = selec.table, mar = 0.05, path = tempdir(), dest.path = file.path(tempdir(), "cuts"), labels = c("rownames", "sound.files", "selec"), pb = FALSE)
+cut_sels(X = selec.table, mar = 0.05, path = tempdir(), 
+         dest.path = file.path(tempdir(), "cuts"), 
+         labels = c("rownames", "sound.files", "selec"), 
+         pb = FALSE)
 
 #list cuts
 list.files(path = file.path(tempdir(), "cuts"))
@@ -431,7 +462,8 @@ And then import the output file into R:
 ```{r, eval=F, echo=T}
 
 # Import output (change the name of the file if you used a different one)
-xcorr.rav <- imp_corr_mat(file = "BatchCorrOutput.txt", path = tempdir())
+xcorr.rav <- imp_corr_mat(file = "BatchCorrOutput.txt", 
+                          path = tempdir())
 
 ```
 
@@ -448,15 +480,18 @@ xcorr.rav <- imp_corr_mat(file = "BatchCorrOutput.txt")
  
 The function returns a list containing the correlation matrix (here only showing the first 5 rows/columns):
 
-```{r, eval=T}
-xcorr.rav$correlation[1:5, 1:5]
+```{r, eval=T, echo = T}
+
+xcorr.rav$correlation
+
 ```
- &nbsp; 
+&nbsp; 
  
 and the time lag matrix:
 
 ```{r, eval=T}
-xcorr.rav$`lag (s)`[1:5, 1:5]
+
+xcorr.rav$`lag (s)`
 
 ```
  &nbsp; 
@@ -469,13 +504,15 @@ This output is ready for stats. For instance, the following code runs a mantel t
 xcorr.rvn <- 1- xcorr.rav$correlation
 
 #sort matrix to match selection table
-xcorr.rvn <- xcorr.rvn[order(rownames(xcorr.rvn)), order(colnames(xcorr.rvn))]
+xcorr.rvn <- xcorr.rvn[order(rownames(xcorr.rvn)), 
+                       order(colnames(xcorr.rvn))]
 
 #convert it to distance matrix
 xcorr.rvn <- as.dist(xcorr.rvn)
 
 # measure acoustic parameters
-sp.wrblR <- specan(selec.table, bp = c(1, 11), wl = 150, pb = FALSE)
+sp.wrblR <- specan(selec.table, bp = c(1, 11), wl = 150, 
+                   pb = FALSE)
 
 #convert them to distance matrix
 dist.sp.wrblR <- dist(sp.wrblR)
@@ -512,7 +549,8 @@ If the path to the sound file is provided, the functions exports a 'sound select
 st1 <- selec.table[selec.table$sound.files == "Phae.long1.wav",]
 
 # Export data of a single sound file
-exp_raven(st1, file.name = "Phaethornis 1", khz.to.hz = TRUE, sound.file.path = tempdir())
+exp_raven(st1, file.name = "Phaethornis 1", khz.to.hz = TRUE, 
+          sound.file.path = tempdir())
 
 ```
 ![gif2](https://raw.githubusercontent.com/maRce10/Rraven/master/gifs/exp_raven1.gif)
@@ -527,8 +565,9 @@ If several sound files are available, users can either export them as a single s
 
 ```{r, eval=FALSE, echo=T}
 
-exp_raven(X = selec.table, file.name = "Phaethornis multiple sound files", 
-sound.file.path = tempdir(), single.file = TRUE)
+exp_raven(X = selec.table, 
+          file.name = "Phaethornis multiple sound files", 
+          sound.file.path = tempdir(), single.file = TRUE)
 ```
  &nbsp; 
 
@@ -551,7 +590,8 @@ The function opens multiple sound files simultaneously in  [Raven](http://www.bi
 raven.path <- "PATH_TO_RAVEN_DIRECTORY_HERE" 
 
 # run function 
-run_raven(raven.path = raven.path, sound.files = c("Phae.long1.wav", "Phae.long2.wav", "Phae.long3.wav", "Phae.long4.wav"), import = TRUE, 
+run_raven(raven.path = raven.path, sound.files = c("Phae.long1.wav", 
+    "Phae.long2.wav", "Phae.long3.wav", "Phae.long4.wav"), import = TRUE, 
  all.data = TRUE)  
 
 ``` 
@@ -572,7 +612,8 @@ This is example runs the detector on one of the example sound files that comes b
 ```{r, eval=FALSE, echo=T}
 
 detec.res <- raven_batch_detec(raven.path = raven.path, 
-sound.files = "BlackCappedVireo.aif", path = file.path(raven.path, "Examples"))
+  sound.files = "BlackCappedVireo.aif", 
+  path = file.path(raven.path, '"Examples"))
 
 ```
 

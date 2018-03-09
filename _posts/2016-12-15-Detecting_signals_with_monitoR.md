@@ -7,9 +7,9 @@ date: 15-12-2016
 
 
 
-Here I show how to detect signals with cross-correlation using the very cool package [monitoR]((https://cran.r-project.org/package=monitoR). This package aims to facilitate acoustic template detection. The code here is similar but much less detailed than the [quick start]((https://cran.r-project.org/web/packages/monitoR/vignettes/monitoR_QuickStart.pdf) vignette of the [monitoR]((https://cran.r-project.org/package=monitoR) package, so I encourage to look at the vignette if you want to learn more about it. 
+Here I show how to detect signals with cross-correlation using the very cool package [monitoR](https://cran.r-project.org/package=monitoR). This package aims to facilitate acoustic template detection. The code here is similar but much less detailed than the [quick start](https://cran.r-project.org/web/packages/monitoR/vignettes/monitoR_QuickStart.pdf) vignette of the [monitoR](https://cran.r-project.org/package=monitoR) package, so I encourage to look at the vignette if you want to learn more about it. 
 
-The package [monitoR]((https://cran.r-project.org/package=monitoR) runs cross-correlation across sound files to search for the signals using previously defined templates. Thus, templates should be examples of the signals we want to detect. It can search for several templates in the same run. I show how the package works using the sound files and data examples that come with the package [warbleR]((https://cran.r-project.org/package=warbleR). These are recordings from long-billed hermits, each one singing a different song type.
+The package [monitoR](https://cran.r-project.org/package=monitoR) runs cross-correlation across sound files to search for the signals using previously defined templates. Thus, templates should be examples of the signals we want to detect. It can search for several templates in the same run. I show how the package works using the sound files and data examples that come with the package [warbleR](https://cran.r-project.org/package=warbleR). These are recordings from long-billed hermits, each one singing a different song type.
 
 First load the packages (the code will install the packages if missing)
 
@@ -52,10 +52,10 @@ phae1T1<-makeCorTemplate("Phae.long1.wav", t.lim=c(selec.table$start[2],selec.ta
 ![plot of chunk unnamed-chunk-3](/assets/Rfig/unnamed-chunk-3-1.png)
 
 {% highlight text %}
-## 
-## Automatic point selection.
-## 
-## Done.
+
+Automatic point selection.
+
+Done.
 {% endhighlight %}
 
 
@@ -68,10 +68,10 @@ phae2T1<-makeCorTemplate("Phae.long2.wav", t.lim=c(selec.table$start[5],selec.ta
 ![plot of chunk unnamed-chunk-3](/assets/Rfig/unnamed-chunk-3-2.png)
 
 {% highlight text %}
-## 
-## Automatic point selection.
-## 
-## Done.
+
+Automatic point selection.
+
+Done.
 {% endhighlight %}
 
 
@@ -84,10 +84,10 @@ phae3T1<-makeCorTemplate("Phae.long3.wav", t.lim=c(selec.table$start[7],selec.ta
 ![plot of chunk unnamed-chunk-3](/assets/Rfig/unnamed-chunk-3-3.png)
 
 {% highlight text %}
-## 
-## Automatic point selection.
-## 
-## Done.
+
+Automatic point selection.
+
+Done.
 {% endhighlight %}
 
 
@@ -100,10 +100,10 @@ phae4T1<-makeCorTemplate("Phae.long4.wav", t.lim=c(selec.table$start[9],selec.ta
 ![plot of chunk unnamed-chunk-3](/assets/Rfig/unnamed-chunk-3-4.png)
 
 {% highlight text %}
-## 
-## Automatic point selection.
-## 
-## Done.
+
+Automatic point selection.
+
+Done.
 {% endhighlight %}
 
 Now that we have the templates we can search for those "acoustic patterns" in a sound file. As the function uses cross-correlation to determine the similarity to the templates we need to select a correlation method. In this case we use Pearson correlation. Lets do it first with the template from the Phae.long1.wav file
@@ -118,12 +118,12 @@ cscoresPhae1<-corMatch(survey = "Phae.long1.wav",templates = phae1T1, parallel =
 
 
 {% highlight text %}
-## 
-## Starting  phae11 . . .
-## 	Fourier transform on survey . . .
-## 	Continuing. . .
-## 
-## 	Done.
+
+Starting  phae11 . . .
+	Fourier transform on survey . . .
+	Continuing. . .
+
+	Done.
 {% endhighlight %}
 
 Now we can extract the detection peaks and generate a graphical output
@@ -136,9 +136,9 @@ cdetectsPhae1<-findPeaks(cscoresPhae1, parallel = TRUE)
 
 
 {% highlight text %}
-## 
-## Done with  phae11
-## Done
+
+Done with  phae11
+Done
 {% endhighlight %}
 
 
@@ -160,12 +160,12 @@ cscoresPhae2<-corMatch(survey = "Phae.long2.wav",templates = phae2T1, parallel =
 
 
 {% highlight text %}
-## 
-## Starting  phae21 . . .
-## 	Fourier transform on survey . . .
-## 	Continuing. . .
-## 
-## 	Done.
+
+Starting  phae21 . . .
+	Fourier transform on survey . . .
+	Continuing. . .
+
+	Done.
 {% endhighlight %}
 
 
@@ -177,9 +177,9 @@ cdetectsPhae2<-findPeaks(cscoresPhae2, parallel = TRUE)
 
 
 {% highlight text %}
-## 
-## Done with  phae21
-## Done
+
+Done with  phae21
+Done
 {% endhighlight %}
 
 
@@ -200,12 +200,12 @@ cscoresPhae3<-corMatch(survey = "Phae.long3.wav",templates = phae3T1, parallel =
 
 
 {% highlight text %}
-## 
-## Starting  phae31 . . .
-## 	Fourier transform on survey . . .
-## 	Continuing. . .
-## 
-## 	Done.
+
+Starting  phae31 . . .
+	Fourier transform on survey . . .
+	Continuing. . .
+
+	Done.
 {% endhighlight %}
 
 
@@ -217,9 +217,9 @@ cdetectsPhae3<-findPeaks(cscoresPhae3, parallel = TRUE)
 
 
 {% highlight text %}
-## 
-## Done with  phae31
-## Done
+
+Done with  phae31
+Done
 {% endhighlight %}
 
 
@@ -240,12 +240,12 @@ cscoresPhae4<-corMatch(survey = "Phae.long4.wav",templates = phae4T1, parallel =
 
 
 {% highlight text %}
-## 
-## Starting  phae41 . . .
-## 	Fourier transform on survey . . .
-## 	Continuing. . .
-## 
-## 	Done.
+
+Starting  phae41 . . .
+	Fourier transform on survey . . .
+	Continuing. . .
+
+	Done.
 {% endhighlight %}
 
 
@@ -257,9 +257,9 @@ cdetectsPhae4<-findPeaks(cscoresPhae4, parallel = TRUE)
 
 
 {% highlight text %}
-## 
-## Done with  phae41
-## Done
+
+Done with  phae41
+Done
 {% endhighlight %}
 
 
@@ -285,21 +285,21 @@ cscoresPhae4all<-corMatch(survey = "Phae.long1.wav",templates = ctemps, parallel
 
 
 {% highlight text %}
-## 
-## Starting  phae11 . . .
-## 	Fourier transform on survey . . .
-## 	Continuing. . .
-## 
-## 	Done.
-## 
-## Starting  phae21 . . .
-## 	Done.
-## 
-## Starting  phae31 . . .
-## 	Done.
-## 
-## Starting  phae41 . . .
-## 	Done.
+
+Starting  phae11 . . .
+	Fourier transform on survey . . .
+	Continuing. . .
+
+	Done.
+
+Starting  phae21 . . .
+	Done.
+
+Starting  phae31 . . .
+	Done.
+
+Starting  phae41 . . .
+	Done.
 {% endhighlight %}
 
 
@@ -311,8 +311,8 @@ cdetectsPhae4all<-findPeaks(cscoresPhae4all, parallel = TRUE)
 
 
 {% highlight text %}
-## 
-## Done
+
+Done
 {% endhighlight %}
 
 
