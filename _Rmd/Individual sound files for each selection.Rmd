@@ -142,7 +142,7 @@ tuneR::writeWave(object = wvcut, filename = paste0(as.character(X$sound.files[i]
 
 ### Step 2: Add a <i>(X)lapply</i> function
 
-Several versions of the `lapply` function can be used. The function `pblapply` from the package [pbapply]((https://cran.r-project.org/package=pbapply) provides a nice progress bar. The following code should produce cuts for each selection in `selec.table`:
+Several versions of the `lapply` function can be used. The function `pblapply` from the package [pbapply](https://cran.r-project.org/package=pbapply) provides a nice progress bar. The following code should produce cuts for each selection in `selec.table`:
 
 ```{r, eval = T}
  
