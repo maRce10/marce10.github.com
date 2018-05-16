@@ -10,7 +10,7 @@ output:
 This post shows how to create and use the new [warbleR](https://cran.r-project.org/package=warbleR) object class *extended_selection_table*.
 
 These objects are created with the `selec_table()` function. This function takes data frames containing selection data (sound file name, selection, start, end ...), checks whether the information is consistent (see `checksels()` function for details) and saves the 'diagnostic' metadata as an attribute. When the argument `extended = TRUE` the function generates an object of class *extended_selection_table* which also contains a list of wave objects corresponding to each of the selections in the data frame. Hence, the function **transforms selection tables into self-contained objects** as they no longer need the original sound files for running most acoustic analysis in 
-[warbleR](https://cran.r-project.org/package=warbleR). This can facilitate a lot the storing and sharing of (bio)acoustic data. In addition, it also speeds up processes as sound files do not need to be read every time.
+[warbleR](https://cran.r-project.org/package=warbleR). This can facilitate a lot the storing and sharing of (bio)acoustic data. In addition, it also speeds up processes as sound files do not need to be read every time the data is analyzed.
 
 Let's first install and/or load [warbleR](https://cran.r-project.org/package=warbleR) developmental version (if there is an older [warbleR](https://cran.r-project.org/package=warbleR) version installed it has to be removed first):
 
@@ -94,7 +94,7 @@ box_css = "border: 1px solid #ddd; padding: 1px; ", extra_css = NULL)
 
 ```
 
-The following code converts it to a extended selection table:
+The following code converts it to an extended selection table:
 
 ```{r extn_sel_4.3}
 
@@ -229,7 +229,7 @@ format(object.size(lng_ext_st), units = "auto")
 
 ```
 
-As you can see the object size is only ~31 Mb. So, as a guide, a selection table with 1000 selections similar to those in 'selec.table' (mean duration ~0.15 seconds) at 22.5 kHz sampling rate and the default margin (mar = 0.1) will generate a extended selection table of ~31 MB or ~310 MB for a 10000 row selection table. 
+As you can see the object size is only ~31 MB. So, as a guide, a selection table with 1000 selections similar to those in 'selec.table' (mean duration ~0.15 seconds) at 22.5 kHz sampling rate and the default margin (mar = 0.1) will generate an extended selection table of ~31 MB or ~310 MB for a 10000 row selection table. 
 
 &nbsp; 
  
@@ -272,6 +272,7 @@ scroll_box(kbl, width = "740px",
 box_css = "border: 1px solid #ddd; padding: 1px; ", extra_css = NULL)
 
 ```
+&nbsp; 
 
 #### Cross correlation
 
@@ -281,7 +282,6 @@ xc <- xcorr(ext_st, frange = c(1, 11))
 
 xc
 ```
-
 
 ```{r, extn_sel_12.4, echo= FALSE}
 
@@ -314,6 +314,7 @@ kbl <- kable(snr, align = "c", row.names = F,  format = "html")
 scroll_box(kbl, width = "740px",
 box_css = "border: 1px solid #ddd; padding: 1px; ", extra_css = NULL)
 ```
+&nbsp; 
 
 #### Dynamic time warping distance
 
@@ -336,6 +337,7 @@ scroll_box(kbl, height = "500px", width = "740px",
 box_css = "border: 1px solid #ddd; padding: 1px; ", extra_css = NULL)
 
 ```
+&nbsp; 
 
 ## Performance
 
@@ -452,6 +454,32 @@ box_css = "border: 1px solid #ddd; padding: 1px; ", extra_css = NULL)
 ```
 
 The margin would be an important parameter to take into consideration for some downstream functions like those producing plots or using additional time segments around selection to run analysis (e.g. `sig2noise()` or `xcorr()`).
+
+## Sharing acoustic data
+
+The new object class allows to share complete data sets, including the acoustic data. For instance, with the following code you can download a subset of the data used in [Araya-Salas *et al* (2017)](https://marceloarayasalas.weebly.com/uploads/2/5/5/2/25524573/araya-salas_smith-vidaurre___webster_2017._table_s1._recording_metadata.xlsx) (it can also be downloaded [here](https://marceloarayasalas.weebly.com/uploads/2/5/5/2/25524573/extended.selection.table.araya-salas.et.al.2017.bioacoustics.100.sels.rds)):
+
+```{r extn.sel_19}
+
+URL <- "https://marceloarayasalas.weebly.com/uploads/2/5/5/2/25524573/extended.selection.table.araya-salas.et.al.2017.bioacoustics.100.sels.rds"
+
+dat <- readRDS(gzcon(url(URL)))
+
+nrow(dat)
+
+format(object.size(dat), units = "auto")
+
+```
+
+The total size of the 100 sound files from which these selections were taken adds up to 1.1 GB. The size of the extended selection table is just 10.1 MB.
+
+This data is ready to be used:
+
+```{r}
+sp <- specan(dat)
+```
+
+The ability to compress large data sets and the easiness of conducting analyses requiring only a single *R* object can potentially simplify data sharing and the reproducibility of bioacoustic analyses.
 
 Please report any bugs [here](https://github.com/maRce10/warbleR/issues).
 

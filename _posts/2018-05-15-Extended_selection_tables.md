@@ -7,7 +7,7 @@ date: 15-05-2018
 This post shows how to create and use the new [warbleR](https://cran.r-project.org/package=warbleR) object class *extended_selection_table*.
 
 These objects are created with the `selec_table()` function. This function takes data frames containing selection data (sound file name, selection, start, end ...), checks whether the information is consistent (see `checksels()` function for details) and saves the 'diagnostic' metadata as an attribute. When the argument `extended = TRUE` the function generates an object of class *extended_selection_table* which also contains a list of wave objects corresponding to each of the selections in the data frame. Hence, the function **transforms selection tables into self-contained objects** as they no longer need the original sound files for running most acoustic analysis in 
-[warbleR](https://cran.r-project.org/package=warbleR). This can facilitate a lot the storing and sharing of (bio)acoustic data. In addition, it also speeds up processes as sound files do not need to be read every time.
+[warbleR](https://cran.r-project.org/package=warbleR). This can facilitate a lot the storing and sharing of (bio)acoustic data. In addition, it also speeds up processes as sound files do not need to be read every time the data is analyzed.
 
 Let's first install and/or load [warbleR](https://cran.r-project.org/package=warbleR) developmental version (if there is an older [warbleR](https://cran.r-project.org/package=warbleR) version installed it has to be removed first):
 
@@ -395,7 +395,7 @@ format(object.size(lng_ext_st), units = "auto")
 [1] "31.3 Mb"
 {% endhighlight %}
 
-As you can see the object size is only ~31 Mb. So, as a guide, a selection table with 1000 selections similar to those in 'selec.table' (mean duration ~0.15 seconds) at 22.5 kHz sampling rate and the default margin (mar = 0.1) will generate a extended selection table of ~31 MB or ~310 MB for a 10000 row selection table. 
+As you can see the object size is only ~31 MB. So, as a guide, a selection table with 1000 selections similar to those in 'selec.table' (mean duration ~0.15 seconds) at 22.5 kHz sampling rate and the default margin (mar = 0.1) will generate a extended selection table of ~31 MB or ~310 MB for a 10000 row selection table. 
 
 &nbsp; 
  
@@ -845,6 +845,7 @@ sp
   </tr>
 </tbody>
 </table></div>
+&nbsp; 
 
 #### Cross correlation
 
@@ -854,7 +855,6 @@ xc <- xcorr(ext_st, frange = c(1, 11))
 
 xc
 {% endhighlight %}
-
 
 <div style="border: 1px solid #ddd; padding: 1px; overflow-y: scroll; height:500px; overflow-x: scroll; width:740px; "><table>
  <thead>
@@ -877,155 +877,155 @@ xc
   <tr>
    <td style="text-align:left;"> Phae.long1.wav_1-1 </td>
    <td style="text-align:center;"> 1.00000 </td>
-   <td style="text-align:center;"> 0.70319 </td>
-   <td style="text-align:center;"> 0.67786 </td>
-   <td style="text-align:center;"> 0.37903 </td>
-   <td style="text-align:center;"> 0.37639 </td>
-   <td style="text-align:center;"> 0.41326 </td>
-   <td style="text-align:center;"> 0.36085 </td>
-   <td style="text-align:center;"> 0.40296 </td>
-   <td style="text-align:center;"> 0.31506 </td>
-   <td style="text-align:center;"> 0.32050 </td>
-   <td style="text-align:center;"> 0.32054 </td>
+   <td style="text-align:center;"> 0.70226 </td>
+   <td style="text-align:center;"> 0.67688 </td>
+   <td style="text-align:center;"> 0.37634 </td>
+   <td style="text-align:center;"> 0.37918 </td>
+   <td style="text-align:center;"> 0.41191 </td>
+   <td style="text-align:center;"> 0.36243 </td>
+   <td style="text-align:center;"> 0.40037 </td>
+   <td style="text-align:center;"> 0.31790 </td>
+   <td style="text-align:center;"> 0.31677 </td>
+   <td style="text-align:center;"> 0.32235 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Phae.long1.wav_2-1 </td>
-   <td style="text-align:center;"> 0.70319 </td>
+   <td style="text-align:center;"> 0.70226 </td>
    <td style="text-align:center;"> 1.00000 </td>
-   <td style="text-align:center;"> 0.64425 </td>
-   <td style="text-align:center;"> 0.39984 </td>
-   <td style="text-align:center;"> 0.40571 </td>
-   <td style="text-align:center;"> 0.40178 </td>
-   <td style="text-align:center;"> 0.35871 </td>
-   <td style="text-align:center;"> 0.40272 </td>
-   <td style="text-align:center;"> 0.31016 </td>
-   <td style="text-align:center;"> 0.31850 </td>
-   <td style="text-align:center;"> 0.31455 </td>
+   <td style="text-align:center;"> 0.64469 </td>
+   <td style="text-align:center;"> 0.39967 </td>
+   <td style="text-align:center;"> 0.40378 </td>
+   <td style="text-align:center;"> 0.40259 </td>
+   <td style="text-align:center;"> 0.36272 </td>
+   <td style="text-align:center;"> 0.40551 </td>
+   <td style="text-align:center;"> 0.31471 </td>
+   <td style="text-align:center;"> 0.31580 </td>
+   <td style="text-align:center;"> 0.31608 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Phae.long1.wav_3-1 </td>
-   <td style="text-align:center;"> 0.67786 </td>
-   <td style="text-align:center;"> 0.64425 </td>
+   <td style="text-align:center;"> 0.67688 </td>
+   <td style="text-align:center;"> 0.64469 </td>
    <td style="text-align:center;"> 1.00000 </td>
-   <td style="text-align:center;"> 0.40352 </td>
-   <td style="text-align:center;"> 0.40582 </td>
-   <td style="text-align:center;"> 0.40634 </td>
-   <td style="text-align:center;"> 0.37767 </td>
-   <td style="text-align:center;"> 0.41297 </td>
-   <td style="text-align:center;"> 0.30521 </td>
-   <td style="text-align:center;"> 0.30567 </td>
-   <td style="text-align:center;"> 0.32297 </td>
+   <td style="text-align:center;"> 0.39931 </td>
+   <td style="text-align:center;"> 0.40200 </td>
+   <td style="text-align:center;"> 0.40541 </td>
+   <td style="text-align:center;"> 0.38045 </td>
+   <td style="text-align:center;"> 0.41584 </td>
+   <td style="text-align:center;"> 0.31090 </td>
+   <td style="text-align:center;"> 0.29867 </td>
+   <td style="text-align:center;"> 0.32298 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Phae.long2.wav_1-1 </td>
-   <td style="text-align:center;"> 0.37903 </td>
-   <td style="text-align:center;"> 0.39984 </td>
-   <td style="text-align:center;"> 0.40352 </td>
+   <td style="text-align:center;"> 0.37634 </td>
+   <td style="text-align:center;"> 0.39967 </td>
+   <td style="text-align:center;"> 0.39931 </td>
    <td style="text-align:center;"> 1.00000 </td>
-   <td style="text-align:center;"> 0.66489 </td>
-   <td style="text-align:center;"> 0.64077 </td>
-   <td style="text-align:center;"> 0.64592 </td>
-   <td style="text-align:center;"> 0.60911 </td>
-   <td style="text-align:center;"> 0.32219 </td>
-   <td style="text-align:center;"> 0.29553 </td>
-   <td style="text-align:center;"> 0.32559 </td>
+   <td style="text-align:center;"> 0.66700 </td>
+   <td style="text-align:center;"> 0.64321 </td>
+   <td style="text-align:center;"> 0.64394 </td>
+   <td style="text-align:center;"> 0.60448 </td>
+   <td style="text-align:center;"> 0.32654 </td>
+   <td style="text-align:center;"> 0.29332 </td>
+   <td style="text-align:center;"> 0.32296 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Phae.long2.wav_2-1 </td>
-   <td style="text-align:center;"> 0.37639 </td>
-   <td style="text-align:center;"> 0.40571 </td>
-   <td style="text-align:center;"> 0.40582 </td>
-   <td style="text-align:center;"> 0.66489 </td>
+   <td style="text-align:center;"> 0.37918 </td>
+   <td style="text-align:center;"> 0.40378 </td>
+   <td style="text-align:center;"> 0.40200 </td>
+   <td style="text-align:center;"> 0.66700 </td>
    <td style="text-align:center;"> 1.00000 </td>
-   <td style="text-align:center;"> 0.60558 </td>
-   <td style="text-align:center;"> 0.62962 </td>
-   <td style="text-align:center;"> 0.63864 </td>
-   <td style="text-align:center;"> 0.31114 </td>
-   <td style="text-align:center;"> 0.27942 </td>
-   <td style="text-align:center;"> 0.31345 </td>
+   <td style="text-align:center;"> 0.60731 </td>
+   <td style="text-align:center;"> 0.63108 </td>
+   <td style="text-align:center;"> 0.63485 </td>
+   <td style="text-align:center;"> 0.31228 </td>
+   <td style="text-align:center;"> 0.27759 </td>
+   <td style="text-align:center;"> 0.31193 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Phae.long3.wav_1-1 </td>
-   <td style="text-align:center;"> 0.41326 </td>
-   <td style="text-align:center;"> 0.40178 </td>
-   <td style="text-align:center;"> 0.40634 </td>
-   <td style="text-align:center;"> 0.64077 </td>
-   <td style="text-align:center;"> 0.60558 </td>
+   <td style="text-align:center;"> 0.41191 </td>
+   <td style="text-align:center;"> 0.40259 </td>
+   <td style="text-align:center;"> 0.40541 </td>
+   <td style="text-align:center;"> 0.64321 </td>
+   <td style="text-align:center;"> 0.60731 </td>
    <td style="text-align:center;"> 1.00000 </td>
-   <td style="text-align:center;"> 0.75517 </td>
-   <td style="text-align:center;"> 0.71210 </td>
-   <td style="text-align:center;"> 0.30168 </td>
-   <td style="text-align:center;"> 0.28201 </td>
-   <td style="text-align:center;"> 0.29369 </td>
+   <td style="text-align:center;"> 0.75870 </td>
+   <td style="text-align:center;"> 0.71031 </td>
+   <td style="text-align:center;"> 0.30546 </td>
+   <td style="text-align:center;"> 0.27932 </td>
+   <td style="text-align:center;"> 0.29560 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Phae.long3.wav_2-1 </td>
-   <td style="text-align:center;"> 0.36085 </td>
-   <td style="text-align:center;"> 0.35871 </td>
-   <td style="text-align:center;"> 0.37767 </td>
-   <td style="text-align:center;"> 0.64592 </td>
-   <td style="text-align:center;"> 0.62962 </td>
-   <td style="text-align:center;"> 0.75517 </td>
+   <td style="text-align:center;"> 0.36243 </td>
+   <td style="text-align:center;"> 0.36272 </td>
+   <td style="text-align:center;"> 0.38045 </td>
+   <td style="text-align:center;"> 0.64394 </td>
+   <td style="text-align:center;"> 0.63108 </td>
+   <td style="text-align:center;"> 0.75870 </td>
    <td style="text-align:center;"> 1.00000 </td>
-   <td style="text-align:center;"> 0.73621 </td>
-   <td style="text-align:center;"> 0.30238 </td>
-   <td style="text-align:center;"> 0.28260 </td>
-   <td style="text-align:center;"> 0.29942 </td>
+   <td style="text-align:center;"> 0.73349 </td>
+   <td style="text-align:center;"> 0.30464 </td>
+   <td style="text-align:center;"> 0.27810 </td>
+   <td style="text-align:center;"> 0.29940 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Phae.long3.wav_3-1 </td>
-   <td style="text-align:center;"> 0.40296 </td>
-   <td style="text-align:center;"> 0.40272 </td>
-   <td style="text-align:center;"> 0.41297 </td>
-   <td style="text-align:center;"> 0.60911 </td>
-   <td style="text-align:center;"> 0.63864 </td>
-   <td style="text-align:center;"> 0.71210 </td>
-   <td style="text-align:center;"> 0.73621 </td>
+   <td style="text-align:center;"> 0.40037 </td>
+   <td style="text-align:center;"> 0.40551 </td>
+   <td style="text-align:center;"> 0.41584 </td>
+   <td style="text-align:center;"> 0.60448 </td>
+   <td style="text-align:center;"> 0.63485 </td>
+   <td style="text-align:center;"> 0.71031 </td>
+   <td style="text-align:center;"> 0.73349 </td>
    <td style="text-align:center;"> 1.00000 </td>
-   <td style="text-align:center;"> 0.30987 </td>
-   <td style="text-align:center;"> 0.28622 </td>
-   <td style="text-align:center;"> 0.29783 </td>
+   <td style="text-align:center;"> 0.31474 </td>
+   <td style="text-align:center;"> 0.27909 </td>
+   <td style="text-align:center;"> 0.29956 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Phae.long4.wav_1-1 </td>
-   <td style="text-align:center;"> 0.31506 </td>
-   <td style="text-align:center;"> 0.31016 </td>
-   <td style="text-align:center;"> 0.30521 </td>
-   <td style="text-align:center;"> 0.32219 </td>
-   <td style="text-align:center;"> 0.31114 </td>
-   <td style="text-align:center;"> 0.30168 </td>
-   <td style="text-align:center;"> 0.30238 </td>
-   <td style="text-align:center;"> 0.30987 </td>
+   <td style="text-align:center;"> 0.31790 </td>
+   <td style="text-align:center;"> 0.31471 </td>
+   <td style="text-align:center;"> 0.31090 </td>
+   <td style="text-align:center;"> 0.32654 </td>
+   <td style="text-align:center;"> 0.31228 </td>
+   <td style="text-align:center;"> 0.30546 </td>
+   <td style="text-align:center;"> 0.30464 </td>
+   <td style="text-align:center;"> 0.31474 </td>
    <td style="text-align:center;"> 1.00000 </td>
-   <td style="text-align:center;"> 0.76558 </td>
-   <td style="text-align:center;"> 0.75519 </td>
+   <td style="text-align:center;"> 0.76573 </td>
+   <td style="text-align:center;"> 0.75555 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Phae.long4.wav_2-1 </td>
-   <td style="text-align:center;"> 0.32050 </td>
-   <td style="text-align:center;"> 0.31850 </td>
-   <td style="text-align:center;"> 0.30567 </td>
-   <td style="text-align:center;"> 0.29553 </td>
-   <td style="text-align:center;"> 0.27942 </td>
-   <td style="text-align:center;"> 0.28201 </td>
-   <td style="text-align:center;"> 0.28260 </td>
-   <td style="text-align:center;"> 0.28622 </td>
-   <td style="text-align:center;"> 0.76558 </td>
+   <td style="text-align:center;"> 0.31677 </td>
+   <td style="text-align:center;"> 0.31580 </td>
+   <td style="text-align:center;"> 0.29867 </td>
+   <td style="text-align:center;"> 0.29332 </td>
+   <td style="text-align:center;"> 0.27759 </td>
+   <td style="text-align:center;"> 0.27932 </td>
+   <td style="text-align:center;"> 0.27810 </td>
+   <td style="text-align:center;"> 0.27909 </td>
+   <td style="text-align:center;"> 0.76573 </td>
    <td style="text-align:center;"> 1.00000 </td>
-   <td style="text-align:center;"> 0.75906 </td>
+   <td style="text-align:center;"> 0.75997 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Phae.long4.wav_3-1 </td>
-   <td style="text-align:center;"> 0.32054 </td>
-   <td style="text-align:center;"> 0.31455 </td>
-   <td style="text-align:center;"> 0.32297 </td>
-   <td style="text-align:center;"> 0.32559 </td>
-   <td style="text-align:center;"> 0.31345 </td>
-   <td style="text-align:center;"> 0.29369 </td>
-   <td style="text-align:center;"> 0.29942 </td>
-   <td style="text-align:center;"> 0.29783 </td>
-   <td style="text-align:center;"> 0.75519 </td>
-   <td style="text-align:center;"> 0.75906 </td>
+   <td style="text-align:center;"> 0.32235 </td>
+   <td style="text-align:center;"> 0.31608 </td>
+   <td style="text-align:center;"> 0.32298 </td>
+   <td style="text-align:center;"> 0.32296 </td>
+   <td style="text-align:center;"> 0.31193 </td>
+   <td style="text-align:center;"> 0.29560 </td>
+   <td style="text-align:center;"> 0.29940 </td>
+   <td style="text-align:center;"> 0.29956 </td>
+   <td style="text-align:center;"> 0.75555 </td>
+   <td style="text-align:center;"> 0.75997 </td>
    <td style="text-align:center;"> 1.00000 </td>
   </tr>
 </tbody>
@@ -1193,6 +1193,7 @@ snr
   </tr>
 </tbody>
 </table></div>
+&nbsp; 
 
 #### Dynamic time warping distance
 
@@ -1378,6 +1379,7 @@ dtw.dist
   </tr>
 </tbody>
 </table></div>
+&nbsp; 
 
 ## Performance
 
@@ -1811,6 +1813,48 @@ bs_snr <- sig2noise(bs_ext_st, mar = 0.05)
 </table></div>
 
 The margin would be an important parameter to take into consideration for some downstream functions like those producing plots or using additional time segments around selection to run analysis (e.g. `sig2noise()` or `xcorr()`).
+
+## Sharing acoustic data
+
+The new object class allows to share complete data sets, including the acoustic data. For instance, with the following code you can download a subset of the data used in [Araya-Salas *et al* (2017)](https://marceloarayasalas.weebly.com/uploads/2/5/5/2/25524573/araya-salas_smith-vidaurre___webster_2017._table_s1._recording_metadata.xlsx) (it can also be downloaded [here](https://marceloarayasalas.weebly.com/uploads/2/5/5/2/25524573/extended.selection.table.araya-salas.et.al.2017.bioacoustics.100.sels.rds)):
+
+
+{% highlight r %}
+URL <- "https://marceloarayasalas.weebly.com/uploads/2/5/5/2/25524573/extended.selection.table.araya-salas.et.al.2017.bioacoustics.100.sels.rds"
+
+dat <- readRDS(gzcon(url(URL)))
+
+nrow(dat)
+{% endhighlight %}
+
+
+
+{% highlight text %}
+[1] 100
+{% endhighlight %}
+
+
+
+{% highlight r %}
+format(object.size(dat), units = "auto")
+{% endhighlight %}
+
+
+
+{% highlight text %}
+[1] "10.1 Mb"
+{% endhighlight %}
+
+The total size of the 100 sound files from which these selections were taken adds up to 1.1 GB. The size of the extended selection table is just 10.1 MB.
+
+This data is ready to be used:
+
+
+{% highlight r %}
+sp <- specan(dat)
+{% endhighlight %}
+
+The ability to compress large data sets and the easiness of conducting analyses requiring only a single *R* object can potentially simplify data sharing and the reproducibility of bioacoustic analyses.
 
 Please report any bugs [here](https://github.com/maRce10/warbleR/issues).
 
