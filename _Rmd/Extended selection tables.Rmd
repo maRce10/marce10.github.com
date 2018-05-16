@@ -1,0 +1,472 @@
+---
+title: Extended selection tables
+author: "Marcelo Araya-Salas"
+date: "2018-05-15"
+output: 
+  md_document:
+    variant: markdown_github
+---
+
+This post shows how to create and use the new [warbleR](https://cran.r-project.org/package=warbleR) object class *extended_selection_table*.
+
+These objects are created with the `selec_table()` function. This function takes data frames containing selection data (sound file name, selection, start, end ...), checks whether the information is consistent (see `checksels()` function for details) and saves the 'diagnostic' metadata as an attribute. When the argument `extended = TRUE` the function generates an object of class *extended_selection_table* which also contains a list of wave objects corresponding to each of the selections in the data frame. Hence, the function **transforms selection tables into self-contained objects** as they no longer need the original sound files for running most acoustic analysis in 
+[warbleR](https://cran.r-project.org/package=warbleR). This can facilitate a lot the storing and sharing of (bio)acoustic data. In addition, it also speeds up processes as sound files do not need to be read every time.
+
+Let's first install and/or load [warbleR](https://cran.r-project.org/package=warbleR) developmental version (if there is an older [warbleR](https://cran.r-project.org/package=warbleR) version installed it has to be removed first):
+
+```{r extn_sel_1, eval=F}
+
+# remove warbleR
+remove.packages("warbleR")
+
+# install devtools if not installed
+if (!"devtools" %in% installed.packages()[,"Package"])  
+  install.packages("devtools")
+
+# and install warbleR from github
+devtools::install_github("maRce10/warbleR")
+
+# load warbleR
+library(warbleR)
+
+```
+
+```{r extn_sel_2, echo = FALSE, message = FALSE}
+
+rm(list = ls())
+
+# unload all non-based packages
+out <- sapply(paste('package:', names(sessionInfo()$otherPkgs), sep = ""), function(x) try(detach(x, unload = FALSE, character.only = TRUE), silent = T))
+
+#load packages
+library(warbleR)
+library(knitr)
+library(kableExtra)
+
+source("~/Dropbox/warbleR/R/selection_table.R")
+
+
+options(knitr.table.format = "html") 
+opts_chunk$set(comment = "")
+opts_knit$set(root.dir = tempdir())
+options(width = 100, max.print = 100)
+
+```
+
+... set a temporary folder, load the example sound files and set [warbleR](https://cran.r-project.org/package=warbleR) options (see `warbleR_options()` documentation):
+
+```{r extn_sel_3}
+
+# set temporary directory
+setwd(tempdir())
+
+# load example data
+data(list = c("Phae.long1", "Phae.long2", "Phae.long3", "Phae.long4",
+              "selec.table"))
+
+# save recordings as wave files
+writeWave(Phae.long1,"Phae.long1.wav")
+writeWave(Phae.long2,"Phae.long2.wav")
+writeWave(Phae.long3,"Phae.long3.wav")
+writeWave(Phae.long4,"Phae.long4.wav")
+
+# set warbleR options
+warbleR_options(wl = 300, pb = FALSE, 
+          parallel = parallel::detectCores() - 1)
+
+```
+
+Now, as mentioned above, you need the `selec_table()` function to create extended selection table. You also need to set the the argument `extended = TRUE` (otherwise the class would be a "selection_table"). Here the example data that comes with [warbleR](https://cran.r-project.org/package=warbleR) is used as the data frame to be converted to an object of class *extended_selection_table*:
+
+
+```{r extn_sel_4.1, eval=FALSE}
+
+selec.table
+
+```
+
+```{r extn_sel_4.2, echo=FALSE}
+
+kbl <- kable(selec.table, align = "c", row.names = F,  format = "html")
+
+scroll_box(kbl, width = "740px",
+box_css = "border: 1px solid #ddd; padding: 1px; ", extra_css = NULL)
+
+```
+
+The following code converts it to a extended selection table:
+
+```{r extn_sel_4.3}
+
+# make extended selection table
+ext_st <- selection_table(X = selec.table, pb = FALSE, 
+          extended = TRUE, confirm.extended = FALSE)
+
+```
+
+And that's it. Now the acoustic data and the selection data (as well as the additional metadata) are all together in a single *R* object.
+
+ &nbsp; 
+ 
+## Manipulating extended selection tables
+
+Several functions can be used to deal with objects of this class. You can test if the object belongs to the *extended_selection_table*:
+
+```{r extn_sel_5}
+
+is_extended_selection_table(ext_st)
+
+```
+
+
+You can subset the selection in the same way that any other data frame in it will maintain its attributes:
+
+```{r extn_sel_6}
+
+ext_st2 <- ext_st[1:2, ]
+
+is_extended_selection_table(ext_st2)
+
+```
+
+There is also a generic version of `print()` for these class of objects: 
+
+```{r extn_sel_7}
+
+## print
+print(ext_st)
+
+```
+
+```{r extn_sel_7.1, eval=FALSE}
+
+## which is the same than this
+ext_st
+
+```
+
+```{r extn_sel_7/2, echo=FALSE}
+
+print(ext_st)
+
+```
+
+And finally they can also be row-bind together. Here the original *extended_selection_table* is split into 2 and bind back together using `rbind()`:
+
+```{r extn_sel_8, eval = FALSE}
+
+ext_st3 <- ext_st[1:5, ]
+
+ext_st4 <- ext_st[6:11, ]
+
+ext_st5 <- rbind(ext_st3, ext_st4)
+
+#print
+ext_st5
+
+```
+
+```{r extn_sel_8.1, echo=FALSE}
+
+ext_st3 <- ext_st[1:5, ]
+
+ext_st4 <- ext_st[6:11, ]
+
+ext_st5 <- rbind(ext_st3, ext_st4)
+
+#print
+print(ext_st5)
+
+```
+
+```{r extn_sel_8.2}
+
+# the same than the original one
+all.equal(ext_st, ext_st5)
+
+```
+
+Keep in mind that other functions that deal with data frames are likely to remove the attributes in which wave objects and metadata are stored.
+
+Extended selection table size will be a function of the number of selections, sampling rate, selection duration and margin duration (the margin is how much extra time you want to keep at each side of the selection). In this example a data frame with 1000 selections is created just by repeating the example data frame several times and then converted to an extended selection table:
+
+
+```{r extn_sel_9, eval=FALSE}
+
+lng.selec.table <- do.call(rbind, replicate(100, selec.table, 
+                        simplify = FALSE))[1:1000,]
+
+lng.selec.table$selec <- 1:nrow(lng.selec.table)
+
+nrow(lng.selec.table)
+
+lng_ext_st <- selection_table(X = lng.selec.table, pb = FALSE, 
+                        extended = TRUE, confirm.extended = FALSE)
+
+lng_ext_st
+
+```
+
+
+```{r extn_sel_9.2, echo=FALSE}
+
+lng.selec.table <- do.call(rbind, replicate(100, selec.table, 
+                        simplify = FALSE))[1:1000,]
+
+lng.selec.table$selec <- 1:nrow(lng.selec.table)
+
+lng_ext_st <- selection_table(X = lng.selec.table, pb = FALSE, 
+                        extended = TRUE, confirm.extended = FALSE)
+
+print(lng_ext_st)
+
+
+```
+
+```{r extn_sel_9.3}
+
+format(object.size(lng_ext_st), units = "auto")
+
+```
+
+As you can see the object size is only ~31 Mb. So, as a guide, a selection table with 1000 selections similar to those in 'selec.table' (mean duration ~0.15 seconds) at 22.5 kHz sampling rate and the default margin (mar = 0.1) will generate a extended selection table of ~31 MB or ~310 MB for a 10000 row selection table. 
+
+&nbsp; 
+ 
+## Running analysis on extended selection tables
+
+These objects can be used as input for most [warbleR](https://cran.r-project.org/package=warbleR) functions. We need to delete the sound files in order to show the data is actually contained in the new objects:
+
+```{r extn_sel_11}
+
+list.files(pattern = "\\.wav$")
+
+# delete files (be careful not to run this 
+# if you have sound files in the working directory!)
+unlink(list.files(pattern = "\\.wav$"))
+
+list.files(pattern = "\\.wav$")
+
+```
+
+Here are a few examples of [warbleR](https://cran.r-project.org/package=warbleR) functions using *extended_selection_table*:
+
+#### Spectral parameters
+
+```{r extn_sel_12.1, eval=FALSE}
+
+# spectral parameters
+sp <- specan(ext_st)
+
+sp
+```
+
+
+```{r, extn_sel_12.2, echo= FALSE}
+
+sp <- specan(ext_st)
+
+kbl <- kable(sp, align = "c", row.names = F,  format = "html")
+
+scroll_box(kbl, width = "740px",
+box_css = "border: 1px solid #ddd; padding: 1px; ", extra_css = NULL)
+
+```
+
+#### Cross correlation
+
+```{r extn_sel_12.3, eval=FALSE}
+
+xc <- xcorr(ext_st, frange = c(1, 11))
+
+xc
+```
+
+
+```{r, extn_sel_12.4, echo= FALSE}
+
+xc <- xcorr(ext_st, frange = c(1, 11))
+
+kbl <- kable(xc, align = "c", row.names = T,  format = "html")
+
+scroll_box(kbl, height = "500px", width = "740px",
+box_css = "border: 1px solid #ddd; padding: 1px; ", extra_css = NULL)
+```
+&nbsp; 
+
+#### Signal-to-noise ratio
+
+```{r extn_sel_12.5, eval=FALSE}
+
+# signal-to-noise ratio
+snr <- sig2noise(ext_st, mar = 0.05)
+
+snr
+```
+
+
+```{r, extn_sel_12.6, echo= FALSE}
+
+snr <- sig2noise(ext_st, mar = 0.05)
+
+kbl <- kable(snr, align = "c", row.names = F,  format = "html")
+
+scroll_box(kbl, width = "740px",
+box_css = "border: 1px solid #ddd; padding: 1px; ", extra_css = NULL)
+```
+
+#### Dynamic time warping distance
+
+```{r extn_sel_12.7, eval=FALSE}
+
+dtw.dist <- dfDTW(ext_st, img = FALSE)
+
+dtw.dist
+
+```
+
+
+```{r, extn_sel_12.8, echo= FALSE}
+
+dtw.dist <- dfDTW(ext_st, img = FALSE)
+
+kbl <- kable(dtw.dist, align = "c", row.names = T,  format = "html")
+
+scroll_box(kbl, height = "500px", width = "740px",
+box_css = "border: 1px solid #ddd; padding: 1px; ", extra_css = NULL)
+
+```
+
+## Performance
+
+Using *extended_selection_table* objects can improve performance (in our case measured as time). Here we used the [microbenchmark](https://cran.r-project.org/package=microbenchmark) to compare the performance and [ggplot2](https://cran.r-project.org/package=ggplot2) to plot the results. We also need to save the wave files again to be able to run the analysis with regular data frames:
+
+```{r extn_sel_13, out.width= 750, dpi = 100}
+
+# save recordings as wave files
+writeWave(Phae.long1,"Phae.long1.wav")
+writeWave(Phae.long2,"Phae.long2.wav")
+writeWave(Phae.long3,"Phae.long3.wav")
+writeWave(Phae.long4,"Phae.long4.wav")
+
+#run this one if microbenchmark is not installed
+# install.packages("microbenchmark")
+library(microbenchmark)
+
+# install.packages("ggplot2")
+library(ggplot2)
+
+# use only 1 core
+warbleR_options(parallel = 1, pb = FALSE)
+
+# repetitions for each process
+reps <- 50
+
+# use the first 100 selection for the long selection tables
+mbmrk.snr <- microbenchmark(extended = sig2noise(lng_ext_st[1:100, ], 
+      mar = 0.05), regular = sig2noise(lng.selec.table[1:100, ], 
+                    mar = 0.05), times = reps)
+
+autoplot(mbmrk.snr) + ggtitle("sig2noise")
+
+mbmrk.dtw <- microbenchmark(extended = dfDTW(lng_ext_st[1:100, ], 
+          img = FALSE), regular = dfDTW(lng.selec.table[1:100, ], 
+                              img = FALSE), times = reps)
+
+autoplot(mbmrk.dtw) + ggtitle("dfDTW")
+
+# on the first 20 selections
+mbmrk.xc <- microbenchmark(extended = xcorr(lng_ext_st[1:20, ], 
+    frange = c(1, 11)), regular = xcorr(lng.selec.table[1:20, ], 
+        frange = c(1, 11)), times = reps)
+
+autoplot(mbmrk.xc) + ggtitle("xcorr")
+
+```
+
+The gain in performance is likely to improve when using longer recordings and data sets (i.e. compensate for computing overhead).
+
+
+## By song
+
+The extended selection tables above were all made 'by selection'. This is, each sound file inside the object contains a single selection (i.e. 1:1 correspondence between selections and wave objects). Extended selection tables, however, can also be created by using a higher hierarchical level with the argument `by.song`. In this case, 'song' represents a higher level that contains one or more selections and that the user may want to keep together for some particular analysis (e.g. gap duration). The argument `by.song` takes the name of the character or factor column with the IDs of the different "songs" within a sound file (note that the function assumes that a given song can only be found in a single sound file so selections with the same song ID but from different sound files is taken as different 'songs').
+
+For the sake of the example, let's add an artificial song column to our example data set in which each sound files 2 songs:  
+
+```{r extn_sel_14}
+
+# add column
+selec.table$song <- c(1, 1, 2, 1, 2, 1, 1, 2, 1, 2, 2)
+
+```
+
+The data frame looks like this:
+
+```{r, extn_sel_15, echo= FALSE}
+
+kbl <- kable(selec.table, align = "c", row.names = F,  format = "html")
+
+scroll_box(kbl, width = "740px",
+box_css = "border: 1px solid #ddd; padding: 1px; ", extra_css = NULL)
+
+```
+
+Now we can create an extended selection table 'by song' using the name of the 'song' column (which in this silly example is also 'song') as the input for the `by.song` argument:
+
+```{r extn_sel_16}
+
+bs_ext_st <- selection_table(X = selec.table, extended = TRUE,
+                              confirm.extended = FALSE, by.song = "song")
+
+```
+
+In this case we should only have 8 wave objects instead of 11 as when the object was created 'by selection':
+
+```{r extn_sel_17}
+
+# by element
+length(attr(ext_st, "wave.objects"))
+
+# by song
+length(attr(bs_ext_st, "wave.objects"))
+
+```
+
+
+Again, these objects can also be used for further analysis:
+
+```{r extn_sel_18}
+
+# signal-to-noise ratio
+bs_snr <- sig2noise(bs_ext_st, mar = 0.05)
+
+```
+
+```{r, extn_sel_18.2, echo= FALSE}
+
+kbl <- kable(bs_snr, align = "c", row.names = F,  format = "html")
+
+scroll_box(kbl, width = "740px",
+box_css = "border: 1px solid #ddd; padding: 1px; ", extra_css = NULL)
+
+```
+
+The margin would be an important parameter to take into consideration for some downstream functions like those producing plots or using additional time segments around selection to run analysis (e.g. `sig2noise()` or `xcorr()`).
+
+Please report any bugs [here](https://github.com/maRce10/warbleR/issues).
+
+---
+
+<font size="4">Session information</font>
+
+```{r session info, echo=F}
+
+sessionInfo()
+
+```
+
+```{r rm, echo=F}
+
+unlink(list.files(pattern = "\\.wav$"))
+```
+
