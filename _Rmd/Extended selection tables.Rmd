@@ -252,7 +252,7 @@ is_extended_selection_table(mrg_ext_st)
 
 ```
 
-This would work as long as some of the original sound files are kept an no other selections are added.
+This works as long as some of the original sound files are kept and no other selections are added.
 
 &nbsp; 
 
