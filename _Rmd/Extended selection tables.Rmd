@@ -226,7 +226,33 @@ for(i in 1:6){
 
 The `read_wave()` function takes the table as well as the index of the selection to be read (e.g. the row number).
 
-Keep in mind that is likely that other functions that deal with data frames will remove the attributes in which wave objects and metadata are stored.
+Keep in mind that is likely that other functions that modify data frames will remove the attributes in which wave objects and metadata are stored. For instances, merging and extended selection table will get rid of its attributes:
+
+```{r extn_sel_8.24}
+# create a new data frame 
+Y <- data.frame(sound.files = ext_st$sound.files, site = "La Selva", lek = c(rep("SUR", 5), rep("CCL", 6)))
+
+# merge
+mrg_ext_st <- merge(ext_st, Y, by = "sound.files")
+
+# check class
+is_extended_selection_table(mrg_ext_st)
+
+```
+
+In this case we can use the `fix_extended_selection_table()` function to transfer the attributes from the original extended selection table:
+
+```{r extn_sel_8.25}
+
+# fix
+mrg_ext_st <- fix_extended_selection_table(X = mrg_ext_st, Y = ext_st)
+
+# check class
+is_extended_selection_table(mrg_ext_st)
+
+```
+
+This would work as long as some of the original sound files are kept an no other selections are added.
 
 &nbsp; 
 
@@ -412,7 +438,6 @@ mbmrk.snr <- microbenchmark(extended = sig2noise(lng_ext_st[1:100, ],
 
 autoplot(mbmrk.snr) + ggtitle("sig2noise")
 
-
 ```
 
 <font size="3"><i>Distribution of <i>`sig2noise()`</i> timing on regular and extended selection tables</i></font>
@@ -558,5 +583,6 @@ sessionInfo()
 ```{r rm, echo=F}
 
 unlink(list.files(pattern = "\\.wav$"))
+
 ```
 
