@@ -67,8 +67,8 @@ open_wd()
 
 
 
-![frange1](frange_catalog.png)
-![frangeX](img/frange_catalog.png)
+![frange1](/img/frange_catalog.png)
+
 ### freq_range_detec
 
 Now we are ready to run the new functions. `freq_range_detec` works on wave objects. In this example we use it to detect the frequency range of the first selection in "ad". But first the selection has to be read as a wave object into *R*: 
@@ -82,7 +82,7 @@ freq_range_detec(w4, bp = c(2, 9.6), fsmooth = 1, ovlp = 95,
                  wl = 200, threshold = 8)
 {% endhighlight %}
 
-![frange2](frange_freq_range_detec.png)
+![frange2](/img/frange_freq_range_detec.png)
 
 We can look at the detection for each selection in the 'ad' data frame using a loop as follows:
 
@@ -104,7 +104,7 @@ Sys.sleep(0.8)
 
 
 
-![frange_gif](frange_2.gif)
+![frange_gif](/img/frange_2.gif)
 
 In most cases the detection is good. However, there are some issues with highly amplitude-modulated signals (e.g. high variation in amplitude across the signal). Some parameter tweeking will be required to improve those detections. 
 
