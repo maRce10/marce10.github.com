@@ -28,7 +28,7 @@ We will run the functions on signals detected on a recording from a male [Stripe
 
 {% highlight r %}
 # set temporary working directory
-setwd(tempdir())
+# setwd(tempdir())
 
 # Query and download  Xeno-Canto for metadata using genus and species as keywords
 Phae.stri <- quer_xc(qword = "nr:154074", download = TRUE, pb = FALSE)
@@ -67,9 +67,7 @@ open_wd()
 
 
 
-
-
-![frange1](img/frange_catalog.png)
+![frange1](frange_catalog.png)
 
 ### freq_range_detec
 
@@ -77,14 +75,14 @@ Now we are ready to run the new functions. `freq_range_detec` works on wave obje
 
 
 {% highlight r %}
-w4 <- readWave(as.character(ad$sound.files[4]), from = ad$start[4], 
-               to = ad$end[4], units = "seconds")
+w2 <- readWave(as.character(ad$sound.files[2]), from = ad$start[2], 
+               to = ad$end[2], units = "seconds")
 
 freq_range_detec(w4, bp = c(2, 9.6), fsmooth = 1, ovlp = 95, 
                  wl = 200, threshold = 8)
 {% endhighlight %}
 
-![frange2](img/frange_freq_range_detec.png)
+![frange2](frange_freq_range_detec.png)
 
 We can look at the detection for each selection in the 'ad' data frame using a loop as follows:
 
@@ -106,7 +104,7 @@ Sys.sleep(0.8)
 
 
 
-![frange_gif](img/frange_2.gif)
+![frange_gif](frange_2.gif)
 
 In most cases the detection is good. However, there are some issues with highly amplitude-modulated signals (e.g. high variation in amplitude across the signal). Some parameter tweeking will be required to improve those detections. 
 

@@ -27,7 +27,7 @@ library("warbleR")
 
 ```{r frange_2 read data, eval= T, echo=F}
 
-setwd(tempdir())
+# setwd(tempdir())
 
 library(warbleR)
 library(knitr)
@@ -48,7 +48,7 @@ We will run the functions on signals detected on a recording from a male [Stripe
 ```{r frange_3, eval = F}
 
 # set temporary working directory
-setwd(tempdir())
+# setwd(tempdir())
 
 # Query and download  Xeno-Canto for metadata using genus and species as keywords
 Phae.stri <- quer_xc(qword = "nr:154074", download = TRUE, pb = FALSE)
@@ -88,8 +88,6 @@ open_wd()
 
 ```
 
-
-
 ```{r frange_7, eval = F, echo = F}
 
 Phae.stri <- list(readWave("Phaethornis-striigularis-154074.wav"), ad)
@@ -98,7 +96,7 @@ saveRDS(Phae.stri, "~/Dropbox/Websites/Blog/Phae.stri.RDS")
 
 ```
 
-![frange1](img/frange_catalog.png)
+![frange1](frange_catalog.png)
 
 ### freq_range_detec
 
@@ -106,15 +104,15 @@ Now we are ready to run the new functions. `freq_range_detec` works on wave obje
 
 ```{r frange_8, eval = FALSE}
 
-w4 <- readWave(as.character(ad$sound.files[4]), from = ad$start[4], 
-               to = ad$end[4], units = "seconds")
+w2 <- readWave(as.character(ad$sound.files[2]), from = ad$start[2], 
+               to = ad$end[2], units = "seconds")
 
 freq_range_detec(w4, bp = c(2, 9.6), fsmooth = 1, ovlp = 95, 
                  wl = 200, threshold = 8)
 
 ```
 
-![frange2](img/frange_freq_range_detec.png)
+![frange2](frange_freq_range_detec.png)
 
 We can look at the detection for each selection in the 'ad' data frame using a loop as follows:
 
@@ -161,7 +159,7 @@ system("ffmpeg  -t 20 -ss 00:00:00 -i y.mp4 y.gif")
 
 ```
 
-![frange_gif](img/frange_2.gif)
+![frange_gif](frange_2.gif)
 
 In most cases the detection is good. However, there are some issues with highly amplitude-modulated signals (e.g. high variation in amplitude across the signal). Some parameter tweeking will be required to improve those detections. 
 
@@ -180,7 +178,7 @@ View(fr.ad)
 ```
 
 ```{r frange_12, echo= FALSE}
-setwd(tempdir())
+# setwd(tempdir())
 
 fr.ad <- freq_range(X = ad, bp = c(2, 12), fsmooth = 0.001, ovlp = 95, 
                     wl = 200, threshold = 10, img = FALSE)
@@ -205,7 +203,7 @@ View(sp)
 
 
 ```{r frange_14, echo= FALSE}
-setwd(tempdir())
+# setwd(tempdir())
 
 sp <- specan(X = fr.ad, wl = 200, bp = "frange", ovlp = 90, 
              pb = FALSE, threshold = 15)
