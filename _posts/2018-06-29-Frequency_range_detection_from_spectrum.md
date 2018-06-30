@@ -121,7 +121,7 @@ fr.ad <- freq_range_detec(X = ad, bp = c(2, 12), fsmooth = 0.001, ovlp = 95,
 View(fr.ad)
 {% endhighlight %}
 
-<div style="border: 1px solid #ddd; padding: 1px; overflow-y: scroll; height:600px; overflow-x: scroll; width:740px; "><table>
+<div style="border: 1px solid #ddd; padding: 1px; overflow-y: scroll; height:600px; overflow-x: scroll; width:740px;  font-size: 13px; margin-left: auto; margin-right: auto;" class="table table-striped"><table>
  <thead>
   <tr>
    <th style="text-align:center;"> sound.files </th>
@@ -328,7 +328,7 @@ View(sp)
 {% endhighlight %}
 
 
-<div style="border: 1px solid #ddd; padding: 1px; overflow-y: scroll; height:600px; overflow-x: scroll; width:740px; "><table>
+<div style="border: 1px solid #ddd; padding: 1px; overflow-y: scroll; height:600px; overflow-x: scroll; width:740px;  font-size: 13px; margin-left: auto; margin-right: auto;" class="table table-striped"><table>
  <thead>
   <tr>
    <th style="text-align:center;"> sound.files </th>

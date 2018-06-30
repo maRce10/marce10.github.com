@@ -185,9 +185,10 @@ fr.ad <- freq_range(X = ad, bp = c(2, 12), fsmooth = 0.001, ovlp = 95,
 
 kbl <- kable(fr.ad, align = "c", row.names = F,  format = "html")
 
-scroll_box(kbl, width = "740px",  height= "600px",
+kbl <- scroll_box(kbl, width = "740px",  height= "600px",
 box_css = "border: 1px solid #ddd; padding: 1px; ", extra_css = NULL)
 
+kable_styling(kbl, bootstrap_options = "striped", font_size = 13)
 ```
 
 The range can then be used as a band pass filter in other [warbleR](https://cran.r-project.org/package=warbleR) functions like `trackfreqs`, `dfts` or `specan`:
@@ -210,9 +211,10 @@ sp <- specan(X = fr.ad, wl = 200, bp = "frange", ovlp = 90,
 
 kbl <- kable(sp, align = "c", row.names = F,  format = "html")
 
-scroll_box(kbl, width = "740px", height= "600px",
-box_css = "border: 1px solid #ddd; padding: 1px; ", extra_css = NULL)
+kbl <- scroll_box(kbl, width = "740px", height= "600px",
+box_css = "border: 1px solid #ddd; padding: 1px; ", extra_css = NULL) 
 
+kable_styling(kbl, bootstrap_options = "striped", font_size = 13)
 ```
 
 That's it!
