@@ -68,7 +68,7 @@ open_wd()
 
 
 ![frange1](frange_catalog.png)
-![frange1](img/frange_catalog.png)
+![frangeX](img/frange_catalog.png)
 ### freq_range_detec
 
 Now we are ready to run the new functions. `freq_range_detec` works on wave objects. In this example we use it to detect the frequency range of the first selection in "ad". But first the selection has to be read as a wave object into *R*: 
