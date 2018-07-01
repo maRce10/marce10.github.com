@@ -7,7 +7,7 @@ output:
     variant: markdown_github
 ---
 
-In bioacoustics we are often interested in measuring the frequency range of acoustic signals. This is typically done by drawing boxes in Raven/Syrinx/Avisoft. An alternative way, and potentially less subjective, is to infer the range from the energy distribution in the frequency domain applying amplitude thresholds on spectrums. 
+
 
 I have added two new functions to [warbleR]((https://cran.r-project.org/package=warbleR) that do exactly that:
 
@@ -23,7 +23,6 @@ if(!require(githubinstall)) install.packages("githubinstall")
 
 githubinstall("warbleR", ask = FALSE)
 
-if(!require(monitoR)) install.packages("monitoR")
 
 ```
 

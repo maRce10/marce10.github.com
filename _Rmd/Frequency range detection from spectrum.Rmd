@@ -107,7 +107,7 @@ Now we are ready to run the new functions. `freq_range_detec` works on wave obje
 w2 <- readWave(as.character(ad$sound.files[2]), from = ad$start[2], 
                to = ad$end[2], units = "seconds")
 
-freq_range_detec(w4, bp = c(2, 9.6), fsmooth = 1, ovlp = 95, 
+freq_range_detec(w2, bp = c(2, 9.6), fsmooth = 1, ovlp = 95, 
                  wl = 200, threshold = 8)
 
 ```
@@ -170,7 +170,7 @@ As mentioned above, the frequency range can be calculated for all selection in a
 
 ```{r frange_11, eval = F}
 
-fr.ad <- freq_range_detec(X = ad, bp = c(2, 12), fsmooth = 0.001, ovlp = 95, 
+fr.ad <- freq_range(X = ad, bp = c(2, 12), fsmooth = 0.001, ovlp = 95, 
                           wl = 200, threshold = 10, img = FALSE)
 
 View(fr.ad)
