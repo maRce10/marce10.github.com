@@ -86,7 +86,7 @@ lspec(ovlp = 50, sxrow = 3, rows = 12)
 
 ![frange_gif](/img/lspec-spec.pca.png)
 
-The elements of this song are pure tone, highly modulated sounds that seem to be recycled along the sequence. Overall, the structure of the elements seems to be consistent across renditions and the background noise level of the recording looks fine.
+The elements of this song are pure tone, highly modulated sounds that are recycled along the sequence. Overall, the structure of the element types seems to be consistent across renditions and the background noise level of the recording looks fine.
 
 To run any analysis we need to detect the time 'coordinates' of the signals in the sound file using `auto_detec`:
 
@@ -182,7 +182,7 @@ est$class.sp <- ifelse(nchar(est$class.sp) == 1,
                              paste0(0, est$class.sp), est$class.sp)
 ```
 
-The classification can be visually assessed using a 'group-tagged' catalog. Elements belonging to the same cluster are next to each other. Elements are also labeled with the cluster number and colors highlight groups of element from the same clusters (note that colors are recycled):
+The classification can be visually assessed using a 'group-tagged' catalog. Elements belonging to the same cluster are next to each other. Elements are also labeled with the cluster number and colors highlight groups of elements from the same clusters (note that colors are recycled):
 ```{r spec.pca 11, eval = FALSE, echo = TRUE}
 
 catalog(est, nrow = 10, ncol =10, mar = 0.01, 
