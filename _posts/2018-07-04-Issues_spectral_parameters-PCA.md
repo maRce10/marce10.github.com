@@ -108,7 +108,7 @@ catalog(est, nrow = 10, ncol = 10, mar = 0.01, labels = "selec",
 
 ![frange_gif](/img/catalog-spec.pca.png)
 
-Some are too noise, but still good enough for the sake of the example.
+Some are too noisy, but still good enough for the example.
 
 ---
 
@@ -149,7 +149,7 @@ est$class.sp <- ifelse(nchar(est$class.sp) == 1,
                              paste0(0, est$class.sp), est$class.sp)
 {% endhighlight %}
 
-The classification can be visually assessed using a 'group-tagged' catalog as follows:
+The classification can be visually assessed using a 'group-tagged' catalog. Elements belonging to the same cluster are next to each other. Elements are also labeled with the cluster number and colors highlight groups of element from the same clusters (note that colors are recycled):
 
 {% highlight r %}
 catalog(est, nrow = 10, ncol =10, mar = 0.01, 
