@@ -9,9 +9,11 @@ output:
 
 We are often interested in getting the frequency range of acoustic signals, either because we have specific predictions about its variation or simply because we want to measure other stuff within that range. Measuring frequency range is typically done by drawing boxes in *Raven/Avisoft/Syrinx*. An alternative way, and potentially less subjective, is to infer the range from the energy distribution in the frequency domain applying amplitude thresholds on spectrums. I have added two new functions to [warbleR](https://cran.r-project.org/package=warbleR) that do exactly that:
 
-* `freq_range_detec`: detects the frequency range of signals in wave objects (like a [seewave](https://cran.r-project.org/package=seewave) function). Can produce image files in the working directory if `plot = TRUE`.
+* `freq_range_detec`: detects the frequency range of signals in wave objects (like a [seewave](https://cran.r-project.org/package=seewave) function). Can produce images n the graphic device if `plot = TRUE`.
 
-* `freq_range`: applies `freq_range_detec` iteratively on signals listed in a selection table (like most [warbleR](https://cran.r-project.org/package=warbleR) functions). If `img = TRUE` a graph including a spectrogram and a frequency spectrum is produced. And this post shows how they work.
+* `freq_range`: applies `freq_range_detec` iteratively on signals listed in a selection table (like most [warbleR](https://cran.r-project.org/package=warbleR) functions). If `img = TRUE` image files including a spectrogram and a frequency spectrum are produced for each selection. 
+
+This post shows how these functions work.
 
  Let's first Load/install [warbleR](https://cran.r-project.org/package=warbleR):
  
@@ -38,8 +40,9 @@ Phae.stri <- readRDS("~/Dropbox/Websites/Blog/Phae.stri.RDS")
 
 writeWave(Phae.stri[[1]], "Phaethornis-striigularis-154074.wav")
 
-ad <- Phae.stri[[2]]
+snr <- Phae.stri[[2]]
 
+ad <- snr[rank(-snr$SNR) < 60, ]
 
 ```
 
@@ -48,7 +51,7 @@ We will run the functions on signals detected on a recording from a male [Stripe
 ```{r frange_3, eval = F}
 
 # set temporary working directory
-# setwd(tempdir())
+ setwd(tempdir())
 
 # Query and download  Xeno-Canto for metadata using genus and species as keywords
 Phae.stri <- quer_xc(qword = "nr:154074", download = TRUE, pb = FALSE)
@@ -71,9 +74,10 @@ ad <- auto_detec(wl = 200, threshold = 3.5, ssmooth = 1200, bp = c(4, 9.6),
 And selec the highest signal-to-noise ratio signals (just for the sake of the example):
 
 ```{r frange_5, eval = FALSE}
+
 snr <- sig2noise(ad, pb = FALSE, mar = 0.05)
 
-ad <- snr[rank(-snr$SNR) < 21, ]
+ad <- snr[rank(-snr$SNR) < 60, ]
 
 ```
 
@@ -90,7 +94,7 @@ open_wd()
 
 ```{r frange_7, eval = F, echo = F}
 
-Phae.stri <- list(readWave("Phaethornis-striigularis-154074.wav"), ad)
+Phae.stri <- list(readWave("Phaethornis-striigularis-154074.wav"), snr)
 
 saveRDS(Phae.stri, "~/Dropbox/Websites/Blog/Phae.stri.RDS")
 
