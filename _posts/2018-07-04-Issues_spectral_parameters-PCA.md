@@ -114,7 +114,7 @@ Some are too noise, but still good enough for the sake of the example.
 
 ## Element classification using the 'standard' approach 
 
-So let's use the recipe of *spectro-temporal parameters + PCA*. First acoustic parameters are measured using `spec_an` and then a PCA is run over those parameters:
+So let's use the *spectro-temporal parameters + PCA* recipe. First acoustic parameters are measured using `spec_an` and then a PCA is run over those parameters:
 
 
 {% highlight r %}
@@ -202,9 +202,9 @@ catalog(est, nrow = 10, ncol = 10, mar = 0.01,
 
 ![frange_gif](/img/Catalog_p1-df_DTW-TSNE.png)
 
-The classification seems pretty good. Most clusters contain a single element type, and most types are found in a single cluster. Nonetheless, the classification was not perfect. For instance, clusters 6 and 7 contain the same element types. However, it's much better compare to the 'standard approach'.
+The classification seems pretty good. Most clusters contain a single element type, and most types are found in a single cluster. Nonetheless, the classification was not perfect. For instance, clusters 6 and 7 contain the same element types. However, it's much better compared to the 'standard approach'.
 
-This quick-and-dirty comparison suggests that we (behavioral ecologists) might actually be missing important signal features when assuming that 'spectral/temporal parameters + PCA' is the silver bullet in bioacoustic analysis. It also stresses the importance of validating our analyses in some way. Otherwise, there is no way to tell whether the results are simply an artifact of our measuring tools, particularly when no differences are found.
+This quick-and-dirty comparison suggests that we (behavioral ecologists) might actually be missing important signal features when using  the *spectral/temporal parameters + PCA* recipe as the silver bullet in bioacoustic analysis. It also stresses the importance of validating our analyses in some way. Otherwise, there is no way to tell whether the results are simply an artifact of our measuring tools, particularly when no differences are found.
 
 
 
