@@ -149,7 +149,7 @@ est$class.sp <- ifelse(nchar(est$class.sp) == 1,
                              paste0(0, est$class.sp), est$class.sp)
 {% endhighlight %}
 
-The classification can be visually assessed using a 'group-tagged' catalog. Elements belonging to the same cluster are next to each other. Elements are also labeled with the cluster number and colors highlight groups of elements from the same clusters (note that colors are recycled):
+The classification can be visually assessed using a 'group-tagged' catalog. In the catalog, elements belonging to the same cluster are located next to each other. Elements are also labeled with the cluster number and colors highlight groups of elements from the same clusters (note that colors are recycled):
 
 {% highlight r %}
 catalog(est, nrow = 10, ncol =10, mar = 0.01, 
