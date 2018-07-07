@@ -174,20 +174,20 @@ As mentioned above, the frequency range can be calculated for all selection in a
 
 ```{r frange_11, eval = F}
 
-fr.ad <- freq_range(X = ad, bp = c(2, 12), fsmooth = 0.001, ovlp = 95, 
+fr_ad <- freq_range(X = ad, bp = c(2, 12), fsmooth = 0.001, ovlp = 95, 
                           wl = 200, threshold = 10, img = FALSE)
 
-View(fr.ad)
+View(fr_ad)
 
 ```
 
 ```{r frange_12, echo= FALSE}
 # setwd(tempdir())
 
-fr.ad <- freq_range(X = ad, bp = c(2, 12), fsmooth = 0.001, ovlp = 95, 
+fr_ad <- freq_range(X = ad, bp = c(2, 12), fsmooth = 0.001, ovlp = 95, 
                     wl = 200, threshold = 10, img = FALSE)
 
-kbl <- kable(fr.ad, align = "c", row.names = F,  format = "html")
+kbl <- kable(fr_ad, align = "c", row.names = F,  format = "html")
 
 kbl <- scroll_box(kbl, width = "740px",  height= "600px",
 box_css = "border: 1px solid #ddd; padding: 1px; ", extra_css = NULL)
@@ -199,7 +199,7 @@ The range can then be used as a band pass filter in other [warbleR](https://cran
 
 ```{r frange_13, eval = F}
 
-sp <- specan(X = fr.ad, wl = 200, bp = "frange", ovlp = 90, pb = FALSE, 
+sp <- specan(X = fr_ad, wl = 200, bp = "frange", ovlp = 90, pb = FALSE, 
              threshold = 15)
 
 View(sp)
@@ -210,7 +210,7 @@ View(sp)
 ```{r frange_14, echo= FALSE}
 # setwd(tempdir())
 
-sp <- specan(X = fr.ad, wl = 200, bp = "frange", ovlp = 90, 
+sp <- specan(X = fr_ad, wl = 200, bp = "frange", ovlp = 90, 
              pb = FALSE, threshold = 15)
 
 kbl <- kable(sp, align = "c", row.names = F,  format = "html")
