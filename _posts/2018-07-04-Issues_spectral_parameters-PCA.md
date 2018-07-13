@@ -27,7 +27,8 @@ warbleR_options(bp =  c(2, 10), flim = c(3.5, 10.5), pb = TRUE, wl = 200,
                 ovlp = 90, parallel = 3, pal = reverse.heat.colors)
 
 # create nice color pallete
-cmc <- function(n) rep(adjustcolor(brewer.pal(5, "Spectral"), alpha.f = 0.6), 
+cmc <- function(n) rep(adjustcolor(brewer.pal(5, "Spectral"), 
+                                   alpha.f = 0.6), 
                        ceiling(n/4))[1:n]
 {% endhighlight %}
 
@@ -41,7 +42,8 @@ As in the [previous post](https://marce10.github.io/2018/06/29/Frequency_range_d
 # set temporary working directory
  setwd(tempdir())
 
-# Query and download  Xeno-Canto for metadata using genus and species as keywords
+# Query and download  Xeno-Canto for metadata using genus 
+# and species as keywords
 Phae.stri <- quer_xc(qword = "nr:154074", download = TRUE, pb = FALSE)
 
 # Convert mp3 to wav format
@@ -64,8 +66,9 @@ To run any analysis we need to detect the time 'coordinates' of the signals in t
 
 
 {% highlight r %}
-ad <- auto_detec(wl = 200, threshold = 3.5, ssmooth = 1200, bp = c(4, 9.6), 
-                 pb = FALSE,  mindur = 0.1, maxdur = 0.25, img = FALSE)
+ad <- auto_detec(wl = 200, threshold = 3.5, ssmooth = 1200, 
+                 bp = c(4, 9.6), pb = FALSE,  mindur = 0.1, 
+                 maxdur = 0.25, img = FALSE)
 {% endhighlight %}
 
 
@@ -84,8 +87,9 @@ ad <- snr[rank(-snr$SNR) < 100, ]
 
 
 {% highlight r %}
-fr_ad <- freq_range(X = ad, bp = c(2, 12), fsmooth = 0.001, ovlp = 95, 
-                          wl = 200, threshold = 10, img = FALSE, impute = TRUE)
+fr_ad <- freq_range(X = ad, bp = c(2, 12), fsmooth = 0.001, 
+                    ovlp = 95, wl = 200, threshold = 10, 
+                    img = FALSE, impute = TRUE)
 {% endhighlight %}
 
 Finally, let's pack the acoustic data and metadata together as a 'extended_selection_table' ([check this post to learn more about these objects](https://marce10.github.io/2018/05/15/Extended_selection_tables.html)):
@@ -93,7 +97,8 @@ Finally, let's pack the acoustic data and metadata together as a 'extended_selec
 
 
 {% highlight r %}
-est <- selection_table(X = fr_ad, extended = TRUE, confirm.extended = FALSE)
+est <- selection_table(X = fr_ad, extended = TRUE, 
+                       confirm.extended = FALSE)
 {% endhighlight %}
 
 We can take a look at the selected signals (or elements, subunits or whatever you want to call them) by creating a catalog:
@@ -122,10 +127,11 @@ sp <- spec_an(X = est)
 
 pca <- prcomp(sp[ , -c(1,2)], scale. = TRUE)
 
-pca_smm <- summary(pca)
+pca_sp <- summary(pca)
 
-barplot(pca_smm$importance[3,1:10], col = rev(.Options$warbleR$pal(10)), 
-        ylab = "Cumulative variance explained", xlab = "PCs", ylim = c(0, 1))
+barplot(pca_sp$importance[3, 1:10], col = rev(.Options$warbleR$pal(10)), 
+        ylab = "Cumulative variance explained", xlab = "PCs", 
+        ylim = c(0, 1))
 
 abline(h = 0.8, lty = 2)
 {% endhighlight %}
@@ -139,7 +145,9 @@ Now let's look and how good is the classification of elements based on the first
 
 {% highlight r %}
 # run mclust
-sp_clust <- Mclust(as.matrix(pca_sp$scores[, 1:5]), G=1:15, modelNames = mclust.options("emModelNames"), verbose = FALSE)  
+sp_clust <- Mclust(as.matrix(pca_sp$x[, 1:5]), G=1:15, 
+                   modelNames = mclust.options("emModelNames"), 
+                   verbose = FALSE)  
 
 # add cluster label to each element (row)
 est$class.sp <- as.character(sp_clust$classification)
@@ -162,7 +170,20 @@ catalog(est, nrow = 10, ncol =10, mar = 0.01,
 
 ![frange_gif](/img/Catalog_p1-sp-PCA.png)
 
+A better way to look at this is by plotting the first 2 PC's:
+
+
+{% highlight r %}
+plot(pca_sp$x[, 1], pca_sp$x[, 2], col = as.numeric(est$class.sp), 
+     pch = as.numeric(est$class.sp), cex = 1.5, xlab = "PC1", 
+     ylab = "PC2")
+{% endhighlight %}
+
+![tsne_plot](/img/pca.plot.png)
+
 Most clusters include several different element types and the same element type can be found on several categories. In this example the performance of the 'standard approach' is not ideal.
+
+
 
 ## An alternative
 
@@ -182,10 +203,13 @@ To convert this distance matrix to a rectangular data frame we can use TSNE ([ch
 set.seed(10)
 
 # run TSNE
-tsne.df <- Rtsne(X = as.dist(df), theta = 0.01, dims = 5, is_distance = TRUE)
+tsne.df <- Rtsne(X = as.dist(df), theta = 0.01, dims = 5, 
+                 is_distance = TRUE)
 
 # clustering
-df_clust <- Mclust(as.matrix(tsne.df$Y), G=1:15, modelNames = mclust.options("emModelNames"), verbose = FALSE)  
+df_clust <- Mclust(as.matrix(tsne.df$Y), G=1:15, 
+              modelNames = mclust.options("emModelNames"), 
+              verbose = FALSE)  
 
 # label elements (rows)
 est$class.df <- as.character(df_clust$classification)
@@ -196,11 +220,28 @@ catalog(est, nrow = 10, ncol = 10, mar = 0.01,
         flim = c(3.5, 10.5), ovlp = 30, labels = "class.df", 
         group.tag = "class.df", pal = reverse.heat.colors, 
         pb = FALSE, width = 15, box = FALSE, spec.mar = 0.5, 
-        title = "df_DTW/TSNE", img.suffix = "df_DTW-TSNE", max.group.cols = 4, 
-        tag.pal = list(cmc), cex = 2, rm.axes = TRUE)
+        title = "df_DTW/TSNE", img.suffix = "df_DTW-TSNE", 
+        max.group.cols = 4, tag.pal = list(cmc), 
+        cex = 2, rm.axes = TRUE)
 {% endhighlight %}
 
 ![frange_gif](/img/Catalog_p1-df_DTW-TSNE.png)
+
+We can obtain 2 dimensions using TSNE so it fits better in a bi-dimensional plot (grouping is likely to improve when adding more dimensions, so this plot gives a conservative estimate):
+
+{% highlight r %}
+# set seed so we all get the same results
+set.seed(10)
+
+tsne.df <- Rtsne(X = as.dist(df), theta = 0.01, dims = 2, 
+                 is_distance = TRUE)
+
+plot(tsne.df$Y[, 1], tsne.df$Y[, 2], col = as.numeric(est$class.df), 
+     pch = as.numeric(est$class.df) + 5, cex = 1.5, xlab = "Dim 1", 
+     ylab = "Dim 2")
+{% endhighlight %}
+
+![tsne_plot](/img/tsne.plot.png)
 
 The classification seems pretty good. Most clusters contain a single element type, and most types are found in a single cluster. Nonetheless, the classification was not perfect. For instance, clusters 6 and 7 contain the same element types. However, it's much better compared to the 'standard approach'.
 

@@ -130,10 +130,11 @@ rvn.dat <- imp_raven(all.data = TRUE, path = tempdir())
 
 kbl <- kable(rvn.dat, align = "c", row.names = F,  format = "html")
 
-kbl <- kable_styling(kbl, bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = FALSE, font_size = 12)
+kbl <- scroll_box(kbl, width = "900px", height= "900px",
+box_css = "border: 1px solid #ddd; padding: 1px; ", extra_css = NULL) 
 
-scroll_box(kbl, height = "500px", width = "900px",
-box_css = "border: 1px solid #ddd; padding: 5px; ", extra_css = NULL)
+kable_styling(kbl, bootstrap_options = "striped", font_size = 13)
+
 ```
  &nbsp; 
  
@@ -152,10 +153,10 @@ rvn.dat <- imp_raven(all.data = TRUE, path = tempdir(), waveform = TRUE)
 
 kbl <- kable(rvn.dat, align = "c", row.names = F,  format = "html")
 
-kbl <- kable_styling(kbl, bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = FALSE, font_size = 12)
+kbl <- scroll_box(kbl, width = "900px", height= "900px",
+box_css = "border: 1px solid #ddd; padding: 1px; ", extra_css = NULL) 
 
-scroll_box(kbl, height = "500px", width = "900px",
-box_css = "border: 1px solid #ddd; padding: 5px; ", extra_css = NULL)
+kable_styling(kbl, bootstrap_options = "striped", font_size = 13)
 
 ```
  &nbsp; 
@@ -177,14 +178,15 @@ rvn.dat
  #providing the name of the column with the sound file names
 rvn.dat <- imp_raven(sound.file.col = "Begin.File", all.data = FALSE, freq.cols = TRUE)
 
-names(rvn.dat)[grep("channel", names(rvn.dat))] <- "channel"
+rvn.dat <- rvn.dat[, !duplicated(lapply(rvn.dat, summary)) & !duplicated(names(rvn.dat))]
 
 kbl <- kable(rvn.dat, align = "c", row.names = F)
 
-kable_styling(kbl, bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = FALSE, font_size = 14)
+kbl <- scroll_box(kbl, 
+box_css = "border: 1px solid #ddd; padding: 1px; ", extra_css = NULL) 
 
-# scroll_box(kbl, height = "500px", width = "900px",
-# box_css = "border: 1px solid #ddd; padding: 5px; ", extra_css = NULL)
+kable_styling(kbl, bootstrap_options = "striped", font_size = 13)
+
 ```
  &nbsp; 
  
@@ -208,12 +210,13 @@ rvn.dat.st <- make.selection.table(rvn.dat)
 
 sp <- specan(X = rvn.dat, bp = "frange", wl = 150, pb = FALSE, ovlp = 90)
 
-kbl <- knitr::kable(sp, align = "c", row.names = FALSE,  format = "html")
+kbl <- kable(sp, align = "c", row.names = FALSE,  format = "html")
 
-kbl <- kable_styling(kbl, bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = FALSE, font_size = 12)
+kbl <- scroll_box(kbl, width = "900px",
+box_css = "border: 1px solid #ddd; padding: 1px; ", extra_css = NULL) 
 
-scroll_box(kbl, width = "900px",
-box_css = "border: 1px solid #ddd; padding: 5px; ", extra_css = NULL)
+kable_styling(kbl, bootstrap_options = "striped", font_size = 13)
+
 
 ```
  &nbsp; 
@@ -278,13 +281,18 @@ rvn.dat <- imp_raven(all.data = TRUE)
 # Peak freq contour dif length
 fcts <- extract_ts(X = rvn.dat, ts.column = "Peak Freq Contour (Hz)")
  
-kbl <- kable(fcts, align = "c", row.names = FALSE,   format = "html")
+kbl <- kable(fcts[1:6,], align = "c", row.names = FALSE,   format = "html")
 
-kbl <- kable_styling(kbl, bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = FALSE, font_size = 12)
+# kbl <- kable_styling(kbl, bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = FALSE, font_size = 12)
+# 
+# scroll_box(kbl, width = "900px",
+# box_css = "border: 1px solid #ddd; padding: 5px; ", extra_css = NULL)
+# 
 
-scroll_box(kbl, width = "900px",
-box_css = "border: 1px solid #ddd; padding: 5px; ", extra_css = NULL)
+kbl <- scroll_box(kbl, width = "900px", 
+box_css = "border: 1px solid #ddd; padding: 1px; ", extra_css = NULL) 
 
+kable_styling(kbl, bootstrap_options = "striped", font_size = 13)
 
 ```
 &nbsp;
@@ -311,7 +319,10 @@ fcts <- extract_ts(X = rvn.dat, ts.column = "Peak Freq Contour (Hz)",
 
 kbl <- kable(head(fcts[ ,21:32]), align = "c", row.names = FALSE,   format = "html")
 
-kable_styling(kbl, bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = FALSE, font_size = 12)
+kbl <- scroll_box(kbl, width = "900px", 
+box_css = "border: 1px solid #ddd; padding: 1px; ", extra_css = NULL) 
+
+kable_styling(kbl, bootstrap_options = "striped", font_size = 13)
 
  
 ```
@@ -327,8 +338,12 @@ equal.length = T, length.out = 10)
 
 kbl <- kable(head(fcts), align = "c", row.names = FALSE,   format = "html")
 
-kable_styling(kbl, bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = FALSE, font_size = 12)
+# kable_styling(kbl, bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = FALSE, font_size = 12)
 
+kbl <- scroll_box(kbl, width = "900px", height= "900px",
+box_css = "border: 1px solid #ddd; padding: 1px; ", extra_css = NULL) 
+
+kable_styling(kbl, bootstrap_options = "striped", font_size = 13)
 
 ```
 &nbsp; 
@@ -347,10 +362,10 @@ dtwDF <- dfDTW(ts.df = fcts)
 
 kbl <- kable(dtwDF, align = "c", row.names = TRUE,   format = "html")
 
-kbl <- kable_styling(kbl, bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = FALSE, font_size = 12)
+kbl <- scroll_box(kbl, width = "900px", 
+box_css = "border: 1px solid #ddd; padding: 1px; ", extra_css = NULL) 
 
-scroll_box(kbl, width = "900px",
-box_css = "border: 1px solid #ddd; padding: 5px; ", extra_css = NULL)
+kable_styling(kbl, bootstrap_options = "striped", font_size = 13)
 
 ```
 
@@ -378,7 +393,11 @@ st1 <- rvn.dat[ ,1:7]
 #check original column names
 kbl <- kable(st1, align = "c", row.names = FALSE,   format = "html")
 
-kable_styling(kbl, bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = FALSE, font_size = 12)
+kbl <- scroll_box(kbl,
+box_css = "border: 1px solid #ddd; padding: 1px; ", extra_css = NULL)
+
+kable_styling(kbl, bootstrap_options = "striped", font_size = 13)
+
 
 ```
 
@@ -395,7 +414,10 @@ rc <- relabel_colms(st1)
 #check original column names
 kbl <- kable(rc, align = "c", row.names = FALSE,   format = "html")
 
-kable_styling(kbl, bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = FALSE, font_size = 12)
+kbl <- scroll_box(kbl, 
+box_css = "border: 1px solid #ddd; padding: 1px; ", extra_css = NULL) 
+
+kable_styling(kbl, bootstrap_options = "striped", font_size = 13)
 
 ```
  &nbsp; 
@@ -419,7 +441,10 @@ rc <- relabel_colms(st1, extra.cols.name = c("selec.file", "View"),
 
 kbl <- kable(rc, align = "c", row.names = FALSE,   format = "html")
 
-kable_styling(kbl, bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = FALSE, font_size = 12)
+kbl <- scroll_box(kbl, width = NULL, height = NULL,
+box_css = "border: 1px solid #ddd; padding: 1px; ", extra_css = NULL) 
+
+kable_styling(kbl, bootstrap_options = "striped", font_size = 13)
 
 ```
  &nbsp; 
@@ -480,18 +505,45 @@ xcorr.rav <- imp_corr_mat(file = "BatchCorrOutput.txt")
  
 The function returns a list containing the correlation matrix (here only showing the first 5 rows/columns):
 
-```{r, eval=T, echo = T}
+```{r, eval=F, echo = T}
 
 xcorr.rav$correlation
 
 ```
 &nbsp; 
+
+```{r, eval=T, echo=F}
+
+xcr <- xcorr.rav$correlation
+
+kbl <- kable(xcr, align = "c", row.names = TRUE,   format = "html")
+
+kbl <- scroll_box(kbl, width = "900px", 
+box_css = "border: 1px solid #ddd; padding: 1px; ", extra_css = NULL) 
+
+kable_styling(kbl, bootstrap_options = "striped", font_size = 13)
+
+```
+ &nbsp; 
  
 and the time lag matrix:
 
-```{r, eval=T}
+```{r, eval=F}
 
 xcorr.rav$`lag (s)`
+
+```
+
+```{r, eval=T, echo=F}
+
+xcr <- xcorr.rav$`lag (s)`
+
+kbl <- kable(xcr, align = "c", row.names = TRUE,   format = "html")
+
+kbl <- scroll_box(kbl, width = "900px", 
+box_css = "border: 1px solid #ddd; padding: 1px; ", extra_css = NULL) 
+
+kable_styling(kbl, bootstrap_options = "striped", font_size = 13)
 
 ```
  &nbsp; 
