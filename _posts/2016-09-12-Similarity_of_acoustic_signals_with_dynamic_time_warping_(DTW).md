@@ -4,7 +4,7 @@ title: "Song similarity using dynamic time warping"
 date: 12-09-2016
 ---
 
-Here I show how to use the `dfDTW` function in [warbleR]((https://cran.r-project.org/package=warbleR) to compare acoustics signals using dynamic time warping (DTW).
+Here I show how to use the `dfDTW` function in [warbleR](https://cran.r-project.org/package=warbleR) to compare acoustics signals using dynamic time warping (DTW).
 
 First load these packages (if not installed the code will install it):
 
@@ -34,7 +34,7 @@ writeWave(Phae.long4, "Phae.long4.wav")
 
 These recordings all come from long-billed hermits with different song types.
 
-We can run the DTW analysis to compare these time series usin the [warbleR]((https://cran.r-project.org/package=warbleR) function `dfDTW` which calculates the dominant frequency contours of each sgnals and compares using dynamic time warping. Internally it applies the `dtwDist` function from the [dtw]((https://cran.r-project.org/package=dtw) package.
+We can run the DTW analysis to compare these time series usin the [warbleR](https://cran.r-project.org/package=warbleR) function `dfDTW` which calculates the dominant frequency contours of each sgnals and compares using dynamic time warping. Internally it applies the `dtwDist` function from the [dtw](https://cran.r-project.org/package=dtw) package.
 
 
 {% highlight r %}
@@ -75,12 +75,12 @@ mantel(dm,as.dist(recmat),permutations = 1000)
 ## Call:
 ## mantel(xdis = dm, ydis = as.dist(recmat), permutations = 1000) 
 ## 
-## Mantel statistic r: 0.673 
+## Mantel statistic r: 0.676 
 ##       Significance: 0.000999 
 ## 
 ## Upper quantiles of permutations (null model):
 ##   90%   95% 97.5%   99% 
-## 0.180 0.243 0.308 0.362 
+## 0.192 0.263 0.323 0.417 
 ## Permutation: free
 ## Number of permutations: 1000
 {% endhighlight %}
@@ -109,11 +109,11 @@ mantel(dspan,as.dist(recmat),permutations = 10000)
 ## mantel(xdis = dspan, ydis = as.dist(recmat), permutations = 10000) 
 ## 
 ## Mantel statistic r: 0.418 
-##       Significance: 0.0011999 
+##       Significance: 8e-04 
 ## 
 ## Upper quantiles of permutations (null model):
 ##   90%   95% 97.5%   99% 
-## 0.166 0.218 0.266 0.319 
+## 0.171 0.220 0.260 0.317 
 ## Permutation: free
 ## Number of permutations: 10000
 {% endhighlight %}
@@ -136,12 +136,12 @@ mantel(dm, dspan, permutations = 10000)
 ## Call:
 ## mantel(xdis = dm, ydis = dspan, permutations = 10000) 
 ## 
-## Mantel statistic r: 0.4533 
-##       Significance: 0.0018998 
+## Mantel statistic r: 0.458 
+##       Significance: 0.0027 
 ## 
 ## Upper quantiles of permutations (null model):
 ##   90%   95% 97.5%   99% 
-## 0.183 0.248 0.302 0.363 
+## 0.188 0.254 0.308 0.367 
 ## Permutation: free
 ## Number of permutations: 10000
 {% endhighlight %}
