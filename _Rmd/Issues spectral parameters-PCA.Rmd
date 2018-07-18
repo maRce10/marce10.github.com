@@ -88,6 +88,10 @@ lspec(ovlp = 50, sxrow = 3, rows = 12)
 
 ![frange_gif](/img/lspec-spec.pca.png)
 
+We can also listen it from [Xeno-Canto](http://xeno-canto.org):
+
+<iframe src='https://www.xeno-canto.org/154074/embed?simple=1' scrolling='no' frameborder='0' width='900' height='150'></iframe>
+
 The elements of this song are pure tone, highly modulated sounds that are recycled along the sequence. Overall, the structure of the element types seems to be consistent across renditions and the background noise level of the recording looks fine.
 
 To run any analysis we need to detect the time 'coordinates' of the signals in the sound file using `auto_detec`:
