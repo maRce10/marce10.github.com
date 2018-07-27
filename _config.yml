@@ -17,7 +17,7 @@ baseurl: ""
 title: Bioacoustics in R
 
 # Short description of your site
-description: Bioacoustics analysis, R, seewave, warbleR
+description: Bioacoustics analysis, R, seewave, warbleR, Rraven, animal communication
 
 # --- Navigation bar options --- #
 
@@ -25,8 +25,10 @@ description: Bioacoustics analysis, R, seewave, warbleR
 navbar-links:
   Search: "search"
   Resources:
-    - warbleR workflow: "https://cran.r-project.org/web/packages/warbleR/vignettes/warbleR_workflow_01.html"
+    - warbleR: "https://marce10.github.io/warbleR"
     - warbleR paper: "http://onlinelibrary.wiley.com/doi/10.1111/2041-210X.12624/full"
+    - Rraven: "https://marce10.github.io/Rraven"
+    - NatureSounds: "https://marce10.github.io/NatureSounds"
     - soundecology intro: "https://cran.r-project.org/web/packages/soundecology/vignettes/intro.html"
     - seewave website: "http://rug.mnhn.fr/seewave/"
     - monitoR quick start: "https://cran.r-project.org/web/packages/monitoR/vignettes/monitoR_QuickStart.pdf"
