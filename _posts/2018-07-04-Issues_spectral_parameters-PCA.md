@@ -81,7 +81,7 @@ Lets' select the 100 highest signal-to-noise ratio signals, just for the sake of
 
 {% highlight r %}
 # measure SNR
-snr <- sig2noise(ad, pb = FALSE, mar = 0.0)5
+snr <- sig2noise(ad, pb = FALSE, mar = 0.05)
 
 # selec the 100 highest SNR
 ad <- snr[rank(-snr$SNR) < 100, ]
