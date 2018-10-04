@@ -138,16 +138,17 @@ kable_styling(kbl, bootstrap_options = "striped", font_size = 13)
 ```
  &nbsp; 
  
-Note that the 'waveform' view data has been removed. It can also be imported as follows: 
+Note that the 'waveform' view data has been removed. It can also be imported as setting the 'waveform' argument to `TRUE`. 
 
-```{r, eval=FALSE}
+```{r, eval=FALSE, echo = FALSE}
 
+#removed as data does not have
 rvn.dat <- imp_raven(all.data = TRUE, waveform = TRUE)
 
 rvn.dat
 ```
 
-```{r, eval = TRUE, echo = FALSE, message = FALSE, warning = FALSE, cache.comments=FALSE, comment=F}
+```{r, eval = FALSE, echo = FALSE, message = FALSE, warning = FALSE, cache.comments=FALSE, comment=F}
 
 rvn.dat <- imp_raven(all.data = TRUE, path = tempdir(), waveform = TRUE)
 
@@ -166,7 +167,7 @@ kable_styling(kbl, bootstrap_options = "striped", font_size = 13)
 ```{r, eval=FALSE}
 
 #providing the name of the column with the sound file names
-rvn.dat <- imp_raven(sound.file.col = "End.File", all.data = FALSE, 
+rvn.dat <- imp_raven(sound.file.col = "Begin File", all.data = FALSE, 
                      freq.cols = TRUE)
 
 rvn.dat
@@ -307,7 +308,7 @@ fcts <- extract_ts(X = rvn.dat, ts.column = "Peak Freq Contour (Hz)",
                    equal.length = TRUE)
 
 #look at the last rows wit no NAs
-fcts[,21:32])
+fcts[ , 21:32]
 
 ```
  
@@ -330,7 +331,16 @@ kable_styling(kbl, bootstrap_options = "striped", font_size = 13)
 
 And the length of the series can also be specified:
 
-```{r, eval=FALSE}
+```{r, eval=FALSE, echo = TRUE}
+
+# Peak freq contour equal length 10 measurements
+fcts <- extract_ts(X = rvn.dat, ts.column = "Peak Freq Contour (Hz)",
+equal.length = T, length.out = 10)  
+
+fcts
+```
+
+```{r, eval=TRUE, echo = FALSE}
 
 # Peak freq contour equal length 10 measurements
 fcts <- extract_ts(X = rvn.dat, ts.column = "Peak Freq Contour (Hz)",
@@ -426,9 +436,8 @@ Additional columns can also be relabeled:
 ```{r, eval = F, echo = T}
 
 # 2 additional column 
-relabel_colms(st1, extra.cols.name = c("selec.file", "View"),
-              extra.cols.new.name = c("Raven selection file", 
-                                      "Raven view"))
+relabel_colms(st1, extra.cols.name = "View",
+              extra.cols.new.name = "Raven view")
 
 
 ```
