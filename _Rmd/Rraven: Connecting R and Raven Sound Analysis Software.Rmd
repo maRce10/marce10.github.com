@@ -27,6 +27,9 @@ options(width = 150, max.print = 100)
 
 options("digits" = 3, "digits.secs" = 3, knitr.table.format = "html") 
 
+source("~/Dropbox/Rraven/R/run_raven.R")
+source("~/Dropbox/warbleR/R/dfDTW.R")
+
 #website to fix gifs
 #https://ezgif.com/optimize
 ```
@@ -58,10 +61,10 @@ data(list = c("Phae.long1", "Phae.long2", "Phae.long3", "Phae.long4",
               "selec.table", "selection_files"))
 
 # save sound files  in temporary directory
-writeWave(Phae.long1,"Phae.long1.wav")
-writeWave(Phae.long2,"Phae.long2.wav")
-writeWave(Phae.long3,"Phae.long3.wav")
-writeWave(Phae.long4,"Phae.long4.wav")
+writeWave(Phae.long1,"Phae.long1.wav", extensible = FALSE)
+writeWave(Phae.long2,"Phae.long2.wav", extensible = FALSE)
+writeWave(Phae.long3,"Phae.long3.wav", extensible = FALSE)
+writeWave(Phae.long4,"Phae.long4.wav", extensible = FALSE)
 
 #save Raven selection tables in the temporary directory
 out <- lapply(1:4, function(x)
@@ -138,30 +141,9 @@ kable_styling(kbl, bootstrap_options = "striped", font_size = 13)
 ```
  &nbsp; 
  
-Note that the 'waveform' view data has been removed. It can also be imported as setting the 'waveform' argument to `TRUE`. 
+Note that the 'waveform' view data has been removed. It can also be imported by setting the 'waveform' argument to `TRUE`. 
 
-```{r, eval=FALSE, echo = FALSE}
 
-#removed as data does not have
-rvn.dat <- imp_raven(all.data = TRUE, waveform = TRUE)
-
-rvn.dat
-```
-
-```{r, eval = FALSE, echo = FALSE, message = FALSE, warning = FALSE, cache.comments=FALSE, comment=F}
-
-rvn.dat <- imp_raven(all.data = TRUE, path = tempdir(), waveform = TRUE)
-
-kbl <- kable(rvn.dat, align = "c", row.names = F,  format = "html")
-
-kbl <- scroll_box(kbl, width = "900px", height= "900px",
-box_css = "border: 1px solid #ddd; padding: 1px; ", extra_css = NULL) 
-
-kable_styling(kbl, bootstrap_options = "striped", font_size = 13)
-
-```
- &nbsp; 
- 
 [Raven](http://www.birds.cornell.edu/brp/raven/RavenOverview.html) selections can also be imported in a 'selection.table' format so it can be directly input into [warbleR](https://cran.r-project.org/package=warbleR) functions. To do this you need to set the `all.data = FALSE` and indicate which column contains the sound file name (using the 'sound.file.col' argument): 
 
 ```{r, eval=FALSE}
@@ -196,9 +178,9 @@ The data frame contains the following columns: sound.files, channel, selec, star
 ```{r, eval=FALSE, echo=TRUE}
 
 # convert to class selection.table
-rvn.dat.st <- make.selection.table(rvn.dat)
+rvn.dat.st <- selection_table(rvn.dat)
 
-sp <- specan(X = rvn.dat, bp = "frange", wl = 150, pb = FALSE, 
+sp <- specan(X = rvn.dat.st, bp = "frange", wl = 150, pb = FALSE, 
              ovlp = 90)
 
 sp
@@ -209,7 +191,7 @@ sp
 # convert to class selection.table
 rvn.dat.st <- make.selection.table(rvn.dat)
 
-sp <- specan(X = rvn.dat, bp = "frange", wl = 150, pb = FALSE, ovlp = 90)
+sp <- specan(X = rvn.dat.st, bp = "frange", wl = 150, pb = FALSE, ovlp = 90)
 
 kbl <- kable(sp, align = "c", row.names = FALSE,  format = "html")
 
@@ -350,7 +332,7 @@ kbl <- kable(head(fcts), align = "c", row.names = FALSE,   format = "html")
 
 # kable_styling(kbl, bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = FALSE, font_size = 12)
 
-kbl <- scroll_box(kbl, width = "900px", height= "900px",
+kbl <- scroll_box(kbl, width = "900px", 
 box_css = "border: 1px solid #ddd; padding: 1px; ", extra_css = NULL) 
 
 kable_styling(kbl, bootstrap_options = "striped", font_size = 13)
@@ -389,7 +371,7 @@ This is a very simple function to relabel columns so they match the selection ta
 ```{r, eval = F, echo = T}
 
 #to simplify the example select a subset of the columns 
-st1 <- rvn.dat[ ,1:7]
+st1 <- rvn.dat.st[ ,1:7]
 
 #check original column names
 st1
@@ -435,7 +417,7 @@ kable_styling(kbl, bootstrap_options = "striped", font_size = 13)
 Additional columns can also be relabeled:
 ```{r, eval = F, echo = T}
 
-# 2 additional column 
+# 1 additional column 
 relabel_colms(st1, extra.cols.name = "View",
               extra.cols.new.name = "Raven view")
 
@@ -651,8 +633,8 @@ The function opens multiple sound files simultaneously in  [Raven](http://www.bi
 raven.path <- "PATH_TO_RAVEN_DIRECTORY_HERE" 
 
 # run function 
-run_raven(raven.path = raven.path, sound.files = c("Phae.long1.wav", 
-    "Phae.long2.wav", "Phae.long3.wav", "Phae.long4.wav"), import = TRUE, 
+run_raven(raven.path = raven.path, sound.files = c("Phae.long1.wav",
+    "Phae.long2.wav", "Phae.long3.wav", "Phae.long4.wav"), import = F, at.the.time = 1, 
  all.data = TRUE)  
 
 ``` 
@@ -666,15 +648,15 @@ See `imp_raven` above for more details on additional settings when importing sel
 
 ### *raven_batch_detec*
 
-As the name suggests, *raven_batch_detec* runs [Raven](http://www.birds.cornell.edu/brp/raven/RavenOverview.html) detector on multiple sound files (sequentially). Batch detection in [Raven](http://www.birds.cornell.edu/brp/raven/RavenOverview.html) can also take files in 'mp3', 'flac' and 'aif' format (although this could not be further analyzed in R!).
+As the name suggests, *raven_batch_detec* runs [Raven](http://www.birds.cornell.edu/brp/raven/RavenOverview.html) detector on multiple sound files (sequentially). Batch detection in [Raven](http://www.birds.cornell.edu/brp/raven/RavenOverview.html) can also take files in 'mp3', 'flac' and 'aif' format (although this could not be further analyzed in R at the time!).
 
 This is example runs the detector on one of the example sound files that comes by default with [Raven](http://www.birds.cornell.edu/brp/raven/RavenOverview.html):
 
 ```{r, eval=FALSE, echo=T}
 
 detec.res <- raven_batch_detec(raven.path = raven.path, 
-  sound.files = "BlackCappedVireo.aif", 
-  path = file.path(raven.path, '"Examples"))
+  sound.files = "BlackCappedVireo.aif", detector.type = "Amplitude Detector",
+  path = file.path(raven.path, "Examples"))
 
 ```
 
