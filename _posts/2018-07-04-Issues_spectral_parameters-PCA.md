@@ -23,7 +23,7 @@ githubinstall("warbleR", ask = FALSE, force = TRUE)
 library(warbleR)
 
 # set warbleR options
-warbleR_options(bp =  c(2, 10), flim = c(3.5, 10.5), pb = TRUE, wl = 200, 
+warbleR_options(bp =  c(2, 10), flim = c(3.5, 10.5), pb = FALSE, wl = 200, 
                 ovlp = 90, parallel = 3, pal = reverse.heat.colors)
 
 # create nice color pallete
@@ -44,11 +44,11 @@ As in the [previous post](https://marce10.github.io/2018/06/29/Frequency_range_d
 
 # Query and download  Xeno-Canto for metadata using genus 
 # and species as keywords
-Phae.stri <- quer_xc(qword = "nr:154074", download = TRUE, pb = FALSE)
+Phae.stri <- quer_xc(qword = "nr:154074", download = TRUE)
 
 # Convert mp3 to wav format
 # Simultaneously lower sampling rate to speed up down stream analyses
-mp32wav(samp.rate = 22.05, pb = FALSE)
+mp32wav(samp.rate = 22.05)
 {% endhighlight %}
 
 A long spectrogram would help to get a sense of the song structure in this species: 
@@ -71,7 +71,7 @@ To run any analysis we need to detect the time 'coordinates' of the signals in t
 
 {% highlight r %}
 ad <- auto_detec(wl = 200, threshold = 3.5, ssmooth = 1200, 
-                 bp = c(4, 9.6), pb = FALSE,  mindur = 0.1, 
+                 bp = c(4, 9.6), mindur = 0.1, 
                  maxdur = 0.25, img = FALSE)
 {% endhighlight %}
 
@@ -81,10 +81,10 @@ Lets' select the 100 highest signal-to-noise ratio signals, just for the sake of
 
 {% highlight r %}
 # measure SNR
-snr <- sig2noise(ad, pb = FALSE, mar = 0.05)
+snr <- sig2noise(ad, mar = 0.05, type = 3)
 
 # selec the 100 highest SNR
-ad <- snr[rank(-snr$SNR) < 100, ]
+ad <- snr[rank(-snr$SNR) <= 100, ]
 {% endhighlight %}
 
 ... and measure the frequency range (as in the [previous post](https://marce10.github.io/2018/06/29/Frequency_range_detection_from_spectrum.html)):
@@ -111,7 +111,7 @@ We can take a look at the selected signals (or elements, subunits or whatever yo
 {% highlight r %}
 catalog(est, nrow = 10, ncol = 10, mar = 0.01, labels = "selec", 
         flim = c(3.5, 10.5), ovlp = 30, pal = reverse.heat.colors, 
-        pb = FALSE, width = 15, box = FALSE, spec.mar = 0.5, 
+        width = 15, box = FALSE, spec.mar = 0.5, 
         max.group.cols = 4, tag.pal = list(cmc), cex = 2, rm.axes = TRUE)
 {% endhighlight %}
 
@@ -167,7 +167,7 @@ The classification can be visually assessed using a 'group-tagged' catalog. In t
 catalog(est, nrow = 10, ncol =10, mar = 0.01, 
         flim = c(3.5, 10.5), ovlp = 30, labels = "class.sp", 
         group.tag = "class.sp", pal = reverse.heat.colors, 
-        pb = FALSE, width = 15, box = FALSE, spec.mar = 0.5, 
+        width = 15, box = FALSE, spec.mar = 0.5, 
         title = "sp/PCA", img.suffix = "sp-PCA", max.group.cols = 4, 
         tag.pal = list(cmc), cex = 2, rm.axes = TRUE)
 {% endhighlight %}
@@ -195,7 +195,7 @@ When working with pure tone modulated whistles, the best approach is likely meas
 
 
 {% highlight r %}
-df <- df_DTW(X = est, wl = 200, threshold = 10, img = FALSE, 
+df <- df_DTW(X = est, wl = 200, threshold = 15, img = FALSE, 
              clip.edges = TRUE, bp =  c(2, 10))
 {% endhighlight %}
 
@@ -217,13 +217,14 @@ df_clust <- Mclust(as.matrix(tsne.df$Y), G=1:15,
 
 # label elements (rows)
 est$class.df <- as.character(df_clust$classification)
-est$class.df <- ifelse(nchar(est$class.df) == 1,  paste0(0, est$class.df), est$class.df)
+est$class.df <- ifelse(nchar(est$class.df) == 1,  paste0(0, est$class.df),
+                       est$class.df)
 
 # make catalog
 catalog(est, nrow = 10, ncol = 10, mar = 0.01, 
         flim = c(3.5, 10.5), ovlp = 30, labels = "class.df", 
         group.tag = "class.df", pal = reverse.heat.colors, 
-        pb = FALSE, width = 15, box = FALSE, spec.mar = 0.5, 
+        width = 15, box = FALSE, spec.mar = 0.5, 
         title = "df_DTW/TSNE", img.suffix = "df_DTW-TSNE", 
         max.group.cols = 4, tag.pal = list(cmc), 
         cex = 2, rm.axes = TRUE)
@@ -247,7 +248,7 @@ plot(tsne.df$Y[, 1], tsne.df$Y[, 2], col = as.numeric(est$class.df),
 
 ![tsne_plot](/img/tsne.plot.png)
 
-The classification seems pretty good. Most clusters contain a single element type, and most types are found in a single cluster. Nonetheless, the classification was not perfect. For instance, clusters 6 and 7 contain the same element types. However, it's much better compared to the 'standard approach'.
+The classification seems OK. Most clusters contain a single element type, and most types are found in a single cluster. Nonetheless, the classification was not perfect. For instance, clusters 5 and 6 share some element types. However, it's much better compared to the 'standard approach'. In a more formal analysis I will make sure the frequency contours are tracking the signals (using `sel_tailor()`). This will likely improve the analysis.
 
 This quick-and-dirty comparison suggests that we (behavioral ecologists) might actually be missing important signal features when using  the *spectral/temporal parameters + PCA* recipe as the silver bullet in bioacoustic analysis. It also stresses the importance of validating our analyses in some way. Otherwise, there is no way to tell whether the results are simply an artifact of our measuring tools, particularly when no differences are found.
 
