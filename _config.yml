@@ -156,7 +156,7 @@ prose:
   ignore:
     - 404.html
     - LICENSE
-    #- feed.xml
+    - feed.xml
     - _config.yml
     - /_layouts
     - /_includes
@@ -196,6 +196,9 @@ prose:
 
 gems:
   - jekyll-paginate
+
+plugins_dir:
+  - jekyll-feed
 
 # Beautiful Jekyll / Dean Attali
 # 2fc73a3a967e97599c9763d05e564189

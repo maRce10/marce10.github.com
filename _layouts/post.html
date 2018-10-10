@@ -15,6 +15,7 @@ layout: base
       {% if page.tags.size > 0 %}
         <div class="blog-tags">
           Tags:
+          {% feed_meta %}
           {% if site.link-tags %}
           {% for tag in page.tags %}
             <a href="/tag/{{ tag }}">{{ tag }}</a>
