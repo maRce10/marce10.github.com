@@ -2492,17 +2492,17 @@ Call:
 vegan::mantel(xdis = xcorr.rvn, ydis = dist.sp.wrblR) 
 
 Mantel statistic r: 0.277 
-      Significance: 0.011 
+      Significance: 0.014 
 
 Upper quantiles of permutations (null model):
   90%   95% 97.5%   99% 
-0.148 0.192 0.224 0.273 
+0.157 0.204 0.245 0.282 
 Permutation: free
 Number of permutations: 999
 {% endhighlight %}
  &nbsp; 
 
-There is actually a good match between two types of analysis!
+There is actually a decent match between the two types of analysis.
 
 ---
  
