@@ -578,9 +578,6 @@ sp
    <th style="text-align:center;"> time.ent </th>
    <th style="text-align:center;"> entropy </th>
    <th style="text-align:center;"> sfm </th>
-   <th style="text-align:center;"> meanfun </th>
-   <th style="text-align:center;"> minfun </th>
-   <th style="text-align:center;"> maxfun </th>
    <th style="text-align:center;"> meandom </th>
    <th style="text-align:center;"> mindom </th>
    <th style="text-align:center;"> maxdom </th>
@@ -590,6 +587,8 @@ sp
    <th style="text-align:center;"> enddom </th>
    <th style="text-align:center;"> dfslope </th>
    <th style="text-align:center;"> meanpeakf </th>
+   <th style="text-align:center;"> bottom.freq </th>
+   <th style="text-align:center;"> top.freq </th>
   </tr>
  </thead>
 <tbody>
@@ -597,25 +596,22 @@ sp
    <td style="text-align:center;"> Phae.long1.wav_1 </td>
    <td style="text-align:center;"> 1 </td>
    <td style="text-align:center;"> 0.17303 </td>
-   <td style="text-align:center;"> 6.0312 </td>
-   <td style="text-align:center;"> 2.0836 </td>
-   <td style="text-align:center;"> 6.3559 </td>
-   <td style="text-align:center;"> 5.1530 </td>
-   <td style="text-align:center;"> 7.0152 </td>
-   <td style="text-align:center;"> 1.8622 </td>
-   <td style="text-align:center;"> 0.08277 </td>
+   <td style="text-align:center;"> 5.9824 </td>
+   <td style="text-align:center;"> 1.3998 </td>
+   <td style="text-align:center;"> 6.3317 </td>
+   <td style="text-align:center;"> 5.2966 </td>
+   <td style="text-align:center;"> 6.8695 </td>
+   <td style="text-align:center;"> 1.5729 </td>
+   <td style="text-align:center;"> 0.07525 </td>
    <td style="text-align:center;"> 0.05267 </td>
    <td style="text-align:center;"> 0.12039 </td>
    <td style="text-align:center;"> 0.06772 </td>
-   <td style="text-align:center;"> 2.6854 </td>
-   <td style="text-align:center;"> 11.0586 </td>
-   <td style="text-align:center;"> 0.92734 </td>
-   <td style="text-align:center;"> 0.94013 </td>
-   <td style="text-align:center;"> 0.87182 </td>
-   <td style="text-align:center;"> 0.56201 </td>
-   <td style="text-align:center;"> 3.6926 </td>
-   <td style="text-align:center;"> 2.50000 </td>
-   <td style="text-align:center;"> 7.500 </td>
+   <td style="text-align:center;"> 1.9978 </td>
+   <td style="text-align:center;"> 7.0216 </td>
+   <td style="text-align:center;"> 0.94345 </td>
+   <td style="text-align:center;"> 0.93979 </td>
+   <td style="text-align:center;"> 0.88664 </td>
+   <td style="text-align:center;"> 0.65109 </td>
    <td style="text-align:center;"> 6.6000 </td>
    <td style="text-align:center;"> 4.425 </td>
    <td style="text-align:center;"> 8.250 </td>
@@ -625,30 +621,29 @@ sp
    <td style="text-align:center;"> 7.200 </td>
    <td style="text-align:center;"> 0.43344 </td>
    <td style="text-align:center;"> 7.1351 </td>
+   <td style="text-align:center;"> 2.2201 </td>
+   <td style="text-align:center;"> 8.6044 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> Phae.long1.wav_2 </td>
    <td style="text-align:center;"> 1 </td>
    <td style="text-align:center;"> 0.16305 </td>
-   <td style="text-align:center;"> 6.0195 </td>
-   <td style="text-align:center;"> 2.0697 </td>
-   <td style="text-align:center;"> 6.2515 </td>
-   <td style="text-align:center;"> 5.2331 </td>
-   <td style="text-align:center;"> 7.0368 </td>
-   <td style="text-align:center;"> 1.8037 </td>
+   <td style="text-align:center;"> 5.9966 </td>
+   <td style="text-align:center;"> 1.4244 </td>
+   <td style="text-align:center;"> 6.2121 </td>
+   <td style="text-align:center;"> 5.3288 </td>
+   <td style="text-align:center;"> 6.8808 </td>
+   <td style="text-align:center;"> 1.5520 </td>
    <td style="text-align:center;"> 0.07414 </td>
    <td style="text-align:center;"> 0.04448 </td>
    <td style="text-align:center;"> 0.11863 </td>
    <td style="text-align:center;"> 0.07414 </td>
-   <td style="text-align:center;"> 2.5330 </td>
-   <td style="text-align:center;"> 10.7669 </td>
-   <td style="text-align:center;"> 0.93115 </td>
-   <td style="text-align:center;"> 0.94444 </td>
-   <td style="text-align:center;"> 0.87941 </td>
-   <td style="text-align:center;"> 0.58084 </td>
-   <td style="text-align:center;"> 3.2688 </td>
-   <td style="text-align:center;"> 0.44118 </td>
-   <td style="text-align:center;"> 7.500 </td>
+   <td style="text-align:center;"> 1.9229 </td>
+   <td style="text-align:center;"> 7.3492 </td>
+   <td style="text-align:center;"> 0.94676 </td>
+   <td style="text-align:center;"> 0.94412 </td>
+   <td style="text-align:center;"> 0.89385 </td>
+   <td style="text-align:center;"> 0.66938 </td>
    <td style="text-align:center;"> 6.7043 </td>
    <td style="text-align:center;"> 5.250 </td>
    <td style="text-align:center;"> 8.325 </td>
@@ -658,30 +653,29 @@ sp
    <td style="text-align:center;"> 7.200 </td>
    <td style="text-align:center;"> 1.83995 </td>
    <td style="text-align:center;"> 6.9086 </td>
+   <td style="text-align:center;"> 2.1694 </td>
+   <td style="text-align:center;"> 8.8071 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> Phae.long1.wav_3 </td>
    <td style="text-align:center;"> 1 </td>
    <td style="text-align:center;"> 0.17492 </td>
-   <td style="text-align:center;"> 6.0685 </td>
-   <td style="text-align:center;"> 2.1527 </td>
-   <td style="text-align:center;"> 6.4639 </td>
-   <td style="text-align:center;"> 4.9938 </td>
-   <td style="text-align:center;"> 7.1331 </td>
-   <td style="text-align:center;"> 2.1394 </td>
+   <td style="text-align:center;"> 6.0208 </td>
+   <td style="text-align:center;"> 1.5161 </td>
+   <td style="text-align:center;"> 6.4284 </td>
+   <td style="text-align:center;"> 5.1528 </td>
+   <td style="text-align:center;"> 6.9833 </td>
+   <td style="text-align:center;"> 1.8305 </td>
    <td style="text-align:center;"> 0.08749 </td>
-   <td style="text-align:center;"> 0.05104 </td>
+   <td style="text-align:center;"> 0.05833 </td>
    <td style="text-align:center;"> 0.13123 </td>
-   <td style="text-align:center;"> 0.08020 </td>
-   <td style="text-align:center;"> 3.1292 </td>
-   <td style="text-align:center;"> 16.0200 </td>
-   <td style="text-align:center;"> 0.93020 </td>
-   <td style="text-align:center;"> 0.93783 </td>
-   <td style="text-align:center;"> 0.87237 </td>
-   <td style="text-align:center;"> 0.57827 </td>
-   <td style="text-align:center;"> 3.6815 </td>
-   <td style="text-align:center;"> 1.18421 </td>
-   <td style="text-align:center;"> 7.500 </td>
+   <td style="text-align:center;"> 0.07291 </td>
+   <td style="text-align:center;"> 2.4887 </td>
+   <td style="text-align:center;"> 11.0887 </td>
+   <td style="text-align:center;"> 0.94484 </td>
+   <td style="text-align:center;"> 0.93764 </td>
+   <td style="text-align:center;"> 0.88592 </td>
+   <td style="text-align:center;"> 0.66888 </td>
    <td style="text-align:center;"> 6.7050 </td>
    <td style="text-align:center;"> 4.200 </td>
    <td style="text-align:center;"> 8.625 </td>
@@ -691,30 +685,29 @@ sp
    <td style="text-align:center;"> 7.200 </td>
    <td style="text-align:center;"> 0.85754 </td>
    <td style="text-align:center;"> 6.8331 </td>
+   <td style="text-align:center;"> 2.2183 </td>
+   <td style="text-align:center;"> 8.7566 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> Phae.long2.wav_1 </td>
    <td style="text-align:center;"> 1 </td>
    <td style="text-align:center;"> 0.13257 </td>
-   <td style="text-align:center;"> 6.5823 </td>
-   <td style="text-align:center;"> 1.9308 </td>
-   <td style="text-align:center;"> 6.7419 </td>
-   <td style="text-align:center;"> 5.6019 </td>
-   <td style="text-align:center;"> 7.6102 </td>
-   <td style="text-align:center;"> 2.0082 </td>
+   <td style="text-align:center;"> 6.4003 </td>
+   <td style="text-align:center;"> 1.3403 </td>
+   <td style="text-align:center;"> 6.5960 </td>
+   <td style="text-align:center;"> 5.6073 </td>
+   <td style="text-align:center;"> 7.3808 </td>
+   <td style="text-align:center;"> 1.7735 </td>
    <td style="text-align:center;"> 0.07801 </td>
    <td style="text-align:center;"> 0.05461 </td>
    <td style="text-align:center;"> 0.10922 </td>
    <td style="text-align:center;"> 0.05461 </td>
-   <td style="text-align:center;"> 2.1870 </td>
-   <td style="text-align:center;"> 8.8696 </td>
-   <td style="text-align:center;"> 0.92448 </td>
-   <td style="text-align:center;"> 0.95029 </td>
-   <td style="text-align:center;"> 0.87852 </td>
-   <td style="text-align:center;"> 0.51876 </td>
-   <td style="text-align:center;"> 6.0364 </td>
-   <td style="text-align:center;"> 0.90000 </td>
-   <td style="text-align:center;"> 7.500 </td>
+   <td style="text-align:center;"> 1.5768 </td>
+   <td style="text-align:center;"> 6.0674 </td>
+   <td style="text-align:center;"> 0.94297 </td>
+   <td style="text-align:center;"> 0.95021 </td>
+   <td style="text-align:center;"> 0.89602 </td>
+   <td style="text-align:center;"> 0.61135 </td>
    <td style="text-align:center;"> 6.3662 </td>
    <td style="text-align:center;"> 5.025 </td>
    <td style="text-align:center;"> 7.575 </td>
@@ -724,30 +717,29 @@ sp
    <td style="text-align:center;"> 5.925 </td>
    <td style="text-align:center;"> 6.78882 </td>
    <td style="text-align:center;"> 7.3617 </td>
+   <td style="text-align:center;"> 2.3169 </td>
+   <td style="text-align:center;"> 8.8223 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> Phae.long2.wav_2 </td>
    <td style="text-align:center;"> 1 </td>
    <td style="text-align:center;"> 0.12615 </td>
-   <td style="text-align:center;"> 6.4168 </td>
-   <td style="text-align:center;"> 1.9467 </td>
-   <td style="text-align:center;"> 6.6429 </td>
-   <td style="text-align:center;"> 5.5397 </td>
-   <td style="text-align:center;"> 7.4683 </td>
-   <td style="text-align:center;"> 1.9286 </td>
+   <td style="text-align:center;"> 6.3126 </td>
+   <td style="text-align:center;"> 1.3707 </td>
+   <td style="text-align:center;"> 6.6020 </td>
+   <td style="text-align:center;"> 5.6098 </td>
+   <td style="text-align:center;"> 7.2132 </td>
+   <td style="text-align:center;"> 1.6034 </td>
    <td style="text-align:center;"> 0.07886 </td>
    <td style="text-align:center;"> 0.05520 </td>
    <td style="text-align:center;"> 0.10252 </td>
    <td style="text-align:center;"> 0.04732 </td>
-   <td style="text-align:center;"> 3.1277 </td>
-   <td style="text-align:center;"> 15.8100 </td>
-   <td style="text-align:center;"> 0.91791 </td>
-   <td style="text-align:center;"> 0.95010 </td>
-   <td style="text-align:center;"> 0.87210 </td>
-   <td style="text-align:center;"> 0.52710 </td>
-   <td style="text-align:center;"> 5.5929 </td>
-   <td style="text-align:center;"> 0.30405 </td>
-   <td style="text-align:center;"> 7.500 </td>
+   <td style="text-align:center;"> 2.4717 </td>
+   <td style="text-align:center;"> 10.8978 </td>
+   <td style="text-align:center;"> 0.93610 </td>
+   <td style="text-align:center;"> 0.95051 </td>
+   <td style="text-align:center;"> 0.88977 </td>
+   <td style="text-align:center;"> 0.62029 </td>
    <td style="text-align:center;"> 6.1721 </td>
    <td style="text-align:center;"> 4.800 </td>
    <td style="text-align:center;"> 7.575 </td>
@@ -757,30 +749,29 @@ sp
    <td style="text-align:center;"> 6.525 </td>
    <td style="text-align:center;"> 13.67418 </td>
    <td style="text-align:center;"> 6.7576 </td>
+   <td style="text-align:center;"> 2.2840 </td>
+   <td style="text-align:center;"> 8.8880 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> Phae.long3.wav_1 </td>
    <td style="text-align:center;"> 1 </td>
    <td style="text-align:center;"> 0.13122 </td>
-   <td style="text-align:center;"> 6.6210 </td>
-   <td style="text-align:center;"> 1.8361 </td>
-   <td style="text-align:center;"> 6.6900 </td>
-   <td style="text-align:center;"> 6.0035 </td>
-   <td style="text-align:center;"> 7.5520 </td>
-   <td style="text-align:center;"> 1.5485 </td>
+   <td style="text-align:center;"> 6.6120 </td>
+   <td style="text-align:center;"> 1.0932 </td>
+   <td style="text-align:center;"> 6.6701 </td>
+   <td style="text-align:center;"> 6.0672 </td>
+   <td style="text-align:center;"> 7.3494 </td>
+   <td style="text-align:center;"> 1.2821 </td>
    <td style="text-align:center;"> 0.06176 </td>
    <td style="text-align:center;"> 0.04632 </td>
    <td style="text-align:center;"> 0.09264 </td>
    <td style="text-align:center;"> 0.04632 </td>
-   <td style="text-align:center;"> 2.6419 </td>
-   <td style="text-align:center;"> 11.2995 </td>
-   <td style="text-align:center;"> 0.90653 </td>
-   <td style="text-align:center;"> 0.95233 </td>
-   <td style="text-align:center;"> 0.86331 </td>
-   <td style="text-align:center;"> 0.47786 </td>
-   <td style="text-align:center;"> 6.6964 </td>
-   <td style="text-align:center;"> 3.21429 </td>
-   <td style="text-align:center;"> 7.500 </td>
+   <td style="text-align:center;"> 1.7739 </td>
+   <td style="text-align:center;"> 6.6263 </td>
+   <td style="text-align:center;"> 0.93026 </td>
+   <td style="text-align:center;"> 0.95181 </td>
+   <td style="text-align:center;"> 0.88543 </td>
+   <td style="text-align:center;"> 0.57033 </td>
    <td style="text-align:center;"> 6.5625 </td>
    <td style="text-align:center;"> 4.875 </td>
    <td style="text-align:center;"> 7.200 </td>
@@ -790,30 +781,29 @@ sp
    <td style="text-align:center;"> 7.050 </td>
    <td style="text-align:center;"> 0.57156 </td>
    <td style="text-align:center;"> 6.7576 </td>
+   <td style="text-align:center;"> 3.0068 </td>
+   <td style="text-align:center;"> 8.8223 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> Phae.long3.wav_2 </td>
    <td style="text-align:center;"> 1 </td>
    <td style="text-align:center;"> 0.13018 </td>
-   <td style="text-align:center;"> 6.6913 </td>
-   <td style="text-align:center;"> 1.7894 </td>
-   <td style="text-align:center;"> 6.7337 </td>
-   <td style="text-align:center;"> 6.0727 </td>
-   <td style="text-align:center;"> 7.6101 </td>
-   <td style="text-align:center;"> 1.5374 </td>
+   <td style="text-align:center;"> 6.6414 </td>
+   <td style="text-align:center;"> 1.1175 </td>
+   <td style="text-align:center;"> 6.6742 </td>
+   <td style="text-align:center;"> 6.1053 </td>
+   <td style="text-align:center;"> 7.4198 </td>
+   <td style="text-align:center;"> 1.3145 </td>
    <td style="text-align:center;"> 0.06894 </td>
    <td style="text-align:center;"> 0.04596 </td>
    <td style="text-align:center;"> 0.09958 </td>
    <td style="text-align:center;"> 0.05362 </td>
-   <td style="text-align:center;"> 2.3873 </td>
-   <td style="text-align:center;"> 8.9018 </td>
-   <td style="text-align:center;"> 0.90254 </td>
-   <td style="text-align:center;"> 0.95406 </td>
-   <td style="text-align:center;"> 0.86108 </td>
-   <td style="text-align:center;"> 0.46317 </td>
-   <td style="text-align:center;"> 6.3839 </td>
-   <td style="text-align:center;"> 2.50000 </td>
-   <td style="text-align:center;"> 7.500 </td>
+   <td style="text-align:center;"> 1.5525 </td>
+   <td style="text-align:center;"> 5.0724 </td>
+   <td style="text-align:center;"> 0.92348 </td>
+   <td style="text-align:center;"> 0.95342 </td>
+   <td style="text-align:center;"> 0.88047 </td>
+   <td style="text-align:center;"> 0.53236 </td>
    <td style="text-align:center;"> 6.2917 </td>
    <td style="text-align:center;"> 4.575 </td>
    <td style="text-align:center;"> 6.900 </td>
@@ -823,30 +813,29 @@ sp
    <td style="text-align:center;"> 6.900 </td>
    <td style="text-align:center;"> 17.86003 </td>
    <td style="text-align:center;"> 6.6821 </td>
+   <td style="text-align:center;"> 2.7768 </td>
+   <td style="text-align:center;"> 8.8880 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> Phae.long3.wav_3 </td>
    <td style="text-align:center;"> 1 </td>
    <td style="text-align:center;"> 0.13122 </td>
-   <td style="text-align:center;"> 6.5186 </td>
-   <td style="text-align:center;"> 1.8534 </td>
-   <td style="text-align:center;"> 6.6519 </td>
-   <td style="text-align:center;"> 5.9119 </td>
-   <td style="text-align:center;"> 7.5444 </td>
-   <td style="text-align:center;"> 1.6324 </td>
+   <td style="text-align:center;"> 6.5880 </td>
+   <td style="text-align:center;"> 1.2534 </td>
+   <td style="text-align:center;"> 6.6546 </td>
+   <td style="text-align:center;"> 6.0371 </td>
+   <td style="text-align:center;"> 7.3941 </td>
+   <td style="text-align:center;"> 1.3570 </td>
    <td style="text-align:center;"> 0.06948 </td>
    <td style="text-align:center;"> 0.03860 </td>
    <td style="text-align:center;"> 0.10036 </td>
    <td style="text-align:center;"> 0.06176 </td>
-   <td style="text-align:center;"> 2.4638 </td>
-   <td style="text-align:center;"> 9.2717 </td>
-   <td style="text-align:center;"> 0.90403 </td>
-   <td style="text-align:center;"> 0.95781 </td>
-   <td style="text-align:center;"> 0.86589 </td>
-   <td style="text-align:center;"> 0.47996 </td>
-   <td style="text-align:center;"> 7.1250 </td>
-   <td style="text-align:center;"> 5.62500 </td>
-   <td style="text-align:center;"> 7.500 </td>
+   <td style="text-align:center;"> 1.8047 </td>
+   <td style="text-align:center;"> 5.9891 </td>
+   <td style="text-align:center;"> 0.91986 </td>
+   <td style="text-align:center;"> 0.95764 </td>
+   <td style="text-align:center;"> 0.88090 </td>
+   <td style="text-align:center;"> 0.53116 </td>
    <td style="text-align:center;"> 6.1458 </td>
    <td style="text-align:center;"> 4.650 </td>
    <td style="text-align:center;"> 6.675 </td>
@@ -856,30 +845,29 @@ sp
    <td style="text-align:center;"> 6.600 </td>
    <td style="text-align:center;"> 14.86088 </td>
    <td style="text-align:center;"> 6.7576 </td>
+   <td style="text-align:center;"> 2.3169 </td>
+   <td style="text-align:center;"> 9.3151 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> Phae.long4.wav_1 </td>
    <td style="text-align:center;"> 1 </td>
    <td style="text-align:center;"> 0.14542 </td>
-   <td style="text-align:center;"> 6.1574 </td>
-   <td style="text-align:center;"> 2.0747 </td>
-   <td style="text-align:center;"> 6.2297 </td>
-   <td style="text-align:center;"> 5.2591 </td>
-   <td style="text-align:center;"> 7.4412 </td>
-   <td style="text-align:center;"> 2.1821 </td>
+   <td style="text-align:center;"> 6.2233 </td>
+   <td style="text-align:center;"> 1.4789 </td>
+   <td style="text-align:center;"> 6.2369 </td>
+   <td style="text-align:center;"> 5.4593 </td>
+   <td style="text-align:center;"> 7.3104 </td>
+   <td style="text-align:center;"> 1.8511 </td>
    <td style="text-align:center;"> 0.08422 </td>
    <td style="text-align:center;"> 0.04594 </td>
    <td style="text-align:center;"> 0.11484 </td>
    <td style="text-align:center;"> 0.06891 </td>
-   <td style="text-align:center;"> 1.7123 </td>
-   <td style="text-align:center;"> 5.8127 </td>
-   <td style="text-align:center;"> 0.94299 </td>
-   <td style="text-align:center;"> 0.95249 </td>
-   <td style="text-align:center;"> 0.89819 </td>
-   <td style="text-align:center;"> 0.61863 </td>
-   <td style="text-align:center;"> 3.4028 </td>
-   <td style="text-align:center;"> 1.32353 </td>
-   <td style="text-align:center;"> 5.625 </td>
+   <td style="text-align:center;"> 1.2507 </td>
+   <td style="text-align:center;"> 4.2866 </td>
+   <td style="text-align:center;"> 0.96418 </td>
+   <td style="text-align:center;"> 0.95206 </td>
+   <td style="text-align:center;"> 0.91795 </td>
+   <td style="text-align:center;"> 0.75803 </td>
    <td style="text-align:center;"> 6.1650 </td>
    <td style="text-align:center;"> 3.975 </td>
    <td style="text-align:center;"> 8.250 </td>
@@ -889,30 +877,29 @@ sp
    <td style="text-align:center;"> 3.975 </td>
    <td style="text-align:center;"> -9.28314 </td>
    <td style="text-align:center;"> 6.3046 </td>
+   <td style="text-align:center;"> 2.5140 </td>
+   <td style="text-align:center;"> 9.2166 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> Phae.long4.wav_2 </td>
    <td style="text-align:center;"> 1 </td>
    <td style="text-align:center;"> 0.14419 </td>
-   <td style="text-align:center;"> 6.2806 </td>
-   <td style="text-align:center;"> 2.0964 </td>
-   <td style="text-align:center;"> 6.2708 </td>
-   <td style="text-align:center;"> 5.4097 </td>
-   <td style="text-align:center;"> 7.6111 </td>
-   <td style="text-align:center;"> 2.2014 </td>
+   <td style="text-align:center;"> 6.4692 </td>
+   <td style="text-align:center;"> 1.5921 </td>
+   <td style="text-align:center;"> 6.3345 </td>
+   <td style="text-align:center;"> 5.6335 </td>
+   <td style="text-align:center;"> 7.5838 </td>
+   <td style="text-align:center;"> 1.9503 </td>
    <td style="text-align:center;"> 0.08350 </td>
    <td style="text-align:center;"> 0.04554 </td>
    <td style="text-align:center;"> 0.11386 </td>
    <td style="text-align:center;"> 0.06832 </td>
-   <td style="text-align:center;"> 2.0139 </td>
-   <td style="text-align:center;"> 7.8329 </td>
-   <td style="text-align:center;"> 0.94335 </td>
-   <td style="text-align:center;"> 0.95359 </td>
-   <td style="text-align:center;"> 0.89958 </td>
-   <td style="text-align:center;"> 0.62249 </td>
-   <td style="text-align:center;"> 3.7208 </td>
-   <td style="text-align:center;"> 2.81250 </td>
-   <td style="text-align:center;"> 5.625 </td>
+   <td style="text-align:center;"> 1.6977 </td>
+   <td style="text-align:center;"> 6.4039 </td>
+   <td style="text-align:center;"> 0.95838 </td>
+   <td style="text-align:center;"> 0.95309 </td>
+   <td style="text-align:center;"> 0.91342 </td>
+   <td style="text-align:center;"> 0.72121 </td>
    <td style="text-align:center;"> 6.5325 </td>
    <td style="text-align:center;"> 3.750 </td>
    <td style="text-align:center;"> 8.775 </td>
@@ -922,30 +909,29 @@ sp
    <td style="text-align:center;"> 3.750 </td>
    <td style="text-align:center;"> -29.64911 </td>
    <td style="text-align:center;"> 6.2290 </td>
+   <td style="text-align:center;"> 2.5797 </td>
+   <td style="text-align:center;"> 10.2351 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> Phae.long4.wav_3 </td>
    <td style="text-align:center;"> 1 </td>
    <td style="text-align:center;"> 0.14510 </td>
-   <td style="text-align:center;"> 5.9974 </td>
-   <td style="text-align:center;"> 2.0832 </td>
-   <td style="text-align:center;"> 6.0483 </td>
-   <td style="text-align:center;"> 4.9172 </td>
-   <td style="text-align:center;"> 7.3034 </td>
-   <td style="text-align:center;"> 2.3862 </td>
+   <td style="text-align:center;"> 6.1237 </td>
+   <td style="text-align:center;"> 1.5432 </td>
+   <td style="text-align:center;"> 6.0817 </td>
+   <td style="text-align:center;"> 5.1786 </td>
+   <td style="text-align:center;"> 7.2467 </td>
+   <td style="text-align:center;"> 2.0681 </td>
    <td style="text-align:center;"> 0.08404 </td>
    <td style="text-align:center;"> 0.04584 </td>
    <td style="text-align:center;"> 0.11460 </td>
    <td style="text-align:center;"> 0.06876 </td>
-   <td style="text-align:center;"> 1.5022 </td>
-   <td style="text-align:center;"> 5.1389 </td>
-   <td style="text-align:center;"> 0.94599 </td>
-   <td style="text-align:center;"> 0.95356 </td>
-   <td style="text-align:center;"> 0.90206 </td>
-   <td style="text-align:center;"> 0.62133 </td>
-   <td style="text-align:center;"> 3.5381 </td>
-   <td style="text-align:center;"> 2.81250 </td>
-   <td style="text-align:center;"> 5.625 </td>
+   <td style="text-align:center;"> 1.0908 </td>
+   <td style="text-align:center;"> 4.1060 </td>
+   <td style="text-align:center;"> 0.96434 </td>
+   <td style="text-align:center;"> 0.95302 </td>
+   <td style="text-align:center;"> 0.91904 </td>
+   <td style="text-align:center;"> 0.73709 </td>
    <td style="text-align:center;"> 6.0713 </td>
    <td style="text-align:center;"> 3.975 </td>
    <td style="text-align:center;"> 7.875 </td>
@@ -955,6 +941,8 @@ sp
    <td style="text-align:center;"> 3.975 </td>
    <td style="text-align:center;"> -26.87821 </td>
    <td style="text-align:center;"> 6.0025 </td>
+   <td style="text-align:center;"> 2.5797 </td>
+   <td style="text-align:center;"> 9.7423 </td>
   </tr>
 </tbody>
 </table></div>
@@ -964,7 +952,7 @@ sp
 
 
 {% highlight r %}
-xc <- xcorr(ext_st, frange = c(1, 11))
+xc <- xcorr(ext_st, bp = c(1, 11))
 
 xc
 {% endhighlight %}
@@ -990,155 +978,155 @@ xc
   <tr>
    <td style="text-align:left;"> Phae.long1.wav_1-1 </td>
    <td style="text-align:center;"> 1.00000 </td>
-   <td style="text-align:center;"> 0.70485 </td>
-   <td style="text-align:center;"> 0.67836 </td>
-   <td style="text-align:center;"> 0.37347 </td>
-   <td style="text-align:center;"> 0.38018 </td>
-   <td style="text-align:center;"> 0.41116 </td>
-   <td style="text-align:center;"> 0.36601 </td>
-   <td style="text-align:center;"> 0.39759 </td>
-   <td style="text-align:center;"> 0.31507 </td>
-   <td style="text-align:center;"> 0.31808 </td>
-   <td style="text-align:center;"> 0.32613 </td>
+   <td style="text-align:center;"> 0.70098 </td>
+   <td style="text-align:center;"> 0.67774 </td>
+   <td style="text-align:center;"> 0.37965 </td>
+   <td style="text-align:center;"> 0.37656 </td>
+   <td style="text-align:center;"> 0.41595 </td>
+   <td style="text-align:center;"> 0.36969 </td>
+   <td style="text-align:center;"> 0.40227 </td>
+   <td style="text-align:center;"> 0.31495 </td>
+   <td style="text-align:center;"> 0.31186 </td>
+   <td style="text-align:center;"> 0.32389 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Phae.long1.wav_2-1 </td>
-   <td style="text-align:center;"> 0.70485 </td>
+   <td style="text-align:center;"> 0.70098 </td>
    <td style="text-align:center;"> 1.00000 </td>
-   <td style="text-align:center;"> 0.64765 </td>
-   <td style="text-align:center;"> 0.39046 </td>
-   <td style="text-align:center;"> 0.40733 </td>
-   <td style="text-align:center;"> 0.40375 </td>
-   <td style="text-align:center;"> 0.36789 </td>
-   <td style="text-align:center;"> 0.40472 </td>
-   <td style="text-align:center;"> 0.31071 </td>
-   <td style="text-align:center;"> 0.31410 </td>
-   <td style="text-align:center;"> 0.31816 </td>
+   <td style="text-align:center;"> 0.64562 </td>
+   <td style="text-align:center;"> 0.39796 </td>
+   <td style="text-align:center;"> 0.40553 </td>
+   <td style="text-align:center;"> 0.40322 </td>
+   <td style="text-align:center;"> 0.36674 </td>
+   <td style="text-align:center;"> 0.40986 </td>
+   <td style="text-align:center;"> 0.31026 </td>
+   <td style="text-align:center;"> 0.31066 </td>
+   <td style="text-align:center;"> 0.32019 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Phae.long1.wav_3-1 </td>
-   <td style="text-align:center;"> 0.67836 </td>
-   <td style="text-align:center;"> 0.64765 </td>
+   <td style="text-align:center;"> 0.67774 </td>
+   <td style="text-align:center;"> 0.64562 </td>
    <td style="text-align:center;"> 1.00000 </td>
-   <td style="text-align:center;"> 0.40045 </td>
-   <td style="text-align:center;"> 0.40461 </td>
-   <td style="text-align:center;"> 0.40741 </td>
-   <td style="text-align:center;"> 0.38527 </td>
-   <td style="text-align:center;"> 0.41226 </td>
-   <td style="text-align:center;"> 0.30580 </td>
-   <td style="text-align:center;"> 0.30182 </td>
-   <td style="text-align:center;"> 0.32475 </td>
+   <td style="text-align:center;"> 0.40397 </td>
+   <td style="text-align:center;"> 0.40515 </td>
+   <td style="text-align:center;"> 0.40939 </td>
+   <td style="text-align:center;"> 0.38032 </td>
+   <td style="text-align:center;"> 0.41243 </td>
+   <td style="text-align:center;"> 0.30668 </td>
+   <td style="text-align:center;"> 0.29962 </td>
+   <td style="text-align:center;"> 0.32628 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Phae.long2.wav_1-1 </td>
-   <td style="text-align:center;"> 0.37347 </td>
-   <td style="text-align:center;"> 0.39046 </td>
-   <td style="text-align:center;"> 0.40045 </td>
+   <td style="text-align:center;"> 0.37965 </td>
+   <td style="text-align:center;"> 0.39796 </td>
+   <td style="text-align:center;"> 0.40397 </td>
    <td style="text-align:center;"> 1.00000 </td>
-   <td style="text-align:center;"> 0.66537 </td>
-   <td style="text-align:center;"> 0.64269 </td>
-   <td style="text-align:center;"> 0.64767 </td>
-   <td style="text-align:center;"> 0.59866 </td>
-   <td style="text-align:center;"> 0.32479 </td>
-   <td style="text-align:center;"> 0.29672 </td>
-   <td style="text-align:center;"> 0.32422 </td>
+   <td style="text-align:center;"> 0.66783 </td>
+   <td style="text-align:center;"> 0.64736 </td>
+   <td style="text-align:center;"> 0.64770 </td>
+   <td style="text-align:center;"> 0.60379 </td>
+   <td style="text-align:center;"> 0.32453 </td>
+   <td style="text-align:center;"> 0.29737 </td>
+   <td style="text-align:center;"> 0.32423 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Phae.long2.wav_2-1 </td>
-   <td style="text-align:center;"> 0.38018 </td>
-   <td style="text-align:center;"> 0.40733 </td>
-   <td style="text-align:center;"> 0.40461 </td>
-   <td style="text-align:center;"> 0.66537 </td>
+   <td style="text-align:center;"> 0.37656 </td>
+   <td style="text-align:center;"> 0.40553 </td>
+   <td style="text-align:center;"> 0.40515 </td>
+   <td style="text-align:center;"> 0.66783 </td>
    <td style="text-align:center;"> 1.00000 </td>
-   <td style="text-align:center;"> 0.60856 </td>
-   <td style="text-align:center;"> 0.63267 </td>
-   <td style="text-align:center;"> 0.63378 </td>
-   <td style="text-align:center;"> 0.30917 </td>
-   <td style="text-align:center;"> 0.27720 </td>
-   <td style="text-align:center;"> 0.31444 </td>
+   <td style="text-align:center;"> 0.60930 </td>
+   <td style="text-align:center;"> 0.63169 </td>
+   <td style="text-align:center;"> 0.63351 </td>
+   <td style="text-align:center;"> 0.31042 </td>
+   <td style="text-align:center;"> 0.27856 </td>
+   <td style="text-align:center;"> 0.31651 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Phae.long3.wav_1-1 </td>
-   <td style="text-align:center;"> 0.41116 </td>
-   <td style="text-align:center;"> 0.40375 </td>
-   <td style="text-align:center;"> 0.40741 </td>
-   <td style="text-align:center;"> 0.64269 </td>
-   <td style="text-align:center;"> 0.60856 </td>
+   <td style="text-align:center;"> 0.41595 </td>
+   <td style="text-align:center;"> 0.40322 </td>
+   <td style="text-align:center;"> 0.40939 </td>
+   <td style="text-align:center;"> 0.64736 </td>
+   <td style="text-align:center;"> 0.60930 </td>
    <td style="text-align:center;"> 1.00000 </td>
-   <td style="text-align:center;"> 0.75641 </td>
-   <td style="text-align:center;"> 0.70975 </td>
-   <td style="text-align:center;"> 0.30693 </td>
-   <td style="text-align:center;"> 0.28003 </td>
-   <td style="text-align:center;"> 0.29767 </td>
+   <td style="text-align:center;"> 0.75640 </td>
+   <td style="text-align:center;"> 0.71382 </td>
+   <td style="text-align:center;"> 0.30416 </td>
+   <td style="text-align:center;"> 0.27581 </td>
+   <td style="text-align:center;"> 0.29938 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Phae.long3.wav_2-1 </td>
-   <td style="text-align:center;"> 0.36601 </td>
-   <td style="text-align:center;"> 0.36789 </td>
-   <td style="text-align:center;"> 0.38527 </td>
-   <td style="text-align:center;"> 0.64767 </td>
-   <td style="text-align:center;"> 0.63267 </td>
-   <td style="text-align:center;"> 0.75641 </td>
+   <td style="text-align:center;"> 0.36969 </td>
+   <td style="text-align:center;"> 0.36674 </td>
+   <td style="text-align:center;"> 0.38032 </td>
+   <td style="text-align:center;"> 0.64770 </td>
+   <td style="text-align:center;"> 0.63169 </td>
+   <td style="text-align:center;"> 0.75640 </td>
    <td style="text-align:center;"> 1.00000 </td>
-   <td style="text-align:center;"> 0.73644 </td>
-   <td style="text-align:center;"> 0.30323 </td>
-   <td style="text-align:center;"> 0.27900 </td>
-   <td style="text-align:center;"> 0.29780 </td>
+   <td style="text-align:center;"> 0.73529 </td>
+   <td style="text-align:center;"> 0.30324 </td>
+   <td style="text-align:center;"> 0.27773 </td>
+   <td style="text-align:center;"> 0.30050 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Phae.long3.wav_3-1 </td>
-   <td style="text-align:center;"> 0.39759 </td>
-   <td style="text-align:center;"> 0.40472 </td>
-   <td style="text-align:center;"> 0.41226 </td>
-   <td style="text-align:center;"> 0.59866 </td>
-   <td style="text-align:center;"> 0.63378 </td>
-   <td style="text-align:center;"> 0.70975 </td>
-   <td style="text-align:center;"> 0.73644 </td>
+   <td style="text-align:center;"> 0.40227 </td>
+   <td style="text-align:center;"> 0.40986 </td>
+   <td style="text-align:center;"> 0.41243 </td>
+   <td style="text-align:center;"> 0.60379 </td>
+   <td style="text-align:center;"> 0.63351 </td>
+   <td style="text-align:center;"> 0.71382 </td>
+   <td style="text-align:center;"> 0.73529 </td>
    <td style="text-align:center;"> 1.00000 </td>
-   <td style="text-align:center;"> 0.31338 </td>
-   <td style="text-align:center;"> 0.28185 </td>
-   <td style="text-align:center;"> 0.29876 </td>
+   <td style="text-align:center;"> 0.31193 </td>
+   <td style="text-align:center;"> 0.28016 </td>
+   <td style="text-align:center;"> 0.30141 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Phae.long4.wav_1-1 </td>
-   <td style="text-align:center;"> 0.31507 </td>
-   <td style="text-align:center;"> 0.31071 </td>
-   <td style="text-align:center;"> 0.30580 </td>
-   <td style="text-align:center;"> 0.32479 </td>
-   <td style="text-align:center;"> 0.30917 </td>
-   <td style="text-align:center;"> 0.30693 </td>
-   <td style="text-align:center;"> 0.30323 </td>
-   <td style="text-align:center;"> 0.31338 </td>
+   <td style="text-align:center;"> 0.31495 </td>
+   <td style="text-align:center;"> 0.31026 </td>
+   <td style="text-align:center;"> 0.30668 </td>
+   <td style="text-align:center;"> 0.32453 </td>
+   <td style="text-align:center;"> 0.31042 </td>
+   <td style="text-align:center;"> 0.30416 </td>
+   <td style="text-align:center;"> 0.30324 </td>
+   <td style="text-align:center;"> 0.31193 </td>
    <td style="text-align:center;"> 1.00000 </td>
-   <td style="text-align:center;"> 0.76492 </td>
-   <td style="text-align:center;"> 0.75724 </td>
+   <td style="text-align:center;"> 0.76814 </td>
+   <td style="text-align:center;"> 0.75387 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Phae.long4.wav_2-1 </td>
-   <td style="text-align:center;"> 0.31808 </td>
-   <td style="text-align:center;"> 0.31410 </td>
-   <td style="text-align:center;"> 0.30182 </td>
-   <td style="text-align:center;"> 0.29672 </td>
-   <td style="text-align:center;"> 0.27720 </td>
-   <td style="text-align:center;"> 0.28003 </td>
-   <td style="text-align:center;"> 0.27900 </td>
-   <td style="text-align:center;"> 0.28185 </td>
-   <td style="text-align:center;"> 0.76492 </td>
+   <td style="text-align:center;"> 0.31186 </td>
+   <td style="text-align:center;"> 0.31066 </td>
+   <td style="text-align:center;"> 0.29962 </td>
+   <td style="text-align:center;"> 0.29737 </td>
+   <td style="text-align:center;"> 0.27856 </td>
+   <td style="text-align:center;"> 0.27581 </td>
+   <td style="text-align:center;"> 0.27773 </td>
+   <td style="text-align:center;"> 0.28016 </td>
+   <td style="text-align:center;"> 0.76814 </td>
    <td style="text-align:center;"> 1.00000 </td>
-   <td style="text-align:center;"> 0.75995 </td>
+   <td style="text-align:center;"> 0.75907 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Phae.long4.wav_3-1 </td>
-   <td style="text-align:center;"> 0.32613 </td>
-   <td style="text-align:center;"> 0.31816 </td>
-   <td style="text-align:center;"> 0.32475 </td>
-   <td style="text-align:center;"> 0.32422 </td>
-   <td style="text-align:center;"> 0.31444 </td>
-   <td style="text-align:center;"> 0.29767 </td>
-   <td style="text-align:center;"> 0.29780 </td>
-   <td style="text-align:center;"> 0.29876 </td>
-   <td style="text-align:center;"> 0.75724 </td>
-   <td style="text-align:center;"> 0.75995 </td>
+   <td style="text-align:center;"> 0.32389 </td>
+   <td style="text-align:center;"> 0.32019 </td>
+   <td style="text-align:center;"> 0.32628 </td>
+   <td style="text-align:center;"> 0.32423 </td>
+   <td style="text-align:center;"> 0.31651 </td>
+   <td style="text-align:center;"> 0.29938 </td>
+   <td style="text-align:center;"> 0.30050 </td>
+   <td style="text-align:center;"> 0.30141 </td>
+   <td style="text-align:center;"> 0.75387 </td>
+   <td style="text-align:center;"> 0.75907 </td>
    <td style="text-align:center;"> 1.00000 </td>
   </tr>
 </tbody>
@@ -1318,6 +1306,11 @@ dtw.dist
 {% endhighlight %}
 
 
+
+{% highlight text %}
+calculating DTW distances (step 2 of 2, no progress bar):
+{% endhighlight %}
+
 <div style="border: 1px solid #ddd; padding: 1px; overflow-y: scroll; height:500px; overflow-x: scroll; width:740px; "><table>
  <thead>
   <tr>
@@ -1341,7 +1334,7 @@ dtw.dist
    <td style="text-align:center;"> 0.000 </td>
    <td style="text-align:center;"> 6.972 </td>
    <td style="text-align:center;"> 7.884 </td>
-   <td style="text-align:center;"> 18.164 </td>
+   <td style="text-align:center;"> 16.465 </td>
    <td style="text-align:center;"> 18.364 </td>
    <td style="text-align:center;"> 11.436 </td>
    <td style="text-align:center;"> 16.843 </td>
@@ -1355,7 +1348,7 @@ dtw.dist
    <td style="text-align:center;"> 6.972 </td>
    <td style="text-align:center;"> 0.000 </td>
    <td style="text-align:center;"> 9.494 </td>
-   <td style="text-align:center;"> 19.137 </td>
+   <td style="text-align:center;"> 19.740 </td>
    <td style="text-align:center;"> 23.317 </td>
    <td style="text-align:center;"> 13.306 </td>
    <td style="text-align:center;"> 19.885 </td>
@@ -1369,7 +1362,7 @@ dtw.dist
    <td style="text-align:center;"> 7.884 </td>
    <td style="text-align:center;"> 9.494 </td>
    <td style="text-align:center;"> 0.000 </td>
-   <td style="text-align:center;"> 22.209 </td>
+   <td style="text-align:center;"> 19.919 </td>
    <td style="text-align:center;"> 19.306 </td>
    <td style="text-align:center;"> 14.960 </td>
    <td style="text-align:center;"> 18.880 </td>
@@ -1380,24 +1373,24 @@ dtw.dist
   </tr>
   <tr>
    <td style="text-align:left;"> Phae.long2.wav_1-1 </td>
-   <td style="text-align:center;"> 18.164 </td>
-   <td style="text-align:center;"> 19.137 </td>
-   <td style="text-align:center;"> 22.209 </td>
+   <td style="text-align:center;"> 16.465 </td>
+   <td style="text-align:center;"> 19.740 </td>
+   <td style="text-align:center;"> 19.919 </td>
    <td style="text-align:center;"> 0.000 </td>
-   <td style="text-align:center;"> 11.275 </td>
-   <td style="text-align:center;"> 13.419 </td>
-   <td style="text-align:center;"> 10.606 </td>
-   <td style="text-align:center;"> 10.893 </td>
-   <td style="text-align:center;"> 14.034 </td>
-   <td style="text-align:center;"> 17.344 </td>
-   <td style="text-align:center;"> 18.327 </td>
+   <td style="text-align:center;"> 9.064 </td>
+   <td style="text-align:center;"> 10.258 </td>
+   <td style="text-align:center;"> 7.864 </td>
+   <td style="text-align:center;"> 9.698 </td>
+   <td style="text-align:center;"> 18.931 </td>
+   <td style="text-align:center;"> 24.143 </td>
+   <td style="text-align:center;"> 24.309 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Phae.long2.wav_2-1 </td>
    <td style="text-align:center;"> 18.364 </td>
    <td style="text-align:center;"> 23.317 </td>
    <td style="text-align:center;"> 19.306 </td>
-   <td style="text-align:center;"> 11.275 </td>
+   <td style="text-align:center;"> 9.064 </td>
    <td style="text-align:center;"> 0.000 </td>
    <td style="text-align:center;"> 10.031 </td>
    <td style="text-align:center;"> 6.988 </td>
@@ -1411,7 +1404,7 @@ dtw.dist
    <td style="text-align:center;"> 11.436 </td>
    <td style="text-align:center;"> 13.306 </td>
    <td style="text-align:center;"> 14.960 </td>
-   <td style="text-align:center;"> 13.419 </td>
+   <td style="text-align:center;"> 10.258 </td>
    <td style="text-align:center;"> 10.031 </td>
    <td style="text-align:center;"> 0.000 </td>
    <td style="text-align:center;"> 7.563 </td>
@@ -1425,7 +1418,7 @@ dtw.dist
    <td style="text-align:center;"> 16.843 </td>
    <td style="text-align:center;"> 19.885 </td>
    <td style="text-align:center;"> 18.880 </td>
-   <td style="text-align:center;"> 10.606 </td>
+   <td style="text-align:center;"> 7.864 </td>
    <td style="text-align:center;"> 6.988 </td>
    <td style="text-align:center;"> 7.563 </td>
    <td style="text-align:center;"> 0.000 </td>
@@ -1439,7 +1432,7 @@ dtw.dist
    <td style="text-align:center;"> 18.746 </td>
    <td style="text-align:center;"> 23.230 </td>
    <td style="text-align:center;"> 23.295 </td>
-   <td style="text-align:center;"> 10.893 </td>
+   <td style="text-align:center;"> 9.698 </td>
    <td style="text-align:center;"> 7.283 </td>
    <td style="text-align:center;"> 8.528 </td>
    <td style="text-align:center;"> 5.606 </td>
@@ -1453,7 +1446,7 @@ dtw.dist
    <td style="text-align:center;"> 22.682 </td>
    <td style="text-align:center;"> 25.976 </td>
    <td style="text-align:center;"> 27.062 </td>
-   <td style="text-align:center;"> 14.034 </td>
+   <td style="text-align:center;"> 18.931 </td>
    <td style="text-align:center;"> 16.920 </td>
    <td style="text-align:center;"> 23.179 </td>
    <td style="text-align:center;"> 19.530 </td>
@@ -1467,7 +1460,7 @@ dtw.dist
    <td style="text-align:center;"> 22.932 </td>
    <td style="text-align:center;"> 24.078 </td>
    <td style="text-align:center;"> 28.581 </td>
-   <td style="text-align:center;"> 17.344 </td>
+   <td style="text-align:center;"> 24.143 </td>
    <td style="text-align:center;"> 23.744 </td>
    <td style="text-align:center;"> 25.229 </td>
    <td style="text-align:center;"> 24.345 </td>
@@ -1481,7 +1474,7 @@ dtw.dist
    <td style="text-align:center;"> 21.909 </td>
    <td style="text-align:center;"> 25.023 </td>
    <td style="text-align:center;"> 25.867 </td>
-   <td style="text-align:center;"> 18.327 </td>
+   <td style="text-align:center;"> 24.309 </td>
    <td style="text-align:center;"> 21.980 </td>
    <td style="text-align:center;"> 22.872 </td>
    <td style="text-align:center;"> 23.278 </td>
@@ -1942,7 +1935,7 @@ This data is ready to be used:
 
 
 {% highlight r %}
-sp <- specan(dat)
+sp <- specan(dat, bp = c(2, 10))
 
 head(sp)
 {% endhighlight %}
@@ -1969,9 +1962,6 @@ head(sp)
    <th style="text-align:center;"> time.ent </th>
    <th style="text-align:center;"> entropy </th>
    <th style="text-align:center;"> sfm </th>
-   <th style="text-align:center;"> meanfun </th>
-   <th style="text-align:center;"> minfun </th>
-   <th style="text-align:center;"> maxfun </th>
    <th style="text-align:center;"> meandom </th>
    <th style="text-align:center;"> mindom </th>
    <th style="text-align:center;"> maxdom </th>
@@ -1988,58 +1978,52 @@ head(sp)
    <td style="text-align:center;"> Pyrrhura rupicola Macaulay Library 132 .wav_2 </td>
    <td style="text-align:center;"> 1 </td>
    <td style="text-align:center;"> 0.15048 </td>
-   <td style="text-align:center;"> 4.6763 </td>
-   <td style="text-align:center;"> 2.3249 </td>
-   <td style="text-align:center;"> 4.2085 </td>
-   <td style="text-align:center;"> 3.3243 </td>
-   <td style="text-align:center;"> 5.6912 </td>
-   <td style="text-align:center;"> 2.3669 </td>
-   <td style="text-align:center;"> 0.07198 </td>
+   <td style="text-align:center;"> 4.6570 </td>
+   <td style="text-align:center;"> 1.7692 </td>
+   <td style="text-align:center;"> 4.2876 </td>
+   <td style="text-align:center;"> 3.4364 </td>
+   <td style="text-align:center;"> 5.6243 </td>
+   <td style="text-align:center;"> 2.1879 </td>
+   <td style="text-align:center;"> 0.06543 </td>
    <td style="text-align:center;"> 0.03926 </td>
-   <td style="text-align:center;"> 0.11124 </td>
-   <td style="text-align:center;"> 0.07198 </td>
-   <td style="text-align:center;"> 4.0281 </td>
-   <td style="text-align:center;"> 24.420 </td>
-   <td style="text-align:center;"> 0.83665 </td>
-   <td style="text-align:center;"> 0.95113 </td>
-   <td style="text-align:center;"> 0.79576 </td>
-   <td style="text-align:center;"> 0.12486 </td>
-   <td style="text-align:center;"> 1.8592 </td>
-   <td style="text-align:center;"> 0.65821 </td>
-   <td style="text-align:center;"> 2.3211 </td>
-   <td style="text-align:center;"> 3.7109 </td>
-   <td style="text-align:center;"> 1.9810 </td>
+   <td style="text-align:center;"> 0.10469 </td>
+   <td style="text-align:center;"> 0.06543 </td>
+   <td style="text-align:center;"> 2.6003 </td>
+   <td style="text-align:center;"> 11.8598 </td>
+   <td style="text-align:center;"> 0.92349 </td>
+   <td style="text-align:center;"> 0.95082 </td>
+   <td style="text-align:center;"> 0.87807 </td>
+   <td style="text-align:center;"> 0.54127 </td>
+   <td style="text-align:center;"> 3.9580 </td>
+   <td style="text-align:center;"> 2.2395 </td>
    <td style="text-align:center;"> 6.8045 </td>
-   <td style="text-align:center;"> 4.8234 </td>
-   <td style="text-align:center;"> 5.3750 </td>
+   <td style="text-align:center;"> 4.5650 </td>
+   <td style="text-align:center;"> 3.5660 </td>
    <td style="text-align:center;"> 4.4789 </td>
-   <td style="text-align:center;"> 1.9810 </td>
-   <td style="text-align:center;"> -16.5996 </td>
+   <td style="text-align:center;"> 4.0482 </td>
+   <td style="text-align:center;"> -2.8620 </td>
    <td style="text-align:center;"> 4.0208 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> 0.CCE.1971.4.4.ITM70863A-23.wav_1 </td>
    <td style="text-align:center;"> 1 </td>
    <td style="text-align:center;"> 0.16556 </td>
-   <td style="text-align:center;"> 7.4982 </td>
-   <td style="text-align:center;"> 4.2091 </td>
-   <td style="text-align:center;"> 6.6224 </td>
-   <td style="text-align:center;"> 5.6193 </td>
-   <td style="text-align:center;"> 8.2961 </td>
-   <td style="text-align:center;"> 2.6767 </td>
+   <td style="text-align:center;"> 6.2556 </td>
+   <td style="text-align:center;"> 1.6484 </td>
+   <td style="text-align:center;"> 6.3505 </td>
+   <td style="text-align:center;"> 5.6072 </td>
+   <td style="text-align:center;"> 7.2024 </td>
+   <td style="text-align:center;"> 1.5952 </td>
    <td style="text-align:center;"> 0.08279 </td>
    <td style="text-align:center;"> 0.03821 </td>
    <td style="text-align:center;"> 0.12100 </td>
    <td style="text-align:center;"> 0.08279 </td>
-   <td style="text-align:center;"> 3.8653 </td>
-   <td style="text-align:center;"> 22.506 </td>
-   <td style="text-align:center;"> 0.91266 </td>
-   <td style="text-align:center;"> 0.94153 </td>
-   <td style="text-align:center;"> 0.85929 </td>
-   <td style="text-align:center;"> 0.49415 </td>
-   <td style="text-align:center;"> 4.2372 </td>
-   <td style="text-align:center;"> 0.52500 </td>
-   <td style="text-align:center;"> 7.3500 </td>
+   <td style="text-align:center;"> 2.3775 </td>
+   <td style="text-align:center;"> 10.1358 </td>
+   <td style="text-align:center;"> 0.93975 </td>
+   <td style="text-align:center;"> 0.94103 </td>
+   <td style="text-align:center;"> 0.88434 </td>
+   <td style="text-align:center;"> 0.63367 </td>
    <td style="text-align:center;"> 6.6003 </td>
    <td style="text-align:center;"> 3.5314 </td>
    <td style="text-align:center;"> 8.1826 </td>
@@ -2054,58 +2038,52 @@ head(sp)
    <td style="text-align:center;"> 0.SAT.1989.6.2.ITM70866A-32.wav_5 </td>
    <td style="text-align:center;"> 1 </td>
    <td style="text-align:center;"> 0.15425 </td>
-   <td style="text-align:center;"> 7.3011 </td>
-   <td style="text-align:center;"> 4.2056 </td>
-   <td style="text-align:center;"> 6.5831 </td>
-   <td style="text-align:center;"> 4.8968 </td>
-   <td style="text-align:center;"> 8.1008 </td>
-   <td style="text-align:center;"> 3.2040 </td>
+   <td style="text-align:center;"> 6.0960 </td>
+   <td style="text-align:center;"> 1.6472 </td>
+   <td style="text-align:center;"> 5.8475 </td>
+   <td style="text-align:center;"> 4.9067 </td>
+   <td style="text-align:center;"> 7.3982 </td>
+   <td style="text-align:center;"> 2.4915 </td>
    <td style="text-align:center;"> 0.08356 </td>
    <td style="text-align:center;"> 0.04499 </td>
    <td style="text-align:center;"> 0.11570 </td>
    <td style="text-align:center;"> 0.07070 </td>
-   <td style="text-align:center;"> 3.4398 </td>
-   <td style="text-align:center;"> 17.254 </td>
-   <td style="text-align:center;"> 0.90865 </td>
-   <td style="text-align:center;"> 0.94323 </td>
-   <td style="text-align:center;"> 0.85707 </td>
-   <td style="text-align:center;"> 0.48203 </td>
-   <td style="text-align:center;"> 3.2220 </td>
-   <td style="text-align:center;"> 1.26000 </td>
-   <td style="text-align:center;"> 6.3000 </td>
-   <td style="text-align:center;"> 6.4492 </td>
-   <td style="text-align:center;"> 4.7373 </td>
+   <td style="text-align:center;"> 1.9681 </td>
+   <td style="text-align:center;"> 7.2878 </td>
+   <td style="text-align:center;"> 0.93913 </td>
+   <td style="text-align:center;"> 0.94322 </td>
+   <td style="text-align:center;"> 0.88581 </td>
+   <td style="text-align:center;"> 0.60968 </td>
+   <td style="text-align:center;"> 6.3221 </td>
+   <td style="text-align:center;"> 3.2731 </td>
    <td style="text-align:center;"> 8.0965 </td>
-   <td style="text-align:center;"> 3.3592 </td>
-   <td style="text-align:center;"> 3.4872 </td>
+   <td style="text-align:center;"> 4.8234 </td>
+   <td style="text-align:center;"> 3.1071 </td>
    <td style="text-align:center;"> 6.3738 </td>
-   <td style="text-align:center;"> 6.5461 </td>
-   <td style="text-align:center;"> 1.1168 </td>
+   <td style="text-align:center;"> 3.2731 </td>
+   <td style="text-align:center;"> -20.1021 </td>
    <td style="text-align:center;"> 7.0473 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> 23.CCE.2011.7.21.7.42.wav_6 </td>
    <td style="text-align:center;"> 1 </td>
    <td style="text-align:center;"> 0.15496 </td>
-   <td style="text-align:center;"> 5.5026 </td>
-   <td style="text-align:center;"> 2.3525 </td>
-   <td style="text-align:center;"> 5.1579 </td>
-   <td style="text-align:center;"> 4.3703 </td>
-   <td style="text-align:center;"> 6.5329 </td>
-   <td style="text-align:center;"> 2.1626 </td>
+   <td style="text-align:center;"> 5.4239 </td>
+   <td style="text-align:center;"> 1.4632 </td>
+   <td style="text-align:center;"> 5.1832 </td>
+   <td style="text-align:center;"> 4.4278 </td>
+   <td style="text-align:center;"> 6.4358 </td>
+   <td style="text-align:center;"> 2.0081 </td>
    <td style="text-align:center;"> 0.06458 </td>
    <td style="text-align:center;"> 0.03875 </td>
    <td style="text-align:center;"> 0.10333 </td>
    <td style="text-align:center;"> 0.06458 </td>
-   <td style="text-align:center;"> 3.6555 </td>
-   <td style="text-align:center;"> 19.129 </td>
-   <td style="text-align:center;"> 0.84312 </td>
-   <td style="text-align:center;"> 0.94541 </td>
-   <td style="text-align:center;"> 0.79709 </td>
-   <td style="text-align:center;"> 0.15365 </td>
-   <td style="text-align:center;"> 4.0046 </td>
-   <td style="text-align:center;"> 0.45938 </td>
-   <td style="text-align:center;"> 7.3500 </td>
+   <td style="text-align:center;"> 2.1063 </td>
+   <td style="text-align:center;"> 8.0438 </td>
+   <td style="text-align:center;"> 0.92290 </td>
+   <td style="text-align:center;"> 0.94473 </td>
+   <td style="text-align:center;"> 0.87189 </td>
+   <td style="text-align:center;"> 0.50696 </td>
    <td style="text-align:center;"> 4.9854 </td>
    <td style="text-align:center;"> 2.3256 </td>
    <td style="text-align:center;"> 7.7519 </td>
@@ -2120,59 +2098,53 @@ head(sp)
    <td style="text-align:center;"> Cyanoliseus patagonus Macaulay Library 79 .wav_5 </td>
    <td style="text-align:center;"> 1 </td>
    <td style="text-align:center;"> 0.15989 </td>
-   <td style="text-align:center;"> 2.6520 </td>
-   <td style="text-align:center;"> 1.5761 </td>
-   <td style="text-align:center;"> 2.2644 </td>
-   <td style="text-align:center;"> 1.8203 </td>
-   <td style="text-align:center;"> 3.2152 </td>
-   <td style="text-align:center;"> 1.3949 </td>
-   <td style="text-align:center;"> 0.05757 </td>
-   <td style="text-align:center;"> 0.03198 </td>
-   <td style="text-align:center;"> 0.09595 </td>
+   <td style="text-align:center;"> 3.1546 </td>
+   <td style="text-align:center;"> 1.2261 </td>
+   <td style="text-align:center;"> 2.5692 </td>
+   <td style="text-align:center;"> 2.2439 </td>
+   <td style="text-align:center;"> 3.6575 </td>
+   <td style="text-align:center;"> 1.4136 </td>
    <td style="text-align:center;"> 0.06396 </td>
-   <td style="text-align:center;"> 5.5610 </td>
-   <td style="text-align:center;"> 43.476 </td>
-   <td style="text-align:center;"> 0.76308 </td>
-   <td style="text-align:center;"> 0.94119 </td>
-   <td style="text-align:center;"> 0.71820 </td>
-   <td style="text-align:center;"> 0.03763 </td>
-   <td style="text-align:center;"> 1.2834 </td>
-   <td style="text-align:center;"> 1.10250 </td>
-   <td style="text-align:center;"> 1.3364 </td>
-   <td style="text-align:center;"> 1.7657 </td>
-   <td style="text-align:center;"> 1.2059 </td>
-   <td style="text-align:center;"> 2.4979 </td>
-   <td style="text-align:center;"> 1.2920 </td>
-   <td style="text-align:center;"> 4.6000 </td>
-   <td style="text-align:center;"> 1.6365 </td>
+   <td style="text-align:center;"> 0.03838 </td>
+   <td style="text-align:center;"> 0.09595 </td>
+   <td style="text-align:center;"> 0.05757 </td>
+   <td style="text-align:center;"> 4.5462 </td>
+   <td style="text-align:center;"> 29.4729 </td>
+   <td style="text-align:center;"> 0.82325 </td>
+   <td style="text-align:center;"> 0.93564 </td>
+   <td style="text-align:center;"> 0.77027 </td>
+   <td style="text-align:center;"> 0.12652 </td>
+   <td style="text-align:center;"> 2.5166 </td>
+   <td style="text-align:center;"> 2.0672 </td>
+   <td style="text-align:center;"> 4.2205 </td>
+   <td style="text-align:center;"> 2.1533 </td>
+   <td style="text-align:center;"> 3.2000 </td>
+   <td style="text-align:center;"> 2.4117 </td>
    <td style="text-align:center;"> 2.2395 </td>
-   <td style="text-align:center;"> 3.7710 </td>
+   <td style="text-align:center;"> -1.0774 </td>
    <td style="text-align:center;"> 2.2913 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> 0.HC1.2011.8.7.9.20.wav_4 </td>
    <td style="text-align:center;"> 1 </td>
    <td style="text-align:center;"> 0.15380 </td>
-   <td style="text-align:center;"> 7.2597 </td>
-   <td style="text-align:center;"> 4.2607 </td>
-   <td style="text-align:center;"> 6.7047 </td>
-   <td style="text-align:center;"> 4.9098 </td>
-   <td style="text-align:center;"> 8.3370 </td>
-   <td style="text-align:center;"> 3.4271 </td>
+   <td style="text-align:center;"> 6.0302 </td>
+   <td style="text-align:center;"> 1.7597 </td>
+   <td style="text-align:center;"> 6.4163 </td>
+   <td style="text-align:center;"> 4.9203 </td>
+   <td style="text-align:center;"> 7.1837 </td>
+   <td style="text-align:center;"> 2.2634 </td>
    <td style="text-align:center;"> 0.07692 </td>
    <td style="text-align:center;"> 0.04487 </td>
    <td style="text-align:center;"> 0.10896 </td>
    <td style="text-align:center;"> 0.06410 </td>
-   <td style="text-align:center;"> 6.1538 </td>
-   <td style="text-align:center;"> 59.207 </td>
-   <td style="text-align:center;"> 0.90094 </td>
-   <td style="text-align:center;"> 0.94619 </td>
-   <td style="text-align:center;"> 0.85246 </td>
-   <td style="text-align:center;"> 0.47193 </td>
-   <td style="text-align:center;"> 2.7777 </td>
-   <td style="text-align:center;"> 0.55823 </td>
-   <td style="text-align:center;"> 5.5125 </td>
-   <td style="text-align:center;"> 6.1334 </td>
+   <td style="text-align:center;"> 4.1566 </td>
+   <td style="text-align:center;"> 27.8331 </td>
+   <td style="text-align:center;"> 0.92869 </td>
+   <td style="text-align:center;"> 0.94595 </td>
+   <td style="text-align:center;"> 0.87849 </td>
+   <td style="text-align:center;"> 0.60299 </td>
+   <td style="text-align:center;"> 6.1017 </td>
    <td style="text-align:center;"> 4.9096 </td>
    <td style="text-align:center;"> 8.5272 </td>
    <td style="text-align:center;"> 3.6176 </td>
@@ -2216,40 +2188,39 @@ Please report any bugs [here](https://github.com/maRce10/warbleR/issues).
 {% highlight text %}
 R version 3.4.4 (2018-03-15)
 Platform: x86_64-pc-linux-gnu (64-bit)
-Running under: Ubuntu 16.04.4 LTS
+Running under: Ubuntu 16.04.5 LTS
 
 Matrix products: default
 BLAS: /usr/lib/openblas-base/libblas.so.3
 LAPACK: /usr/lib/libopenblasp-r0.2.18.so
 
 locale:
- [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C               LC_TIME=en_US.UTF-8       
- [4] LC_COLLATE=en_US.UTF-8     LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
- [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                  LC_ADDRESS=C              
-[10] LC_TELEPHONE=C             LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+ [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C               LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+ [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8    LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+ [9] LC_ADDRESS=C               LC_TELEPHONE=C             LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
 
 attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
-[1] ggplot2_2.2.1        microbenchmark_1.4-4 kableExtra_0.7.0     knitr_1.20          
-[5] warbleR_1.1.13       NatureSounds_1.0.0   seewave_2.1.0        tuneR_1.3.2         
-[9] maps_3.3.0          
+[1] ggplot2_3.0.0        microbenchmark_1.4-4 kableExtra_0.9.0     knitr_1.20           warbleR_1.1.15      
+[6] NatureSounds_1.0.0   seewave_2.1.0        tuneR_1.3.3          maps_3.3.0          
 
 loaded via a namespace (and not attached):
- [1] Rcpp_0.12.14         pracma_2.1.4         highr_0.6            plyr_1.8.4          
- [5] pillar_1.0.1         compiler_3.4.4       bitops_1.0-6         iterators_1.0.9     
- [9] tools_3.4.4          Sim.DiffProc_4.0     digest_0.6.13        gtable_0.2.0        
-[13] viridisLite_0.2.0    tibble_1.4.1         evaluate_0.10.1      fftw_1.0-4          
-[17] pkgconfig_2.0.1      rlang_0.1.6          yaml_2.1.16          parallel_3.4.4      
-[21] xml2_1.2.0           httr_1.3.1           stringr_1.2.0        hms_0.4.0           
-[25] grid_3.4.4           rprojroot_1.3-2      scatterplot3d_0.3-40 R6_2.2.2            
-[29] dtw_1.18-1           jpeg_0.1-8           pbapply_1.3-4        rgl_0.95.1441       
-[33] rmarkdown_1.8        readr_1.1.1          magrittr_1.5         scales_0.5.0        
-[37] backports_1.1.2      htmltools_0.3.6      MASS_7.3-49          rvest_0.3.2         
-[41] colorspace_1.3-2     Deriv_3.8.4          proxy_0.4-22         stringi_1.1.6       
-[45] lazyeval_0.2.1       munsell_0.4.3        signal_0.7-6         RCurl_1.95-4.10     
-[49] rjson_0.2.18        
+ [1] rgl_0.95.1441        Rcpp_0.12.18         fftw_1.0-4           assertthat_0.2.0     rprojroot_1.3-2     
+ [6] digest_0.6.16        R6_2.2.2             plyr_1.8.4           Sim.DiffProc_4.1     backports_1.1.2     
+[11] signal_0.7-6         evaluate_0.11        pracma_2.1.5         httr_1.3.1           highr_0.7           
+[16] pillar_1.3.0         rlang_0.2.2          lazyeval_0.2.1       curl_3.2             rstudioapi_0.7      
+[21] rmarkdown_1.10       devtools_1.13.6      moments_0.14         readr_1.1.1          stringr_1.3.1       
+[26] RCurl_1.95-4.11      munsell_0.5.0        proxy_0.4-22         compiler_3.4.4       Deriv_3.8.5         
+[31] pkgconfig_2.0.2      htmltools_0.3.6      tidyselect_0.2.4     tibble_1.4.2         dtw_1.20-1          
+[36] bioacoustics_0.1.5   viridisLite_0.3.0    crayon_1.3.4         dplyr_0.7.6          withr_2.1.2         
+[41] MASS_7.3-50          bitops_1.0-6         grid_3.4.4           gtable_0.2.0         git2r_0.23.0        
+[46] magrittr_1.5         scales_1.0.0         stringi_1.2.4        pbapply_1.3-4        scatterplot3d_0.3-41
+[51] bindrcpp_0.2.2       xml2_1.2.0           rjson_0.2.20         iterators_1.0.10     tools_3.4.4         
+[56] glue_1.3.0           purrr_0.2.5          hms_0.4.2            jpeg_0.1-8           parallel_3.4.4      
+[61] yaml_2.2.0           colorspace_1.3-2     soundgen_1.3.1       rvest_0.3.2          memoise_1.1.0       
+[66] bindr_0.1.1         
 {% endhighlight %}
 
 

@@ -348,14 +348,14 @@ box_css = "border: 1px solid #ddd; padding: 1px; ", extra_css = NULL)
 
 ```{r extn_sel_12.3, eval=FALSE}
 
-xc <- xcorr(ext_st, frange = c(1, 11))
+xc <- xcorr(ext_st, bp = c(1, 11))
 
 xc
 ```
 
 ```{r, extn_sel_12.4, echo= FALSE}
 
-xc <- xcorr(ext_st, frange = c(1, 11))
+xc <- xcorr(ext_st, bp = c(1, 11))
 
 kbl <- kable(xc, align = "c", row.names = T,  format = "html")
 
@@ -532,14 +532,14 @@ The total size of the 100 sound files from which these selections were taken add
 This data is ready to be used:
 
 ```{r, eval = F}
-sp <- specan(dat)
+sp <- specan(dat, bp = c(2, 10))
 
 head(sp)
 ```
 
 ```{r, extn_sel_20, echo= FALSE}
 
-sp <- specan(dat)
+sp <- specan(dat, bp = c(2, 10))
 
 kbl <- kable(sp[1:6, ], align = "c", row.names = F,  format = "html")
 
