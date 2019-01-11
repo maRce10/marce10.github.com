@@ -1,0 +1,97 @@
+---
+title: "Using your own frequency contours on DTW"
+author: "Marcelo Araya-Salas"
+date: "2019-01-11"
+output: 
+  md_document:
+    variant: markdown_github
+---
+
+```{r clean session, echo=F}
+
+rm(list = ls())
+
+# unload all non-based packages
+out <- sapply(paste('package:', names(sessionInfo()$otherPkgs), sep = ""), function(x) try(detach(x, unload = FALSE, character.only = TRUE), silent = T))
+
+```
+
+I got the following question about dynamic time warping on frequency contours:
+
+> "what I am looking for is to use ffDTW on a file in which I have a column for the filename and then 20 pitch measurements for each of 10000 files (e.g. 10000 rows). Do you have suggestions?"
+
+There is a workaround in [warbleR](https://cran.r-project.org/package=warbleR) to do that:
+ 
+ The function [dfDTW()](https://marce10.github.io/warbleR/reference/dfDTW.html) has the argument `ts.df` (for time series data frame) that allows to input your own frequency contours (or any other sequences of values taken along the signals).
+
+Let's first set up the example data and global options:
+
+```{r global options}
+
+# load warbleR
+library(warbleR)
+
+#load data and save sound files
+data(list = c("Phae.long1", "Phae.long2","lbh_selec_table"))
+writeWave(Phae.long2, "Phae.long2.wav") #save sound files 
+writeWave(Phae.long1, "Phae.long1.wav")
+
+# set warbleR global options, including the number of frequency values for contours
+# this options can also be set within the function call
+warbleR_options(flim = c(1, 12), bp = c(2, 9), wl = 300, pb = FALSE, 
+                length.out = 30, ovlp = 90)
+```
+
+This is how it works. We will use [dfts()](https://marce10.github.io/warbleR/reference/dfts.html) to extract dominant frequency contours on the [warbleR](https://cran.r-project.org/package=warbleR) example data and then input those contours into [dfDTW()](https://marce10.github.io/warbleR/reference/dfDTW.html) using the `ts.df` argument: 
+
+```{r custom contour 1, eval = TRUE}
+
+# get dom freq contours (will use only the first 5 rows)
+cntours <- dfts(X = lbh_selec_table[1:5, ])
+
+# calculate DTW pairwise distances
+dfDTW(ts.df = cntours)
+
+```
+
+That output matrix contains the pairwise DTW distance based on our own frequency contours. The data frame containing the contours must have columns for 'sound.files' and 'selec'.
+
+ We could even calculate DTW distances based on spectral entropy contours using the [sp.en.ts()](https://marce10.github.io/warbleR/reference/sp.en.ts.html) function:
+
+```{r custom contour 2, eval = TRUE}
+
+# get dom freq contours (will use only the first 5 rows)
+sp.en.cntours <- sp.en.ts(X = lbh_selec_table[1:5, ])
+
+# calculate DTW pairwise distances
+dfDTW(ts.df = sp.en.cntours)
+
+```
+
+
+Note that, we are using [dfDTW()](https://marce10.github.io/warbleR/reference/dfDTW.html) instead of  [ffDTW()](https://marce10.github.io/warbleR/reference/ffDTW.html) as in the original question. This is because the `ts.df` argument is only found in [dfDTW()](https://marce10.github.io/warbleR/reference/dfDTW.html). These  two functions will be merged at some point in the future anyways.
+
+This trick could be particularly useful when the contours have been measured somewhere else or when they need to be manually tailored. The tailoring of frequency contours can be done using   [seltailor()](https://marce10.github.io/warbleR/reference/seltailor.html) and the `ts.df` argument as follows:
+
+```{r custom contour 3, eval = F}
+
+tail.cntours <-seltailor(X = lbh_selec_table[1:5, ], ts.df = cntours, 
+                auto.contour = TRUE)
+
+```
+
+![seltailor.contour](/img/seltailor.contour.gif)
+
+These signals are far from ideal to do frequency contour tracking, but they help to make the point. As you can see, this is an interactive function in which the user can adjust the frequency of specific points by clicking on the desired frequency. More details about the function can be found [on this post](https://marce10.github.io/2017/08/03/Fixing_selections_manually.html) and in the [function's documentation](https://marce10.github.io/warbleR/reference/seltailor.html).
+
+Hope that helps!
+
+
+<font size="4">Session information</font>
+
+```{r session info, echo=F}
+
+sessionInfo()
+
+```
+
