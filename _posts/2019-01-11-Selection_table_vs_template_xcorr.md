@@ -8,9 +8,9 @@ date: 11-01-2019
 
 I got the following question about cross-correlation:
 
-> "We would like to compare every call within a selection table to a template of each owl, and get peak correlation coefficients on each call separately. However, currently R compares the entire recording to the template as a unit. Is there a way to separate that? We can copy-paste the sound files, and rename it, and separate the calls that way but I wonder if you know an easier method"
+> "We would like to compare every call within a selection table to a template of each owl, and get peak correlation coefficients on each call separately"
 
-The easiest way to do this is by running a loop that compares each row in a selection table to the set of template calls and then put the results back into the selection table.
+The easiest way to do this is by running a loop that compares each row in a selection table to the set of template songs and then put the results back into the selection table.
 
 First set up the example data and global options:
 
@@ -28,16 +28,16 @@ warbleR_options(wl = 300, pb = FALSE, ovlp = 90, flim = c(1, 12),
                 pal = reverse.heat.colors)
 {% endhighlight %}
 
-We'll use the example data set from the [NatureSounds](https://cran.r-project.org/package=NatureSounds) package. Check out the full description of the data [here](https://marce10.github.io/NatureSounds/reference/Phae.long.est.html).
+We'll use the example data set from the [NatureSounds](https://cran.r-project.org/package=NatureSounds) package. This data has long-billed hermit songs from different song types (see 'lek.song.type' column). Check out the full description of the data [here](https://marce10.github.io/NatureSounds/reference/Phae.long.est.html).
 
-So the first step is to create an example selection table for "calls" to be compared and another one for the template "calls". In the following code we get 3 examples for each song type in the (extended) selection table (calls) and 1 of each song type in a template set (tempts):
+The first step is to create an example selection table for unidentified songs (or calls if working with owl vocalizations) and another one for the template songs. In the following code we get 3 examples for each song type in the (extended) selection table (*unk.songs*) and 1 of each song type in a template set (*tempts*):
 
 
 {% highlight r %}
-# get calls to identify
-calls <- Phae.long.est[c(1:3, 11:13, 21:23), ]
+# get songs to identify
+unk.songs <- Phae.long.est[c(1:3, 11:13, 21:23), ]
 
-# get 3 candidate calls to compare against
+# get 3 template songs to compare against
 tempts <- Phae.long.est[c(10, 20, 30), ]
 {% endhighlight %}
 
@@ -45,8 +45,8 @@ We can look at the spectrograms for the 2 sets as follows:
 
 
 {% highlight r %}
-# catalog for calls
-catalog(calls, nrow = 3, ncol = 3, rm.axes = T, width = 11, 
+# catalog for unk.songs
+catalog(unk.songs, nrow = 3, ncol = 3, rm.axes = T, width = 11, 
         labels = "lek.song.type")
 {% endhighlight %}
 
@@ -61,19 +61,19 @@ catalog(tempts, nrow = 2, ncol = 3, rm.axes = T, width = 11,
 {% endhighlight %}
 ![catalog2](/img/templt_catalog.png)
 
-As you can see the templates have an single example of each of the 3 song types in the 'calls' selection table.
+As you can see the templates have a single example of each of the 3 song types in the 'unk.songs' selection table.
 
-Now we have to create a routine that will compare each row in the "calls" selection table to each template and put the results in a data frame: 
+Now we have to create a routine that will compare each row in the 'unk.songs' selection table to each template and put the results in a data frame: 
 
 
 {% highlight r %}
 # loop for each row
-out <- lapply(1:nrow(calls), function(x) {
+out <- lapply(1:nrow(unk.songs), function(x) {
   
   # extract each row at the time
-  X <- calls[x, , drop = FALSE]
+  X <- unk.songs[x, , drop = FALSE]
   
-  # bind the call and the candidate calls in a single extended selection table
+  # bind the unk.songs and the templates in a single extended selection table
   Y <- rbind(X, tempts)
   
   # run cross correlation
@@ -89,37 +89,116 @@ out <- lapply(1:nrow(calls), function(x) {
   })
 
 # put results back into a single data frame
-do.call(rbind, out)
+xcorr_results <-  do.call(rbind, out)
 {% endhighlight %}
 
+Let's take a look at the output (excluding irrelevant columns):
 
 
-{% highlight text %}
-##                        sound.files selec start       end bottom.freq
-## 31    0.BR1.2012.7.27.5.55.wav_3-4     1   0.1 0.2577134    2.322680
-## 32      0.BR1.2012.7.27.5.55.wav_1     1   0.1 0.2547964    2.367977
-## 33    0.BR1.2012.7.27.5.55.wav_3-3     1   0.1 0.2555617    2.549166
-## 410    0.CCL.2008.4.1.8.27.wav_2-8     1   0.1 0.2286106    1.370448
-## 411   0.CCL.2008.4.1.8.27.wav_1-10     1   0.1 0.2255827    1.717743
-## 412    0.CCL.2008.4.1.8.27.wav_2-6     1   0.1 0.2345561    1.775625
-## 430    43.CCL.2011.6.16.8.19.wav_2     1   0.1 0.2391177    2.199320
-## 431    43.CCL.2011.6.16.8.19.wav_4     1   0.1 0.2380658    2.243740
-## 432 31.CCL.2011.6.17.8.45.wav_1-13     1   0.1 0.2347949    2.110482
-##     top.freq lek lek.song.type BR1-D1 CCL-G1 CCL-K2
-## 31  11.67318 BR1        BR1-D1  0.696  0.253  0.424
-## 32  11.71848 BR1        BR1-D1  0.704  0.264  0.417
-## 33  11.89967 BR1        BR1-D1  0.700  0.235  0.418
-## 410 10.72095 CCL        CCL-G1  0.312  0.752  0.488
-## 411 11.06824 CCL        CCL-G1  0.294  0.746  0.454
-## 412 11.12612 CCL        CCL-G1  0.313  0.754  0.491
-## 430 11.54982 CCL        CCL-K2  0.474  0.377  0.671
-## 431 11.59424 CCL        CCL-K2  0.443  0.435  0.723
-## 432 11.46098 CCL        CCL-K2  0.407  0.455  0.690
+{% highlight r %}
+xcorr_results[ , -c(3:6)]
 {% endhighlight %}
 
-Note the last 3 columns with the cross-correlation scores for each of the 3 templates respectively.
+<div style="border: 1px solid #ddd; padding: 1px;  font-size: 13px; margin-left: auto; margin-right: auto;" class="table table-striped"><table>
+ <thead>
+  <tr>
+   <th style="text-align:center;"> sound.files </th>
+   <th style="text-align:center;"> selec </th>
+   <th style="text-align:center;"> lek </th>
+   <th style="text-align:center;"> lek.song.type </th>
+   <th style="text-align:center;"> BR1-D1 </th>
+   <th style="text-align:center;"> CCL-G1 </th>
+   <th style="text-align:center;"> CCL-K2 </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:center;"> 0.BR1.2012.7.27.5.55.wav_3-4 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> BR1 </td>
+   <td style="text-align:center;"> BR1-D1 </td>
+   <td style="text-align:center;"> <span style=" font-weight: bold;    color: white;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: red;">0.694</span> </td>
+   <td style="text-align:center;"> <span style="     color: black;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white;">0.251</span> </td>
+   <td style="text-align:center;"> <span style="     color: black;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white;">0.418</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 0.BR1.2012.7.27.5.55.wav_1 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> BR1 </td>
+   <td style="text-align:center;"> BR1-D1 </td>
+   <td style="text-align:center;"> <span style=" font-weight: bold;    color: white;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: red;">0.701</span> </td>
+   <td style="text-align:center;"> <span style="     color: black;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white;">0.269</span> </td>
+   <td style="text-align:center;"> <span style="     color: black;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white;">0.416</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 0.BR1.2012.7.27.5.55.wav_3-3 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> BR1 </td>
+   <td style="text-align:center;"> BR1-D1 </td>
+   <td style="text-align:center;"> <span style=" font-weight: bold;    color: white;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: red;">0.7</span> </td>
+   <td style="text-align:center;"> <span style="     color: black;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white;">0.238</span> </td>
+   <td style="text-align:center;"> <span style="     color: black;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white;">0.417</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 0.CCL.2008.4.1.8.27.wav_2-8 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> CCL </td>
+   <td style="text-align:center;"> CCL-G1 </td>
+   <td style="text-align:center;"> <span style="     color: black;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white;">0.313</span> </td>
+   <td style="text-align:center;"> <span style=" font-weight: bold;    color: white;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: red;">0.754</span> </td>
+   <td style="text-align:center;"> <span style="     color: black;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white;">0.484</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 0.CCL.2008.4.1.8.27.wav_1-10 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> CCL </td>
+   <td style="text-align:center;"> CCL-G1 </td>
+   <td style="text-align:center;"> <span style="     color: black;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white;">0.298</span> </td>
+   <td style="text-align:center;"> <span style=" font-weight: bold;    color: white;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: red;">0.747</span> </td>
+   <td style="text-align:center;"> <span style="     color: black;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white;">0.459</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 0.CCL.2008.4.1.8.27.wav_2-6 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> CCL </td>
+   <td style="text-align:center;"> CCL-G1 </td>
+   <td style="text-align:center;"> <span style="     color: black;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white;">0.314</span> </td>
+   <td style="text-align:center;"> <span style=" font-weight: bold;    color: white;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: red;">0.756</span> </td>
+   <td style="text-align:center;"> <span style="     color: black;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white;">0.494</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 43.CCL.2011.6.16.8.19.wav_2 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> CCL </td>
+   <td style="text-align:center;"> CCL-K2 </td>
+   <td style="text-align:center;"> <span style="     color: black;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white;">0.469</span> </td>
+   <td style="text-align:center;"> <span style="     color: black;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white;">0.381</span> </td>
+   <td style="text-align:center;"> <span style=" font-weight: bold;    color: white;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: red;">0.667</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 43.CCL.2011.6.16.8.19.wav_4 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> CCL </td>
+   <td style="text-align:center;"> CCL-K2 </td>
+   <td style="text-align:center;"> <span style="     color: black;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white;">0.445</span> </td>
+   <td style="text-align:center;"> <span style="     color: black;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white;">0.431</span> </td>
+   <td style="text-align:center;"> <span style=" font-weight: bold;    color: white;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: red;">0.725</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 31.CCL.2011.6.17.8.45.wav_1-13 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> CCL </td>
+   <td style="text-align:center;"> CCL-K2 </td>
+   <td style="text-align:center;"> <span style="     color: black;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white;">0.414</span> </td>
+   <td style="text-align:center;"> <span style="     color: black;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white;">0.455</span> </td>
+   <td style="text-align:center;"> <span style=" font-weight: bold;    color: white;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: red;">0.691</span> </td>
+  </tr>
+</tbody>
+</table></div>
 
-The code can go faster by using parallel computing. This can be done using the pblapply function (instead of lapply) from the [pbapply](https://cran.r-project.org/package=NatureSounds) package with the argument `cl`. 
+The last 3 columns show the cross-correlation scores for each of the 3 templates, respectively. Note that the highest scores correspond to the belong to the templates from the same song type category (highllighted cells). 
+
+The code can go faster by using parallel computing. This can be done using the pblapply function (instead of lapply) from the [pbapply](https://cran.r-project.org/package=NatureSounds) package setting the argument `cl`. 
 
 Hope that helps!
 
@@ -149,15 +228,26 @@ Hope that helps!
 ## 
 ## other attached packages:
 ## [1] warbleR_1.1.16     NatureSounds_1.0.1 seewave_2.1.0     
-## [4] tuneR_1.3.3        maps_3.3.0        
+## [4] tuneR_1.3.3        maps_3.3.0         kableExtra_0.9.0  
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] knitr_1.20       magrittr_1.5     Sim.DiffProc_4.3 MASS_7.3-50     
-##  [5] Deriv_3.8.5      rjson_0.2.20     jpeg_0.1-8       pbapply_1.3-4   
-##  [9] stringr_1.3.1    highr_0.7        tools_3.5.1      parallel_3.5.1  
-## [13] dtw_1.20-1       iterators_1.0.10 yaml_2.2.0       soundgen_1.3.2  
-## [17] bitops_1.0-6     RCurl_1.95-4.11  signal_0.7-6     evaluate_0.12   
-## [21] proxy_0.4-22     stringi_1.2.4    pracma_2.2.2     compiler_3.5.1  
-## [25] fftw_1.0-4
+##  [1] Rcpp_1.0.0        pracma_2.2.2      bindr_0.1.1      
+##  [4] highr_0.7         compiler_3.5.1    pillar_1.3.0     
+##  [7] bitops_1.0-6      iterators_1.0.10  tools_3.5.1      
+## [10] Sim.DiffProc_4.3  digest_0.6.18     viridisLite_0.3.0
+## [13] evaluate_0.12     tibble_1.4.2      fftw_1.0-4       
+## [16] pkgconfig_2.0.2   rlang_0.3.1       rstudioapi_0.9.0 
+## [19] yaml_2.2.0        parallel_3.5.1    bindrcpp_0.2.2   
+## [22] dplyr_0.7.6       xml2_1.2.0        httr_1.4.0       
+## [25] stringr_1.3.1     knitr_1.20        hms_0.4.2        
+## [28] tidyselect_0.2.4  rprojroot_1.3-2   glue_1.3.0       
+## [31] R6_2.3.0          dtw_1.20-1        jpeg_0.1-8       
+## [34] pbapply_1.3-4     rmarkdown_1.10    soundgen_1.3.2   
+## [37] purrr_0.2.5       readr_1.3.1       magrittr_1.5     
+## [40] scales_1.0.0      backports_1.1.3   htmltools_0.3.6  
+## [43] MASS_7.3-50       assertthat_0.2.0  rvest_0.3.2      
+## [46] colorspace_1.3-2  Deriv_3.8.5       stringi_1.2.4    
+## [49] proxy_0.4-22      munsell_0.5.0     signal_0.7-6     
+## [52] RCurl_1.95-4.11   crayon_1.3.4      rjson_0.2.20
 {% endhighlight %}
 
