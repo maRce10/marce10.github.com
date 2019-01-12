@@ -1,7 +1,7 @@
 ---
 title: "Compare signals from selection tables to a set of templates using cross-correlation"
 author: "Marcelo Araya-Salas"
-date: "2019-01-11"
+date: "2019-01-12"
 output: 
   md_document:
     variant: markdown_github
@@ -22,7 +22,7 @@ I got the following question about cross-correlation:
 
 > "We would like to compare every call within a selection table to a template of each owl, and get peak correlation coefficients on each call separately"
 
-The easiest way to do this is by running a loop that compares each row in a selection table to the set of template songs and then put the results back into the selection table.
+One way to do this would be putting the unidentified and template signals together into a single selection table, and then running cross-correlation. However, this will also compare all unidentified signals against each other, which can be very inefficient. A better way would be running a loop that compares each row in a selection table to the set of template songs and then put the results back into the selection table. This post shows how to do exactly that.
 
 First set up the example data and global options:
 
@@ -64,7 +64,12 @@ catalog(unk.songs, nrow = 3, ncol = 3, rm.axes = T, width = 11,
 
 ```
 
-![catalog1](/img/calls_catalog.png)
+
+```{r xcorr templts 2.5, out.width = "500px", echo = FALSE, fig.align= "center"}
+
+knitr::include_graphics("./img/calls_catalog.png")
+
+```
 
 
 ```{r xcorr templts 3, eval = FALSE}
@@ -74,7 +79,12 @@ catalog(tempts, nrow = 2, ncol = 3, rm.axes = T, width = 11,
         labels = "lek.song.type")
 
 ```
-![catalog2](/img/templt_catalog.png)
+
+```{r xcorr templts 3.5, out.width = "500px", echo = FALSE, fig.align= "center"}
+
+knitr::include_graphics("./img/templt_catalog.png")
+
+```
 
 As you can see the templates have a single example of each of the 3 song types in the 'unk.songs' selection table.
 
@@ -145,7 +155,7 @@ kable_styling(kbl, bootstrap_options = "striped", font_size = 13, full_width = T
 
 ```
 
-The last 3 columns show the cross-correlation scores for each of the 3 templates, respectively. Note that the highest scores correspond to the belong to the templates from the same song type category (highllighted cells). 
+The last 3 columns show the cross-correlation scores for each of the 3 templates, respectively. Note that the highest scores correspond to the templates belonging to the same song type category (highllighted cells). 
 
 The code can go faster by using parallel computing. This can be done using the pblapply function (instead of lapply) from the [pbapply](https://cran.r-project.org/package=NatureSounds) package setting the argument `cl`. 
 
