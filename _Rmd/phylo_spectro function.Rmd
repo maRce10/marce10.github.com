@@ -62,7 +62,8 @@ xc.tree <- as.phylo(xc.tree)
 
 # plot tree with spectrograms
 phylo_spectro(X = X, tree = xc.tree, offset = 0, par.mar = c(1, 1, 1, 8),
-inner.mar = rep(0, 4), size = 1, xl = 0.1, show.tip.label = FALSE, res = 300)
+inner.mar = rep(0, 4), size = 1, xl = 0.1, show.tip.label = FALSE, 
+res = 300)
 
 ```
 
