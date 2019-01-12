@@ -1,0 +1,119 @@
+---
+title: "Compare signals in a selection table to a set of templates using cross-correlation"
+author: "Marcelo Araya-Salas"
+date: "2019-01-11"
+output: 
+  md_document:
+    variant: markdown_github
+---
+
+```{r clean session, echo=F}
+
+rm(list = ls())
+
+# unload all non-based packages
+out <- sapply(paste('package:', names(sessionInfo()$otherPkgs), sep = ""), function(x) try(detach(x, unload = FALSE, character.only = TRUE), silent = T))
+
+```
+
+I got the following question about cross-correlation:
+
+> "We would like to compare every call within a selection table to a template of each owl, and get peak correlation coefficients on each call separately. However, currently R compares the entire recording to the template as a unit. Is there a way to separate that? We can copy-paste the sound files, and rename it, and separate the calls that way but I wonder if you know an easier method"
+
+The easiest way to do this is by running a loop that compares each row in a selection table to the set of template calls and then put the results back into the selection table.
+
+First set up the example data and global options:
+
+```{r global options}
+
+# load warbleR
+library(warbleR)
+
+#load data and save sound files
+data("Phae.long.est")
+
+# set warbleR global options
+# this options can also be set within the function call
+warbleR_options(wl = 300, pb = FALSE, ovlp = 90, flim = c(1, 12), 
+                pal = reverse.heat.colors)
+
+```
+
+We'll use the example data set from the [NatureSounds](https://cran.r-project.org/package=NatureSounds) package. Check out the full description of the data [here](https://marce10.github.io/NatureSounds/reference/Phae.long.est.html).
+
+So the first step is to create an example selection table for "calls" to be compared and another one for the template "calls". In the following code we get 3 examples for each song type in the (extended) selection table (calls) and 1 of each song type in a template set (tempts):
+
+```{r xcorr templts 1, eval = TRUE}
+
+# get calls to identify
+calls <- Phae.long.est[c(1:3, 11:13, 21:23), ]
+
+# get 3 candidate calls to compare against
+tempts <- Phae.long.est[c(10, 20, 30), ]
+```
+
+We can look at the spectrograms for the 2 sets as follows:
+
+```{r xcorr templts 2, eval = FALSE}
+
+# catalog for calls
+catalog(calls, nrow = 3, ncol = 3, rm.axes = T, width = 11, 
+        labels = "lek.song.type")
+
+```
+
+![catalog1](/img/calls_catalog.png)
+
+
+```{r xcorr templts 3, eval = FALSE}
+
+# catalog for templates
+catalog(tempts, nrow = 2, ncol = 3, rm.axes = T, width = 11, 
+        labels = "lek.song.type")
+
+```
+![catalog2](/img/templt_catalog.png)
+
+As you can see the templates have an single example of each of the 3 song types in the 'calls' selection table.
+
+Now we have to create a routine that will compare each row in the "calls" selection table to each template and put the results in a data frame: 
+
+```{r xcorr templts 4, eval = TRUE}
+
+# loop for each row
+out <- lapply(1:nrow(calls), function(x) {
+  
+  # extract each row at the time
+  X <- calls[x, , drop = FALSE]
+  
+  # bind the call and the candidate calls in a single extended selection table
+  Y <- rbind(X, tempts)
+  
+  # run cross correlation
+  xc <- xcorr(Y, pb = FALSE)
+
+  # put results into a data frame
+  Z <- data.frame(X, t(round(xc[ -1, 1], 3)))
+  
+  # rename columns with xc values
+  names(Z)[9:11] <- tempts$lek.song.type
+  
+  return(Z)
+  })
+
+# put results back into a single data frame
+do.call(rbind, out)
+```
+
+
+Hope that helps!
+
+
+<font size="4">Session information</font>
+
+```{r session info, echo=F}
+
+sessionInfo()
+
+```
+
