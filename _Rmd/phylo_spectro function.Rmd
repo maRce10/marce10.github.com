@@ -1,7 +1,7 @@
 ---
 title: "Spectrograms on trees"
 author: "Marcelo Araya-Salas"
-date: "2019-01-13"
+date: "2019-01-12"
 output: 
   md_document:
     variant: markdown_github
@@ -14,7 +14,7 @@ rm(list = ls())
 # unload all non-based packages
 out <- sapply(paste('package:', names(sessionInfo()$otherPkgs), sep = ""), function(x) try(detach(x, unload = FALSE, character.only = TRUE), silent = T))
 
-library(kableExtra)
+knitr::opts_chunk$set(dpi = 200)
 
 ```
 
@@ -68,7 +68,7 @@ inner.mar = rep(0, 4), size = 1, xl = 0.1, show.tip.label = FALSE, res = 300)
 
 It can also plot fan trees by setting `type = "fan"`:
 
-```{r phylo.spectro 4}
+```{r phylo.spectro 4,  out.width = "800px"}
 
 # plot fan tree with spectrograms
 phylo_spectro(X = X, tree = xc.tree, offset = 0.12, par.mar = rep(5, 4),
@@ -79,7 +79,7 @@ res = 300)
 
 Additional arguments can be passed to [plot.phylo](https://www.rdocumentation.org/packages/ape/versions/5.2/topics/plot.phylo). Here we modify 'edge.lty' and 'edge.witdth':
 
-```{r phylo.spectro 2}
+```{r phylo.spectro 2,  out.width = "800px"}
 
 # plot tree with spectrograms
 phylo_spectro(X = X, tree = xc.tree, offset = 0.12, par.mar = rep(5, 4),
@@ -91,7 +91,7 @@ res = 300, edge.color = "red", edge.lty = 4, edge.width = 4)
 
 and to [specreator](https://marce10.github.io/warbleR/reference/specreator.html). Here we modify 'pal' (color palette):
 
-```{r phylo.spectro 3}
+```{r phylo.spectro 3,  out.width = "800px"}
 
 # plot tree with spectrograms
 phylo_spectro(X = X, tree = xc.tree, offset = 0.12, par.mar = rep(5, 4),
@@ -103,7 +103,7 @@ pal = reverse.topo.colors, res = 300)
 
 Here is another example using an [extended selection table](https://marce10.github.io/2018/05/15/Extended_selection_tables.html) and more signals:
 
-```{r phylo.spectro 5, eval = TRUE,  out.width = "800px"}
+```{r phylo.spectro 5, eval = TRUE, out.width = "800px"}
 
 data("Phae.long.est")
 
