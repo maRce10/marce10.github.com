@@ -132,7 +132,7 @@ flim = c(2, 10), edge.color = "orange",  edge.width = 3)
 ```
 
 
-Of course, the function can also plot species' songs on phylogenetic trees. Here is an example from an ongoing project:
+Of course, the function can also plot species songs on phylogenetic trees. Here is an example from an ongoing project:
 
 ```{r xcorr templts 2.5, out.width = "900px", echo = FALSE, fig.align= "center"}
 
