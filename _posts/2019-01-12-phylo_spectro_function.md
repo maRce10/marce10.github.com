@@ -127,7 +127,7 @@ Of course, the function can also plot species songs on phylogenetic trees. Here 
 
 <img src="/./img/brilliants_tree.png" title="plot of chunk xcorr templts 2.5" alt="plot of chunk xcorr templts 2.5" width="900px" style="display: block; margin: auto;" />
 
-That's it! Special thanks to [Russel Ligon](http://russellligon.wixsite.com/russell-ligon) for suggestions on how to make this function.
+That's it! Special thanks to [Gerardo Soto](https://www.researchgate.net/profile/Gerardo_Soto2) and [Russel Ligon](http://russellligon.wixsite.com/russell-ligon) for suggestions on how to make this function work.
 
 <font size="4">Session information</font>
 
@@ -157,25 +157,13 @@ That's it! Special thanks to [Russel Ligon](http://russellligon.wixsite.com/russ
 ## [4] seewave_2.1.0      tuneR_1.3.3        maps_3.3.0        
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] tidyselect_0.2.4  purrr_0.2.5       pbapply_1.3-4    
-##  [4] lattice_0.20-35   colorspace_1.3-2  htmltools_0.3.6  
-##  [7] viridisLite_0.3.0 yaml_2.2.0        rlang_0.3.1      
-## [10] pracma_2.2.2      pillar_1.3.0      glue_1.3.0       
-## [13] bindrcpp_0.2.2    jpeg_0.1-8        bindr_0.1.1      
-## [16] stringr_1.3.1     munsell_0.5.0     rvest_0.3.2      
-## [19] kableExtra_0.9.0  evaluate_0.12     knitr_1.20       
-## [22] fftw_1.0-4        parallel_3.5.1    highr_0.7        
-## [25] Rcpp_1.0.0        readr_1.3.1       backports_1.1.3  
-## [28] scales_1.0.0      soundgen_1.3.2    Sim.DiffProc_4.3 
-## [31] Deriv_3.8.5       rjson_0.2.20      hms_0.4.2        
-## [34] digest_0.6.18     stringi_1.2.4     dplyr_0.7.6      
-## [37] grid_3.5.1        dtw_1.20-1        rprojroot_1.3-2  
-## [40] tools_3.5.1       bitops_1.0-6      magrittr_1.5     
-## [43] RCurl_1.95-4.11   proxy_0.4-22      tibble_1.4.2     
-## [46] crayon_1.3.4      pkgconfig_2.0.2   MASS_7.3-50      
-## [49] xml2_1.2.0        assertthat_0.2.0  rmarkdown_1.10   
-## [52] httr_1.4.0        rstudioapi_0.9.0  iterators_1.0.10 
-## [55] R6_2.3.0          nlme_3.1-137      signal_0.7-6     
-## [58] compiler_3.5.1
+##  [1] Rcpp_1.0.0       knitr_1.20       magrittr_1.5     Sim.DiffProc_4.3
+##  [5] MASS_7.3-50      lattice_0.20-35  Deriv_3.8.5      rjson_0.2.20    
+##  [9] jpeg_0.1-8       pbapply_1.3-4    highr_0.7        stringr_1.3.1   
+## [13] tools_3.5.1      grid_3.5.1       parallel_3.5.1   nlme_3.1-137    
+## [17] dtw_1.20-1       iterators_1.0.10 yaml_2.2.0       soundgen_1.3.2  
+## [21] bitops_1.0-6     RCurl_1.95-4.11  signal_0.7-6     evaluate_0.12   
+## [25] proxy_0.4-22     stringi_1.2.4    pracma_2.2.2     compiler_3.5.1  
+## [29] fftw_1.0-4
 {% endhighlight %}
 

@@ -140,7 +140,7 @@ knitr::include_graphics("./img/brilliants_tree.png")
 
 ```
 
-That's it! Special thanks to [Russel Ligon](http://russellligon.wixsite.com/russell-ligon) for suggestions on how to make this function.
+That's it! Special thanks to [Gerardo Soto](https://www.researchgate.net/profile/Gerardo_Soto2) and [Russel Ligon](http://russellligon.wixsite.com/russell-ligon) for suggestions on how to make this function work.
 
 <font size="4">Session information</font>
 
