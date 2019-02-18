@@ -6,7 +6,7 @@ date: 16-02-2019
 
 
 
-Animal vocalizations can be hierarchically organized: elements group together in syllables, syllables in songs, songs in bouts and so on. Many important biological patterns of vocal variation are better described at higher levels, so we are often interested in characterizing vocalizations at those levels. There are several tools in [warbleR](https://cran.r-project.org/package=warbleR) to explore and measure these higher levels. For simplicity any level above 'elements' will be refered to as 'songs' in this post as well as in the [warbleR](https://cran.r-project.org/package=warbleR) functions described here.
+Animal vocalizations can be hierarchically organized: elements group together in syllables, syllables in songs, songs in bouts and so on. Many important biological patterns of vocal variation are better described at higher structural levels, so we are often interested in characterizing vocalizations at those levels. There are several tools in [warbleR](https://cran.r-project.org/package=warbleR) to explore and measure these features. For simplicity, any level above 'elements' will be refered to as 'songs' in this post as well as in the [warbleR](https://cran.r-project.org/package=warbleR) functions described here.
   
 
 We will work on a recording from a Scale-throated Hermit (hummingbird) (*Phaethornis eurynome*):
