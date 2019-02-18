@@ -101,17 +101,17 @@ Song features can be measured using [song_param](https://marce10.github.io/warbl
 
 ```{r song 6, eval = FALSE}
 
-song.feat <- song_param(pe_st, song_colm = "song")
+song_feat <- song_param(pe_st, song_colm = "song")
 
-head(song.feat)
+head(song_feat)
 ```
 
 
 ```{r song 7, echo=FALSE}
 
-song.feat <- song_param(pe_st, song_colm = "song")
+song_feat <- song_param(pe_st, song_colm = "song")
 
-kbl <- kable(song.feat[1:6, ], align = "c", row.names = F,  format = "html")
+kbl <- kable(song_feat[1:6, ], align = "c", row.names = F,  format = "html")
 
 kbl <- scroll_box(kbl, width = "740px")
 
@@ -124,18 +124,18 @@ If the element label column is supplied the function will also return the number
 
 ```{r song 8, eval = FALSE}
 
-song.feat <- song_param(pe_st, song_colm = "song", elm_colm = "elm")
+song_feat <- song_param(pe_st, song_colm = "song", elm_colm = "elm")
 
 # look at data, exclude some columns just for visualization
-head(song.feat[, -c(2:6)])
+head(song_feat[, -c(2:6)])
 ```
 
 
 ```{r song 9, echo=FALSE}
 
-song.feat <- song_param(pe_st, song_colm = "song", elm_colm = "elm")
+song_feat <- song_param(pe_st, song_colm = "song", elm_colm = "elm")
 
-kbl <- kable(song.feat[1:6, -c(2:8)], align = "c", row.names = F,  format = "html")
+kbl <- kable(song_feat[1:6, -c(2:8)], align = "c", row.names = F,  format = "html")
 
 kbl <-  column_spec(kbl, 14:15 - 7, background = "#ccebff")
 
@@ -152,33 +152,33 @@ And if spectral parameters have been measured on the elements they can also be a
 ```{r song 10, eval = FALSE}
 
 # measure acoustic parameters
-elm.sp <- specan(pe_st)
+elm_sp <- specan(pe_st)
 
 # add song data
-elm.sp <- merge(elm.sp, pe_st, by = c("sound.files", "selec"))
+elm_sp <- merge(elm_sp, pe_st, by = c("sound.files", "selec"))
 
 # calculate mean kurtosis and entropy
-song.feat <- song_param(X = elm.sp, song_colm = "song", 
+song_feat <- song_param(X = elm_sp, song_colm = "song", 
                         mean_colm = c("kurt", "sp.ent"))
 
 # look at data
-head(song.feat)
+head(song_feat)
 
 ```
 
 ```{r song 11, echo=FALSE}
 
 # measure acoustic parameters
-elm.sp <- specan(pe_st)
+elm_sp <- specan(pe_st)
 
 # add song data
-elm.sp <- merge(elm.sp[, -c(3:4)], pe_st, by = c("sound.files", "selec"))
+elm_sp <- merge(elm_sp[, -c(3:4)], pe_st, by = c("sound.files", "selec"))
 
 # calculate mean kurtosis and entropy
-song.feat <- song_param(X = elm.sp, song_colm = "song",
+song_feat <- song_param(X = elm_sp, song_colm = "song",
 mean_colm = c("kurt", "sp.ent"), parallel = 1, pb = FALSE)
 
-kbl <- kable(song.feat[1:6, ], align = "c", row.names = F,  format = "html")
+kbl <- kable(song_feat[1:6, ], align = "c", row.names = F,  format = "html")
 
 kbl <-  column_spec(kbl, 8:9, background = "#ccebff")
 
@@ -196,10 +196,10 @@ Given that the start, end bottom and top frequency are returned by [song_param](
 
 
 # calculate mean kurtosis and entropy
-song.feat <- song_param(X = elm.sp, song_colm = "song")
+song_feat <- song_param(X = elm_sp, song_colm = "song")
 
 # run cross correlation using the first 10 songs
-xc <- xcorr(song.feat[1:10, ])
+xc <- xcorr(song_feat[1:10, ])
 
 head(xc)
 ```
@@ -208,7 +208,7 @@ head(xc)
 ```{r song 11.6, echo=FALSE}
 
 # run cross correlation
-xc <- xcorr(song.feat[1:10, ], parallel = 3)
+xc <- xcorr(song_feat[1:10, ], parallel = 3)
 
 kbl <- kable(xc, align = "c", row.names = TRUE,  format = "html")
 
@@ -258,7 +258,7 @@ Now we can measure things on songs without having to keep the original sound fil
 unlink("Phaethornis-eurynome-15607.wav")
 
 # measure song features
-song.feat <- song_param(pe_est, song_colm = "song")
+song_feat <- song_param(pe_est, song_colm = "song")
 
 ```
 
@@ -266,9 +266,9 @@ song.feat <- song_param(pe_est, song_colm = "song")
 ```{r song 16, echo=FALSE}
 
 # measure song features
-song.feat <- song_param(pe_st, song_colm = "song")
+song_feat <- song_param(pe_st, song_colm = "song")
 
-kbl <- kable(song.feat[1:6, ], align = "c", row.names = F,  format = "html")
+kbl <- kable(song_feat[1:6, ], align = "c", row.names = F,  format = "html")
 
 kbl <- scroll_box(kbl, width = "740px")
 
@@ -336,7 +336,7 @@ lspec(pe_st, ovlp = 90, sxrow = 2.5, rows = 7, overwrite = TRUE,
 ---
 
 
-<font size="4">Session information</font>
+<font size="4"><b>Session information</b></font>
 
 ```{r session info, echo=F}
 
