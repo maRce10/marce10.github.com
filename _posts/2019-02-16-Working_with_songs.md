@@ -1,22 +1,22 @@
 ---
 layout: post
-title: "Working with higher levels of organization (i.e. songs) in vocal signals"
+title: "Working with higher structural levels in vocal signals"
 date: 16-02-2019
 ---
 
 
 
-Animal vocalizations can be hierarchically organized: elements group together in syllables, syllables in songs, songs in bouts and so on. Many important biological patterns of vocal variation are better described at higher structural levels, so we are often interested in characterizing vocalizations at those levels. There are several tools in [warbleR](https://cran.r-project.org/package=warbleR) to explore and measure these features. For simplicity, any level above 'elements' will be refered to as 'songs' in this post as well as in the [warbleR](https://cran.r-project.org/package=warbleR) functions described here.
+Animal vocalizations can be hierarchically structured: elements group together in syllables, syllables in songs, songs in bouts and so on. Many important biological patterns of vocal variation are better described at higher structural levels, so we are often interested in characterizing vocalizations at those levels. There are several tools in [warbleR](https://cran.r-project.org/package=warbleR) to explore and measure features above the element level. For simplicity, any level above 'elements' will be refered to as 'songs' in this post as well as in the [warbleR](https://cran.r-project.org/package=warbleR) functions described here.
   
 
-We will work on a recording from a Scale-throated Hermit (hummingbird) (*Phaethornis eurynome*):
+We will work on a recording from a [Scale-throated Hermit (hummingbird) (*Phaethornis eurynome*)](https://www.xeno-canto.org/species/Phaethornis-eurynome):
 
 <img src="/./img/Phaethornis-eurynome-15607-p1.jpeg" title="plot of chunk song 1" alt="plot of chunk song 1" width="900px" style="display: block; margin: auto;" />
 
 <iframe src='https://www.xeno-canto.org/15607/embed?simple=1' scrolling='no' frameborder='0' width='900' height='150'></iframe>
 
 
-It has a very simple song with a couple of elements. The code I used for selecting elements and adding labels (i.e. creating the 'pe_st' object) is found at [the end of the post](#Creating_example_data). 
+It has a very simple song with a couple of elements. The code I used for selecting elements and adding labels (i.e. creating the 'pe_st' object) is found at the end of the post. 
 
 We can make spectrograms of the full recording with boxes on the elements and orange lines above the elements highlighting those that belong to the same song. This can be done using the 'song' argument in [lspec](https://marce10.github.io/warbleR/reference/lspec.html). The argument simply takes the name of the column with the song labels:
 
@@ -36,7 +36,7 @@ lspec(pe_st, sxrow = 2.5, rows = 7, fast.spec = TRUE,
 <img src="/./img/Phaethornis-eurynome-15607-labeled.jpeg" title="plot of chunk songs 2.3" alt="plot of chunk songs 2.3" width="900px" style="display: block; margin: auto;" />
 
 
-We can plot single spectrograms of each song (or other higher structural level) using the 'song' argument in [specreator](https://marce10.github.io/warbleR/reference/specreator.html). The function will label each element using the 'selec' column label:
+We can plot single spectrograms of each song using the 'song' argument in [specreator](https://marce10.github.io/warbleR/reference/specreator.html). The function will label each element using the 'selec' column label:
  
 
 {% highlight r %}
@@ -56,7 +56,7 @@ specreator(pe_st, by.song = "song", sel.labels = "elm")
 
 <img src="/./img/Phaethornis-eurynome-15607.wav-3-labeled.jpeg" title="plot of chunk songs 5" alt="plot of chunk songs 5" style="display: block; margin: auto;" />
 
-Song features can be calculated using [song_param](https://marce10.github.io/warbleR/reference/song_param.html). The function calculates several descriptive features of songs, including start and end time, top and bottom frequency (the lowest bottom and highest top frequency of all elements), mean element duration, song duration, number of elements, frequency range, song rate (elements per second) and gap duration:
+Song features can be measured using [song_param](https://marce10.github.io/warbleR/reference/song_param.html). The function calculates several descriptive features of songs, including start and end time, top and bottom frequency (the lowest bottom and highest top frequency of all elements), mean element duration, song duration, number of elements, frequency range, song rate (elements per second) and gap duration:
 
 
 
@@ -278,8 +278,8 @@ elm.sp <- specan(pe_st)
 elm.sp <- merge(elm.sp, pe_st, by = c("sound.files", "selec"))
 
 # calculate mean kurtosis and entropy
-song.feat <- song_param(X = elm.sp, song_colm = "song",
-mean_colm = c("kurt", "sp.ent"), parallel = 1, pb = FALSE)
+song.feat <- song_param(X = elm.sp, song_colm = "song", 
+                        mean_colm = c("kurt", "sp.ent"))
 
 # look at data
 head(song.feat)
@@ -411,7 +411,171 @@ head(song.feat)
 </tbody>
 </table></div>
 
-Finally, extended selection tables, which are files containing both annotations and acoustic data ([see this post](https://marce10.github.io/2018/05/15/Extended_selection_tables.html)), can be created at the song level. This means that all elements in a song will be contained in a single wave object within the selection table. This enables users to take song level metrics as the ones described above using this type of objects (this is not possible when creating them based on elements, which is the default behavior).   
+Given that the start, end bottom and top frequency are returned by [song_param](https://marce10.github.io/warbleR/reference/song_param.html), then the output can be used as a selection table to measure or compare the songs themselves, rather than the elements. For instance, we can run cross-correlation between songs, perhaps as a metric of song consistency, as follows:
+
+
+{% highlight r %}
+# calculate mean kurtosis and entropy
+song.feat <- song_param(X = elm.sp, song_colm = "song")
+
+# run cross correlation using the first 10 songs
+xc <- xcorr(song.feat[1:10, ])
+
+head(xc)
+{% endhighlight %}
+
+
+<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:740px;  font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;" class="table table-striped"><table>
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:center;"> Phaethornis-eurynome-15607.wav-1 </th>
+   <th style="text-align:center;"> Phaethornis-eurynome-15607.wav-1 </th>
+   <th style="text-align:center;"> Phaethornis-eurynome-15607.wav-1 </th>
+   <th style="text-align:center;"> Phaethornis-eurynome-15607.wav-1 </th>
+   <th style="text-align:center;"> Phaethornis-eurynome-15607.wav-1 </th>
+   <th style="text-align:center;"> Phaethornis-eurynome-15607.wav-1 </th>
+   <th style="text-align:center;"> Phaethornis-eurynome-15607.wav-1 </th>
+   <th style="text-align:center;"> Phaethornis-eurynome-15607.wav-1 </th>
+   <th style="text-align:center;"> Phaethornis-eurynome-15607.wav-1 </th>
+   <th style="text-align:center;"> Phaethornis-eurynome-15607.wav-1 </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;font-weight: bold;"> Phaethornis-eurynome-15607.wav-1 </td>
+   <td style="text-align:center;"> 1.0000000 </td>
+   <td style="text-align:center;"> 0.8480428 </td>
+   <td style="text-align:center;"> 0.8236448 </td>
+   <td style="text-align:center;"> 0.8157560 </td>
+   <td style="text-align:center;"> 0.7414838 </td>
+   <td style="text-align:center;"> 0.8444431 </td>
+   <td style="text-align:center;"> 0.8002958 </td>
+   <td style="text-align:center;"> 0.7442434 </td>
+   <td style="text-align:center;"> 0.8149569 </td>
+   <td style="text-align:center;"> 0.8020731 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;font-weight: bold;"> Phaethornis-eurynome-15607.wav-1 </td>
+   <td style="text-align:center;"> 0.8480428 </td>
+   <td style="text-align:center;"> 1.0000000 </td>
+   <td style="text-align:center;"> 0.8480428 </td>
+   <td style="text-align:center;"> 0.8236448 </td>
+   <td style="text-align:center;"> 0.8157560 </td>
+   <td style="text-align:center;"> 0.7414838 </td>
+   <td style="text-align:center;"> 0.8444431 </td>
+   <td style="text-align:center;"> 0.8002958 </td>
+   <td style="text-align:center;"> 0.7442434 </td>
+   <td style="text-align:center;"> 0.8149569 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;font-weight: bold;"> Phaethornis-eurynome-15607.wav-1 </td>
+   <td style="text-align:center;"> 0.8236448 </td>
+   <td style="text-align:center;"> 0.8480428 </td>
+   <td style="text-align:center;"> 1.0000000 </td>
+   <td style="text-align:center;"> 0.8020731 </td>
+   <td style="text-align:center;"> 0.8480428 </td>
+   <td style="text-align:center;"> 0.8236448 </td>
+   <td style="text-align:center;"> 0.8157560 </td>
+   <td style="text-align:center;"> 0.7414838 </td>
+   <td style="text-align:center;"> 0.8444431 </td>
+   <td style="text-align:center;"> 0.8002958 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;font-weight: bold;"> Phaethornis-eurynome-15607.wav-1 </td>
+   <td style="text-align:center;"> 0.8157560 </td>
+   <td style="text-align:center;"> 0.8236448 </td>
+   <td style="text-align:center;"> 0.8020731 </td>
+   <td style="text-align:center;"> 1.0000000 </td>
+   <td style="text-align:center;"> 0.7442434 </td>
+   <td style="text-align:center;"> 0.8149569 </td>
+   <td style="text-align:center;"> 0.8020731 </td>
+   <td style="text-align:center;"> 0.8480428 </td>
+   <td style="text-align:center;"> 0.8236448 </td>
+   <td style="text-align:center;"> 0.8157560 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;font-weight: bold;"> Phaethornis-eurynome-15607.wav-1 </td>
+   <td style="text-align:center;"> 0.7414838 </td>
+   <td style="text-align:center;"> 0.8157560 </td>
+   <td style="text-align:center;"> 0.8480428 </td>
+   <td style="text-align:center;"> 0.7442434 </td>
+   <td style="text-align:center;"> 1.0000000 </td>
+   <td style="text-align:center;"> 0.7414838 </td>
+   <td style="text-align:center;"> 0.8444431 </td>
+   <td style="text-align:center;"> 0.8002958 </td>
+   <td style="text-align:center;"> 0.7442434 </td>
+   <td style="text-align:center;"> 0.8149569 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;font-weight: bold;"> Phaethornis-eurynome-15607.wav-1 </td>
+   <td style="text-align:center;"> 0.8444431 </td>
+   <td style="text-align:center;"> 0.7414838 </td>
+   <td style="text-align:center;"> 0.8236448 </td>
+   <td style="text-align:center;"> 0.8149569 </td>
+   <td style="text-align:center;"> 0.7414838 </td>
+   <td style="text-align:center;"> 1.0000000 </td>
+   <td style="text-align:center;"> 0.8020731 </td>
+   <td style="text-align:center;"> 0.8480428 </td>
+   <td style="text-align:center;"> 0.8236448 </td>
+   <td style="text-align:center;"> 0.8157560 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;font-weight: bold;"> Phaethornis-eurynome-15607.wav-1 </td>
+   <td style="text-align:center;"> 0.8002958 </td>
+   <td style="text-align:center;"> 0.8444431 </td>
+   <td style="text-align:center;"> 0.8157560 </td>
+   <td style="text-align:center;"> 0.8020731 </td>
+   <td style="text-align:center;"> 0.8444431 </td>
+   <td style="text-align:center;"> 0.8020731 </td>
+   <td style="text-align:center;"> 1.0000000 </td>
+   <td style="text-align:center;"> 0.7414838 </td>
+   <td style="text-align:center;"> 0.8444431 </td>
+   <td style="text-align:center;"> 0.8002958 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;font-weight: bold;"> Phaethornis-eurynome-15607.wav-1 </td>
+   <td style="text-align:center;"> 0.7442434 </td>
+   <td style="text-align:center;"> 0.8002958 </td>
+   <td style="text-align:center;"> 0.7414838 </td>
+   <td style="text-align:center;"> 0.8480428 </td>
+   <td style="text-align:center;"> 0.8002958 </td>
+   <td style="text-align:center;"> 0.8480428 </td>
+   <td style="text-align:center;"> 0.7414838 </td>
+   <td style="text-align:center;"> 1.0000000 </td>
+   <td style="text-align:center;"> 0.7442434 </td>
+   <td style="text-align:center;"> 0.8149569 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;font-weight: bold;"> Phaethornis-eurynome-15607.wav-1 </td>
+   <td style="text-align:center;"> 0.8149569 </td>
+   <td style="text-align:center;"> 0.7442434 </td>
+   <td style="text-align:center;"> 0.8444431 </td>
+   <td style="text-align:center;"> 0.8236448 </td>
+   <td style="text-align:center;"> 0.7442434 </td>
+   <td style="text-align:center;"> 0.8236448 </td>
+   <td style="text-align:center;"> 0.8444431 </td>
+   <td style="text-align:center;"> 0.7442434 </td>
+   <td style="text-align:center;"> 1.0000000 </td>
+   <td style="text-align:center;"> 0.8020731 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;font-weight: bold;"> Phaethornis-eurynome-15607.wav-1 </td>
+   <td style="text-align:center;"> 0.8020731 </td>
+   <td style="text-align:center;"> 0.8149569 </td>
+   <td style="text-align:center;"> 0.8002958 </td>
+   <td style="text-align:center;"> 0.8157560 </td>
+   <td style="text-align:center;"> 0.8149569 </td>
+   <td style="text-align:center;"> 0.8157560 </td>
+   <td style="text-align:center;"> 0.8002958 </td>
+   <td style="text-align:center;"> 0.8149569 </td>
+   <td style="text-align:center;"> 0.8020731 </td>
+   <td style="text-align:center;"> 1.0000000 </td>
+  </tr>
+</tbody>
+</table></div>
+
+Finally, extended selection tables, which are objects containing both annotations and acoustic data ([see this post](https://marce10.github.io/2018/05/15/Extended_selection_tables.html)), can be created at the song level. This means that all elements in a song will be contained in a single wave object within the selection table. This enables users to take song level metrics as those described above using this type of objects (this is not possible when creating them based on elements, which is the default behavior).   
 
 The song level extended selection table can be created using the argument 'by.song', which takes the song label column, as follows:
 
@@ -465,7 +629,7 @@ pe_est
 
 It has 23 wave objects, 1 for each song.
 
-Now we can measure things on songs without requiring to keep the original sound file. The following code deletes the recording and measures song level parameters using the extended selection table:
+Now we can measure things on songs without having to keep the original sound file. The following code deletes the sound file and measures song level parameters using the extended selection table:
 
 
 {% highlight r %}
@@ -590,8 +754,7 @@ song.feat <- song_param(pe_est, song_colm = "song")
 </table></div>
 That's it! 
 
-
-### Creating example data
+<font size="4">Creating example data</font>
 
 
 {% highlight r %}
@@ -629,6 +792,10 @@ fr_ad$elm <- rep(c("a", "b"), nrow(fr_ad) / 2)
 
 # create selection table (not mandatory but advice)
 pe_st <- selection_table(fr_ad, extended = FALSE)
+
+# create the first spectrogram in the post
+lspec(pe_st, sxrow = 2.5, rows = 7, fast.spec = TRUE, 
+      horizontal = TRUE, song = "song")
 {% endhighlight %}
 
 
