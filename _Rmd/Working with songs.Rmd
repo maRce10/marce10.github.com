@@ -41,7 +41,7 @@ knitr::include_graphics("./img/Phaethornis-eurynome-15607-p1.jpeg")
 <iframe src='https://www.xeno-canto.org/15607/embed?simple=1' scrolling='no' frameborder='0' width='900' height='150'></iframe>
 
 
-It has a very simple song with a couple of elements. The code I used for selecting elements and adding labels (i.e. creating the 'pe_st' selection table) is found at the end of the post. For now it's enough to say that the only extra feature in 'pe_st' is a column containing the song labels (i.e. to which song each element belongs to). 
+It has a very simple song with a couple of elements. The code for selecting elements and adding labels (creating the 'pe_st' selection table) is found at the end of the post. For now it's enough to say that the only extra feature in 'pe_st' is a couple of columns containing the element and song labels. 
 
 We can make spectrograms of the full recording with boxes on the elements and orange lines above the elements highlighting those that belong to the same song. This can be done using the 'song' argument in [lspec](https://marce10.github.io/warbleR/reference/lspec.html). The argument simply takes the name of the column with the song labels:
 
@@ -189,6 +189,8 @@ kbl <-  kable_styling(kbl, bootstrap_options = "striped", font_size = 12, full_w
 kbl
 
 ```
+
+The minimum, maximum and standard error can also be returned using the 'min_colm', 'max_colm' and 'sd' arguments respectively.
 
 Given that the start, end bottom and top frequency are returned by [song_param](https://marce10.github.io/warbleR/reference/song_param.html), then the output can be used as a selection table to measure or compare the songs themselves, rather than the elements. For instance, we can run cross-correlation between songs, perhaps as a metric of song consistency, as follows:
 
