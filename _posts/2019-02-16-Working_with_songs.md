@@ -16,7 +16,7 @@ We will work on a recording from a [Scale-throated Hermit (hummingbird) (*Phaeth
 <iframe src='https://www.xeno-canto.org/15607/embed?simple=1' scrolling='no' frameborder='0' width='900' height='150'></iframe>
 
 
-It has a very simple song with a couple of elements. The code I used for selecting elements and adding labels (i.e. creating the 'pe_st' selection table) is found at the end of the post. For now it's enough to say that the only extra feature in 'pe_st' is a column containing the song labels (i.e. to which song each element belong to). 
+It has a very simple song with a couple of elements. The code I used for selecting elements and adding labels (i.e. creating the 'pe_st' selection table) is found at the end of the post. For now it's enough to say that the only extra feature in 'pe_st' is a column containing the song labels (i.e. to which song each element belongs to). 
 
 We can make spectrograms of the full recording with boxes on the elements and orange lines above the elements highlighting those that belong to the same song. This can be done using the 'song' argument in [lspec](https://marce10.github.io/warbleR/reference/lspec.html). The argument simply takes the name of the column with the song labels:
 
@@ -445,131 +445,131 @@ head(xc)
   <tr>
    <td style="text-align:left;font-weight: bold;"> Phaethornis-eurynome-15607.wav-1 </td>
    <td style="text-align:center;"> 1.0000000 </td>
-   <td style="text-align:center;"> 0.8496454 </td>
-   <td style="text-align:center;"> 0.8237875 </td>
-   <td style="text-align:center;"> 0.8153765 </td>
-   <td style="text-align:center;"> 0.7410841 </td>
-   <td style="text-align:center;"> 0.8443667 </td>
-   <td style="text-align:center;"> 0.8006863 </td>
-   <td style="text-align:center;"> 0.7480147 </td>
-   <td style="text-align:center;"> 0.8165839 </td>
-   <td style="text-align:center;"> 0.8055912 </td>
+   <td style="text-align:center;"> 0.8489301 </td>
+   <td style="text-align:center;"> 0.8227544 </td>
+   <td style="text-align:center;"> 0.8162418 </td>
+   <td style="text-align:center;"> 0.7406047 </td>
+   <td style="text-align:center;"> 0.8422275 </td>
+   <td style="text-align:center;"> 0.8011251 </td>
+   <td style="text-align:center;"> 0.7460487 </td>
+   <td style="text-align:center;"> 0.8170544 </td>
+   <td style="text-align:center;"> 0.8038471 </td>
   </tr>
   <tr>
    <td style="text-align:left;font-weight: bold;"> Phaethornis-eurynome-15607.wav-1 </td>
-   <td style="text-align:center;"> 0.8496454 </td>
+   <td style="text-align:center;"> 0.8489301 </td>
    <td style="text-align:center;"> 1.0000000 </td>
-   <td style="text-align:center;"> 0.8496454 </td>
-   <td style="text-align:center;"> 0.8237875 </td>
-   <td style="text-align:center;"> 0.8153765 </td>
-   <td style="text-align:center;"> 0.7410841 </td>
-   <td style="text-align:center;"> 0.8443667 </td>
-   <td style="text-align:center;"> 0.8006863 </td>
-   <td style="text-align:center;"> 0.7480147 </td>
-   <td style="text-align:center;"> 0.8165839 </td>
+   <td style="text-align:center;"> 0.8489301 </td>
+   <td style="text-align:center;"> 0.8227544 </td>
+   <td style="text-align:center;"> 0.8162418 </td>
+   <td style="text-align:center;"> 0.7406047 </td>
+   <td style="text-align:center;"> 0.8422275 </td>
+   <td style="text-align:center;"> 0.8011251 </td>
+   <td style="text-align:center;"> 0.7460487 </td>
+   <td style="text-align:center;"> 0.8170544 </td>
   </tr>
   <tr>
    <td style="text-align:left;font-weight: bold;"> Phaethornis-eurynome-15607.wav-1 </td>
-   <td style="text-align:center;"> 0.8237875 </td>
-   <td style="text-align:center;"> 0.8496454 </td>
+   <td style="text-align:center;"> 0.8227544 </td>
+   <td style="text-align:center;"> 0.8489301 </td>
    <td style="text-align:center;"> 1.0000000 </td>
-   <td style="text-align:center;"> 0.8055912 </td>
-   <td style="text-align:center;"> 0.8496454 </td>
-   <td style="text-align:center;"> 0.8237875 </td>
-   <td style="text-align:center;"> 0.8153765 </td>
-   <td style="text-align:center;"> 0.7410841 </td>
-   <td style="text-align:center;"> 0.8443667 </td>
-   <td style="text-align:center;"> 0.8006863 </td>
+   <td style="text-align:center;"> 0.8038471 </td>
+   <td style="text-align:center;"> 0.8489301 </td>
+   <td style="text-align:center;"> 0.8227544 </td>
+   <td style="text-align:center;"> 0.8162418 </td>
+   <td style="text-align:center;"> 0.7406047 </td>
+   <td style="text-align:center;"> 0.8422275 </td>
+   <td style="text-align:center;"> 0.8011251 </td>
   </tr>
   <tr>
    <td style="text-align:left;font-weight: bold;"> Phaethornis-eurynome-15607.wav-1 </td>
-   <td style="text-align:center;"> 0.8153765 </td>
-   <td style="text-align:center;"> 0.8237875 </td>
-   <td style="text-align:center;"> 0.8055912 </td>
+   <td style="text-align:center;"> 0.8162418 </td>
+   <td style="text-align:center;"> 0.8227544 </td>
+   <td style="text-align:center;"> 0.8038471 </td>
    <td style="text-align:center;"> 1.0000000 </td>
-   <td style="text-align:center;"> 0.7480147 </td>
-   <td style="text-align:center;"> 0.8165839 </td>
-   <td style="text-align:center;"> 0.8055912 </td>
-   <td style="text-align:center;"> 0.8496454 </td>
-   <td style="text-align:center;"> 0.8237875 </td>
-   <td style="text-align:center;"> 0.8153765 </td>
+   <td style="text-align:center;"> 0.7460487 </td>
+   <td style="text-align:center;"> 0.8170544 </td>
+   <td style="text-align:center;"> 0.8038471 </td>
+   <td style="text-align:center;"> 0.8489301 </td>
+   <td style="text-align:center;"> 0.8227544 </td>
+   <td style="text-align:center;"> 0.8162418 </td>
   </tr>
   <tr>
    <td style="text-align:left;font-weight: bold;"> Phaethornis-eurynome-15607.wav-1 </td>
-   <td style="text-align:center;"> 0.7410841 </td>
-   <td style="text-align:center;"> 0.8153765 </td>
-   <td style="text-align:center;"> 0.8496454 </td>
-   <td style="text-align:center;"> 0.7480147 </td>
+   <td style="text-align:center;"> 0.7406047 </td>
+   <td style="text-align:center;"> 0.8162418 </td>
+   <td style="text-align:center;"> 0.8489301 </td>
+   <td style="text-align:center;"> 0.7460487 </td>
    <td style="text-align:center;"> 1.0000000 </td>
-   <td style="text-align:center;"> 0.7410841 </td>
-   <td style="text-align:center;"> 0.8443667 </td>
-   <td style="text-align:center;"> 0.8006863 </td>
-   <td style="text-align:center;"> 0.7480147 </td>
-   <td style="text-align:center;"> 0.8165839 </td>
+   <td style="text-align:center;"> 0.7406047 </td>
+   <td style="text-align:center;"> 0.8422275 </td>
+   <td style="text-align:center;"> 0.8011251 </td>
+   <td style="text-align:center;"> 0.7460487 </td>
+   <td style="text-align:center;"> 0.8170544 </td>
   </tr>
   <tr>
    <td style="text-align:left;font-weight: bold;"> Phaethornis-eurynome-15607.wav-1 </td>
-   <td style="text-align:center;"> 0.8443667 </td>
-   <td style="text-align:center;"> 0.7410841 </td>
-   <td style="text-align:center;"> 0.8237875 </td>
-   <td style="text-align:center;"> 0.8165839 </td>
-   <td style="text-align:center;"> 0.7410841 </td>
+   <td style="text-align:center;"> 0.8422275 </td>
+   <td style="text-align:center;"> 0.7406047 </td>
+   <td style="text-align:center;"> 0.8227544 </td>
+   <td style="text-align:center;"> 0.8170544 </td>
+   <td style="text-align:center;"> 0.7406047 </td>
    <td style="text-align:center;"> 1.0000000 </td>
-   <td style="text-align:center;"> 0.8055912 </td>
-   <td style="text-align:center;"> 0.8496454 </td>
-   <td style="text-align:center;"> 0.8237875 </td>
-   <td style="text-align:center;"> 0.8153765 </td>
+   <td style="text-align:center;"> 0.8038471 </td>
+   <td style="text-align:center;"> 0.8489301 </td>
+   <td style="text-align:center;"> 0.8227544 </td>
+   <td style="text-align:center;"> 0.8162418 </td>
   </tr>
   <tr>
    <td style="text-align:left;font-weight: bold;"> Phaethornis-eurynome-15607.wav-1 </td>
-   <td style="text-align:center;"> 0.8006863 </td>
-   <td style="text-align:center;"> 0.8443667 </td>
-   <td style="text-align:center;"> 0.8153765 </td>
-   <td style="text-align:center;"> 0.8055912 </td>
-   <td style="text-align:center;"> 0.8443667 </td>
-   <td style="text-align:center;"> 0.8055912 </td>
+   <td style="text-align:center;"> 0.8011251 </td>
+   <td style="text-align:center;"> 0.8422275 </td>
+   <td style="text-align:center;"> 0.8162418 </td>
+   <td style="text-align:center;"> 0.8038471 </td>
+   <td style="text-align:center;"> 0.8422275 </td>
+   <td style="text-align:center;"> 0.8038471 </td>
    <td style="text-align:center;"> 1.0000000 </td>
-   <td style="text-align:center;"> 0.7410841 </td>
-   <td style="text-align:center;"> 0.8443667 </td>
-   <td style="text-align:center;"> 0.8006863 </td>
+   <td style="text-align:center;"> 0.7406047 </td>
+   <td style="text-align:center;"> 0.8422275 </td>
+   <td style="text-align:center;"> 0.8011251 </td>
   </tr>
   <tr>
    <td style="text-align:left;font-weight: bold;"> Phaethornis-eurynome-15607.wav-1 </td>
-   <td style="text-align:center;"> 0.7480147 </td>
-   <td style="text-align:center;"> 0.8006863 </td>
-   <td style="text-align:center;"> 0.7410841 </td>
-   <td style="text-align:center;"> 0.8496454 </td>
-   <td style="text-align:center;"> 0.8006863 </td>
-   <td style="text-align:center;"> 0.8496454 </td>
-   <td style="text-align:center;"> 0.7410841 </td>
+   <td style="text-align:center;"> 0.7460487 </td>
+   <td style="text-align:center;"> 0.8011251 </td>
+   <td style="text-align:center;"> 0.7406047 </td>
+   <td style="text-align:center;"> 0.8489301 </td>
+   <td style="text-align:center;"> 0.8011251 </td>
+   <td style="text-align:center;"> 0.8489301 </td>
+   <td style="text-align:center;"> 0.7406047 </td>
    <td style="text-align:center;"> 1.0000000 </td>
-   <td style="text-align:center;"> 0.7480147 </td>
-   <td style="text-align:center;"> 0.8165839 </td>
+   <td style="text-align:center;"> 0.7460487 </td>
+   <td style="text-align:center;"> 0.8170544 </td>
   </tr>
   <tr>
    <td style="text-align:left;font-weight: bold;"> Phaethornis-eurynome-15607.wav-1 </td>
-   <td style="text-align:center;"> 0.8165839 </td>
-   <td style="text-align:center;"> 0.7480147 </td>
-   <td style="text-align:center;"> 0.8443667 </td>
-   <td style="text-align:center;"> 0.8237875 </td>
-   <td style="text-align:center;"> 0.7480147 </td>
-   <td style="text-align:center;"> 0.8237875 </td>
-   <td style="text-align:center;"> 0.8443667 </td>
-   <td style="text-align:center;"> 0.7480147 </td>
+   <td style="text-align:center;"> 0.8170544 </td>
+   <td style="text-align:center;"> 0.7460487 </td>
+   <td style="text-align:center;"> 0.8422275 </td>
+   <td style="text-align:center;"> 0.8227544 </td>
+   <td style="text-align:center;"> 0.7460487 </td>
+   <td style="text-align:center;"> 0.8227544 </td>
+   <td style="text-align:center;"> 0.8422275 </td>
+   <td style="text-align:center;"> 0.7460487 </td>
    <td style="text-align:center;"> 1.0000000 </td>
-   <td style="text-align:center;"> 0.8055912 </td>
+   <td style="text-align:center;"> 0.8038471 </td>
   </tr>
   <tr>
    <td style="text-align:left;font-weight: bold;"> Phaethornis-eurynome-15607.wav-1 </td>
-   <td style="text-align:center;"> 0.8055912 </td>
-   <td style="text-align:center;"> 0.8165839 </td>
-   <td style="text-align:center;"> 0.8006863 </td>
-   <td style="text-align:center;"> 0.8153765 </td>
-   <td style="text-align:center;"> 0.8165839 </td>
-   <td style="text-align:center;"> 0.8153765 </td>
-   <td style="text-align:center;"> 0.8006863 </td>
-   <td style="text-align:center;"> 0.8165839 </td>
-   <td style="text-align:center;"> 0.8055912 </td>
+   <td style="text-align:center;"> 0.8038471 </td>
+   <td style="text-align:center;"> 0.8170544 </td>
+   <td style="text-align:center;"> 0.8011251 </td>
+   <td style="text-align:center;"> 0.8162418 </td>
+   <td style="text-align:center;"> 0.8170544 </td>
+   <td style="text-align:center;"> 0.8162418 </td>
+   <td style="text-align:center;"> 0.8011251 </td>
+   <td style="text-align:center;"> 0.8170544 </td>
+   <td style="text-align:center;"> 0.8038471 </td>
    <td style="text-align:center;"> 1.0000000 </td>
   </tr>
 </tbody>
