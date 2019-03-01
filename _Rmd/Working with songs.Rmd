@@ -155,7 +155,7 @@ And if spectral parameters have been measured on the elements they can also be a
 elm_sp <- specan(pe_st)
 
 # add song data
-elm_sp <- merge(elm_sp, pe_st, by = c("sound.files", "selec"))
+elm_sp <- merge(elm_sp[ , -c(3:4)], pe_st, by = c("sound.files", "selec"))
 
 # calculate mean kurtosis and entropy
 song_feat <- song_param(X = elm_sp, song_colm = "song", 
