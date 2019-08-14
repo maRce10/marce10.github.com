@@ -1,0 +1,258 @@
+---
+title: "Evaluating group acoustic signatures using cross-correlation"
+author: "Marcelo Araya-Salas"
+date: "2019-08-13"
+output: 
+  md_document:
+    variant: markdown_github
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r clean session, , eval = TRUE, echo = FALSE}
+
+rm(list = ls())
+
+# unload all non-based packages
+out <- sapply(paste('package:', names(sessionInfo()$otherPkgs), sep = ""), function(x) try(detach(x, unload = FALSE, character.only = TRUE), silent = T))
+
+knitr::opts_chunk$set(dpi = 200)
+
+library(warbleR)
+
+library(kableExtra)
+
+
+warbleR_options(wav.path = "/home/m/Dropbox/Websites/Blog/", flim = c(2.5, 14), wl = 200, ovlp = 90, pb = FALSE)
+
+pe_st <- read.csv("/home/m/Dropbox/Websites/Blog/P. eurynome selection table.csv")
+
+```
+
+Social learning is often diagnosed by mapping the geographic variation of behavior. Behavioral variation at a small geographical scale that shows both sharp differences among localities and consistency within localities is indicative of social learning of local traditions. This pattern translates into a pretty straight forward statistical hypothesis: *the behavior is more similar within than between groups* (although absence of this pattern doesn't necessarily imply a lack of learning!). In other words, if there is social learning going on, we can expect a group level signature. This post is about how to test this pattern in vocal signals (i.e. testing vocal learning) using pairwise similarities from cross-correlation. In fact, that's exactly what we did in [our recent paper on the co-ocurrence of social learning in vocal and visual signals in long billed hermit](https://marceloarayasalas.weebly.com/uploads/2/5/5/2/25524573/araya-salas_smith-vidaurre_et_al_2019.pdf). So the post reproduces the code I used for the acoustic analysis on that paper.
+
+We made all annotations and acoustic data [available in Dryad](https://datadryad.org/resource/doi:10.5061/dryad.gn8qf6q). We just need to download the extended selection table ([R object including acoustic data + annotations](https://marce10.github.io/2018/05/15/Extended_selection_tables.html)) from Dryad and unzip the file as follows (it could take a while): 
+```{r, eval = FALSE, echo = TRUE}
+
+# set temporary working directory
+setwd(tempdir())
+
+url <- "https://datadryad.org/bitstream/handle/10255/dryad.216487/extended%20selection%20table%20LBH%20songs.zip?sequence=2"
+
+download.file(url = url, destfile = "lbh_est.zip", mode="wb")
+
+unzip("lbh_est.zip")
+
+```
+
+Now we can read the file and take a look at the data:
+```{r, eval = FALSE, echo = TRUE}
+
+library(warbleR)
+
+lbh_est <- readRDS("extended selection table LBH songs.RDS")
+
+lbh_est
+
+```
+
+```{r, eval = TRUE, echo = FALSE}
+
+lbh_est <- readRDS("/home/m/Dropbox/Websites/Blog/extended selection table LBH songs.RDS")
+
+library(warbleR)
+
+lbh_est
+
+```
+
+
+The data contains several songs per individual, several individuals per lek and some individual share their song type within leks. This is a pretty big data set, so it takes a while to run the analysis. To speed it up a bit (and avoid pseudoreplication!), we will keep only the highest signal-to-noise ratio song for each individual:
+```{r, eval = TRUE, echo = FALSE}
+
+warbleR_options(wl = 200, pb = FALSE)
+
+lbh_est <- sig2noise(lbh_est, mar = 0.1)
+
+sub_lbh_est <- lbh_est[ave(x = lbh_est$SNR, paste0(lbh_est$Lek, lbh_est$Bird.ID), FUN = function(x) rank(x, ties.method = "first")) == 1, ]
+
+```
+
+```{r, eval = FALSE, echo= TRUE}
+
+# set warbleR global options 
+warbleR_options(wl = 200)
+
+# measure SNR
+lbh_est <- sig2noise(lbh_est, mar = 0.1)
+
+# subset ext. sel. tab.
+sub_lbh_est <- lbh_est[ave(x = lbh_est$SNR, paste0(lbh_est$Lek, lbh_est$Bird.ID), FUN = function(x) rank(x, ties.method = "first")) == 1, ]
+
+```
+
+
+Now we can run the cross-correlation analysis as follows:
+```{r, eval = TRUE, echo = FALSE}
+
+xc_mat <- readRDS( "/home/m/Dropbox/Websites/Blog/group_signature_xcorr_mat.RDS")
+
+```
+
+```{r, eval = FALSE, echo = TRUE}
+
+xc_mat <- x_corr(sub_lbh_est)
+
+```
+
+The output is a dissimilarity matrix with dimensions *60 x 60* (for simplicity only the 20 first columns/rows are shown):
+```{r, eval = TRUE, echo = FALSE}
+
+kbl <- kable(xc_mat[1:20, 1:20], align = "c", row.names = T,  format = "html")
+
+kbl <- scroll_box(kbl, width = "740px")
+
+kbl <-  kable_styling(kbl, bootstrap_options = "striped", font_size = 12)
+
+kbl
+
+```
+
+Now we can input the cross-correlation (di)similarities in a mantel to directly test our hypothesis. But first, we need an additional matrix representing lek membership. We have to create a pairwise matrices in which 0 will denote pairs of individuals that belong to the same lek and 1 pairs that belong to different leks. The following function creates the binary matrix:
+```{r, eval = TRUE, echo = TRUE}
+
+#function to create group membership binary matrix
+bi_mats <- function(X, labels) {
+  
+  # create empty matrix to store memebership matrix
+  mat <- matrix(nrow = ncol(X), ncol = ncol(X))
+ 
+  # add labels to row and col names
+  rownames(mat) <- colnames(mat) <- labels
+  
+  # add 0 if same lek and 1 if else 
+  out <- lapply(1:(length(labels) - 1), function(i){
+  sapply((i + 1):length(labels), function(j) 
+    if (labels[i] == labels[j]) 0 else 1)  
+    })
+
+  # add to mat
+  mat[lower.tri(mat)] <- unlist(out)
+
+  # retunr as distance matrix
+  return(as.dist(mat))
+  }
+
+```
+
+The function takes the cross-correlation similarity matrix and a label indicating lek membership:
+```{r, eval = TRUE, echo = TRUE}
+
+# create lek membership from column names
+lbls <- sapply(strsplit(colnames(xc_mat), ".", fixed = TRUE), "[[", 2)
+
+# create binary matrix
+lek_bi_mat <- bi_mats(xc_mat, lbls)
+
+# look at the first 15 rows/cols
+as.matrix(lek_bi_mat)[1:15, 1:15]
+```
+
+The 2 matrices are then input into a Mantel test to evaluate if acoustic similarity is higher within than between leks. Note that the cross-correlation matrix is transformed into a distance matrix by subtracting it from 1:
+```{r, eval = TRUE, echo = TRUE}
+
+# install vegan if necessary
+library(vegan)
+
+# convert xcorr mat to distance
+xc_dist <- as.dist(1 - xc_mat)
+
+# run mantel test
+mantel(xc_dist, lek_bi_mat, permutations = 10000)
+
+```
+
+That's a pretty solid association between lek membership and acoustic similarity, r = 0.37. So there is a lek level acoustic signature.
+
+## Individual signature
+
+We can use the same approach to test for signatures at other levels, for instance, at the individual level. Let's first pick up the lek with the highest number of individuals:
+```{r}
+
+colSums(table(lbh_est$Bird.ID, lbh_est$Lek))
+
+```
+
+Lek "SUR" is the one with more birds (n = 14). So we will keep only the recordings from that lek. We will also keep the 5 highest signal-to-noise ratio songs for each individual to shrink the data set a bit and speed up the analysis:
+```{r}
+
+# keep only SUR swongs
+sur_est <- lbh_est[lbh_est$Lek == "SUR", ]
+
+# check count
+table(sur_est$lek.song.type)
+
+# subset ext. sel. tab.
+sub_sur_est <- sur_est[ave(x = sur_est$SNR, sur_est$Bird.ID, FUN = function(x) rank(x, ties.method = "first")) <= 5, ]
+
+# check count
+table(sub_sur_est$Bird.ID)
+
+```
+
+Cross-correlation can be ran now:
+```{r, eval = FALSE, echo = TRUE}
+
+xc_ind_mat <- x_corr(sub_sur_est)
+
+```
+
+```{r, eval = TRUE, echo = FALSE}
+
+xc_ind_mat <- readRDS("/home/m/Dropbox/Websites/Blog/indiv_signature_xcorr_mat.RDS")
+
+```
+
+Again, we need a pairwise binary matrix indicating if songs belong to the same or to different individuals:
+```{r, eval = TRUE, echo = TRUE}
+
+# create binary matrix
+ind_bi_mat <- bi_mats(xc_ind_mat, sub_sur_est$Bird.ID)
+
+```
+
+These songs also belong to different song types within lek "SUR". So we must take this other level of variation into account. This can be done by using an additional song-type membership binary matrix as a third variable in a partial mantel test:
+```{r, eval = TRUE, echo = TRUE}
+
+# create binary matrix
+st_bi_mat <- bi_mats(xc_ind_mat, sub_sur_est$lek.song.type)
+
+```
+
+And then just run the cross-correlation as we did above:
+```{r, eval = TRUE, echo = TRUE}
+
+# convert xcorr mat to distance
+xc_ind_dist <- as.dist(1 - xc_ind_mat)
+
+# run mantel test
+mantel.partial(xc_ind_dist, ind_bi_mat, st_bi_mat, 
+               permutations = 10000)
+
+```
+
+There is a pretty high correlation, which suggests strong individual signatures. 
+
+That's it!
+
+
+---
+
+
+<font size="4"><b>Session information</b></font>
+
+```{r session info, echo=F}
+
+sessionInfo()
+
+```

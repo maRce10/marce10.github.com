@@ -197,6 +197,8 @@ prose:
 gems:
   - jekyll-paginate
 
+exclude: vendor
+
 #plugins_dir:
 #  - jekyll-feed
 
