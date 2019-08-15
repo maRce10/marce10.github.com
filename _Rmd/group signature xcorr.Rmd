@@ -29,9 +29,19 @@ pe_st <- read.csv("/home/m/Dropbox/Websites/Blog/P. eurynome selection table.csv
 
 ```
 
-Social learning is often diagnosed by mapping the geographic variation of behavior. Behavioral variation at a small geographical scale that shows both sharp differences among localities and consistency within localities is indicative of social learning of local traditions. This pattern translates into a pretty straight forward statistical hypothesis: *the behavior is more similar within than between groups* (although absence of this pattern doesn't necessarily imply a lack of learning!). In other words, if there is social learning going on, we can expect a group level signature. This post is about how to test this pattern in vocal signals (i.e. testing vocal learning) using pairwise similarities from cross-correlation. In fact, that's exactly what we did in [our recent paper on the co-ocurrence of social learning in vocal and visual signals in long billed hermit](https://marceloarayasalas.weebly.com/uploads/2/5/5/2/25524573/araya-salas_smith-vidaurre_et_al_2019.pdf). So the post reproduces the code I used for the acoustic analysis on that paper.
+Social learning is often diagnosed by mapping the geographic variation of behavior. Behavioral variation at a small geographical scale that shows both sharp differences among localities and consistency within localities is indicative of social learning of local traditions. This pattern translates into a pretty straight forward statistical hypothesis: *the behavior is more similar within than between groups* (although absence of this pattern doesn't necessarily imply a lack of learning!). In other words, if there is social learning going on, we can expect a group level signature. 
 
-We made all annotations and acoustic data [available in Dryad](https://datadryad.org/resource/doi:10.5061/dryad.gn8qf6q). We just need to download the extended selection table ([R object including acoustic data + annotations](https://marce10.github.io/2018/05/15/Extended_selection_tables.html)) from Dryad and unzip the file as follows (it could take a while): 
+This post is about how to test this pattern in vocal signals (i.e. testing vocal learning) using pairwise similarities derived from spectrographic cross-correlation. In fact, that's exactly what we did in [our recent paper on the co-ocurrence of social learning in vocal and visual signals in the long billed hermit](https://marceloarayasalas.weebly.com/uploads/2/5/5/2/25524573/araya-salas_smith-vidaurre_et_al_2019.pdf). So the post reproduces the code I used for the acoustic analysis in that paper.
+
+Male long-billed hermits have a vocal repertoire consisting of a single song type. Different song types are found at different sites, leks and even within leks:
+```{r song 1, out.width = "600px", echo = FALSE, fig.align= "center"}
+
+knitr::include_graphics("./img/map.lbh.song.types.png")
+
+```
+<font size="2">Location of three study sites in northeastern Costa Rica. Spectrograms of the 10 observed song types grouped by lek are also shown. Maps of leks at La Selva Biological Station are shown in greater detail in the lower left map. The two song neighbourhoods at lek SUR are shown in lower right map (similar song neighbourhoods were found at the other leks with 2 song types—SJA, TR2, and HC1—but are not shown); polygons represent lekking male territories and the coloured borders delineate the song neighbourhoods corresponding to the coloured borders of the spectrograms at the far right.</font>
+
+All annotations and acoustic data were made [available on Dryad](https://datadryad.org/resource/doi:10.5061/dryad.gn8qf6q). We just need to download the extended selection table ([R object including acoustic data + annotations](https://marce10.github.io/2018/05/15/Extended_selection_tables.html)) from Dryad and unzip the file as follows (it could take a while): 
 ```{r, eval = FALSE, echo = TRUE}
 
 # set temporary working directory
@@ -67,7 +77,7 @@ lbh_est
 ```
 
 
-The data contains several songs per individual, several individuals per lek and some individual share their song type within leks. This is a pretty big data set, so it takes a while to run the analysis. To speed it up a bit (and avoid pseudoreplication!), we will keep only the highest signal-to-noise ratio song for each individual:
+The data contains several songs per individual, and several individuals per lek. This is a pretty big data set, so it takes a while to run the analysis. To speed it up a bit (and avoid pseudoreplication!), we will keep only the highest signal-to-noise ratio song for each individual:
 ```{r, eval = TRUE, echo = FALSE}
 
 warbleR_options(wl = 200, pb = FALSE)
@@ -105,7 +115,7 @@ xc_mat <- x_corr(sub_lbh_est)
 
 ```
 
-The output is a dissimilarity matrix with dimensions *60 x 60* (for simplicity only the 20 first columns/rows are shown):
+The output is a similarity matrix with dimensions *60 x 60* (for simplicity only the 20 first columns/rows are shown):
 ```{r, eval = TRUE, echo = FALSE}
 
 kbl <- kable(xc_mat[1:20, 1:20], align = "c", row.names = T,  format = "html")
@@ -118,7 +128,7 @@ kbl
 
 ```
 
-Now we can input the cross-correlation (di)similarities in a mantel to directly test our hypothesis. But first, we need an additional matrix representing lek membership. We have to create a pairwise matrices in which 0 will denote pairs of individuals that belong to the same lek and 1 pairs that belong to different leks. The following function creates the binary matrix:
+Now we can input the cross-correlation (di)similarities in a mantel to directly test our hypothesis. But first, we need an second matrix representing lek membership. It must be a pairwise matrix in which 0 will denote pairs of individuals that belong to the same lek and 1 pairs that belong to different leks. The following function creates the binary matrix:
 ```{r, eval = TRUE, echo = TRUE}
 
 #function to create group membership binary matrix
@@ -145,7 +155,7 @@ bi_mats <- function(X, labels) {
 
 ```
 
-The function takes the cross-correlation similarity matrix and a label indicating lek membership:
+The function takes as arguments the cross-correlation similarity matrix and a label indicating lek membership:
 ```{r, eval = TRUE, echo = TRUE}
 
 # create lek membership from column names
@@ -200,7 +210,7 @@ table(sub_sur_est$Bird.ID)
 
 ```
 
-Cross-correlation can be ran now:
+Cross-correlation can now be run:
 ```{r, eval = FALSE, echo = TRUE}
 
 xc_ind_mat <- x_corr(sub_sur_est)

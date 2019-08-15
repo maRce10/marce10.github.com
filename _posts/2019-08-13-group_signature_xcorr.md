@@ -8,9 +8,15 @@ editor_options:
 
 
 
-Social learning is often diagnosed by mapping the geographic variation of behavior. Behavioral variation at a small geographical scale that shows both sharp differences among localities and consistency within localities is indicative of social learning of local traditions. This pattern translates into a pretty straight forward statistical hypothesis: *the behavior is more similar within than between groups* (although absence of this pattern doesn't necessarily imply a lack of learning!). In other words, if there is social learning going on, we can expect a group level signature. This post is about how to test this pattern in vocal signals (i.e. testing vocal learning) using pairwise similarities from cross-correlation. In fact, that's exactly what we did in [our recent paper on the co-ocurrence of social learning in vocal and visual signals in long billed hermit](https://marceloarayasalas.weebly.com/uploads/2/5/5/2/25524573/araya-salas_smith-vidaurre_et_al_2019.pdf). So the post reproduces the code I used for the acoustic analysis on that paper.
+Social learning is often diagnosed by mapping the geographic variation of behavior. Behavioral variation at a small geographical scale that shows both sharp differences among localities and consistency within localities is indicative of social learning of local traditions. This pattern translates into a pretty straight forward statistical hypothesis: *the behavior is more similar within than between groups* (although absence of this pattern doesn't necessarily imply a lack of learning!). In other words, if there is social learning going on, we can expect a group level signature. 
 
-We made all annotations and acoustic data [available in Dryad](https://datadryad.org/resource/doi:10.5061/dryad.gn8qf6q). We just need to download the extended selection table ([R object including acoustic data + annotations](https://marce10.github.io/2018/05/15/Extended_selection_tables.html)) from Dryad and unzip the file as follows (it could take a while): 
+This post is about how to test this pattern in vocal signals (i.e. testing vocal learning) using pairwise similarities derived from spectrographic cross-correlation. In fact, that's exactly what we did in [our recent paper on the co-ocurrence of social learning in vocal and visual signals in the long billed hermit](https://marceloarayasalas.weebly.com/uploads/2/5/5/2/25524573/araya-salas_smith-vidaurre_et_al_2019.pdf). So the post reproduces the code I used for the acoustic analysis in that paper.
+
+Male long-billed hermits have a vocal repertoire consisting of a single song type. Different song types are found at different sites, leks and even within leks:
+<img src="/./img/map.lbh.song.types.png" title="plot of chunk song 1" alt="plot of chunk song 1" width="600px" style="display: block; margin: auto;" />
+<font size="2">Location of three study sites in northeastern Costa Rica. Spectrograms of the 10 observed song types grouped by lek are also shown. Maps of leks at La Selva Biological Station are shown in greater detail in the lower left map. The two song neighbourhoods at lek SUR are shown in lower right map (similar song neighbourhoods were found at the other leks with 2 song types—SJA, TR2, and HC1—but are not shown); polygons represent lekking male territories and the coloured borders delineate the song neighbourhoods corresponding to the coloured borders of the spectrograms at the far right.</font>
+
+All annotations and acoustic data were made [available on Dryad](https://datadryad.org/resource/doi:10.5061/dryad.gn8qf6q). We just need to download the extended selection table ([R object including acoustic data + annotations](https://marce10.github.io/2018/05/15/Extended_selection_tables.html)) from Dryad and unzip the file as follows (it could take a while): 
 
 {% highlight r %}
 # set temporary working directory
@@ -69,7 +75,7 @@ lbh_est
 {% endhighlight %}
 
 
-The data contains several songs per individual, several individuals per lek and some individual share their song type within leks. This is a pretty big data set, so it takes a while to run the analysis. To speed it up a bit (and avoid pseudoreplication!), we will keep only the highest signal-to-noise ratio song for each individual:
+The data contains several songs per individual, and several individuals per lek. This is a pretty big data set, so it takes a while to run the analysis. To speed it up a bit (and avoid pseudoreplication!), we will keep only the highest signal-to-noise ratio song for each individual:
 
 
 
@@ -93,7 +99,7 @@ Now we can run the cross-correlation analysis as follows:
 xc_mat <- x_corr(sub_lbh_est)
 {% endhighlight %}
 
-The output is a dissimilarity matrix with dimensions *60 x 60* (for simplicity only the 20 first columns/rows are shown):
+The output is a similarity matrix with dimensions *60 x 60* (for simplicity only the 20 first columns/rows are shown):
 <div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:740px;  font-size: 12px; margin-left: auto; margin-right: auto;" class="table table-striped"><table>
  <thead>
   <tr>
@@ -584,7 +590,7 @@ The output is a dissimilarity matrix with dimensions *60 x 60* (for simplicity o
 </tbody>
 </table></div>
 
-Now we can input the cross-correlation (di)similarities in a mantel to directly test our hypothesis. But first, we need an additional matrix representing lek membership. We have to create a pairwise matrices in which 0 will denote pairs of individuals that belong to the same lek and 1 pairs that belong to different leks. The following function creates the binary matrix:
+Now we can input the cross-correlation (di)similarities in a mantel to directly test our hypothesis. But first, we need an second matrix representing lek membership. It must be a pairwise matrix in which 0 will denote pairs of individuals that belong to the same lek and 1 pairs that belong to different leks. The following function creates the binary matrix:
 
 {% highlight r %}
 #function to create group membership binary matrix
@@ -610,7 +616,7 @@ bi_mats <- function(X, labels) {
   }
 {% endhighlight %}
 
-The function takes the cross-correlation similarity matrix and a label indicating lek membership:
+The function takes as arguments the cross-correlation similarity matrix and a label indicating lek membership:
 
 {% highlight r %}
 # create lek membership from column names
@@ -671,7 +677,7 @@ mantel(xc_dist, lek_bi_mat, permutations = 10000)
 ## 
 ## Upper quantiles of permutations (null model):
 ##    90%    95%  97.5%    99% 
-## 0.0306 0.0414 0.0504 0.0627 
+## 0.0309 0.0416 0.0517 0.0640 
 ## Permutation: free
 ## Number of permutations: 10000
 {% endhighlight %}
@@ -729,7 +735,7 @@ table(sub_sur_est$Bird.ID)
 ##   5   5   5   5   5   5   5   5   5   5   5   5   5   5
 {% endhighlight %}
 
-Cross-correlation can be ran now:
+Cross-correlation can now be run:
 
 {% highlight r %}
 xc_ind_mat <- x_corr(sub_sur_est)
@@ -776,7 +782,7 @@ mantel.partial(xc_ind_dist, ind_bi_mat, st_bi_mat,
 ## 
 ## Upper quantiles of permutations (null model):
 ##    90%    95%  97.5%    99% 
-## 0.0246 0.0332 0.0408 0.0505 
+## 0.0255 0.0340 0.0421 0.0510 
 ## Permutation: free
 ## Number of permutations: 10000
 {% endhighlight %}
@@ -819,7 +825,7 @@ That's it!
 ## 
 ## loaded via a namespace (and not attached):
 ##  [1] xfun_0.7          pbapply_1.4-0     splines_3.6.1    
-##  [4] colorspace_1.4-1  viridisLite_0.3.0 htmltools_0.3.6  
+##  [4] colorspace_1.4-1  htmltools_0.3.6   viridisLite_0.3.0
 ##  [7] mgcv_1.8-28       rlang_0.3.4       pracma_2.2.5     
 ## [10] pillar_1.4.0      glue_1.3.1        jpeg_0.1-8       
 ## [13] stringr_1.4.0     munsell_0.5.0     rvest_0.3.3      
@@ -832,7 +838,7 @@ That's it!
 ## [34] grid_3.6.1        tools_3.6.1       bitops_1.0-6     
 ## [37] magrittr_1.5      RCurl_1.95-4.12   proxy_0.4-23     
 ## [40] tibble_2.1.1      cluster_2.1.0     crayon_1.3.4     
-## [43] pkgconfig_2.0.2   MASS_7.3-51.4     Matrix_1.2-17    
+## [43] pkgconfig_2.0.2   Matrix_1.2-17     MASS_7.3-51.4    
 ## [46] xml2_1.2.0        rmarkdown_1.13    httr_1.4.0       
 ## [49] rstudioapi_0.10   iterators_1.0.10  R6_2.4.0         
 ## [52] signal_0.7-6      nlme_3.1-140      compiler_3.6.1
