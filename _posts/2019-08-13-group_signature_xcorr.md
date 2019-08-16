@@ -8,7 +8,7 @@ editor_options:
 
 
 
-Social learning is often diagnosed by mapping the geographic variation of behavior. Behavioral variation at a small geographical scale that shows both sharp differences among localities and consistency within localities is indicative of social learning of local traditions. This pattern translates into a pretty straight forward statistical hypothesis: *the behavior is more similar within than between groups* (although absence of this pattern doesn't necessarily imply a lack of learning!). In other words, if there is social learning going on, we can expect a group level signature. 
+Social learning is often diagnosed by mapping the geographic variation of behavior. Behavioral variation at a small geographical scale that shows both sharp differences among localities and consistency within localities is indicative of social learning of local traditions. This pattern translates into a pretty straightforward statistical hypothesis: *the behavior is more similar within than between groups* (although absence of this pattern doesn't necessarily imply a lack of learning!). In other words, if there is social learning going on, we can expect a group level signature. 
 
 This post is about how to test this pattern in vocal signals (i.e. testing vocal learning) using pairwise similarities derived from spectrographic cross-correlation. In fact, that's exactly what we did in [our recent paper on the co-ocurrence of social learning in vocal and visual signals in the long billed hermit](https://marceloarayasalas.weebly.com/uploads/2/5/5/2/25524573/araya-salas_smith-vidaurre_et_al_2019.pdf). So the post reproduces the code I used for the acoustic analysis in that paper.
 
@@ -644,7 +644,7 @@ mantel(xc_dist, lek_bi_mat, permutations = 10000)
 ## 
 ## Upper quantiles of permutations (null model):
 ##    90%    95%  97.5%    99% 
-## 0.0313 0.0425 0.0524 0.0653 
+## 0.0313 0.0418 0.0517 0.0632 
 ## Permutation: free
 ## Number of permutations: 10000
 {% endhighlight %}
@@ -678,7 +678,7 @@ mantel(as.dist(dtw_dist), lek_bi_mat, permutations = 10000)
 ## 
 ## Upper quantiles of permutations (null model):
 ##    90%    95%  97.5%    99% 
-## 0.0307 0.0401 0.0489 0.0598 
+## 0.0310 0.0412 0.0495 0.0598 
 ## Permutation: free
 ## Number of permutations: 10000
 {% endhighlight %}
@@ -707,11 +707,11 @@ mantel(dist_sp, lek_bi_mat, permutations = 10000)
 ## mantel(xdis = dist_sp, ydis = lek_bi_mat, permutations = 10000) 
 ## 
 ## Mantel statistic r: 0.0482 
-##       Significance: 0.0306 
+##       Significance: 0.032 
 ## 
 ## Upper quantiles of permutations (null model):
 ##    90%    95%  97.5%    99% 
-## 0.0305 0.0409 0.0509 0.0624 
+## 0.0309 0.0417 0.0518 0.0646 
 ## Permutation: free
 ## Number of permutations: 10000
 {% endhighlight %}
@@ -739,11 +739,11 @@ mantel(dist_cc, lek_bi_mat, permutations = 10000)
 ## mantel(xdis = dist_cc, ydis = lek_bi_mat, permutations = 10000) 
 ## 
 ## Mantel statistic r: -0.0297 
-##       Significance: 0.905 
+##       Significance: 0.913 
 ## 
 ## Upper quantiles of permutations (null model):
 ##    90%    95%  97.5%    99% 
-## 0.0301 0.0406 0.0492 0.0595 
+## 0.0307 0.0411 0.0511 0.0633 
 ## Permutation: free
 ## Number of permutations: 10000
 {% endhighlight %}
@@ -769,32 +769,38 @@ That's it!
 ## LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.8.0
 ## 
 ## locale:
-##  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C               LC_TIME=es_CR.UTF-8       
-##  [4] LC_COLLATE=en_US.UTF-8     LC_MONETARY=es_CR.UTF-8    LC_MESSAGES=en_US.UTF-8   
-##  [7] LC_PAPER=es_CR.UTF-8       LC_NAME=C                  LC_ADDRESS=C              
-## [10] LC_TELEPHONE=C             LC_MEASUREMENT=es_CR.UTF-8 LC_IDENTIFICATION=C       
+##  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+##  [3] LC_TIME=es_CR.UTF-8        LC_COLLATE=en_US.UTF-8    
+##  [5] LC_MONETARY=es_CR.UTF-8    LC_MESSAGES=en_US.UTF-8   
+##  [7] LC_PAPER=es_CR.UTF-8       LC_NAME=C                 
+##  [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+## [11] LC_MEASUREMENT=es_CR.UTF-8 LC_IDENTIFICATION=C       
 ## 
 ## attached base packages:
 ## [1] stats     graphics  grDevices utils     datasets  methods   base     
 ## 
 ## other attached packages:
-## [1] vegan_2.5-5        lattice_0.20-38    permute_0.9-5      kableExtra_1.1.0  
-## [5] warbleR_1.1.16     NatureSounds_1.0.1 seewave_2.1.3      tuneR_1.3.3       
-## [9] maps_3.3.0        
+## [1] vegan_2.5-5        lattice_0.20-38    permute_0.9-5     
+## [4] kableExtra_1.1.0   warbleR_1.1.16     NatureSounds_1.0.1
+## [7] seewave_2.1.3      tuneR_1.3.3        maps_3.3.0        
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] xfun_0.7          pbapply_1.4-0     splines_3.6.1     colorspace_1.4-1 
-##  [5] htmltools_0.3.6   viridisLite_0.3.0 mgcv_1.8-28       rlang_0.3.4      
-##  [9] pracma_2.2.5      pillar_1.4.0      glue_1.3.1        jpeg_0.1-8       
-## [13] stringr_1.4.0     munsell_0.5.0     rvest_0.3.3       evaluate_0.14    
-## [17] knitr_1.23        fftw_1.0-5        parallel_3.6.1    highr_0.8        
-## [21] Rcpp_1.0.1        readr_1.3.1       scales_1.0.0      webshot_0.5.1    
-## [25] soundgen_1.4.0    Sim.DiffProc_4.3  Deriv_3.8.5       rjson_0.2.20     
-## [29] hms_0.4.2         packrat_0.5.0     digest_0.6.19     stringi_1.4.3    
-## [33] dtw_1.20-1        grid_3.6.1        tools_3.6.1       bitops_1.0-6     
-## [37] magrittr_1.5      RCurl_1.95-4.12   proxy_0.4-23      tibble_2.1.1     
-## [41] cluster_2.1.0     crayon_1.3.4      pkgconfig_2.0.2   Matrix_1.2-17    
-## [45] MASS_7.3-51.4     xml2_1.2.0        rmarkdown_1.13    httr_1.4.0       
-## [49] rstudioapi_0.10   iterators_1.0.10  R6_2.4.0          nlme_3.1-140     
-## [53] signal_0.7-6      compiler_3.6.1
+##  [1] xfun_0.7          pbapply_1.4-0     splines_3.6.1    
+##  [4] colorspace_1.4-1  htmltools_0.3.6   viridisLite_0.3.0
+##  [7] mgcv_1.8-28       rlang_0.3.4       pracma_2.2.5     
+## [10] pillar_1.4.0      glue_1.3.1        jpeg_0.1-8       
+## [13] stringr_1.4.0     munsell_0.5.0     rvest_0.3.3      
+## [16] evaluate_0.14     knitr_1.23        fftw_1.0-5       
+## [19] parallel_3.6.1    highr_0.8         Rcpp_1.0.1       
+## [22] readr_1.3.1       scales_1.0.0      webshot_0.5.1    
+## [25] soundgen_1.4.0    Sim.DiffProc_4.3  Deriv_3.8.5      
+## [28] rjson_0.2.20      hms_0.4.2         packrat_0.5.0    
+## [31] digest_0.6.19     stringi_1.4.3     dtw_1.20-1       
+## [34] grid_3.6.1        tools_3.6.1       bitops_1.0-6     
+## [37] magrittr_1.5      RCurl_1.95-4.12   proxy_0.4-23     
+## [40] tibble_2.1.1      cluster_2.1.0     crayon_1.3.4     
+## [43] pkgconfig_2.0.2   Matrix_1.2-17     MASS_7.3-51.4    
+## [46] xml2_1.2.0        rmarkdown_1.13    httr_1.4.0       
+## [49] rstudioapi_0.10   iterators_1.0.10  R6_2.4.0         
+## [52] nlme_3.1-140      signal_0.7-6      compiler_3.6.1
 {% endhighlight %}
