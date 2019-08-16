@@ -68,10 +68,12 @@ lbh_est
 
 ```{r, eval = TRUE, echo = FALSE}
 
-lbh_est <- readRDS("/home/m/Dropbox/Websites/Blog/extended selection table LBH songs.RDS")
-
 library(warbleR)
 
+lbh_est <- readRDS("/home/m/Dropbox/Websites/Blog/extended selection table LBH songs.RDS")
+
+
+lbh_est
 ```
 
 
