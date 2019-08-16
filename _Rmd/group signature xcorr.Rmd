@@ -29,7 +29,7 @@ pe_st <- read.csv("/home/m/Dropbox/Websites/Blog/P. eurynome selection table.csv
 
 ```
 
-Social learning is often diagnosed by mapping the geographic variation of behavior. Behavioral variation at a small geographical scale that shows both sharp differences among localities and consistency within localities is indicative of social learning of local traditions. This pattern translates into a pretty straight forward statistical hypothesis: *the behavior is more similar within than between groups* (although absence of this pattern doesn't necessarily imply a lack of learning!). In other words, if there is social learning going on, we can expect a group level signature. 
+Social learning is often diagnosed by mapping the geographic variation of behavior. Behavioral variation at a small geographical scale that shows both sharp differences among localities and consistency within localities is indicative of social learning of local traditions. This pattern translates into a pretty straightforward statistical hypothesis: *the behavior is more similar within than between groups* (although absence of this pattern doesn't necessarily imply a lack of learning!). In other words, if there is social learning going on, we can expect a group level signature. 
 
 This post is about how to test this pattern in vocal signals (i.e. testing vocal learning) using pairwise similarities derived from spectrographic cross-correlation. In fact, that's exactly what we did in [our recent paper on the co-ocurrence of social learning in vocal and visual signals in the long billed hermit](https://marceloarayasalas.weebly.com/uploads/2/5/5/2/25524573/araya-salas_smith-vidaurre_et_al_2019.pdf). So the post reproduces the code I used for the acoustic analysis in that paper.
 
