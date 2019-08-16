@@ -41,7 +41,7 @@ knitr::include_graphics("./img/map.lbh.song.types.png")
 ```
 <font size="2">Location of three study sites in northeastern Costa Rica. Spectrograms of the 10 observed song types grouped by lek are also shown. Maps of leks at La Selva Biological Station are shown in greater detail in the lower left map. The two song neighbourhoods at lek SUR are shown in lower right map (similar song neighbourhoods were found at the other leks with 2 song types—SJA, TR2, and HC1—but are not shown); polygons represent lekking male territories and the coloured borders delineate the song neighbourhoods corresponding to the coloured borders of the spectrograms at the far right.</font>
 
-All annotations and acoustic data were made [available on Dryad](https://datadryad.org/resource/doi:10.5061/dryad.gn8qf6q). We just need to download the extended selection table ([R object including acoustic data + annotations](https://marce10.github.io/2018/05/15/Extended_selection_tables.html)) from Dryad and unzip the file as follows (it could take a while): 
+All annotations and acoustic data used on that paper were made [available on Dryad](https://datadryad.org/resource/doi:10.5061/dryad.gn8qf6q). We just need to download the extended selection table ([R object including acoustic data + annotations](https://marce10.github.io/2018/05/15/Extended_selection_tables.html)) from Dryad and unzip the file as follows (it could take a while): 
 ```{r, eval = FALSE, echo = TRUE}
 
 # set temporary working directory
@@ -95,7 +95,9 @@ warbleR_options(wl = 200)
 lbh_est <- sig2noise(lbh_est, mar = 0.1)
 
 # subset ext. sel. tab.
-sub_lbh_est <- lbh_est[ave(x = lbh_est$SNR, paste0(lbh_est$Lek, lbh_est$Bird.ID), FUN = function(x) rank(x, ties.method = "first")) == 1, ]
+sub_lbh_est <- lbh_est[ave(x = lbh_est$SNR, 
+    paste0(lbh_est$Lek, lbh_est$Bird.ID), 
+    FUN = function(x) rank(x, ties.method = "first")) == 1, ]
 
 ```
 

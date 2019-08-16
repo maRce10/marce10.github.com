@@ -16,7 +16,7 @@ Male long-billed hermits have a vocal repertoire consisting of a single song typ
 <img src="/./img/map.lbh.song.types.png" title="plot of chunk song 1" alt="plot of chunk song 1" width="600px" style="display: block; margin: auto;" />
 <font size="2">Location of three study sites in northeastern Costa Rica. Spectrograms of the 10 observed song types grouped by lek are also shown. Maps of leks at La Selva Biological Station are shown in greater detail in the lower left map. The two song neighbourhoods at lek SUR are shown in lower right map (similar song neighbourhoods were found at the other leks with 2 song types—SJA, TR2, and HC1—but are not shown); polygons represent lekking male territories and the coloured borders delineate the song neighbourhoods corresponding to the coloured borders of the spectrograms at the far right.</font>
 
-All annotations and acoustic data were made [available on Dryad](https://datadryad.org/resource/doi:10.5061/dryad.gn8qf6q). We just need to download the extended selection table ([R object including acoustic data + annotations](https://marce10.github.io/2018/05/15/Extended_selection_tables.html)) from Dryad and unzip the file as follows (it could take a while): 
+All annotations and acoustic data used on that paper were made [available on Dryad](https://datadryad.org/resource/doi:10.5061/dryad.gn8qf6q). We just need to download the extended selection table ([R object including acoustic data + annotations](https://marce10.github.io/2018/05/15/Extended_selection_tables.html)) from Dryad and unzip the file as follows (it could take a while): 
 
 {% highlight r %}
 # set temporary working directory
@@ -54,7 +54,9 @@ warbleR_options(wl = 200)
 lbh_est <- sig2noise(lbh_est, mar = 0.1)
 
 # subset ext. sel. tab.
-sub_lbh_est <- lbh_est[ave(x = lbh_est$SNR, paste0(lbh_est$Lek, lbh_est$Bird.ID), FUN = function(x) rank(x, ties.method = "first")) == 1, ]
+sub_lbh_est <- lbh_est[ave(x = lbh_est$SNR, 
+    paste0(lbh_est$Lek, lbh_est$Bird.ID), 
+    FUN = function(x) rank(x, ties.method = "first")) == 1, ]
 {% endhighlight %}
 
 
@@ -644,7 +646,7 @@ mantel(xc_dist, lek_bi_mat, permutations = 10000)
 ## 
 ## Upper quantiles of permutations (null model):
 ##    90%    95%  97.5%    99% 
-## 0.0313 0.0418 0.0517 0.0632 
+## 0.0303 0.0408 0.0504 0.0626 
 ## Permutation: free
 ## Number of permutations: 10000
 {% endhighlight %}
@@ -678,7 +680,7 @@ mantel(as.dist(dtw_dist), lek_bi_mat, permutations = 10000)
 ## 
 ## Upper quantiles of permutations (null model):
 ##    90%    95%  97.5%    99% 
-## 0.0310 0.0412 0.0495 0.0598 
+## 0.0302 0.0400 0.0484 0.0599 
 ## Permutation: free
 ## Number of permutations: 10000
 {% endhighlight %}
@@ -707,11 +709,11 @@ mantel(dist_sp, lek_bi_mat, permutations = 10000)
 ## mantel(xdis = dist_sp, ydis = lek_bi_mat, permutations = 10000) 
 ## 
 ## Mantel statistic r: 0.0482 
-##       Significance: 0.032 
+##       Significance: 0.0339 
 ## 
 ## Upper quantiles of permutations (null model):
 ##    90%    95%  97.5%    99% 
-## 0.0309 0.0417 0.0518 0.0646 
+## 0.0307 0.0419 0.0521 0.0644 
 ## Permutation: free
 ## Number of permutations: 10000
 {% endhighlight %}
@@ -739,11 +741,11 @@ mantel(dist_cc, lek_bi_mat, permutations = 10000)
 ## mantel(xdis = dist_cc, ydis = lek_bi_mat, permutations = 10000) 
 ## 
 ## Mantel statistic r: -0.0297 
-##       Significance: 0.913 
+##       Significance: 0.91 
 ## 
 ## Upper quantiles of permutations (null model):
 ##    90%    95%  97.5%    99% 
-## 0.0307 0.0411 0.0511 0.0633 
+## 0.0307 0.0410 0.0508 0.0625 
 ## Permutation: free
 ## Number of permutations: 10000
 {% endhighlight %}
