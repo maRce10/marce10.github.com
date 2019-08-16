@@ -72,8 +72,6 @@ lbh_est <- readRDS("/home/m/Dropbox/Websites/Blog/extended selection table LBH s
 
 library(warbleR)
 
-lbh_est
-
 ```
 
 
@@ -115,7 +113,7 @@ xc_mat <- x_corr(sub_lbh_est)
 
 ```
 
-The output is a similarity matrix with dimensions *60 x 60* (for simplicity only the 20 first columns/rows are shown):
+The output is a similarity matrix with dimensions *60 x 60* (for simplicity only the first 20 columns/rows are shown):
 ```{r, eval = TRUE, echo = FALSE}
 
 kbl <- kable(xc_mat[1:20, 1:20], align = "c", row.names = T,  format = "html")
@@ -128,7 +126,7 @@ kbl
 
 ```
 
-Now we can input the cross-correlation (di)similarities in a mantel to directly test our hypothesis. But first, we need an second matrix representing lek membership. It must be a pairwise matrix in which 0 will denote pairs of individuals that belong to the same lek and 1 pairs that belong to different leks. The following function creates the binary matrix:
+We will need a second matrix representing lek membership. It has to be a pairwise matrix in which 0 denotes pairs of individuals that belong to the same lek and 1 pairs that belong to different leks. The following function creates this type of matrix:
 ```{r, eval = TRUE, echo = TRUE}
 
 #function to create group membership binary matrix
@@ -184,74 +182,45 @@ mantel(xc_dist, lek_bi_mat, permutations = 10000)
 
 That's a pretty solid association between lek membership and acoustic similarity, r = 0.37. So there is a lek level acoustic signature.
 
-## Individual signature
+## Using other metrics
 
-We can use the same approach to test for signatures at other levels, for instance, at the individual level. Let's first pick up the lek with the highest number of individuals:
+The same test can be done using other acoustic structure metrics. For instance dynamic time warping returns a distance matrix which can be directly input into the mantel test: 
+
 ```{r}
 
-colSums(table(lbh_est$Bird.ID, lbh_est$Lek))
-
-```
-
-Lek "SUR" is the one with more birds (n = 14). So we will keep only the recordings from that lek. We will also keep the 5 highest signal-to-noise ratio songs for each individual to shrink the data set a bit and speed up the analysis:
-```{r}
-
-# keep only SUR swongs
-sur_est <- lbh_est[lbh_est$Lek == "SUR", ]
-
-# check count
-table(sur_est$lek.song.type)
-
-# subset ext. sel. tab.
-sub_sur_est <- sur_est[ave(x = sur_est$SNR, sur_est$Bird.ID, FUN = function(x) rank(x, ties.method = "first")) <= 5, ]
-
-# check count
-table(sub_sur_est$Bird.ID)
-
-```
-
-Cross-correlation can now be run:
-```{r, eval = FALSE, echo = TRUE}
-
-xc_ind_mat <- x_corr(sub_sur_est)
-
-```
-
-```{r, eval = TRUE, echo = FALSE}
-
-xc_ind_mat <- readRDS("/home/m/Dropbox/Websites/Blog/indiv_signature_xcorr_mat.RDS")
-
-```
-
-Again, we need a pairwise binary matrix indicating if songs belong to the same or to different individuals:
-```{r, eval = TRUE, echo = TRUE}
-
-# create binary matrix
-ind_bi_mat <- bi_mats(xc_ind_mat, sub_sur_est$Bird.ID)
-
-```
-
-These songs also belong to different song types within lek "SUR". So we must take this other level of variation into account. This can be done by using an additional song-type membership binary matrix as a third variable in a partial mantel test:
-```{r, eval = TRUE, echo = TRUE}
-
-# create binary matrix
-st_bi_mat <- bi_mats(xc_ind_mat, sub_sur_est$lek.song.type)
-
-```
-
-And then just run the cross-correlation as we did above:
-```{r, eval = TRUE, echo = TRUE}
-
-# convert xcorr mat to distance
-xc_ind_dist <- as.dist(1 - xc_ind_mat)
+# measure DTW distances
+dtw_dist <- df_DTW(sub_lbh_est, img = FALSE)
 
 # run mantel test
-mantel.partial(xc_ind_dist, ind_bi_mat, st_bi_mat, 
-               permutations = 10000)
+mantel(as.dist(dtw_dist), lek_bi_mat, permutations = 10000)
 
 ```
 
-There is a pretty high correlation, which suggests strong individual signatures. 
+We can also use non-pairwise metrics of acoustic structure like spectrographic parameters or descriptors of cepstral coefficients. However, this would need an extra step for converting those metrics into a distance matrix. We can do that with the base R function `dist()`:
+
+```{r}
+
+# measure spectrographic parameters
+sp <- specan(sub_lbh_est)
+
+# create distance matrix
+dist_sp <- dist(sp[, -4:-1])
+
+# run mantel test
+mantel(dist_sp, lek_bi_mat, permutations = 10000)
+
+# measure descriptors of mel cepstral coefficients
+mfcc <- mfcc_stats(sub_lbh_est, bp = c(1, 11), nbands = 20)
+
+# create distance matrix
+dist_cc <- dist(mfcc[, -2:-1])
+
+# run mantel test
+mantel(dist_cc, lek_bi_mat, permutations = 10000)
+
+```
+
+Mantel tests using dynamic time warping and spectrographic parameters were also able to detect lek level signatures. That was not the case for cepstral coefficients. 
 
 That's it!
 
