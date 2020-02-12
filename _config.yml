@@ -26,13 +26,11 @@ navbar-links:
   Search: "search"
   Resources:
     - warbleR: "https://marce10.github.io/warbleR"
-    - warbleR paper: "http://onlinelibrary.wiley.com/doi/10.1111/2041-210X.12624/full"
     - Rraven: "https://marce10.github.io/Rraven"
+    - baRulho: "https://marce10.github.io/baRulho"
     - NatureSounds: "https://marce10.github.io/NatureSounds"
-    - soundecology intro: "https://cran.r-project.org/web/packages/soundecology/vignettes/intro.html"
     - seewave website: "http://rug.mnhn.fr/seewave/"
-    - monitoR quick start: "https://cran.r-project.org/web/packages/monitoR/vignettes/monitoR_QuickStart.pdf"
-    - R bloggers: "https://www.r-bloggers.com/"
+
   Marcelo Araya-Salas: "aboutme"
   Author's home: "http://marceloarayasalas.weebly.com"
 
