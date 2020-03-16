@@ -12,7 +12,6 @@ editor_options:
 ```{r eval = TRUE, echo = FALSE}
 
 knitr::opts_knit$set(root.dir = normalizePath(".."))  
-
 ```
 
 The [baRulho](https://marce10.github.io/baRulho/) package is intended to facilitate acoustic analysis of (animal) sound transmission experiments. Such studies typically aim to quantify changes in signal structure when transmitted in a given habitat by broadcasting and re-recording animal sounds at increasing distances. We will refer to these changes in signal structure 'degradation' for the sake of simplicity. The package offers a workflow with functions to prepare the data set for analysis as well as to calculate and visualize several degradation metrics. [baRulho](https://marce10.github.io/baRulho/) builds upon functions and data formats from the [warbleR](https://cran.r-project.org/package=warbleR) and [seewave](https://cran.r-project.org/package=seewave) packages, so some experience with these packages is advised.
