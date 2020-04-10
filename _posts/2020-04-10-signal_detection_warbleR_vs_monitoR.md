@@ -70,7 +70,7 @@ This graph shows the detections:
 plot(cdetectsPhae1, hit.marker="points")
 {% endhighlight %}
 
-<img src="/./img/phae1-1_monitor_detection.png" title="plot of chunk wblrVSmntr4.5" alt="plot of chunk wblrVSmntr4.5" width="600px" style="display: block; margin: auto;" />
+<img src="/./img/phae1-1_monitor_detection.png" title="plot of chunk wblrVSmntr4.5" alt="plot of chunk wblrVSmntr4.5" width="900px" style="display: block; margin: auto;" />
 
 Below is the exact same process using [warbleR](https://cran.r-project.org/package=warbleR). Note that the template(s) and sound files to be used in the detections are indicated in the "compare.matrix" input. This is simply a matrix
 with the templates in the first column ("Phae.long1.wav-1" means selection "1" from sound file "Phae.long1.wav") and the sound files in which to look for in the second column. The object 'lbh_selec_table' is a selection table with all the annotation data needed to find templates:
@@ -92,7 +92,7 @@ pks$bottom.freq <- lbh_selec_table$bottom.freq[1]
 pks$top.freq <- lbh_selec_table$top.freq[1]
 {% endhighlight %}
 
-And plot the detections like this
+And plot the detections:
 
 
 {% highlight r %}
@@ -100,7 +100,7 @@ spectrograms(X = pks, wl = 200, by.song = "sound.files",
              collevels = seq(-80, 0, 5), xl = 3, pb = FALSE)
 {% endhighlight %}
 
-<img src="/./img/Phae.long1.wav.jpeg" title="plot of chunk wblrVSmntr6" alt="plot of chunk wblrVSmntr6" width="600px" style="display: block; margin: auto;" />
+<img src="/./img/Phae.long1.wav.jpeg" title="plot of chunk wblrVSmntr6" alt="plot of chunk wblrVSmntr6" width="900px" style="display: block; margin: auto;" />
 
 
 # Compare warbleR and monitoR
@@ -158,7 +158,7 @@ autoplot(mb)
 
 
 
-<img src="/./img/mb_plot.jpeg" title="plot of chunk wblrVSmntr7.2" alt="plot of chunk wblrVSmntr7.2" width="600px" style="display: block; margin: auto;" />
+<img src="/./img/mb_plot.jpeg" title="plot of chunk wblrVSmntr7.2" alt="plot of chunk wblrVSmntr7.2" width="900px" style="display: block; margin: auto;" />
 
 
 {% highlight r %}
@@ -236,29 +236,38 @@ Detection with [monitoR](https://cran.r-project.org/package=monitoR) takes ~7 ti
 ## [7] seewave_2.1.5        tuneR_1.3.3         
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] Rcpp_1.0.3       highr_0.8       
-##  [3] compiler_3.6.1   pillar_1.4.2    
-##  [5] bitops_1.0-6     tools_3.6.1     
-##  [7] digest_0.6.22    evaluate_0.14   
-##  [9] lattice_0.20-40  tibble_2.1.3    
-## [11] gtable_0.3.0     fftw_1.0-6      
-## [13] pkgconfig_2.0.3  rlang_0.4.1     
-## [15] Matrix_1.2-18    rstudioapi_0.10 
-## [17] yaml_2.2.1       parallel_3.6.1  
-## [19] mvtnorm_1.0-11   xfun_0.12       
-## [21] stringr_1.4.0    withr_2.1.2     
-## [23] dplyr_0.8.3      grid_3.6.1      
-## [25] tidyselect_0.2.5 glue_1.3.1      
-## [27] R6_2.4.1         dtw_1.21-3      
-## [29] pbapply_1.4-2    survival_3.1-11 
-## [31] multcomp_1.4-12  TH.data_1.0-10  
-## [33] purrr_0.3.3      magrittr_1.5    
-## [35] codetools_0.2-16 splines_3.6.1   
-## [37] scales_1.0.0     MASS_7.3-51.4   
-## [39] assertthat_0.2.1 colorspace_1.4-1
-## [41] sandwich_2.5-1   stringi_1.4.6   
-## [43] proxy_0.4-23     signal_0.7-6    
-## [45] RCurl_1.98-1.1   munsell_0.5.0   
-## [47] crayon_1.3.4     rjson_0.2.20    
-## [49] zoo_1.8-6
+##  [1] Rcpp_1.0.3        mvtnorm_1.0-11   
+##  [3] lattice_0.20-40   prettyunits_1.0.2
+##  [5] ps_1.3.0          fftw_1.0-6       
+##  [7] zoo_1.8-6         assertthat_0.2.1 
+##  [9] rprojroot_1.3-2   digest_0.6.22    
+## [11] R6_2.4.1          backports_1.1.5  
+## [13] signal_0.7-6      evaluate_0.14    
+## [15] highr_0.8         pillar_1.4.2     
+## [17] rlang_0.4.1       curl_4.2         
+## [19] multcomp_1.4-12   rstudioapi_0.10  
+## [21] callr_3.3.2       Matrix_1.2-18    
+## [23] desc_1.2.0        devtools_2.2.1   
+## [25] splines_3.6.1     stringr_1.4.0    
+## [27] RCurl_1.98-1.1    munsell_0.5.0    
+## [29] proxy_0.4-23      compiler_3.6.1   
+## [31] xfun_0.12         pkgconfig_2.0.3  
+## [33] pkgbuild_1.0.6    tidyselect_0.2.5 
+## [35] tibble_2.1.3      dtw_1.21-3       
+## [37] codetools_0.2-16  crayon_1.3.4     
+## [39] dplyr_0.8.3       withr_2.1.2      
+## [41] MASS_7.3-51.4     bitops_1.0-6     
+## [43] grid_3.6.1        gtable_0.3.0     
+## [45] magrittr_1.5      scales_1.0.0     
+## [47] cli_1.1.0         stringi_1.4.6    
+## [49] pbapply_1.4-2     fs_1.3.1         
+## [51] remotes_2.1.0     testthat_2.3.0   
+## [53] ellipsis_0.3.0    sandwich_2.5-1   
+## [55] TH.data_1.0-10    rjson_0.2.20     
+## [57] tools_3.6.1       glue_1.3.1       
+## [59] purrr_0.3.3       processx_3.4.1   
+## [61] pkgload_1.0.2     parallel_3.6.1   
+## [63] survival_3.1-11   yaml_2.2.1       
+## [65] colorspace_1.4-1  sessioninfo_1.1.1
+## [67] memoise_1.1.0     usethis_1.5.1
 {% endhighlight %}

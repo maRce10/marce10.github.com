@@ -11,7 +11,11 @@ editor_options:
 
 ```{r eval = TRUE, echo = FALSE}
 
-knitr::opts_knit$set(root.dir = normalizePath(".."))  
+knitr::opts_knit$set(root.dir = normalizePath("..")) 
+
+knitr::opts_chunk$set(out.width = "900px")
+
+library(microbenchmark)
 ```
 
 [warbleR](https://cran.r-project.org/package=warbleR) (v1.1.24) now includes functions to detect signals using cross-correlation similar to those in the package [monitoR](https://cran.r-project.org/package=monitoR). There is already a [blog post on cross-correlation detection using monitoR](https://marce10.github.io/2016/12/15/Detecting_signals_with_monitoR.html). In this post I show how to do that with [warbleR](https://cran.r-project.org/package=warbleR) and compare its performance against that from  [monitoR](https://cran.r-project.org/package=monitoR).
@@ -79,7 +83,7 @@ plot(cdetectsPhae1, hit.marker="points")
 
 ```
 
-```{r wblrVSmntr4.5, out.width = "600px", echo = FALSE, fig.align= "center"}
+```{r wblrVSmntr4.5,  echo = FALSE, fig.align= "center"}
 
 knitr::include_graphics("./img/phae1-1_monitor_detection.png")
 
@@ -106,7 +110,7 @@ pks$top.freq <- lbh_selec_table$top.freq[1]
 
 ```
 
-And plot the detections like this
+And plot the detections:
 
 ```{r wblrVSmntr5.5, eval = FALSE}
 
@@ -116,7 +120,7 @@ spectrograms(X = pks, wl = 200, by.song = "sound.files",
 
 ```
 
-```{r wblrVSmntr6, out.width = "600px", echo = FALSE, fig.align= "center"}
+```{r wblrVSmntr6,  echo = FALSE, fig.align= "center"}
 
 knitr::include_graphics("./img/Phae.long1.wav.jpeg")
 
@@ -188,7 +192,7 @@ mb <- readRDS("./img/microbenchmark_results.RDS")
 ```
 
 
-```{r wblrVSmntr7.2, out.width = "600px", echo = FALSE, fig.align= "center"}
+```{r wblrVSmntr7.2,  echo = FALSE, fig.align= "center"}
 
 knitr::include_graphics("./img/mb_plot.jpeg")
 
