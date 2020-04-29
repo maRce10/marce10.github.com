@@ -38,7 +38,7 @@ marg <- tlimsize / 2
 
 #add silence
 wav <-pastew(wave2 = silence(duration = marg, samp.rate = wav1@samp.rate, 
-            xunit = "time"), wave1 = wav1, f = wav@samp.rate, 
+            xunit = "time"), wave1 = wav1, f = wav1@samp.rate, 
             output = "Wave")
 
 wav <-pastew(wave1 = silence(duration = marg, samp.rate = wav@samp.rate, 
