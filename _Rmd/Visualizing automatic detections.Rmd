@@ -1,0 +1,224 @@
+---
+title: "Visualizing automatic detections"
+author: "Marcelo Araya-Salas"
+date: "2020-05-05"
+output: 
+  md_document:
+    variant: markdown_github
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r eval = TRUE, echo = FALSE}
+
+knitr::opts_knit$set(root.dir = normalizePath("..")) 
+
+knitr::opts_chunk$set(out.width = "900px")
+
+library(microbenchmark)
+```
+
+[warbleR](https://cran.r-project.org/package=warbleR) (v1.1.24) now includes functions to detect signals using cross-correlation similar to those in the package [monitoR](https://cran.r-project.org/package=monitoR). There is already a [blog post on cross-correlation detection using monitoR](https://marce10.github.io/2016/12/15/Detecting_signals_with_monitoR.html). In this post I show how to do that with [warbleR](https://cran.r-project.org/package=warbleR) and compare its performance against that from  [monitoR](https://cran.r-project.org/package=monitoR).
+
+First install the latest developmental version of [warbleR](https://cran.r-project.org/package=warbleR) and load other packages (the code will install the packages if missing):
+
+```{r wblrVSmntr1, message = FALSE, eval = FALSE}
+
+devtools::install_github("maRce10/warbleR")
+
+x <- c("warbleR", "monitoR", "microbenchmark", "ggplot2")
+
+out <- lapply(x, function(y) {
+  if(!y %in% installed.packages()[,"Package"])  install.packages(y)
+require(y, character.only = T)
+  })
+```
+
+and  load the long-billed hermit sound that comes with [warbleR](https://cran.r-project.org/package=warbleR):
+
+```{r wblrVSmntr2, message = FALSE, eval = FALSE}
+
+#write files in temporal directory
+setwd(tempdir()))
+
+# load sound files and data
+data(list = c("Phae.long1", "Phae.long2", 
+              "Phae.long3", "Phae.long4", "selec.table"))
+
+#write files to disk
+writeWave(Phae.long1,"Phae.long1.wav")
+
+```
+
+Before getting into the functions let's recall how detection works with [monitoR](https://cran.r-project.org/package=monitoR):
+
+1. Create template
+1. Run cross-correlation
+1. Find peaks (detections above a trheshold)
+
+```{r wblrVSmntr3, message = FALSE, eval = FALSE}
+
+# Create template
+phae1T1 <- makeCorTemplate("Phae.long1.wav", 
+      t.lim = c(lbh_selec_table$start[2], lbh_selec_table$end[2]), 
+      wl = 300, ovlp = 90, frq.lim = c(1, 11), dens = 1, 
+      name = "phae1T1", score.cutoff = 0.4, write.wav = FALSE)
+
+#  Run cross-correlation
+cscoresPhae1 <- corMatch(survey = "Phae.long1.wav",
+                 templates = phae1T1, parallel = TRUE, 
+                 show.prog = FALSE, time.source = "fileinfo")
+
+# Find peaks
+cdetectsPhae1 <- findPeaks(cscoresPhae1, parallel = TRUE)
+
+```
+
+This graph shows the detections:
+
+```{r wblrVSmntr4, eval = FALSE}
+
+# View results
+plot(cdetectsPhae1, hit.marker="points")
+
+```
+
+```{r wblrVSmntr4.5,  echo = FALSE, fig.align= "center"}
+
+knitr::include_graphics("./img/phae1-1_monitor_detection.png")
+
+```
+
+Below is the exact same process using [warbleR](https://cran.r-project.org/package=warbleR). Note that the template(s) and sound files to be used in the detections are indicated in the "compare.matrix" input. This is simply a matrix
+with the templates in the first column ("Phae.long1.wav-1" means selection "1" from sound file "Phae.long1.wav") and the sound files in which to look for in the second column. The object 'lbh_selec_table' is a selection table with all the annotation data needed to find templates:
+
+```{r wblrVSmntr5, eval = FALSE}
+
+# make matrix with templates and sound files
+cm <- matrix(c("Phae.long1.wav-1", "Phae.long1.wav"), ncol = 2)
+
+# Run cross correlation
+xc.output <- xcorr(X = lbh_selec_table[1, ], output = "list", 
+compare.matrix = cm, path = tempdir())
+
+# find peaks
+pks <- find_peaks(xc.output = xc.output, path = tempdir())
+
+# add frequency range (not required but used for plot)
+pks$bottom.freq <- lbh_selec_table$bottom.freq[1]
+pks$top.freq <- lbh_selec_table$top.freq[1]
+
+```
+
+And plot the detections:
+
+```{r wblrVSmntr5.5, eval = FALSE}
+
+spectrograms(X = pks, wl = 200, by.song = "sound.files",
+             collevels = seq(-80, 0, 5), xl = 3, pb = FALSE)
+
+
+```
+
+```{r wblrVSmntr6,  echo = FALSE, fig.align= "center"}
+
+knitr::include_graphics("./img/Phae.long1.wav.jpeg")
+
+```
+
+
+# Compare warbleR and monitoR
+
+We will use the function `microbenchmark()` from the package of the same name to test performance (i.e. how long it takes to run). To do this we first need to save both processes as individual functions:
+
+```{r wblrVSmntr6.5, message=F, eval = FALSE}
+
+# monitoR detection
+detec_monitor <- function(x){
+ 
+  # Create template
+phae1T1 <- makeCorTemplate("Phae.long1.wav", 
+      t.lim = c(lbh_selec_table$start[2], lbh_selec_table$end[2]), 
+      wl = 300, ovlp = 90, frq.lim = c(1, 11), dens = 1, 
+      name = "phae1T1", score.cutoff = 0.4, write.wav = FALSE)
+
+#  Run cross-correlation
+cscoresPhae1 <- corMatch(survey = "Phae.long1.wav",
+                 templates = phae1T1, parallel = TRUE, 
+                 show.prog = FALSE, time.source = "fileinfo")
+
+  
+  # find peaks
+  cdetectsPhae1 <- findPeaks(cscoresPhae1)
+}
+
+# warbleR detection
+detec_warbleR <- function(x){
+ 
+  xc.output <- x_corr(X = lbh_selec_table[1, ], output = "list",
+    compare.matrix = matrix(c("Phae.long1.wav-1", "Phae.long1.wav"), ncol = 2), 
+    path = tempdir(), pb = FALSE)
+
+# find peaks
+pks <- find_peaks(xc.output = xc.output, path = tempdir(), 
+                  pb = FALSE)
+
+pks$bottom.freq <- lbh_selec_table$bottom.freq[1]
+pks$top.freq <- lbh_selec_table$top.freq[1]
+  
+}
+
+```
+
+
+And now test performance (this can take a few minutes):
+
+```{r wblrVSmntr7.5, warning=FALSE, message=FALSE, eval = FALSE}
+
+mb <- microbenchmark(detec_warbleR(), detec_monitor(), times = 10)
+
+autoplot(mb)
+
+```
+
+```{r wblrVSmntr7, warning=FALSE, message=FALSE, echo=FALSE}
+
+# mb <- microbenchmark(detec_warbleR(), detec_monitor(), times = 100)
+# 
+# saveRDS(mb, "microbenchmark_results.RDS")
+
+mb <- readRDS("./img/microbenchmark_results.RDS")
+
+```
+
+
+```{r wblrVSmntr7.2,  echo = FALSE, fig.align= "center"}
+
+knitr::include_graphics("./img/mb_plot.jpeg")
+
+```
+
+```{r wblrVSmntr8, eval = TRUE}
+
+# print results
+mb
+
+# mean time per function
+mean_times <- tapply(mb$time, mb$expr, mean)
+
+# how monitoR compares to warbleR
+round(mean_times[2] / mean_times[1], 2)
+
+```
+
+Detection with [monitoR](https://cran.r-project.org/package=monitoR) takes ~7 times longer. So a long process that may take a week in monitoR would take about a day using [warbleR](https://cran.r-project.org/package=warbleR). Note that parallelization could further improve performance. This can be set with the argument 'parallel' in both `x_corr()` and `find_peaks()`.
+
+---
+
+<font size="4">Session information</font>
+
+```{r session info, echo=F}
+
+sessionInfo()
+
+```
