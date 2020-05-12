@@ -52,7 +52,7 @@ author:
   email: "marceloa27@gmail.com"
   facebook: yourname  # eg. daattali
   github: maRce10    # eg. daattali
-  twitter: yourname   # eg. daattali
+  twitter: M_Araya_Salas   # eg. daattali
   reddit: yourname    # eg. daattali
   google-plus: +yourname   # eg. +DeanAttali or 109424658772469020925
   linkedin: marcelo-araya-salas-71230938  # eg. daattali
@@ -69,7 +69,7 @@ footer-links-active:
   rss: true
   facebook: false
   email: false
-  twitter: false
+  twitter: true
   google-plus: false
   github: true
   reddit: false
