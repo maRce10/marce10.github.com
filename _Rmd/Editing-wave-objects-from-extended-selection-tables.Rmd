@@ -1,0 +1,126 @@
+---
+title: "Editing wave objects from extended selection tables.Rmd"
+author: "Marcelo Araya-Salas"
+date: "2020-05-26"
+output: 
+  md_document:
+    variant: markdown_github
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r eval = TRUE, echo = FALSE}
+
+knitr::opts_knit$set(root.dir = normalizePath("..")) 
+
+knitr::opts_chunk$set(out.width = "900px")
+
+```
+
+
+>> "Is there a simple way to remove noise from the clips in an extended table -- I can do this by directly manipulating the attributes of the table but it seems a bit kludgy ... so again, am I missing something simple?"
+
+Manipulating clips from *extended selection tables* is pretty straightforward. This can be done using `lapply()` to go over each clip. Things should be fine as long as you don't modify any time related feature. For example filtering out low frequencies on the clips from the example *extended selection table* 'lbh.est' from the package [NatureSounds](https://marce10.github.io/NatureSounds). This is how the original clips look like:
+
+```{r, message = FALSE, eval = TRUE}
+
+# load packages
+library(NatureSounds)
+library(warbleR)
+library(seewave)
+
+# load data
+data("lbh.est")
+
+# extract 2 clips
+w1 <- read_wave(lbh.est, 12, from = 0, to = Inf)
+w2 <- read_wave(lbh.est, 20, from = 0, to = Inf)
+
+# split graphic device
+par(mfrow = c(1, 2))
+
+# plot spectros
+spectro(w1, wl = 300, ovlp = 95, flim = c(1, 10), scale = FALSE, 
+        grid = FALSE, palette = reverse.gray.colors.1, 
+        collevels = seq(-70, 0, 5))
+
+spectro(w2, wl = 300, ovlp = 95, flim = c(1, 10), scale = FALSE, 
+        grid = FALSE, palette = reverse.gray.colors.1, 
+        collevels = seq(-70, 0, 5))
+```
+
+Clips are stored in an attribute call 'wave.objects'. In this particular example the list of clips can be called like this: `attributes(lbh.est)$wave.objects`
+
+We can apply a bandpass filter from 4 to 10 kHz over each element of this list using `lapply()` and `ffilter()` (from [seewave](http://rug.mnhn.fr/seewave)):
+```{r}
+
+# filter out freqs below 4 kHz
+attributes(lbh.est)$wave.objects <- lapply(attributes(lbh.est)$wave.objects, 
+    FUN = ffilter, from = 4000, to = 10000, output = "Wave")
+
+```
+
+We can double-check that the bandpass has been succesfully applied look again at the spectrograms: 
+
+```{r}
+# extract the same 2 clips again
+w1 <- read_wave(lbh.est, 12, from = 0, to = Inf)
+w2 <- read_wave(lbh.est, 20, from = 0, to = Inf)
+
+# split graphic device
+par(mfrow = c(1, 2))
+
+# plot spectros
+spectro(w1, wl = 300, ovlp = 95, flim = c(1, 10), scale = FALSE, 
+        grid = FALSE, palette = reverse.gray.colors.1, 
+        collevels = seq(-70, 0, 5))
+
+spectro(w2, wl = 300, ovlp = 95, flim = c(1, 10), scale = FALSE, 
+        grid = FALSE, palette = reverse.gray.colors.1, 
+        collevels = seq(-70, 0, 5))
+```
+
+So any [seewave](http://rug.mnhn.fr/seewave) function that works on 'wave' objects and returns 'wave' objects as well, can be used. For instance, applying a linear frequency shift to increase pitch in 2 kHz followed by the bandpass filter used aboved: 
+
+```{r}
+
+# load data
+data("lbh.est")
+
+# filter out freqs below 4 kHz
+attributes(lbh.est)$wave.objects <- lapply(attributes(lbh.est)$wave.objects, 
+    FUN = lfs, shift = 2000, output = "Wave")
+
+# filter out freqs below 4 kHz
+attributes(lbh.est)$wave.objects <- lapply(attributes(lbh.est)$wave.objects, 
+    FUN = ffilter, from = 4000, to = 10000, output = "Wave")
+
+
+# extract the same 2 clips again
+w1 <- read_wave(lbh.est, 12, from = 0, to = Inf)
+w2 <- read_wave(lbh.est, 20, from = 0, to = Inf)
+
+# split graphic device
+par(mfrow = c(1, 2))
+
+# plot spectros
+spectro(w1, wl = 300, ovlp = 95, flim = c(1, 10), scale = FALSE, 
+        grid = FALSE, palette = reverse.gray.colors.1, 
+        collevels = seq(-70, 0, 5))
+
+spectro(w2, wl = 300, ovlp = 95, flim = c(1, 10), scale = FALSE, 
+        grid = FALSE, palette = reverse.gray.colors.1, 
+        collevels = seq(-70, 0, 5))
+```
+
+Again, this should be OK as long as you don't modify any time related feature. If temporal features change then the time annotations are no longer useful.
+
+---
+
+<font size="4">Session information</font>
+
+```{r session info, echo=F}
+
+sessionInfo()
+
+```
