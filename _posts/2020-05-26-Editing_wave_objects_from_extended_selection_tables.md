@@ -11,7 +11,7 @@ editor_options:
 
 > "Is there a simple way to remove noise from the clips in an extended table -- I can do this by directly manipulating the attributes of the table but it seems a bit kludgy ... so again, am I missing something simple?"
 
-Manipulating clips from *extended selection tables* can be pretty straightforward. It can be done by using `lapply()` to go over each clip. Things should be fine as long as you don't mess with any time related feature (i.e. the time position of the signals in the clip remain unchanged). For example filtering out low frequencies on the clips from the example *extended selection table* 'lbh.est' from the package [NatureSounds](https://marce10.github.io/NatureSounds). This is how the original clips look like:
+Manipulating clips from *extended selection tables* can be pretty straightforward. It can be done by using `lapply()` to go over each clip. Things should be fine as long as you don't mess with any time related feature (i.e. the time position of the signals in the clip remains unchanged). For example filtering out low frequencies on the clips from the example *extended selection table* 'lbh.est' from the package [NatureSounds](https://marce10.github.io/NatureSounds). This is how the original clips look like:
 
 
 {% highlight r %}
