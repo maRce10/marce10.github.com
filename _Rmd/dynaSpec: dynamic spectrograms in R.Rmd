@@ -24,9 +24,9 @@ library(warbleR)
 ```
 
 
-The R package [dynaSpec](https://marce10.github.io/dynaSpec) can now be installed from github. This is a set of tools to generate dynamic spectrogram visualizations in video format. It is still on the making and new visualizations will be available soon. [FFMPEG](https://ffmpeg.org/download.html) must be installed in order for this package to work. 
+The R package [dynaSpec](https://marce10.github.io/dynaSpec) can now be installed from github. This is a set of tools to generate dynamic spectrogram visualizations in video format. It is still on the making and new visualizations will be available soon. [FFMPEG](https://ffmpeg.org/download.html) **must be installed** in order for this package to work. 
 
-To install from [github](http://github.com/) you will need the R package [devtools](https://cran.r-project.org/package=devtools):
+To install [dynaSpec](https://marce10.github.io/dynaSpec) from [github](http://github.com/) you will need the R package [devtools](https://cran.r-project.org/package=devtools):
 
 ```{r, eval = FALSE}
 
