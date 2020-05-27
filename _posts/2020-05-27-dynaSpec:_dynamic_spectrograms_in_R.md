@@ -42,7 +42,7 @@ library(tuneR)
 library(seewave)
 {% endhighlight %}
 
-The function `scrolling_spectro()` (the only function so far) create '.mp4' video files of the spectrogram of an input 'wave' object that moves from right to left. For instance, this is a dynamic spectrogram of a canyon wren song with a viridis color palette:
+The function `scrolling_spectro()` (the only function so far) creates '.mp4' video files of the spectrogram of an input 'wave' object that moves from right to left. For instance, this is a dynamic spectrogram of a canyon wren song with a viridis color palette:
 
 {% highlight r %}
 
