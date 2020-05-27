@@ -7,9 +7,17 @@ output:
     variant: markdown_github
 ---
 
+
+
+<div class="alert alert-info">
+
+<center>Note that the code below is now available in the new R package <a href="https://marce10.github.io/dynaSpec/">dynaSpec</a></center>
+
+</div>
+
 This code creates a video with a spectrogram scrolling from right to left. The spectrogram is synchronized with the audio. This is done by creating single image files for each of the movie frames and then putting them together in .mp4 video format. You will need  the ffmpeg UNIX application to be able to run the code (only works for OSX and Linux).  
 
-First load the [warbleR]((https://cran.r-project.org/package=warbleR) package 
+First load the [warbleR](https://cran.r-project.org/package=warbleR) package 
 
 ```{r , eval=F}
 
@@ -99,4 +107,9 @@ system("ffmpeg -i spectro_movie.mp4 -i audio1.wav -vcodec libx264 -acodec libmp3
 
 At the end you should get something like this:
 
-<iframe width="854/2" height="480/2" src="(https://www.youtube.com/embed/McAQaIXeuUQ" frameborder="0" allowfullscreen></iframe>
+<center><iframe allowtransparency="true" style="background: #FFFFFF;" style="border:0px solid lightgrey;"  width="854/2" height="480/2"
+src="https://www.youtube.com/embed/McAQaIXeuUQ" 
+frameborder="0" 
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+allowfullscreen></iframe></center>
+
