@@ -1,7 +1,7 @@
 ---
 title: "dynaSpec: dynamic spectrograms in R"
 author: "Marcelo Araya-Salas"
-date: "2020-05-26"
+date: "2020-05-27"
 output: 
   md_document:
     variant: markdown_github
