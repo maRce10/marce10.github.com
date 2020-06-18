@@ -10,7 +10,7 @@ editor_options:
 
 Some recent additions to [warbleR](https://cran.r-project.org/package=warbleR) aim to simplify the automatic detection of signals. The current post details these additions with a study case detecting inquiry calls of Spix's disc-winged bats (*Thyroptera tricolor*). 
 
-Inquiry calls were recorded while the bats were flying in a flight cage. Recordings were made on four channels, each one from using a different mic. Mics were about 1m apart from each other. So the four channels from a recording event represent slightly different registers of the same calls. This is an important characteristic of the data that will be taken into account in the analysis. Recordings were made as part of a ongoing study on indvidual variation in vocal activity at the [Chaverri Lab](https://www.batcr.com).      
+Inquiry calls were recorded while the bats were flying in a flight cage. Recordings were made on four channels, each one from using a different mic. Mics were about 1m apart from each other. So the four channels from a recording event represent slightly different registers of the same calls. This is an important characteristic of the data that will be taken into account in the analysis. Recordings were made as part of an ongoing study on indvidual variation in vocal activity at the [Chaverri Lab](https://www.batcr.com).      
 
 To run this post you will need  [warbleR](https://cran.r-project.org/package=warbleR) 1.1.24 (currently as the developmental version on github). It can be installed like this:
 
