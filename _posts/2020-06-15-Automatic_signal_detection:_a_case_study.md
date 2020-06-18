@@ -1091,7 +1091,7 @@ lspec(ad_detections, sxrow = 2, rows = 10, flim = c(10, 50),
 
 ![gif5](/img/autodetec2_lspec.gif)
 
-Most calls were detected but not all of them. This detection could improve by adjusting the detection parameters (i.e. 'threshold', 'ssmooth', etc). Nonetheless the example is good enough to show how to do these analyses in R. 
+Most calls were detected but not all of them. This detection could improve by adjusting the detection parameters (i.e. 'threshold', 'ssmooth', etc). Nonetheless, the example is good enough to show how to do these analyses in R. 
 
 ---
 
