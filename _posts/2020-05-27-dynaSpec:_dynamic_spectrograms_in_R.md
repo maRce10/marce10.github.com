@@ -89,7 +89,6 @@ allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
 allowfullscreen></iframe></center>
 
 &nbsp;
-
 A spectrogram with black background (colbg = "black"):
 
 {% highlight r %}
@@ -166,7 +165,7 @@ allowfullscreen></iframe></center>
 &nbsp;
 
 
- A northern nightingale wren recording from [xeno-canto](xeno-canto.org) using a custom color palette:
+Visualizing a northern nightingale wren recording from [xeno-canto](https://www.xeno-canto.org) using a custom color palette:
 
 
 {% highlight r %}
@@ -433,12 +432,82 @@ allowfullscreen></iframe></center>
 
 &nbsp;
 
+
+Finally, the argument 'annotation.call' can be used to add static labels (i.e. non-scrolling). It works similar to 'spectro.call', but requires a call from `text()`. This let users customize things as size, color, position, font, and additional arguments taken by `text()`. The call should also include the argmuents 'start' and 'end' to indicate the time at which the labels are displayed (in s). 'fading' is optional and allows fade-in and fade-out effects on labels (in s as well). The following code downloads a recording containing several frog species recorded in Costa Rica from figshare, cuts a clip including two species and labels it with a single label:
+
+
+{% highlight r %}
+
+# read data from figshare
+frogs <- read_wave("https://ndownloader.figshare.com/files/22829075")
+
+# cut a couple of species
+shrt_frgs <- cutw(frogs, from = 35.3, to = 50.5, output = "Wave")
+
+# make annotation call
+ann_cll <- call("text", x = 0.25, y = 0.87, 
+                labels = "Frog calls", cex = 1, start = 0.2, end = 14, 
+                col = "#FFEA46CC", font = 3, fading = 0.6)
+
+# create dynamic spectro
+scrolling_spectro(wave = shrt_frgs, wl = 512, ovlp = 95,  
+                  t.display = 1.1, pal = cividis,
+                  grid = FALSE, flim = c(0, 5.5), loop = 3,
+                  width = 1200, height = 550, res = 200,
+                  collevels = seq(-40, 0, 5), lcol =  "#FFFFFFCC", 
+                  colbg = "black", fps = 60, file.name = "../frogs.mp4",
+                  osc = TRUE, height.prop = c(3, 1), colwave = "#31688E", 
+                  lty = 3, annotation.call = ann_cll)
+
+
+{% endhighlight %}
+
+<center><iframe  allowtransparency="true" style="background: #FFFFFF;" style="border:0px solid lightgrey;"  width="763.63" height="350"
+src="https://www.youtube.com/embed/Ux71aMVa_oU" 
+frameborder="0" 
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+allowfullscreen></iframe></center>
+
+&nbsp;
+
+The argument accepts more than one labels as in a regular `text()` call. In that case 'start' and 'end' values should be supplied for each label:
+
+
+{% highlight r %}
+
+# make annotation call for 2 annotations
+ann_cll <- call("text", x = 0.25, y = 0.87, 
+                labels = c("Dendropsophus ebraccatus", "Eleutherodactylus coqui"), 
+                cex = 1, start = c(0.4, 7), 
+                end = c(5.5, 14.8), col = "#FFEA46CC", font = 3, fading = 0.6)
+
+# create dynamic spectro
+scrolling_spectro(wave = shrt_frgs, wl = 512, ovlp = 95,  
+                  t.display = 1.1, pal = cividis,
+                  grid = FALSE, flim = c(0, 5.5), loop = 3,
+                  width = 1200, height = 550, res = 200,
+                  collevels = seq(-40, 0, 5), lcol =  "#FFFFFFCC", colbg = "black", 
+                  fps = 60, file.name = "../frogs_sp_labels.mp4", osc = TRUE, 
+                  height.prop = c(3, 1),colwave = "#31688E", lty = 3, 
+                  annotation.call = ann_cll)
+
+{% endhighlight %}
+
+<center><iframe  allowtransparency="true" style="background: #FFFFFF;" style="border:0px solid lightgrey;"  width="763.63" height="350"
+src="https://www.youtube.com/embed/nFfYr8Tc53Q" 
+frameborder="0" 
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+allowfullscreen></iframe></center>
+
+&nbsp;
+ 
+
 ---
 
 
 Please cite [dynaSpec](https://marce10.github.io/dynaSpec) as follows:
 
-Araya-Salas M & M. Wilkins. (2020), *dynaSpec: dynamic spectrogram visualizations in R*. R package version 1.0.0.
+Araya-Salas M. (2020), *dynaSpec: dynamic spectrogram visualizations in R*. R package version 1.0.0.
 
 ---
 
@@ -455,39 +524,35 @@ Araya-Salas M & M. Wilkins. (2020), *dynaSpec: dynamic spectrogram visualization
 ## LAPACK: /usr/lib/x86_64-linux-gnu/atlas/liblapack.so.3.10.3
 ## 
 ## locale:
-##  [1] LC_CTYPE=es_ES.UTF-8      
-##  [2] LC_NUMERIC=C              
-##  [3] LC_TIME=es_CR.UTF-8       
-##  [4] LC_COLLATE=es_ES.UTF-8    
-##  [5] LC_MONETARY=es_CR.UTF-8   
-##  [6] LC_MESSAGES=es_ES.UTF-8   
-##  [7] LC_PAPER=es_CR.UTF-8      
-##  [8] LC_NAME=C                 
-##  [9] LC_ADDRESS=C              
-## [10] LC_TELEPHONE=C            
-## [11] LC_MEASUREMENT=es_CR.UTF-8
-## [12] LC_IDENTIFICATION=C       
+##  [1] LC_CTYPE=es_ES.UTF-8       LC_NUMERIC=C              
+##  [3] LC_TIME=es_CR.UTF-8        LC_COLLATE=es_ES.UTF-8    
+##  [5] LC_MONETARY=es_CR.UTF-8    LC_MESSAGES=es_ES.UTF-8   
+##  [7] LC_PAPER=es_CR.UTF-8       LC_NAME=C                 
+##  [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+## [11] LC_MEASUREMENT=es_CR.UTF-8 LC_IDENTIFICATION=C       
 ## 
 ## attached base packages:
-## [1] stats     graphics  grDevices utils    
-## [5] datasets  methods   base     
+## [1] stats     graphics  grDevices utils     datasets 
+## [6] methods   base     
 ## 
 ## other attached packages:
-## [1] warbleR_1.1.24     seewave_2.1.5     
-## [3] tuneR_1.3.3        NatureSounds_1.0.3
-## [5] knitr_1.28        
+## [1] kableExtra_1.1.0   warbleR_1.1.24     NatureSounds_1.0.3
+## [4] seewave_2.1.6      tuneR_1.3.3        knitr_1.28        
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] Rcpp_1.0.4.6    dtw_1.21-3     
-##  [3] fftw_1.0-6      digest_0.6.25  
-##  [5] bitops_1.0-6    MASS_7.3-51.4  
-##  [7] magrittr_1.5    signal_0.7-6   
-##  [9] evaluate_0.14   highr_0.8      
-## [11] rlang_0.4.6     stringi_1.4.6  
-## [13] pbapply_1.4-2   rmarkdown_1.17 
-## [15] rjson_0.2.20    tools_3.6.1    
-## [17] stringr_1.4.0   RCurl_1.98-1.2 
-## [19] proxy_0.4-24    xfun_0.13      
-## [21] yaml_2.2.1      parallel_3.6.1 
-## [23] compiler_3.6.1  htmltools_0.4.0
+##  [1] Rcpp_1.0.4.6      highr_0.8         compiler_3.6.1   
+##  [4] pillar_1.4.4      bitops_1.0-6      tools_3.6.1      
+##  [7] digest_0.6.25     viridisLite_0.3.0 evaluate_0.14    
+## [10] tibble_3.0.1      lifecycle_0.2.0   fftw_1.0-6       
+## [13] pkgconfig_2.0.3   rlang_0.4.6       rstudioapi_0.11  
+## [16] yaml_2.2.1        parallel_3.6.1    xfun_0.14        
+## [19] xml2_1.3.2        stringr_1.4.0     httr_1.4.1       
+## [22] vctrs_0.3.1       hms_0.5.3         webshot_0.5.2    
+## [25] glue_1.4.1        R6_2.4.1          dtw_1.21-3       
+## [28] pbapply_1.4-2     rmarkdown_2.2     readr_1.3.1      
+## [31] magrittr_1.5      scales_1.1.1      htmltools_0.4.0  
+## [34] ellipsis_0.3.1    MASS_7.3-51.4     rvest_0.3.5      
+## [37] colorspace_1.4-1  stringi_1.4.6     proxy_0.4-24     
+## [40] munsell_0.5.0     signal_0.7-6      RCurl_1.98-1.2   
+## [43] crayon_1.3.4      rjson_0.2.20
 {% endhighlight %}
