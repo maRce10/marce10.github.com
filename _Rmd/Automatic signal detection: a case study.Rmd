@@ -98,8 +98,8 @@ for(i in 1:length(ids))
 
 ## Cross-correlation based detection
 
-Cross-correlation can be used to detect highly stereotyped signals like the inquiry calls of Spix's disc-winged bats. Cross-correlation detection uses a acoustic template to find similar signals across sound files. Hence, the first step is
-creating a template, which can be easily done by making a selection table with the time location of an example inquiry call (I determine the location by scrolling over the sound file spectrogram using [Audacity](https://www.audacityteam.org):
+Cross-correlation can be used to detect highly stereotyped signals like the inquiry calls of Spix's disc-winged bats. Cross-correlation detection uses an acoustic template to find similar signals across sound files. Hence, the first step is
+creating a template, which can be easily done by making a selection table with the time location of an example inquiry call (location was determined by scrolling over the spectrogram using [Audacity](https://www.audacityteam.org)):
 
 ```{r template 2, eval = FALSE, echo = TRUE}
 
