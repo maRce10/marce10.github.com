@@ -1,0 +1,94 @@
+---
+title: Start your first post with blogdown website
+author: Yabin Da
+date: '2020-09-29'
+slug: start-your-first-post-with-blogdown-website
+categories:
+  - Fun
+tags:
+  - First Post
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2021-01-17T22:11:37-05:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+
+
+output:
+  blogdown::html_page:
+    toc: true
+    toc_depth: 4
+---
+
+
+<div id="TOC">
+<ul>
+<li><a href="#start-your-first-post" id="toc-start-your-first-post">Start your first post</a></li>
+<li><a href="#customize-your-first-post" id="toc-customize-your-first-post">Customize your first post</a></li>
+<li><a href="#how-to-embed-images-in-your-website" id="toc-how-to-embed-images-in-your-website">How to embed images in your website</a>
+<ul>
+<li><a href="#insert-images-via-insert-image-in-addins" id="toc-insert-images-via-insert-image-in-addins">Insert images via <code>Insert Image</code> in <code>Addins</code></a></li>
+<li><a href="#insert-images-with-knitrinclude_graphic" id="toc-insert-images-with-knitrinclude_graphic">Insert images with <code>Knitr::include_graphic</code></a></li>
+</ul></li>
+</ul>
+</div>
+
+<p>After you successfully create your website with <code>blogdown</code>, you may want to start your first post right away. In this short section, I am going to briefly introduce how to create a new post with <code>blogdown</code>.</p>
+<div id="start-your-first-post" class="section level3">
+<h3>Start your first post</h3>
+<p>I highly recommend you start your post using the <code>New Post</code> button in <code>Addins</code> in <code>RStudio</code>. See the figure below.</p>
+<p><img src="../../../../../post/2020-09-29-start-your-first-post-with-blogdown-website.en_files/plot1.png" /><!-- --></p>
+<p>It’s followed by an interface, see the figure below. You can easily fill up the basic information for your new post, such as <code>Title</code>, <code>Author</code>, and <code>Date</code>. The <code>Subdirectory</code> will allow you to specify the type of this new post, either it can be a post or publication or talk etc.</p>
+<p>The <code>Categories</code> and <code>Tags</code> fields will automatically display the existing categories and tags. But you can add new ones directly in the fields. The <code>Filename</code> will be automatically generated. Finally, you are free to choose the <code>Format</code> you are comfortable with. The differences between these three formats are explained <a href="https://bookdown.org/yihui/blogdown/output-format.html">here</a></p>
+<p><img src="../../../../../post/2020-09-29-start-your-first-post-with-blogdown-website.en_files/plot2.png" /><!-- --></p>
+</div>
+<div id="customize-your-first-post" class="section level3">
+<h3>Customize your first post</h3>
+<p>After you click <code>Done</code>, the associated <code>.Rmd</code> file (if you chose the <code>.Rmd</code> format) will show up in the respective folder under the <code>content</code> folder. The <code>YAML</code> front matter will also be created in the <code>.Rmd</code> file. You can easily customize the <code>YAML</code> front matter based on your needs.</p>
+<p>For instance, if the post is a draft and is not ready to display on your website, you can simply add <code>draft: true</code> in the <code>YAML</code>. When you are ready to publish the post, simply delete the <code>draft: true</code> or set <code>true</code> to <code>false</code>. Additionally, if you want to feature this post, just add <code>feature: true</code> in the <code>YAML</code>.</p>
+<p>Another useful trick is that if you are writing a long post and wish to display the table of content in the post, you can add the followings to your <code>YAML</code> front matter.</p>
+<pre><code>output:
+  blogdown::html_page:
+    toc: true
+    toc_depth: 4
+
+</code></pre>
+</div>
+<div id="how-to-embed-images-in-your-website" class="section level3">
+<h3>How to embed images in your website</h3>
+<p>One benefit of creating website with <code>blogdown</code> is that it allows you to execute <code>R</code> code chunks in the <code>Rmd</code> files. That means you can easily add <code>R</code> plots on your website. In this section, I will focus on how to insert external images instead.</p>
+<p>It should be noted that all static content (i.e. images, data, etc.) on your website should be stored in the <code>static</code> folder. You can create new folders inside the <code>static</code> folder to organize static contents for each of the post.</p>
+<p>Also note that the static contents will be automatically copied to the <code>public</code> folder after we deploy the website.</p>
+<div id="insert-images-via-insert-image-in-addins" class="section level4">
+<h4>Insert images via <code>Insert Image</code> in <code>Addins</code></h4>
+<p>This is the easiest way to do the job. In the interface below, you can specify the <code>Width</code> and <code>Height</code> of the figure.</p>
+<p>Note that <code>Target file path</code> will be automatically created and target to the <code>static</code> folder. That says the inserted images will be automatically copied to the <code>static</code> folder, regardless of the original image path.</p>
+<p><img src="/post/2020-09-29-start-your-first-post-with-blogdown-website.en_files/plot3.png" /></p>
+<p>After you click <code>done</code>, the figure will be inserted by the code below. You can see that the image is placed to the automatically created folder <code>static/post/2020-09-29-start-your-first-post-with-blogdown-website.en_files</code> that is associated with the post.</p>
+<pre><code>![](/post/2020-09-29-start-your-first-post-with-blogdown-website.en_files/IMG_20190313_120505.jpg)
+</code></pre>
+<p>The images will show up on your website. (see the armadillo below).</p>
+<p><img src="/post/2020-09-29-start-your-first-post-with-blogdown-website.en_files/IMG_20190313_120505.jpg" /></p>
+</div>
+<div id="insert-images-with-knitrinclude_graphic" class="section level4">
+<h4>Insert images with <code>Knitr::include_graphic</code></h4>
+<p>In some cases, you may want to insert images with <code>Knitr::include_graphic</code> which is a function rooted in <code>R markdown</code> and more straightforward.</p>
+<p>The trick here is to correctly specify the image path. As I mentioned in the preceding section, the default path for static content is the <code>static</code> folder. That means <code>R</code> will search for the image in the default <code>static</code> folder. So in order to successfully insert the external image, you should place the image in the <code>static</code> folder.</p>
+<p>As <code>Knitr</code> does not automatically create new folder under the <code>static</code> folder, it’s recommended that you create new folders manually and store static contents (i.e. images) separately for each post. See the code chunk below.</p>
+<p>Please remember to set the <code>error = FALSE</code> in the <code>include_graphics</code>, otherwise you will end up with errors.</p>
+<pre class="r"><code>knitr::include_graphics(&quot;/post/2020-09-29-start-your-first-post-with-blogdown-website.en_files/plot3.png&quot;, 
+                        error = False)</code></pre>
+<p>Next you can customize the code chunk options to add figure caption, adjust figure alignment, output width, etc. See the example below.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-4"></span>
+<img src="../../../../../post/2020-09-29-start-your-first-post-with-blogdown-website.en_files/IMG_20190313_120505.jpg" alt="This is a figure with smaller size" width="50%" />
+<p class="caption">
+Figure 1: This is a figure with smaller size
+</p>
+</div>
+</div>
+</div>

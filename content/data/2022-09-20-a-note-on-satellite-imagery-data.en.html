@@ -1,0 +1,65 @@
+---
+title: A note on satellite imagery data
+author: Yabin Da
+date: '2022-09-20'
+slug: a-note-on-satellite-imagery-data
+categories:
+  - Data
+tags: []
+subtitle: ''
+summary: ''
+authors: [Yabin Da]
+lastmod: '2022-09-020T11:00:18-05:00'
+featured: no
+draft: false
+math: true
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+output:
+  blogdown::html_page:
+    toc: true
+    toc_depth: 4
+---
+
+
+<div id="TOC">
+<ul>
+<li><a href="#introduction" id="toc-introduction"><strong>Introduction</strong></a></li>
+<li><a href="#where-to-find-the-data" id="toc-where-to-find-the-data"><strong>Where to find the data</strong></a></li>
+<li><a href="#how-to-use-the-data" id="toc-how-to-use-the-data"><strong>How to use the data</strong></a></li>
+</ul>
+</div>
+
+<div id="introduction" class="section level2">
+<h2><strong>Introduction</strong></h2>
+<p>I have seen more and more papers utilizing satellite imagery data, especially in the environmental economics domain. There are many benefits of using those imagery data and one of such is their very much fine-scaled and consistent spatial and temporal resolutions. Some satellites could provide data at a minute-level frequency and meter-level (or even centimeter-level) spatial scale. These satellite imagery data can be used to infer changes in natural endowment (i.e., land cover, water level, glacier, soil conditions, air quality, etc.) and changes in social characteristics (i.e., population density, economic activity, migration pattern, etc.) as well as to spot natural disasters (i.e., wildfire, flood, hurricane, etc.). The richness of the data and its linkage between natural resources and society greatly advance its application in the analysis of climate change.</p>
+<p>The aim of this post is twofold. On the one hand, I will collect sources of satellite imagery data on a regular basis. If you google “satellite imagery data”, you will find a list of such collections already exist. Although most of them point to similar sources, I still think the collections are overwhelming and find it difficult to pin down the specific data to use. Thus, I decided to turn to the literature and observe the widely used satellite imagery data in papers written by climate modelers and economists. On the other hand, after identifying the data, the question turns to be how to handle them. I answer this question in the second part of the post. It should be noted though satellite imagery data themselves are new to me. Being said, this post is by no means a professional tutorial. Instead, it simply documents my learning-by-doing journey with satellite imagery data.</p>
+</div>
+<div id="where-to-find-the-data" class="section level2">
+<h2><strong>Where to find the data</strong></h2>
+<p>To begin with, we primarily focus on freely accessible products which are usually provided by the government or research institutions. In the context of satellite imagery, a few examples are:</p>
+<ul>
+<li><p><a href="https://landsat.gsfc.nasa.gov/">USGS/NASA’s Landsat series</a></p></li>
+<li><p><a href="https://modis.gsfc.nasa.gov/">NASA’s MODIS instrument</a></p></li>
+<li><p><a href="https://sentinels.copernicus.eu/web/sentinel/home">ESA’s Sentinel seriesTypical</a></p></li>
+</ul>
+<p>Although three products are listed above, I will focus on the first two. Simply by exploring their websites, you will discover how abundant the data they provide are, and as I pointed out previously, it is difficult to filter out the data you truly need. The good news is that NASA offers multiple powerful data portals that allow users to assess, search, and subset its data pool (see <a href="https://www.earthdata.nasa.gov/">Earthdata</a>). Besides, NOAA also features such tools and is also an ideal source for climate-related data (<a href="https://www.ncei.noaa.gov/">National Centers for Environmental Information</a>).</p>
+<p>In most cases, the satellite imagery data provided by NASA are ready to use, meaning you do not need to perform additional atmospheric corrections, which saves tons of time for non-technical users.</p>
+<p>Now back to our data search tool Earthdata, it essentially collects data from all three products mentioned above. There are two powerful tools within Earthdata.</p>
+<ul>
+<li><p><a href="https://www.earthdata.nasa.gov/learn/pathfinders">Data Pathfinders</a></p></li>
+<li><p><a href="https://search.earthdata.nasa.gov/search?lat=-9.394089162992742&amp;long=-0.5009765625&amp;zoom=6">Earthdata Search</a></p></li>
+</ul>
+<p><a href="https://www.earthdata.nasa.gov/learn/pathfinders">Data Pathfinders</a> allows you to explore the data by topics, such as Agricultural and Water Resources, Biological Diversity and Ecological Forecasting, Disasters, Diseases, Geographic Information Systems (GIS), Greenhouse Gases, Health and Air Quality, Sustainable Development Goals, Water Quality, and Wildfires. Each tab leads you to a specific collection of data closely related to the topic.</p>
+<p>As an alternative, you can directly explore and filter out data within <a href="https://search.earthdata.nasa.gov/search?lat=-9.394089162992742&amp;long=-0.5009765625&amp;zoom=6">Earthdata Search</a> by Keywords (Agriculture, Atmosphere, Cryosphere, Human Dimensions, Land Surface, etc.), by Platforms (Air-based Platforms, Land-based Platforms, etc.), by Instruments (Satellite), by Processing Levels (i.e., 0, 1, 1A, 1B, 2, 3, 4). <strong>This is the critical part. Normally, we do not want to touch those raw data leveled at 0 and 1. Instead, we prefer those level 3 data which have already been projected onto a well-defined spatial grid over a well-defined time period</strong>. Additionally, you can also filter the data by Data Format, Horizontal Data Resolution (spatial scale). This is one of the most efficient ways to pin down the desired data.</p>
+<p><img src="/data/levels.png" /></p>
+<p>Another tool worth mentioning is the <a href="https://worldview.earthdata.nasa.gov/">Worldview</a> function which allows you to interactively browse and download full-resolution, global satellite imagery from over 1000 data products in NASA. Similar functions developed by NASA such as <a href="https://giovanni.gsfc.nasa.gov/giovanni/">Giovanni</a> can also be used to do the task.</p>
+<p>So far, we already have an overview of satellite imagery data. The rest of this part will be given to specific satellite data that I collect from the literature.</p>
+</div>
+<div id="how-to-use-the-data" class="section level2">
+<h2><strong>How to use the data</strong></h2>
+<p>To be continued.</p>
+</div>

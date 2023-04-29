@@ -1,0 +1,61 @@
+---
+title: Health data in China
+author: Yabin
+date: '2021-01-23'
+slug: health-data-in-china
+categories: []
+tags: []
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2021-01-23T17:06:53-06:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+output:
+  blogdown::html_page:
+    toc: true
+    toc_depth: 4
+---
+
+ The impacts of climate change and air pollution on human health have gained privilege in the environmental economics literature. While the availability of climate and air pollution are getting better and better, the health data are very limited. In this post, I collected useful health data from the literature. I will update this post accordingly. 
+
+**It turns out that most of the health data collected in this post are NOT publicly available**.
+
+### An integrated national mortality surveillance system by CCDC
+
+- **Introduction**
+
+  In China, sample-based mortality surveillance systems, such as the Chinese Center for Disease Control and Prevention’s disease surveillance points system and the Ministry of Health’s vital registration system, have been used for decades to provide nationally representative data on health status for health-care decision-making and performance evaluation. However, neither system provided representative mortality and cause-of-death data at the provincial level to inform regional health service needs and policy priorities. Moreover, the systems overlapped to a considerable extent, thereby entailing a duplication of effort. In 2013, the Chinese Government combined these two systems into an integrated national mortality surveillance system to provide a provincially representative picture of total and cause-specific mortality and to accelerate the development of a comprehensive vital registration and mortality surveillance system for the whole country. This new system increased the surveillance population from 6 to 24% of the Chinese population. The number of surveillance points, each of which covered a district or county, increased from 161 to 605. To ensure representatives at the provincial level, the 605 surveillance points were selected to cover China’s 31 provinces using an iterative method involving multistage stratification that took into account the demographics characteristics of the population. This paper describes the development and operation of the new national mortality surveillance system, which is expected to yield representative provincial estimates of mortality in China for the first time.
+ Note that the instruction above was obtained from the reference below. 
+
+- **Reference for the data**
+
+  Liu S, Wu X, Lopez AD, et al. An integrated national mortality surveillance system for death registration and mortality surveillance, China. Bull World Health Organ. 2016;94(1):46-57. doi:10.2471/BLT.15.153148.
+  
+- **Access to the data**
+
+  It's interesting that I could not find any links to access the data. The reference above carefully introduces how the system was established, however did not mention how to access the data. 
+  My guess is that only the CCDC employees are able to access the data. The paper below employed the data, and one of coauthors works for CCDC. I will update the post if I am lucky enough to get the link.
+  
+- **Applications**
+   - Maoyong Fan, Guojun He, Maigeng Zhou. The winter choke: Coal-Fired heating, air pollution, and mortality in China. Journal of Health Economics 71 (2020). [Link](https://doi.org/10.1016/j.jhealeco.2020.102316)
+   
+   
+### China Health Insurance Research Association (CHIRA)
+
+This data source complies a random sample of inpatient vist for those insured under two policies: Urban Resident Basic Medical Insurance (URBMI) and Urban Employee Basic Medical Insurance (UEBMI) in 2008-2010. In 2010, their total enrollees reached 432.06 million, accounting for approximately 65% of China's urban population. 
+
+Each record includes information on the admission and discharge dates, diagnosis, gender, and birth date of patients. On the cost side, the data contains total spending, spending covered by the URBMI or UEBMI, patients' payments, other costs. 
+
+
+- **Access to the data**
+
+ I obtained the data information from the application paper below. The paper did not disclose the website/archive of the data. Again, the data are confidential. 
+
+
+- **Applications**
+   - Sumit Agarwal, Yu Qin, Luwen Shi, Guoxu Wei, Hongjia Zhu. Impact of temperature on morbidity: New evidence from China. Journal of Environmental Economics and Management 71 (2020). [Link](https://www.sciencedirect.com/science/article/pii/S009506962100070X)

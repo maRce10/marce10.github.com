@@ -1,4 +1,12 @@
-_site
-.sass-cache
+# IDEs
+.idea/
+
+# Hugo
+/resources/
+/public/
+jsconfig.json
+node_modules/
 .Rproj.user
-.httr-oauth
+.DS_Store
+Thumbs.db
+.hugo_build.lock

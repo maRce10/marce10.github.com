@@ -1,0 +1,10 @@
+Variables,Thresholds (°C),Mean ± SD (10 days)
+Fall: DD_low,0-18,118.09 ± 15.88
+Fall: DD_med,18-23,11.4 ± 3.5
+Fall: DD_high,23+,4.32 ± 2.03
+Winter: DD_low,0-10,22.28 ± 8.09
+Winter: DD_med,10-19,1.31 ± 1.05
+Winter: DD_high,19+,0.01 ± 0.04
+Spring: DD_low,0-25,200.51 ± 15.21
+Spring: DD_med,25-31,7.88 ± 2.64
+Spring: DD_high,31+,1.21 ± 0.86

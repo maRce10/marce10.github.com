@@ -1,0 +1,197 @@
+---
+title: How to do clustering for panel data model in R
+author: Yabin Da
+date: '2020-12-27'
+slug: how-to-do-clustering-for-panel-data-model-in-r
+categories:
+  - Data
+tags:
+  - Panel data
+  - Clustering standard errors
+subtitle: 'Clustering standard errors in R'
+summary: ''
+authors: []
+lastmod: '2020-12-27T23:17:39-06:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+draft: false
+math: true
+
+output:
+  blogdown::html_page:
+    toc: true
+    toc_depth: 4
+
+---
+
+
+<div id="TOC">
+<ul>
+<li><a href="#an-introduction-of-clustering-in-panel-data-models" id="toc-an-introduction-of-clustering-in-panel-data-models">An introduction of clustering in panel data models</a></li>
+<li><a href="#clustering-in-r" id="toc-clustering-in-r">Clustering in R</a>
+<ul>
+<li><a href="#importing-the-data" id="toc-importing-the-data">Importing the data</a></li>
+<li><a href="#running-the-fixed-effect-model" id="toc-running-the-fixed-effect-model">Running the fixed effect model</a></li>
+<li><a href="#clustering-the-standard-erros" id="toc-clustering-the-standard-erros">Clustering the standard erros</a></li>
+</ul></li>
+<li><a href="#takeaways" id="toc-takeaways">Takeaways</a></li>
+<li><a href="#reference" id="toc-reference">Reference</a></li>
+</ul>
+</div>
+
+<div id="an-introduction-of-clustering-in-panel-data-models" class="section level3">
+<h3>An introduction of clustering in panel data models</h3>
+<p>In my last post, I briefly introduced standard error clustering in panel data settings. In this post, I will continue the topic and present how to do the clustering in <code>R</code>.</p>
+<p>Before we move to the coding part, I’d like to clarify several things. First, the panel model I focus on in this post refers to the fixed effect panel data model, which is distinct from the random effect model. These two models differ from each other in terms of the assumption of the unobserved individual effects. The random effect model assumes the individual effects are unrelated to the independent variables, whereas the fixed effect model allows the presence of arbitrary correlations. You are encouraged to go over the textbook by Wooldridge (2010) if you want to learn more.</p>
+<p>In practice, the fixed effect model is much more privileged than the random effect model. Because we suspect there exist unobserved individual effects that are correlated with the covariates and we use the fixed effect model to control for the unobservables to alleviate omitted variable bias.</p>
+<p>Back to our topic, clustering in the fixed effect model is straightforward. We can either cluster at <span class="math inline">\(i\)</span> (individual level) or <span class="math inline">\(t\)</span> (time level). The former case is robust to heterogeneity and serial correlation within the individual, whereas the latter one allows correlations across individuals yet is unable to take account of the serial correlations.</p>
+<p>You may ask how to determine which level to cluster at? The rule of thumb is that in panels where you have a large number of individuals and a short period, you should cluster at the individual level. Analogously, if you have a few individuals that were observed during a long time slot, you should cluster at the time level.</p>
+<p>Alternatively, you can also “cluster” at both individual and time levels (also known as two-way clustering). See <a href="https://cran.r-project.org/web/packages/multiwayvcov/multiwayvcov.pdf">here</a> for more details.</p>
+<p>Clustering in the random effect model is slightly different than that in the fixed effect counterpart. With a few more assumptions (again refer to Wooldridge (2010) for more details), we can use GLS to estimate standard errors. In such cases, we gain efficiency (because we have a smaller number of unknowns to estimate in the variance and covariance matrix), however, the payoff is the standard errors are less robust because we imposed additional assumptions in the first place. Thus, in some circumstances, regular clustering is also recommended in random effect model settings.</p>
+</div>
+<div id="clustering-in-r" class="section level3">
+<h3>Clustering in R</h3>
+<p>Before we perform clustering, we need to run the panel data model first. You can either use the <code>lm</code> function or the <code>plm</code> function from the <code>plm</code> package. I personally prefer the latter over the former. Thus, in this post, I am going to stick with the <code>plm</code> package.</p>
+<div id="importing-the-data" class="section level4">
+<h4>Importing the data</h4>
+<p>I am going to run a panel data model to examine the effects of weather conditions on crop yields. The data can be downloaded from <a href="https://drive.google.com/file/d/1DFU30lRmoVEbjJpYtEMIFP29f3K1PV8A/view?usp=sharing">here</a>.</p>
+<pre class="r"><code>library(tidyverse) 
+library(plm)
+library(lmtest)
+library(clubSandwich)
+library(sandwich)
+
+df &lt;- read_csv(&#39;dataforclustering.csv&#39;,
+               col_types = cols(new_code = col_character()))
+
+head(df)</code></pre>
+<pre><code>## # A tibble: 6 × 5
+##   new_code  Year wheat  tavg    pc
+##   &lt;chr&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1 130402    1987  1.64  8.15 103. 
+## 2 130402    1988  1.62  8.29 177. 
+## 3 130402    1989  5.37  9.17  95.4
+## 4 130402    1999  4.75 10.3   41.4
+## 5 130402    2000  4.75  9.29  88.9
+## 6 130402    2001  4.75  8.83 151.</code></pre>
+<p>As you can see,</p>
+<ul>
+<li><code>new_code</code> represents the counties (individuals).</li>
+<li><code>Year</code> indicates the time index.</li>
+<li><code>wheat</code> refers to winter wheat yield in tons/hectare.</li>
+<li><code>tavg</code> stands for the average temperature over the growing season (October to May).</li>
+<li><code>pc</code> is the accumulation of precipitation over the growing season.</li>
+</ul>
+</div>
+<div id="running-the-fixed-effect-model" class="section level4">
+<h4>Running the fixed effect model</h4>
+<pre class="r"><code># Note I only included the county fixed effect in the model.
+reg &lt;- df %&gt;%
+  pdata.frame(index = c(&#39;new_code&#39;,&#39;Year&#39;)) %&gt;% # specify the inidivual and year index
+  plm(formula = log(wheat) ~ tavg + I(tavg^2) + pc + I(pc^2), 
+      data = ., effect = &#39;individual&#39;, model = &#39;within&#39;)
+
+summary(reg)</code></pre>
+<pre><code>## Oneway (individual) effect Within Model
+## 
+## Call:
+## plm(formula = log(wheat) ~ tavg + I(tavg^2) + pc + I(pc^2), data = ., 
+##     effect = &quot;individual&quot;, model = &quot;within&quot;)
+## 
+## Unbalanced Panel: n = 352, T = 10-34, N = 8867
+## 
+## Residuals:
+##      Min.   1st Qu.    Median   3rd Qu.      Max. 
+## -7.158354 -0.132313  0.081255  0.255566  1.144955 
+## 
+## Coefficients:
+##              Estimate  Std. Error t-value  Pr(&gt;|t|)    
+## tavg       4.4441e-01  5.0411e-02  8.8156 &lt; 2.2e-16 ***
+## I(tavg^2) -8.5789e-03  2.6044e-03 -3.2940 0.0009917 ***
+## pc         1.8988e-03  2.0575e-04  9.2285 &lt; 2.2e-16 ***
+## I(pc^2)   -2.6568e-06  3.3927e-07 -7.8309 5.425e-15 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Total Sum of Squares:    2107.6
+## Residual Sum of Squares: 1726.4
+## R-Squared:      0.18087
+## Adj. R-Squared: 0.1467
+## F-statistic: 469.818 on 4 and 8511 DF, p-value: &lt; 2.22e-16</code></pre>
+<p>As can be been, with raw (no clustering) standard errors, we got statistically significant coefficients on temperature and precipitation. We then move forward to clustering.</p>
+</div>
+<div id="clustering-the-standard-erros" class="section level4">
+<h4>Clustering the standard erros</h4>
+<p>There are three functions available to do the clustering.</p>
+<ul>
+<li>You can use the <code>vcovHC</code> function in the <code>plm</code> package to construct the variance-covariance matrix.</li>
+<li>Alternatively, you can use the <code>vcovHC</code> function from the <code>sandwich</code> package to do the task.</li>
+<li>Or <code>vcovCR</code> function from the <code>clubSandwich</code> package to do the task.</li>
+</ul>
+<pre class="r"><code># The first approach: vcovHC from the plm package
+# &#39;arellano&#39; is the recommanded method as it does not 
+# impose restrictions on the structure of the variance-covariance matrix.
+# cluster = &#39;group&#39; indicates we cluster at county level
+# type = &#39;HC3&#39; is for small-sample adjustment.
+method1 &lt;- coeftest(reg, vcov = function(x) 
+  plm::vcovHC(x, method = &#39;arellano&#39;, cluster = &#39;group&#39;, type = &#39;HC3&#39;))
+
+# The second approach: vcovHC from the sandwich package
+# You may have noticed that there does not exist a parameter for us 
+# to specify the clustering level.
+method2 &lt;- coeftest(reg, vcov = function(x) 
+  sandwich::vcovHC(x, type = &#39;HC3&#39;))
+
+# The third approach: vcovHC from the clubSandwich package
+# type = &#39;CR2&#39; is recommanded for small-sample adjustment.
+# cluster = df$new_code indicates we cluster at the individual level.
+method3 &lt;- coeftest(reg, vcov = function(x) 
+  clubSandwich::vcovCR(x, type = &#39;CR2&#39;, cluster = df$new_code))
+
+# Compare the estimated standard errors
+
+comse &lt;- bind_cols(method1[,2], method2[,2], method3[,2]) %&gt;% 
+  rename(&#39;plm&#39; = &#39;...1&#39;,
+         &#39;sandwich&#39; = &#39;...2&#39;,
+         &#39;clubsandwich&#39; = &#39;...3&#39;) %&gt;% print(.)</code></pre>
+<pre><code>## # A tibble: 4 × 3
+##           plm    sandwich clubsandwich
+##         &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;
+## 1 0.0721      0.0721       0.0724     
+## 2 0.00360     0.00360      0.00361    
+## 3 0.000233    0.000233     0.000234   
+## 4 0.000000375 0.000000375  0.000000377</code></pre>
+<p>As we can see, <code>plm</code> and <code>sandwich</code> gave us identical clustered standard errors, whereas <code>clubsanwich</code> returned slightly larger standard errors. Note that in the analysis above, we clustered at the county (individual) level.</p>
+<p>Things are different if we clustered at the year (time) level. Simply change the <code>cluster = 'group'</code> to <code>cluster = 'time'</code> in method one, and adjust <code>cluster = df$new_code</code> to <code>cluster = df$Year</code> in method three. See below. The <code>vcovHC</code> function from the <code>sandwich</code> package does not allow us to choose which level to cluster the standard errors at.</p>
+<pre class="r"><code>method1_time &lt;- coeftest(reg, vcov = function(x) 
+  plm::vcovHC(x, method = &#39;arellano&#39;, cluster = &#39;time&#39;, type = &#39;HC3&#39;))
+
+method3_time &lt;- coeftest(reg, vcov = function(x) 
+  clubSandwich::vcovCR(x, type = &#39;CR2&#39;, cluster = df$Year))
+
+comse_time &lt;- bind_cols(method1_time[,2], method2[,2], method3_time[,2]) %&gt;% 
+  rename(&#39;plm&#39; = &#39;...1&#39;,
+         &#39;sandwich&#39; = &#39;...2&#39;,
+         &#39;clubsandwich&#39; = &#39;...3&#39;) %&gt;% print(.)</code></pre>
+<pre><code>## # A tibble: 4 × 3
+##          plm    sandwich clubsandwich
+##        &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;
+## 1 0.189      0.0721        0.208     
+## 2 0.00865    0.00360       0.00996   
+## 3 0.00114    0.000233      0.00124   
+## 4 0.00000138 0.000000375   0.00000150</code></pre>
+</div>
+</div>
+<div id="takeaways" class="section level3">
+<h3>Takeaways</h3>
+<p>In applications where you cluster standard errors at the individual level, all three methods should work just fine. However, if you want to cluster at the time level (or other alternative levels), you may refer to the embedded <code>vcovHC</code> function in the <code>plm</code> package or the <code>vcovCR</code> function from the <code>clubSandwich</code> package.</p>
+<p>Well, actually I would say it’s better to just stick with the <code>plm</code> and/or <code>clubSandwich</code>approaches regardless of what level your standard errors were clustered at. The <code>sandwich</code> package is sort of particularly designed for clustering in <code>lm</code> or <code>glm</code> regressions.</p>
+</div>
+<div id="reference" class="section level3">
+<h3>Reference</h3>
+<p>Jeffrey M Wooldridge, 2010. “Econometric Analysis of Cross Section and Panel Data,” MIT Press Books, The MIT Press, edition 2.</p>
+</div>

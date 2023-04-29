@@ -1,0 +1,93 @@
+---
+title: Problems I encountered while creating tables for regression results in R
+author: Yabin Da
+date: '2021-05-07'
+slug: problems-i-encountered-while-creating-tables-for-regression-results in R
+categories:
+  - Data
+tags: []
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2021-06-27T23:05:59-05:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+math: true
+
+output:
+  blogdown::html_page:
+    toc: true
+    toc_depth: 4
+
+---
+
+
+<div id="TOC">
+<ul>
+<li><a href="#select-variables-to-be-reported-in-the-table" id="toc-select-variables-to-be-reported-in-the-table">Select variables to be reported in the table</a></li>
+<li><a href="#present-underscores-as-text" id="toc-present-underscores-as-text">Present underscores as text</a></li>
+<li><a href="#customize-the-t-statistics-and-p-values" id="toc-customize-the-t-statistics-and-p-values">Customize the t statistics and p values</a></li>
+<li><a href="#add-lines-in-the-table" id="toc-add-lines-in-the-table">Add lines in the table</a></li>
+</ul>
+</div>
+
+<p>In many circumstances, we need to create nice tables from regression results and present the table in beamers. As an R user, I primarily use the <code>stargazer</code> package to do the job. I think it is powerful enough and can accommodate most of the cases. An alternative package is <code>kableExtra</code>, which I find is particularly useful when you are trying to create tables for data frames.</p>
+<p>In this post, I will take notes on the problems I encountered while using the <code>stargazer</code> to provide a reference for myself and hopefully can also help others.</p>
+<p>Below is an example of the code. <code>reg</code>, <code>rpenalty.1</code>, and <code>rpenalty.2</code> are the three regressions I report.</p>
+<pre><code>stargazer(reg5, rpenalty.1, rpenalty.2, 
+no.space = T, font.size = &#39;footnotesize&#39;, single.row = F,
+type = &#39;latex&#39;, header = F,
+column.labels = c(&#39;Baseline panel&#39;,&#39;Partial penalty&#39;, &#39;Full penalty&#39;),
+keep = c(&#39;dfallhigh&#39;,&#39;frez_spring&#39;,&#39;penalty_dfallhigh&#39;,&#39;penalty_frez_spring&#39;),
+covariate.labels = c(&#39;DDhigh\\_fall&#39;,&#39;Frez\\_spring&#39;,&#39;DDhigh\\_fall\\_penalty&#39;,
+                               &#39;Frez\\_spring\\_penalty&#39;),
+coef = list(mreg5[,1][c(4,8)], mrpenalty.1[,1][c(4,8,20,21)], mrpenalty.2[,1][c(4,8,23,27)]),
+se = list(mreg5[,2][c(4,8)], mrpenalty.1[,2][c(4,8,20,21)], mrpenalty.2[,2][c(4,8,23,27)]),
+t = list(mreg5[,3][c(4,8)], mrpenalty.1[,3][c(4,8,20,21)], mrpenalty.2[,3][c(4,8,23,27)]),
+p = list(mreg5[,4][c(4,8)], mrpenalty.1[,4][c(4,8,20,21)], mrpenalty.2[,4][c(4,8,23,27)]),
+model.names = F,dep.var.caption = &#39;Winter wheat yields&#39;,
+dep.var.labels.include = F,omit.stat = c(&quot;rsq&quot;, &quot;f&quot;,&#39;ser&#39;),
+ci = F, digits = 3, model.numbers = T,
+add.lines = list(c(&#39;County fixed effect&#39;,&#39;Yes&#39;,&#39;Yes&#39;,&#39;Yes&#39;),
+                           c(&#39;Linear time trend&#39;,&#39;Yes&#39;,&#39;Yes&#39;,&#39;Yes&#39;),
+                           c(&#39;Quadratic time trend&#39;,&#39;Yes&#39;,&#39;Yes&#39;,&#39;Yes&#39;)))
+</code></pre>
+<p>The created table looks like below.</p>
+<p><img src="/notes_in_r/2021-05-07-problems-i-encountered-while-creating-tables-for-regression-results.en_files/reg_table.png" /></p>
+<div id="select-variables-to-be-reported-in-the-table" class="section level4">
+<h4>Select variables to be reported in the table</h4>
+<p>This can be done by using the <code>keep</code> or <code>omit</code> parameter in <code>stargazer</code>. My feeling is that <code>keep</code> is more convenient. You just need to specify the names of variables (in the regression) you want to present in the final table. See an example below.</p>
+<pre><code>keep = c(&#39;dfallhigh&#39;,&#39;frez_spring&#39;,&#39;penalty_dfallhigh&#39;,&#39;penalty_frez_spring&#39;)
+</code></pre>
+<p><strong>You need to pay particular attention here</strong>. The variable names should be specified carefully to make sure that <code>keep</code> and <code>omit</code> work. Try to aviod variable names like <code>log(x)</code>, <code>I(x^2)</code>, etc. In contrast to using variable names, you can also use a numeric vector to indicate the positions of variables in the regression with full varaibles, i.e. <code>keep = c(1:5)</code>.</p>
+<p>Following that, you can further specify the namesto be presented in the table.</p>
+<pre><code>covariate.labels = c(&#39;DDhigh\\_fall&#39;,&#39;Frez\\_spring&#39;,&#39;DDhigh\\_fall\\_penalty&#39;,
+                               &#39;Frez\\_spring\\_penalty&#39;)</code></pre>
+</div>
+<div id="present-underscores-as-text" class="section level4">
+<h4>Present underscores as text</h4>
+<p>Underscores won’t be printed in the final table because it is recognized as a special character in R and Latex. To print underscore as text, use <code>\</code> to skip. See an example below. This also applies to other special characters (i.e. dollar sign). The code below will print <code>DDhigh_fall</code> in the table.</p>
+<pre><code>
+covariate.labels = c(&#39;DDhigh\\_fall&#39;,&#39;Frez\\_spring&#39;,&#39;DDhigh\\_fall\\_penalty&#39;,
+                               &#39;Frez\\_spring\\_penalty&#39;)</code></pre>
+</div>
+<div id="customize-the-t-statistics-and-p-values" class="section level4">
+<h4>Customize the t statistics and p values</h4>
+<p><code>stargazer</code> allows users to manually specify the coefficients, t statistics, and p values. This could be extremely helpful when it comes to robust errors which are not reported in original regression results.</p>
+<p>To do this in <code>stargazer</code>, use <code>coef</code>, <code>se</code>, <code>t</code>, and <code>p</code> parameters. See the example below. I first specify the coefficients I want to report in the table (which should be consistent with the <code>keep</code> parameter). <code>mreg5</code>, <code>mrpenalty.1</code>, and <code>mrpenalty.1</code> are objects that resulted from the <code>coeftest</code> function. Similarly, <code>se</code> parameter corresponds to the robust standard errors in those objects.</p>
+<pre><code>coef = list(mreg5[,1][c(4,8)], mrpenalty.1[,1][c(4,8,20,21)], mrpenalty.2[,1][c(4,8,23,27)])
+se = list(mreg5[,2][c(4,8)], mrpenalty.1[,2][c(4,8,20,21)], mrpenalty.2[,2][c(4,8,23,27)])
+</code></pre>
+</div>
+<div id="add-lines-in-the-table" class="section level4">
+<h4>Add lines in the table</h4>
+<p>In addition to the main regression results, you can manually add lines to report the fixed effects. The number of elements in each line should be consistent with the column numbers.</p>
+<pre><code>add.lines = list(c(&#39;County fixed effect&#39;,&#39;Yes&#39;,&#39;Yes&#39;,&#39;Yes&#39;),
+                           c(&#39;Linear time trend&#39;,&#39;Yes&#39;,&#39;Yes&#39;,&#39;Yes&#39;),
+                           c(&#39;Quadratic time trend&#39;,&#39;Yes&#39;,&#39;Yes&#39;,&#39;Yes&#39;))
+</code></pre>
+</div>

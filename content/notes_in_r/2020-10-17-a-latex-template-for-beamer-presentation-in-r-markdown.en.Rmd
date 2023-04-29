@@ -1,0 +1,160 @@
+---
+title: A TAMU LaTex beamer template in R Markdown
+author: Yabin Da
+date: '2020-10-17'
+slug: a-latex-template-for-beamer-presentation-in-r-markdown
+categories:
+  - TAMU
+tags:
+  - Beamer
+  - LaTex
+subtitle: ''
+summary: 'Here I present a LaTex template for beamer presentation in R Markdown that is designed for Texas A&M University (TAMU)'
+authors: []
+lastmod: '2021-01-17T21:38:16-05:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+draft: false
+
+output:
+  blogdown::html_page:
+    toc: true
+    toc_depth: 4
+
+---
+
+
+### Introduction
+
+I really like beamer presentations (slides) in the LaTex manner. It's very neat and looks pretty professional. These beamer presentations are particularly preferable in academics. 
+
+There is no need for you to build a LaTex beamer from the very beginning. Plenty of templates are available, just GOOGLE it. You may even find templates that are officially provided by your university.
+
+The advantage of LaTex is that it's very flexible, yet sometimes maybe too flexible and difficult to pick up for beginners. So I decided to move to R Markdown which I am more familiar with and I think is easier than LaTex. 
+
+The problem with R Markdown beamer is that the official cookbook only covers limited features. In most cases, it's better to use a LaTex **template** to start with in R Markdown. In this way, you can do all the fancy customization in the LaTex template and in R Markdown you just fill the content of your slides. 
+
+I found this nice LaTex template developed by [Dr. Steven V. Miller](http://svmiller.com/blog/2019/08/r-markdown-template-beamer-presentations/). He eliminated unnecessary navigation and blank lines to make the best use of available spaces. From his website, you can learn how to customize the template based on your needs.
+
+### Download the TAMU template
+
+Here from my [Github](https://github.com/dayabin/TAMUBeamer), you can directly download the TAMU template with maroon color and TAMU logo (`TAMUTemplate.tex`). You can also find an example of TAMU beamer presentation there (`TAMUBeamer.pdf`). 
+
+Below I will briefly introduce the changes I made to Dr. Miller's original template. Before you start your editing, you are recommended to quickly go over the template to have a basic idea of what's going on there. 
+
+### Include TAMU LOGO
+
+You may want to include TAMU logo in your title page of your slide. Information about TAMU branding, including logo, color, font, etc. can be found from [here](https://brandguide.tamu.edu/visual-style/logos/downloads.html). 
+
+To include, go to the template and navigate to the code section like below. Here I use an absolute path. You just need to replace with paths on your local machine. 
+
+```
+
+\titlegraphic{\includegraphics[width=0.4\paperwidth]{C:/work/TAMUBeamer/tamu/tamu.png}} 
+
+```
+
+### Maroon color
+
+To customize colors in the template, you can go to the code section below. I define two colors, `tamumaroon` and `tamuwhite`. In the second part of the code section, you can customize colors for frame title, title, block title, etc. 
+
+
+```
+% Some optional colors. Change or add as you see fit.
+%---------------------------------------------------
+\definecolor{tamumaroon}{HTML}{500000}
+\definecolor{tamuwhite}{HTML}{FFFFFF}
+
+
+% Some optional color adjustments to Beamer. Change as you see fit.
+%------------------------------------------------------------------
+\setbeamercolor{frametitle}{fg=tamuwhite,bg=tamumaroon}
+\setbeamercolor{title}{fg=tamuwhite,bg=tamumaroon}
+\setbeamercolor{local structure}{fg=tamumaroon}
+\setbeamercolor{section in toc}{fg=tamuwhite,bg=tamumaroon}
+\setbeamercolor{subsection in toc}{fg=tamuwhite,bg=tamumaroon}
+\setbeamercolor{footline}{fg=tamumaroon, bg=tamuwhite}
+\setbeamercolor{block title}{fg=tamuwhite, bg=tamumaroon}
+
+
+```
+
+### Other changes I made to the template
+
+I also slightly edited the original template based on suggestions by a contributor at Stackoverflow. See the post [here](https://stackoverflow.com/questions/64374791/page-number-not-showing-in-r-markdown-beamer-while-using-a-latex-template/64375699?noredirect=1#comment113835188_64375699). 
+
+
+
+
+
+### Using the template in R Markdown
+
+The YAML header in R Markdown would like something below. You need to specify the path where you store the template. Here I created a folder particularly for the template. Here again I use an absolute path. 
+
+```
+
+---
+title: "TAMUBeamer"
+subtitle: ""
+author: Yabin Da
+date: "`r Sys.Date()`"
+institute: Department of Agricultural Economics
+fontsize: 10pt
+output:
+ beamer_presentation:
+    template: C:/work/TAMUBeamer/TAMUBeamer/TAMUTemplate.tex
+    keep_tex: true
+    slide_level: 3
+make149: true
+
+---
+
+```
+
+You should set `keep_tex:true`, which will retain the LaTex file that actually creates your beamer slides. I found it's very intuitive for troubleshooting.
+
+
+### How to include LaTex tables in R Markdown
+
+At the end of this post, I want say something about how to include LaTex tables in beamer presentation in R Markdown. 
+
+According to my experience, there are two different types of tables: user-defined tables and regression result tables. 
+
+For the first scenario, it can be a data frame containing data or other important information that you want to present as a table in your presentation. In this case, you'd better refer to the `kbl` function from the `kableExtra` package. It has numerous features and is easy to customize based on your needs. You are highly recommended to check out this [website](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html#Overview) for more detailed information. 
+
+Below I show a code example and the created table in beamer slide. 
+
+
+
+```{r cutoff, echo=TRUE, eval=FALSE, results='hide'}
+
+df <- read_csv('cutoff.csv')
+
+df %>%
+  kbl(booktabs = T,caption = 'Estimated temperature thresholds for each of the seasons', linesep = "") %>%
+  kable_styling(full_width = F, font_size = 7) %>% 
+  footnote(general = "\\\\tiny{Note: The lower threshold is restricted to be at least 5 °C above zero and 10 °C below the maximum temperature. The upper threshold is set to be at least 5 °C above the lower threshold and 5 °C below the maximum temperature. Relaxing those restrictions do not significantly change the results.}",footnote_as_chunk = T,
+           threeparttable = T, escape = F,
+           general_title = "")
+
+
+```
+
+![](/post/2020-10-17-a-latex-template-for-beamer-presentation-in-r-markdown.en_files/table1.png)
+
+
+Here I'd like to emphasize two more things. Firstly, the default font for table note is `footnote`. If you have a very long note, you may need change to `tiny` (see the `footnote` in the code chunk). But do REMEMBER to set the `escape = F`, otherwise the `\\\\tiny` command won't be rendered by R Markdown.
+
+Secondly, by default the footnote will be a list below the table. That means the word `Note:` will be in the row of the note. The content of the note starts at the second row. You can set `footnote_as_chunk = T` to fix this problem. 
+
+However, the appearance of the footnote is still wired (see the image below). Therefore, I set the `general_title = ""` to remove the default `Note:` and directly start my note with `Note:`.
+
+![](/post/2020-10-17-a-latex-template-for-beamer-presentation-in-r-markdown.en_files/table2.png)
+
+
+To be continued for the regression result tables. 
+

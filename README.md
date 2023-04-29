@@ -1,1 +1,5 @@
-This blog has been moved to [https://marce10.github.io/bioacoustics_in_R/](https://marce10.github.io/bioacoustics_in_R/)
+# my personal website
+
+its private so you shouldn't be reading this
+
+website: [https://marce10.github.io/personal_website/](https://marce10.github.io/personal_website/)

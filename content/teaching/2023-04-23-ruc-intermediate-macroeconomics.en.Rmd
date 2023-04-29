@@ -1,0 +1,37 @@
+---
+title: Intermediate Macroeconomics at RUC
+author: 'Yabin Da'
+date: '2023-02-20'
+slug: ruc-inter-macro
+categories: []
+tags:
+  - Teaching
+  - RUC
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2023-04-23T10:00:00-06:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+math: true
+
+output:
+  blogdown::html_page:
+    toc: false
+    toc_depth: 4
+
+---
+
+
+Howdy! I am currently lecturing the Intermediate Macroeconomics for undergraduate students at the School of Agricultural Economics and Rural Development, Renmin University of China. Materials for the class will be posted here (occasionally). 
+
+If you have any questions, feel free to contact me via `dayabin@ruc.edu.cn`.
+
+
+### Syllabus
+
+- Syllabus in Chinese can be found [here](https://drive.google.com/file/d/1223v4L35Ri4jJkv7X_zxiCvwaWnWHyhD/view?usp=sharing).
