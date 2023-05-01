@@ -4,10 +4,16 @@ output: github_document
 editor_options: 
   chunk_output_type: console
 lastmod: '2022-12-19'
+image:
+  caption:
+  focal_point: 'Left'
+  placement: 2
+  preview_only: true
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
+<img src="/post/ohun_sticker.png" alt="ohun sticker" align="right" width = "25%" height="25%"/>
 
 [ohun](https://github.com/maRce10/ohun) is intended to facilitate the automated detection of sound events, providing functions to diagnose and optimize detection routines.
 

@@ -4,6 +4,11 @@ output: github_document
 editor_options: 
   chunk_output_type: console
 lastmod: '2021-03-10'
+image:
+  caption:
+  focal_point: 'Left'
+  placement: 2
+  preview_only: true
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
