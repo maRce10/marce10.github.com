@@ -19,9 +19,9 @@ main:
   # - name: "Technical Notes in R"
   #   url: '#notes_in_r'
   #   weight: 32
-  # - name: "Regular Post for Fun"
-  #   url: '#regular_post'
-  #   weight: 33
+  - name: "Software"
+    url: '#software'
+    weight: 19
   # - name: "Gallery"
   #   url: '#gallery'
   #   weight: 45

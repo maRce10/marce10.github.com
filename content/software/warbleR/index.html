@@ -1,0 +1,67 @@
+---
+title: "warbleR: Streamline Bioacoustic Analysis"
+output: github_document
+editor_options: 
+  chunk_output_type: console
+lastmod: '2019-12-09'
+featured: yes
+image:
+  caption:
+  focal_point: 'Left'
+  placement: 2
+  preview_only: true
+---
+
+
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+<p><img src="vignettes/warbleR_sticker.png" alt="warbleR logo" align="right" width = "25%" height="25%"/></p>
+<p><a href="https://cran.r-project.org/package=warbleR">warbleR</a> is intended to facilitate the analysis of the structure of animal acoustic signals in R. Users can collect open-access avian recordings or enter their own data into a workflow that facilitates spectrographic visualization and measurement of acoustic parameters. <a href="https://cran.r-project.org/package=warbleR">warbleR</a> makes use of the fundamental sound analysis tools of the seewave package, and offers new tools for acoustic structure analysis. These tools are available for batch analysis of acoustic signals.</p>
+<p>The main features of the package are:</p>
+<ul>
+<li>Diverse tools for measuring acoustic structure</li>
+<li>The use of loops to apply tasks through acoustic signals referenced in a selection table</li>
+<li>The production of images in the working directory with spectrograms to allow users organize data and verify acoustic analyses</li>
+</ul>
+<p>The package offers functions to:</p>
+<ul>
+<li>Explore and download <a href="https://xeno-canto.org/">Xeno‐Canto</a> recordings</li>
+<li>Explore, organize and manipulate multiple sound files</li>
+<li>Detect signals automatically (in frequency and time) (but check the R package <a href="https://marce10.github.io/ohun/index.html">ohun</a> for a more thorough and friendly implementation)</li>
+<li>Create spectrograms of complete recordings or individual signals</li>
+<li>Run different measures of acoustic signal structure</li>
+<li>Evaluate the performance of measurement methods</li>
+<li>Catalog signals</li>
+<li>Characterize different structural levels in acoustic signals</li>
+<li>Statistical analysis of duet coordination</li>
+<li>Consolidate databases and annotation tables</li>
+</ul>
+<p>Most of the functions allow the parallelization of tasks, which distributes the tasks among several processors to improve computational efficiency. Tools to evaluate the performance of the analysis at each step are also available.</p>
+<div id="installing" class="section level2">
+<h2>Installing</h2>
+<p>Install/load the package from CRAN as follows:</p>
+<pre class="r"><code>install.packages(&quot;warbleR&quot;)
+
+# load package
+library(warbleR)</code></pre>
+<p>To install the latest developmental version from <a href="https://github.com/">github</a> you will need the R package <a href="https://cran.r-project.org/package=remotes">remotes</a>:</p>
+<pre class="r"><code>remotes::install_github(&quot;maRce10/warbleR&quot;)
+
+# load package
+library(warbleR)</code></pre>
+</div>
+<div id="usage" class="section level2">
+<h2>Usage</h2>
+<p>Take a look at the <a href="https://marce10.github.io/warbleR/articles/">package vignettes</a> with detailed examples on how to organize functions in an acoustic analysis workflow.</p>
+<p>A full description of the package (although a bit outdated) can be found in this <a href="https://doi.org/10.1111/2041-210X.12624">journal article</a>.</p>
+</div>
+<div id="other-packages" class="section level2">
+<h2>Other packages</h2>
+<p>The packages <a href="https://cran.r-project.org/package=seewave">seewave</a> and <a href="https://cran.r-project.org/package=seewave">tuneR</a> provide a huge variety of functions for acoustic analysis and manipulation. They moslty works on wave objects already imported into the R environment. The package <a href="https://cran.r-project.org/package=baRulho">baRulho</a> focuses on quantifying habitat-induced degradatio of acoustic signals with data inputs and ouputs similar to those of <a href="https://cran.r-project.org/package=warbleR">warbleR</a>. The package <a href="https://cran.r-project.org/package=Rraven">Rraven</a> facilitates the exchange of data between R and <a href="https://ravensoundsoftware.com">Raven sound analysis software</a> (<a href="https://www.birds.cornell.edu/home">Cornell Lab of Ornithology</a>) and can be very helpful for incorporating Raven as the annotating tool into acoustic analysis workflow in R. The package <a href="https://github.com/maRce10/ohun">ohun</a> works on automated detection of sound events, providing functions to diagnose and optimize detection routines. <a href="https://cran.r-project.org/package=seewave">dynaSpec</a> is allows to create dynamic spectrograms (i.e. spectrogram videos).</p>
+</div>
+<div id="citation" class="section level2">
+<h2>Citation</h2>
+<p>Please cite <a href="https://cran.r-project.org/package=warbleR">warbleR</a> as follows:</p>
+<p>Araya-Salas, M. and Smith-Vidaurre, G. (2017), <em>warbleR: an r package to streamline analysis of animal acoustic signals</em>. Methods Ecol Evol. 8, 184-191. <a href="https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.12624">link</a></p>
+<p>NOTE: please also cite the <a href="https://cran.r-project.org/package=tuneR">tuneR</a> and <a href="https://cran.r-project.org/package=seewave">seewave</a> packages if you use any spectrogram-creating or acoustic-measuring functions</p>
+</div>

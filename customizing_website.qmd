@@ -6,6 +6,17 @@ editor_options:
   chunk_output_type: console
 ---
 
+# Basic Customization
+
+From <https://matteocourthoud.github.io/post/website/> Site clone from: <https://www.yabin-da.com> <https://github.com/dayabin/PersonalWebisteNewVersion>
+
+The basic files that you want to modify to customize your website are the following:
+
+    config/_default/config.yaml: general website information
+    config/_default/params.yaml: website customization
+    config/_default/menus.yaml: top bar / menu customization
+    content/authors/admin/_index.md: personal information files
+
 ### functions
 
 ```{r}
@@ -80,18 +91,26 @@ add.pdf <- function(path = "./content/publication", file.pattern = "\\.md$", rm.
   print(results)
 }
 
+
+render_readme <-function(from, date = Sys.Date()) {
+  
+        x <- readLines(file.path(from, "README.Rmd"))
+      
+        # remove badges
+        badges <- grep("<!-- badges:", x)
+        x <- x[-(min(badges):max(badges))]
+
+        output_line <- grep("---", x)[2] -1
+        x <- c(x[1:output_line], paste0("lastmod: '", date, "'"), x[(output_line +1):length(x)])
+      
+        file_name <- paste0("./content/software/", date, "-", basename(from), ".Rmd")
+        cat(x, file = file_name, sep="\n")
+        
+     # rmarkdown::render(input = 'README.Rmd', output_format = "html_document", output_dir = "~/Dropbox/Websites/marce10.github.io/content/software", output_file = "ohun.html")
+     # 
+}
+
 ```
-
-# Basic Customization
-
-From <https://matteocourthoud.github.io/post/website/> Site clone from: <https://www.yabin-da.com> <https://github.com/dayabin/PersonalWebisteNewVersion>
-
-The basic files that you want to modify to customize your website are the following:
-
-    config/_default/config.yaml: general website information
-    config/_default/params.yaml: website customization
-    config/_default/menus.yaml: top bar / menu customization
-    content/authors/admin/_index.md: personal information files
 
 ```{r, eval= FALSE}
 
@@ -152,4 +171,26 @@ add.pdf()
 # fixed 
 .section-heading h1{margin:0 0 10px 0}
 .section-heading h1{margin:0 0 10px 0;position:sticky;position:-webkit-sticky;top:150px;}
+
+
+
+```{r}
+
+render_readme(from = "~/Dropbox/R_package_testing/ohun", date = "2022-12-19")
+
+render_readme(from = "~/Dropbox/R_package_testing/warbleR", date = "2022-12-09")
+
+render_readme(from = "~/Dropbox/R_package_testing/Rraven", date = "2021-04-21")
+
+render_readme(from = "~/Dropbox/R_package_testing/dynaSpec", date = "2021-03-10")
+
+render_readme(from = "~/Dropbox/R_package_testing/baRulho", date = "2022-03-01")
+
+render_readme(from = "~/Dropbox/R_package_testing/PhenotypeSpace", date = "2023-04-29")
+
+render_readme(from = "~/Dropbox/R_package_testing/brmsish", date = "2023-04-30")
+
+render_readme(from = "~/Dropbox/R_package_testing/sketchy", date = "2023-04-28")
+
+```
 

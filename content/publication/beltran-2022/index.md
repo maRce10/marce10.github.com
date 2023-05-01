@@ -58,7 +58,7 @@ abstract: Traits that exhibit differences between the sexes have been of special
   are positively associated, while tail dimorphism and song complexity are negatively
   associated. Our results suggest that key ecological factors shape sexually dimorphic
   traits, and that different communication modalities do not always evolve in tandem.
-publication: '*Proceedings of the Royal Society B*'
+publication: '*Proceedings of the Royal Society B: Biological Sciences*'
 url_pdf: uploads/beltran-2022.pdf
 links:
 - name: URL

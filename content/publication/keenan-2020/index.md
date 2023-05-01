@@ -63,7 +63,7 @@ abstract: Many animals produce coordinated signals, but few are more striking th
   or vegetation density. These results suggest that tightly coordinated duets play
   an important role in mediating breeding behaviour, possibly by signalling commitment
   or coalition of the pair to mates and other conspecifics.
-publication: '*Proceedings of the Royal Society B*'
+publication: '*Proceedings of the Royal Society B: Biological Sciences*'
 links:
 - name: URL
   url: https://royalsocietypublishing.org/doi/10.1098/rspb.2020.2482

@@ -1,0 +1,33 @@
+---
+title: "ohun: optimizing sound event detection"
+output: github_document
+editor_options: 
+  chunk_output_type: console
+lastmod: '2022-12-19'
+---
+
+
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+<p><a href="https://github.com/maRce10/ohun">ohun</a> is intended to facilitate the automated detection of sound events, providing functions to diagnose and optimize detection routines.</p>
+<p>The main features of the package are:</p>
+<ul>
+<li>The use of reference annotations for detection diagnostic and optimization</li>
+<li>The use of signal detection theory indices to evaluate detection performance</li>
+</ul>
+<p>The package offers functions for:</p>
+<ul>
+<li>Curate references and acoustic data sets</li>
+<li>Diagnose detection performance</li>
+<li>Optimize detection routines based on reference annotations</li>
+<li>Energy-based detection</li>
+<li>Template-based detection</li>
+</ul>
+<p>All functions allow the parallelization of tasks, which distributes the tasks among several processors to improve computational efficiency. The package works on sound files in ‘.wav’, ‘.mp3’, ‘.flac’ and ‘.wac’ format.</p>
+<p>To install the latest developmental version from <a href="https://github.com/">github</a> you will need the R package <a href="https://cran.r-project.org/package=remotes">remotes</a>:</p>
+<pre class="r"><code>remotes::install_github(&quot;maRce10/ohun&quot;)
+
+#load package
+library(ohun)</code></pre>
+<p>Please cite <a href="https://github.com/maRce10/ohun">ohun</a> as follows:</p>
+<p>Araya-Salas, M. (2021), ohun: diagnosing and optimizing automated sound event detection. R package version 0.1.0.</p>

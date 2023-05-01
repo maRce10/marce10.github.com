@@ -60,7 +60,6 @@ abstract: The ability of an animal to detect environmental cues is crucial for i
   show that non-acoustic inputs can still be an important source of information for
   finding critical resources in bats.
 publication: '*Behavioral Ecology*'
-doi: 10.1093/BEHECO/ARAD018
 links:
 - name: URL
   url: https://academic.oup.com/beheco/advance-article/doi/10.1093/beheco/arad018/7111247
