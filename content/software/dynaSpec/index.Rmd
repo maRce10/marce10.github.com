@@ -3,7 +3,7 @@ title: "dynaSpec: dynamic spectrogram visualizations"
 output: github_document
 editor_options: 
   chunk_output_type: console
-lastmod: '2021-03-10'
+lastmod: '2021-03-20'
 image:
   caption:
   focal_point: 'Left'

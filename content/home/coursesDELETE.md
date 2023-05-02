@@ -1,16 +1,16 @@
 +++
 # A Projects section created with the Portfolio widget.
-widget = "pages"  # See https://sourcethemes.com/academic/docs/page-builder/
-headless = true  # This file represents a page section.
+  widget = "pages"  # See https://sourcethemes.com/academic/docs/page-builder/
+headless = false  # This file represents a page section.
 active = false  # Activate this widget? true/false
-weight = 26  # Order that this section will appear.
+weight = 45  # Order that this section will appear.
 
-title = "Useful Data"
+title = "courses"
 subtitle = ""
 
 [content]
   # Page type to display. E.g. post, talk, or publication.
-  page_type = "data"
+  page_type = "courses"
   
   # Choose how much pages you would like to display (0 = all pages)
   count = 5
@@ -35,7 +35,7 @@ subtitle = ""
   #   2 = Compact
   #   3 = Card
   #   4 = Citation (publication only)
-  view = 1
+  view = 3
   
 [design.background]
   # Apply a background color, gradient, or image.

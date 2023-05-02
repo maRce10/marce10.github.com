@@ -1,9 +1,10 @@
 +++
 # A Projects section created with the Portfolio widget.
+# This section displays posts from `content/software/`
 widget = "pages"  # See https://sourcethemes.com/academic/docs/page-builder/
-headless = false  # This file represents a page section.
+headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
-weight = 19  # Order that this section will appear.
+weight = 30  # Order that this section will appear.
 
 title = "Software packages"
 subtitle = ""
@@ -13,7 +14,7 @@ subtitle = ""
   page_type = "software"
 
   # Choose how much pages you would like to display (0 = all pages)
-  count = 10
+  count = 4
 
   # Choose how many pages you would like to offset by
   offset = 0

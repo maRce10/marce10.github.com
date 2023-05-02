@@ -1,21 +1,19 @@
 +++
-# A Recent Publications section created with the Pages widget.
-# This section displays recent blog posts from `content/publication/`.
-
+# A Projects section created with the Portfolio widget.
 widget = "pages"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
-weight = 20  # Order that this section will appear.
+weight = 26  # Order that this section will appear.
 
 title = "Publications"
-#subtitle = "Place your cursor at **Marcelo Araya** in the author list to see my contribution to the paper"
+subtitle = ""
 
 [content]
   # Page type to display. E.g. post, talk, or publication.
   page_type = "publication"
   
   # Choose how much pages you would like to display (0 = all pages)
-  count = 0
+  count = 5
   
   # Choose how many pages you would like to offset by
   offset = 0
@@ -27,8 +25,8 @@ title = "Publications"
   [content.filters]
     tag = ""
     category = ""
-    # publication_type = "2"
-    author = "admin"
+    publication_type = ""
+    author = ""
     exclude_featured = false
   
 [design]
@@ -44,13 +42,13 @@ title = "Publications"
   #   Uncomment (by removing `#`) an option to apply it.
   #   Choose a light or dark text color by setting `text_color_light`.
   #   Any HTML color name or Hex value is valid.
-    
+  
   # Background color.
-  # color = "gray"
+  # color = "navy"
   
   # Background gradient.
-  # gradient_start = "#929294"
-  # gradient_end = "#6a6a6d"
+  # gradient_start = "DeepSkyBlue"
+  # gradient_end = "SkyBlue"
   
   # Background image.
   # image = "background.jpg"  # Name of image in `static/media/`.
@@ -66,4 +64,3 @@ title = "Publications"
  # CSS class.
  css_class = ""
 +++
-

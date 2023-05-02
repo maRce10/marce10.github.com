@@ -1,9 +1,6 @@
 ---
 title: "ohun: optimizing sound event detection"
-output: github_document
-editor_options: 
-  chunk_output_type: console
-lastmod: '2022-12-19'
+lastmod: '2020-05-27'
 image:
   caption:
   focal_point: 'Left'
