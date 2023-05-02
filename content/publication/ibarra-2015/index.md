@@ -13,21 +13,12 @@ authors:
 - T. F. Timothy F. Wright
 - Wei Tang
 tags:
-- \"behavioral monitoring
 - Behavioral monitoring
 - Electrical mechanical co-design
 - Hummingbird feeder
 - Interdisciplinary application
 - Passive ID tag
 - RFID
-- RFID\"
-- behavioral monitoring
-- electrical mechanical co-design
-- hummingbird feeder
-- interdisciplinary application
-- passive ID tag
-- passive id tag
-- rfid
 categories: []
 date: '2015-01-01'
 lastmod: 2023-04-28T11:33:40-06:00

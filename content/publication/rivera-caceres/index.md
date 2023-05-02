@@ -11,9 +11,7 @@ authors:
 - Christopher N Templeton
 - William A Searcy
 tags:
-- Biology ( whole organism ) Subject Areas
-- Subject Category
-- behaviour Keywords
+- behavior
 - birdsong
 - duet codes
 - duet development
