@@ -50,7 +50,7 @@ Please cite [brmsish](https://marce10.github.io/brmsish/) as follows:
 Araya-Salas (2022), *brmsish: Miscellaneous functions to customize brms bayesian regression models*. R package version 1.0.0. 
 
 
-# References
+### References
 
 1. Buerkner, P. C. (2017). brms: An R package for Bayesian multilevel models using Stan. Journal of statistical software, 80, 1-28.
 

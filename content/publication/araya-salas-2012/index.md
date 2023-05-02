@@ -55,4 +55,6 @@ url_pdf: uploads/araya-salas_2012.pdf
 links:
 - name: URL
   url: https://www.sciencedirect.com/science/article/abs/pii/S000334721200214X?casa_token=lpsrDKO6agAAAAAA:GlbhNZ2j872MblH3we5XRSxNKqbHH7s2N1OnW9JP2GTW2MdF9a1WLjhlMEUkWGj3w9BGElW4Z71x
+- name: Supp Mat
+  url: uploads/1-s2.0-S000334721200214X-mmc1.pdf
 ---

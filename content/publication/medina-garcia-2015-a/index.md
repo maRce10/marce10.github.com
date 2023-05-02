@@ -66,6 +66,6 @@ links:
 - name: URL
   url: http://doi.wiley.com/10.1111/jeb.12694
 - name: Supp Mat
-  url: https://onlinelibrary.wiley.com/doi/full/10.1111/jeb.12694
+  url: uploads/suppl.mat.zip
 url_pdf: uploads/medina-garcia-2015-a.pdf
 ---

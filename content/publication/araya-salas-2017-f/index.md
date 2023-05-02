@@ -56,8 +56,6 @@ abstract: Animal acoustic communication is one of the most fruitful research are
 publication: '*Methods in Ecology and Evolution*'
 links:
 - name: URL
-  url: http://onlinelibrary.wiley.com/doi/10.1111/2041-210X.12624/abstract
-- name: Supp Mat
   url: https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.12624
 - name: Repository
   url: https://github.com/maRce10/warbleR

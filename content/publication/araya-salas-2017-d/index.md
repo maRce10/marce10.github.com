@@ -67,6 +67,6 @@ links:
 - name: URL
   url: https://www.sciencedirect.com/science/article/abs/pii/S0003347216303347?casa_token=lt6vf9IIfoAAAAAA:5XJJTj4BO9tD23frqPg5mUeg7zcUTVKomXJbqpG9eHbBoimuJEDmfuDV8jQ3o2mJL1WAVOGoNt--
 - name: Supp Mat
-  url: 
+  url: uploads/ScienceDirect_files_02May2023_20-08-59.759.zip
 url_pdf: uploads/araya-salas-2017-d.pdf
 ---
