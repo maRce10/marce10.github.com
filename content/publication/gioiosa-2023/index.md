@@ -64,7 +64,7 @@ links:
 - name: URL
   url: https://academic.oup.com/beheco/advance-article/doi/10.1093/beheco/arad018/7111247
 - name: Supp Mat
-  url: 
+  url: uploads/statistical_analysis.html
 - name: Repository
   url: https://github.com/maRce10/Roost-finding-behavior-in-Thyroptera-tricolor
 url_pdf: uploads/gioiosa-2023.pdf
