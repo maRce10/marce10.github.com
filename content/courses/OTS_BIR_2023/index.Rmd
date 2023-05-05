@@ -1,19 +1,29 @@
+---
+title: "Bioacoustic Analysis in R"
+output: github_document
+editor_options: 
+  chunk_output_type: console
+date: '2023-05-01'
+---
 
-<br>
+<figure>
+  <img src="https://marce10.github.io/OTS_BIR_2022/images/measures-parrot-call-spectro3.jpg">
 
-<center>
-<font size="6"><b>Bioacoustic Analysis in R</b></font>
-</center>
+</figure>
 
-<center><font size="5"><b><a href="https://tropicalstudies.org/">Organization for Tropical Studies</a><br></b></font></center>
+<div class="alert alert-success">
 
-<i><center><font size="5"><b><a href="marceloarayasalas.weebly.com/">Marcelo Araya-Salas, PhD</a><br></b></font></center></i>
+  - Online course
+  - May 15-19, 2023
+  - 10 am - 1 pm CST time
 
-<center>
-<font size="4">May 16 - 20, 2022</font>
-</center>
+</div>
 
-<center><img src="images/measures-parrot-call-spectro3.jpg" alt = "acousti measurements"></center>
+<center><a href="https://tropicalstudies.org/course/online-course-bioacoustic-analysis-in-r/" class="btn btn-info btn-lg">Apply</a></center>
+
+
+
+
 
 &nbsp; 
 
@@ -40,3 +50,9 @@ research as well as hands-on experience on analytical tools in R.
 Training biological science students and researchers in the detection and analysis of animal sounds in R. Specifically, it seeks to familiarize participants with computational tools in the R environment aiming at curating, detecting and analyzing animal acoustic signals, with an especial focus on quantifying fine-scale structural variation. The course will introduce the most relevant acoustics concepts to allow a detailed understanding of the metrics used for characterize acoustic signals. It will also guide participants through a variety of R packages for bioacoustics analysis, including seewave, tuneR, warbleR and baRulho. 
 
 </div>
+
+<br>
+
+<center><a href="https://tropicalstudies.org/course/online-course-bioacoustic-analysis-in-r/" class="btn btn-info btn-lg">Apply</a></center>
+
+<br>

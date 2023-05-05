@@ -25,12 +25,9 @@ main:
   - name: "Software"
     url: '#software'
     weight: 30
-  # - name: "Gallery"
-  #   url: '#gallery'
-  #   weight: 45
-  # - name: "Contact"
-  #   url: '#contact'
-  #   weight: 50
+  - name: "Students"
+    url: '#students'
+    weight: 40
 
 
 # Link to a PDF of your resume/CV from the menu.
