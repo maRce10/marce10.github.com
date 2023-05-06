@@ -15,10 +15,11 @@ authors:
 - R. J. Safran
 - G. Hobel
 tags:
-- communication
-- mating signal
-- scaling relationships
-- static allometry
+- Animal communication
+- Mating signal
+- Scaling relationships
+- Static allometry
+- Animal behavior
 categories: []
 date: '2015-10-01'
 lastmod: 2023-04-28T11:33:34-06:00

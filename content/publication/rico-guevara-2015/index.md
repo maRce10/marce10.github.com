@@ -8,15 +8,16 @@ authors:
 - Alejandro Rico-Guevara
 - admin
 tags:
-- animal weaponry
-- bill morphology
-- ecological causation
-- intrasexual competition
-- male combat
-- secondary sexual
-- sexual dimorphism
-- traits
-- trochilidae
+- Animal weaponry
+- Bill morphology
+- Ecological causation
+- Intrasexual competition
+- Male combat
+- Secondary sexual
+- Sexual dimorphism
+- Trochilidae
+- Hummingbirds
+- Long-billed hermit
 categories: []
 date: '2015-10-01'
 lastmod: 2023-04-28T11:33:34-06:00

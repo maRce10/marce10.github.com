@@ -24,11 +24,12 @@ authors:
 - Michael S. Webster
 - Aaron N. Rice
 tags:
-- acoustic communication
-- acoustic measurements
-- multivariate analysis
-- phylogenetic comparative analysis
-- signal evolution
+- Acoustic communication
+- Acoustic measurements
+- Multivariate analysis
+- Phylogenetic comparative analysis
+- Phenotypic evolution
+- Animal behavior
 categories: []
 date: '2021-01-01'
 lastmod: 2023-04-28T11:33:41-06:00

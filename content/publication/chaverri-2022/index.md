@@ -18,7 +18,9 @@ tags:
 - Leaf shape
 - Resource specialization
 - Roosting
-- Thyroptera tricolor
+- Spix’s disc-winged bat
+- Bats
+- Animal behavior
 categories: []
 date: '2022-11-01'
 lastmod: 2023-04-28T11:33:43-06:00

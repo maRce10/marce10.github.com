@@ -9,7 +9,11 @@ authors:
 - Grace Smith-Vidaurre
 - admin
 - Timothy F Wright
-tags: []
+tags:
+- Animal communication
+- Individual signature
+- Geographic variation
+- Animal behavior
 categories: []
 date: '2019-12-01'
 lastmod: 2023-04-28T11:33:38-06:00

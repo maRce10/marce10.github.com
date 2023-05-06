@@ -11,13 +11,14 @@ authors:
 - Christopher N Templeton
 - William A Searcy
 tags:
-- behavior
-- birdsong
-- duet codes
-- duet development
-- duetting
-- temporal coordination
-- vocal interaction
+- Animal behavior
+- Birdsong
+- Duet code
+- Duet development
+- Duetting
+- Temporal coordination
+- Vocal interaction
+- Vocal learning
 categories: []
 date: '2018-01-01'
 lastmod: 2023-04-28T11:33:40-06:00

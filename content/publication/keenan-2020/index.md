@@ -17,13 +17,15 @@ authors:
 - J. Jordan Price
 - Christopher N. Templeton
 tags:
-- coordination
-- duet
-- signal evolution
-- songbirds
-- troglodytes
-- vocal communication
-- vocal learning
+- Vocal coordination
+- Duetting
+- Phenotypic evolution
+- Songbirds
+- Troglodytes
+- Vocal communication
+- Vocal learning
+- Animal behavior
+- Phylogenetic comparative analysis
 categories: []
 date: '2020-12-01'
 lastmod: 2023-04-28T11:33:44-06:00

@@ -8,12 +8,13 @@ authors:
 - admin
 - T. Wright
 tags:
-- behaviour
-- cognition
-- ecology
-- environmental science
-- evolution
-- neuroscience
+- Animal behavior
+- Cognition
+- Open-ended learning
+- Ontogeny
+- Animal communication
+- Hummingbirds
+- Long-billed hermit
 categories: []
 date: '2013-09-01'
 lastmod: 2023-04-28T11:33:33-06:00

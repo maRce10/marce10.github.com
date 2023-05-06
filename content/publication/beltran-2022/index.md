@@ -13,11 +13,13 @@ authors:
 - Alejandro Rico-Guevara
 tags:
 - Trochilidae
-- communication signals
-- dimorphism
-- elevation
-- habitat structure
-- signal redundancy
+- Hummingbirds
+- Animal communication
+- Suxual dimorphism
+- Elevation
+- Habitat structure
+- Signal redundancy
+- Acoustic adaptation
 categories: []
 date: '2022-12-01'
 lastmod: 2023-04-28T11:33:43-06:00

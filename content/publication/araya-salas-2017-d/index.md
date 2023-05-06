@@ -12,12 +12,14 @@ authors:
 - Daniel J Mennill
 - Timothy F Wright
 tags:
-- animal communication
-- context-dependent strategy
-- lekking behaviour
-- randomization test
-- song alternation
-- song overlap
+- Animal communication
+- Context-dependent behavior
+- Lekking behavior
+- Randomization test
+- Vocal coordination
+- Animal behavior
+- Hummingbirds
+- Long-billed hermit
 categories: []
 date: '2017-01-01'
 lastmod: 2023-04-28T11:33:36-06:00

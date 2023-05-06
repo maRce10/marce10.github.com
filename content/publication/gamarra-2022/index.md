@@ -1,7 +1,7 @@
 ---
 # Documentation: https://wowchemy.com/docs/managing-content/
 
-title: Variación de la estructura del canto del Gorrión de Collar Rufo (Zonotrichia capensis) a lo largo de un gradiente urbano en el suroeste del Perú
+title: Variación de la estructura del canto del Gorrión de Collar Rufo (*Zonotrichia capensis*) a lo largo de un gradiente urbano en el suroeste del Perú
 subtitle: ''
 summary: ''
 authors:
@@ -9,7 +9,12 @@ authors:
 - Víctor Gamarra-Toledo
 - Evaristo López Tejeda
 - admin
-tags: []
+tags:
+- Vocal behavior
+- Animal communication
+- Geographic variation
+- Acoustic adaptation
+- Rufous-collared sparrow
 categories: []
 date: '2022-01-01'
 lastmod: 2023-04-28T11:33:42-06:00

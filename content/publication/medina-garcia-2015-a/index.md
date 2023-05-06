@@ -11,13 +11,13 @@ authors:
 - T. F. Wright
 tags:
 - Neotropical parrot
-- body size
-- comparative analyses
-- contact calls
-- evolutionary rates
-- sensory drive
-- signal evolution
-- vocal learning
+- Body size
+- Phylogenetic comparative analysis
+- Contact calls
+- Evolutionary rates
+- Sensory drive
+- Phenotypic evolution
+- Vocal learning
 categories: []
 date: '2015-10-01'
 lastmod: 2023-04-28T11:33:45-06:00

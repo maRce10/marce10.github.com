@@ -13,7 +13,14 @@ authors:
 - Timothy F. Wright
 - Virgilio López III
 - Timothy F. Wright
-tags: []
+tags:
+- Animal behavior
+- Animal communication
+- Cognition
+- Spatial memory
+- Animal weaponry
+- Bill morphology
+- Lekking behavior
 categories: []
 date: '2018-01-01'
 lastmod: 2023-04-28T11:33:38-06:00

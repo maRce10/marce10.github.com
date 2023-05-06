@@ -6,7 +6,13 @@ subtitle: ''
 summary: ''
 authors:
 - admin
-tags: []
+tags:
+- Biomusicology
+- Animal behavior
+- Animal communication
+- Geographic variation
+- Harmonicity
+- Nightingale wren
 categories: []
 date: '2012-12-01'
 lastmod: 2023-04-28T11:33:33-06:00

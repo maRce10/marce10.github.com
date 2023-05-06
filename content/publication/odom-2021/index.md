@@ -24,7 +24,12 @@ authors:
 - Kimberley K. A. Meyers
 - admin
 - Michael S. Webster
-tags: []
+tags:
+- Animal behavior
+- Sex roles
+- Sexual dimorphism
+- Phylogenetic comparative analysis
+- Fairy wrens
 categories: []
 date: '2021-01-01'
 lastmod: 2023-04-28T11:33:42-06:00

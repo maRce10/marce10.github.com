@@ -8,7 +8,13 @@ authors:
 - Katarzyna Wojczulanis-Jakubas
 - admin
 - Dariusz Jakubas
-tags: []
+tags:
+- Coordinated provisioning
+- Environmental effect
+- Little auk
+- Seabird
+- Parental care
+- Animal behavior
 categories: []
 date: '2018-01-01'
 lastmod: 2023-04-28T11:33:37-06:00

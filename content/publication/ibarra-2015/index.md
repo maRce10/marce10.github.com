@@ -19,6 +19,7 @@ tags:
 - Interdisciplinary application
 - Passive ID tag
 - RFID
+- Humminbirds
 categories: []
 date: '2015-01-01'
 lastmod: 2023-04-28T11:33:40-06:00

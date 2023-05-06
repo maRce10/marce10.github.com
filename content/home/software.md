@@ -7,7 +7,7 @@ active = true  # Activate this widget? true/false
 weight = 30  # Order that this section will appear.
 
 title = "Software packages"
-subtitle = ""
+subtitle = "Click to see details"
 
 [content]
   # Page type to display. E.g. post, talk, or publication.

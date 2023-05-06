@@ -9,18 +9,12 @@ authors:
 - J. Edgardo Arévalo
 - admin
 tags:
-- aggressive displays
-- carara national park
-- distress calls
-- falcon
-- forest-
-- micrastur semitorquatus
-- prey on a
-- prey size
-- prey-predator interaction
-- such as the collared
-- tropical forest
-- tropical raptors
+- Aggressive displays
+- Distress calls
+- Forest-falcon
+- Prey-predator interaction
+- Chesnut-mandibled toucan
+- Natural history
 categories: []
 date: '2013-03-01'
 lastmod: 2023-04-28T11:33:33-06:00

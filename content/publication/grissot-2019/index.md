@@ -18,18 +18,12 @@ authors:
 - Katarzyna Błachowiak-Samołyk
 - Katarzyna Wojczulanis-Jakubas
 tags:
-- coordinated provisioning
-- dovekie
-- environmental effect
-- evolution
-- frontiers in ecology and
-- frontiersin
-- little auk
-- little auk (Dovekie)
-- org
-- parental care
-- seabird
-- www
+- Coordinated provisioning
+- Little auk
+- Environmental effect
+- Parental care
+- Seabird
+- Animal behavior
 categories: []
 date: '2019-01-01'
 lastmod: 2023-04-28T11:33:39-06:00

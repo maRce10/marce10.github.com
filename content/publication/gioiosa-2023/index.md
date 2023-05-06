@@ -15,7 +15,13 @@ authors:
 - Mariela Sánchez-Chavarría
 - Dino Scaravelli
 - Gloriana Chaverri
-tags: []
+tags:
+- Animal behavior
+- Bats
+- Spix’s disc-winged bat
+- Sensory input
+- Vocal behavior
+- Roosting
 categories: []
 date: '2023-04-01'
 lastmod: 2023-04-29T09:40:46-06:00

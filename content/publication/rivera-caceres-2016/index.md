@@ -14,7 +14,8 @@ tags:
 - Duet code
 - Duet coordination
 - Duet ontogeny
-- Song learning
+- Vocal learning
+- Animal behavior
 categories: []
 date: '2016-01-01'
 lastmod: 2023-04-28T11:33:37-06:00

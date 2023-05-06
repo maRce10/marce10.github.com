@@ -11,11 +11,13 @@ authors:
 - Michael Webster
 tags:
 - Sound file compression
-- acoustic analysis
-- cross-correlation
-- dynamic-time warping
+- Acoustic analysis
+- Acoustic signal degradation
+- Cross-correlation
+- Dynamic-time warping
 - mp3
-- spectrographic parameters
+- Spectrographic parameters
+- Acoustic methods
 categories: []
 date: '2019-01-01'
 lastmod: 2023-04-28T11:33:40-06:00

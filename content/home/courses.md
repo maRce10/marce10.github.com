@@ -13,7 +13,7 @@ active: true
 weight: 65
 
 title: Courses
-subtitle: ''
+subtitle: 'Click to see details'
 
 content:
   # Page type to display. E.g. project.

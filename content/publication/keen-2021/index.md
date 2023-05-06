@@ -12,14 +12,15 @@ authors:
 - Timothy F. Wright
 - admin
 tags:
-- acoustic diversity
-- acoustic space
-- classification
-- data augmentation
-- random forest
-- repertoire size
-- unsupervised machine learning
-- vocal signals
+- Acoustic diversity
+- Acoustic space
+- Automatic classification
+- Data augmentation
+- Random forest
+- Repertoire size
+- Unsupervised machine learning
+- Animal communication
+- Animal behavior
 categories: []
 date: '2021-07-01'
 lastmod: 2023-04-28T11:33:41-06:00

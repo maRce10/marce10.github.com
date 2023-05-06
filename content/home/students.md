@@ -1,68 +1,26 @@
-+++
-# A Projects section created with the Portfolio widget.
-# This section displays posts from `content/software/`
-widget = "pages"  # See https://sourcethemes.com/academic/docs/page-builder/
-headless = true  # This file represents a page section.
-active = true  # Activate this widget? true/false
-weight = 30  # Order that this section will appear.
+---
+# A section created with the Portfolio widget.
+# This section displays content from `content/project/`.
+# See https://wowchemy.com/docs/widget/portfolio/
+widget: portfolio
 
-title = "Students"
-subtitle = ""
+# This file represents a page section.
+headless: false
 
-[content]
-  # Page type to display. E.g. post, talk, or publication.
-  page_type = "students"
+# Order that this section appears on the page.
+weight: 40
 
-  # Choose how much pages you would like to display (0 = all pages)
-  count = 0
+title: 'Students'
+subtitle: 'Click to see details'
 
-  # Choose how many pages you would like to offset by
-  offset = 0
+content:
+  # Page type to display. E.g. project.
+  page_type: portfolio
 
-  # Page order. Descending (desc) or ascending (asc) date.
-  order = "asc"
-
-  # Filter posts by a taxonomy term.
-  [content.filters]
-    tag = ""
-    category = ""
-    publication_type = ""
-    author = ""
-    exclude_featured = false
-
-[design]
-  # Toggle between the various page layout types.
-  #   1 = List
-  #   2 = Compact
-  #   3 = Card
-  #   4 = Citation (publication only)
-  view = 2
-
-[design.background]
-  # Apply a background color, gradient, or image.
-  #   Uncomment (by removing `#`) an option to apply it.
-  #   Choose a light or dark text color by setting `text_color_light`.
-  #   Any HTML color name or Hex value is valid.
-
-  # Background color.
-  # color = "navy"
-
-  # Background gradient.
-  # gradient_start = "DeepSkyBlue"
-  # gradient_end = "SkyBlue"
-
-  # Background image.
-  # image = "background.jpg"  # Name of image in `static/media/`.
-  # image_darken = 0.6  # Darken the image? Range 0-1 where 0 is transparent and 1 is opaque.
-
-  # Text color (true=light or false=dark).
-  # text_color_light = true  
-
-[advanced]
- # Custom CSS. 
- css_style = ""
-
- # CSS class.
- css_class = ""
-
-+++
+design:
+  columns: '2'
+  view: masonry
+  flip_alt_rows: true
+  background: {}
+  spacing: {padding: [0, 0, 0, 0]}
+---

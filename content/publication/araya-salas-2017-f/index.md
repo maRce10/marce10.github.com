@@ -11,6 +11,9 @@ tags:
 - Bioinformatics
 - Evolutionary biology
 - Software
+- Acoustic methods
+- R
+- Scientific programming
 categories: []
 date: '2017-01-01'
 lastmod: 2023-04-28T11:33:36-06:00

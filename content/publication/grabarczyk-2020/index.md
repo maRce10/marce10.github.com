@@ -11,13 +11,13 @@ authors:
 - Maarten J. Vonhof
 - Sharon A. Gill
 tags:
-- context
-- dependent signaling
-- eavesdropping
-- signal masking
-- signaling network
-- territory intrusion
-- vocal coordination
+- Context-dependent behavior
+- Eavesdropping
+- Signal masking
+- Signaling network
+- Territory intrusion
+- Vocal coordination
+- Animal behavior
 categories: []
 date: '2020-11-01'
 lastmod: 2023-04-28T11:33:45-06:00

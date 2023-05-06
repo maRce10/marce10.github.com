@@ -7,7 +7,11 @@ summary: ''
 authors:
 - Paulina L. González-Gómez
 - admin
-tags: []
+tags: 
+- Animal behavior
+- Hummingbirds
+- Cognition
+- Field research
 categories: []
 date: '2019-01-01'
 lastmod: 2023-04-28T11:33:44-06:00

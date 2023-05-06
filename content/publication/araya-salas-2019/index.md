@@ -13,9 +13,12 @@ authors:
 - Paulina L. Gonzalez-Gomez
 - Timothy F Wright
 tags:
-- behaviour
-- evolution
-- neuroscience
+- Animal behavior
+- Geographic variation
+- Hummingbirds
+- Long-billed hermit
+- Lekking behavior
+- Animal communication
 categories: []
 date: '2019-01-01'
 lastmod: 2023-04-28T11:33:37-06:00

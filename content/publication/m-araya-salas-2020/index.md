@@ -9,7 +9,12 @@ authors:
 - Andres Hernández-Pinsón
 - Nazareth Rojas Rojas
 - Gloriana Chaverri
-tags: []
+tags:
+- Animal behavior
+- Ontogeny
+- Bats
+- Spix’s disc-winged bats
+- Vocal interactions
 categories: []
 date: '2020-01-01'
 lastmod: 2023-04-28T11:33:39-06:00

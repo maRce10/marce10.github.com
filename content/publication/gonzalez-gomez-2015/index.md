@@ -9,7 +9,11 @@ authors:
 - P. Razeto-Barry
 - admin
 - C. F. Estades
-tags: []
+tags:
+- Animal behavior
+- Cognition
+- Environmental effects
+- Hummingbirds
 categories: []
 date: '2015-01-01'
 lastmod: 2023-04-28T11:33:35-06:00
