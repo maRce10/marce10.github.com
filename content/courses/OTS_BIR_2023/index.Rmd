@@ -22,9 +22,6 @@ date: '2023-05-01'
 <center><a href="https://tropicalstudies.org/course/online-course-bioacoustic-analysis-in-r/" class="btn btn-info btn-lg">Apply</a></center>
 
 
-
-
-
 &nbsp; 
 
 The study of animal acoustic signals is a central tool for many fields
