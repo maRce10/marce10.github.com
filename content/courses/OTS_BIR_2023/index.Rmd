@@ -6,10 +6,10 @@ editor_options:
 date: '2023-05-01'
 ---
 
-<figure>
-  <img src="https://marce10.github.io/OTS_BIR_2022/images/measures-parrot-call-spectro3.jpg">
+<!-- <figure> -->
+<!--   <img src="https://marce10.github.io/OTS_BIR_2022/images/measures-parrot-call-spectro3.jpg"> -->
 
-</figure>
+<!-- </figure> -->
 
 <div class="alert alert-success">
 
