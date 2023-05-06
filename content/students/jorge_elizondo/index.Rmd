@@ -1,5 +1,5 @@
 ---
-title: "Jorge Elizondo"
+title: "Jorge Elizondo-Calvo"
 output: github_document
 editor_options: 
   chunk_output_type: console
@@ -12,7 +12,7 @@ image:
   preview_only: true
 ---
 
-<img src="/post/jorge_elizondo.jpg" alt="Jorge Elizondo" align="right" width = "35%" height="35%" style='border:20px solid #ffffff'/>
+<img src="/post/jorge_elizondo.jpg" alt="Jorge Elizondo-Calvo" align="right" width = "35%" height="35%" style='border:20px solid #ffffff'/>
 
 I'm a third-year undergraduate student majoring in Biology at the University of Costa Rica. My academic journey has been focused on the application of computational tools to deepen our understanding of the ecological roles played by diverse animals, including amphibians, birds, and mammals. By utilizing these tools, I actively contribute to the development of enhanced conservation efforts.
 
