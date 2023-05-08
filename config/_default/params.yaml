@@ -9,7 +9,7 @@
 appearance:
   # theme: custom_theme
   day_night: true
-  theme_night: ocean
+  theme_night: custom
   theme_day: custom
   font: Custom
   font_size: M

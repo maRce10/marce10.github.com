@@ -15,7 +15,7 @@ subtitle: 'Click to see details'
 
 content:
   # Page type to display. E.g. project.
-  page_type: portfolio
+  page_type: students
 
 design:
   columns: '2'
