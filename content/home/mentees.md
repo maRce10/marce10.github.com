@@ -10,12 +10,15 @@ headless: false
 # Order that this section appears on the page.
 weight: 40
 
-title: 'Students'
+title: 'Mentees'
 subtitle: 'Click to see details'
+
+kinds:
+  - page
 
 content:
   # Page type to display. E.g. project.
-  page_type: students
+  page_type: mentees
 
 design:
   columns: '2'

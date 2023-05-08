@@ -12,10 +12,12 @@ From <https://matteocourthoud.github.io/post/website/> Site clone from: <https:/
 
 The basic files that you want to modify to customize your website are the following:
 
-    config/_default/config.yaml: general website information
-    config/_default/params.yaml: website customization
-    config/_default/menus.yaml: top bar / menu customization
-    content/authors/admin/_index.md: personal information files
+```         
+config/_default/config.yaml: general website information
+config/_default/params.yaml: website customization
+config/_default/menus.yaml: top bar / menu customization
+content/authors/admin/_index.md: personal information files
+```
 
 ### functions
 
@@ -168,11 +170,9 @@ add.pdf()
 
 ```
 
-# fixed 
-.section-heading h1{margin:0 0 10px 0}
-.section-heading h1{margin:0 0 10px 0;position:sticky;position:-webkit-sticky;top:150px;}
+# fixed
 
-
+.section-heading h1{margin:0 0 10px 0} .section-heading h1{margin:0 0 10px 0;position:sticky;position:-webkit-sticky;top:150px;}
 
 ```{r}
 
@@ -193,4 +193,3 @@ render_readme(from = "~/Dropbox/R_package_testing/brmsish", date = "2023-04-30")
 render_readme(from = "~/Dropbox/R_package_testing/sketchy", date = "2023-04-28")
 
 ```
-

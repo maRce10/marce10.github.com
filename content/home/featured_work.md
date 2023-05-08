@@ -10,10 +10,10 @@ headless: true
 active: false
 
 # Order that this section appears on the page.
-weight: 50
+weight: 60
 
 # Note: `&shy;` is used to add a 'soft' hyphen in a long heading.
-title: 'Accomplish&shy;ments'
+title: Featured work
 subtitle:
 
 # Date format
@@ -26,14 +26,15 @@ date_format: Jan 2006
 #   Leave other parameters empty if not required.
 #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
 item:
-- certificate_url: https://www.coursera.org
+- certificate_url: https://www.nature.com/articles/d41586-019-01719-0
   date_end: ""
-  date_start: "2021-01-25"
+  date_start: "2019-06-01"
   description: ""
-  organization: Coursera
-  organization_url: https://www.coursera.org
-  title: Neural Networks and Deep Learning
-  url: ""
+  organization: Nature News and Views
+  organization_url: https://www.nature.com/articles/d41586-019-01719-0
+  title: Hummingbirds look and learn
+
+
 - certificate_url: https://www.edx.org
   date_end: ""
   date_start: "2021-01-01"

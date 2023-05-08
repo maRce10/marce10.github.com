@@ -15,19 +15,20 @@ main:
   #   weight: 21
   - name: "Courses"
     url: '#courses'
-  #   weight: 30
+    weight: 50
   # - name: "Useful Data"
   #   url: '#data'
   #   weight: 31
-  # - name: "Technical Notes in R"
-  #   url: '#notes_in_r'
-  #   weight: 32
   - name: "Software"
     url: '#software'
     weight: 30
-  - name: "Students"
-    url: '#students'
+  - name: "Mentees"
+    url: '#mentees'
     weight: 40
+  # - name: "Featured work"
+  #   url: '#featured_work'
+  #   weight: 60
+
 
 
 # Link to a PDF of your resume/CV from the menu.
