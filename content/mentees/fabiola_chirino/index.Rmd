@@ -1,0 +1,23 @@
+---
+title: "Fabiola Chirino"
+output: github_document
+editor_options: 
+  chunk_output_type: console
+lastmod: '2023-05-05'
+featured: yes
+image:
+  caption:
+  focal_point: 'Left'
+  placement: 2
+  preview_only: true
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+<img src="/post/fabiola_chirino.jpg" alt="Fabiola Chirino" align="right" width = "33%" height="33%"/>
+
+I am a biologist with experience in ecology and bioacoustics of frogs and acoustic recognition software programming. I have more than five years of experience in field work focused on the observation of frog and mammal species in their habitat.  
+
+My research is centered in three main areas: research, conservation and education. I am currently developing my thesis with an emphasis in Zoology focused on understanding Lemur frog reproductive phenology using computational tools to program an acoustic automatic detector to associate their calling activity with climatic variables in a context of climate change. I'm passionate about projects that involve science as a tool for improving conservation efforts.
+
+&nbsp; 
