@@ -10,8 +10,14 @@ date: '2023-05-01'
 <!--   <img src="https://marce10.github.io/OTS_BIR_2022/images/measures-parrot-call-spectro3.jpg"> -->
 
 <!-- </figure> -->
-
 <div class="alert alert-success">
+
+<center>[**Check the course website for related materials and practices**](https://marce10.github.io/OTS_BIR_2023/
+)</center>
+
+</div>
+
+<div class="alert alert-warning">
 
   - Online course
   - May 15-19, 2023
