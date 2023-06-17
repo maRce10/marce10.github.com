@@ -82,6 +82,6 @@ links:
 - name: URL
   url: https://onlinelibrary.wiley.com/doi/10.1002/ece3.8378
 - name: Supp Mat
-  url: https://onlinelibrary.wiley.com/doi/10.1002/ece3.8378
+  url: https://datadryad.org/stash/share/6vGZI029rtLkq4Mv2aJZAtP4GZtdLAvcJSZi-OkLqUs
 url_pdf: uploads/odom-2021.pdf
 ---

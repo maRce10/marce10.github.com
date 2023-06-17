@@ -12,7 +12,7 @@ date: '2023-05-01'
 <!-- </figure> -->
 <div class="alert alert-success">
 
-<center>[**Check the course website for related materials and practices**](https://marce10.github.io/OTS_BIR_2023/
+<center>[**Check the course website for materials and practices**](https://marce10.github.io/OTS_BIR_2023/
 )</center>
 
 </div>

@@ -8,7 +8,7 @@ authors:
 - admin
 tags: []
 categories: []
-date: '2020-01-01'
+date: '2017-01-01'
 lastmod: 2023-04-28T11:33:38-06:00
 featured: false
 draft: false
@@ -33,4 +33,10 @@ publication_types:
 abstract: ''
 publication: ''
 url_pdf: uploads/araya-salas-2017-e.pdf
+links:
+- name: URL
+  url: https://marce10.github.io/Rraven/
+- name: Repository
+  url: https://github.com/maRce10/Rraven
+
 ---

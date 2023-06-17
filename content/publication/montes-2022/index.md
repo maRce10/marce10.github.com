@@ -1,7 +1,7 @@
 ---
 # Documentation: https://wowchemy.com/docs/managing-content/
 
-title: Variación de la estructura del canto del Gorrión de Collar Rufo (*Zonotrichia capensis*) a lo largo de un gradiente urbano en el suroeste del Perú
+title: "Variación de la estructura del canto del Gorrión de Collar Rufo (Zonotrichia capensis) a lo largo de un gradiente urbano en el suroeste del Perú"
 subtitle: ''
 summary: ''
 authors:
