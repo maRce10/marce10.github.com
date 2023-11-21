@@ -42,7 +42,7 @@ publication: '*Frontiers in Bird Science*'
 url_pdf: uploads/genes2023.pdf
 links:
 - name: URL
-  url: https://www.frontiersin.org/articles/10.3389/fbirs.2023.1266420/full#supplementary-material
+  url: https://www.frontiersin.org/articles/10.3389/fbirs.2023.1266420/full
 - name: Supp Mat
   url: https://www.frontiersin.org/articles/file/downloadfile/1266420_supplementary-materials_datasheets_1_pdf/octet-stream/Data%20Sheet%201.pdf/2/1266420?isPublishedV2=False
 - name: Repository
