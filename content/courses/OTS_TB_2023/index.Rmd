@@ -9,7 +9,7 @@ date: '2023-06-01'
 
 <div class="alert alert-success">
 
-<center>[**Check the course website for materials and practices**](https://marce10.github.io/OTS_TB_2022/)</center>
+<center>[**Check the course website for materials and practices**](https://marce10.github.io/OTS_Tropical_Biology_2023/)</center>
 
 </div>
 
