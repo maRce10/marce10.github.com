@@ -116,7 +116,7 @@ render_readme <-function(from, date = Sys.Date()) {
 
 ```{r, eval= FALSE}
 
-blogdown::serve_site()
+blogdown::build_site()
 
 ```
 

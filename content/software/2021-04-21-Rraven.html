@@ -1,0 +1,35 @@
+---
+title: "Rraven: connecting R and Raven sound analysis software"
+output: github_document
+editor_options: 
+  chunk_output_type: console
+lastmod: '2021-04-21'
+---
+
+
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+<p><img src="vignettes/Rraven_sticker.png" alt="warbleR logo" align="right" width = "25%" height="25%"/></p>
+<p>The <code>Rraven</code> package is designed to facilitate the exchange of data between R and <a href="https://ravensoundsoftware.com">Raven sound analysis software</a> (<a href="https://www.birds.cornell.edu/home">Cornell Lab of Ornithology</a>). <a href="https://ravensoundsoftware.com">Raven</a> provides very powerful tools for the analysis of (animal) sounds. R can simplify the automatization of complex routines of analyses. Furthermore, R packages as <a href="https://cran.r-project.org/package=warbleR">warbleR</a>, <a href="https://cran.r-project.org/package=seewave">seewave</a> and <a href="https://cran.r-project.org/package=monitoR">monitoR</a> (among others) provide additional methods of analysis, working as a perfect complement for those found in <a href="https://ravensoundsoftware.com">Raven</a>. Hence, bridging these applications can largely expand the bioacoustician’s toolkit.</p>
+<p>Currently, most analyses in <a href="https://ravensoundsoftware.com">Raven</a> cannot be run in the background from a command terminal. Thus, most <code>Rraven</code> functions are design to simplify the exchange of data between the two programs.</p>
+<p>Install/load the package from CRAN as follows:</p>
+<pre class="r"><code># From CRAN 
+install.packages(&quot;Rraven&quot;)
+
+#load package
+library(Rraven)</code></pre>
+<p>To install the latest developmental version from <a href="https://github.com/">github</a> you will need the R package <a href="https://cran.r-project.org/package=devtools">remotes</a>:</p>
+<pre class="r"><code># From github
+remotes::install_github(&quot;maRce10/Rraven&quot;)
+
+#load package
+library(Rraven)</code></pre>
+<p>The package vignette provides detailed examples for each function in <code>Rraven</code>, including both the R code as well as the additional steps in <a href="https://ravensoundsoftware.com">Raven</a> required to fully accomplished the analyses. You can pull it up as follows:</p>
+<pre class="r"><code>vignette(&quot;Rraven&quot;)</code></pre>
+<p>The animations explaining additional steps in <a href="https://ravensoundsoftware.com">Raven</a> are shown in more detail on the <a href="https://github.com/maRce10/Rraven">github</a> version of this vignette, which can be downloaded as follows (saves the file “Rraven.github.html” in your current working directory):</p>
+<pre class="r"><code>download.file(url = &quot;https://raw.githubusercontent.com/maRce10/Rraven/master/gifs/Rraven.hitgub.html&quot;, 
+destfile = &quot;Rraven.hitgub.html&quot;)</code></pre>
+<p>The downloaded file can be opened by any internet browser.</p>
+<hr />
+<p>Please cite <code>Rraven</code> as follows:</p>
+<p>Araya-Salas. (2020), <em>Rraven: connecting R and Raven bioacoustic software</em>. R package version 1.0.9.</p>

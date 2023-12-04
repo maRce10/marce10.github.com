@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Customizing and deploying sites</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="customizing_website_files/libs/clipboard/clipboard.min.js"></script>
+<script src="customizing_website_files/libs/quarto-html/quarto.js"></script>
+<script src="customizing_website_files/libs/quarto-html/popper.min.js"></script>
+<script src="customizing_website_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="customizing_website_files/libs/quarto-html/anchor.min.js"></script>
+<link href="customizing_website_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="customizing_website_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="customizing_website_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="customizing_website_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="customizing_website_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Customizing and deploying sites</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="basic-customization" class="level1">
+<h1>Basic Customization</h1>
+<p>From <a href="https://matteocourthoud.github.io/post/website/" class="uri">https://matteocourthoud.github.io/post/website/</a> Site clone from: <a href="https://www.yabin-da.com" class="uri">https://www.yabin-da.com</a> <a href="https://github.com/dayabin/PersonalWebisteNewVersion" class="uri">https://github.com/dayabin/PersonalWebisteNewVersion</a></p>
+<p>The basic files that you want to modify to customize your website are the following:</p>
+<pre><code>config/_default/config.yaml: general website information
+config/_default/params.yaml: website customization
+config/_default/menus.yaml: top bar / menu customization
+content/authors/admin/_index.md: personal information files</code></pre>
+<section id="functions" class="level3">
+<h3 class="anchored" data-anchor-id="functions">functions</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#find text in functions</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>find.text <span class="ot">&lt;-</span> <span class="cf">function</span>(pattern, <span class="at">fun.only =</span> <span class="cn">FALSE</span>, <span class="at">path =</span> <span class="st">"./R"</span>, <span class="at">ignore.case =</span> T, <span class="at">file.pattern =</span> <span class="st">"</span><span class="sc">\\</span><span class="st">.md$"</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  {</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>rfiles <span class="ot">&lt;-</span> <span class="fu">list.files</span>(<span class="at">pattern =</span> file.pattern, <span class="at">path =</span> path, <span class="at">full.names =</span> T, <span class="at">all.files =</span> T, <span class="at">recursive =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">#check where a word is found in each function an return the name of function where it was found and the time</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>w <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(f <span class="cf">in</span> rfiles){</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># print(f)</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> <span class="fu">readLines</span>(f)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  y <span class="ot">&lt;-</span> <span class="fu">grep</span>(pattern, x, <span class="at">fixed =</span> T, <span class="at">value =</span> T)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">length</span>(y) <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="fu">gsub</span>(<span class="at">pattern =</span> file.pattern, <span class="st">""</span>,  (<span class="fu">basename</span>(f)))) </span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span>(i <span class="cf">in</span> y) <span class="fu">print</span>(i)</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  w <span class="ot">=</span> w <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="co">#replace text</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>repl.text <span class="ot">&lt;-</span> <span class="cf">function</span>(pattern, repl, <span class="at">path =</span> <span class="st">"./R"</span>, <span class="at">ignore.case =</span> T, <span class="at">file.pattern =</span> <span class="st">"</span><span class="sc">\\</span><span class="st">.md$"</span>, <span class="at">fixed =</span> <span class="cn">FALSE</span>){</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>  rfiles <span class="ot">&lt;-</span> <span class="fu">list.files</span>(<span class="at">pattern =</span> file.pattern, <span class="at">path =</span> path, <span class="at">full.names =</span> T, <span class="at">all.files =</span> T, <span class="at">recursive =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span>(f <span class="cf">in</span> rfiles){</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    <span class="co">#find and replace</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>      x <span class="ot">&lt;-</span> <span class="fu">readLines</span>(f)</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>      y <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="at">pattern =</span> pattern, <span class="at">replacement =</span> repl, <span class="at">x =</span> x, <span class="at">fixed =</span> fixed)</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cat</span>(y, <span class="at">file =</span> f, <span class="at">sep=</span><span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>  <span class="co">#reread</span></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>      x <span class="ot">&lt;-</span> <span class="fu">readLines</span>(f)</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>      w <span class="ot">&lt;-</span> <span class="fu">grep</span>(repl, x, <span class="at">fixed =</span> fixed, <span class="at">value =</span> T, <span class="at">ignore.case =</span> T)</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span>(<span class="fu">length</span>(w)<span class="sc">&gt;</span><span class="dv">0</span>) {</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>          <span class="fu">print</span>(f) </span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span>(i <span class="cf">in</span> w) <span class="fu">print</span>(i)</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>          }</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>add.pdf <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">path =</span> <span class="st">"./content/publication"</span>, <span class="at">file.pattern =</span> <span class="st">"</span><span class="sc">\\</span><span class="st">.md$"</span>, <span class="at">rm.doi =</span> <span class="cn">TRUE</span>){</span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>  rfiles <span class="ot">&lt;-</span> <span class="fu">list.files</span>(<span class="at">pattern =</span> file.pattern, <span class="at">path =</span> path, <span class="at">full.names =</span> T, <span class="at">all.files =</span> T, <span class="at">recursive =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>  results <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span>(f <span class="cf">in</span> rfiles){</span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>    <span class="co">#find and replace</span></span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>      x <span class="ot">&lt;-</span> <span class="fu">readLines</span>(f)</span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> (rm.doi)</span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>        x <span class="ot">&lt;-</span> x[<span class="sc">!</span><span class="fu">grepl</span>(<span class="st">"^doi:"</span>, x)]</span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> (<span class="sc">!</span><span class="fu">any</span>(<span class="fu">grepl</span>(<span class="st">"^url_pdf"</span>, x))){</span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>        url_pdf <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"url_pdf: "</span>, <span class="fu">basename</span>(<span class="fu">dirname</span>(f)), <span class="st">".pdf"</span>)</span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>        y <span class="ot">&lt;-</span> x[<span class="sc">-</span><span class="fu">length</span>(x)]</span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>        y <span class="ot">&lt;-</span> <span class="fu">c</span>(y, url_pdf, x[<span class="fu">length</span>(x)])</span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>        <span class="fu">cat</span>(y, <span class="at">file =</span> f, <span class="at">sep=</span><span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>        results[<span class="fu">length</span>(results) <span class="sc">+</span> <span class="dv">1</span>] <span class="ot">&lt;-</span> url_pdf</span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(results)</span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a>render_readme <span class="ot">&lt;-</span><span class="cf">function</span>(from, <span class="at">date =</span> <span class="fu">Sys.Date</span>()) {</span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>        x <span class="ot">&lt;-</span> <span class="fu">readLines</span>(<span class="fu">file.path</span>(from, <span class="st">"README.Rmd"</span>))</span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a>        <span class="co"># remove badges</span></span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>        badges <span class="ot">&lt;-</span> <span class="fu">grep</span>(<span class="st">"&lt;!-- badges:"</span>, x)</span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a>        x <span class="ot">&lt;-</span> x[<span class="sc">-</span>(<span class="fu">min</span>(badges)<span class="sc">:</span><span class="fu">max</span>(badges))]</span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>        output_line <span class="ot">&lt;-</span> <span class="fu">grep</span>(<span class="st">"---"</span>, x)[<span class="dv">2</span>] <span class="sc">-</span><span class="dv">1</span></span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a>        x <span class="ot">&lt;-</span> <span class="fu">c</span>(x[<span class="dv">1</span><span class="sc">:</span>output_line], <span class="fu">paste0</span>(<span class="st">"lastmod: '"</span>, date, <span class="st">"'"</span>), x[(output_line <span class="sc">+</span><span class="dv">1</span>)<span class="sc">:</span><span class="fu">length</span>(x)])</span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a>        file_name <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"./content/software/"</span>, date, <span class="st">"-"</span>, <span class="fu">basename</span>(from), <span class="st">".Rmd"</span>)</span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a>        <span class="fu">cat</span>(x, <span class="at">file =</span> file_name, <span class="at">sep=</span><span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a>     <span class="co"># rmarkdown::render(input = 'README.Rmd', output_format = "html_document", output_dir = "~/Dropbox/Websites/marce10.github.io/content/software", output_file = "ohun.html")</span></span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a>     <span class="co"># </span></span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>blogdown<span class="sc">::</span><span class="fu">serve_site</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>To add citations <a href="https://github.com/wowchemy/hugo-academic-cli" class="uri">https://github.com/wowchemy/hugo-academic-cli</a></p>
+<p>download your papers from mendeley in .bib format into the main website project folder (export.bib)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>blogdown<span class="sc">::</span><span class="fu">stop_server</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The web server has been stopped.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># .rs.restartR()</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Sys.sleep(3)</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># delete folders</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># dirs &lt;- list.dirs("./content/publication", full.names = TRUE)[-1]</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># for (i in dirs)</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co"># unlink(i, recursive = TRUE)</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co"># run on terminal</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="fu">system</span>(<span class="st">"academic import --bibtex export.bib"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in system("academic import --bibtex export.bib"): error in running
+command</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># find.text(pattern = "- Marcelo Araya-Salas",  ignore.case = T, path = "./content/publication", file.pattern = "\\.md$")</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">repl.text</span>(<span class="at">pattern =</span> <span class="st">"repository$"</span>, <span class="at">repl =</span> <span class="st">"Repository"</span>, <span class="at">path =</span> <span class="st">"./content/publication"</span>, </span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>          )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "./content/publication/araya-salas_et_al_2023/index.md"
+[1] "- name: Repository"
+[1] "./content/publication/araya-salas-2017-e/index.md"
+[1] "- name: Repository"
+[1] "./content/publication/araya-salas-2017-f/index.md"
+[1] "  repository Xeno-Canto, displaying the geographic extent of the recordings, manipulating"
+[1] "- name: Repository"
+[1] "./content/publication/beltran-2022/index.md"
+[1] "- name: Repository"
+[1] "./content/publication/genes_et_al-2023/index.md"
+[1] "- name: Repository"
+[1] "./content/publication/gioiosa-2023/index.md"
+[1] "- name: Repository"
+[1] "./content/publication/ohun 2023/index.md"
+[1] "- name: Repository"
+[1] "./content/publication/smith-vidaurre-2019/index.md"
+[1] "- name: Repository"
+[1] "./content/publication/wojczulanis-jakubas-2023/index.md"
+[1] "- name: Repository"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">repl.text</span>(<span class="at">pattern =</span> <span class="st">"- Marcelo Araya Salas"</span>, <span class="at">repl =</span> <span class="st">"- admin"</span>, <span class="at">path =</span> <span class="st">"./content/publication"</span>, <span class="at">file.pattern =</span> <span class="st">"</span><span class="sc">\\</span><span class="st">.md$"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "./content/publication/araya-salas_et_al_2023/index.md"
+[1] "- admin"
+[1] "./content/publication/araya-salas-2012-a/index.md"
+[1] "- admin"
+[1] "./content/publication/araya-salas-2012/index.md"
+[1] "- admin"
+[1] "./content/publication/araya-salas-2013/index.md"
+[1] "- admin"
+[1] "./content/publication/araya-salas-2017-d/index.md"
+[1] "- admin"
+[1] "./content/publication/araya-salas-2017-e/index.md"
+[1] "- admin"
+[1] "./content/publication/araya-salas-2017-f/index.md"
+[1] "- admin"
+[1] "./content/publication/araya-salas-2018-a/index.md"
+[1] "- admin"
+[1] "./content/publication/araya-salas-2019-a/index.md"
+[1] "- admin"
+[1] "./content/publication/araya-salas-2019/index.md"
+[1] "- admin"
+[1] "./content/publication/araya-salas-2020/index.md"
+[1] "- admin"
+[1] "./content/publication/arevalo-2013/index.md"
+[1] "- admin"
+[1] "./content/publication/beltran-2022/index.md"
+[1] "- admin"
+[1] "./content/publication/chaverri-2022/index.md"
+[1] "- admin"
+[1] "./content/publication/genes_et_al-2023/index.md"
+[1] "- admin"
+[1] "./content/publication/gioiosa-2023/index.md"
+[1] "- admin"
+[1] "./content/publication/gonzalez-gomez-2015/index.md"
+[1] "- admin"
+[1] "./content/publication/gonzalez-gomez-2019/index.md"
+[1] "- admin"
+[1] "./content/publication/grabarczyk-2020/index.md"
+[1] "- admin"
+[1] "./content/publication/grissot-2019/index.md"
+[1] "- admin"
+[1] "./content/publication/ibarra-2015/index.md"
+[1] "- admin"
+[1] "./content/publication/keen-2021/index.md"
+[1] "- admin"
+[1] "./content/publication/keenan-2020/index.md"
+[1] "- admin"
+[1] "./content/publication/medina-garcia-2015-a/index.md"
+[1] "- admin"
+[1] "./content/publication/montes-2022/index.md"
+[1] "- admin"
+[1] "./content/publication/moussaoui-2023/index.md"
+[1] "- admin"
+[1] "./content/publication/odom-2021/index.md"
+[1] "- admin"
+[1] "./content/publication/odom-araya-2021/index.md"
+[1] "- admin"
+[1] "./content/publication/ohun 2023/index.md"
+[1] "- admin"
+[1] "./content/publication/rico-guevara-2015/index.md"
+[1] "- admin"
+[1] "./content/publication/rivera-caceres-2016/index.md"
+[1] "- admin"
+[1] "./content/publication/rivera-caceres/index.md"
+[1] "- admin"
+[1] "./content/publication/rodriguez-2015/index.md"
+[1] "- admin"
+[1] "./content/publication/smith-vidaurre-2019/index.md"
+[1] "- admin"
+[1] "./content/publication/wojczulanis-jakubas-2018/index.md"
+[1] "- admin"
+[1] "./content/publication/wojczulanis-jakubas-2023/index.md"
+[1] "- admin"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">repl.text</span>(<span class="at">pattern =</span> <span class="st">"- M Araya-Salas"</span>, <span class="at">repl =</span> <span class="st">"- admin"</span>, <span class="at">path =</span> <span class="st">"./content/publication"</span>, <span class="at">file.pattern =</span> <span class="st">"</span><span class="sc">\\</span><span class="st">.md$"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "./content/publication/araya-salas_et_al_2023/index.md"
+[1] "- admin"
+[1] "./content/publication/araya-salas-2012-a/index.md"
+[1] "- admin"
+[1] "./content/publication/araya-salas-2012/index.md"
+[1] "- admin"
+[1] "./content/publication/araya-salas-2013/index.md"
+[1] "- admin"
+[1] "./content/publication/araya-salas-2017-d/index.md"
+[1] "- admin"
+[1] "./content/publication/araya-salas-2017-e/index.md"
+[1] "- admin"
+[1] "./content/publication/araya-salas-2017-f/index.md"
+[1] "- admin"
+[1] "./content/publication/araya-salas-2018-a/index.md"
+[1] "- admin"
+[1] "./content/publication/araya-salas-2019-a/index.md"
+[1] "- admin"
+[1] "./content/publication/araya-salas-2019/index.md"
+[1] "- admin"
+[1] "./content/publication/araya-salas-2020/index.md"
+[1] "- admin"
+[1] "./content/publication/arevalo-2013/index.md"
+[1] "- admin"
+[1] "./content/publication/beltran-2022/index.md"
+[1] "- admin"
+[1] "./content/publication/chaverri-2022/index.md"
+[1] "- admin"
+[1] "./content/publication/genes_et_al-2023/index.md"
+[1] "- admin"
+[1] "./content/publication/gioiosa-2023/index.md"
+[1] "- admin"
+[1] "./content/publication/gonzalez-gomez-2015/index.md"
+[1] "- admin"
+[1] "./content/publication/gonzalez-gomez-2019/index.md"
+[1] "- admin"
+[1] "./content/publication/grabarczyk-2020/index.md"
+[1] "- admin"
+[1] "./content/publication/grissot-2019/index.md"
+[1] "- admin"
+[1] "./content/publication/ibarra-2015/index.md"
+[1] "- admin"
+[1] "./content/publication/keen-2021/index.md"
+[1] "- admin"
+[1] "./content/publication/keenan-2020/index.md"
+[1] "- admin"
+[1] "./content/publication/medina-garcia-2015-a/index.md"
+[1] "- admin"
+[1] "./content/publication/montes-2022/index.md"
+[1] "- admin"
+[1] "./content/publication/moussaoui-2023/index.md"
+[1] "- admin"
+[1] "./content/publication/odom-2021/index.md"
+[1] "- admin"
+[1] "./content/publication/odom-araya-2021/index.md"
+[1] "- admin"
+[1] "./content/publication/ohun 2023/index.md"
+[1] "- admin"
+[1] "./content/publication/rico-guevara-2015/index.md"
+[1] "- admin"
+[1] "./content/publication/rivera-caceres-2016/index.md"
+[1] "- admin"
+[1] "./content/publication/rivera-caceres/index.md"
+[1] "- admin"
+[1] "./content/publication/rodriguez-2015/index.md"
+[1] "- admin"
+[1] "./content/publication/smith-vidaurre-2019/index.md"
+[1] "- admin"
+[1] "./content/publication/wojczulanis-jakubas-2018/index.md"
+[1] "- admin"
+[1] "./content/publication/wojczulanis-jakubas-2023/index.md"
+[1] "- admin"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">repl.text</span>(<span class="at">pattern =</span> <span class="st">"- M. Araya-Salas"</span>, <span class="at">repl =</span> <span class="st">"- admin"</span>, <span class="at">path =</span> <span class="st">"./content/publication"</span>, <span class="at">file.pattern =</span> <span class="st">"</span><span class="sc">\\</span><span class="st">.md$"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "./content/publication/araya-salas_et_al_2023/index.md"
+[1] "- admin"
+[1] "./content/publication/araya-salas-2012-a/index.md"
+[1] "- admin"
+[1] "./content/publication/araya-salas-2012/index.md"
+[1] "- admin"
+[1] "./content/publication/araya-salas-2013/index.md"
+[1] "- admin"
+[1] "./content/publication/araya-salas-2017-d/index.md"
+[1] "- admin"
+[1] "./content/publication/araya-salas-2017-e/index.md"
+[1] "- admin"
+[1] "./content/publication/araya-salas-2017-f/index.md"
+[1] "- admin"
+[1] "./content/publication/araya-salas-2018-a/index.md"
+[1] "- admin"
+[1] "./content/publication/araya-salas-2019-a/index.md"
+[1] "- admin"
+[1] "./content/publication/araya-salas-2019/index.md"
+[1] "- admin"
+[1] "./content/publication/araya-salas-2020/index.md"
+[1] "- admin"
+[1] "./content/publication/arevalo-2013/index.md"
+[1] "- admin"
+[1] "./content/publication/beltran-2022/index.md"
+[1] "- admin"
+[1] "./content/publication/chaverri-2022/index.md"
+[1] "- admin"
+[1] "./content/publication/genes_et_al-2023/index.md"
+[1] "- admin"
+[1] "./content/publication/gioiosa-2023/index.md"
+[1] "- admin"
+[1] "./content/publication/gonzalez-gomez-2015/index.md"
+[1] "- admin"
+[1] "./content/publication/gonzalez-gomez-2019/index.md"
+[1] "- admin"
+[1] "./content/publication/grabarczyk-2020/index.md"
+[1] "- admin"
+[1] "./content/publication/grissot-2019/index.md"
+[1] "- admin"
+[1] "./content/publication/ibarra-2015/index.md"
+[1] "- admin"
+[1] "./content/publication/keen-2021/index.md"
+[1] "- admin"
+[1] "./content/publication/keenan-2020/index.md"
+[1] "- admin"
+[1] "./content/publication/medina-garcia-2015-a/index.md"
+[1] "- admin"
+[1] "./content/publication/montes-2022/index.md"
+[1] "- admin"
+[1] "./content/publication/moussaoui-2023/index.md"
+[1] "- admin"
+[1] "./content/publication/odom-2021/index.md"
+[1] "- admin"
+[1] "./content/publication/odom-araya-2021/index.md"
+[1] "- admin"
+[1] "./content/publication/ohun 2023/index.md"
+[1] "- admin"
+[1] "./content/publication/rico-guevara-2015/index.md"
+[1] "- admin"
+[1] "./content/publication/rivera-caceres-2016/index.md"
+[1] "- admin"
+[1] "./content/publication/rivera-caceres/index.md"
+[1] "- admin"
+[1] "./content/publication/rodriguez-2015/index.md"
+[1] "- admin"
+[1] "./content/publication/smith-vidaurre-2019/index.md"
+[1] "- admin"
+[1] "./content/publication/wojczulanis-jakubas-2018/index.md"
+[1] "- admin"
+[1] "./content/publication/wojczulanis-jakubas-2023/index.md"
+[1] "- admin"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">repl.text</span>(<span class="at">pattern =</span> <span class="st">"- Marcelo Araya-salas"</span>, <span class="at">repl =</span> <span class="st">"- admin"</span>, <span class="at">path =</span> <span class="st">"./content/publication"</span>, <span class="at">file.pattern =</span> <span class="st">"</span><span class="sc">\\</span><span class="st">.md$"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "./content/publication/araya-salas_et_al_2023/index.md"
+[1] "- admin"
+[1] "./content/publication/araya-salas-2012-a/index.md"
+[1] "- admin"
+[1] "./content/publication/araya-salas-2012/index.md"
+[1] "- admin"
+[1] "./content/publication/araya-salas-2013/index.md"
+[1] "- admin"
+[1] "./content/publication/araya-salas-2017-d/index.md"
+[1] "- admin"
+[1] "./content/publication/araya-salas-2017-e/index.md"
+[1] "- admin"
+[1] "./content/publication/araya-salas-2017-f/index.md"
+[1] "- admin"
+[1] "./content/publication/araya-salas-2018-a/index.md"
+[1] "- admin"
+[1] "./content/publication/araya-salas-2019-a/index.md"
+[1] "- admin"
+[1] "./content/publication/araya-salas-2019/index.md"
+[1] "- admin"
+[1] "./content/publication/araya-salas-2020/index.md"
+[1] "- admin"
+[1] "./content/publication/arevalo-2013/index.md"
+[1] "- admin"
+[1] "./content/publication/beltran-2022/index.md"
+[1] "- admin"
+[1] "./content/publication/chaverri-2022/index.md"
+[1] "- admin"
+[1] "./content/publication/genes_et_al-2023/index.md"
+[1] "- admin"
+[1] "./content/publication/gioiosa-2023/index.md"
+[1] "- admin"
+[1] "./content/publication/gonzalez-gomez-2015/index.md"
+[1] "- admin"
+[1] "./content/publication/gonzalez-gomez-2019/index.md"
+[1] "- admin"
+[1] "./content/publication/grabarczyk-2020/index.md"
+[1] "- admin"
+[1] "./content/publication/grissot-2019/index.md"
+[1] "- admin"
+[1] "./content/publication/ibarra-2015/index.md"
+[1] "- admin"
+[1] "./content/publication/keen-2021/index.md"
+[1] "- admin"
+[1] "./content/publication/keenan-2020/index.md"
+[1] "- admin"
+[1] "./content/publication/medina-garcia-2015-a/index.md"
+[1] "- admin"
+[1] "./content/publication/montes-2022/index.md"
+[1] "- admin"
+[1] "./content/publication/moussaoui-2023/index.md"
+[1] "- admin"
+[1] "./content/publication/odom-2021/index.md"
+[1] "- admin"
+[1] "./content/publication/odom-araya-2021/index.md"
+[1] "- admin"
+[1] "./content/publication/ohun 2023/index.md"
+[1] "- admin"
+[1] "./content/publication/rico-guevara-2015/index.md"
+[1] "- admin"
+[1] "./content/publication/rivera-caceres-2016/index.md"
+[1] "- admin"
+[1] "./content/publication/rivera-caceres/index.md"
+[1] "- admin"
+[1] "./content/publication/rodriguez-2015/index.md"
+[1] "- admin"
+[1] "./content/publication/smith-vidaurre-2019/index.md"
+[1] "- admin"
+[1] "./content/publication/wojczulanis-jakubas-2018/index.md"
+[1] "- admin"
+[1] "./content/publication/wojczulanis-jakubas-2023/index.md"
+[1] "- admin"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>blogdown<span class="sc">::</span><span class="fu">stop_server</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The web server has been stopped.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>blogdown<span class="sc">::</span><span class="fu">stop_server</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The web server has been stopped.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>blogdown<span class="sc">::</span><span class="fu">serve_site</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>In content/publication/ look into common R files and replace your name (Marcelo Araya-Salas) for admin</p>
+</section>
+</section>
+<section id="add-pdfs" class="level1">
+<h1>add pdfs</h1>
+<p>PDFs should be placed in static/uploads/ with the same name of the folder containing the citation info</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">add.pdf</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>NULL</code></pre>
+</div>
+</div>
+</section>
+<section id="fixed" class="level1">
+<h1>fixed</h1>
+<p>.section-heading h1{margin:0 0 10px 0} .section-heading h1{margin:0 0 10px 0;position:sticky;position:-webkit-sticky;top:150px;}</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">render_readme</span>(<span class="at">from =</span> <span class="st">"~/Dropbox/R_package_testing/ohun"</span>, <span class="at">date =</span> <span class="st">"2022-12-19"</span>)</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="fu">render_readme</span>(<span class="at">from =</span> <span class="st">"~/Dropbox/R_package_testing/warbleR"</span>, <span class="at">date =</span> <span class="st">"2022-12-09"</span>)</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="fu">render_readme</span>(<span class="at">from =</span> <span class="st">"~/Dropbox/R_package_testing/Rraven"</span>, <span class="at">date =</span> <span class="st">"2021-04-21"</span>)</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="fu">render_readme</span>(<span class="at">from =</span> <span class="st">"~/Dropbox/R_package_testing/dynaSpec"</span>, <span class="at">date =</span> <span class="st">"2021-03-10"</span>)</span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a><span class="fu">render_readme</span>(<span class="at">from =</span> <span class="st">"~/Dropbox/R_package_testing/baRulho"</span>, <span class="at">date =</span> <span class="st">"2022-03-01"</span>)</span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a><span class="fu">render_readme</span>(<span class="at">from =</span> <span class="st">"~/Dropbox/R_package_testing/PhenotypeSpace"</span>, <span class="at">date =</span> <span class="st">"2023-04-29"</span>)</span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a><span class="fu">render_readme</span>(<span class="at">from =</span> <span class="st">"~/Dropbox/R_package_testing/brmsish"</span>, <span class="at">date =</span> <span class="st">"2023-04-30"</span>)</span>
+<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a><span class="fu">render_readme</span>(<span class="at">from =</span> <span class="st">"~/Dropbox/R_package_testing/sketchy"</span>, <span class="at">date =</span> <span class="st">"2023-04-28"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

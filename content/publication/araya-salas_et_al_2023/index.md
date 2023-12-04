@@ -49,5 +49,5 @@ links:
 - name: Repository
   url: https://github.com/maRce10/barulho_paper
 - name: Presentation
-  url: https://rpubs.com/marcelo-araya-salas/1123313
+  url: https://rstudio-pubs-static.s3.amazonaws.com/1123313_76c0b1820ca24b0c97fb2afa81b787f7.html
 ---

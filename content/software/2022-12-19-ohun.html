@@ -1,0 +1,49 @@
+---
+title: "ohun: optimizing sound event detection"
+output: github_document
+editor_options: 
+  chunk_output_type: console
+lastmod: '2022-12-19'
+---
+
+
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+<p><img src="vignettes/ohun_sticker.png" alt="ohun logo" align="right" width = "25%" height="25%"/></p>
+<p><a href="https://github.com/ropensci/ohun">ohun</a> is intended to facilitate the automated detection of sound events, providing functions to diagnose and optimize detection routines. It provides utilities for comparing detection and annotations of audio events described by frequency and time boxes.</p>
+<p>The main features of the package are:</p>
+<ul>
+<li>The use of reference annotations for detection diagnostic and optimization</li>
+<li>The use of signal detection theory indices to evaluate detection performance</li>
+</ul>
+<p>The package offers functions for:</p>
+<ul>
+<li>Curate references and acoustic data sets</li>
+<li>Diagnose detection performance</li>
+<li>Optimize detection routines based on reference annotations</li>
+<li>Energy-based detection</li>
+<li>Template-based detection</li>
+</ul>
+<p>The implementation of detection diagnostics that can be applied to both built in detection methods and to those obtained from other software packages makes the package <a href="https://github.com/ropensci/ohun">ohun</a> an useful tool for conducting direct comparisons of the performance of different routines. In addition, the compatibility of <a href="https://github.com/ropensci/ohun">ohun</a> with data formats already used by other sound analysis R packages (e.g. seewave, warbleR) enables the integration of <a href="https://github.com/ropensci/ohun">ohun</a> into more complex acoustic analysis workflows in a popular programming environment within the research community.</p>
+<p>All functions allow the parallelization of tasks (using the packages parallel and <a href="https://CRAN.R-project.org/package=pbapply">pbapply</a>), which distributes the tasks among several processors to improve computational efficiency. The package works on sound files in ‘.wav’, ‘.mp3’, ‘.flac’ and ‘.wac’ format.</p>
+<p>Install/load the package from CRAN as follows:</p>
+<pre class="r"><code># From CRAN would be
+install.packages(&quot;ohun&quot;)
+
+#load package
+library(ohun)</code></pre>
+<p>To install the latest developmental version from <a href="https://github.com/">github</a> you will need the R package <a href="https://cran.r-project.org/package=remotes">remotes</a>:</p>
+<pre class="r"><code>remotes::install_github(&quot;ropensci/ohun&quot;)
+
+#load package
+library(ohun)</code></pre>
+<p>Further system requirements due to the dependency <a href="https://rug.mnhn.fr/seewave/">seewave</a> may be needed. Take a look a <a href="https://rug.mnhn.fr/seewave/inst.html">this link</a> for instruction on how to install/troubleshoot these external dependencies.</p>
+<p>Take a look at the vignettes for an overview of the main features of the packages:</p>
+<ul>
+<li><a href="https://docs.ropensci.org/ohun/articles/intro_to_ohun.html">Optimizing sound event detection</a></li>
+<li><a href="https://docs.ropensci.org/ohun/articles/energy_based_detection.html">Energy-based detection</a></li>
+<li><a href="https://docs.ropensci.org/ohun/articles/template_based_detection.html">Template-based detection</a></li>
+</ul>
+<hr />
+<p>Please cite <a href="https://github.com/ropensci/ohun">ohun</a> as follows:</p>
+<p>Araya-Salas, M. (2022), ohun: diagnosing and optimizing automated sound event detection. R package version 0.1.1.</p>
