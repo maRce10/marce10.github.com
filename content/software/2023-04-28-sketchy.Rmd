@@ -41,10 +41,6 @@ library(sketchy)
 
 ```
 
-```{r 2, echo = FALSE}
-
-load("./data/compendiums.rda")
-```
 
 
 ## Default compendium skeletons
@@ -54,6 +50,8 @@ Compendiums can be set up with the function `make_compendium()`. The function cr
 ### Basic compendium
 
 ```{r 3, eval = TRUE}
+
+data("compendiums")
 
 path = tempdir()
 

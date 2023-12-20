@@ -118,6 +118,7 @@ render_readme <-function(from, date = Sys.Date()) {
 
 blogdown::build_site()
 
+blogdown::serve_site()
 ```
 
 To add citations <https://github.com/wowchemy/hugo-academic-cli>
