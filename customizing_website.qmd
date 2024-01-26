@@ -194,3 +194,54 @@ render_readme(from = "~/Dropbox/R_package_testing/brmsish", date = "2023-04-30")
 render_readme(from = "~/Dropbox/R_package_testing/sketchy", date = "2023-04-28")
 
 ```
+
+
+# R packages
+
+get info from readme files of packages:
+
+```{r}
+
+pkgs <- c("sketchy", "PhenotypeSpace", "baRulho", "brmsish", "dynaSpec", "ohun",  "Rraven", "suwo", "warbleR")
+
+dates <- c("2023-04-28", "2023-04-29", "2022-03-01", "2023-04-30", "2021-03-10", "2022-12-19", "2021-04-21", "2024-01-01", "2019-12-09")
+
+for(i in seq_along(pkgs)){
+  print(pkgs[i])
+  readme <- readLines(file.path("~/Dropbox/R_package_testing/", pkgs[i], "README.Rmd"))
+
+  rm_badges <- grep("-- badges:", readme)
+  readme <- readme[c(rm_badges[1]:rm_badges[2]) * -1]
+  rm_sticker <- grep("sticker.png", readme)
+  readme <- readme[rm_sticker[1] * -1]
+  
+  yaml <- c("featured: yes", "image:", "  caption:", "  focal_point: 'Left'", "  placement: 2", "  preview_only: true")
+  date <- paste0("lastmod: '", dates[i], "'")
+  
+  sticker <- '<img src="/post/sketchy_sticker.png" alt="sketchy sticker" align="right" width = "25%" height="25%"/>'
+
+  sticker <- gsub("sketchy", pkgs[i], sticker)
+  
+  # barulho workflow 
+    readme<- gsub("man/figures", "", readme)
+  
+  readme <- c(readme[1:5], date, yaml, readme[6:rm_badges[1]], sticker, readme[rm_badges[1]:length(readme)])
+    
+  rmd.file <- paste0("./content/software/", pkgs[i], "/index.Rmd")
+  writeLines(readme, con = rmd.file)
+Sys.sleep(1)
+  
+  markdown::renderMarkdown(rmd.file)
+  
+Sys.sleep(1)
+  }
+
+blogdown::stop_server()
+Sys.sleep(1)
+blogdown::build_site()
+Sys.sleep(1)
+
+blogdown::serve_site()
+
+```
+

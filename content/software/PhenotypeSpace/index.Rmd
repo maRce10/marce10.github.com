@@ -4,6 +4,7 @@ output: github_document
 editor_options: 
   chunk_output_type: console
 lastmod: '2023-04-29'
+featured: yes
 image:
   caption:
   focal_point: 'Left'
@@ -14,7 +15,8 @@ image:
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 
-<img src="/post/PhenotypeSpace_sticker.png" alt="PhenotypeSpace logo" align="right" width = "25%" height="25%"/>
+<img src="/post/PhenotypeSpace_sticker.png" alt="PhenotypeSpace sticker" align="right" width = "25%" height="25%"/>
+
 
 [PhenotypeSpace](https://github.com/maRce10/PhenotypeSpace) is intended to facilitate the quantification of phenotypic space features.
 

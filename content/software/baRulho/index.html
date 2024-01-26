@@ -1,9 +1,10 @@
 ---
-title: "baRulho: quantifying habitat-induced degradation of (animal) sounds"
+title: "baRulho: quantifying degradation of (animal) sounds"
 output: github_document
 editor_options: 
   chunk_output_type: console
-lastmod: '2021-03-01'
+lastmod: '2022-03-01'
+featured: yes
 image:
   caption:
   focal_point: 'Left'
@@ -14,24 +15,60 @@ image:
 
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-<p><img src="/post/baRulho_sticker.png" alt="baRulho logo" align="right" width = "25%" height="25%"/></p>
-<p><a href="https://cran.r-project.org/package=baRulho">baRulho</a> is intended to facilitate acoustic analysis of (animal) sound transmission experiments, which typically aim to quantify changes in signal structure when transmitted in a given habitat by broadcasting and re-recording animal sounds at increasing distances. The package offers a workflow with functions to prepare the data set for analysis as well as to calculate and visualize several degradation metrics, including blur ratio, signal-to-noise ratio, excess attenuation and envelope correlation among others (Dabelsteen et al 1993).</p>
+<p><img src="/post/baRulho_sticker.png" alt="baRulho sticker" align="right" width = "25%" height="25%"/></p>
+<p><a href="https://cran.r-project.org/package=baRulho">baRulho</a> is intended to facilitate the implementation of (animal) sound transmission experiments, which typically aim to quantify changes in signal structure when transmitted in a given habitat by broadcasting and re-recording animal sounds at increasing distances.</p>
+<p>These experiments aim to answer research questions such as:</p>
+<ul>
+<li>How habitat structure has shaped the transmission properties of animal acoustic signals?</li>
+<li>Which acoustic features are shaped by selection for improving transmission?</li>
+<li>Which features are more degraded in different habitats?</li>
+<li>How far a acoustic signals can be detected?</li>
+</ul>
+<p>A common sequence of steps to experimentally test hypotheses related to sound transmission is depicted in the following diagram:</p>
+<p><img src="analysis_workflow.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><em>Diagram depicting a typical workflow for a experiment working on signal transmission and degradation. Nodes with black font indicate steps that can be conducted using baRulho functions. Blue nodes denote the functions that can be used at those steps.</em></p>
+<p> </p>
+<p><a href="https://marce10.github.io/baRulho/">baRulho</a> offers functions for critical steps in this workflow (those in black, including ‘checks’) that required acoustic data manipulation and analysis.</p>
+<p>The main features of the package are:</p>
+<ul>
+<li>The use of loops to apply tasks through sounds referenced in a selection table (sensu <a href="https://cran.r-project.org/package=warbleR">warbleR</a>)</li>
+<li>The production of image files with graphic representations of sound in time and/or frequency that let users verify acoustic analyses</li>
+<li>The use of annotation tables as the object format to input acoustic data and annotations and to output results</li>
+<li>The use of parallelization to distribute tasks among several cores to improve computational efficiency</li>
+</ul>
+<p><a href="https://marce10.github.io/baRulho/">baRulho</a> builds upon functions and data formats from the <a href="https://cran.r-project.org/package=warbleR">warbleR</a> and <a href="https://cran.r-project.org/package=seewave">seewave</a> packages, so some experience with these packages is advised.</p>
+<p>Take a look at the vignettes for an overview of the main features of the packages:</p>
+<ul>
+<li><a href="https://marce10.github.io/baRulho/articles/align_test_sounds.html">Align test sounds</a></li>
+<li><a href="https://marce10.github.io/baRulho/articles/quantify_degradation.html">Quantify degradation</a></li>
+</ul>
+<div id="installing-barulho" class="section level2">
+<h2>Installing baRulho</h2>
 <p>Install/load the package from CRAN as follows:</p>
 <pre class="r"><code># From CRAN would be
-#install.packages(&quot;baRulho&quot;)
+# install.packages(&quot;baRulho&quot;)
 
-#load package
+# load package
 library(baRulho)</code></pre>
 <p>To install the latest developmental version from <a href="https://github.com/">github</a> you will need the R package <a href="https://cran.r-project.org/package=remotes">remotes</a>:</p>
 <pre class="r"><code># From github
 remotes::install_github(&quot;maRce10/baRulho&quot;)
 
-#load package
+# load package
 library(baRulho)</code></pre>
+<p>Further system requirements due to the dependency <a href="https://rug.mnhn.fr/seewave/">seewave</a> may be needed. Take a look a <a href="https://rug.mnhn.fr/seewave/inst.html">this link</a> for instruction on how to install/troubleshoot these external dependencies.</p>
+</div>
+<div id="other-packages" class="section level2">
+<h2>Other packages</h2>
+<p>The packages <a href="https://cran.r-project.org/package=seewave">seewave</a> and <a href="https://cran.r-project.org/package=seewave">tuneR</a> provide a huge variety of functions for acoustic analysis and manipulation. They mostly work on wave objects already imported into the R environment. The package <a href="https://cran.r-project.org/package=warbleR">warbleR</a> provides functions to visualize and measure sounds already referenced in annotation tables, similar to <a href="https://marce10.github.io/baRulho/">baRulho</a>. The package <a href="https://cran.r-project.org/package=Rraven">Rraven</a> facilitates the exchange of data between R and <a href="https://www.ravensoundsoftware.com/">Raven sound analysis software</a> (<a href="https://www.birds.cornell.edu/home">Cornell Lab of Ornithology</a>) and can be very helpful for incorporating Raven as the annotating tool into acoustic analysis workflow in R. The package <a href="https://github.com/ropensci/ohun">ohun</a> works on automated detection of sound events, providing functions to diagnose and optimize detection routines.</p>
+</div>
+<div id="citation" class="section level2">
+<h2>Citation</h2>
 <p>Please cite <a href="https://marce10.github.io/baRulho/">baRulho</a> as follows:</p>
-<p>Araya-Salas, M. (2020), <em>baRulho: quantifying habitat-induced degradation of (animal) acoustic signals in R</em>. R package version 1.0.0.</p>
-<div id="references" class="section level1">
-<h1>References</h1>
+<p>Araya-Salas, M. (2020), <em>baRulho: quantifying degradation of (animal) acoustic signals in R</em>. R package version 1.0.0.</p>
+</div>
+<div id="references" class="section level2">
+<h2>References</h2>
 <ol style="list-style-type: decimal">
 <li><p>Dabelsteen, T., Larsen, O. N., &amp; Pedersen, S. B. (1993). <em>Habitat-induced degradation of sound signals: Quantifying the effects of communication sounds and bird location on blur ratio, excess attenuation, and signal-to-noise ratio in blackbird song</em>. The Journal of the Acoustical Society of America, 93(4), 2206.</p></li>
 <li><p>Marten, K., &amp; Marler, P. (1977). <em>Sound transmission and its significance for animal vocalization</em>. Behavioral Ecology and Sociobiology, 2(3), 271-290.</p></li>

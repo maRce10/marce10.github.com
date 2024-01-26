@@ -15,6 +15,8 @@ image:
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 
+<img src="/post/sketchy_sticker.png" alt="sketchy sticker" align="right" width = "25%" height="25%"/>
+
 ```{r setup, include = FALSE}
 
 # knitr global options
@@ -27,25 +29,12 @@ library(sketchy)
 
 ```
 
-<img src="/post/sketchy_sticker.png" alt="sketchy sticker" align="right" width = "25%" height="25%"/>
 
 The package is intended to facilitate the use of research compendiums for data analysis in the R environment. Standard research compendiums provide a easily recognizable means for organizing digital materials, allowing  other researchers to inspect, reproduce, and build upon that research. 
 
 <!-- Unlike other packages for setting up research compendiums, `sketchy` has very simple functionality. Hence, users can focus on the research project itself rather than on learning how to use a new R package. -->
 
 Unlike other R packages for creating research compendiums (e.g. [vertical](https://github.com/CrumpLab/vertical), [rrtools](https://github.com/benmarwick/rrtools)), `sketchy` isn't  wedded to a particular folder structure. Currently the package provides `r length(compendiums)` alternative structures (see object `compendiums`) and allows users to modify or input their own structures.   
-
-
-Install/load the package from CRAN as follows:
-
-```{r, eval = FALSE}
-install.packages("sketchy")
-
-# load package
-library(sketchy)
-
-```
-
 
 To install the latest developmental version from [github](https://github.com/) you will need the R package [remotes](https://cran.r-project.org/package=remotes):
 
@@ -59,12 +48,6 @@ library(sketchy)
 
 ```
 
-```{r 2, echo = FALSE}
-
-# load("./data/compendiums.rda")
-```
-
-
 ## Default compendium skeletons
 
 Compendiums can be set up with the function `make_compendium()`. The function creates the folder/subfolder structure and prints a diagram of the skeleton in the console:
@@ -74,6 +57,9 @@ Compendiums can be set up with the function `make_compendium()`. The function cr
 ```{r 3, eval = TRUE}
 
 path = tempdir()
+
+# load data
+data(compendiums)
 
 make_compendium(name = "proyect_x", path = path, format = "basic")
 

@@ -3,7 +3,8 @@ title: "dynaSpec: dynamic spectrogram visualizations"
 output: github_document
 editor_options: 
   chunk_output_type: console
-lastmod: '2021-03-20'
+lastmod: '2021-03-10'
+featured: yes
 image:
   caption:
   focal_point: 'Left'
@@ -14,8 +15,8 @@ image:
 
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-<p><img src="man/figures/dynaSpec_sticker.png" alt="sketchy sticker" align="right" width = "25%" height="25%"/></p>
-<p>A set of tools to generate dynamic spectrogram visualizations in video format. <a href="https://ffmpeg.org/download.html">FFMPEG</a> must be installed in order for this package to work. The package relies heavily on the packages <a href="https://CRAN.R-project.org/package=seewave">seewave</a> and <a href="https://CRAN.R-project.org/package=tuneR">tuneR</a>.</p>
+<p><img src="/post/dynaSpec_sticker.png" alt="dynaSpec sticker" align="right" width = "25%" height="25%"/></p>
+<p>A set of tools to generate dynamic spectrogram visualizations in video format. <a href="https://ffmpeg.org/download.html">FFMPEG</a> must be installed in order for this package to work (check <a href="https://www.rdocumentation.org/packages/ndtv/versions/0.13.3/topics/install.ffmpeg">this link for instructions</a> and this <a href="https://github.com/maRce10/dynaSpec/issues/3">link for troubleshooting installation on Windows</a>). The package relies heavily on the packages <a href="https://CRAN.R-project.org/package=seewave">seewave</a> and <a href="https://CRAN.R-project.org/package=tuneR">tuneR</a>.</p>
 <p>Please cite <a href="https://marce10.github.io/dynaSpec/">dynaSpec</a> as follows:</p>
 <p>Araya-Salas, Marcelo &amp; Wilkins, Matthew R.. (2020), <em>dynaSpec: dynamic spectrogram visualizations in R</em>. R package version 1.0.0.</p>
 <p>Install/load the package from CRAN as follows:</p>
@@ -177,7 +178,7 @@ color.spectro(wave = hs_wren, wl = 200, ovlp = 95, flim = c(1, 13),
               collevels = seq(-55, 0, 5), dB = &quot;B&quot;, X = st, col.clm = &quot;colors&quot;, 
               base.col = &quot;black&quot;,  t.mar = 0.07, f.mar = 0.1, strength = 3, 
               interactive = NULL, bg.col = &quot;black&quot;)</code></pre>
-<p><img src="man/figures/colored_spectro_house_wren_duet.png" alt="house wren duet"></p>
+<p><img src="colored_spectro_house_wren_duet.png" alt="house wren duet"></p>
 <p>The male part is shown in green and the female part in yellow.</p>
 <p>We can wrap the <code>color_spectro()</code> call using the <code>call()</code> function form base R and input that into <code>scrolling_spectro()</code> using the argument ‘spectro.call’:</p>
 <pre class="r"><code># save call
@@ -375,16 +376,16 @@ params &lt;-prep_static_ggspectro(f[1],destFolder=&quot;wd&quot;,savePNG=T)</cod
 </div>
 <div id="static-spectrogram-of-a-female-barn-swallow-song" class="section level3">
 <h3>Static spectrogram of a female barn swallow song</h3>
-<div class="figure">
-<img src="man/figures/femaleBarnSwallow_1.png" alt="" />
-<p class="caption">Static Spectrogram of a female barn swallow song</p>
+<div class="float">
+<img src="femaleBarnSwallow_1.png" alt="Static Spectrogram of a female barn swallow song" />
+<div class="figcaption">Static Spectrogram of a female barn swallow song</div>
 </div>
 <pre class="r"><code>
 #let&#39;s add axes 
 femaleBarnSwallow&lt;-prep_static_ggspectro(f[1],destFolder=tempdir(),savePNG=T,onlyPlotSpec = F)</code></pre>
-<div class="figure">
-<img src="man/figures/femaleBarnSwallow_1b.png" alt="" />
-<p class="caption">Static spectrogram with axis labels for female barn swallow song</p>
+<div class="float">
+<img src="femaleBarnSwallow_1b.png" alt="Static spectrogram with axis labels for female barn swallow song" />
+<div class="figcaption">Static spectrogram with axis labels for female barn swallow song</div>
 </div>
 <pre class="r"><code>
 #Now generate a dynamic spectrogram
@@ -409,9 +410,9 @@ paged_spectro(femaleBarnSwallow)</code></pre>
 
 p2&lt;-prepStaticSpec(f[1],min_dB=-35, savePNG=T, destFolder=&quot;wd&quot;,onlyPlotSpec=F,bgFlood=T,ampTrans=3) 
 pagedSpec(p2) </code></pre>
-<div class="figure">
-<img src="man/figures/femaleBarnSwallow_1c.png" alt="" />
-<p class="caption">Static spectrogram with axis labels for female barn swallow song</p>
+<div class="float">
+<img src="femaleBarnSwallow_1c.png" alt="Static spectrogram with axis labels for female barn swallow song" />
+<div class="figcaption">Static spectrogram with axis labels for female barn swallow song</div>
 </div>
 <iframe src="https://player.vimeo.com/video/432727824" style="border:0px" width="910" height="303" frameborder="0" allow="autoplay; fullscreen" allowfullscreen>
 </iframe>
@@ -435,9 +436,9 @@ pagedSpec(whale)
 </div>
 <div id="static-whale-song-spectrogram" class="section level3">
 <h3>Static whale song spectrogram</h3>
-<div class="figure">
-<img src="man/figures/humpback.png" alt="" />
-<p class="caption">Humpback whale song spectrogram</p>
+<div class="float">
+<img src="humpback.png" alt="Humpback whale song spectrogram" />
+<div class="figcaption">Humpback whale song spectrogram</div>
 </div>
 </div>
 <div id="dynamic-multipage-whale-song-spectrogram" class="section level3">

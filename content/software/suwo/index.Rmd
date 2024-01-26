@@ -1,0 +1,45 @@
+---
+title: "suwo: access nature media repositories through R"
+output: github_document
+editor_options: 
+  chunk_output_type: console
+lastmod: '2024-01-01'
+featured: yes
+image:
+  caption:
+  focal_point: 'Left'
+  placement: 2
+  preview_only: true
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+  
+<img src="/post/suwo_sticker.png" alt="suwo sticker" align="right" width = "25%" height="25%"/>
+  
+
+[suwo](https://github.com/maRce10/suwo) is intended streamline searching/downloading
+of nature media files (e.g. audios, photos) from online repositories.
+
+The package offers functions for:
+
+   - Obtaining media metadata from online repositories
+   - Downloading associated media files
+   - Updating data sets with new records
+   
+THE PACKAGE IS ON AN EARLY DEVELOPMENTAL STAGE. We are currently searching for new online repositories to be included in the package. Please [open a new issue](https://github.com/maRce10/suwo/issues/new/choose) if you want to suggest a new repository.
+
+
+To install the latest developmental version from [github](https://github.com/) you will need the R package [remotes](https://cran.r-project.org/package=remotes):
+
+```{r, eval = FALSE}
+remotes::install_github("maRce10/suwo")
+
+#load package
+library(suwo)
+
+```
+
+Please cite [suwo](https://github.com/maRce10/suwo) as follows:
+
+Araya-Salas, M., & J. Elizondo-Calvo. 2023. suwo: access nature media repositories through R. R package version 0.1.0.
+
