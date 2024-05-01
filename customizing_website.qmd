@@ -195,7 +195,6 @@ render_readme(from = "~/Dropbox/R_package_testing/sketchy", date = "2023-04-28")
 
 ```
 
-
 # R packages
 
 get info from readme files of packages:
@@ -223,7 +222,7 @@ for(i in seq_along(pkgs)){
   sticker <- gsub("sketchy", pkgs[i], sticker)
   
   # barulho workflow 
-    readme<- gsub("man/figures", "", readme)
+    readme<- gsub("man/figures/", "", readme)
   
   readme <- c(readme[1:5], date, yaml, readme[6:rm_badges[1]], sticker, readme[rm_badges[1]:length(readme)])
     
@@ -244,4 +243,3 @@ Sys.sleep(1)
 blogdown::serve_site()
 
 ```
-
