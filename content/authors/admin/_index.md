@@ -58,16 +58,24 @@ I also enjoy developing my own computational tools for customizing data analysis
 I'm deeply involved in the development of software packages for the analysis of behavioral data. I have created the R package [warbleR](https://cran.r-project.org/package=warbleR) that provides functions to streamline high-throughput acoustic analysis of animal sounds. I also made available two R packages, [Rraven](https://cran.r-project.org/package=Rraven) and [NatureSounds](https://cran.r-project.org/package=NatureSounds), that aim to simplify the use of R for bioacoustic research. More recently I released the R packages [baRulho](https://cran.r-project.org/package=baRulho), to quantify acoustic signal transmission and degradation, and [ohun](https://cran.r-project.org/package=ohun), to optimize automatic detection. New functions as well as other more elaborated analyses are detailed in my blog [coded bioacoustics](https://marce10.github.io/coded_bioacoustics/).
 
 
+
 <body class="m-3">
-    <div class="alert alert-success">
-    <b>News</b>
-
-  - may-13-2024: [OTS' Bioacoustics in R online course](https://tropicalstudies.org/course/online-course-bioacoustic-analysis-in-r/)  
-  - may-5-2024: [New package suwo for accessing nature media repositories through R](https://github.com/maRce10/suwo)
-  - apr-5-2024: [baRulho package accepted in ropensci](https://docs.ropensci.org/baRulho/)!
-
+    <div class="alert alert-info">
+    <b>What's new</b>
+     <hr>
+     <div style="border:0px solid black;width:750px;height:100px;overflow:scroll;overflow-y:scroll;overflow-x:hidden;">
+    <p style="height:0%;">
+     <ul>
+       <li> may-13-2024: <a href="https://tropicalstudies.org/course/online-course-bioacoustic-analysis-in-r/">OTS' Bioacoustics in R online course</a></li>
+       <li> may-5-2024: <a href="https://github.com/maRce10/suwo">New package suwo for accessing nature media repositories through R</a></li>
+       <li> apr-23-2024: <a href="https://marce10.github.io/OTS_REU_OS_2024/">OTS' REU-postbacc workshop on reproducible science</a></li>
+       <li> apr-5-2024: 
+<a href="https://docs.ropensci.org/baRulho/">baRulho package accepted in ropensci!</a></li>
+      </ul>
+     </div>
     </div>
 </body>
+
 
 <!--   <center> -->
 <!--   <script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=5r78v2ax08m&amp;m=0&amp;s=178&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33" async="async"></script> -->
