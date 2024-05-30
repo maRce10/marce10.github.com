@@ -60,11 +60,11 @@ I'm deeply involved in the development of software packages for the analysis of 
 
 <div style="background-color: #e9f5f9; color: black; margin: 20px; padding: 14px;  border-radius: 5px; height:100%;">
     <b>What's new</b>
-     <div style="border:0px solid black;width:750px;height:150px;overflow:scroll;overflow-y:scroll;overflow-x:hidden;">
+     <div style="border:0px solid black;width:100%;height:150px;overflow:scroll;overflow-y:scroll;overflow-x:hidden;">
     <p style="height:0%;">
      <ul>
-        <li> <p style="color:gray;">may 22, 2024: <a href="https://marce10.github.io/publication/devogel_2024/">New paper out: <i>Vocal interactions of breeding partners predict duration of incubation bout in an Artic seabird</i></a></li>
-        <li> <p style="color:gray;">may 20, 2024: <a href="https://marce10.github.io/publication/chaverri-et-al-2024/">New paper out: <i>Calling to the collective: contact calling rates within groups of disc-winged bats do not vary by kinship or association</i></a></li>
+        <li> <p style="color:gray;">may 22, 2024: <p style="color:black;">New paper out: <a href="https://marce10.github.io/publication/devogel_2024/"><i>Vocal interactions of breeding partners predict duration of incubation bout in an Artic seabird</i></a></li>
+        <li> <p style="color:gray;">may 22, 2024: <p style="color:black;">New paper out: <a href="https://marce10.github.io/publication/chaverri-et-al-2024/"><i>Calling to the collective: contact calling rates within groups of disc-winged bats do not vary by kinship or association</i></a></li>
         <li> <p style="color:gray;">may 13, 2024: <a href="https://tropicalstudies.org/course/online-course-bioacoustic-analysis-in-r/">OTS' Bioacoustics in R online course</a></li>
        <li> <p style="color:gray;">may 5, 2024: <a href="https://github.com/maRce10/suwo">New package suwo for accessing nature media repositories through R</a></li>
        <li> <p style="color:gray;">apr 23, 2024: <a href="https://marce10.github.io/OTS_REU_OS_2024/">OTS' REU-postbacc workshop on reproducible science</a></li>
