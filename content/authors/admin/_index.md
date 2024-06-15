@@ -65,7 +65,7 @@ I'm deeply involved in the development of software packages for the analysis of 
      <ul>
 
 <li> <p style="color:gray;">jun 10, 2024: <p style="color:black;"><a href="https://vimeo.com/906639425/44f95a6367?share=copy
-"><i>Research featured at One Planet's 'Les Genies de la Nature' documentary</i></a></li>
+"><i>Research featured at One Planet's 'Les Genies de la Nature' documentary, Canal +</i></a></li>
 
 
 <li> <p style="color:gray;">may 22, 2024: <p style="color:black;">New paper out: <a href="https://marce10.github.io/publication/devogel_2024/"><i>Vocal interactions of breeding partners predict duration of incubation bout in an Artic seabird</i></a></li>
