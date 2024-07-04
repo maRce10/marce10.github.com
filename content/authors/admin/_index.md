@@ -64,6 +64,8 @@ I'm deeply involved in the development of software packages for the analysis of 
     <p style="height:0%;">
      <ul>
 
+<li> <p style="color:gray;">jul 4, 2024: <p style="color:black;">New paper out: <a href="https://bmcneurosci.biomedcentral.com/articles/10.1186/s12868-024-00879-8"><i>Persistent vocal learning in an aging open-ended learner reflected in neural FoxP2 expression</i></a></li>
+
 <li> <p style="color:gray;">jun 10, 2024: <p style="color:black;"><a href="https://vimeo.com/906639425/44f95a6367?share=copy
 "><i>Research featured at One Planet's 'Les Genies de la Nature' documentary, Canal +</i></a></li>
 
