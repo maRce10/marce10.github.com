@@ -44,4 +44,6 @@ url_pdf: uploads/moussaoui_2024.pdf
 links:
 - name: URL
   url: https://bmcneurosci.biomedcentral.com/articles/10.1186/s12868-024-00879-8
+- name: Supp Mat
+  url: https://datadryad.org/stash/dataset/doi:10.5061/dryad.gb5mkkwvj  
 ---
