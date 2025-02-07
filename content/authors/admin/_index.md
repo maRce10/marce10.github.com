@@ -64,6 +64,8 @@ I'm deeply involved in the development of software packages for the analysis of 
     <p style="height:0%;">
      <ul>
 
+<li> <p style="color:gray;">jan 24, 2025: <p style="color:black;">New paper out: <a href="https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.14481"><i>Quantifying degradation in animal acoustic signals with the R package baRulho</i></a></li>
+
 <li> <p style="color:gray;">nov 20, 2024: <p style="color:black;"><i>Plenary talk at <a href="https://redecoacustica.org/congreso/2ccbe/">2do Congreso Colombiano de Bioacústica y Ecoacústica</i></a></li>
 
 <li> <p style="color:gray;">jul 4, 2024: <p style="color:black;">New paper out: <a href="https://bmcneurosci.biomedcentral.com/articles/10.1186/s12868-024-00879-8"><i>Persistent vocal learning in an aging open-ended learner reflected in neural FoxP2 expression</i></a></li>
