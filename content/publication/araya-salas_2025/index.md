@@ -55,4 +55,8 @@ links:
   url: https://github.com/maRce10/barulho_paper
 - name: Review history
   url: https://www.webofscience.com/api/gateway/wos/peer-review/10.1111/2041-210X.14481
+- name: Preprint
+  url: https://www.biorxiv.org/content/10.1101/2023.11.22.568305v1
+- name: Presentation
+  url: https://rstudio-pubs-static.s3.amazonaws.com/1130250_d0d6643a30754e408155ab07f2e7bd07.html
 ---
