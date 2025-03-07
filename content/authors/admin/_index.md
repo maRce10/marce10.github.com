@@ -52,10 +52,9 @@ email: "marcelo.araya@ucr.ac.cr"
 highlight_name: true
 ---
 
-I am interested in understanding how behavior has evolved and which factors have influenced it, spanning both cultural and evolutionary timescales. I am also interested in the possible macro-evolutionary consequences of these processes. I tackle these questions by studying the communication systems of (mostly neotropical) taxa, making use of 'single species' behavioral studies, comparative phylogenetic methods and cutting-edge data analyses.
+I am interested in understanding the factors that have shaped behavior across both cultural and evolutionary timescales. I am also interested in the potential macro-evolutionary consequences of these processes. To explore these questions, I study the communication systems of various taxa, with a particular focus on neotropical species. My research combines single-species behavioral studies, comparative phylogenetic methods, and cutting-edge data analysis approaches.
 
-I also enjoy developing my own computational tools for customizing data analysis. 
-I'm deeply involved in the development of software packages for the analysis of behavioral data. I have created the R package [warbleR](https://cran.r-project.org/package=warbleR) that provides functions to streamline high-throughput acoustic analysis of animal sounds. I also made available two R packages, [Rraven](https://cran.r-project.org/package=Rraven) and [NatureSounds](https://cran.r-project.org/package=NatureSounds), that aim to simplify the use of R for bioacoustic research. More recently I released the R packages [baRulho](https://cran.r-project.org/package=baRulho), to quantify acoustic signal transmission and degradation, and [ohun](https://cran.r-project.org/package=ohun), to optimize automatic detection. New functions as well as other more elaborated analyses are detailed in my blog [coded bioacoustics](https://marce10.github.io/coded_bioacoustics/).
+In addition to my research, I am particularly involved in creating software packages for analyzing behavioral data. I developed the R packages [warbleR](https://cran.r-project.org/package=warbleR), which provides functions to streamline high-throughput acoustic analysis of animal sounds, and [Rraven](https://cran.r-project.org/package=Rraven) designed to simplify the integration of Raven Pro for bioacustic analysis workflows in R. I also created the R packages [baRulho](https://cran.r-project.org/package=baRulho), to quantify acoustic signal transmission and degradation, and [ohun](https://cran.r-project.org/package=ohun), to optimize automatic detection. 
 
 
 <div style="background-color: #e9f5f9; color: black; margin: 20px; padding: 14px;  border-radius: 5px; height:100%;">
@@ -63,6 +62,8 @@ I'm deeply involved in the development of software packages for the analysis of 
      <div style="border:0px solid black;width:100%;height:150px;overflow:scroll;overflow-y:scroll;overflow-x:hidden;">
     <p style="height:0%;">
      <ul>
+
+<li> <p style="color:gray;">may 12-16, 2025: <a href="https://tropicalstudies.org/course/online-course-bioacoustic-analysis-in-r/">OTS' Bioacoustics in R online course (accepting applications)</a></li>
 
 <li> <p style="color:gray;">jan 24, 2025: <p style="color:black;">New paper out: <a href="https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.14481"><i>Quantifying degradation in animal acoustic signals with the R package baRulho</i></a></li>
 
