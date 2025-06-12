@@ -4,12 +4,12 @@ subtitle: "Advanced R programming and data visualization"
 output: github_document
 editor_options: 
   chunk_output_type: console
-date: '2023-06-01'
+date: '2024-06-01'
 ---
 
 <div class="alert alert-success">
 
-<center>[**Check the 2023 course website for materials and practices** (in spanish)](https://marce10.github.io/r_avanzado_2023)</center>
+<center>[**Check the 2024 course website for materials and practices** (in spanish)](https://marce10.github.io/r_avanzado_2024)</center>
 
 </div>
 

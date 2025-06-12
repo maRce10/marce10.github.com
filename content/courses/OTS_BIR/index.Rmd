@@ -1,0 +1,49 @@
+---
+title: "Bioacoustic Analysis in R"
+output: github_document
+editor_options: 
+  chunk_output_type: console
+date: '2025-05-01'
+---
+
+<!-- <figure> -->
+<!--   <img src="https://marce10.github.io/OTS_BIR_2022/images/measures-parrot-call-spectro3.jpg"> -->
+
+<!-- </figure> -->
+<div class="alert alert-success">
+
+<center>[**Check the course website for materials and practices**](https://marce10.github.io/OTS_BIR_2025/
+)</center>
+
+</div>
+
+<div class="alert alert-warning">
+
+  - Online course
+  - May 12-16, 2025
+  - 10 am - 1 pm CST time
+
+</div>
+
+<center><a href="https://tropicalstudies.org/course/online-course-bioacoustic-analysis-in-r/" class="btn btn-info btn-lg">Apply</a></center>
+
+
+&nbsp; 
+
+The study of animal acoustic signals plays a vital role in behavior, ecology, evolution, and biodiversity monitoring. With the increasing accessibility of recording equipment and open-access acoustic libraries, researchers now have unprecedented opportunities to analyze animal sounds across vast temporal, geographic, and taxonomic scales. Yet, the complexity of these signals—coupled with the diversity of analytical methods—poses significant challenges in extracting biologically meaningful insights.
+
+This course introduces students to the most relevant acoustic analysis tools in R, empowering researchers to overcome these challenges. You’ll learn how to efficiently gather, organize, and analyze large acoustic datasets while applying advanced methods tailored to your research questions. Through a combination of foundational theory and hands-on practice, you’ll gain the skills to quantify fine-scale structural variation in animal sounds and unlock new dimensions in bioacoustic research.
+
+<div class="alert alert-info">
+
+### Objetive
+
+Training biological science students and researchers in the detection and analysis of animal sounds in R. Specifically, it seeks to familiarize participants with computational tools in the R environment aiming at curating, detecting and analyzing animal acoustic signals, with an especial focus on quantifying fine-scale structural variation. The course will introduce the most relevant acoustics concepts to allow a detailed understanding of the metrics used for characterize acoustic signals. It will also guide participants through a variety of R packages for bioacoustics analysis, including seewave, tuneR, warbleR and baRulho.
+
+</div>
+
+<br>
+
+<center><a href="https://tropicalstudies.org/course/online-course-bioacoustic-analysis-in-r/" class="btn btn-info btn-lg">Apply</a></center>
+
+<br>
