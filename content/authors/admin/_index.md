@@ -56,17 +56,15 @@ I am interested in understanding the factors that have shaped behavior across bo
 
 In addition to my research, I am particularly involved in creating software packages for analyzing behavioral data. I developed the R packages [warbleR](https://cran.r-project.org/package=warbleR), which provides functions to streamline high-throughput acoustic analysis of animal sounds, and [Rraven](https://cran.r-project.org/package=Rraven) designed to simplify the integration of Raven Pro for bioacustic analysis workflows in R. I also created the R packages [baRulho](https://cran.r-project.org/package=baRulho), to quantify acoustic signal transmission and degradation, and [ohun](https://cran.r-project.org/package=ohun), to optimize automatic detection. 
 
-<li> <p style="color:gray;">jul 4, 2024: <p style="color:black;">New paper out: <a href="https://bmcneurosci.biomedcentral.com/articles/10.1186/s12868-024-00879-8"><i>Persistent vocal learning in an aging open-ended learner reflected in neural FoxP2 expression</i></a></li>
-
-<li> <p style="color:gray;">Jun 4, 2025: <p style="color:black;"><i>talk at <a href="https://www.birds.cornell.edu/ccb/bioacoustalks/">bioacousTalks: baRulho: an R package to quantify (animal) sound degradation</i></a></li>
-
-<li> <p style="color:gray;">nov 20, 2024: <p style="color:black;"><i>Plenary talk at <a href="https://redecoacustica.org/congreso/2ccbe/">2do Congreso Colombiano de Bioacústica y Ecoacústica</i></a></li>
-
-<div style="background-color: #ffffff; color: black; margin: 20px; padding: 14px;  border-radius: 5px; height:100%;">
+<div style="background-color: #f6fbfe; color: black; margin: 20px; padding: 14px;  border-radius: 5px; height:100%;">
     <b>What's new</b>
      <div style="border:0px solid black;width:100%;height:150px;overflow:scroll;overflow-y:scroll;overflow-x:hidden;">
     <p style="height:0%;">
      <ul>
+
+<li> <p style="color:gray;">jun 12, 2025: <p style="color:black;">New paper out: <a href="https://marce10.github.io/uploads/chirino-et-al-2025.pdf"><i>Environmental drivers of calling activity in the critically endangered Lemur Leaf frog, Agalychnis lemur (Hylidae:Phyllomedusinae)</i></a></li>
+
+<li> <p style="color:gray;">Jun 4, 2025: <p style="color:black;"><i>talk at <a href="https://www.birds.cornell.edu/ccb/bioacoustalks/">bioacousTalks: baRulho: an R package to quantify (animal) sound degradation</i></a></li>
 
 <li> <p style="color:gray;">may 12-16, 2025: <a href="https://tropicalstudies.org/course/online-course-bioacoustic-analysis-in-r/">OTS' Bioacoustics in R online course (accepting applications)</a></li>
 
