@@ -58,13 +58,15 @@ In addition to my research, I am particularly involved in creating software pack
 
 <div style="background-color: #f6fbfe; color: black; margin: 20px; padding: 14px;  border-radius: 5px; height:100%;">
     <b>What's new</b>
-     <div style="border:0px solid black;width:100%;height:150px;overflow:scroll;overflow-y:scroll;overflow-x:hidden;">
+     <div style="border:0px solid black;width:100%;height:200px;overflow:scroll;overflow-y:scroll;overflow-x:hidden;">
     <p style="height:0%;">
      <ul>
 
 <li> <p style="color:gray;">jun 12, 2025: <p style="color:black;">New paper out: <a href="https://marce10.github.io/uploads/chirino-et-al-2025.pdf"><i>Environmental drivers of calling activity in the critically endangered Lemur Leaf frog, Agalychnis lemur (Hylidae:Phyllomedusinae)</i></a></li>
 
 <li> <p style="color:gray;">Jun 4, 2025: <p style="color:black;"><i>talk at <a href="https://www.birds.cornell.edu/ccb/bioacoustalks/">bioacousTalks: baRulho: an R package to quantify (animal) sound degradation</i></a></li>
+
+<li> <p style="color:gray;">jun 2, 2025: <p style="color:black;">New paper out: <a href="https://marce10.github.io/uploads/best_et_al_2025.pdf"><i>Bioacoustic fundamental frequency estimation: a cross-species dataset and deep learning baseline</i></a></li>
 
 <li> <p style="color:gray;">may 12-16, 2025: <a href="https://tropicalstudies.org/course/online-course-bioacoustic-analysis-in-r/">OTS' Bioacoustics in R online course (accepting applications)</a></li>
 
