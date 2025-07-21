@@ -243,7 +243,3 @@ Sys.sleep(1)
 blogdown::serve_site()
 
 ```
-
-
-# change colors
- Go to 'data/themes/custom.toml'

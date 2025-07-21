@@ -62,6 +62,8 @@ In addition to my research, I am particularly involved in creating software pack
     <p style="height:0%;">
      <ul>
 
+<li> <p style="color:gray;">jun 21, 2025: <p style="color:black;">New paper out: <a href="https://marce10.github.io/uploads/odom-et-al-2025.pdf"><i> Global incidence of female birdsong is predicted by territoriality and biparental care in songbirds</i></a></li>
+
 <li> <p style="color:gray;">jun 12, 2025: <p style="color:black;">New paper out: <a href="https://marce10.github.io/uploads/chirino-et-al-2025.pdf"><i>Environmental drivers of calling activity in the critically endangered Lemur Leaf frog, Agalychnis lemur (Hylidae:Phyllomedusinae)</i></a></li>
 
 <li> <p style="color:gray;">Jun 4, 2025: <p style="color:black;"><i>talk at <a href="https://www.birds.cornell.edu/ccb/bioacoustalks/">bioacousTalks: baRulho: an R package to quantify (animal) sound degradation</i></a></li>
@@ -70,7 +72,7 @@ In addition to my research, I am particularly involved in creating software pack
 
 <li> <p style="color:gray;">may 12-16, 2025: <a href="https://tropicalstudies.org/course/online-course-bioacoustic-analysis-in-r/">OTS' Bioacoustics in R online course (accepting applications)</a></li>
 
-<li> <p style="color:gray;">jan 24, 2025: <p style="color:black;">New paper out: <a href="https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.14481"><i>Quantifying degradation in animal acoustic signals with the R package baRulho</i></a></li>
+<li> <p style="color:gray;">jan 24, 2025: <p style="color:black;">New paper out: <a href="https://marce10.github.io/uploads/araya-salas-et-al-2024.pdf"><i>Quantifying degradation in animal acoustic signals with the R package baRulho</i></a></li>
 
 <li> <p style="color:gray;">nov 20, 2024: <p style="color:black;"><i>Plenary talk at <a href="https://redecoacustica.org/congreso/2ccbe/">2do Congreso Colombiano de Bioacústica y Ecoacústica</i></a></li>
 
