@@ -62,7 +62,7 @@ In addition to my research, I am particularly involved in creating software pack
     <p style="height:0%;">
      <ul>
      
-<li> <p style="color:gray;">jul 25, 2025: <p style="color:black;">New paper out: <a href="https://marce10.github.io/uploads/escudero-leyva-2025.pdf"><i>Genomic insights reveal community structure and phylogenetic associations of endohyphal bacteria and viruses in fungal endophytes</i></a></li>
+<li> <p style="color:gray;">jul 25, 2025: <p style="color:black;">New paper out: <a href="./publication/escudero-leyva-et-at-2025/"><i>Genomic insights reveal community structure and phylogenetic associations of endohyphal bacteria and viruses in fungal endophytes</i></a></li>
 
 <li> <p style="color:gray;">jul 21, 2025: <p style="color:black;">New paper out: <a href="https://marce10.github.io/uploads/odom-et-al-2025.pdf"><i>Global incidence of female birdsong is predicted by territoriality and biparental care in songbirds</i></a></li>
 
