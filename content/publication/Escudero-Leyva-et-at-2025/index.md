@@ -25,8 +25,8 @@ tags:
 - virome
 
 categories: []
-date: '2025-02-11'
-lastmod: 2025-02-11
+date: '2025-07-25'
+lastmod: 2025-07-25
 featured: false
 draft: false
 
@@ -44,18 +44,18 @@ image:
 #   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
 #   Otherwise, set `projects = []`.
 projects: []
-publishDate: '2025-02-11'
+publishDate: '2025-07-25'
 publication_types: 
 - '2'
-abstract: Endohyphal microbiomes, comprising bacteria and viruses, significantly influence fungal phenotypes, host fitness, and ecological interactions. Endohyphal bacterial symbionts are known to affect fungal pathogenicity, secondary metabolite production, and adaptability, yet many aspects of their diversity and interactions remain uncertain. In contrast, endohyphal viruses, despite their widespread presence, are poorly understood in terms of their diversity, ecological roles, and evolutionary relationships with fungal hosts. These gaps highlight the need for integrative studies to explore the composition, diversity, host associations, and functional roles of both bacterial and viral communities in fungi. This study aimed to (1) characterize the diversity of endohyphal bacterial and viral communities within selected fungal endophytes using genomic and transcriptomic approaches, and (2) test for host specialization through phylogenetic signals and core microbial taxa. Endohyphal microbial communities from 19 fungal isolates from eight fungal orders (Amphisphaeriales, Botryosphaeriales, Diaporthales, Glomerellales, Mucorales, Pleosporales, Sordariales, and Xylariales) obtained from Fagus grandifolia leaves were characterized. Bacterial communities exhibited high diversity and significant phylogenetic signals, with core taxa such as Bacillales, Burkholderiales, Enterobacterales, Hyphomicrobiales, and Pseudomonadales, shared across all fungal samples. Specific bacterial taxa displayed potential host specialization, including Moraxellales, Sphingomonadales, and Streptosporangiaceae for Amphisphaeriales fungal samples; Enterobacterales (e.g., Enterobacteraceae), Hyphomicrobiales (e.g., Rhizobiaceae), and Micrococcales for Glomerellales; and Cytophagales for Diaporthales. Viral communities were less diverse, with Bamfordvirae and Heunggongvirae (double-stranded DNA viruses) identified as core taxa in metagenomic data, while metatranscriptomic data revealed no core taxa. Surprisingly, only a few reads of double-stranded RNA mycoviruses were detected. The findings suggest a level of host specialization in bacterial communities and a more complex, limited association for viral communities, with dsDNA dominating the endohyphal virome. This study enhances our understanding of fungal-microbe interactions and highlights the ecological and evolutionary dynamics of endohyphal microbiota. Future efforts to expand reference databases and investigate the functional roles of these microbial taxa will further elucidate their contributions to fungal biology, impacts on their plant hosts, and ecosystem processes.
+abstract: Endohyphal microbial communities, composed of bacteria and viruses residing within fungal hyphae, play important roles in shaping fungal phenotypes, host interactions, and ecological functions. While endohyphal bacteria have been shown to influence fungal pathogenicity, secondary metabolism, and adaptability, much remains unknown about their diversity and host specificity. Even less is known about endohyphal viruses, whose ecological roles and evolutionary dynamics are poorly understood. This study integrates genomic and transcriptomic approaches to (1) characterize the diversity of endohyphal bacterial and viral communities in fungal endophytes isolated from Fagus grandifolia leaves, and (2) assess potential host specialization through phylogenetic signal analyses. We analyzed 19 fungal isolates spanning eight fungal orders (Amphisphaeriales, Botryosphaeriales, Diaporthales, Glomerellales, Mucorales, Pleosporales, Sordariales, and Xylariales). Bacterial communities were highly diverse and showed significant phylogenetic signal, with core taxa—such as Bacillales, Burkholderiales, Enterobacterales, Hyphomicrobiales, and Pseudomonadales—shared across hosts. Several bacterial groups were associated with specific fungal orders, suggesting host specialization, Moraxellales, Sphingomonadales, and Streptosporangiaceae in Amphisphaeriales; Enterobacterales, Hyphomicrobiales, and Micrococcales in Glomerellales; and Cytophagales in Diaporthales. In contrast, viral communities were less diverse and dominated by double-stranded DNA viruses, primarily Bamfordvirae and Heunggongvirae. No core viral taxa were detected in metatranscriptomic data, and only a few reads of double-stranded RNA viruses were found. Overall, our results indicate potential host specialization in bacterial endophytes and limited viral diversity in fungal hosts, with dsDNA viruses dominating the endohyphal virome. These findings provide new insights into the ecological and evolutionary dynamics of fungal-associated microbiota. Future work expanding taxonomic reference databases and exploring the functional roles of these microbial symbionts will be essential to understanding their contributions to fungal biology, host interactions, and broader ecosystem processes.
 
-publication: '*BioRchiv*'
-url_pdf: https://www.biorxiv.org/content/10.1101/2025.02.07.637084v2.full.pdf
+publication: '*Environmental Microbiome*'
+url_pdf: uploads/escudero-leyva-2025.pdf
 links:
 - name: URL
-  url: https://doi.org/10.1101/2025.02.07.637084 
-# - name: Supp Mat
-#   url: https://doi.org/10.6084/m9.figshare.21559074
+  url: https://environmentalmicrobiome.biomedcentral.com/articles/10.1186/s40793-025-00757-8 
+- name: Supp Mat
+  url: https://static-content.springer.com/esm/art%3A10.1186%2Fs40793-025-00757-8/MediaObjects/40793_2025_757_MOESM1_ESM.docx
 # - name: Repository
 #   url: https://github.com/maRce10/barulho_paper
 # - name: Review history

@@ -61,8 +61,10 @@ In addition to my research, I am particularly involved in creating software pack
      <div style="border:0px solid black;width:100%;height:200px;overflow:scroll;overflow-y:scroll;overflow-x:hidden;">
     <p style="height:0%;">
      <ul>
+     
+<li> <p style="color:gray;">jul 25, 2025: <p style="color:black;">New paper out: <a href="https://marce10.github.io/uploads/escudero-leyva-2025.pdf"><i>Genomic insights reveal community structure and phylogenetic associations of endohyphal bacteria and viruses in fungal endophytes</i></a></li>
 
-<li> <p style="color:gray;">jun 21, 2025: <p style="color:black;">New paper out: <a href="https://marce10.github.io/uploads/odom-et-al-2025.pdf"><i> Global incidence of female birdsong is predicted by territoriality and biparental care in songbirds</i></a></li>
+<li> <p style="color:gray;">jul 21, 2025: <p style="color:black;">New paper out: <a href="https://marce10.github.io/uploads/odom-et-al-2025.pdf"><i>Global incidence of female birdsong is predicted by territoriality and biparental care in songbirds</i></a></li>
 
 <li> <p style="color:gray;">jun 12, 2025: <p style="color:black;">New paper out: <a href="https://marce10.github.io/uploads/chirino-et-al-2025.pdf"><i>Environmental drivers of calling activity in the critically endangered Lemur Leaf frog, Agalychnis lemur (Hylidae:Phyllomedusinae)</i></a></li>
 
