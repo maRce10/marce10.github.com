@@ -56,37 +56,45 @@ I am interested in understanding the factors that have shaped behavior across bo
 
 In addition to my research, I am particularly involved in creating software packages for analyzing behavioral data. I developed the R packages [warbleR](https://cran.r-project.org/package=warbleR), which provides functions to streamline high-throughput acoustic analysis of animal sounds, and [Rraven](https://cran.r-project.org/package=Rraven) designed to simplify the integration of Raven Pro for bioacustic analysis workflows in R. I also created the R packages [baRulho](https://cran.r-project.org/package=baRulho), to quantify acoustic signal transmission and degradation, and [ohun](https://cran.r-project.org/package=ohun), to optimize automatic detection. 
 
+<div style="background-color: #d3f1c9; color: black; margin: 20px; padding: 14px;  border-radius: 5px; height:100%; width:80%; font-size: 17px;">
+     <div style="border:0px solid black;width:80%;height:50px;">
+     <center>
+<p style="color:black;"><a href="https://biodb.com/species/long-billed-hermit/">&#128154 Honorary Patron of the Long-billed Hermit (hummingbird) at the bioDB conservation database </a>
+    </center>
+  </div>
+</div>
+
 <div style="background-color: #f6fbfe; color: black; margin: 20px; padding: 14px;  border-radius: 5px; height:100%;">
     <b>What's new</b>
      <div style="border:0px solid black;width:100%;height:200px;overflow:scroll;overflow-y:scroll;overflow-x:hidden;">
     <p style="height:0%;">
      <ul>
      
-<li> <p style="color:gray;">jul 25, 2025: <p style="color:black;">New paper out: <a href="./publication/escudero-leyva-et-at-2025/"><i>Genomic insights reveal community structure and phylogenetic associations of endohyphal bacteria and viruses in fungal endophytes</i></a></li>
+<li> <p style="color:gray;">jul 25, 2025: <p style="color:black;">New paper out&#129395: <a href="./publication/escudero-leyva-et-at-2025/"><i>Genomic insights reveal community structure and phylogenetic associations of endohyphal bacteria and viruses in fungal endophytes</i></a></li>
 
-<li> <p style="color:gray;">jul 21, 2025: <p style="color:black;">New paper out: <a href="./publication/odom_et_al_2025"><i>Global incidence of female birdsong is predicted by territoriality and biparental care in songbirds</i></a></li>
+<li> <p style="color:gray;">jul 21, 2025: <p style="color:black;">New paper out&#129395: <a href="./publication/odom_et_al_2025"><i>Global incidence of female birdsong is predicted by territoriality and biparental care in songbirds</i></a></li>
 
-<li> <p style="color:gray;">jun 12, 2025: <p style="color:black;">New paper out: <a href="./publication/chirino_et_al_2025/"><i>Environmental drivers of calling activity in the critically endangered Lemur Leaf frog, Agalychnis lemur (Hylidae:Phyllomedusinae)</i></a></li>
+<li> <p style="color:gray;">jun 12, 2025: <p style="color:black;">New paper out&#129395: <a href="./publication/chirino_et_al_2025/"><i>Environmental drivers of calling activity in the critically endangered Lemur Leaf frog, Agalychnis lemur (Hylidae:Phyllomedusinae)</i></a></li>
 
 <li> <p style="color:gray;">Jun 4, 2025: <p style="color:black;">talk at <a href="https://www.birds.cornell.edu/ccb/bioacoustalks/">bioacousTalks: baRulho: an R package to quantify (animal) sound degradation</a></li>
 
-<li> <p style="color:gray;">jun 2, 2025: <p style="color:black;">New paper out: <a href="./publication/best_2025/"><i>Bioacoustic fundamental frequency estimation: a cross-species dataset and deep learning baseline</i></a></li>
+<li> <p style="color:gray;">jun 2, 2025: <p style="color:black;">New paper out&#129395: <a href="./publication/best_2025/"><i>Bioacoustic fundamental frequency estimation: a cross-species dataset and deep learning baseline</i></a></li>
 
 <li> <p style="color:gray;">may 12-16, 2025: <a href="https://tropicalstudies.org/course/online-course-bioacoustic-analysis-in-r/">OTS' Bioacoustics in R online course (accepting applications)</a></li>
 
-<li> <p style="color:gray;">jan 24, 2025: <p style="color:black;">New paper out: <a href="./publication/araya-salas_2024/"><i>Quantifying degradation in animal acoustic signals with the R package baRulho</i></a></li>
+<li> <p style="color:gray;">jan 24, 2025: <p style="color:black;">New paper out&#129395: <a href="./publication/araya-salas_2024/"><i>Quantifying degradation in animal acoustic signals with the R package baRulho</i></a></li>
 
 <li> <p style="color:gray;">nov 20, 2024: <p style="color:black;"><i>Plenary talk at <a href="https://redecoacustica.org/congreso/2ccbe/">2do Congreso Colombiano de Bioacústica y Ecoacústica</i></a></li>
 
-<li> <p style="color:gray;">jul 4, 2024: <p style="color:black;">New paper out: <a href="./publication/moussaoui_2024/"><i>Persistent vocal learning in an aging open-ended learner reflected in neural FoxP2 expression</i></a></li>
+<li> <p style="color:gray;">jul 4, 2024: <p style="color:black;">New paper out&#129395: <a href="./publication/moussaoui_2024/"><i>Persistent vocal learning in an aging open-ended learner reflected in neural FoxP2 expression</i></a></li>
 
 <li> <p style="color:gray;">jun 10, 2024: <p style="color:black;"><a href="https://vimeo.com/906639425/44f95a6367?share=copy
 "><i>Research featured at One Planet's 'Les Genies de la Nature' documentary, Canal +</i></a></li>
 
 
-<li> <p style="color:gray;">may 22, 2024: <p style="color:black;">New paper out: <a href="./publication/devogel_2024/"><i>Vocal interactions of breeding partners predict duration of incubation bout in an Artic seabird</i></a></li>
+<li> <p style="color:gray;">may 22, 2024: <p style="color:black;">New paper out&#129395: <a href="./publication/devogel_2024/"><i>Vocal interactions of breeding partners predict duration of incubation bout in an Artic seabird</i></a></li>
 
-<li> <p style="color:gray;">may 22, 2024: <p style="color:black;">New paper out: <a href="./publication/chaverri-et-al-2024/"><i>Calling to the collective: contact calling rates within groups of disc-winged bats do not vary by kinship or association</i></a></li>
+<li> <p style="color:gray;">may 22, 2024: <p style="color:black;">New paper out&#129395: <a href="./publication/chaverri-et-al-2024/"><i>Calling to the collective: contact calling rates within groups of disc-winged bats do not vary by kinship or association</i></a></li>
 
 <li> <p style="color:gray;">may 13, 2024: <a href="https://tropicalstudies.org/course/online-course-bioacoustic-analysis-in-r/">OTS' Bioacoustics in R online course</a></li>
 
