@@ -56,14 +56,16 @@ I am interested in understanding the factors that have shaped behavior across bo
 
 In addition to my research, I am particularly involved in creating software packages for analyzing behavioral data. I developed the R packages [warbleR](https://cran.r-project.org/package=warbleR), which provides functions to streamline high-throughput acoustic analysis of animal sounds, and [Rraven](https://cran.r-project.org/package=Rraven) designed to simplify the integration of Raven Pro for bioacustic analysis workflows in R. I also created the R packages [baRulho](https://cran.r-project.org/package=baRulho), to quantify acoustic signal transmission and degradation, and [ohun](https://cran.r-project.org/package=ohun), to optimize automatic detection. 
 
-<div style="background-color: #d3f1c9; color: black; margin: 20px; padding: 14px;  border-radius: 5px; height:100%; width:80%; font-size: 17px;">
-     <div style="border:0px solid black;width:80%;height:50px;">
-     <center>
+
+<!--   Honorary Patron box -->
+<div style="background-color: #d3f1c9; color: black; margin: 20px; padding: 14px;  border-radius: 5px; height:100%; width:90%; font-size: 16px;">
+         <center>
 <p style="color:black;"><a href="https://biodb.com/species/long-billed-hermit/">&#128154 Honorary Patron of the Long-billed Hermit (hummingbird) at the bioDB conservation database </a>
     </center>
-  </div>
 </div>
 
+
+<!--   What's new box -->
 <div style="background-color: #f6fbfe; color: black; margin: 20px; padding: 14px;  border-radius: 5px; height:100%;">
     <b>What's new</b>
      <div style="border:0px solid black;width:100%;height:200px;overflow:scroll;overflow-y:scroll;overflow-x:hidden;">
