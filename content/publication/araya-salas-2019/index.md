@@ -19,7 +19,9 @@ tags:
 - Long-billed hermit
 - Lekking behavior
 - Animal communication
-categories: []
+- Neotropical
+
+categories: [Neotropical, Animal behavior, Behavioral ecology, Vocal learning, Hummingbirds, Visual displays]
 date: '2019-01-01'
 lastmod: 2023-04-28T11:33:37-06:00
 featured: false

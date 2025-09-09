@@ -8,6 +8,7 @@ summary: ''
 authors:
 - J. Edgardo Arévalo
 - admin
+
 tags:
 - Aggressive displays
 - Distress calls
@@ -15,7 +16,9 @@ tags:
 - Prey-predator interaction
 - Chesnut-mandibled toucan
 - Natural history
-categories: []
+- Neotropical
+
+categories: [Neotropical, Animal behavior, Behavioral ecology, Acoustic communication]
 date: '2013-03-01'
 lastmod: 2023-04-28T11:33:33-06:00
 featured: false

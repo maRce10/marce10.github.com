@@ -15,7 +15,9 @@ tags:
 - Animal communication
 - Hummingbirds
 - Long-billed hermit
-categories: []
+- Neotropical
+
+categories: [Neotropical, Animal behavior, Behavioral ecology, Scientific programming, Vocal ontogeny, Acoustic communication, Hummingbirds]
 date: '2013-09-01'
 lastmod: 2023-04-28T11:33:33-06:00
 featured: false

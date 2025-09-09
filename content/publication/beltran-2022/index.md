@@ -11,6 +11,7 @@ authors:
 - Juan L. Parra
 - F. Gary Stiles
 - Alejandro Rico-Guevara
+
 tags:
 - Trochilidae
 - Hummingbirds
@@ -20,7 +21,9 @@ tags:
 - Habitat structure
 - Signal redundancy
 - Acoustic adaptation
-categories: []
+- Neotropical
+
+categories: [Neotropical, Animal behavior, Behavioral ecology, Phylogenetic comparative analysis, Hummingbirds, Dimorphism]
 date: '2022-12-01'
 lastmod: 2023-04-28T11:33:43-06:00
 featured: false

@@ -14,7 +14,8 @@ tags:
 - Individual signature
 - Geographic variation
 - Animal behavior
-categories: []
+
+categories: [Animal behavior, Behavioral ecology, Vocal ontogeny, Acoustic communication, Parrots]
 date: '2019-12-01'
 lastmod: 2023-04-28T11:33:38-06:00
 featured: false

@@ -14,7 +14,8 @@ tags:
 - Geographic variation
 - Harmonicity
 - Nightingale wren
-categories: []
+- Neotropical
+categories: [Neotropical, Animal behavior, Behavioral ecology, Scientific programming, Biomusicology, Wrens]
 date: '2012-06-01'
 lastmod: 2023-04-28T11:33:34-06:00
 featured: false

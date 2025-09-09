@@ -30,7 +30,8 @@ tags:
 - Sexual dimorphism
 - Phylogenetic comparative analysis
 - Fairy wrens
-categories: []
+
+categories: [Animal behavior, Phylogenetic comparative analysis, Vocal ontogeny, Acoustic communication, Dimorphism]
 date: '2021-01-01'
 lastmod: 2023-04-28T11:33:42-06:00
 featured: false

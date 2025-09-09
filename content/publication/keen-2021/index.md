@@ -21,7 +21,10 @@ tags:
 - Unsupervised machine learning
 - Animal communication
 - Animal behavior
-categories: []
+- Scientific programming
+- Neotropical
+
+categories: [Neotropical, Animal behavior, Behavioral ecology, Scientific programming, Acoustic communication]
 date: '2021-07-01'
 lastmod: 2023-04-28T11:33:41-06:00
 featured: false

@@ -7,7 +7,7 @@ summary: ''
 authors:
 - admin
 tags: []
-categories: []
+categories: [Scientific programming]
 date: '2017-01-01'
 lastmod: 2023-04-28T11:33:38-06:00
 featured: false

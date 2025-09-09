@@ -21,7 +21,10 @@ tags:
 - Animal weaponry
 - Bill morphology
 - Lekking behavior
-categories: []
+- Neotropical
+
+categories: [Neotropical, Animal behavior, Behavioral ecology, Acoustic communication, Hummingbirds]
+
 date: '2018-01-01'
 lastmod: 2023-04-28T11:33:38-06:00
 featured: false

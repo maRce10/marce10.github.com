@@ -15,8 +15,9 @@ tags:
 - detection
 - echolocation
 - bats
+- Neotropical
 
-categories: []
+categories: [Neotropical, Animal behavior, Behavioral ecology, Acoustic communication, Bats]
 date: '2025-09-01'
 lastmod: 2025-09-01
 featured: false

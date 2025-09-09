@@ -10,12 +10,13 @@ authors:
 - Evaristo López Tejeda
 - admin
 tags:
-- Vocal behavior
+- Acoustic communication
 - Animal communication
 - Geographic variation
 - Acoustic adaptation
 - Rufous-collared sparrow
-categories: []
+
+categories: [Animal behavior, Behavioral ecology, Acoustic communication]
 date: '2022-01-01'
 lastmod: 2023-04-28T11:33:42-06:00
 featured: false

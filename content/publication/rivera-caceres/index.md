@@ -19,7 +19,7 @@ tags:
 - Temporal coordination
 - Vocal interaction
 - Vocal learning
-categories: []
+categories: [Neotropical, Animal behavior, Behavioral ecology, Vocal ontogeny, Acoustic communication, Dimorphism, Wrens]
 date: '2018-01-01'
 lastmod: 2023-04-28T11:33:40-06:00
 featured: false

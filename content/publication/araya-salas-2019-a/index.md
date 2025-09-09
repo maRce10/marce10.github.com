@@ -18,7 +18,7 @@ tags:
 - mp3
 - Spectrographic parameters
 - Acoustic methods
-categories: []
+categories: [Scientific programming]
 date: '2019-01-01'
 lastmod: 2023-04-28T11:33:40-06:00
 featured: false

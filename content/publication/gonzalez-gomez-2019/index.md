@@ -12,7 +12,9 @@ tags:
 - Hummingbirds
 - Cognition
 - Field research
-categories: []
+- Neotropical
+
+categories: [Neotropical, Animal behavior, Behavioral ecology, Hummingbirds]
 date: '2019-01-01'
 lastmod: 2023-04-28T11:33:44-06:00
 featured: false

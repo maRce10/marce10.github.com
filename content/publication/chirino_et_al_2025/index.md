@@ -20,9 +20,9 @@ tags:
 - Conservation
 - Endangered species
 - Vocal phenology
+- Neotropical
 
-
-categories: []
+categories: [Neotropical, Animal behavior, Behavioral ecology, Scientific programming, Frogs, Acoustic communication]
 date: '2025-02-18'
 lastmod: 2025-02-18
 featured: false

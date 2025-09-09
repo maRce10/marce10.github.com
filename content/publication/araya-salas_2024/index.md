@@ -18,8 +18,9 @@ tags:
 - animal communication
 - attenuation
 - sound transmission
+- Neotropical
 
-categories: []
+categories: [Animal behavior, Behavioral ecology, Scientific programming, Sound propagation]
 date: '2025-01-25'
 lastmod: 2025-01-25
 featured: false

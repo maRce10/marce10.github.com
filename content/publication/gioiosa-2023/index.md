@@ -15,14 +15,17 @@ authors:
 - Mariela Sánchez-Chavarría
 - Dino Scaravelli
 - Gloriana Chaverri
+
 tags:
 - Animal behavior
 - Bats
 - Spix’s disc-winged bat
 - Sensory input
-- Vocal behavior
+- Acoustic communication
 - Roosting
-categories: []
+- Neotropical
+
+categories: [Neotropical, Animal behavior, Behavioral ecology, Acoustic communication, Bats]
 date: '2023-04-01'
 lastmod: 2023-04-29T09:40:46-06:00
 featured: false

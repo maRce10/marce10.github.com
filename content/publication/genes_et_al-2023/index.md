@@ -14,7 +14,9 @@ tags:
 - Geographic variation
 - Dialect
 - Vocal learning
-categories: []
+- Neotropical
+
+categories: [Neotropical, Animal behavior, Behavioral ecology, Acoustic communication, cultural evolution, Parrots]
 date: '2023-11-17'
 lastmod: 2023-11-17
 featured: false

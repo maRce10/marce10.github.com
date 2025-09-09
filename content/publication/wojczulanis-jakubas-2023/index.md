@@ -15,7 +15,8 @@ tags:
 - Risk avoidance
 - Predation risk allocation hypothesis
 - Traplining
-categories: []
+
+categories: [Neotropical, Animal behavior, Behavioral ecology, Hummingbirds]
 date: '2023-06-08'
 lastmod: 2023-04-28T11:33:34-06:00
 featured: false

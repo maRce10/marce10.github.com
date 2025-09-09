@@ -12,6 +12,7 @@ authors:
 - Marcela Penã-Acunã
 - Angie Liz Varela
 - Joxerra Aihartza
+
 tags:
 - Biomechanics
 - Flight
@@ -21,7 +22,9 @@ tags:
 - Spix’s disc-winged bat
 - Bats
 - Animal behavior
-categories: []
+- Neotropical
+
+categories: [Neotropical, Animal behavior, Behavioral ecology, Bats]
 date: '2022-11-01'
 lastmod: 2023-04-28T11:33:43-06:00
 featured: false

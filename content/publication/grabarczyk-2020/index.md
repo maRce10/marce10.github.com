@@ -18,7 +18,8 @@ tags:
 - Territory intrusion
 - Vocal coordination
 - Animal behavior
-categories: []
+
+categories: [Animal behavior, Behavioral ecology, Acoustic communication, Sound propagation, Wrens]
 date: '2020-11-01'
 lastmod: 2023-04-28T11:33:45-06:00
 featured: false

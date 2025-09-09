@@ -25,7 +25,9 @@ tags:
 - Group cohesion
 - Kinship
 - Thyroptera tricolor
-categories: []
+- Neotropical
+
+categories: [Neotropical, Animal behavior, Behavioral ecology, Bats]
 date: '2024-05-20'
 lastmod: 2024-05-29
 featured: false

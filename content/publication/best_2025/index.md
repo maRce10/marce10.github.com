@@ -33,7 +33,7 @@ tags:
 - cross-species dataset
 - deep learning
 
-categories: []
+categories: [Scientific programming, Hummingbirds]
 date: '2025-06-02'
 lastmod: 2025-06-02
 featured: false

@@ -19,7 +19,7 @@ tags:
 - bioacoustics
 - sound event detection
 
-categories: []
+categories: [Scientific programming, Acoustic communication]
 date: '2023-07-10'
 lastmod: 2023-04-28T11:33:34-06:00
 featured: false

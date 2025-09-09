@@ -24,7 +24,8 @@ tags:
 - Parental care
 - Seabird
 - Animal behavior
-categories: []
+
+categories: [Animal behavior, Behavioral ecology]
 date: '2019-01-01'
 lastmod: 2023-04-28T11:33:39-06:00
 featured: false

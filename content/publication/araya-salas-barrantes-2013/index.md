@@ -11,7 +11,8 @@ tags:
 - Microcerculus philomela
 - Nightingale wren
 - Cultural evolution
-categories: []
+- Neotropical
+categories: [Neotropical, Animal behavior, Behavioral ecology, Cultural evolution, Wrens]
 date: '2013-06-01'
 lastmod: 2023-04-28T11:33:34-06:00
 featured: false

@@ -14,7 +14,9 @@ tags:
 - Acoustic methods
 - R
 - Scientific programming
-categories: []
+- Neotropical
+
+categories: [Neotropical, Scientific programming, Hummingbirds]
 date: '2017-01-01'
 lastmod: 2023-04-28T11:33:36-06:00
 featured: false

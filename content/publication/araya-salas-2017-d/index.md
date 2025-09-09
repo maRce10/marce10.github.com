@@ -20,7 +20,9 @@ tags:
 - Animal behavior
 - Hummingbirds
 - Long-billed hermit
-categories: []
+- Neotropical
+
+categories: [Neotropical, Animal behavior, Behavioral ecology, Scientific programming, Vocal learning, Acoustic communication, Hummingbirds]
 date: '2017-01-01'
 lastmod: 2023-04-28T11:33:36-06:00
 featured: false

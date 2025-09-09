@@ -15,7 +15,9 @@ tags:
 - Bats
 - Spix’s disc-winged bats
 - Vocal interactions
-categories: []
+- Neotropical
+
+categories: [Neotropical, Animal behavior, Behavioral ecology, Vocal ontogeny, Acoustic communication, Bats]
 date: '2020-01-01'
 lastmod: 2023-04-28T11:33:39-06:00
 featured: false

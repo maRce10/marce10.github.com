@@ -18,7 +18,8 @@ tags:
 - Sensory drive
 - Phenotypic evolution
 - Vocal learning
-categories: []
+
+categories: [Neotropical, Animal behavior, Acoustic communication, Phylogenetic comparative analysis, Parrots]
 date: '2015-10-01'
 lastmod: 2023-04-28T11:33:45-06:00
 featured: false

@@ -27,7 +27,7 @@ tags:
 - Songbirds
 - Life-history
 
-categories: []
+categories: [Animal behavior, Phylogenetic comparative analysis, Vocal ontogeny, Acoustic communication, Dimorphism]
 date: '2025-07-21'
 lastmod: 2025-07-21
 featured: false

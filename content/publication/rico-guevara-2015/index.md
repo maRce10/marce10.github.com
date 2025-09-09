@@ -18,7 +18,7 @@ tags:
 - Trochilidae
 - Hummingbirds
 - Long-billed hermit
-categories: []
+categories: [Neotropical, Animal behavior, Acoustic communication, Dimorphism, Hummingbirds]
 date: '2015-10-01'
 lastmod: 2023-04-28T11:33:34-06:00
 featured: false

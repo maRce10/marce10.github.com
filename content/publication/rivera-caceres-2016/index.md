@@ -16,7 +16,8 @@ tags:
 - Duet ontogeny
 - Vocal learning
 - Animal behavior
-categories: []
+
+categories: [Animal behavior, Behavioral ecology, Vocal ontogeny, Acoustic communication, Dimorphism, Wrens]
 date: '2016-01-01'
 lastmod: 2023-04-28T11:33:37-06:00
 featured: false

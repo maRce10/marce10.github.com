@@ -16,6 +16,7 @@ authors:
 - Peter J. B. Slater
 - J. Jordan Price
 - Christopher N. Templeton
+
 tags:
 - Vocal coordination
 - Duetting
@@ -26,7 +27,9 @@ tags:
 - Vocal learning
 - Animal behavior
 - Phylogenetic comparative analysis
-categories: []
+- Neotropical
+
+categories: [Neotropical, Animal behavior, Vocal communication, Phylogenetic comparative analysis, Wrens]
 date: '2020-12-01'
 lastmod: 2023-04-28T11:33:44-06:00
 featured: false

@@ -15,7 +15,8 @@ tags:
 - Aging
 - Budgerigar
 - FoxP2
-categories: []
+
+categories: [Animal behavior, Acoustic communication, Neuroethology, Vocal ontogeny]
 date: '2024-07-04'
 lastmod: 2024-07-04
 featured: false
