@@ -63,7 +63,6 @@ I also develop [software packages for analyzing behavioral data](https://marce10
     </center>
 </div> -->
 
-
 <!--   What's new box -->
 <div style="background-color: #f6fbfe; color: black; margin: 20px; padding: 14px;  border-radius: 5px; height:100%;">
     <b>What's new</b>
