@@ -70,6 +70,8 @@ I also develop [software packages for analyzing behavioral data](https://marce10
     <p style="height:0%;">
      <ul>
 
+<li> <p style="color:gray;">oct 6-10, 2025: <a href="https://instats.org/seminar/bioacoustics-data-analysis-using-r">&#128187 Instats' Bioacoustics data analysis in R online course</a></li>
+
 <li> <p style="color:gray;">sep 2, 2025: <p style="color:black;">New paper <i>in press</i>&#129395: <a href="./publication/iturralde-polit-et-al-2025/"><i>Variation in echolocation call emission of Neotropical insect-eating bats in response to shifting ambient temperatures</i></a></li>
 
 <li> <p style="color:gray;">sept 1, 2025: <p style="color:black;"><a href="https://biodb.com/species/long-billed-hermit/">&#128154 Honorary Patron of the Long-billed Hermit (hummingbird) at the bioDB conservation database </a></li>
