@@ -3,7 +3,7 @@ title: "Rraven: connecting R and Raven sound analysis software"
 output: github_document
 editor_options: 
   chunk_output_type: console
-lastmod: '2021-04-21'
+lastmod: '2025-11-26'
 featured: yes
 image:
   caption:
@@ -12,16 +12,14 @@ image:
   preview_only: true
 ---
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
-
-
-<img src="/post/Rraven_sticker.png" alt="Rraven sticker" align="right" width = "25%" height="25%"/>
 
 
 
-The `Rraven` package is designed to facilitate the exchange of data between R and  [Raven sound analysis software](https://ravensoundsoftware.com) ([Cornell Lab of Ornithology](https://www.birds.cornell.edu/home)). [Raven](https://ravensoundsoftware.com) provides very  powerful tools for the analysis of (animal) sounds. R can simplify the automatization of complex routines of analyses. Furthermore, R packages as [warbleR](https://cran.r-project.org/package=warbleR), [seewave](https://cran.r-project.org/package=seewave) and [monitoR](https://cran.r-project.org/package=monitoR) (among others) provide additional methods of analysis, working as a perfect complement for those found in [Raven](https://ravensoundsoftware.com). Hence, bridging these applications can largely expand the bioacoustician's toolkit.
+<img src="Rraven_sticker.png" alt="warbleR logo" align="right" width = "25%" height="25%"/>
 
-Currently, most analyses in [Raven](https://ravensoundsoftware.com) cannot be run in the background from a command terminal. Thus, most `Rraven` functions are design to simplify the exchange of data between the two programs. 
+The `Rraven` package is designed to facilitate the exchange of data between R and  [Raven sound analysis software](https://www.ravensoundsoftware.com/) ([Cornell Lab of Ornithology](https://www.birds.cornell.edu/home)). [Raven](https://www.ravensoundsoftware.com/) provides very  powerful tools for the analysis of (animal) sounds. R can simplify the automatization of complex routines of analyses. Furthermore, R packages as [warbleR](https://cran.r-project.org/package=warbleR), [seewave](https://cran.r-project.org/package=seewave) and [monitoR](https://cran.r-project.org/package=monitoR) (among others) provide additional methods of analysis, working as a perfect complement for those found in [Raven](https://www.ravensoundsoftware.com/). Hence, bridging these applications can largely expand the bioacoustician's toolkit.
+
+Currently, most analyses in [Raven](https://www.ravensoundsoftware.com/) cannot be run in the background from a command terminal. Thus, most `Rraven` functions are design to simplify the exchange of data between the two programs. 
 
 Install/load the package from CRAN as follows:
 
@@ -47,7 +45,7 @@ library(Rraven)
 
 ```
 
-The package vignette provides detailed examples for each function in `Rraven`, including both the R code as well as the additional steps in [Raven](https://ravensoundsoftware.com) required to fully accomplished the analyses. You can pull it up as follows:
+The package vignette provides detailed examples for each function in `Rraven`, including both the R code as well as the additional steps in [Raven](https://www.ravensoundsoftware.com/) required to fully accomplished the analyses. You can pull it up as follows:
 
 ```{r, eval = FALSE}
 
@@ -55,7 +53,7 @@ vignette("Rraven")
 
 ```
 
-The animations explaining additional steps in [Raven](https://ravensoundsoftware.com) are shown in more detail on the [github](https://github.com/maRce10/Rraven) version of this vignette, which can be downloaded as follows (saves the file "Rraven.github.html" in your current working directory):
+The animations explaining additional steps in [Raven](https://www.ravensoundsoftware.com/) are shown in more detail on the [github](https://github.com/maRce10/Rraven) version of this vignette, which can be downloaded as follows (saves the file "Rraven.github.html" in your current working directory):
 
 ```{r, eval = FALSE}
 

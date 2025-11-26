@@ -243,3 +243,332 @@ Sys.sleep(1)
 blogdown::serve_site()
 
 ```
+
+
+# Copy readmes from packages
+
+```{r}
+
+copy_and_modify_rmd_complete <- function(source_folder, dest_folder, overwrite = FALSE) {
+  
+  # Find README.Rmd file automatically
+  source_file <- find_readme_rmd(source_folder)
+  
+  # Check if source file exists
+  if (!file.exists(source_file)) {
+    stop("README.Rmd file does not exist in: ", source_folder)
+  }
+  
+  message("Found README.Rmd: ", source_file)
+  
+  # Create destination folder if it doesn't exist
+  if (!dir.exists(dest_folder)) {
+    dir.create(dest_folder, recursive = TRUE)
+  }
+  
+  # Create destination path with "index.Rmd" filename
+  dest_file <- file.path(dest_folder, "index.Rmd")
+  
+  # Check if destination file already exists
+  if (file.exists(dest_file) && !overwrite) {
+    stop("index.Rmd already exists in destination folder. Use overwrite = TRUE to replace it.")
+  }
+  
+  # Copy sticker file
+  copy_sticker_file(source_folder, dest_folder)
+  
+  # Read the source file
+  content <- readLines(source_file, warn = FALSE)
+  
+  # Find YAML header boundaries
+  if (content[1] != "---") {
+    stop("File does not start with YAML header (---)")
+  }
+  
+  yaml_end <- which(content == "---")[2]
+  if (is.na(yaml_end)) {
+    stop("YAML header not properly closed (---)")
+  }
+  
+  # Extract the original YAML (without the opening and closing ---)
+  original_yaml <- content[2:(yaml_end - 1)]
+  
+  # Create the new fields with exact formatting
+  new_fields <- c(
+    paste0("lastmod: '", format(Sys.Date(), "%Y-%m-%d"), "'"),
+    "featured: yes",
+    "image:",
+    "  caption:",
+    "  focal_point: 'Left'",
+    "  placement: 2",
+    "  preview_only: true"
+  )
+  
+  # Combine original YAML with new fields
+  combined_yaml <- c(original_yaml, new_fields)
+  
+  # Reconstruct the file content up to this point
+  new_content <- c(
+    "---",
+    combined_yaml,
+    "---",
+    content[(yaml_end + 1):length(content)]
+  )
+  
+  # Find and process images
+  new_content <- process_images(source_file, dest_folder, new_content)
+  
+  # Remove all comments and badges aggressively
+  new_content <- remove_all_comments_and_badges(new_content)
+  
+  # Write to destination file as "index.Rmd"
+  writeLines(new_content, dest_file)
+  
+  message("File successfully copied and modified as 'index.Rmd': ", dest_file)
+  return(invisible(dest_file))
+}
+
+# Function to copy sticker file
+copy_sticker_file <- function(source_folder, dest_folder) {
+  # Get base name of source folder
+  folder_base_name <- basename(source_folder)
+  
+  # Construct sticker filename pattern
+  sticker_pattern <- paste0(folder_base_name, "_sticker.png")
+  
+  # Search for the sticker file recursively in all subfolders
+  sticker_files <- list.files(
+    path = source_folder,
+    pattern = sticker_pattern,
+    recursive = TRUE,
+    full.names = TRUE,
+    ignore.case = TRUE
+  )
+  
+  # Also check for case variations
+  if (length(sticker_files) == 0) {
+    # Try with different case patterns
+    alternative_patterns <- c(
+      paste0(tolower(folder_base_name), "_sticker.png"),
+      paste0(toupper(folder_base_name), "_sticker.png"),
+      paste0(tools::toTitleCase(folder_base_name), "_sticker.png")
+    )
+    
+    for (pattern in alternative_patterns) {
+      sticker_files <- list.files(
+        path = source_folder,
+        pattern = pattern,
+        recursive = TRUE,
+        full.names = TRUE,
+        ignore.case = FALSE
+      )
+      if (length(sticker_files) > 0) break
+    }
+  }
+  
+  # Copy sticker file if found
+  if (length(sticker_files) > 0) {
+    sticker_file <- sticker_files[1]
+    dest_sticker_path <- file.path(dest_folder, "featured.png")
+    
+    # Copy the file
+    file.copy(sticker_file, dest_sticker_path, overwrite = TRUE)
+    message("Copied sticker file: ", basename(sticker_file), " -> featured.png")
+    
+  } else {
+    message("No sticker file found matching pattern: ", sticker_pattern)
+    
+    # Look for any file with "_sticker.png" in the name
+    fallback_stickers <- list.files(
+      path = source_folder,
+      pattern = "_sticker\\.png$",
+      recursive = TRUE,
+      full.names = TRUE,
+      ignore.case = TRUE
+    )
+    
+    if (length(fallback_stickers) > 0) {
+      sticker_file <- fallback_stickers[1]
+      dest_sticker_path <- file.path(dest_folder, "featured.png")
+      
+      file.copy(sticker_file, dest_sticker_path, overwrite = TRUE)
+      message("Copied fallback sticker file: ", basename(sticker_file), " -> featured.png")
+    } else {
+      warning("No sticker files found in: ", source_folder)
+    }
+  }
+}
+
+# Function to find README.Rmd file
+find_readme_rmd <- function(folder_path) {
+  # Possible filenames for the README (case insensitive)
+  possible_files <- c(
+    "README.Rmd", "readme.Rmd", "Readme.Rmd",
+    "README.rmd", "readme.rmd", "Readme.rmd"
+  )
+  
+  # Check for each possible file
+  for (filename in possible_files) {
+    file_path <- file.path(folder_path, filename)
+    if (file.exists(file_path)) {
+      return(file_path)
+    }
+  }
+  
+  # If no README.Rmd found, look for any .Rmd file
+  rmd_files <- list.files(folder_path, pattern = "\\.Rmd$", ignore.case = TRUE, full.names = TRUE)
+  
+  if (length(rmd_files) == 0) {
+    stop("No .Rmd files found in: ", folder_path)
+  }
+  
+  # If multiple .Rmd files, look for one that might be the main file
+  main_files <- c("index.Rmd", "main.Rmd", "template.Rmd")
+  for (main_file in main_files) {
+    main_path <- file.path(folder_path, main_file)
+    if (file.exists(main_path)) {
+      message("Using main file: ", main_file)
+      return(main_path)
+    }
+  }
+  
+  # Use the first .Rmd file found
+  message("Using first .Rmd file found: ", basename(rmd_files[1]))
+  return(rmd_files[1])
+}
+
+# Helper function to process images
+process_images <- function(source_file, dest_folder, content) {
+  # Pattern to match HTML img tags with src attribute
+  img_pattern <- '<img[^>]*src\\s*=\\s*[\"\"]([^\"\"\"]*)[\"\"][^>]*>'
+  
+  # Find all img tags
+  img_matches <- gregexpr(img_pattern, content, ignore.case = TRUE)
+  
+  # Process each line that contains img tags
+  for (i in seq_along(content)) {
+    if (img_matches[[i]][1] != -1) {
+      line <- content[i]
+      matches <- regmatches(line, img_matches[[i]])
+      
+      for (match in matches) {
+        # Extract the src path
+        src_pattern <- 'src\\s*=\\s*[\"\"]([^\"\"\"]*)[\"\"]'
+        src_match <- regmatches(match, regexpr(src_pattern, match, ignore.case = TRUE))
+        original_src <- gsub('src\\s*=\\s*[\"\"]([^\"\"\"]*)[\"\"]', '\\1', src_match, ignore.case = TRUE)
+        
+        # Only process relative paths (not absolute URLs)
+        if (!grepl('^https?://', original_src) && !grepl('^/', original_src)) {
+          # Determine the source directory of the Rmd file
+          source_dir <- dirname(source_file)
+          
+          # Construct full path to the image
+          if (grepl('^\\./', original_src)) {
+            image_full_path <- file.path(source_dir, original_src)
+          } else {
+            # Handle relative paths
+            image_full_path <- file.path(source_dir, original_src)
+          }
+          
+          # Check if image exists
+          if (file.exists(image_full_path)) {
+            # Get just the filename
+            image_filename <- basename(original_src)
+            
+            # Copy image to destination folder
+            dest_image_path <- file.path(dest_folder, image_filename)
+            file.copy(image_full_path, dest_image_path, overwrite = TRUE)
+            message("Copied image: ", image_filename)
+            
+            # Update the src path in the content (remove directory path)
+            new_src <- paste0('src=\"', image_filename, '\"')
+            old_src <- paste0('src=\"', original_src, '\"')
+            line <- gsub(old_src, new_src, line, fixed = TRUE)
+            
+          } else {
+            warning("Image file not found: ", image_full_path)
+          }
+        }
+      }
+      
+      content[i] <- line
+    }
+  }
+  
+  return(content)
+}
+
+# Function to remove commented lines and badges
+remove_all_comments_and_badges <- function(content) {
+  cleaned_content <- character()
+  in_comment_block <- FALSE
+  
+  for (line in content) {
+    # Handle HTML comment blocks
+    if (grepl('^\\s*<!--', line) && !grepl('-->', line)) {
+      in_comment_block <- TRUE
+      next
+    }
+    
+    if (in_comment_block && grepl('-->', line)) {
+      in_comment_block <- FALSE
+      next
+    }
+    
+    if (in_comment_block) {
+      next
+    }
+    
+    # Skip single line HTML comments
+    if (grepl('^\\s*<!--.*-->\\s*$', line)) {
+      next
+    }
+    
+    # Skip lines that are just whitespace and/or comments
+    if (grepl('^\\s*$', line) || grepl('^\\s*<!--.*-->\\s*$', line)) {
+      next
+    }
+    
+    # Remove badges (common patterns)
+    badge_patterns <- c(
+      '^\\s*!\\[.*?\\]\\(https://img\\.shields\\.io',  # shields.io
+      '^\\s*!\\[.*?\\]\\(https://badge\\..*?\\)',      # badge.*
+      '^\\s*!\\[.*?\\]\\(https://.*?\\.svg',           # SVG images
+      '^\\s*\\[!\\[.*?\\]',                            # Nested badges
+      '^\\s*<!--.*badge.*-->',                         # Commented badges
+      '^\\s*\\[<img',                                  # HTML image badges
+      '^\\s*<a.*badge',                                # Badge links
+      '^\\s*<img.*badge'                               # Badge images
+    )
+    
+    is_badge <- any(sapply(badge_patterns, function(pattern) grepl(pattern, line, ignore.case = TRUE)))
+    
+    if (!is_badge) {
+      cleaned_content <- c(cleaned_content, line)
+    } else {
+      message("Removed badge: ", substr(trimws(line), 1, 50), "...")
+    }
+  }
+  
+  return(cleaned_content)
+}
+
+
+# copy_and_modify_rmd_complete(source_folder = "~/Dropbox/R_package_testing/suwo/", dest_folder = "/home/m/Dropbox/Websites/marce10.github.io/content/software/suwo", overwrite = TRUE)
+
+
+dirs <- list.dirs("~/Dropbox/R_package_testing/", recursive = FALSE)
+
+dirs <- dirs[grepl("suwo$|baRulho$|warbleR$|dynaSpec$|ohun$|sketchy$|Rraven$|PhenotypeSpace$", dirs)]
+
+for (i in dirs) {
+  pkg_name <- basename(i)
+  dest_folder <- file.path("/home/m/Dropbox/Websites/marce10.github.io/content/software/", pkg_name)
+  copy_and_modify_rmd_with_images(source_file = file.path(i, "README.Rmd"), dest_folder = dest_folder, overwrite = TRUE)
+  # unlink(list.files(dest_folder, pattern = "\\.html$", full.names = TRUE))
+}
+
+
+
+```
+

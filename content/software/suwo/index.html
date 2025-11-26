@@ -1,9 +1,9 @@
 ---
-title: "suwo: access nature media repositories through R"
+title: "suwo: access nature media repositories"
 output: github_document
 editor_options: 
   chunk_output_type: console
-lastmod: '2024-01-01'
+lastmod: '2025-11-26'
 featured: yes
 image:
   caption:
@@ -14,21 +14,58 @@ image:
 
 
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
-<p><img src="/post/suwo_sticker.png" alt="suwo sticker" align="right" width = "25%" height="25%"/></p>
-<p><a href="https://github.com/maRce10/suwo">suwo</a> is intended streamline searching/downloading
-of nature media files (e.g. audios, photos) from online repositories.</p>
-<p>The package offers functions for:</p>
+<p>The <a href="https://marce10.github.io/suwo/">suwo</a> package aims to simplify the
+retrieval of nature media (mostly photos, audio files and videos) across
+multiple online biodiversity databases. Such media are increasingly used in
+diverse fields ranging from ecology and evolutionary biology
+(e.g. trait evolution) to wildlife monitoring and conservation (training
+species detection models).</p>
+<p>The main features of the package are:</p>
 <ul>
 <li>Obtaining media metadata from online repositories</li>
 <li>Downloading associated media files</li>
 <li>Updating data sets with new records</li>
 </ul>
-<p>THE PACKAGE IS ON AN EARLY DEVELOPMENTAL STAGE. We are currently searching for new online repositories to be included in the package. Please <a href="https://github.com/maRce10/suwo/issues/new/choose">open a new issue</a> if you want to suggest a new repository.</p>
-<p>To install the latest developmental version from <a href="https://github.com/">github</a> you will need the R package <a href="https://cran.r-project.org/package=remotes">remotes</a>:</p>
-<pre class="r"><code>remotes::install_github(&quot;maRce10/suwo&quot;)
+<div id="installing-suwo" class="section level2">
+<h2>Installing suwo</h2>
+<p>Install the package from CRAN:</p>
+<pre class="r"><code># install from CRAN
+install.packages(&quot;suwo&quot;)
+
+# load package
+library(suwo)</code></pre>
+<p>Alternatively, the package can also be installed from R universe as follows:</p>
+<pre class="r"><code># From R universe would be
+install.packages(&#39;suwo&#39;, repos = c(&#39;https://marce10.r-universe.dev&#39;))
+
+# load package
+library(suwo)</code></pre>
+<p>To install the latest developmental version from
+<a href="https://github.com/">github</a> you will need the R package
+<a href="https://cran.r-project.org/package=remotes">remotes</a>:</p>
+<pre class="r"><code># install remotes if you don&#39;t have it yet
+remotes::install_github(&quot;maRce10/suwo&quot;)
 
 #load package
 library(suwo)</code></pre>
-<p>Please cite <a href="https://github.com/maRce10/suwo">suwo</a> as follows:</p>
-<p>Araya-Salas, M., &amp; J. Elizondo-Calvo. 2023. suwo: access nature media repositories through R. R package version 0.1.0.</p>
+</div>
+<div id="basic-workflow-for-obtaining-nature-media-files" class="section level1">
+<h1>Basic workflow for obtaining nature media files</h1>
+<p>Obtaining nature media using <a href="https://marce10.github.io/suwo/">suwo</a> follows a basic
+sequence. The following diagram illustrates this workflow and the main functions
+involved:</p>
+<center>
+<img src="workflow_diagram.png" alt="suwo workflow diagram" width="100%">
+</center>
+<p>Take a look at the <a href="https://marce10.github.io/suwo/articles/suwo.html">package vignette</a> for an overview of the workflow and the core querying functions.</p>
+<div id="intended-use-and-responsible-practices" class="section level2">
+<h2>Intended use and responsible practices</h2>
+<p>The <a href="https://marce10.github.io/suwo/">suwo</a> package is designed exclusively for non-commercial, scientific purposes, including research, education, and conservation. <strong>Any commercial use of the data or media retrieved through this package is strictly prohibited</strong> unless explicit, separate permission is granted directly from the original source platforms and rights holders. Users are obligated to comply with the specific terms of service and data use policies of each source database, which often mandate attribution and similarly restrict commercial application. The package developers assume no liability for misuse of the retrieved data or violations of third-party terms of service.</p>
+</div>
+<div id="citation" class="section level2">
+<h2>Citation</h2>
+<p>Please cite <a href="https://marce10.github.io/suwo/">suwo</a> as follows:</p>
+<p>Araya-Salas, M., J. Elizondo-Calvo &amp; A. Rico-Guevara. 2025. suwo: access nature media
+repositories. R package version 0.1.0.</p>
+</div>
+</div>
