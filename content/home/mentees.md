@@ -8,7 +8,7 @@ widget: portfolio
 headless: false
 
 # Order that this section appears on the page.
-weight: 40
+weight: 80
 
 title: 'Mentees'
 subtitle: 'Click to see details'

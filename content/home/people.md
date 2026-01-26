@@ -18,7 +18,7 @@ design:
   # Show user's social networking links? (true/false)
   show_social: true
   # Show user's interests? (true/false)
-  show_interests: true
+  show_interests: false
   # Show user's role?
   show_role: false
   # Show user's organizations/affiliations?

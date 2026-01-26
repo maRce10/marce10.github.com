@@ -15,7 +15,7 @@ main:
   #   weight: 21
   - name: "Courses"
     url: '#courses'
-    weight: 50
+    weight: 40
   # - name: "Useful Data"
   #   url: '#data'
   #   weight: 31
@@ -24,7 +24,7 @@ main:
     weight: 30
   - name: "Mentees"
     url: '#mentees'
-    weight: 40
+    weight: 50
   # - name: "Featured work"
   #   url: '#featured_work'
   #   weight: 60
