@@ -52,7 +52,7 @@ email: "marcelo.araya@ucr.ac.cr"
 highlight_name: true
 ---
 
-I am interested in understanding the factors that have shaped behavior across both cultural and evolutionary timescales. I am also interested in the potential macro-evolutionary consequences of these processes. To explore these questions, I study the communication systems of various taxa (i.e. [hummingbirds](./category/hummingbirds/), [wrens](./category/wrens/), [bats](./category/bats/)), with a particular focus on [neotropical species](./category/neotropical/). My research combines [single-species behavioral studies](./category/behavioral-ecology/), [comparative phylogenetic analyses](./category/phylogenetic-comparative-analysis/), and custom data analysis through [scientific programming](./category/scientific-programming/).
+I am broadly interested in understanding the factors that have shaped behavior across both cultural and evolutionary timescales. I study the communication systems of various taxa (i.e. [hummingbirds](./category/hummingbirds/), [wrens](./category/wrens/), [bats](./category/bats/)), with a particular focus on [neotropical species](./category/neotropical/). My research combines [single-species behavioral studies](./category/behavioral-ecology/), [comparative phylogenetic analyses](./category/phylogenetic-comparative-analysis/), and custom data analysis through [scientific programming](./category/scientific-programming/).
 
 I also develop [software packages for analyzing behavioral data](https://marce10.github.io/software/). I created the R packages [warbleR](https://cran.r-project.org/package=warbleR), which provides functions to streamline high-throughput acoustic analysis of animal sounds, and [Rraven](https://cran.r-project.org/package=Rraven) which simplifies the integration of [Raven Pro](https://www.ravensoundsoftware.com/) (a sound annotation software) for bioacustic analysis workflows in R. I also created the R packages [baRulho](https://cran.r-project.org/package=baRulho), to quantify acoustic signal transmission and degradation, and [ohun](https://cran.r-project.org/package=ohun), to optimize automatic detection. I am currently expanding this ecosystem with two new packages: [suwo](https://github.com/maRce10/suwo/), for accessing nature media repositories through R and [PhenotypeSpace](https://marce10.github.io/PhenotypeSpace/), for quantifying features of multivariate phenotypic spaces. 
 
@@ -69,6 +69,11 @@ I also develop [software packages for analyzing behavioral data](https://marce10
      <div style="border:0px solid black;width:100%;height:200px;overflow:scroll;overflow-y:scroll;overflow-x:hidden;">
     <p style="height:0%;">
      <ul>
+
+<li> <p style="color:gray;">jan 14, 2026: <p style="color:black;">New paper out&#129395: <a href="./publication/wright-et-al-2026/"><i>Chronic stress raises baseline circulating corticosterone and reduces vocal plasticity in male budgerigars, an avian model for adult vocal learning</i></a></li>
+
+<li> <p style="color:gray;">Jan, 2025: <a href="https://tropicalstudies.org/course/ecologia-tropical-y-conservacion/">Invited professor at OTS' Tropical Ecology and Conservation field course</a></li>
+
 
 <li> <p style="color:gray;">oct 4, 2025: <p style="color:black;">New paper out&#129395: <a href="./publication/iturralde-polit-et-al-2025/"><i>Variation in echolocation call emission of Neotropical insect-eating bats in response to shifting ambient temperatures</i></a></li>
 
