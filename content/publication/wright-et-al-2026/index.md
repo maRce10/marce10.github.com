@@ -15,13 +15,12 @@ authors:
 - J.M. Jawor
 
 tags:
-- attenuation
-- detection
-- echolocation
-- bats
-- Neotropical
+- Vocal learning
+- Aging
+- Budgerigar
+- FoxP2
 
-categories: [Neotropical, Animal behavior, Behavioral ecology, Acoustic communication, Bats, Sound propagation]
+categories: [Animal behavior, Acoustic communication, Neuroethology, Vocal ontogeny]
 date: '2025-08-28'
 lastmod: 2025-08-28
 featured: false
