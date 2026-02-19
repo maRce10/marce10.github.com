@@ -70,6 +70,8 @@ I also develop [software packages for analyzing behavioral data](https://marce10
     <p style="height:0%;">
      <ul>
 
+<li> <p style="color:gray;">feb 8, 2026: <p style="color:black;">New paper out&#129395: <a href="./publication/avalos-et-al-2026/"><i>Variation in sexual size dimorphism and fit to rensch’s rule in Costa Rican hummingbirds</i></a></li>
+
 <li> <p style="color:gray;">jan 14, 2026: <p style="color:black;">New paper out&#129395: <a href="./publication/wright-et-al-2026/"><i>Chronic stress raises baseline circulating corticosterone and reduces vocal plasticity in male budgerigars, an avian model for adult vocal learning</i></a></li>
 
 <li> <p style="color:gray;">Jan, 2025: <a href="https://tropicalstudies.org/course/ecologia-tropical-y-conservacion/">Invited professor at OTS' Tropical Ecology and Conservation field course</a></li>
