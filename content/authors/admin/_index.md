@@ -70,6 +70,8 @@ I also develop [software packages for analyzing behavioral data](https://marce10
     <p style="height:0%;">
      <ul>
 
+<li> <p style="color:gray;">may 11-15, 2026: <a href="https://esa.org/career-development/professional-development-from-esa/#bioacoustic">&#128187 Bioacoustic data analysis in R online course, Ecological Society of America</a></li>
+
 <li> <p style="color:gray;">mar 18, 2026: 
 <a href="https://docs.ropensci.org/suwo/">suwo package accepted in rOpenSci!</a></li>
 
