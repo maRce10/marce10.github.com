@@ -41,18 +41,18 @@ publishDate: '2023-04-28T18:11:58.249827Z'
 publication_types:
 - '2'
 abstract: We investigated the ontogenetic changes of two call types, the inquiry call
-  and the response call, whichcomprise an interactive communication system in Spix's
-  disc-winged bats,Thyroptera tricolor.Wedocumented structural changes on both inquiry
-  and response calls during ontogeny by recording singleindividual vocalizations in
-  aflight cage and triggering response calls with playbacks of adult inquiry calls.Most
+  and the response call, which comprise an interactive communication system in Spix's
+  disc-winged bats,Thyroptera tricolor. We documented structural changes on both inquiry
+  and response calls during ontogeny by recording single individual vocalizations in
+  a flight cage and triggering response calls with playbacks of adult inquiry calls. Most
   ontogenetic changes in response calls were sex dependent. In addition, individuality
-  was high forboth call types across age categories. Despite the observed changes
-  during development, both call typesresembled the structure of adult calls from early
-  ontogenetic stages, suggesting little influence of sociallearning in call development.
-  Finally, we found sex dependent ontogenetic changes and high levels ofindividuality
+  was high for both call types across age categories. Despite the observed changes
+  during development, both call types resembled the structure of adult calls from early
+  ontogenetic stages, suggesting little influence of social learning in call development.
+  Finally, we found sex dependent ontogenetic changes and high levels of individuality
   of calls early in life, which may indicate additional functionality in sex and pup
-  recognition.Overall, thefindings bring novel insight into the complex developmental
-  process of the call typescomprising the communication systems of Spix's disc-winged
+  recognition. Overall, the findings bring novel insight into the complex developmental
+  process of the call types comprising the communication systems of Spix's disc-winged
   bats, and contribute to a better under-standing of signal development in complex
   social communication systems.
 publication: '*Animal Behaviour*'
