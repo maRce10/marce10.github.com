@@ -70,6 +70,8 @@ I also develop [software packages for analyzing behavioral data](https://marce10
     <p style="height:0%;">
      <ul>
 
+<li> <p style="color:gray;">aug 6, 2026: <p style="color:black;">New paper out&#129395: <a href="./publication/perea-et-al-2026/"><i>The role of conservation bioacoustics in achieving global biodiversity goals</i></a></li>
+
 <li> <p style="color:gray;">apr 20, 2026: 
 <a href="https://CRAN.R-project.org/package=suwo">suwo package now available in CRAN!</a></li>
 
