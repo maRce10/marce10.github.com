@@ -69,6 +69,8 @@ I also develop [software packages for analyzing behavioral data](https://marce10
      <div style="border:0px solid black;width:100%;height:200px;overflow:scroll;overflow-y:scroll;overflow-x:hidden;">
     <p style="height:0%;">
      <ul>
+<li><p style="color:gray;">aug 13, 2026:
+<a href="https://www.maxwell-hanrahan.org/programs/field-biology">Maxwell/Hanrahan Award in Field Biology recipient &#129395</a></li>
 
 <li> <p style="color:gray;">aug 6, 2026: <p style="color:black;">New paper out&#129395: <a href="./publication/perea_et_al_2026/"><i>The role of conservation bioacoustics in achieving global biodiversity goals</i></a></li>
 
