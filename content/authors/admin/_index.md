@@ -64,7 +64,7 @@ I also develop [software packages for analyzing behavioral data](https://marce10
 </div> -->
 
 <!--   What's new box -->
-<div style="background-color: #f6fbfe; color: black; margin: 20px; padding: 14px;  border-radius: 5px; height:100%;">
+<div class="whats-new" style="background-color: #f6fbfe; color: black; margin: 20px; padding: 14px;  border-radius: 5px; height:100%;">
     <b>What's new</b>
      <div style="border:0px solid black;width:100%;height:200px;overflow:scroll;overflow-y:scroll;overflow-x:hidden;">
     <p style="height:0%;">

@@ -1,0 +1,16 @@
+// "What's new" box on the home page (content/authors/admin/_index.md)
+// Wowchemy adds the class "dark" to <body> when the dark theme is on.
+// !important is needed because the box uses inline styles.
+.dark .whats-new {
+  background-color: #2f3340 !important;
+  color: #e6e6e6 !important;
+}
+
+.dark .whats-new [style*="color:black"],
+.dark .whats-new [style*="color: black"] {
+  color: #e6e6e6 !important;
+}
+
+.dark .whats-new [style*="color:gray"] {
+  color: #a8adb8 !important;
+}
