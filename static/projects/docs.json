@@ -1,0 +1,1650 @@
+[
+  {
+    "title": "Vocal character displacement in southern capuchinos",
+    "desc": "",
+    "date": "2026-09-25T17:49:47+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1462426_576a3d93f32f4760963d271cad0651fe.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/vcd_capuchinos",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/56be24c6d114f07854f22574a1f3a31c/png/?thumbnail_max_width=200&unique=1790358587&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1462426_576a3d93f32f4760963d271cad0651fe.html&viewport=960x960"
+  },
+  {
+    "title": "Vocal variation of Bearded Bellbird bock songs",
+    "desc": "",
+    "date": "2026-09-04T22:39:46+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1456399_bef60f0a28154ee9a207ccfdf68fdd1f.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/1456399",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/4f274d2cf7f239486cf268786374a8a6/png/?thumbnail_max_width=200&unique=1788561586&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1456399_bef60f0a28154ee9a207ccfdf68fdd1f.html&viewport=960x960"
+  },
+  {
+    "title": "Cape parrot vocal dialects acoustic analysis",
+    "desc": "v02",
+    "date": "2026-08-26T22:27:15+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1454602_b66c9bc889564cc68476e4582dfd4cb8.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/cape_parrots_v03",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/927dab23f061381d6553cccb6087943b/png/?thumbnail_max_width=200&unique=1787783235&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1454602_b66c9bc889564cc68476e4582dfd4cb8.html&viewport=960x960"
+  },
+  {
+    "title": "Aggression and territoriality in long billed hermits",
+    "desc": "",
+    "date": "2026-07-23T15:20:02+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1448725_6921b9afce464ae1b52972d992233e08.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/lbh_aggresion",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/f326de67705ea1ae2d5339d6c60de9d0/png/?thumbnail_max_width=200&unique=1784820002&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1448725_6921b9afce464ae1b52972d992233e08.html&viewport=960x960"
+  },
+  {
+    "title": "Feeding behavior covariates in harvestmen",
+    "desc": "",
+    "date": "2026-07-22T21:55:54+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1448607_e95e16349c844daca8818067267faf31.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/feeding_substrate_harvemestmen",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/cc02f039c42129364f626e57ef28f832/png/?thumbnail_max_width=200&unique=1784757354&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1448607_e95e16349c844daca8818067267faf31.html&viewport=960x960"
+  },
+  {
+    "title": "Choosing the best distance metric for quantifying vocal convergence",
+    "desc": "Vocal convergence and social behavior in budgies",
+    "date": "2026-07-10T01:58:37+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1446511_70b81e5cef164c31b9c06d981fcaf793.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/distance_metric_budgie_vocal",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/20e76e6e5d9ccae586b2ca74515a5782/png/?thumbnail_max_width=200&unique=1783648717&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1446511_70b81e5cef164c31b9c06d981fcaf793.html&viewport=960x960"
+  },
+  {
+    "title": "Owl facial disc evolution",
+    "desc": "",
+    "date": "2026-06-12T20:14:26+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1441668_a0f94c71fca9479682cbedb9bad84e95.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/owl_facial_disc_evo",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/a2e8dbf5e6087155ddc6517b26f82fff/png/?thumbnail_max_width=200&unique=1781295266&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1441668_a0f94c71fca9479682cbedb9bad84e95.html&viewport=960x960"
+  },
+  {
+    "title": "Repertoire size evolution in parrots",
+    "desc": "SEM on imputed data",
+    "date": "2026-06-04T17:51:27+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1438674_8c6253c8f82a4d5d929f4b8d00771a7e.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/1438674",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/4d5da29118a3575f265f7277129f4538/png/?thumbnail_max_width=200&unique=1780595487&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1438674_8c6253c8f82a4d5d929f4b8d00771a7e.html&viewport=960x960"
+  },
+  {
+    "title": "Bellbird mimicry",
+    "desc": "Statistical analysis",
+    "date": "2026-05-21T18:15:28+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1434394_2bcae4b481cb43469baf1724c2e2f86f.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/bellbird_mimicry_stats",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/cec49a0b35d67f6bbeb3d38355c91009/png/?thumbnail_max_width=200&unique=1779387328&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1434394_2bcae4b481cb43469baf1724c2e2f86f.html&viewport=960x960"
+  },
+  {
+    "title": "Owl facial disc evolution",
+    "desc": "stats",
+    "date": "2026-05-14T15:33:30+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1432481_cbd751a2377941c9913ae742dee7b1de.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/owl_facial_disc_evolution",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/e5ba7c795bdb85394b1227ade9cbac9c/png/?thumbnail_max_width=200&unique=1778772810&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1432481_cbd751a2377941c9913ae742dee7b1de.html&viewport=960x960"
+  },
+  {
+    "title": "Statistical analysis: familiarity enhances efficiency in complex collective tasks",
+    "desc": "Source code and data found at https://github.com/maRce10/team_familiarity_spixs_discwinged_bats",
+    "date": "2026-05-07T14:51:28+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1430321_89317cdf250a4843aacfd8f90b9178ab.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/team_familiarity_bats",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/ddfc984b428ce9fdfd0bb24d39fe7de1/png/?thumbnail_max_width=200&unique=1778165488&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1430321_89317cdf250a4843aacfd8f90b9178ab.html&viewport=960x960"
+  },
+  {
+    "title": "Exploring birdNET embeddings",
+    "desc": "Heterospecific vocal mimicry in a bellbird",
+    "date": "2026-03-05T15:22:31+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1405799_a5edb09d1ea34fd9ae0655008121322a.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/bellbird_mimicry",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/2eaa3741e2c56629dd1e50461ddf9917/png/?thumbnail_max_width=200&unique=1772724151&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1405799_a5edb09d1ea34fd9ae0655008121322a.html&viewport=960x960"
+  },
+  {
+    "title": "USVs count data",
+    "desc": "",
+    "date": "2026-02-25T21:44:18+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1402380_c58afc7a12d14422bc83545eb5a92d7e.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/usv_counts_oh",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/e69933afa4c261cbe3ae18d18039d3e3/png/?thumbnail_max_width=200&unique=1772055858&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1402380_c58afc7a12d14422bc83545eb5a92d7e.html&viewport=960x960"
+  },
+  {
+    "title": "Vocal coordination in waterrails v2",
+    "desc": "",
+    "date": "2026-02-23T20:27:33+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1401020_ccaee8c7630e44029ec5063219f9d419.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/vocal_coorination_waterrail",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/501268f38e1dd46829f11fd94e6d3c80/png/?thumbnail_max_width=200&unique=1771878453&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1401020_ccaee8c7630e44029ec5063219f9d419.html&viewport=960x960"
+  },
+  {
+    "title": "Emerald glassfrog mating activity",
+    "desc": "",
+    "date": "2026-01-28T20:47:16+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1391174_a75bf782cc8e4c9c93726961334ba0f1.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/emerald_glassfrog_mating",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/e5889fbb75446d524e2d4075cd5f6315/png/?thumbnail_max_width=200&unique=1769633236&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1391174_a75bf782cc8e4c9c93726961334ba0f1.html&viewport=960x960"
+  },
+  {
+    "title": "DAG-based causal inference vs AIC model selection",
+    "desc": "",
+    "date": "2026-01-19T21:20:50+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1388736_f9f58f9410684ddaabf7a3af4de3ab40.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/dag_vs_model_selection",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/4cf84f6d85633f31f88db37e586a1806/png/?thumbnail_max_width=200&unique=1768857650&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1388736_f9f58f9410684ddaabf7a3af4de3ab40.html&viewport=960x960"
+  },
+  {
+    "title": "Bat echolocation adaptation and plasticity 2026",
+    "desc": "",
+    "date": "2026-01-17T17:01:13+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1388271_3e157168c1a94495ae7c41990140f7b6.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/bat_echo_adapt_2026",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/cb2aa5dedead47be2c10cb6bfc76e6e9/png/?thumbnail_max_width=200&unique=1768669273&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1388271_3e157168c1a94495ae7c41990140f7b6.html&viewport=960x960"
+  },
+  {
+    "title": "Curating USVs count data",
+    "desc": "",
+    "date": "2025-11-13T19:45:56+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1368233_6fddbda8b1294dc1bc0f29f7c2019014.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/1368233",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/a0ab627827aae13945f45cb6a7da6f3c/png/?thumbnail_max_width=200&unique=1763063156&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1368233_6fddbda8b1294dc1bc0f29f7c2019014.html&viewport=960x960"
+  },
+  {
+    "title": "Rensch’s Rule in Costa Rican hummingbirds v2",
+    "desc": "",
+    "date": "2025-11-12T16:44:17+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1367687_36eab72b9c37425d9b17215fdae90e82.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/1367687",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/ca68096db0d5eb8c73589d3ab59ad36a/png/?thumbnail_max_width=200&unique=1762965857&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1367687_36eab72b9c37425d9b17215fdae90e82.html&viewport=960x960"
+  },
+  {
+    "title": "Extract mountain observations from DASCO data",
+    "desc": "RAVeM",
+    "date": "2025-10-15T21:10:26+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1355898_d698865d51644759ae28ca2c1376b561.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/extract_mountain_obs_ravem",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/5a2c3945fd9d9cd02b0bbf9f4f49a3f4/png/?thumbnail_max_width=200&unique=1760562626&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1355898_d698865d51644759ae28ca2c1376b561.html&viewport=960x960"
+  },
+  {
+    "title": "Adding taxonomy to DASCO",
+    "desc": "RAVeM workflow",
+    "date": "2025-10-14T21:40:01+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1355490_3b8bc468710c4259a07bc8a0d25e3023.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/dasco_taxonomy",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/bcb1acc10cbd780f8f61ae439373cf80/png/?thumbnail_max_width=200&unique=1760478001&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1355490_3b8bc468710c4259a07bc8a0d25e3023.html&viewport=960x960"
+  },
+  {
+    "title": "Vocal activity and noise in birds of Santa Rosa NP",
+    "desc": "",
+    "date": "2025-09-23T19:09:20+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1347684_8ef3e2933ba84ec7beecec9e5e4943b5.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/vocal_activity_and_noise_santa_rosa",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/4352c903f40f04a547c708b1676afc9a/png/?thumbnail_max_width=200&unique=1758654560&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1347684_8ef3e2933ba84ec7beecec9e5e4943b5.html&viewport=960x960"
+  },
+  {
+    "title": "Parrot vocal repertoire evolution",
+    "desc": "",
+    "date": "2025-08-26T16:55:14+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1338786_66efd4c6684e47f78a087a3994a1f94b.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/parrot_vocal_repertoire_evolution",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/d07fdcafabd63537c300aa55425fcbb8/png/?thumbnail_max_width=200&unique=1756227314&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1338786_66efd4c6684e47f78a087a3994a1f94b.html&viewport=960x960"
+  },
+  {
+    "title": "Detecting rat ultrasonic vocalizations",
+    "desc": "source code at https://github.com/maRce10/USV_detection_models",
+    "date": "2025-08-18T20:43:52+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1336956_2d4685a72343465889189780d9b5fd11.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/detecting_rat_suvs",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/a0594c65496c8bcf9a92d2346448bcd7/png/?thumbnail_max_width=200&unique=1755549832&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1336956_2d4685a72343465889189780d9b5fd11.html&viewport=960x960"
+  },
+  {
+    "title": "Distribución y abundancia de mugílidos en la cuenca media del Río Sarapiquí",
+    "desc": "",
+    "date": "2025-08-13T20:40:49+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1336035_ce0e5da2a9674c7d87b0a658c2c46bf0.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/peces_sarapiqui",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/c2890d1beb64cef42b9b3146d082126c/png/?thumbnail_max_width=200&unique=1755117649&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1336035_ce0e5da2a9674c7d87b0a658c2c46bf0.html&viewport=960x960"
+  },
+  {
+    "title": "Partitioning variation of call structure at social scales in parrots",
+    "desc": "",
+    "date": "2025-07-28T21:37:29+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1332769_ffdf6b7d320e4e71b08bda90296df069.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/partition_call_variation_parrots",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/4dba6d0fd416df0431ee02f9cd7d641c/png/?thumbnail_max_width=200&unique=1753738649&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1332769_ffdf6b7d320e4e71b08bda90296df069.html&viewport=960x960"
+  },
+  {
+    "title": "Vocal variation in thick-billed parrots",
+    "desc": "",
+    "date": "2025-07-23T20:49:12+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1331710_07502555dd3c4ae7ba22f22aae4d09f9.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/vocal-variation-thick-billed-parrots",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/eaf962febf3e7a2c2f950016f2465a27/png/?thumbnail_max_width=200&unique=1753303752&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1331710_07502555dd3c4ae7ba22f22aae4d09f9.html&viewport=960x960"
+  },
+  {
+    "title": "Vocal variation in monk parakeets",
+    "desc": "",
+    "date": "2025-07-23T20:15:41+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1331698_330884936d1c4b82876b71b697cb564a.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/vocal-variation-monk-parakeets",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/3542f71ab6de659f3b17c603d11dfe30/png/?thumbnail_max_width=200&unique=1753301741&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1331698_330884936d1c4b82876b71b697cb564a.html&viewport=960x960"
+  },
+  {
+    "title": "Maternal Care rat USV detection and count",
+    "desc": "",
+    "date": "2025-07-23T18:01:35+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1331664_119d07dfc4ae4884baf299b4fafe1575.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/maternal_care_usv_analysis",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/9ad2173dad4af25ea9462be6dd6a8c46/png/?thumbnail_max_width=200&unique=1753293695&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1331664_119d07dfc4ae4884baf299b4fafe1575.html&viewport=960x960"
+  },
+  {
+    "title": "Vocal variation in yellow-naped amazons",
+    "desc": "",
+    "date": "2025-07-23T17:01:59+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1331644_94798b37968d437e88b2677a394cf8b2.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/vocal-variation-yellow-naped-amazon",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/0e50e9da779f13bca34ed01b7e16b8e2/png/?thumbnail_max_width=200&unique=1753290119&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1331644_94798b37968d437e88b2677a394cf8b2.html&viewport=960x960"
+  },
+  {
+    "title": "Amphetamine and stress USV detection and analysis",
+    "desc": "",
+    "date": "2025-07-22T20:49:40+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1331433_3210f0f55c454a47a1d5291c06ad48ac.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/amphetamine-stress-usv-counts",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/9a23aec177c08a9bdb746eaa42dd9b2d/png/?thumbnail_max_width=200&unique=1753217380&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1331433_3210f0f55c454a47a1d5291c06ad48ac.html&viewport=960x960"
+  },
+  {
+    "title": "Chronic stress raises and vocal plasticity in budgerigars",
+    "desc": "Statistical analysis",
+    "date": "2025-07-21T21:09:10+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1331156_2657fedf5f224c55ade25dabf9d4239d.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/stress_vocal_learning",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/453b37d22fe949ec2527e5e2bee9c053/png/?thumbnail_max_width=200&unique=1753132150&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1331156_2657fedf5f224c55ade25dabf9d4239d.html&viewport=960x960"
+  },
+  {
+    "title": "data double checking",
+    "desc": "bird_song_evolution",
+    "date": "2025-06-23T19:42:06+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1324831_81e7fc101efa459eaf5165d8e37efcc1.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/bird_song_evolution",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/6e65a1d250624888ce28724bd0f17024/png/?thumbnail_max_width=200&unique=1750707726&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1324831_81e7fc101efa459eaf5165d8e37efcc1.html&viewport=960x960"
+  },
+  {
+    "title": "Measuring schroeders with noise",
+    "desc": "",
+    "date": "2025-06-10T16:31:21+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1320568_9810ae19868b4016a94ffe98cfcaaf8f.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/acoustic_fine_noise",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/95ccaf2bbb5d9c2b805807f36154ced1/png/?thumbnail_max_width=200&unique=1749573081&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1320568_9810ae19868b4016a94ffe98cfcaaf8f.html&viewport=960x960"
+  },
+  {
+    "title": "Contribuciones al CIN",
+    "desc": "",
+    "date": "2025-06-02T15:39:10+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1317392_18ac0b95935d4c49aa581b66cdfd3ff9.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/1317392",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/33e917da6cf9d46c58571fbf1db0eba9/png/?thumbnail_max_width=200&unique=1748878750&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1317392_18ac0b95935d4c49aa581b66cdfd3ff9.html&viewport=960x960"
+  },
+  {
+    "title": "Detecting acoustic fine structure on schroeders with background noise",
+    "desc": "",
+    "date": "2025-04-08T22:22:08+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1295027_41843e6bd2d34fc1a26d253b56ce40b6.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/1295027",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/0f5db976163444edd3b93be449baab7d/png/?thumbnail_max_width=200&unique=1744150928&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1295027_41843e6bd2d34fc1a26d253b56ce40b6.html&viewport=960x960"
+  },
+  {
+    "title": "Classifying rat USV subtypes",
+    "desc": "https://github.com/maRce10/rat_vocalization_alcohol",
+    "date": "2025-03-21T21:46:05+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1287445_d75568a11fe04184b7d9b7b896653c1a.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/usv_subtype_classification",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/d8308d09055dc8b265bf753d01ba2a20/png/?thumbnail_max_width=200&unique=1742593565&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1287445_d75568a11fe04184b7d9b7b896653c1a.html&viewport=960x960"
+  },
+  {
+    "title": "Detecting schroeder phase",
+    "desc": "",
+    "date": "2025-03-19T14:33:24+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1286441_8512a7c49bc44882b789d087a32d6136.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/detecting_schroeder_phase",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/1ac5ab12ccd7b0af26b4cd45f932904b/png/?thumbnail_max_width=200&unique=1742394804&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1286441_8512a7c49bc44882b789d087a32d6136.html&viewport=960x960"
+  },
+  {
+    "title": "Degradation and measures of acoustic fine structure in Schroeders",
+    "desc": "",
+    "date": "2025-03-06T21:34:52+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1281277_0f88a94913bc4d0ca4fbbb33350aa81d.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/degrad_schroeder",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/9c8852d99e2b6ee676bf2e9b764e9e4a/png/?thumbnail_max_width=200&unique=1741296892&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1281277_0f88a94913bc4d0ca4fbbb33350aa81d.html&viewport=960x960"
+  },
+  {
+    "title": "Predictores del desempeño en la Olimpiada Costarricense de Biología (OLICOCIBI)",
+    "desc": "",
+    "date": "2025-02-21T17:42:07+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1275002_65f946f0b4a845b8a4fe82cf2fb19320.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/1275002",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/3b8a19b8cb19518408f99a5284dd0b60/png/?thumbnail_max_width=200&unique=1740159727&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1275002_65f946f0b4a845b8a4fe82cf2fb19320.html&viewport=960x960"
+  },
+  {
+    "title": "Analisis de estridulacion grillos",
+    "desc": "",
+    "date": "2024-12-05T20:48:55+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1253888_38420d8c7d5a468ca022c7824494cd91.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/grillos2024",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/409a3100d15dadc50327daf937b6653f/png/?thumbnail_max_width=200&unique=1733431735&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1253888_38420d8c7d5a468ca022c7824494cd91.html&viewport=960x960"
+  },
+  {
+    "title": "cultural evolution comparative analysis- consensus tree",
+    "desc": "",
+    "date": "2024-10-29T21:35:03+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1238628_62f1b695841248dcab472176227f270f.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/cult_comp",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/fb74a898caf2ac700d131a0f8ca72cb0/png/?thumbnail_max_width=200&unique=1730237703&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1238628_62f1b695841248dcab472176227f270f.html&viewport=960x960"
+  },
+  {
+    "title": "Combining lek cultural trees",
+    "desc": "",
+    "date": "2024-10-18T20:42:40+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1233711_656f74eaa46d4c3ea18f255ba9aeefae.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/1233711",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/89a6ad122608b7a65c7ad18c175afa34/png/?thumbnail_max_width=200&unique=1729284160&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1233711_656f74eaa46d4c3ea18f255ba9aeefae.html&viewport=960x960"
+  },
+  {
+    "title": "Topological space stats",
+    "desc": "",
+    "date": "2024-10-10T21:47:20+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1230361_95203be4128c40dcac9fdc556706cbc4.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/1230361",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/ed8be0939873a31d9ddf5a860029ceb9/png/?thumbnail_max_width=200&unique=1728596840&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1230361_95203be4128c40dcac9fdc556706cbc4.html&viewport=960x960"
+  },
+  {
+    "title": "Female response to vocal stimuli",
+    "desc": "",
+    "date": "2024-09-20T17:04:27+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1222844_d85ee97bb921448c9ea46b7b0516699e.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/1222844",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/6bb100757b039ac96e84b504a5554d7e/png/?thumbnail_max_width=200&unique=1726851867&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1222844_d85ee97bb921448c9ea46b7b0516699e.html&viewport=960x960"
+  },
+  {
+    "title": "Vocal coordination analysis",
+    "desc": "Vocal coordination in water rail pairs",
+    "date": "2024-09-18T02:05:28+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1221727_e10555a1b85a4f1ea05389304de02d12.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/1221727",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/03acc9330e48e51b306861ad1b881482/png/?thumbnail_max_width=200&unique=1726625128&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1221727_e10555a1b85a4f1ea05389304de02d12.html&viewport=960x960"
+  },
+  {
+    "title": "Composition of fungi's bacteria and virus communities",
+    "desc": "",
+    "date": "2024-09-10T19:34:00+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1218708_88264b8d2dfd4af4aee314bbaca4ab75.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/1218708",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/76c98494b233406077f90ce2144265bc/png/?thumbnail_max_width=200&unique=1725996840&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1218708_88264b8d2dfd4af4aee314bbaca4ab75.html&viewport=960x960"
+  },
+  {
+    "title": "R packages for behavioral ecologists",
+    "desc": "",
+    "date": "2024-09-06T20:28:09+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1217190_e058980b070846c7841506f2cd672f0a.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/1217190",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/f8ab038787e3cbfc15d3bb3a81aba562/png/?thumbnail_max_width=200&unique=1725654489&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1217190_e058980b070846c7841506f2cd672f0a.html&viewport=960x960"
+  },
+  {
+    "title": "Statistical analysis",
+    "desc": "female song evolution in songbirds",
+    "date": "2024-08-07T03:42:50+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1209189_be554010630b47bcaf5b8a45368254d2.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/1209189",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/210f6752bead3837cd14fcd99d547b06/png/?thumbnail_max_width=200&unique=1723002170&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1209189_be554010630b47bcaf5b8a45368254d2.html&viewport=960x960"
+  },
+  {
+    "title": "Bioacoustics stimuli for L2 learning",
+    "desc": "",
+    "date": "2024-07-24T20:02:22+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1206266_ecf8c35738644989b299b4fa04c47c9c.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/1206266",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/3264cc1b418eba59354c5228cd9dcbbb/png/?thumbnail_max_width=200&unique=1721851342&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1206266_ecf8c35738644989b299b4fa04c47c9c.html&viewport=960x960"
+  },
+  {
+    "title": "Degradation statistics",
+    "desc": "Sex-dependent signal propagation in L. palavanensis",
+    "date": "2024-07-12T03:45:00+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1203509_17a11daaf0904305a0d70d70230de4f4.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/1203509",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/c0c12e44b5d2f6e9268d3ffa3363decb/png/?thumbnail_max_width=200&unique=1720755900&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1203509_17a11daaf0904305a0d70d70230de4f4.html&viewport=960x960"
+  },
+  {
+    "title": "local vs winner takes all acoustic adaptation",
+    "desc": "",
+    "date": "2024-07-08T20:24:41+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1202768_954324773a8b4fba87e3c37e73447073.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/1202768",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/8fe018dd30dedca5f77d6570663e71d8/png/?thumbnail_max_width=200&unique=1720470281&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1202768_954324773a8b4fba87e3c37e73447073.html&viewport=960x960"
+  },
+  {
+    "title": "Statistical analysis using causal inference v02",
+    "desc": "",
+    "date": "2024-06-12T01:43:58+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1195671_37c23a3feab9435ab79862851cdb7f3e.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/1195671",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/32e48fd8ed583ce2519289129d098824/png/?thumbnail_max_width=200&unique=1718156638&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1195671_37c23a3feab9435ab79862851cdb7f3e.html&viewport=960x960"
+  },
+  {
+    "title": "Acoustic analysis",
+    "desc": "Cryptic species in Pseudasthenes",
+    "date": "2024-05-10T21:02:20+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1183764_aa937fbdc82e4db8ae2ffc04f48105e1.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/1183764",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/87782796f605d784d540c01db4ca27c0/png/?thumbnail_max_width=200&unique=1715374940&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1183764_aa937fbdc82e4db8ae2ffc04f48105e1.html&viewport=960x960"
+  },
+  {
+    "title": "Multi-level inference to predict functional diversity 2024",
+    "desc": "",
+    "date": "2024-05-03T14:45:08+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1181194_915866e5b1f6466b9f6816ab6c0ee72c.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/1181194",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/67d16fc72914e68b1926852041e6f1a5/png/?thumbnail_max_width=200&unique=1714747508&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1181194_915866e5b1f6466b9f6816ab6c0ee72c.html&viewport=960x960"
+  },
+  {
+    "title": "3D plots",
+    "desc": "Echolocation plasticity in Vespertilionidae",
+    "date": "2024-05-01T23:44:48+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1180580_dafecea905ed4bbbb1b5d6fb44d4013e.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/1180580",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/b46a9d1b22ac435f988d7aa044a6502b/png/?thumbnail_max_width=200&unique=1714607088&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1180580_dafecea905ed4bbbb1b5d6fb44d4013e.html&viewport=960x960"
+  },
+  {
+    "title": "Statistical analysis of vocal activity in Agalychnis lemur using causal inference",
+    "desc": "",
+    "date": "2024-03-25T20:25:06+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1166112_73528a6f3f6c4117bd097857f1c0462c.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/1166112",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/045561b48bb7d206189a9c47a2c355d1/png/?thumbnail_max_width=200&unique=1711398306&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1166112_73528a6f3f6c4117bd097857f1c0462c.html&viewport=960x960"
+  },
+  {
+    "title": "Owl duet comparative analysis",
+    "desc": "",
+    "date": "2024-03-15T20:34:56+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1161938_b54da17439f34993872ef31755c35931.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/1161938",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/0c3e4200c254a6bc0e547600baef45b3/png/?thumbnail_max_width=200&unique=1710534896&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1161938_b54da17439f34993872ef31755c35931.html&viewport=960x960"
+  },
+  {
+    "title": "Stats for litter decomposition",
+    "desc": "",
+    "date": "2024-03-12T00:19:25+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1160176_416d0e3401524ae99fabb83bd7792c32.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/litter_effex",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/c6240a53df419f4bed205e9f14490414/png/?thumbnail_max_width=200&unique=1710202765&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1160176_416d0e3401524ae99fabb83bd7792c32.html&viewport=960x960"
+  },
+  {
+    "title": "Mite plant preference",
+    "desc": "",
+    "date": "2024-03-05T23:50:54+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1157884_843d2ec0fe314501b602adfafc5fa9be.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/1157884",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/ef278fe800f84723e02536db825842b7/png/?thumbnail_max_width=200&unique=1709682654&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1157884_843d2ec0fe314501b602adfafc5fa9be.html&viewport=960x960"
+  },
+  {
+    "title": "Owl duet comparative analysis",
+    "desc": "",
+    "date": "2024-03-01T21:26:55+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1155823_2586180b4e9a420fad4bc3d875dc6e7b.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/1155823",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/5e6868dee8aa5a00937f1070a4af6a1a/png/?thumbnail_max_width=200&unique=1709328415&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1155823_2586180b4e9a420fad4bc3d875dc6e7b.html&viewport=960x960"
+  },
+  {
+    "title": "Variation in vocal behavior under varying stress levels V01",
+    "desc": "",
+    "date": "2024-03-01T00:59:11+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1155504_728314fc0a5e462581a500ebcbfcc2df.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/1155504",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/de7f8673904cfe085ba24c486024be19/png/?thumbnail_max_width=200&unique=1709254751&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1155504_728314fc0a5e462581a500ebcbfcc2df.html&viewport=960x960"
+  },
+  {
+    "title": "Sound pressure level in long-billed hermits",
+    "desc": "Evaluating variation in song intensity (sound pressure level) and its ecological covariates",
+    "date": "2024-02-15T17:34:41+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1149357_fcfc3400daa44e9f9159fa9fe38e33e1.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/1149357",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/4be00141b4f3c6c1a8bbda32e0f3a8b6/png/?thumbnail_max_width=200&unique=1708018481&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1149357_fcfc3400daa44e9f9159fa9fe38e33e1.html&viewport=960x960"
+  },
+  {
+    "title": "Measuring segment similarity in LBH songs",
+    "desc": "LBH song type prevalence and degradation",
+    "date": "2024-02-14T21:27:22+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1148997_ca65a05c80b84c74a6d961af15f7103e.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/1148997",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/544c899077851cb0c4e938051012b5a8/png/?thumbnail_max_width=200&unique=1707946042&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1148997_ca65a05c80b84c74a6d961af15f7103e.html&viewport=960x960"
+  },
+  {
+    "title": "first python",
+    "desc": "",
+    "date": "2024-02-12T23:23:50+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1148174_bf3d1e5dd7f240e0be29f7c50768e157.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/1148174",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/ccb1f093e2568acf9f90d93e1eec7a58/png/?thumbnail_max_width=200&unique=1707780230&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1148174_bf3d1e5dd7f240e0be29f7c50768e157.html&viewport=960x960"
+  },
+  {
+    "title": "Owl vocal complexity",
+    "desc": "",
+    "date": "2024-01-18T03:19:48+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1139101_d292acf4402848349149129e28e2a441.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/1139101",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/967293662f2e4a0a095e854932d14cdb/png/?thumbnail_max_width=200&unique=1705547988&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1139101_d292acf4402848349149129e28e2a441.html&viewport=960x960"
+  },
+  {
+    "title": "Mobbing ontogeny",
+    "desc": "",
+    "date": "2024-01-15T19:23:24+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1138418_c607ffad9fc94591ac85eaaecb28a942.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/1138418",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/9c7816939bce28cc7a9e81acdf6c9129/png/?thumbnail_max_width=200&unique=1705346604&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1138418_c607ffad9fc94591ac85eaaecb28a942.html&viewport=960x960"
+  },
+  {
+    "title": "Oilbird vocal repertoire",
+    "desc": "",
+    "date": "2023-12-18T21:25:19+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1131789_fbf3e96e79194030b5f2045ca501e4d4.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/1131789",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/f7f0976c0d421803b4c83ca07bf88535/png/?thumbnail_max_width=200&unique=1702934719&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1131789_fbf3e96e79194030b5f2045ca501e4d4.html&viewport=960x960"
+  },
+  {
+    "title": "baRulho: Un paquete de R para cuantificar la de degradación de sonidos animales inducida por el ambiente",
+    "desc": "",
+    "date": "2023-12-15T15:20:58+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1130649_1c7745ee25b4474cbf31b84ba59bfbf9.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/1130649",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/d410bcf2e8a116d5e2c071b71ad258e8/png/?thumbnail_max_width=200&unique=1702653658&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1130649_1c7745ee25b4474cbf31b84ba59bfbf9.html&viewport=960x960"
+  },
+  {
+    "title": "baRulho: an R package to quantify degradation in animal acoustic signals",
+    "desc": "",
+    "date": "2023-12-14T19:09:52+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1130250_d0d6643a30754e408155ab07f2e7bd07.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/barulho_dec",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/8a4ae5f49df3f8cdfa314e2359cfbad3/png/?thumbnail_max_width=200&unique=1702580992&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1130250_d0d6643a30754e408155ab07f2e7bd07.html&viewport=960x960"
+  },
+  {
+    "title": "Cultural evolution analysis",
+    "desc": "LBH song type prevalence and degradation",
+    "date": "2023-12-12T19:52:15+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1129223_acb5d695e8504835abca7c948747c790.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/1129223",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/c6b854a0776c9a0ae189915ddac196ec/png/?thumbnail_max_width=200&unique=1702410735&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1129223_acb5d695e8504835abca7c948747c790.html&viewport=960x960"
+  },
+  {
+    "title": "Data formatting: song sexual dimorphism",
+    "desc": "",
+    "date": "2023-12-05T23:29:00+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1125471_7547ed3f17cc41a6a78b515e16d352de.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/song_sexual_dimorphism",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/cff6dc0a581fdfa7cf4f324db96484ea/png/?thumbnail_max_width=200&unique=1701818940&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1125471_7547ed3f17cc41a6a78b515e16d352de.html&viewport=960x960"
+  },
+  {
+    "title": "Classifying USV subtypes",
+    "desc": "Rat vocalization and alcohol",
+    "date": "2023-11-18T00:47:23+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1116353_3646491ca1f440aeadeff47917cffc7f.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/1116353",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/6b359970b8eb262c9bfa61f60912b2e8/png/?thumbnail_max_width=200&unique=1700268443&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1116353_3646491ca1f440aeadeff47917cffc7f.html&viewport=960x960"
+  },
+  {
+    "title": "Phyllostomid call evolution and functional diversity",
+    "desc": "",
+    "date": "2023-10-22T02:31:08+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1102485_0729a2b5fa654be8822d342920bcc55f.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/1102485",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/e24d133371a3188c46441bee4b6da4fd/png/?thumbnail_max_width=200&unique=1697941868&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1102485_0729a2b5fa654be8822d342920bcc55f.html&viewport=960x960"
+  },
+  {
+    "title": "Age, vocal learning and FoxP2 in budgerigards",
+    "desc": "",
+    "date": "2023-09-20T21:20:18+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1086095_91e44e721d254ce98f9f3e30a54bc4c7.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/1086095",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/699fed917d74507dbfff5830a3a5da6a/png/?thumbnail_max_width=200&unique=1695244818&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1086095_91e44e721d254ce98f9f3e30a54bc4c7.html&viewport=960x960"
+  },
+  {
+    "title": "Vocal interactions in Spix's disc-winged bats (*Thyroptera tricolor*)",
+    "desc": "",
+    "date": "2023-09-20T15:45:20+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1085969_3b7c99a5773f4d3f97b7ead994d267f4.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/1085969",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/f3493dcedf299342a97a50598b2891e5/png/?thumbnail_max_width=200&unique=1695224720&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1085969_3b7c99a5773f4d3f97b7ead994d267f4.html&viewport=960x960"
+  },
+  {
+    "title": "Suppl. mat. baRulho paper",
+    "desc": "",
+    "date": "2023-08-30T14:37:26+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1075886_fe32cb634f79461dbd2e370ef3bacf8b.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/1075886",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/e8cee7dc662dfd8d7f9722c7ff3788f0/png/?thumbnail_max_width=200&unique=1693406246&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1075886_fe32cb634f79461dbd2e370ef3bacf8b.html&viewport=960x960"
+  },
+  {
+    "title": "Measuring degradation on schroeders",
+    "desc": "https://github.com/maRce10/acoustic-fine-features-zebra-finch",
+    "date": "2023-08-02T17:46:05+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1068313_c0b78effabf64ea1b36006de87342282.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/1068313",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/6c34386c232f980b7b40b41bdac7dfff/png/?thumbnail_max_width=200&unique=1690998365&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1068313_c0b78effabf64ea1b36006de87342282.html&viewport=960x960"
+  },
+  {
+    "title": "Measuring degradation in long billed hermit song types",
+    "desc": "LBH song type prevalence and degradation",
+    "date": "2023-07-22T00:01:06+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1064942_d7248f0c52894d5191badeae09f99ef7.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/1064942",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/e5e789e0716db9c5dcafd82494e10615/png/?thumbnail_max_width=200&unique=1689984066&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1064942_d7248f0c52894d5191badeae09f99ef7.html&viewport=960x960"
+  },
+  {
+    "title": "Cape parrot vocal dialects acoustic analysis",
+    "desc": "",
+    "date": "2023-07-17T22:00:27+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1063552_4532b1e4baf84d1fa6b416de828fb6c3.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/1063552",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/561dceb8cc86e9c77082a7c064a75470/png/?thumbnail_max_width=200&unique=1689631227&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1063552_4532b1e4baf84d1fa6b416de828fb6c3.html&viewport=960x960"
+  },
+  {
+    "title": "Fine acoustic features in zebra finch vocalizations",
+    "desc": "Source code and data found at https://github.com/maRce10/acoustic-fine-features-zebra-finch",
+    "date": "2023-07-12T00:24:53+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1061961_7c738fb414914757ac797afe901e9b47.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/1061961",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/596598a07ce7e3729d22cd5504fb51b0/png/?thumbnail_max_width=200&unique=1689121493&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1061961_7c738fb414914757ac797afe901e9b47.html&viewport=960x960"
+  },
+  {
+    "title": "Zebra fish beta-estradiol and behavior",
+    "desc": "",
+    "date": "2023-07-11T19:42:09+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1061898_3fb18f2b423f42289afe2ca7aaee3467.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/1061898",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/cae7e8616978f57a574309d905153897/png/?thumbnail_max_width=200&unique=1689104529&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1061898_3fb18f2b423f42289afe2ca7aaee3467.html&viewport=960x960"
+  },
+  {
+    "title": "Acoustic adaptation in lekking hermit hummingbirds",
+    "desc": "",
+    "date": "2023-06-22T17:38:47+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1056971_75bf7da5f5544d17a6b504434753b5db.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/1056971",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/fcd7f27bc6f471dcb6845f190b0ea3e1/png/?thumbnail_max_width=200&unique=1687455527&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1056971_75bf7da5f5544d17a6b504434753b5db.html&viewport=960x960"
+  },
+  {
+    "title": "Bat echolocation plasticity",
+    "desc": "OTS TB 2023 La Selva",
+    "date": "2023-06-20T05:08:44+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1056168_26fb5f6d535f4aaa98839221ed9f5b03.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/1056168",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/8aa6f629f02a833bad893506c77533c3/png/?thumbnail_max_width=200&unique=1687237724&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1056168_26fb5f6d535f4aaa98839221ed9f5b03.html&viewport=960x960"
+  },
+  {
+    "title": "Foraging, Fear and Behavioral Variation in a Traplining Hummingbird",
+    "desc": "Statistical Analysis:\r\n\r\n Wojczulanis-Jakubas, K.; Araya-Salas, M. Foraging, Fear and Behavioral Variation in a Traplining Hum-mingbird. Animals 2023, 13, x. https://doi.org/10.3390/xxxxx",
+    "date": "2023-06-05T02:02:02+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1050043_7cef9b3b7175438a9f6cdfa94f9bae76.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/1050043",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/e05eafa0316b97bec015279498d5e137/png/?thumbnail_max_width=200&unique=1685930522&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1050043_7cef9b3b7175438a9f6cdfa94f9bae76.html&viewport=960x960"
+  },
+  {
+    "title": "Statistical Analysis Tlalpan Degradation Playback",
+    "desc": "",
+    "date": "2023-04-21T22:30:12+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1032060_eb5ce23a07b24a2e918a1ff1df3efd89.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/1032060",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/34048713eace166331422a154fd1f8ea/png/?thumbnail_max_width=200&unique=1682116212&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1032060_eb5ce23a07b24a2e918a1ff1df3efd89.html&viewport=960x960"
+  },
+  {
+    "title": "Geographic call variation in yellow-naped amazon across its entire geographic range",
+    "desc": "",
+    "date": "2023-02-28T23:44:03+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1009380_d18eccadb82b45af9d8770feb00d57ff.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/1009380",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/8e77387122e9c266a5d5040e3d0d8143/png/?thumbnail_max_width=200&unique=1677627843&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1009380_d18eccadb82b45af9d8770feb00d57ff.html&viewport=960x960"
+  },
+  {
+    "title": "Flexible use of visual and acoustic cues during roost finding in Spix’s disc-winged bat",
+    "desc": "Data analysis for the paper:\r\n\r\nGioiosa, Miriam; Araya-Salas, Marcelo; Castillo Salazar, Cristian; Chaves-Ramírez, Silvia; Gioiosa, Maurizio; Rojas, Nazareth; Sanchez, Mariela; Scaravelli, Dino; Chaverri, Gloriana. 2023. Flexible use of visual and acoustic cues during roost finding in Spix’s disc-winged bat. Behavioral Ecology.",
+    "date": "2023-02-26T01:24:33+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1007830_c6c42f1ccb8a485f9a40a88f7feba639.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/1007830",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/8115c2a51c968a2b7c104cca3a9529c3/png/?thumbnail_max_width=200&unique=1677374673&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1007830_c6c42f1ccb8a485f9a40a88f7feba639.html&viewport=960x960"
+  },
+  {
+    "title": "Automated call detection of strawberry poison-dart frog calls",
+    "desc": "",
+    "date": "2023-02-18T23:01:57+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1004806_57a6d77111044bca89cbe73435b2c69c.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/1004806",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/5bf92bcf83a68b7a8f0255732875d065/png/?thumbnail_max_width=200&unique=1676761317&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1004806_57a6d77111044bca89cbe73435b2c69c.html&viewport=960x960"
+  },
+  {
+    "title": "Turning analysis in cage test",
+    "desc": "",
+    "date": "2023-02-16T16:26:20+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1004093_78166e2a58ee4b98aa1ff33f7a826138.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/1004093",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/41fc084f1eb6bf5eb77c5be5ce88e45c/png/?thumbnail_max_width=200&unique=1676564780&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1004093_78166e2a58ee4b98aa1ff33f7a826138.html&viewport=960x960"
+  },
+  {
+    "title": "Rensch's Rule in Costa Rican hummingbirds",
+    "desc": "",
+    "date": "2023-02-13T13:57:15+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1002262_0fdff984645240f0b704f2d8abe8afb4.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/1002262",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/066cbbbef470cf37426ffeb36ae91053/png/?thumbnail_max_width=200&unique=1676296635&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1002262_0fdff984645240f0b704f2d8abe8afb4.html&viewport=960x960"
+  },
+  {
+    "title": "Collecitve behavior in inquiry calling in Spix's disc-wingd bats",
+    "desc": "https://github.com/maRce10/flight_coordination_in_Thyroptera",
+    "date": "2023-02-09T20:51:30+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/1000978_36aec61c297e4118ab1ce5f60db4414f.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/1000978",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/90310b6c7953bfb013b9e65a94dffc5e/png/?thumbnail_max_width=200&unique=1675975890&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F1000978_36aec61c297e4118ab1ce5f60db4414f.html&viewport=960x960"
+  },
+  {
+    "title": "Owl vocalization comparative analysis",
+    "desc": "https://github.com/maRce10/owl_vocaization_comparative_analysis",
+    "date": "2023-01-11T21:33:57+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/991169_86f95704d84b43bd9440657aeeac8143.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/991169",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/ccb8b056916619880bf9459bd8ff0f26/png/?thumbnail_max_width=200&unique=1673472837&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F991169_86f95704d84b43bd9440657aeeac8143.html&viewport=960x960"
+  },
+  {
+    "title": "Automatic call detection",
+    "desc": "Automatic call detection in A. lemur",
+    "date": "2022-10-11T22:58:53+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/954741_a38173a4de274583a0f2bbb4bff197fe.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/954741",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/3c808dffd9e839f65d4c27dd2c73cea0/png/?thumbnail_max_width=200&unique=1665529133&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F954741_a38173a4de274583a0f2bbb4bff197fe.html&viewport=960x960"
+  },
+  {
+    "title": "Phylogenetic uncertainty models",
+    "desc": "",
+    "date": "2022-10-04T00:14:35+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/951077_fb08afe81a694895b3f85abc085ebedc.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/951077",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/b21089ae4fd44cf068bd5d128219372e/png/?thumbnail_max_width=200&unique=1664842475&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F951077_fb08afe81a694895b3f85abc085ebedc.html&viewport=960x960"
+  },
+  {
+    "title": "Measuring degradation",
+    "desc": "Simulated song degradation Manu 2022",
+    "date": "2022-09-28T12:57:15+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/948738_feccaf80e6d746f288dcac1d7521b2d9.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/948738",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/6f74908ea3453e02e3eba1e0e1d10786/png/?thumbnail_max_width=200&unique=1664369835&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F948738_feccaf80e6d746f288dcac1d7521b2d9.html&viewport=960x960"
+  },
+  {
+    "title": "Supervised models for classifying model species, mimetic bellbind",
+    "desc": "",
+    "date": "2022-09-18T18:43:28+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/943736_76e9288ed08a4656b955c08c00ad4411.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/943736",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/86bf1babaa5b69f115599b775debd43f/png/?thumbnail_max_width=200&unique=1663526608&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F943736_76e9288ed08a4656b955c08c00ad4411.html&viewport=960x960"
+  },
+  {
+    "title": "Statistical Analysis Agalychinis lemur vocal activity",
+    "desc": "",
+    "date": "2022-09-17T20:20:16+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/943416_eff6ceb9902d4fee9986e10580801cc4.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/943416",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/12b4d259b18d0964d31b68bdd8f29ada/png/?thumbnail_max_width=200&unique=1663446016&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F943416_eff6ceb9902d4fee9986e10580801cc4.html&viewport=960x960"
+  },
+  {
+    "title": "VGGish automatic classification",
+    "desc": "",
+    "date": "2022-09-14T21:07:01+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/942301_a09ad1a7b4bd4aa7a2aac7c44618afd8.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/942301",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/02e3c291cbf61baee00a5ec1347a7259/png/?thumbnail_max_width=200&unique=1663189621&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F942301_a09ad1a7b4bd4aa7a2aac7c44618afd8.html&viewport=960x960"
+  },
+  {
+    "title": "Compare SIGPRO and baRulho",
+    "desc": "",
+    "date": "2022-08-04T23:21:28+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/929959_72dfbe8c93e0468384e4acdaeabc669e.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/929959",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/8d7f1909b25db4830986a4144e5126e4/png/?thumbnail_max_width=200&unique=1659655288&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F929959_72dfbe8c93e0468384e4acdaeabc669e.html&viewport=960x960"
+  },
+  {
+    "title": "Corroboracion preliminar Truscan",
+    "desc": "",
+    "date": "2022-06-29T18:04:11+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/920081_c8119eb6cc84425fa1da5cee2363b5fa.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/920081",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/35133dc2556832e53fd6d61e20b6f67d/png/?thumbnail_max_width=200&unique=1656525851&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F920081_c8119eb6cc84425fa1da5cee2363b5fa.html&viewport=960x960"
+  },
+  {
+    "title": "Sensory drive in hummingbird and frog acoustic signals",
+    "desc": "OTS Tropical Biology 2022 project",
+    "date": "2022-06-19T21:59:56+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/916370_5de60a769a5d4ea4a4417f5be76e9458.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/916370",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/2d64901d7f8eaa6d0bab7832f65801e3/png/?thumbnail_max_width=200&unique=1655675996&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F916370_5de60a769a5d4ea4a4417f5be76e9458.html&viewport=960x960"
+  },
+  {
+    "title": "ohun: energy-based automatic detection on zebra finch songs",
+    "desc": "",
+    "date": "2022-05-11T17:13:20+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/901202_299a5daf55dd4eca96a4f02b513f0f16.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/901202",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/0efd72a0140a8e1179235ce619c20891/png/?thumbnail_max_width=200&unique=1652289200&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F901202_299a5daf55dd4eca96a4f02b513f0f16.html&viewport=960x960"
+  },
+  {
+    "title": "ohun:Template-based automatic detection on Spix’s disc-winged bat social calls",
+    "desc": "",
+    "date": "2022-05-10T22:06:44+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/900888_c6d50098e6da41ec8f3ae37c9d897269.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/900888",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/beb47fd2f6e29d53370521ddd123d3a8/png/?thumbnail_max_width=200&unique=1652220404&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F900888_c6d50098e6da41ec8f3ae37c9d897269.html&viewport=960x960"
+  },
+  {
+    "title": "Variation in vocal behavior under varying stress levels v03",
+    "desc": "",
+    "date": "2022-04-19T23:07:45+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/892332_2817e184be614815b4693e9ffe9e8178.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/budgie_stress_learning",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/5a27556362d518867d4b403288b81bf9/png/?thumbnail_max_width=200&unique=1650409665&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F892332_2817e184be614815b4693e9ffe9e8178.html&viewport=960x960"
+  },
+  {
+    "title": "Transect random sampling optimization",
+    "desc": "",
+    "date": "2022-04-07T00:26:01+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/887434_092143164e024b3186309ac34cd38a4b.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/887434",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/057df8490bf406bc7a9688ee39772849/png/?thumbnail_max_width=200&unique=1649291161&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F887434_092143164e024b3186309ac34cd38a4b.html&viewport=960x960"
+  },
+  {
+    "title": "Roost entry coordination Thyroptera",
+    "desc": "",
+    "date": "2022-04-06T16:52:20+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/887208_d15252ca39e34657b240a486833a3c29.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/887208",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/6f3f6ce2fcfa8bcc5a8f513e064446a8/png/?thumbnail_max_width=200&unique=1649263940&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F887208_d15252ca39e34657b240a486833a3c29.html&viewport=960x960"
+  },
+  {
+    "title": "Inquiry calling rate in group and solo flights Thyroptera",
+    "desc": "Group flight coordination in Thyroptera",
+    "date": "2022-03-07T20:43:54+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/874932_b1c4abc9049c40738ace6954bd8e34f3.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/874932",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/f3602f09898802a997ce80a8afea892d/png/?thumbnail_max_width=200&unique=1646685834&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F874932_b1c4abc9049c40738ace6954bd8e34f3.html&viewport=960x960"
+  },
+  {
+    "title": "Song detection on all data Agalychnis lemur",
+    "desc": "",
+    "date": "2022-02-20T01:20:43+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/868263_56aadff215da4543be954044f0a4f9e9.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/868263",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/b20e2bcc632c77c55b9d414d8cc0a8c7/png/?thumbnail_max_width=200&unique=1645320043&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F868263_56aadff215da4543be954044f0a4f9e9.html&viewport=960x960"
+  },
+  {
+    "title": "Compare detection methods bat social call",
+    "desc": "",
+    "date": "2022-01-26T22:33:19+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/859242_7554871ed4544202ac1bbab32227c64e.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/859242",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/66b4170a1f1463cbb68bcffbbcbaede1/png/?thumbnail_max_width=200&unique=1643236399&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F859242_7554871ed4544202ac1bbab32227c64e.html&viewport=960x960"
+  },
+  {
+    "title": "temporary results bayesian mixed models reef herbivory functional diversity",
+    "desc": "",
+    "date": "2021-11-25T15:28:16+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/839787_a36fd98b064241c69b2a40037be805f3.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/839787",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/9639b0c2763be3d7be453ad304aa4f3e/png/?thumbnail_max_width=200&unique=1637854096&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F839787_a36fd98b064241c69b2a40037be805f3.html&viewport=960x960"
+  },
+  {
+    "title": "Respuestas a la tarea 2",
+    "desc": "",
+    "date": "2021-11-16T16:55:34+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/836160_2ff9d45dbf3c43c9b74b6965257d09ab.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/836160",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/0fb6df5a222d6114ad681fbd4932e60c/png/?thumbnail_max_width=200&unique=1637081734&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F836160_2ff9d45dbf3c43c9b74b6965257d09ab.html&viewport=960x960"
+  },
+  {
+    "title": "Thyroptera roosting preference",
+    "desc": "",
+    "date": "2021-11-08T19:59:53+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/832839_26e0372c994440b5b89ff1f469e16573.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/832839",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/a0dfdb7abfd5eca490bf789bfb7da49b/png/?thumbnail_max_width=200&unique=1636401593&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F832839_26e0372c994440b5b89ff1f469e16573.html&viewport=960x960"
+  },
+  {
+    "title": "Detecting 55 kHz USVs with bedding",
+    "desc": "",
+    "date": "2021-10-20T21:39:39+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/824937_f2e6445a7a2345be882ba08a96f4e675.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/824937",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/f07b9092953c6d13182009385f38d043/png/?thumbnail_max_width=200&unique=1634765979&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F824937_f2e6445a7a2345be882ba08a96f4e675.html&viewport=960x960"
+  },
+  {
+    "title": "Detecting 22 kHz USVs with bedding",
+    "desc": "",
+    "date": "2021-10-06T00:00:28+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/818504_e580f0b586a94194adf669ecab859429.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/818504",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/79ef0049d26bbb592c2bbeceba08dd32/png/?thumbnail_max_width=200&unique=1633478428&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F818504_e580f0b586a94194adf669ecab859429.html&viewport=960x960"
+  },
+  {
+    "title": "Acoustic analysis inquiry calls PART 2, indentify individuals in group flights",
+    "desc": "https://github.com/maRce10/flight_coordination_thyroptera",
+    "date": "2021-10-05T01:56:40+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/818063_5f1f2b43fc65477c8dbec90b8e52340c.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/818063",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/6589d7b3eec6e0370d49ce0b06201083/png/?thumbnail_max_width=200&unique=1633399000&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F818063_5f1f2b43fc65477c8dbec90b8e52340c.html&viewport=960x960"
+  },
+  {
+    "title": "Detecting 55 kHz USVs without bedding",
+    "desc": "https://github.com/maRce10/rat_ultrasonic_vocalizations",
+    "date": "2021-09-20T17:47:58+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/811726_9f5c2ff81c6b4853beccbc2752a422f0.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/811726",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/bad76f1fc7e69434172bf7ff2509bf50/png/?thumbnail_max_width=200&unique=1632160078&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F811726_9f5c2ff81c6b4853beccbc2752a422f0.html&viewport=960x960"
+  },
+  {
+    "title": "Detecting 22 kHz USVs without bedding",
+    "desc": "https://github.com/maRce10/rat_ultrasonic_vocalizations",
+    "date": "2021-09-20T17:39:03+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/811722_5cdcd8aa032448dca3df45fb3be00330.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/811722",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/3fb861427e82b9edd07a9ba3c02176fa/png/?thumbnail_max_width=200&unique=1632159543&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F811722_5cdcd8aa032448dca3df45fb3be00330.html&viewport=960x960"
+  },
+  {
+    "title": "Format USVs recordings",
+    "desc": "https://github.com/maRce10/rat_ultrasonic_vocalizations",
+    "date": "2021-09-20T17:25:14+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/811714_c1f5e3b58c134578a479030220eb852d.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/811714",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/0ad7cd42ce5f445ba58d2f8761638415/png/?thumbnail_max_width=200&unique=1632158714&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F811714_c1f5e3b58c134578a479030220eb852d.html&viewport=960x960"
+  },
+  {
+    "title": "Flight coordination and calling rate",
+    "desc": "",
+    "date": "2021-09-06T21:29:06+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/805868_3c118057fc00485bbc8a697e4b7aa4a0.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/805868",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/3d0e9985d535200bc4d76c26aca23ab6/png/?thumbnail_max_width=200&unique=1630963746&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F805868_3c118057fc00485bbc8a697e4b7aa4a0.html&viewport=960x960"
+  },
+  {
+    "title": "Calling rate in solo and group flights",
+    "desc": "",
+    "date": "2021-07-28T01:51:40+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/794158_cc703f2fb6af415c8b1fb0182ce88191.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/794158",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/560943ec3571f64dfeff246091a44ea2/png/?thumbnail_max_width=200&unique=1627437100&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F794158_cc703f2fb6af415c8b1fb0182ce88191.html&viewport=960x960"
+  },
+  {
+    "title": "Quantifying acoustic structure in budgie contact calls",
+    "desc": "",
+    "date": "2021-07-23T17:26:38+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/792989_f2e769093c51408c9fc84290c47f5355.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/792989",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/70b569d18e76995891fe457da30792d0/png/?thumbnail_max_width=200&unique=1627061198&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F792989_f2e769093c51408c9fc84290c47f5355.html&viewport=960x960"
+  },
+  {
+    "title": "Correlated evolution of mating signals in hummingbirds",
+    "desc": "",
+    "date": "2021-07-16T00:48:10+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/791160_b52e7866e5104c3bb48fdbd969b9fa66.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/791160",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/bd558703fe7ae6b9d6fd99372de18c6c/png/?thumbnail_max_width=200&unique=1626396490&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F791160_b52e7866e5104c3bb48fdbd969b9fa66.html&viewport=960x960"
+  },
+  {
+    "title": "frog degradation",
+    "desc": "",
+    "date": "2021-07-06T06:04:46+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/788415_c902dc1f567348d9a2c9d44af250ff50.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/788415",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/a55990db37dc89182f544725eae205fb/png/?thumbnail_max_width=200&unique=1625551486&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F788415_c902dc1f567348d9a2c9d44af250ff50.html&viewport=960x960"
+  },
+  {
+    "title": "Experiments for communication networks in Thyroptera tricolor",
+    "desc": "",
+    "date": "2021-06-30T16:17:49+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/786954_b95cfbc92222487d8dbc1e9329d584f3.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/786954",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/77369f36b5c7a71a0c28a5f7053b641f/png/?thumbnail_max_width=200&unique=1625069869&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F786954_b95cfbc92222487d8dbc1e9329d584f3.html&viewport=960x960"
+  },
+  {
+    "title": "Current status of experiments for communication networks in Thyroptera tricolor",
+    "desc": "",
+    "date": "2021-06-30T01:13:52+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/786803_060c260c3d124b7f91b92ae291e3dec1.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/786803",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/f5fb61bd7f645d6145ba2561d805b739/png/?thumbnail_max_width=200&unique=1625015632&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F786803_060c260c3d124b7f91b92ae291e3dec1.html&viewport=960x960"
+  },
+  {
+    "title": "Determining best measuring method for quantifying acoustic structure in budgie contact calls",
+    "desc": "Budgie INBRE stress and contact calls",
+    "date": "2021-06-25T15:31:26+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/785368_7cc91dd7d9cd4da6b95542b3469cc1d7.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/785368",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/3c79025ac7df496f52e48b4839ddb947/png/?thumbnail_max_width=200&unique=1624635086&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F785368_7cc91dd7d9cd4da6b95542b3469cc1d7.html&viewport=960x960"
+  },
+  {
+    "title": "Sound pressure level stats",
+    "desc": "https://github.com/maRce10/lbh_song_amplitude",
+    "date": "2021-04-19T20:44:50+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/757288_57329150f4fb4e6eac8e23586a995a48.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/757288",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/cc547be2bd5a92fd0b3ffeb5e630b048/png/?thumbnail_max_width=200&unique=1618865090&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F757288_57329150f4fb4e6eac8e23586a995a48.html&viewport=960x960"
+  },
+  {
+    "title": "Song detection and calibration",
+    "desc": "https://github.com/maRce10/lbh_song_amplitude",
+    "date": "2021-04-16T19:16:31+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/755667_ab1cd794ea3b4fe59de7c5414e6a58dc.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/755667",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/c49a5f6ecede820a1fe6064ca0e5ee84/png/?thumbnail_max_width=200&unique=1618600591&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F755667_ab1cd794ea3b4fe59de7c5414e6a58dc.html&viewport=960x960"
+  },
+  {
+    "title": "Audiomoth calibration",
+    "desc": "https://github.com/maRce10/lbh_song_amplitude",
+    "date": "2021-03-26T13:42:34+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/745581_d4e5e4ad90104a67b7b22bcc10756ba5.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/745581",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/b82cd971471eb3702fdeaa04177a9be2/png/?thumbnail_max_width=200&unique=1616766154&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F745581_d4e5e4ad90104a67b7b22bcc10756ba5.html&viewport=960x960"
+  },
+  {
+    "title": "SImulating sexual dimorphism",
+    "desc": "",
+    "date": "2021-02-22T22:25:56+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/729405_2e158077fe8e45d095c31fd68e1574c9.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/729405",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/573bf928fb3ed14aaf0ae704fbc82ef1/png/?thumbnail_max_width=200&unique=1614032756&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F729405_2e158077fe8e45d095c31fd68e1574c9.html&viewport=960x960"
+  },
+  {
+    "title": "Statistical analysis-Thyroptera roost finding and sensory input",
+    "desc": "",
+    "date": "2021-02-10T22:11:46+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/724192_ce3f5bbe4f564c7d9a5fb1ebccbdb6ac.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/724192",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/b5fb483cf618ad58c403d4973b941192/png/?thumbnail_max_width=200&unique=1612995106&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F724192_ce3f5bbe4f564c7d9a5fb1ebccbdb6ac.html&viewport=960x960"
+  },
+  {
+    "title": "revBayes diagnostics /LBH cultural evolution trees",
+    "desc": "https://github.com/maRce10/lbh_cultural_evolution",
+    "date": "2021-02-06T17:38:07+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/722260_a9b40b8437644409b5103cfb09899099.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/722260",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/c1b794b74dac2dee59219e2bc0b246fc/png/?thumbnail_max_width=200&unique=1612633087&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F722260_a9b40b8437644409b5103cfb09899099.html&viewport=960x960"
+  },
+  {
+    "title": "grupos mixtos thyroptera 2021",
+    "desc": "",
+    "date": "2021-01-18T17:29:52+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/714859_2f0ed07cfcab47afba51f7a6004f9d34.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/714859",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/d00ffb700c04b596ce986fe98c75a674/png/?thumbnail_max_width=200&unique=1610990992&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F714859_2f0ed07cfcab47afba51f7a6004f9d34.html&viewport=960x960"
+  },
+  {
+    "title": "Tree topology diagnostics",
+    "desc": "from poryect github.com/maRce10/lbh_cultural_evolution",
+    "date": "2021-01-04T16:05:48+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/709692_78cb8146d6ae4514aa6781eaef4d01fa.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/709692",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/cde4568f89acce192a61408336c49cbb/png/?thumbnail_max_width=200&unique=1609776348&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F709692_78cb8146d6ae4514aa6781eaef4d01fa.html&viewport=960x960"
+  },
+  {
+    "title": "Group flight calling patterns in Thyroptera",
+    "desc": "https://github.com/maRce10/flight_coordination_in_Thyroptera",
+    "date": "2020-10-23T01:40:09+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/679920_5430cecba40b4b758a9a2b3e21ebd942.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/679920",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/88a7d46bba23e042aa127c0b573be437/png/?thumbnail_max_width=200&unique=1603417209&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F679920_5430cecba40b4b758a9a2b3e21ebd942.html&viewport=960x960"
+  },
+  {
+    "title": "Automatic detection of inquiry calls",
+    "desc": "updated on oct-7-2020\r\n\r\nfor details visit https://github.com/maRce10/flight_coordination_in_Thyroptera",
+    "date": "2020-10-07T13:12:49+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/671954_79e493b0cb9a4a7d8ed5a35733f21967.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/671954",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/437836e9a159b74e5faa95477e6ef0a3/png/?thumbnail_max_width=200&unique=1602076369&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F671954_79e493b0cb9a4a7d8ed5a35733f21967.html&viewport=960x960"
+  },
+  {
+    "title": "Calling activity analysis Thyroptera",
+    "desc": "updated on oct-7-2020\r\n\r\nfor details visit https://github.com/maRce10/flight_coordination_in_Thyroptera",
+    "date": "2020-10-07T13:05:27+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/671951_3fcca94c6e6f48adb5cea4bb1118c179.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/671951",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/87a4facf2eade06470cd000712087d01/png/?thumbnail_max_width=200&unique=1602075927&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F671951_3fcca94c6e6f48adb5cea4bb1118c179.html&viewport=960x960"
+  },
+  {
+    "title": "Sex-dependent response calling in Thyroptera tricolor",
+    "desc": "https://github.com/maRce10/sex-dependent_response_calling_thyroptera",
+    "date": "2020-06-12T14:40:54+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/627001_e8fe56feb77346b9a2e235f7af6bffdd.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/627001",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/2c2d4aad6c36a7526c2eca790244bd56/png/?thumbnail_max_width=200&unique=1591972854&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F627001_e8fe56feb77346b9a2e235f7af6bffdd.html&viewport=960x960"
+  },
+  {
+    "title": "Calling activity analysis Thyroptera",
+    "desc": "https://github.com/maRce10/flight_coordination_in_Thyroptera#to-do-list",
+    "date": "2020-06-04T21:43:43+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/624039_913bd42afd0543fa8eda00faac554b52.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/624039",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/4c60485bf04113a18c94685139e06b2c/png/?thumbnail_max_width=200&unique=1591307023&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F624039_913bd42afd0543fa8eda00faac554b52.html&viewport=960x960"
+  },
+  {
+    "title": "Multimodal signaling in hermit hummingbirds",
+    "desc": "data analysis of project:\r\n\r\nhttps://github.com/maRce10/lbh_multimodal_signals/blob/master/README.md",
+    "date": "2020-05-28T03:49:23+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/620665_5433726c29094ce2abf47e080f16045b.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/620665",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/6729426696bec5d1fdb9384d41a8c3b8/png/?thumbnail_max_width=200&unique=1590637763&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F620665_5433726c29094ce2abf47e080f16045b.html&viewport=960x960"
+  },
+  {
+    "title": "Antropogenic noise and song structure in Zonotrichia capensis",
+    "desc": "Response to city noise in rufous-collared sparrow",
+    "date": "2020-05-05T15:25:02+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/609605_a43fd648eb20426788e58d663f957725.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/609605",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/1dcf62a6c63b2e39a8fd0637fa686e24/png/?thumbnail_max_width=200&unique=1588692302&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F609605_a43fd648eb20426788e58d663f957725.html&viewport=960x960"
+  },
+  {
+    "title": "Song sequence alignments",
+    "desc": "Cultural evolution in long-billed hermits\r\n\r\nUnvailing the evolutionary dynamics that generated complex vocalizations in hummingbirds",
+    "date": "2020-04-18T17:45:43+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/601065_a75371d8c9d74ca79a3ed966d289b13a.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/601065",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/866dd3ec03b8cb0665b86135b5153ee0/png/?thumbnail_max_width=200&unique=1587231943&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F601065_a75371d8c9d74ca79a3ed966d289b13a.html&viewport=960x960"
+  },
+  {
+    "title": "Maff alignment optimization",
+    "desc": "Cultural evolution in long-billed hermits\r\n\r\nUnvailing the evolutionary dynamics that generated complex vocalizations in hummingbirds",
+    "date": "2020-04-18T15:11:12+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/601010_54dd1a02af274a5fa228c5ab2163dde1.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/601010",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/dcfbc73ed91dc3ccc54c3c299cc4c10e/png/?thumbnail_max_width=200&unique=1587222672&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F601010_54dd1a02af274a5fa228c5ab2163dde1.html&viewport=960x960"
+  },
+  {
+    "title": "BInding trees from different sources hummingbird song evolution",
+    "desc": "",
+    "date": "2020-04-13T04:30:53+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/598340_e4190985442f411ea59bf9224bfa72c8.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/598340",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/2b3e13692305ee94aae82ecf7d939dbf/png/?thumbnail_max_width=200&unique=1586752253&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F598340_e4190985442f411ea59bf9224bfa72c8.html&viewport=960x960"
+  },
+  {
+    "title": "Branchwise rates results",
+    "desc": "Hummingbird song evolution",
+    "date": "2020-04-13T04:09:55+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/598332_472ec90880b34d24a86ff1441902ee18.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/598332",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/13031760588903a60da173af4267522d/png/?thumbnail_max_width=200&unique=1586750995&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F598332_472ec90880b34d24a86ff1441902ee18.html&viewport=960x960"
+  },
+  {
+    "title": "Sound degradation experiment Tlalpan",
+    "desc": "",
+    "date": "2020-03-11T14:28:16+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/583845_c637a147929242c3b9e8886feb796441.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/583845",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/45905296abf355df45a341e39be00e27/png/?thumbnail_max_width=200&unique=1583936896&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F583845_c637a147929242c3b9e8886feb796441.html&viewport=960x960"
+  },
+  {
+    "title": "Roosting flight trajectories v02",
+    "desc": "",
+    "date": "2019-12-09T18:22:29+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/558082_0a572967de2d4b558decb38a00ca5f8e.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/558082",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/804f8c89bdd21028ca88eee2c51bd866/png/?thumbnail_max_width=200&unique=1575915749&url=http%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F558082_0a572967de2d4b558decb38a00ca5f8e.html&viewport=960x960"
+  },
+  {
+    "title": "Acoustic space function",
+    "desc": "",
+    "date": "2019-09-25T20:04:52+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/532332_cfc55af7f2db428b866c02a774144c5e.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/532332",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/c636b6b2c4da56724bb17d8116d97224/png/?thumbnail_max_width=200&unique=1569441892&url=https%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F532332_cfc55af7f2db428b866c02a774144c5e.html&viewport=960x960"
+  },
+  {
+    "title": "Evolution of song complexity in hummingbirds",
+    "desc": "",
+    "date": "2019-09-09T14:33:20+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/526408_1ee133e63ff14023a6ff4915885ee437.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/526408",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/770635dcb9e601247dfda8ed7c992acb/png/?thumbnail_max_width=200&unique=1568039600&url=http%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F526408_1ee133e63ff14023a6ff4915885ee437.html&viewport=960x960"
+  },
+  {
+    "title": "LBH song type degradation",
+    "desc": "",
+    "date": "2019-07-31T21:51:40+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/516768_2e65aded233f4db8b061b240f4b0c5fe.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/516768",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/fd9938dbec7bae8c0e95cdf771c863e7/png/?thumbnail_max_width=200&unique=1564609900&url=http%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F516768_2e65aded233f4db8b061b240f4b0c5fe.html&viewport=960x960"
+  },
+  {
+    "title": "LBH song amplitude",
+    "desc": "",
+    "date": "2019-07-21T15:24:09+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/514287_b866265e3f2543f988606bc00c5eeb9e.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/514287",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/40c438dbbefb312196a468a11273dc98/png/?thumbnail_max_width=200&unique=1563722649&url=http%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F514287_b866265e3f2543f988606bc00c5eeb9e.html&viewport=960x960"
+  },
+  {
+    "title": "LBH song type degradation",
+    "desc": "",
+    "date": "2019-07-20T22:19:23+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/514145_c3865a5e73ee4b35b1cdadd6b58aa350.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/514145",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/bae707a4ce65632a68bc58c367bf1734/png/?thumbnail_max_width=200&unique=1563661163&url=http%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F514145_c3865a5e73ee4b35b1cdadd6b58aa350.html&viewport=960x960"
+  },
+  {
+    "title": "Echolocation call plasticity",
+    "desc": "",
+    "date": "2019-07-15T19:23:38+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/512870_c852b180ab6d43b7a9c476e7f6164a09.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/512870",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/52166ab483384f7af10e0293ed86e8bc/png/?thumbnail_max_width=200&unique=1563218618&url=http%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F512870_c852b180ab6d43b7a9c476e7f6164a09.html&viewport=960x960"
+  },
+  {
+    "title": "Budgie call-FoxP2 analysis 2019",
+    "desc": "",
+    "date": "2019-06-25T23:29:46+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/508092_9bcea4b3a3ca4f3aa63391839f95f6c2.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/508092",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/41f6a187746b2fd528b15b7389125601/png/?thumbnail_max_width=200&unique=1561505386&url=http%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F508092_9bcea4b3a3ca4f3aa63391839f95f6c2.html&viewport=960x960"
+  },
+  {
+    "title": "Social call ontogeny in Thyroptera",
+    "desc": "",
+    "date": "2019-06-11T22:04:13+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/504063_617e30ca3a2c4672bcb1f8be275cdfef.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/504063",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/f8666b3116e40dead20ddd47fb396003/png/?thumbnail_max_width=200&unique=1560290653&url=http%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F504063_617e30ca3a2c4672bcb1f8be275cdfef.html&viewport=960x960"
+  },
+  {
+    "title": "Acoustic random forest performance",
+    "desc": "",
+    "date": "2019-03-13T21:31:27+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/475988_a883de5372a74248bac60817ae511344.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/475988",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/22961bd9999b37f17a3d6ab462d4f2d8/png/?thumbnail_max_width=200&unique=1552512687&url=http%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F475988_a883de5372a74248bac60817ae511344.html&viewport=960x960"
+  },
+  {
+    "title": "seewave",
+    "desc": "",
+    "date": "2019-02-28T18:06:51+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/471939_6dc4c401711744daa0cdd230da9b25ab.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/471939",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/fbf6e2686952c0beb1e9be2be9ee2953/png/?thumbnail_max_width=200&unique=1551377211&url=http%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F471939_6dc4c401711744daa0cdd230da9b25ab.html&viewport=960x960"
+  },
+  {
+    "title": "Bat roosting flight",
+    "desc": "",
+    "date": "2019-02-28T00:12:06+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/471683_69fb55ad217540b4b9926ddd55ad12f9.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/471683",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/fea3682af08987bfb24c133e6a53dd3a/png/?thumbnail_max_width=200&unique=1551312726&url=http%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F471683_69fb55ad217540b4b9926ddd55ad12f9.html&viewport=960x960"
+  },
+  {
+    "title": "Random forest on synthetic acoustic data",
+    "desc": "",
+    "date": "2019-02-06T00:02:23+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/464516_95cb6f89ba5e46908515e0325018f2ba.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/464516",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/fb26249d53f837514ec5fd826aebca91/png/?thumbnail_max_width=200&unique=1549411343&url=http%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F464516_95cb6f89ba5e46908515e0325018f2ba.html&viewport=960x960"
+  },
+  {
+    "title": "Hummingbird song evolution NEXT STEPS",
+    "desc": "",
+    "date": "2019-01-14T15:57:17+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/458218_3ad1ba8241914eceab7063de6d4e8472.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/458218",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/8f1aff4c63ba0778b0ececa0c247e6c1/png/?thumbnail_max_width=200&unique=1547481437&url=http%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F458218_3ad1ba8241914eceab7063de6d4e8472.html&viewport=960x960"
+  },
+  {
+    "title": "Evolution of song complexity in hummingbirds",
+    "desc": "",
+    "date": "2018-12-14T13:30:06+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/451017_9f9f34d9a18d4a5aaccca374e50a5f77.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/451017",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/18c1cdd4b31b009138c65b3979ed72b9/png/?thumbnail_max_width=200&unique=1544794206&url=http%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F451017_9f9f34d9a18d4a5aaccca374e50a5f77.html&viewport=960x960"
+  },
+  {
+    "title": "Vervain hummingbird analysis 2.0",
+    "desc": "looking at geographical patterns of repertoire sharing",
+    "date": "2018-10-26T15:59:50+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/433528_d3175e773f304f64a61bc2e51f7e0788.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/433528",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/67a503e94c54576fb31d8d40ae53575c/png/?thumbnail_max_width=200&unique=1540569590&url=http%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F433528_d3175e773f304f64a61bc2e51f7e0788.html&viewport=960x960"
+  },
+  {
+    "title": "Hummingbird song evolution phylogenies-spectrograms",
+    "desc": "",
+    "date": "2018-10-18T20:19:17+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/430733_239a1c3a094942ebbf970b489e6d530c.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/430733",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/6719f744d750dc2b7b97ec6135ec5039/png/?thumbnail_max_width=200&unique=1539893957&url=http%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F430733_239a1c3a094942ebbf970b489e6d530c.html&viewport=960x960"
+  },
+  {
+    "title": "House Wren noisy coordination aug-2018",
+    "desc": "",
+    "date": "2018-08-19T17:08:42+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/413338_33fb88b0170946d38ee66c780e6f0559.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/413338",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/7b30b010e67972686112fa9a8375d4b8/png/?thumbnail_max_width=200&unique=1534698522&url=http%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F413338_33fb88b0170946d38ee66c780e6f0559.html&viewport=960x960"
+  },
+  {
+    "title": "Fairy wrens song dimorphism IOC",
+    "desc": "",
+    "date": "2018-07-25T12:04:58+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/407311_7fc92cbf985c44c093b660f2c97c8de3.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/407311",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/239af7cfb52e8d050dd6f23aefd422e7/png/?thumbnail_max_width=200&unique=1532520298&url=http%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F407311_7fc92cbf985c44c093b660f2c97c8de3.html&viewport=960x960"
+  },
+  {
+    "title": "Heliconia phylogeny",
+    "desc": "",
+    "date": "2018-07-19T02:32:41+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/405636_e8a8ac4a759f427dadc1f4cffadca12f.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/405636",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/4f9b93ce3b9bf193b865efeb349b2123/png/?thumbnail_max_width=200&unique=1531967561&url=http%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F405636_e8a8ac4a759f427dadc1f4cffadca12f.html&viewport=960x960"
+  },
+  {
+    "title": "Random forest budgie call analysis apr-2018",
+    "desc": "",
+    "date": "2018-04-02T21:00:07+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/376197_66f45b42c2614c2abdfa9ae820bdf2fe.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/376197",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/704bb9cbff48315440358c7c2f78c8eb/png/?thumbnail_max_width=200&unique=1522702807&url=http%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F376197_66f45b42c2614c2abdfa9ae820bdf2fe.html&viewport=960x960"
+  },
+  {
+    "title": "Fairywrens song dimorphism",
+    "desc": "",
+    "date": "2018-03-29T21:14:54+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/375038_dada35254b9c443a9276b29bcf3a90ef.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/375038",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/1154b2525d9e93418f197f7f9d303b26/png/?thumbnail_max_width=200&unique=1522358094&url=http%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F375038_dada35254b9c443a9276b29bcf3a90ef.html&viewport=960x960"
+  },
+  {
+    "title": "Diasporus acoustic analysis mar-2018",
+    "desc": "",
+    "date": "2018-03-18T02:42:01+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/370766_9bc14fc158154b43a7722c09e2d8f2fb.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/370766",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/94c69fe0f9efaea589f6d195f465f34b/png/?thumbnail_max_width=200&unique=1521340921&url=http%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F370766_9bc14fc158154b43a7722c09e2d8f2fb.html&viewport=960x960"
+  },
+  {
+    "title": "Vervain hummingbird song analysis",
+    "desc": "",
+    "date": "2018-03-06T03:09:22+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/366926_4ac879ac9217422eaa0c69c7298241da.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/366926",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/efb2965b631f5695feb6e496a4f2d7c1/png/?thumbnail_max_width=200&unique=1520305762&url=http%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F366926_4ac879ac9217422eaa0c69c7298241da.html&viewport=960x960"
+  },
+  {
+    "title": "Data collection Dixiphia pipra",
+    "desc": "searching recordings of Dixiphia pipra in acoustic libraries",
+    "date": "2018-02-26T18:57:07+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/364424_e87277ed53d7479eae271cd4a4e42f0a.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/364424",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/fe63317ce47bbdafb9fb5b40ce0c4e87/png/?thumbnail_max_width=200&unique=1519671427&url=http%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F364424_e87277ed53d7479eae271cd4a4e42f0a.html&viewport=960x960"
+  },
+  {
+    "title": "Data checking-Hummingbird song evolution",
+    "desc": "",
+    "date": "2018-02-25T15:13:28+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/363980_917c23b360be4c759d35f0031abaee8f.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/363980",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/879d1ac3330e7710f5497f512a204fff/png/?thumbnail_max_width=200&unique=1519571608&url=http%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F363980_917c23b360be4c759d35f0031abaee8f.html&viewport=960x960"
+  },
+  {
+    "title": "LBH acoustic space and cultural phylograms",
+    "desc": "",
+    "date": "2017-11-25T19:58:11+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/333860_2164e51f7ed644f6b31a92c675699bc4.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/333860",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/5439a2b3d5e3f300e98f58fcc4d457c4/png/?thumbnail_max_width=200&unique=1511639891&url=http%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F333860_2164e51f7ed644f6b31a92c675699bc4.html&viewport=960x960"
+  },
+  {
+    "title": "LBH cultural evolution song structure statistical analysis 2017",
+    "desc": "",
+    "date": "2017-11-13T14:44:43+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/329674_e6437743ee4f4dbb9cddc06911bce707.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/329674",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/67ec3a1e8744e9918e9915d387098783/png/?thumbnail_max_width=200&unique=1510584283&url=http%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F329674_e6437743ee4f4dbb9cddc06911bce707.html&viewport=960x960"
+  },
+  {
+    "title": "LBH cultural evolution parameters oct-17",
+    "desc": "",
+    "date": "2017-10-30T03:14:18+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/324257_8abec71818b2426cb09def5c4ff7b983.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/324257",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/2fd2aa13c43ae7f5256e3df0c280fed5/png/?thumbnail_max_width=200&unique=1509333258&url=http%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F324257_8abec71818b2426cb09def5c4ff7b983.html&viewport=960x960"
+  },
+  {
+    "title": "LBH cultural evolution agent based model 2017",
+    "desc": "",
+    "date": "2017-10-29T13:15:54+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/323972_6a4ddbed28334311977299ab2be22bfb.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/323972",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/ac63474e53139f76cfbb2300db7bfb2d/png/?thumbnail_max_width=200&unique=1509282954&url=http%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F323972_6a4ddbed28334311977299ab2be22bfb.html&viewport=960x960"
+  },
+  {
+    "title": "LBH cultural evolution acoustic analysis",
+    "desc": "Random forest on several metrics of acoustic structure",
+    "date": "2017-09-29T21:06:14+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/313525_a8cb46e09e3a4e6890271fd97387b3eb.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/313525",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/e115a970173b9011d0350513e2bc69b7/png/?thumbnail_max_width=200&unique=1506719174&url=http%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F313525_a8cb46e09e3a4e6890271fd97387b3eb.html&viewport=960x960"
+  },
+  {
+    "title": "Pastos marinos Cahuita 2009-2015",
+    "desc": "",
+    "date": "2017-01-26T00:40:51+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/244670_ff743cdbba3f4807899042b803b6c1d6.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/244670",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/dcfbff09ce18c2da1ac7c28fa2e41ef4/png/?thumbnail_max_width=200&unique=1485391251&url=http%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F244670_ff743cdbba3f4807899042b803b6c1d6.html&viewport=960x960"
+  },
+  {
+    "title": "Effect of compression and background noise on acoustic analysis",
+    "desc": "",
+    "date": "2017-01-19T01:14:25+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/242800_66b6c9cf8f05482589a2b8cdd2dc202f.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/242800",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/63c4cb8379fbe9c3cd88376c72f094f1/png/?thumbnail_max_width=200&unique=1484788465&url=http%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F242800_66b6c9cf8f05482589a2b8cdd2dc202f.html&viewport=960x960"
+  },
+  {
+    "title": "Evo canto colibries OET 2017",
+    "desc": "",
+    "date": "2017-01-13T04:33:53+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/241441_a977f9de0e31420b9adc43556934ad1b.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/241441",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/a33302d733071e9580f1b44eaceab766/png/?thumbnail_max_width=200&unique=1484282033&url=http%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F241441_a977f9de0e31420b9adc43556934ad1b.html&viewport=960x960"
+  },
+  {
+    "title": "Song degradation sept-2016",
+    "desc": "Looking at the effect of acoustic degradation on particular acoustic parameters and acoustic similarity measurements",
+    "date": "2016-09-21T00:48:13+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/210943_16661910334041c698d032f4e6f79da8.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/210943",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/bb766837d56db46b4f3d501f1bac4dc4/png/?thumbnail_max_width=200&unique=1474418893&url=http%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F210943_16661910334041c698d032f4e6f79da8.html&viewport=960x960"
+  },
+  {
+    "title": "LBH cultural evolution REU 2016",
+    "desc": "analyses for REU project",
+    "date": "2016-07-31T15:12:40+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/199571_8b58246b95af430bb6cee299c24a751e.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/199571",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/65b053b9027e335fc17aa4848a7b199b/png/?thumbnail_max_width=200&unique=1469977960&url=http%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F199571_8b58246b95af430bb6cee299c24a751e.html&viewport=960x960"
+  },
+  {
+    "title": "LBH condition/cognition",
+    "desc": "",
+    "date": "2016-05-30T03:16:15+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/184828_84d486b47d134058aceaeaa4f2552ea9.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/184828",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/0b3640649fd4076f812415756dba14a1/png/?thumbnail_max_width=200&unique=1464578175&url=http%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F184828_84d486b47d134058aceaeaa4f2552ea9.html&viewport=960x960"
+  },
+  {
+    "title": "Cognition-condition_2016",
+    "desc": "",
+    "date": "2016-04-28T15:46:07+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/176613_7ec2541edc504aa2a28e9924c5792d61.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/176613",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/2f6da9d72946dde6c91646585955af4d/png/?thumbnail_max_width=200&unique=1461858367&url=http%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F176613_7ec2541edc504aa2a28e9924c5792d61.html&viewport=960x960"
+  },
+  {
+    "title": "Remover_tamano_en_analisis_discriminante",
+    "desc": "",
+    "date": "2016-04-22T23:59:05+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/173873_da424b1479ef441abcdbeba285a8cd6a.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/173873",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/b7e33d36d0c91f6d0f4ef6c41cf02bd7/png/?thumbnail_max_width=200&unique=1461369545&url=http%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F173873_da424b1479ef441abcdbeba285a8cd6a.html&viewport=960x960"
+  },
+  {
+    "title": "Modelos evolutivos",
+    "desc": "Analisis Comparativo Filogenetico, UCR I-2016",
+    "date": "2016-04-06T04:32:10+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/168609_63c5035de5644c37a4aca169a404cd1e.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/168609",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/0b77c5c4520d8f930f0aab46d5053acf/png/?thumbnail_max_width=200&unique=1459917130&url=http%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F168609_63c5035de5644c37a4aca169a404cd1e.html&viewport=960x960"
+  },
+  {
+    "title": "Graphs in R",
+    "desc": "",
+    "date": "2016-01-23T22:12:48+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/145676_2b7488b363084adcaf59345b4fe61c1c.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/145676",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/d54fc5bb357f1cf2adee45abec757c36/png/?thumbnail_max_width=200&unique=1453587168&url=http%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F145676_2b7488b363084adcaf59345b4fe61c1c.html&viewport=960x960"
+  },
+  {
+    "title": "How to input data in R",
+    "desc": "",
+    "date": "2016-01-23T22:06:43+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/145672_a063edeee0e24313a3896beef42334dc.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/145672",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/78de40faa0b7abc0bd10ed88a2e3afa5/png/?thumbnail_max_width=200&unique=1453586803&url=http%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F145672_a063edeee0e24313a3896beef42334dc.html&viewport=960x960"
+  },
+  {
+    "title": "wren duet analysis",
+    "desc": "",
+    "date": "2016-01-22T00:50:29+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/145061_52d05acbe50e41dfb718ee4058c47c5d.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/145061",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/f2e92e7524309ff5a31d529e6530f346/png/?thumbnail_max_width=200&unique=1453423829&url=http%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F145061_52d05acbe50e41dfb718ee4058c47c5d.html&viewport=960x960"
+  },
+  {
+    "title": "Speeding up R",
+    "desc": "",
+    "date": "2015-11-08T17:17:18+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/124367_d2d2fc85241c4687919c5d94d6960881.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/124367",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/58209ebdf40696730e71524253e7db97/png/?thumbnail_max_width=200&unique=1447003038&url=http%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F124367_d2d2fc85241c4687919c5d94d6960881.html&viewport=960x960"
+  },
+  {
+    "title": "LBH coordinated singing oct-2015",
+    "desc": "",
+    "date": "2015-10-31T21:38:30+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/122956_54349b75120743b0803ec6b4d7523b25.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/122956",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/ac6ab309d7575636e41fc0d639238715/png/?thumbnail_max_width=200&unique=1446327510&url=http%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F122956_54349b75120743b0803ec6b4d7523b25.html&viewport=960x960"
+  },
+  {
+    "title": "Analysis of coordinated singing oct-15",
+    "desc": "testing coor.graph and coor.test function from warbleR package",
+    "date": "2015-10-20T17:50:49+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/118976_0d5227d689484a52803ee623dbffd960.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/118976",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/41a86f406a81ae0f7833b83c041f69fa/png/?thumbnail_max_width=200&unique=1445363449&url=http%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F118976_0d5227d689484a52803ee623dbffd960.html&viewport=960x960"
+  },
+  {
+    "title": "using monitoR to detect LBH songs",
+    "desc": "",
+    "date": "2015-10-08T01:50:45+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/116309_35acf778d94c4e17a1382d3a3bf91289.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/116309",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/96cd93b8c624c60dbf215e29cec6f33d/png/?thumbnail_max_width=200&unique=1444269045&url=http%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F116309_35acf778d94c4e17a1382d3a3bf91289.html&viewport=960x960"
+  },
+  {
+    "title": "Song similarity using dynamic time warping",
+    "desc": "",
+    "date": "2015-10-04T03:11:41+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/115559_fe0836de9c3e48a7817486911c4e8a61.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/115559",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/8f07e3555ddb16da3a73213aa94d850f/png/?thumbnail_max_width=200&unique=1443928301&url=http%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F115559_fe0836de9c3e48a7817486911c4e8a61.html&viewport=960x960"
+  },
+  {
+    "title": "Number_of_males_per_lek_LBH",
+    "desc": "http://marceloarayasalas.weebly.com/",
+    "date": "2015-07-02T21:49:33+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/90826_f7b126b241ff4902b58ea59a244ae60b.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/90826",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/bd258e908b8c4b2126220f54f554f4d0/png/?thumbnail_max_width=200&unique=1435873773&url=http%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F90826_f7b126b241ff4902b58ea59a244ae60b.html&viewport=960x960"
+  },
+  {
+    "title": "LBH coordinated singing apr-15",
+    "desc": "http://marceloarayasalas.weebly.com/",
+    "date": "2015-04-08T22:49:17+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/72036_de7b7273c6894dbabd8e711d12316a38.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/72036",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/373d8ab71d1a18c94c7d73707a30fd5a/png/?thumbnail_max_width=200&unique=1428533357&url=http%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F72036_de7b7273c6894dbabd8e711d12316a38.html&viewport=960x960"
+  },
+  {
+    "title": "LIAK coordinated provisioning apr-15",
+    "desc": "coordinating provisioning in little auks\r\n\r\nhttp://marceloarayasalas.weebly.com/",
+    "date": "2015-04-06T01:33:58+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/71568_0a576a0de152422bb2e168b910fc7456.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/71568",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/ab13ff69c6f0b780f57123d92a647093/png/?thumbnail_max_width=200&unique=1428284038&url=http%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F71568_0a576a0de152422bb2e168b910fc7456.html&viewport=960x960"
+  },
+  {
+    "title": "Hummer_color_evolution_dec-14",
+    "desc": "PGLS Regressions of color of several plumage patches against vegetation density",
+    "date": "2014-12-27T23:11:12+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/52362_c6a7bfa6b3fc4905bcd5ead1b1a631d3.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/52362",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/193d6a3123eec01e9420a942923142f6/png/?thumbnail_max_width=200&unique=1419721872&url=http%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F52362_c6a7bfa6b3fc4905bcd5ead1b1a631d3.html&viewport=960x960"
+  },
+  {
+    "title": "LBH Display sequence analysis dec-14",
+    "desc": "",
+    "date": "2014-12-13T15:34:30+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/48046_8f7c87223fa74379961ff8f1ce1d98c9.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/48046",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/f9fe08730295b3074208100e235cff9d/png/?thumbnail_max_width=200&unique=1418484870&url=http%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F48046_8f7c87223fa74379961ff8f1ce1d98c9.html&viewport=960x960"
+  },
+  {
+    "title": "LBH replicability of morphology/condition data sep-2014",
+    "desc": "",
+    "date": "2014-09-18T02:01:08+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/28925_d5beda31dba94a6e9d9b24410ed7457e.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/28925",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/47717850811d2acf7ab1f390ee890736/png/?thumbnail_max_width=200&unique=1411005668&url=http%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F28925_d5beda31dba94a6e9d9b24410ed7457e.html&viewport=960x960"
+  },
+  {
+    "title": "Neotropical Parrot Call Evolution 2014",
+    "desc": "",
+    "date": "2014-09-10T20:43:50+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/28090_9abbdfab96f04780b504f889827937bc.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/28090",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/705d65a13b46f7b929faf448944381c9/png/?thumbnail_max_width=200&unique=1410381830&url=http%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F28090_9abbdfab96f04780b504f889827937bc.html&viewport=960x960"
+  },
+  {
+    "title": "LBH display sequence analysis_sep-14",
+    "desc": "",
+    "date": "2014-09-07T05:07:14+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/27778_ae1176f8d6a14bd7acadc8fd4427118f.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/27778",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/28d11845ce8d715f1dd2c79e5dc5d472/png/?thumbnail_max_width=200&unique=1410066434&url=http%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F27778_ae1176f8d6a14bd7acadc8fd4427118f.html&viewport=960x960"
+  },
+  {
+    "title": "Analysis morfologico Florisuga mellivora aug-14",
+    "desc": "",
+    "date": "2014-08-26T19:21:30+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/27113_0495dcebc8de44409829c2f33a5ecdb5.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/27113",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/74bfb85c16955036fa822c94878d4931/png/?thumbnail_max_width=200&unique=1409080890&url=http%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F27113_0495dcebc8de44409829c2f33a5ecdb5.html&viewport=960x960"
+  },
+  {
+    "title": "Bill_tip_change_analysis_aug-14",
+    "desc": "long-billed hermits",
+    "date": "2014-08-25T20:49:34+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/27060_1b87cb10a7904762bf7def50d3d7466f.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/27060",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/894e5d3769d71d2c769d3b09db312a83/png/?thumbnail_max_width=200&unique=1408999774&url=http%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F27060_1b87cb10a7904762bf7def50d3d7466f.html&viewport=960x960"
+  },
+  {
+    "title": "LBH_bill_tip_allometry_jul-14",
+    "desc": "long billed hermit  bill as daggers stats",
+    "date": "2014-08-07T01:46:34+00:00",
+    "url": "https://rstudio-pubs-static.s3.amazonaws.com/24502_b27e04b0bfa54c0eb2cf7dcf091d542c.html",
+    "rpubs": "https://rpubs.com/marcelo-araya-salas/24502",
+    "thumb": "https://d38j8069scdbm5.cloudfront.net/v6/P5441C759E0FFE/4cf5939f722d664ebcce8c87e4ac9d02/png/?thumbnail_max_width=200&unique=1407375994&url=http%3A%2F%2Frstudio-pubs-static.s3.amazonaws.com%2F24502_b27e04b0bfa54c0eb2cf7dcf091d542c.html&viewport=960x960"
+  }
+]

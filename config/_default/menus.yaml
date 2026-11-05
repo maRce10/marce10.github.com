@@ -25,6 +25,9 @@ main:
   - name: "Mentees"
     url: '#mentees'
     weight: 50
+  - name: "Projects"
+    url: 'projects/'
+    weight: 55
   # - name: "Featured work"
   #   url: '#featured_work'
   #   weight: 60

@@ -69,6 +69,12 @@ I also develop [software packages for analyzing behavioral data](https://marce10
      <div style="border:0px solid black;width:100%;height:200px;overflow:scroll;overflow-y:scroll;overflow-x:hidden;">
     <p style="height:0%;">
      <ul>
+<li> <p style="color:gray;">nov 5, 2026: <p style="color:black;">New paper out&#129395: <a href="./publication/ortiz-ramirez_et_al_2026/"><i>Ecology and morphology as drivers of passerine song differentiation across an island archipelago</i></a></li>
+
+<li> <p style="color:gray;">nov 4, 2026: <p style="color:black;">New paper out&#129395: <a href="./publication/garcia-rodriguez_et_al_2026/"><i>A dataset of records of alien vertebrates in mountains of the World</i></a></li>
+
+<li> <p style="color:gray;">oct 30, 2026: <p style="color:black;">New preprint&#128221: <a href="./publication/obrien_et_al_2026/"><i>Toward welfare indicators: leg condition and aversive stimuli modulate defensive behavior in Opiliones</i></a></li>
+
 <li><p style="color:gray;">aug 13, 2026:
 <a href="https://www.maxwell-hanrahan.org/programs/field-biology">Maxwell/Hanrahan Award in Field Biology recipient &#129395</a></li>
 

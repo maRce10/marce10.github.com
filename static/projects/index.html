@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projects | Marcelo Araya-Salas</title>
+<meta name="description" content="R Markdown documents by Marcelo Araya-Salas, originally published on RPubs.">
+<style>
+  :root {
+    --bg: #fafafa; --card: #fff; --text: #222; --muted: #6b6b6b;
+    --border: #e3e3e3; --accent: #1565c0;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #16181b; --card: #202327; --text: #e8e8e8; --muted: #a0a0a0;
+      --border: #33373c; --accent: #64a8f0;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  header, main { max-width: 1200px; margin: 0 auto; padding: 0 16px; }
+  header { padding-top: 28px; padding-bottom: 8px; }
+  .back { font-size: 14px; }
+  h1 { margin: 10px 0 4px; font-size: 28px; }
+  .sub { color: var(--muted); margin: 0 0 18px; }
+  .tools { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin-bottom: 20px; }
+  #q {
+    flex: 1 1 260px; padding: 9px 12px; font-size: 15px; border-radius: 6px;
+    border: 1px solid var(--border); background: var(--card); color: var(--text);
+  }
+  #count { color: var(--muted); font-size: 14px; }
+  .grid {
+    display: grid; gap: 18px; padding-bottom: 40px;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+  .tile {
+    background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+    overflow: hidden; display: flex; flex-direction: column;
+  }
+  .tile .thumb { display: block; aspect-ratio: 1 / 1; background: var(--border); overflow: hidden; }
+  .tile img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+  .info { padding: 10px 12px 12px; display: flex; flex-direction: column; gap: 4px; flex: 1; }
+  .info h2 { font-size: 15px; margin: 0; line-height: 1.3; }
+  .info h2 a { color: var(--text); }
+  .desc { font-size: 13px; color: var(--muted); overflow-wrap: anywhere; }
+  time { font-size: 12px; color: var(--muted); margin-top: auto; }
+</style>
+</head>
+<body>
+<header>
+  <a class="back" href="/">&larr; marce10.github.io</a>
+  <h1>Projects</h1>
+  <p class="sub">R Markdown reports, tutorials and analyses, originally published on
+    <a href="https://rpubs.com/marcelo-araya-salas">RPubs</a>.</p>
+  <div class="tools">
+    <input id="q" type="search" placeholder="Search titles and descriptions…" aria-label="Search documents">
+    <span id="count"></span>
+  </div>
+</header>
+<main>
+  <div class="grid" id="grid"></div>
+</main>
+<script>
+  const grid = document.getElementById("grid");
+  const count = document.getElementById("count");
+  const q = document.getElementById("q");
+  let docs = [];
+
+  function el(tag, attrs, text) {
+    const e = document.createElement(tag);
+    for (const k in attrs || {}) e.setAttribute(k, attrs[k]);
+    if (text) e.textContent = text;
+    return e;
+  }
+
+  // Render description text, turning bare URLs into links
+  function descNode(text) {
+    const d = el("div", { class: "desc" });
+    text.split(/(https?:\/\/\S+)/).forEach((part, i) => {
+      if (i % 2) d.appendChild(el("a", { href: part, target: "_blank", rel: "noopener" }, part));
+      else if (part) d.appendChild(document.createTextNode(part));
+    });
+    return d;
+  }
+
+  function tile(doc) {
+    const t = el("article", { class: "tile" });
+    const a = el("a", { class: "thumb", href: doc.url, target: "_blank", rel: "noopener" });
+    a.appendChild(el("img", { src: doc.thumb, alt: "", loading: "lazy" }));
+    t.appendChild(a);
+
+    const info = el("div", { class: "info" });
+    const h = el("h2");
+    h.appendChild(el("a", { href: doc.url, target: "_blank", rel: "noopener" }, doc.title));
+    info.appendChild(h);
+    if (doc.desc) info.appendChild(descNode(doc.desc));
+    const date = new Date(doc.date);
+    info.appendChild(el("time", { datetime: doc.date },
+      date.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" })));
+    t.appendChild(info);
+    return t;
+  }
+
+  function render() {
+    const terms = q.value.toLowerCase().trim().split(/\s+/).filter(Boolean);
+    const shown = docs.filter(d => {
+      const hay = (d.title + " " + d.desc).toLowerCase();
+      return terms.every(w => hay.includes(w));
+    });
+    grid.replaceChildren(...shown.map(tile));
+    count.textContent = shown.length === docs.length
+      ? docs.length + " documents"
+      : shown.length + " of " + docs.length + " documents";
+  }
+
+  q.addEventListener("input", render);
+
+  fetch("docs.json")
+    .then(r => r.json())
+    .then(d => { docs = d; render(); })
+    .catch(() => { count.textContent = "Could not load the document list."; });
+</script>
+</body>
+</html>
